@@ -1,0 +1,22 @@
+#Makefile Jorge y Javi
+#Nombre de ejecutable
+EXE_NAME=06_redes2
+
+#Ficheros para la realizacion de la compilacion
+SOURCE_FILES = server.c server.h
+
+#Flags para el compilador
+FFLAGS= -Wall -pedantic
+
+#Comienzo del makefile
+#Regla All: compila todo el programa
+all:
+	echo "Compilando ficheros"
+	gcc -o $(EXE_NAME) $(SOURCE_FILES) $(FFLAGS)
+
+
+
+#Regla clean: limpia el directorio del ficheros temporales
+clean:
+	echo "Borrando ficheros temporales"
+	rm -rf *.o $(EXE_NAME)
