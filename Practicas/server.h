@@ -17,11 +17,11 @@
 
 
 #define MAX_CONNECTIONS 100
-#define TOPIC_MAXSIZE 100
-#define NFC_SERVER_PORT 6667
-#define TAM_BUFFER 8096
-#define MAX_USERS 100
+#define SERVER_PORT 6667
+#define CLIENT_MESSAGE_MAXSIZE 8096
 
 int server_start(void);
 void server_accept_connection(int socket_id);
 void server_start_communication(int connval);
+void server_exit(int handler);
+int isClosedSocket(int val_read, char str[]);
