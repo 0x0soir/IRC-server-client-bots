@@ -25,3 +25,4 @@ void server_accept_connection(int socket_id);
 void server_start_communication(int connval);
 void server_exit(int handler);
 int isClosedSocket(int val_read, char str[]);
+void server_daemon();

@@ -74,6 +74,7 @@ void server_accept_connection(int socket_desc){
 		    syslog(LOG_ERR, "ERROR aceptando conexiones");
         exit(EXIT_FAILURE);
 		}
+
 		syslog(LOG_ERR, "-- Conexion recibida en el socket");
 		/*Se lanza el servicio y se espera a que acabe, de momento se comenta*/
 		server_start_communication(client_socket);
@@ -110,6 +111,7 @@ void server_start_communication(int socket_desc){
     syslog(LOG_INFO, "Mensaje enviado");
   }
   syslog(LOG_INFO, "Servicio Cliente: Fin servicio");
+  exit(0);
 }
 
 /*
@@ -140,7 +142,26 @@ int isClosedSocket(int val_read, char str[]){
   return (val_read==0)||(str[0]=='\0');
 }
 
+/*
+ * Function:  server_daemon
+ * ----------------------------------------
+ *  Inicia el proceso en modo daemon (hace fork, mata al hijo y continua padre)
+ *
+ *  returns: FAILURE or SUCCESS
+ */
+void server_daemon(){
+  int pid;
+  pid = fork();
+  if(pid<0){
+    exit(EXIT_FAILURE);
+  }
+  if(pid>0){
+    exit(EXIT_SUCCESS);
+  }
+}
+
 int main(){
+  server_daemon();
   struct sigaction act;
   act.sa_handler = server_exit;
   sigaction(SIGINT, &act, NULL);
