@@ -94,20 +94,28 @@ void server_accept_connection(int socket_desc){
  */
 void server_start_communication(int socket_desc){
   int pid, val_read;
-  char str[2000];
+  char str[2000], *command, *unpipeline_response;
   pid = fork();
   if (pid < 0) exit(EXIT_FAILURE);
-  if (pid == 0) return;
+  if (pid > 0) return;
   while(server_status)
   {
-    bzero(str, 2000);
+    memset(str, 0, 2000);
     val_read = recv(socket_desc, str, 2000, 0);
     if(isClosedSocket(val_read, str)){
       syslog (LOG_INFO, "Cierra conexion");
       break;
     }
-    syslog(LOG_INFO, "Mensaje recibido: %s", str);
+    syslog(LOG_INFO, "MENSAJE RECIBIDO: %s", str);
+    unpipeline_response=IRC_UnPipelineCommands(str, &command);
+    syslog(LOG_INFO, "PARSEO COMANDO 1: %s", command);
+	  while(unpipeline_response!=NULL){
+		 	syslog(LOG_INFO, "PARSEO COMANDO 2: %s", command);
+		 	unpipeline_response=IRC_UnPipelineCommands(NULL, &command);
+		}
+		syslog(LOG_INFO, "PARSEO COMANDO 3: %s", command);
     send(socket_desc, str, strlen(str), 0);
+    memset(str, 0, 2000);
     syslog(LOG_INFO, "Mensaje enviado");
   }
   syslog(LOG_INFO, "Servicio Cliente: Fin servicio");
