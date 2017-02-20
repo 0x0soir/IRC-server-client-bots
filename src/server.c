@@ -110,15 +110,15 @@ void server_start_communication(int socket_desc){
     unpipeline_response=IRC_UnPipelineCommands(str, &command);
     syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
     server_execute_function(IRC_CommandQuery(command));
+    free(command);
     /* Parseo comando siguiente -> Ejecuto */
 	  while(unpipeline_response!=NULL){
 		 	unpipeline_response=IRC_UnPipelineCommands(unpipeline_response, &command);
       syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
       server_execute_function(IRC_CommandQuery(command));
-      /*server_execute_function(*unpipeline_response);*/
+      free(command);
 		}
     send(socket_desc, str, strlen(str), 0);
-    memset(str, 0, 2000);
     syslog(LOG_INFO, "Mensaje enviado");
   }
   syslog(LOG_INFO, "Servicio Cliente: Fin servicio");
@@ -128,7 +128,7 @@ void server_start_communication(int socket_desc){
 void server_execute_function(long functionName){
   FunctionCallBack functions[IRC_MAX_USER_COMMANDS];
   /* Definir lista de funciones para cada comando*/
-  functions[USER] = &server_execute_command_user_function;
+  functions[USER] = &server_command_user_function;
   /* Llamar a la funcion del argumento */
   if ((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
     syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");
@@ -136,11 +136,6 @@ void server_execute_function(long functionName){
     syslog(LOG_INFO, "MANEJADOR RECONOCIDO");
     functions[functionName](0);
   }
-}
-
-int server_execute_command_user_function(int i){
-  syslog(LOG_INFO, "FUNCION DE USER EJECUTADA");
-  return 0;
 }
 
 /*
