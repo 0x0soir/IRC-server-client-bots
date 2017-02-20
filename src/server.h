@@ -24,5 +24,10 @@ int server_start(void);
 void server_accept_connection(int socket_id);
 void server_start_communication(int connval);
 void server_exit(int handler);
+void server_execute_function(long i);
+int server_execute_command_user_function(int i);
 int isClosedSocket(int val_read, char str[]);
 void server_daemon();
+
+/* Tipos */
+typedef int (*FunctionCallBack)(int);

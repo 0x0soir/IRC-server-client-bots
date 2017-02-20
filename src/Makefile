@@ -3,7 +3,7 @@
 EXE_NAME=06_redes2
 
 #Ficheros para la realizacion de la compilacion
-SOURCE_FILES = server.c server.h list.h list_iterator.c list_node.c list.c
+SOURCE_FILES = server.c server.h
 
 #Flags para el compilador
 FFLAGS= -Wall -pedantic -pthread

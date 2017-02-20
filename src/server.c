@@ -106,20 +106,41 @@ void server_start_communication(int socket_desc){
       syslog (LOG_INFO, "Cierra conexion");
       break;
     }
-    syslog(LOG_INFO, "MENSAJE RECIBIDO: %s", str);
+    /* Comando ya parseado -> Ejecuto */
     unpipeline_response=IRC_UnPipelineCommands(str, &command);
-    syslog(LOG_INFO, "PARSEO COMANDO 1: %s", command);
+    syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
+    server_execute_function(IRC_CommandQuery(command));
+    /* Parseo comando siguiente -> Ejecuto */
 	  while(unpipeline_response!=NULL){
-		 	syslog(LOG_INFO, "PARSEO COMANDO 2: %s", command);
-		 	unpipeline_response=IRC_UnPipelineCommands(NULL, &command);
+		 	unpipeline_response=IRC_UnPipelineCommands(unpipeline_response, &command);
+      syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
+      server_execute_function(IRC_CommandQuery(command));
+      /*server_execute_function(*unpipeline_response);*/
 		}
-		syslog(LOG_INFO, "PARSEO COMANDO 3: %s", command);
     send(socket_desc, str, strlen(str), 0);
     memset(str, 0, 2000);
     syslog(LOG_INFO, "Mensaje enviado");
   }
   syslog(LOG_INFO, "Servicio Cliente: Fin servicio");
   exit(0);
+}
+
+void server_execute_function(long functionName){
+  FunctionCallBack functions[IRC_MAX_USER_COMMANDS];
+  /* Definir lista de funciones para cada comando*/
+  functions[USER] = &server_execute_command_user_function;
+  /* Llamar a la funcion del argumento */
+  if ((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
+    syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");
+  } else {
+    syslog(LOG_INFO, "MANEJADOR RECONOCIDO");
+    functions[functionName](0);
+  }
+}
+
+int server_execute_command_user_function(int i){
+  syslog(LOG_INFO, "FUNCION DE USER EJECUTADA");
+  return 0;
 }
 
 /*
@@ -169,9 +190,9 @@ void server_daemon(){
 }
 
 int main(){
-  server_daemon();
   struct sigaction act;
   act.sa_handler = server_exit;
+  server_daemon();
   sigaction(SIGINT, &act, NULL);
   server_accept_connection(server_start());
   return 0;
