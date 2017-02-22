@@ -13,20 +13,25 @@ int server_command_function_nick(char* command, int desc){
   if(IRCParse_Nick(command, &prefix, &nick, &msg)!=IRC_OK){
     if(IRCMsg_ErrNoNickNameGiven(&msg, prefix, nick)==IRC_OK){
       send(desc, msg, strlen(msg), 0);
+      return -1;
     }
   } else if(strlen(nick) > 9){
     if(IRCMsg_ErrErroneusNickName(&msg, prefix, nick, nick)==IRC_OK){
       send(desc, msg, strlen(msg), 0);
+      return -1;
     }
   } else if (server_users_find(0, nick, TRUE)!=0){
     if(IRCMsg_ErrNickNameInUse(&msg, prefix, nick, nick)==IRC_OK){
       send(desc, msg, strlen(msg), 0);
+      return -1;
     }
   } else {
     if (IRCTADUser_New("user", nick, "realname", NULL, "host", "ip", desc)==IRC_OK){
-      syslog(LOG_INFO, "USER: USUARIO CREADO CORRECTAMENTE");
+      if(IRCMsg_Nick(&command, prefix, nick, msg)==IRC_OK){
+        send(desc, command, strlen(command), 0);
+        return 0;
+      }
     }
-    IRCParse_ErrNickNameInUse(command, &prefix, &nick, &nick, &msg);
   }
   /* Comprobar si usuario esta siendo usado por otro*/
   return 0;
