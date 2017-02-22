@@ -94,10 +94,10 @@ void server_accept_connection(int socket_desc){
  */
 void server_start_communication(int socket_desc){
   int pid, val_read;
-  char str[2000], *command, *unpipeline_response;
+  char str[2000], *command=NULL, *unpipeline_response=NULL;
   pid = fork();
   if (pid < 0) exit(EXIT_FAILURE);
-  if (pid > 0) return;
+  if (pid == 0) return;
   while(server_status)
   {
     memset(str, 0, 2000);
@@ -109,32 +109,32 @@ void server_start_communication(int socket_desc){
     /* Comando ya parseado -> Ejecuto */
     unpipeline_response=IRC_UnPipelineCommands(str, &command);
     syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
-    server_execute_function(IRC_CommandQuery(command));
+    server_execute_function(IRC_CommandQuery(command), command, socket_desc);
     free(command);
     /* Parseo comando siguiente -> Ejecuto */
 	  while(unpipeline_response!=NULL){
 		 	unpipeline_response=IRC_UnPipelineCommands(unpipeline_response, &command);
       syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
-      server_execute_function(IRC_CommandQuery(command));
+      server_execute_function(IRC_CommandQuery(command), command, socket_desc);
       free(command);
 		}
-    send(socket_desc, str, strlen(str), 0);
+    /*send(socket_desc, str, strlen(str), 0);*/
     syslog(LOG_INFO, "Mensaje enviado");
   }
   syslog(LOG_INFO, "Servicio Cliente: Fin servicio");
   exit(0);
 }
 
-void server_execute_function(long functionName){
+void server_execute_function(long functionName, char* command, int desc){
   FunctionCallBack functions[IRC_MAX_USER_COMMANDS];
   /* Definir lista de funciones para cada comando*/
-  functions[USER] = &server_command_user_function;
+  functions[NICK] = &server_command_function_nick;
+  functions[USER] = &server_command_function_user;
   /* Llamar a la funcion del argumento */
   if ((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
     syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");
   } else {
-    syslog(LOG_INFO, "MANEJADOR RECONOCIDO");
-    functions[functionName](0);
+    functions[functionName](command, desc);
   }
 }
 
@@ -187,8 +187,8 @@ void server_daemon(){
 int main(){
   struct sigaction act;
   act.sa_handler = server_exit;
+  sigaction(SIGKILL, &act, NULL);
   server_daemon();
-  sigaction(SIGINT, &act, NULL);
   server_accept_connection(server_start());
   return 0;
 }
