@@ -19,17 +19,23 @@
 #include "function_handlers.h"
 #include "common_functions.h"
 
-#define MAX_CONNECTIONS 100
-#define SERVER_PORT 6667
-#define CLIENT_MESSAGE_MAXSIZE 8096
+/* External libs */
+#include "list.h"
+#include "thread_pool.h"
+
+#define MIN_POOL_THREADS        2
+#define MAX_CONNECTIONS         100
+#define SERVER_PORT             6667
+#define CLIENT_MESSAGE_MAXSIZE  8096
 
 int server_start(void);
 void server_accept_connection(int socket_id);
 void server_start_communication(int connval);
 void server_exit(int handler);
-void server_execute_function(long functionName, char* command, int desc);
+void server_execute_function(long functionName, char* command, int desc, char *);
 int isClosedSocket(int val_read, char str[]);
 void server_daemon();
+void server_start_pool();
 
 /* Tipos */
-typedef int (*FunctionCallBack)(char*, int);
+typedef int (*FunctionCallBack)(char*, int, char *);

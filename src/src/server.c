@@ -1,9 +1,11 @@
-#include "server.h"
+#include "../includes/server.h"
 
 /* Estado del servidor (controla los whiles mediante signals) */
 static bool server_status = true;
 /* Identificador global para el desc. del socket */
 static int server_socket_desc;
+
+thread_pool_t *pool = NULL;
 
 /*
  * Function:  server_start
@@ -51,6 +53,19 @@ int server_start(){
     return socket_desc;
 }
 
+void *task_callback(void *arg)
+{
+    int t_pool_id;
+    int sum = 0;
+    syslog(LOG_ERR, "TASK: Entra en task");
+    for(t_pool_id = 0; t_pool_id < 100; t_pool_id++)
+    {
+        sum += t_pool_id;
+    }
+    syslog(LOG_ERR, "TASK: %d", sum);
+    return NULL;
+}
+
 /*
  * Function:  server_accept_connection
  * ----------------------------------------
@@ -77,7 +92,14 @@ void server_accept_connection(int socket_desc){
 
 		syslog(LOG_ERR, "-- Conexion recibida en el socket");
 		/*Se lanza el servicio y se espera a que acabe, de momento se comenta*/
-		server_start_communication(client_socket);
+    syslog(LOG_ERR, "POOL: Creando hilo al cliente...");
+    task_t *t = task_create();
+    syslog(LOG_ERR, "POOL: Task creado");
+    task_init(t, server_start_communication, client_socket);
+    syslog(LOG_ERR, "POOL: Task iniciado");
+    task_add(pool, t);
+    syslog(LOG_ERR, "POOL: Fin crear tarea");
+		/*server_start_communication(client_socket);*/
 	}
   close(socket_desc);
 	return;
@@ -94,10 +116,11 @@ void server_accept_connection(int socket_desc){
  */
 void server_start_communication(int socket_desc){
   int pid, val_read;
-  char str[2000], *command=NULL, *unpipeline_response=NULL;
+  char str[2000], *command=NULL, *unpipeline_response=NULL, *nick;
   pid = fork();
   if (pid < 0) exit(EXIT_FAILURE);
   if (pid == 0) return;
+  nick = malloc(sizeof(char) * 9);
   while(server_status)
   {
     memset(str, 0, 2000);
@@ -109,32 +132,32 @@ void server_start_communication(int socket_desc){
     /* Comando ya parseado -> Ejecuto */
     unpipeline_response=IRC_UnPipelineCommands(str, &command);
     syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
-    server_execute_function(IRC_CommandQuery(command), command, socket_desc);
+    server_execute_function(IRC_CommandQuery(command), command, socket_desc, nick);
     free(command);
     /* Parseo comando siguiente -> Ejecuto */
 	  while(unpipeline_response!=NULL){
 		 	unpipeline_response=IRC_UnPipelineCommands(unpipeline_response, &command);
       syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
-      server_execute_function(IRC_CommandQuery(command), command, socket_desc);
+      server_execute_function(IRC_CommandQuery(command), command, socket_desc, nick);
       free(command);
 		}
-    /*send(socket_desc, str, strlen(str), 0);*/
     syslog(LOG_INFO, "Mensaje enviado");
   }
   syslog(LOG_INFO, "Servicio Cliente: Fin servicio");
   exit(0);
 }
 
-void server_execute_function(long functionName, char* command, int desc){
+void server_execute_function(long functionName, char* command, int desc, char* nick){
   FunctionCallBack functions[IRC_MAX_USER_COMMANDS];
   /* Definir lista de funciones para cada comando*/
   functions[NICK] = &server_command_function_nick;
   functions[USER] = &server_command_function_user;
   /* Llamar a la funcion del argumento */
   if ((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
-    syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");
+    /*syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");*/
   } else {
-    functions[functionName](command, desc);
+    /*syslog(LOG_INFO, "-----> EXECUTE: %s", nick);*/
+    functions[functionName](command, desc, nick);
   }
 }
 
@@ -184,11 +207,27 @@ void server_daemon(){
   }
 }
 
+void server_start_pool(){
+  int t_pool_id;
+  /* Inicializar thread pool */
+  pool = thread_pool_create(MIN_POOL_THREADS);
+  syslog(LOG_ERR, "POOL INICIADA: %p (%d hilos base)", pool, MIN_POOL_THREADS);
+  thread_pool_init(pool);
+  /*for(t_pool_id = 0; t_pool_id < 20; t_pool_id++)
+  {
+      syslog(LOG_ERR, "TASK: Crea task %d", t_pool_id);
+      task_t *t = task_create();
+      task_init(t, task_callback, NULL);
+      task_add(pool, t);
+  }*/
+}
+
 int main(){
   struct sigaction act;
   act.sa_handler = server_exit;
   sigaction(SIGKILL, &act, NULL);
   server_daemon();
+  server_start_pool();
   server_accept_connection(server_start());
   return 0;
 }

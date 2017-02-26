@@ -15,5 +15,6 @@
 #include <netdb.h>
 #include <pthread.h>
 
-int server_command_function_nick(char* command, int desc);
-int server_command_function_user(char* command, int desc);
+/* Functions */
+int server_users_find_by_nick(char* data);
+int server_users_find_by_socket(int sockdesc);

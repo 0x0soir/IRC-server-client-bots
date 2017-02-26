@@ -3,7 +3,15 @@
 EXE_NAME=06_redes2
 
 #Ficheros para la realizacion de la compilacion
-SOURCE_FILES = server.c server.h function_handlers.c function_handlers.h common_functions.c common_functions.h
+SRCDIR = src/server.c
+SRCDIR += includes/server.h
+SRCDIR += srclib/common_functions.c
+SRCDIR += includes/common_functions.h
+SRCDIR += srclib/function_handlers.c
+SRCDIR += includes/function_handlers.h
+SRCDIR += srclib/thread_pool.c
+SRCDIR += includes/list.h
+SRCDIR += includes/thread_pool.h
 
 #Flags para el compilador
 FFLAGS= -Wall -pedantic -pthread
@@ -11,9 +19,13 @@ REDESLIB= -lircredes -lirctad -lircinterface -lsoundredes
 
 #Comienzo del makefile
 #Regla All: compila todo el programa
-all:
-	echo "Compilando ficheros"
-	gcc -o $(EXE_NAME) $(SOURCE_FILES) $(FFLAGS) $(REDESLIB)
+
+all: server
+
+server:
+	@echo "\033[31mCompilando ejecutable...\033[00m"
+	gcc -o $(EXE_NAME) $(SRCDIR) $(FFLAGS) $(REDESLIB)
+	@echo "\033[32mEjecutable compilado: $(EXE_NAME)\033[00m"
 
 #Regla clean: limpia el directorio del ficheros temporales
 clean:
