@@ -42,7 +42,7 @@ int server_command_function_user(char* command, int desc, char * nick_static){
   syslog(LOG_INFO, "-----> EXECUTE USER: %s", nick_static);
   if(IRCParse_User(command, &prefix, &user, &host, &IP, &realname)==IRC_OK){
     if (IRCTADUser_New(user, nick_static, realname, NULL, host, IP, desc)==IRC_OK){
-      if(IRCMsg_RplWelcome(&command, prefix, nick_static, nick_static, user, host)==IRC_OK){
+      if(IRCMsg_RplWelcome(&command, "ip.servidor", nick_static, nick_static, user, host)==IRC_OK){
         send(desc, command, strlen(command), 0);
         syslog(LOG_INFO, "USER: OK");
         return 0;

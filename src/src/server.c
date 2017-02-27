@@ -26,7 +26,7 @@ int server_start(){
     }
 
     /* Activar multiconexion del socket */
-    if( setsockopt(socket_desc, SOL_SOCKET, SO_REUSEADDR, (char *)&opt, sizeof(opt)) < 0 )
+    if(setsockopt(socket_desc, SOL_SOCKET, SO_REUSEADDR, (char *)&opt, sizeof(opt)) < 0)
     {
         perror("setsockopt");
         exit(EXIT_FAILURE);
@@ -90,7 +90,7 @@ void server_accept_connection(int socket_desc){
         exit(EXIT_FAILURE);
 		}
 
-		syslog(LOG_ERR, "-- Conexion recibida en el socket");
+		syslog(LOG_ERR, "-- Conexion recibida en el socket (SD padre: %d, SD hijo: %d)", socket_desc, client_socket);
 		/*Se lanza el servicio y se espera a que acabe, de momento se comenta*/
     syslog(LOG_ERR, "POOL: Creando hilo al cliente...");
     task_t *t = task_create();
@@ -99,9 +99,7 @@ void server_accept_connection(int socket_desc){
     syslog(LOG_ERR, "POOL: Task iniciado");
     task_add(pool, t);
     syslog(LOG_ERR, "POOL: Fin crear tarea");
-		/*server_start_communication(client_socket);*/
 	}
-  close(socket_desc);
 	return;
 }
 
@@ -115,12 +113,10 @@ void server_accept_connection(int socket_desc){
  *  returns: void
  */
 void server_start_communication(int socket_desc){
-  int pid, val_read;
+  int val_read;
   char str[2000], *command=NULL, *unpipeline_response=NULL, *nick;
-  pid = fork();
-  if (pid < 0) exit(EXIT_FAILURE);
-  if (pid == 0) return;
   nick = malloc(sizeof(char) * 9);
+  syslog (LOG_INFO, "Inicia conexion con... %d", socket_desc);
   while(server_status)
   {
     memset(str, 0, 2000);
@@ -133,6 +129,7 @@ void server_start_communication(int socket_desc){
     unpipeline_response=IRC_UnPipelineCommands(str, &command);
     syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
     server_execute_function(IRC_CommandQuery(command), command, socket_desc, nick);
+    syslog(LOG_INFO, "PROCESADO");
     free(command);
     /* Parseo comando siguiente -> Ejecuto */
 	  while(unpipeline_response!=NULL){
@@ -143,20 +140,25 @@ void server_start_communication(int socket_desc){
 		}
     syslog(LOG_INFO, "Mensaje enviado");
   }
-  syslog(LOG_INFO, "Servicio Cliente: Fin servicio");
-  exit(0);
+  syslog(LOG_INFO, "Servicio Cliente: Fin servicio %d", socket_desc);
+  /* Cerrar conexion con el usuario y liberar el hilo */
+	close(socket_desc);
+  exit(EXIT_SUCCESS);
 }
 
 void server_execute_function(long functionName, char* command, int desc, char* nick){
   FunctionCallBack functions[IRC_MAX_USER_COMMANDS];
+  int i;
+  for(i=0; i<IRC_MAX_USER_COMMANDS; i++){
+    functions[i]=NULL;
+  }
   /* Definir lista de funciones para cada comando*/
   functions[NICK] = &server_command_function_nick;
   functions[USER] = &server_command_function_user;
   /* Llamar a la funcion del argumento */
   if ((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
-    /*syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");*/
+    syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");
   } else {
-    /*syslog(LOG_INFO, "-----> EXECUTE: %s", nick);*/
     functions[functionName](command, desc, nick);
   }
 }
