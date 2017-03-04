@@ -34,12 +34,19 @@ int thread_pool_delete(thread_pool_t *p)
     syslog(LOG_ERR, "Eliminado");
     thread_del_internal(p, t, 0);
     syslog(LOG_ERR, "Fuera de lista");
-    free(t);
+    if(t)
+      free(t);
   }
   pthread_mutex_unlock(&p->global);
   syslog(LOG_ERR, "Fin eliminar hilos");
-  free(p->master_thread);
-  free(p->task_next);
+  if(p->master_thread){
+    free(p->master_thread);
+    p->master_thread = NULL;
+  }
+  if(p->task_next){
+    free(p->task_next);
+    p->task_next = NULL;
+  }
   return 0;
 }
 
@@ -96,9 +103,9 @@ int thread_pool_init_internal(thread_pool_t *p, double low_level,
 
 thread_t *thread_create(void)
 {
-    thread_t *t;
+    thread_t *t = NULL;
 
-    t = (thread_t *)malloc(sizeof(thread_t));
+    t = (thread_t *)calloc(1, sizeof(thread_t));
     if(t == NULL)
     {
         return NULL;
@@ -256,7 +263,7 @@ task_t *task_create(void)
     return t;
 }
 
-void task_init(task_t *t, void* (*task_callback)(int *), void *arg)
+void task_init(task_t *t, void* (*task_callback)(int), void *arg)
 {
     t->task_callback = task_callback;
     t->arg = arg;

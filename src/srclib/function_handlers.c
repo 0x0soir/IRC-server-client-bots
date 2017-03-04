@@ -103,27 +103,49 @@ void server_command_function_join(char* command, int desc, char * nick_static, i
         }
       }
     }
-    if(key)
+    if(key){
       free(key);
-    if(prefix)
+      key = NULL;
+    }
+    if(prefix){
       free(prefix);
-    if(msg)
-    free(msg);
-    if(channel)
+      prefix = NULL;
+    }
+    if(msg){
+      free(msg);
+      msg = NULL;
+    }
+    if(channel){
       free(channel);
-    if(unknown_user)
+      channel = NULL;
+    }
+    if(unknown_user){
       free(unknown_user);
-    if(unknown_nick)
+      unknown_user = NULL;
+    }
+    if(unknown_nick){
       free(unknown_nick);
-    if(unknown_real)
+      unknown_nick = NULL;
+    }
+    if(unknown_real){
       free(unknown_real);
-    if(server)
+      unknown_real = NULL;
+    }
+    if(server){
       free(server);
-    if(host)
+      server = NULL;
+    }
+    if(host){
       free(host);
-    if(IP)
+      host = NULL;
+    }
+    if(IP){
       free(IP);
-    if(away)
+      IP = NULL;
+    }
+    if(away){
       free(away);
+      away = NULL;
+    }
   }
 }

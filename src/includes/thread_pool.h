@@ -91,7 +91,7 @@ void thread_del(thread_t *t);
 task_t *task_create(void);
 
 /*init a task*/
-void task_init(task_t *, void* (*)(int *), void *);
+void task_init(task_t *, void* (*)(int), void *);
 
 /*add a task into a thread pool*/
 void task_add(thread_pool_t *, task_t *);
