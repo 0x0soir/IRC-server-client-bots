@@ -23,7 +23,7 @@
 #include "list.h"
 #include "thread_pool.h"
 
-#define MIN_POOL_THREADS        2
+#define MIN_POOL_THREADS        1
 #define MAX_CONNECTIONS         100
 #define SERVER_PORT             6667
 #define CLIENT_MESSAGE_MAXSIZE  8096

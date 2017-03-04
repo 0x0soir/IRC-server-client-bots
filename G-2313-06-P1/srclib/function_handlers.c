@@ -56,6 +56,7 @@ void server_command_function_user(char* command, int desc, char * nick_static, i
         if(IRCMsg_RplWelcome(&command, "ip.servidor", nick_static, nick_static, user, "localhost")==IRC_OK){
           send(desc, command, strlen(command), 0);
           syslog(LOG_INFO, "USER: OK");
+          *register_status = 2;
         }
       }
     }
@@ -96,7 +97,7 @@ void server_command_function_join(char* command, int desc, char * nick_static, i
       if(IRCTADUser_GetData(&unknown_id, &unknown_user, &unknown_nick, &unknown_real, &host, &IP, &desc, &creationTS, &actionTS, &away)==IRC_OK){
         syslog(LOG_INFO, "JOIN: %s %s", server, host);
         if(IRC_Prefix(&prefix, nick_static, unknown_user, "localhost", "LOCALHOST")==IRC_OK){
-      		if(IRCMsg_Join(&command, "ip.servidor", channel, key, msg)==IRC_OK){
+      		if(IRCMsg_Join(&command, "ip.servidor", NULL, key, channel)==IRC_OK){
         		send(desc, command, strlen(command), 0);
             syslog(LOG_INFO, "MSG: %s", command);
           }
@@ -147,5 +148,44 @@ void server_command_function_join(char* command, int desc, char * nick_static, i
       free(away);
       away = NULL;
     }
+  }
+}
+
+/* Msg: Almacena el texto de quit del usuario */
+void server_command_function_quit(char* command, int desc, char * nick_static, int* register_status){
+  char *user = NULL, *realname = NULL, *prefix = NULL, *host = NULL, *IP = NULL, *msg = NULL;
+  syslog(LOG_INFO, "-----> EXECUTE QUIT: %s", nick_static);
+  if((*register_status)==2){
+    if(IRCParse_Quit(command, &prefix, &msg)==IRC_OK){
+      IRCTAD_Quit(nick_static);
+      if(IRCMsg_Quit(&command, prefix, msg)==IRC_OK){
+        send(desc, command, strlen(command), 0);
+        syslog(LOG_INFO, "MSG: %s", command);
+      }
+    }
+  }
+  if(user){
+    free(user);
+    user = NULL;
+  }
+  if(realname){
+    free(realname);
+    realname = NULL;
+  }
+  if(host){
+    free(host);
+    host = NULL;
+  }
+  if(IP){
+    free(IP);
+    IP = NULL;
+  }
+  if(prefix){
+    free(prefix);
+    prefix = NULL;
+  }
+  if(msg){
+    free(msg);
+    msg = NULL;
   }
 }

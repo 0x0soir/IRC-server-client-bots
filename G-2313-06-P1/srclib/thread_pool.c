@@ -24,30 +24,31 @@ thread_pool_t *thread_pool_create(int size)
     return p;
 }
 
-int thread_pool_delete(thread_pool_t *p)
-{
+void thread_pool_delete(thread_pool_t *p){
   thread_t *t = NULL;
   pthread_mutex_lock(&p->global);
   list_for_each_entry(t, (&(p->worker_queue)), worker_entry){
+    syslog(LOG_ERR, "Eliminando hilo");
+    pthread_kill(t->tid, SIGTERM);
+    syslog(LOG_ERR, "Eliminado");
+    thread_del_internal(p, t, 0);
+    syslog(LOG_ERR, "Fuera de lista");
+  }
+  /*list_for_each_entry(t, (&(p->idle_queue)), idle_entry){
     syslog(LOG_ERR, "Eliminando hilo");
     pthread_kill(t, SIGTERM);
     syslog(LOG_ERR, "Eliminado");
     thread_del_internal(p, t, 0);
     syslog(LOG_ERR, "Fuera de lista");
-    if(t)
-      free(t);
-  }
+  }*/
   pthread_mutex_unlock(&p->global);
   syslog(LOG_ERR, "Fin eliminar hilos");
   if(p->master_thread){
     free(p->master_thread);
     p->master_thread = NULL;
   }
-  if(p->task_next){
-    free(p->task_next);
-    p->task_next = NULL;
-  }
-  return 0;
+  syslog(LOG_INFO, "POOL: Termina de liberar");
+  return;
 }
 
 int thread_pool_init(thread_pool_t *p)
@@ -158,6 +159,7 @@ void thread_del_internal(thread_pool_t *p, thread_t *t, int force_lock){
   if (force_lock){
     pthread_mutex_unlock(&p->global);
   }
+  free(t);
 }
 
 void *worker_callback(void *arg)
@@ -214,10 +216,8 @@ void *master_callback(void *arg)
 {
     thread_pool_t *p = (thread_pool_t *)arg;
     thread_t *t;
-
     int busy = 0;
     int idle = 0;
-
     list_for_each_entry(t, (&(p->worker_queue)), worker_entry)
     {
       if(t->state == THREAD_STATE_IDLE)
@@ -229,9 +229,6 @@ void *master_callback(void *arg)
         busy++;
       }
     }
-
-    double threshold = busy / p->size;
-    /*printf("threshold:%.2lf low_level:%.2lf\n", threshold, p->low_level);*/
     if(idle<5){
       int add_num = 5;
       syslog(LOG_ERR, "POOL: Falta de espacio, incrementa pool en %d hilos", add_num);

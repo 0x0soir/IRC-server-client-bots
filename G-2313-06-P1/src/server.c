@@ -151,6 +151,7 @@ void *server_start_communication(int socket_desc){
   free(register_status);
   free(unpipeline_response);
   free(nick);
+  return NULL;
 }
 
 void server_execute_function(long functionName, char* command, int desc, char* nick, int* register_status){
@@ -163,6 +164,7 @@ void server_execute_function(long functionName, char* command, int desc, char* n
   functions[NICK] = &server_command_function_nick;
   functions[USER] = &server_command_function_user;
   functions[JOIN] = &server_command_function_join;
+  functions[QUIT] = &server_command_function_quit;
   /* Llamar a la funcion del argumento */
   if ((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
     syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");
@@ -183,6 +185,7 @@ void server_exit(){
   close(server_socket_desc);
   thread_pool_delete(pool);
   free(pool);
+  syslog(LOG_INFO, "TODO LIBERADO");
   exit(EXIT_SUCCESS);
 }
 

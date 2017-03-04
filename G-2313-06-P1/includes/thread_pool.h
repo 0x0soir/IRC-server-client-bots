@@ -63,6 +63,8 @@ typedef struct thread_pool_t
 /*create a thread pool*/
 thread_pool_t *thread_pool_create(int size);
 
+void thread_pool_delete(thread_pool_t *p);
+
 /*init the thread pool*/
 int thread_pool_init(thread_pool_t *);
 

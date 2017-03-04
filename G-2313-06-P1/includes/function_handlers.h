@@ -18,3 +18,4 @@
 void server_command_function_nick(char* command, int desc, char* nick_static, int* register_status);
 void server_command_function_user(char* command, int desc, char* nick_static, int* register_status);
 void server_command_function_join(char* command, int desc, char* nick_static, int* register_status);
+void server_command_function_quit(char* command, int desc, char* nick_static, int* register_status);
