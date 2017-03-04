@@ -20,7 +20,7 @@ int server_users_find_by_nick(char* data){
 int server_users_find_by_socket(int sockdesc){
   char *unknown_user = NULL, *unknown_nick = NULL, *unknown_real = NULL;
   long unknown_id = 0;
-  char *host, *IP, *away;
+  char *host = NULL, *IP = NULL, *away = NULL;
   long creationTS, actionTS;
   bool return_flag = false;
   if(IRCTADUser_GetData(&unknown_id, &unknown_user, &unknown_nick, &unknown_real, &host, &IP, &sockdesc, &creationTS, &actionTS, &away)==IRC_OK){
@@ -29,10 +29,25 @@ int server_users_find_by_socket(int sockdesc){
       return_flag = true;
     }
   }
-  free(unknown_user);
-  free(unknown_nick);
-  free(host);
-  free(IP);
-  free(away);
+  if(unknown_user){
+    free(unknown_user);
+    unknown_user = NULL;
+  }
+  if(unknown_nick){
+    free(unknown_nick);
+    unknown_nick = NULL;
+  }
+  if(host){
+    free(host);
+    host = NULL;
+  }
+  if(IP){
+    free(IP);
+    IP = NULL;
+  }
+  if(away){
+    free(away);
+    away = NULL;
+  }
   return return_flag;
 }

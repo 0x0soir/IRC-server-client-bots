@@ -77,29 +77,34 @@ void *task_callback(void *arg)
  *  returns: void
  */
 void server_accept_connection(int socket_desc){
-	int client_socket;
+	int * client_socket = malloc(sizeof(int));
+  task_t *t;
 	socklen_t len;
 	struct sockaddr Conexion;
 
 	len = sizeof(Conexion);
 
 	while(server_status){
-		client_socket = accept(socket_desc, &Conexion, &len);
-		if (client_socket < 0){
+		*client_socket = accept(socket_desc, &Conexion, &len);
+		if (*client_socket < 0){
 		    syslog(LOG_ERR, "ERROR aceptando conexiones");
         exit(EXIT_FAILURE);
 		}
 
-		syslog(LOG_ERR, "-- Conexion recibida en el socket (SD padre: %d, SD hijo: %d)", socket_desc, client_socket);
+    syslog(LOG_ERR, "-- Conexion recibida en el socket (SD padre: %d, SD hijo: %d)", socket_desc, *client_socket);
 		/*Se lanza el servicio y se espera a que acabe, de momento se comenta*/
     syslog(LOG_ERR, "POOL: Creando hilo al cliente...");
-    task_t *t = task_create();
+    t = task_create();
     syslog(LOG_ERR, "POOL: Task creado");
     task_init(t, server_start_communication, client_socket);
     syslog(LOG_ERR, "POOL: Task iniciado");
     task_add(pool, t);
     syslog(LOG_ERR, "POOL: Fin crear tarea");
+
 	}
+  syslog(LOG_ERR, "ACCEPT CONNECTION: LIMPIAR");
+  free(client_socket);
+  free(t);
 	return;
 }
 
@@ -112,15 +117,18 @@ void server_accept_connection(int socket_desc){
  *
  *  returns: void
  */
-void server_start_communication(int socket_desc){
-  int val_read;
+void *server_start_communication(int* socket_desc_old){
+  int val_read, *register_status, *socket_desc;
   char str[2000], *command=NULL, *unpipeline_response=NULL, *nick;
   nick = malloc(sizeof(char) * 9);
-  syslog (LOG_INFO, "Inicia conexion con... %d", socket_desc);
+  register_status = malloc(sizeof(int));
+  socket_desc = malloc(sizeof(int));
+  *socket_desc = *socket_desc_old;
+  syslog (LOG_INFO, "Inicia conexion con... %d", *socket_desc);
   while(server_status)
   {
     memset(str, 0, 2000);
-    val_read = recv(socket_desc, str, 2000, 0);
+    val_read = recv(*socket_desc, str, 2000, 0);
     if(isClosedSocket(val_read, str)){
       syslog (LOG_INFO, "Cierra conexion");
       break;
@@ -128,25 +136,29 @@ void server_start_communication(int socket_desc){
     /* Comando ya parseado -> Ejecuto */
     unpipeline_response=IRC_UnPipelineCommands(str, &command);
     syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
-    server_execute_function(IRC_CommandQuery(command), command, socket_desc, nick);
+    server_execute_function(IRC_CommandQuery(command), command, *socket_desc, nick, register_status);
     syslog(LOG_INFO, "PROCESADO");
     free(command);
     /* Parseo comando siguiente -> Ejecuto */
 	  while(unpipeline_response!=NULL){
 		 	unpipeline_response=IRC_UnPipelineCommands(unpipeline_response, &command);
       syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
-      server_execute_function(IRC_CommandQuery(command), command, socket_desc, nick);
+      server_execute_function(IRC_CommandQuery(command), command, *socket_desc, nick, register_status);
       free(command);
 		}
     syslog(LOG_INFO, "Mensaje enviado");
   }
-  syslog(LOG_INFO, "Servicio Cliente: Fin servicio %d", socket_desc);
+  syslog(LOG_INFO, "Servicio Cliente: Fin servicio %d", *socket_desc);
   /* Cerrar conexion con el usuario y liberar el hilo */
-	close(socket_desc);
-  exit(EXIT_SUCCESS);
+	close(*socket_desc);
+  free(socket_desc);
+  free(socket_desc_old);
+  free(register_status);
+  free(unpipeline_response);
+  free(nick);
 }
 
-void server_execute_function(long functionName, char* command, int desc, char* nick){
+void server_execute_function(long functionName, char* command, int desc, char* nick, int* register_status){
   FunctionCallBack functions[IRC_MAX_USER_COMMANDS];
   int i;
   for(i=0; i<IRC_MAX_USER_COMMANDS; i++){
@@ -155,11 +167,12 @@ void server_execute_function(long functionName, char* command, int desc, char* n
   /* Definir lista de funciones para cada comando*/
   functions[NICK] = &server_command_function_nick;
   functions[USER] = &server_command_function_user;
+  functions[JOIN] = &server_command_function_join;
   /* Llamar a la funcion del argumento */
   if ((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
     syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");
   } else {
-    functions[functionName](command, desc, nick);
+    functions[functionName](command, desc, nick, register_status);
   }
 }
 
@@ -170,10 +183,11 @@ void server_execute_function(long functionName, char* command, int desc, char* n
  *
  *  returns: EXIT_SUCCESS
  */
-void server_exit(int handler){
-  syslog(LOG_INFO, "CIERRA SERVIDOR");
+void server_exit(){
   server_status = false;
   close(server_socket_desc);
+  thread_pool_delete(pool);
+  free(pool);
   exit(EXIT_SUCCESS);
 }
 
@@ -210,25 +224,18 @@ void server_daemon(){
 }
 
 void server_start_pool(){
-  int t_pool_id;
   /* Inicializar thread pool */
   pool = thread_pool_create(MIN_POOL_THREADS);
-  syslog(LOG_ERR, "POOL INICIADA: %p (%d hilos base)", pool, MIN_POOL_THREADS);
+  syslog(LOG_ERR, "POOL INICIADA: (%d hilos base)", MIN_POOL_THREADS);
   thread_pool_init(pool);
-  /*for(t_pool_id = 0; t_pool_id < 20; t_pool_id++)
-  {
-      syslog(LOG_ERR, "TASK: Crea task %d", t_pool_id);
-      task_t *t = task_create();
-      task_init(t, task_callback, NULL);
-      task_add(pool, t);
-  }*/
 }
 
 int main(){
-  struct sigaction act;
+  /*struct sigaction act;
   act.sa_handler = server_exit;
-  sigaction(SIGKILL, &act, NULL);
-  server_daemon();
+  sigaction(SIGKILL, &act, NULL);*/
+  /*server_daemon();*/
+  signal(SIGINT, server_exit);
   server_start_pool();
   server_accept_connection(server_start());
   return 0;

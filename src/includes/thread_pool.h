@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <syslog.h>
+#include <signal.h>
 #include <unistd.h>
 #include "list.h"
 
@@ -81,7 +82,7 @@ thread_t *thread_create(void);
 int thread_add(thread_pool_t *, thread_t *);
 
 /*delete a thread in a thread pool*/
-void thread_del_internal(thread_pool_t *, thread_t *);
+void thread_del_internal(thread_pool_t *, thread_t *, int);
 
 /*the interface of deleting a thread*/
 void thread_del(thread_t *t);
@@ -90,7 +91,7 @@ void thread_del(thread_t *t);
 task_t *task_create(void);
 
 /*init a task*/
-void task_init(task_t *, void* (*)(void *), void *);
+void task_init(task_t *, void* (*)(int *), void *);
 
 /*add a task into a thread pool*/
 void task_add(thread_pool_t *, task_t *);

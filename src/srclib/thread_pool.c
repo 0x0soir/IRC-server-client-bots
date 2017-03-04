@@ -8,21 +8,39 @@ thread_pool_t *thread_pool_create(int size)
     p = (thread_pool_t*)malloc(sizeof(thread_pool_t));
     if(p == NULL)
     {
-        //LOG("malloc");
         return NULL;
     }
 
     master_thread = (thread_t *)malloc(sizeof(thread_t));
     if(master_thread == NULL)
     {
-        //LOG("malloc");
         free(p);
         return NULL;
     }
 
     p->master_thread = master_thread;
     p->size = size;
+    pthread_mutex_init(&p->global, NULL);
     return p;
+}
+
+int thread_pool_delete(thread_pool_t *p)
+{
+  thread_t *t = NULL;
+  pthread_mutex_lock(&p->global);
+  list_for_each_entry(t, (&(p->worker_queue)), worker_entry){
+    syslog(LOG_ERR, "Eliminando hilo");
+    pthread_kill(t, SIGTERM);
+    syslog(LOG_ERR, "Eliminado");
+    thread_del_internal(p, t, 0);
+    syslog(LOG_ERR, "Fuera de lista");
+    free(t);
+  }
+  pthread_mutex_unlock(&p->global);
+  syslog(LOG_ERR, "Fin eliminar hilos");
+  free(p->master_thread);
+  free(p->task_next);
+  return 0;
 }
 
 int thread_pool_init(thread_pool_t *p)
@@ -44,7 +62,6 @@ int thread_pool_init_internal(thread_pool_t *p, double low_level,
     ret = pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
     if(ret != 0)
     {
-        //LOG
         return -1;
     }
 
@@ -84,7 +101,6 @@ thread_t *thread_create(void)
     t = (thread_t *)malloc(sizeof(thread_t));
     if(t == NULL)
     {
-        //LOG
         return NULL;
     }
     return t;
@@ -92,53 +108,49 @@ thread_t *thread_create(void)
 
 int thread_add(thread_pool_t *p, thread_t *t)
 {
-    int ret;
-    pthread_attr_t attr;
+  int ret;
+  pthread_attr_t attr;
 
-    pthread_attr_init(&attr);
-    ret = pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
-    if(ret != 0)
-    {
-        //LOG
-        pthread_attr_destroy(&attr);
-        return -1;
-    }
-    INIT_LIST_HEAD(&t->task_queue);
-    pthread_mutex_trylock(&p->global);
-    list_add_tail(&(t->worker_entry), &(p->worker_queue));
-    list_add_tail(&(t->idle_entry), &(p->idle_queue));
-    p->size++;
-    pthread_mutex_unlock(&p->global);
-    t->state = THREAD_STATE_IDLE;
-    t->state = THREAD_RUNNING;
-    t->queue_size = 0;
-    t->tp = (void *)p;
-    pthread_mutex_init(&t->mutex, NULL);
-    pthread_cond_init(&t->cond, NULL);
-
-    pthread_create(&t->tid, &attr,
-                   worker_callback, (void *)t);
+  pthread_attr_init(&attr);
+  ret = pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+  if(ret != 0){
     pthread_attr_destroy(&attr);
+    return -1;
+  }
+  INIT_LIST_HEAD(&t->task_queue);
+  list_add_tail(&(t->worker_entry), &(p->worker_queue));
+  list_add_tail(&(t->idle_entry), &(p->idle_queue));
+  p->size++;
+  t->state = THREAD_STATE_IDLE;
+  t->state = THREAD_RUNNING;
+  t->queue_size = 0;
+  t->tp = (void *)p;
+  pthread_mutex_init(&t->mutex, NULL);
+  pthread_cond_init(&t->cond, NULL);
 
-    return 0;
+  pthread_create(&t->tid, &attr, worker_callback, (void *)t);
+  pthread_attr_destroy(&attr);
+
+  return 0;
 }
 
-void thread_del(thread_t *t)
-{
+void thread_del(thread_t *t){
     pthread_mutex_lock(&t->mutex);
     t->stop = THREAD_STOPPING;
     pthread_cond_signal(&t->cond);
     pthread_mutex_unlock(&t->mutex);
 }
 
-void thread_del_internal(thread_pool_t *p, thread_t *t)
-{
+void thread_del_internal(thread_pool_t *p, thread_t *t, int force_lock){
+  if (force_lock){
     pthread_mutex_lock(&p->global);
-    list_del(&t->worker_entry);
-    list_del(&t->idle_entry);
-    p->size--;
+  }
+  list_del(&t->worker_entry);
+  list_del(&t->idle_entry);
+  p->size--;
+  if (force_lock){
     pthread_mutex_unlock(&p->global);
-    free(t);
+  }
 }
 
 void *worker_callback(void *arg)
@@ -159,7 +171,7 @@ void *worker_callback(void *arg)
             if(curr->queue_size == 0)
             {
                 pthread_mutex_unlock(&curr->mutex);
-                thread_del_internal(tp, curr);
+                thread_del_internal(tp, curr, 1);
                 break;
             }
             else
@@ -199,53 +211,37 @@ void *master_callback(void *arg)
     int busy = 0;
     int idle = 0;
 
-    pthread_mutex_trylock(&p->global);
     list_for_each_entry(t, (&(p->worker_queue)), worker_entry)
     {
-         if(t->state == THREAD_STATE_IDLE)
-         {
-             idle++;
-         }
-         else if(t->state == THREAD_STATE_BUSY)
-         {
-             busy++;
-         }
+      if(t->state == THREAD_STATE_IDLE)
+      {
+        idle++;
+      }
+      else if(t->state == THREAD_STATE_BUSY)
+      {
+        busy++;
+      }
     }
 
     double threshold = busy / p->size;
-    printf("threshold:%.2lf low_level:%.2lf\n", threshold, p->low_level);
-    // if(threshold < p->low_level)
-    // {
-    //      struct list_head *next;
-    //      int delete_num = p->size * (p->low_level - threshold);
-    //      while(delete_num--)
-    //      {
-    //          next = p->idle_queue.next;
-    //          thread_t *t = list_entry(next, thread_t, idle_entry);
-    //          thread_del(t);
-    //          next = next->next;
-    //          printf("deleting a thread\n");
-    //      }
-    // }
-    if(idle<5)
-    {
-         int add_num = 5;
-         syslog(LOG_ERR, "POOL: Falta de espacio, incrementa pool en %d hilos", add_num);
-         while(add_num--)
-         {
-             thread_t *t = thread_create();
-             if(t == NULL)
-             {
-                 break;
-             }
-             else
-             {
-               thread_add(p, t);
-             }
-         }
+    /*printf("threshold:%.2lf low_level:%.2lf\n", threshold, p->low_level);*/
+    if(idle<5){
+      int add_num = 5;
+      syslog(LOG_ERR, "POOL: Falta de espacio, incrementa pool en %d hilos", add_num);
+      while(add_num--){
+        t = thread_create();
+        syslog(LOG_ERR, "POOL: Crea nuevo hilo");
+        if(t == NULL){
+          break;
+        }
+        else{
+          thread_add(p, t);
+        }
+        syslog(LOG_ERR, "POOL: Add hilo al pool");
+      }
     }
-    pthread_mutex_unlock(&p->global);
     syslog(LOG_ERR, "POOL: Busy: %d | Idle: %d", busy, idle);
+    return NULL;
 }
 
 task_t *task_create(void)
@@ -255,13 +251,12 @@ task_t *task_create(void)
     t = (task_t *)malloc(sizeof(task_t));
     if(t == NULL)
     {
-        //log
         return NULL;
     }
     return t;
 }
 
-void task_init(task_t *t, void* (*task_callback)(void *), void *arg)
+void task_init(task_t *t, void* (*task_callback)(int *), void *arg)
 {
     t->task_callback = task_callback;
     t->arg = arg;
@@ -272,21 +267,26 @@ void task_add(thread_pool_t *p, task_t *t)
     thread_t *th = NULL;
     thread_t *last = NULL;
 
-    master_callback((void *)p);
-
     pthread_mutex_lock(&p->global);
+    syslog(LOG_ERR, "POOL: A");
+    master_callback((void *)p);
+    syslog(LOG_ERR, "POOL: B");
     th = p->task_next;
     last = list_entry(p->worker_queue.prev, thread_t, worker_entry);
+    syslog(LOG_ERR, "POOL: C");
     if(th == last)
     {
-        p->task_next = list_first_entry((&p->worker_queue), thread_t, worker_entry);
+      syslog(LOG_ERR, "POOL: D");
+      p->task_next = list_first_entry((&p->worker_queue), thread_t, worker_entry);
+      syslog(LOG_ERR, "POOL: E");
+    } else {
+      syslog(LOG_ERR, "POOL: F");
+      p->task_next = list_next_entry(th, worker_entry);
+      syslog(LOG_ERR, "POOL: G");
     }
-    else
-    {
-        p->task_next = list_next_entry(th, worker_entry);
-    }
+    syslog(LOG_ERR, "POOL: SALE");
     pthread_mutex_unlock(&p->global);
-
+    syslog(LOG_ERR, "POOL: SALE DE MUTEX GLOBAL");
     pthread_mutex_trylock(&th->mutex);
     list_add_tail(&(t->entry), &(th->task_queue));
     th->queue_size++;
