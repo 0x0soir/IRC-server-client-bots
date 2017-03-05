@@ -18,3 +18,4 @@
 /* Functions */
 int server_users_find_by_nick(char* data);
 int server_users_find_by_socket(int sockdesc);
+int server_channels_find_by_name(char *channel);

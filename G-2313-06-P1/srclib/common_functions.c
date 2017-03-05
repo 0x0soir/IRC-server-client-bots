@@ -51,3 +51,18 @@ int server_users_find_by_socket(int sockdesc){
   }
   return return_flag;
 }
+
+int server_channels_find_by_name(char *channel){
+  char **channels;
+  long size;
+  int i;
+  if(IRCTADChan_GetList(&channels, &size, NULL)==IRC_OK){
+    for (i = 0; i < size; i++){
+      if (strcmp(channels[i], channel) == 0) {
+        return 1;
+      }
+    }
+    free(channels);
+  }
+  return 0;
+}
