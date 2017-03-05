@@ -91,7 +91,7 @@ void server_command_function_user(char* command, int desc, char * nick_static, i
 void server_command_function_join(char* command, int desc, char * nick_static, int* register_status){
   char *key = NULL, *prefix = NULL, *msg = NULL, *channel = NULL, *unknown_user = NULL, *unknown_nick = NULL, *unknown_real = NULL, *server = NULL;
   long unknown_id = 0, find_id = 0, find_creationTS, find_actionTS, creationTS, actionTS, numberOfUsers;
-  char *host, *IP, *away, *modeFlag, **arrayNicks;
+  char *host, *IP, *away, *modeFlag = malloc(sizeof(char)*2), **arrayNicks;
   char *find_user = NULL, *find_real = NULL, *find_host = NULL, *find_ip = NULL, *find_away = NULL;
   int i, find_socket = 0;
   if (IRCParse_Join(command, &prefix, &channel, &key, &msg) != IRC_OK){
@@ -103,7 +103,7 @@ void server_command_function_join(char* command, int desc, char * nick_static, i
       free(key);
   } else {
     if(server_channels_find_by_name(channel)==0){
-      modeFlag = "o";
+      strcpy(modeFlag, "o");
     }
     if(IRCTAD_Join(channel, nick_static, modeFlag, key)==IRC_OK){
       if(IRCTADUser_GetData(&unknown_id, &unknown_user, &unknown_nick, &unknown_real, &host, &IP, &desc, &creationTS, &actionTS, &away)==IRC_OK){
@@ -161,10 +161,10 @@ void server_command_function_join(char* command, int desc, char * nick_static, i
         free(away);
       }
     }
-    /*if(modeFlag){
+    if(modeFlag){
       free(modeFlag);
       modeFlag = NULL;
-    }*/
+    }
     if(prefix){
       free(prefix);
       prefix = NULL;
