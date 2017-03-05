@@ -145,7 +145,11 @@ void *server_start_communication(int socket_desc){
 		}
     syslog(LOG_INFO, "Mensaje enviado");
   }
-  syslog(LOG_INFO, "Servicio Cliente: Fin servicio %d", socket_desc);
+  if(*register_status!=0){
+    syslog(LOG_INFO, "--> FIN CLIENTE: No recibido QUIT, se borran datos");
+    IRCTAD_Quit(nick);
+  }
+  syslog(LOG_INFO, "--> FIN CLIENTE: Cierra desc %d", socket_desc);
   /* Cerrar conexion con el usuario y liberar el hilo */
 	close(socket_desc);
   free(register_status);

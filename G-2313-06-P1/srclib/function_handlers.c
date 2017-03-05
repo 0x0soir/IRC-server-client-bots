@@ -161,6 +161,7 @@ void server_command_function_quit(char* command, int desc, char * nick_static, i
       if(IRCMsg_Quit(&command, prefix, msg)==IRC_OK){
         send(desc, command, strlen(command), 0);
         syslog(LOG_INFO, "MSG: %s", command);
+        *register_status = 0;
       }
     }
   }
