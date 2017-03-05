@@ -169,6 +169,8 @@ void server_execute_function(long functionName, char* command, int desc, char* n
   functions[USER] = &server_command_function_user;
   functions[JOIN] = &server_command_function_join;
   functions[QUIT] = &server_command_function_quit;
+  functions[PING] = &server_command_function_ping;
+  functions[LIST] = &server_command_function_list;
   /* Llamar a la funcion del argumento */
   if ((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
     syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");

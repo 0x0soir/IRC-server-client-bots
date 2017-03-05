@@ -190,3 +190,43 @@ void server_command_function_quit(char* command, int desc, char * nick_static, i
     msg = NULL;
   }
 }
+
+void server_command_function_ping(char* command, int desc, char * nick_static, int* register_status){
+  char *ping = NULL, *pong = NULL, *prefix = NULL, *msg = NULL;
+  if(IRCParse_Ping(command, &prefix, &ping, &pong, &msg)==IRC_OK){
+  	if(IRCMsg_Pong(&command, "ip.servidor", ping, pong, ping)==IRC_OK){
+  		send(desc, command, strlen(command), 0);
+  	}
+    free(ping);
+    free(pong);
+    free(prefix);
+    free(msg);
+  }
+}
+
+void server_command_function_list(char* command, int desc, char * nick_static, int* register_status){
+  char *ping = NULL, *pong = NULL, *prefix = NULL, *msg = NULL, **channels, *topic, visible[50];
+  long size;
+  int i;
+  IRCTADChan_GetList(&channels, &size, NULL);
+  if(IRCMsg_RplListStart(&msg, "ip.servidor", nick_static)==IRC_OK){
+    send(desc, "", strlen(""), 0);
+    syslog(LOG_INFO, "MSG: %s | Canales: %d", msg, size);
+    send(desc, msg, strlen(msg), 0);
+    free(msg);
+    for (i = 0; i < size; i++) {
+      if (IRCTADChan_GetModeInt(channels[i])!=IRCMODE_SECRET) {
+        if(IRCTAD_GetTopic(channels[i], &topic)==IRC_OK){
+          sprintf(visible, "%ld", IRCTADChan_GetNumberOfUsers(channels[i]));
+          IRCMsg_RplList(&msg, "ip.servidor", nick_static, channels[i], visible, topic);
+          send(desc, msg, strlen(msg), 0);
+          free(msg);
+        }
+      }
+    }
+    if(IRCMsg_RplListEnd(&msg, "ip.servidor", nick_static)==IRC_OK){
+      send(desc, msg, strlen(msg), 0);
+      free(msg);
+    }
+  }
+}
