@@ -28,21 +28,29 @@ void thread_pool_delete(thread_pool_t *p){
   thread_t *t = NULL;
   pthread_mutex_lock(&p->global);
   list_for_each_entry(t, (&(p->worker_queue)), worker_entry){
+    if(p->size>0){
+      syslog(LOG_ERR, "Eliminando hilo");
+      pthread_kill(t->tid, SIGINT);
+      syslog(LOG_ERR, "Eliminado 1");
+      /*pthread_join(t->tid, NULL);*/
+      pthread_detach(t->tid);
+      syslog(LOG_ERR, "Eliminado 2");
+      thread_del_internal(p, t, 0);
+      syslog(LOG_ERR, "Fuera de lista");
+    }
+  }
+  syslog(LOG_ERR, "Termina hijos");
+  list_for_each_entry(t, (&(p->idle_queue)), idle_entry){
     syslog(LOG_ERR, "Eliminando hilo");
-    pthread_kill(t->tid, SIGTERM);
-    syslog(LOG_ERR, "Eliminado");
+    pthread_exit(&t->tid);
+    syslog(LOG_ERR, "Eliminado 1");
+    /*pthread_join(t->tid, NULL);*/
+    pthread_detach(t->tid);
+    syslog(LOG_ERR, "Eliminado 2");
     thread_del_internal(p, t, 0);
     syslog(LOG_ERR, "Fuera de lista");
   }
-  /*list_for_each_entry(t, (&(p->idle_queue)), idle_entry){
-    syslog(LOG_ERR, "Eliminando hilo");
-    pthread_kill(t, SIGTERM);
-    syslog(LOG_ERR, "Eliminado");
-    thread_del_internal(p, t, 0);
-    syslog(LOG_ERR, "Fuera de lista");
-  }*/
   pthread_mutex_unlock(&p->global);
-  syslog(LOG_ERR, "Fin eliminar hilos");
   if(p->master_thread){
     free(p->master_thread);
     p->master_thread = NULL;

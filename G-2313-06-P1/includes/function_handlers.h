@@ -21,3 +21,5 @@ void server_command_function_join(char* command, int desc, char* nick_static, in
 void server_command_function_quit(char* command, int desc, char* nick_static, int* register_status);
 void server_command_function_ping(char* command, int desc, char* nick_static, int* register_status);
 void server_command_function_list(char* command, int desc, char* nick_static, int* register_status);
+void server_command_function_privmsg(char* command, int desc, char* nick_static, int* register_status);
+void server_command_function_part(char* command, int desc, char* nick_static, int* register_status);

@@ -117,6 +117,16 @@ void server_command_function_join(char* command, int desc, char * nick_static, i
               if(IRCTADUser_GetData(&find_id, &find_user, &arrayNicks[i], &find_real, &find_host, &find_ip,
                 &find_socket, &find_creationTS, &find_actionTS, &find_away)==IRC_OK){
                 send(find_socket, command, strlen(command), 0);
+                if(find_user)
+                  free(find_user);
+                if(find_real)
+                  free(find_real);
+                if(find_host)
+                  free(find_host);
+                if(find_ip)
+                  free(find_ip);
+                if(find_away)
+                  free(find_away);
                 find_user = NULL;
                 find_real = NULL;
                 find_ip = NULL;
@@ -126,16 +136,6 @@ void server_command_function_join(char* command, int desc, char * nick_static, i
                 find_id = 0;
               }
             }
-            if(find_user)
-              free(find_user);
-            if(find_real)
-              free(find_real);
-            if(find_host)
-              free(find_host);
-            if(find_ip)
-              free(find_ip);
-            if(find_away)
-              free(find_away);
           }
         }
       }
@@ -187,6 +187,7 @@ void server_command_function_quit(char* command, int desc, char * nick_static, i
         send(desc, command, strlen(command), 0);
         syslog(LOG_INFO, "MSG: %s", command);
         *register_status = 0;
+        close(desc);
       }
     }
   }
@@ -230,7 +231,7 @@ void server_command_function_ping(char* command, int desc, char * nick_static, i
 }
 
 void server_command_function_list(char* command, int desc, char * nick_static, int* register_status){
-  char *ping = NULL, *pong = NULL, *prefix = NULL, *msg = NULL, **channels, *topic, visible[50];
+  char *prefix = NULL, *msg = NULL, **channels, *topic, visible[50];
   long size;
   int i;
   IRCTADChan_GetList(&channels, &size, NULL);
@@ -251,5 +252,117 @@ void server_command_function_list(char* command, int desc, char * nick_static, i
       send(desc, msg, strlen(msg), 0);
       free(msg);
     }
+  }
+}
+
+void server_command_function_privmsg(char* command, int desc, char *nick_static, int* register_status){
+  char *prefix, *msgtarget, *msg;
+  long find_id = 0, find_creationTS, find_actionTS, numberOfUsers;
+  char **arrayNicks;
+  char *find_user = NULL, *find_real = NULL, *find_host = NULL, *find_ip = NULL, *find_away = NULL;
+  int i, find_socket = 0;
+  if(IRCParse_Privmsg(command, &prefix, &msgtarget, &msg)==IRC_OK){
+    if(msgtarget[0]=='#'){
+      /* Es canal */
+      IRCTAD_ListNicksOnChannelArray(msgtarget, &arrayNicks, &numberOfUsers);
+      for(i=0; i< numberOfUsers; i++){
+        if(strcmp(nick_static, arrayNicks[i])!=0){
+          if(IRCTADUser_GetData(&find_id, &find_user, &arrayNicks[i], &find_real, &find_host, &find_ip, &find_socket, &find_creationTS, &find_actionTS, &find_away)==IRC_OK){
+            if(IRC_Prefix(&prefix, arrayNicks[i], find_user, NULL, "LOCALHOST")==IRC_OK){
+              if(IRCMsg_Privmsg(&command, prefix+1, msgtarget, msg)==IRC_OK){
+                syslog(LOG_INFO, "-----> EXECUTE PRIVMSG: Socket: %d", find_socket);
+                send(find_socket, command, strlen(command), 0);
+                if(find_user)
+                  free(find_user);
+                if(find_real)
+                  free(find_real);
+                if(find_host)
+                  free(find_host);
+                if(find_ip)
+                  free(find_ip);
+                if(find_away)
+                  free(find_away);
+                if(prefix)
+                  free(prefix);
+                if(command)
+                  free(command);
+                find_user = find_real = find_host = find_away = prefix = NULL;
+                find_socket = find_id = 0;
+              }
+            }
+          }
+        }
+      }
+      IRCTADChan_FreeList(arrayNicks, numberOfUsers);
+    } else {
+      /* Es usuario */
+      if(IRCTADUser_GetData(&find_id, &find_user, &msgtarget, &find_real, &find_host, &find_ip, &find_socket, &find_creationTS, &find_actionTS, &find_away)==IRC_OK){
+        if(IRC_Prefix(&prefix, nick_static, find_user, NULL, "LOCALHOST")==IRC_OK){
+          if(IRCMsg_Privmsg(&command, prefix+1, msgtarget, msg)==IRC_OK){
+            syslog(LOG_INFO, "-----> EXECUTE PRIVMSG: Socket: %d", find_socket);
+            send(find_socket, command, strlen(command), 0);
+            if(find_user)
+              free(find_user);
+            if(find_real)
+              free(find_real);
+            if(find_host)
+              free(find_host);
+            if(find_ip)
+              free(find_ip);
+            if(find_away)
+              free(find_away);
+            if(prefix)
+              free(prefix);
+            if(command)
+              free(command);
+            find_user = find_real = find_host = find_away = prefix = NULL;
+            find_socket = find_id = 0;
+          }
+        }
+      } else {
+        IRCMsg_ErrNoSuchNick(&command, "ip.servidor", nick_static, msgtarget);
+        send(desc, command, strlen(command), 0);
+        if(command)
+          free(command);
+      }
+    }
+    if(msgtarget){
+      free(msgtarget);
+      msgtarget = NULL;
+    }
+    if(msg){
+      free(msg);
+      msg = NULL;
+    }
+  }
+}
+
+void server_command_function_part(char* command, int desc, char * nick_static, int* register_status){
+  char *prefix = NULL, *msg = NULL, **channels, *target_channel;
+  long size;
+  int i;
+  syslog(LOG_INFO, "-----> EXECUTE PART: %s", command);
+  if(IRCParse_Part(command, &prefix, &target_channel, &msg)==IRC_OK){
+    syslog(LOG_INFO, "PRIVMSG: Pre Get List");
+    IRCTADChan_GetList(&channels, &size, NULL);
+    syslog(LOG_INFO, "PRIVMSG: Post Get List");
+  	if(size < 1) {
+      syslog(LOG_INFO, "PRIVMSG: < 1");
+      IRCMsg_ErrNoSuchChannel(&msg, "ip.servidor", nick_static, target_channel);
+      send(desc, msg, strlen(msg), 0);
+      free(msg);
+    } else {
+      if(IRCTAD_Part(target_channel, nick_static)==IRC_OK){
+        if(IRCMsg_Part(&msg, "ip.servidor", target_channel, msg)==IRC_OK){
+          send(desc, msg, strlen(msg), 0);
+          free(msg);
+        }
+      } else {
+        IRCMsg_ErrNoSuchChannel(&msg, "ip.servidor", nick_static, target_channel);
+        send(desc, msg, strlen(msg), 0);
+        free(msg);
+      }
+    }
+    IRCTADChan_FreeList(channels, size);
   }
 }

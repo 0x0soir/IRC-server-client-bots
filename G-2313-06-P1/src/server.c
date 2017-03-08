@@ -117,10 +117,8 @@ void server_accept_connection(int socket_desc){
  *  returns: void
  */
 void *server_start_communication(int socket_desc){
-  int val_read, *register_status;
-  char str[2000], *command=NULL, *unpipeline_response=NULL, *nick;
-  nick = malloc(sizeof(char) * 9);
-  register_status = malloc(sizeof(int));
+  int val_read, *register_status = malloc(sizeof(int));;
+  char str[2000], *command=NULL, *unpipeline_response=NULL, *nick = malloc(sizeof(char) * 9);
   syslog (LOG_INFO, "Inicia conexion con... %d", socket_desc);
   while(server_status)
   {
@@ -152,15 +150,26 @@ void *server_start_communication(int socket_desc){
   syslog(LOG_INFO, "--> FIN CLIENTE: Cierra desc %d", socket_desc);
   /* Cerrar conexion con el usuario y liberar el hilo */
 	close(socket_desc);
-  free(register_status);
-  free(unpipeline_response);
-  free(nick);
+  if(register_status){
+    free(register_status);
+    register_status = NULL;
+  }
+  if(unpipeline_response = NULL){
+    free(unpipeline_response);
+    unpipeline_response = NULL;
+  }
+  if(nick){
+    free(nick);
+    nick = NULL;
+  }
+  pthread_exit(NULL);
   return NULL;
 }
 
 void server_execute_function(long functionName, char* command, int desc, char* nick, int* register_status){
   FunctionCallBack functions[IRC_MAX_USER_COMMANDS];
   int i;
+  char *msg;
   for(i=0; i<IRC_MAX_USER_COMMANDS; i++){
     functions[i]=NULL;
   }
@@ -171,9 +180,14 @@ void server_execute_function(long functionName, char* command, int desc, char* n
   functions[QUIT] = &server_command_function_quit;
   functions[PING] = &server_command_function_ping;
   functions[LIST] = &server_command_function_list;
+  functions[PRIVMSG] = &server_command_function_privmsg;
+  functions[PART] = &server_command_function_part;
   /* Llamar a la funcion del argumento */
   if ((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
-    syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");
+    if(IRCMsg_ErrUnKnownCommand(&msg, "ip.servidor", nick, command)==IRC_OK){
+      send(desc, msg, strlen(msg), 0);
+      free(msg);
+    }
   } else {
     functions[functionName](command, desc, nick, register_status);
   }
