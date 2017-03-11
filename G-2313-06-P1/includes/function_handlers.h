@@ -15,6 +15,8 @@
 #include <netdb.h>
 #include <pthread.h>
 
+#include "common_functions.h"
+
 void server_command_function_nick(char* command, int desc, char* nick_static, int* register_status);
 void server_command_function_user(char* command, int desc, char* nick_static, int* register_status);
 void server_command_function_join(char* command, int desc, char* nick_static, int* register_status);
@@ -23,3 +25,8 @@ void server_command_function_ping(char* command, int desc, char* nick_static, in
 void server_command_function_list(char* command, int desc, char* nick_static, int* register_status);
 void server_command_function_privmsg(char* command, int desc, char* nick_static, int* register_status);
 void server_command_function_part(char* command, int desc, char* nick_static, int* register_status);
+void server_command_function_names(char* command, int desc, char* nick_static, int* register_status);
+void server_command_function_kick(char* command, int desc, char * nick_static, int* register_status);
+void server_command_function_mode(char* command, int desc, char * nick_static, int* register_status);
+void server_command_function_away(char* command, int desc, char * nick_static, int* register_status);
+void server_command_function_whois(char* command, int desc, char * nick_static, int* register_status);

@@ -117,10 +117,11 @@ void server_accept_connection(int socket_desc){
  *  returns: void
  */
 void *server_start_communication(int socket_desc){
-  int val_read, *register_status = malloc(sizeof(int));
-  char str[2000], *command=NULL, *unpipeline_response=NULL, *nick = malloc(sizeof(char) * 10);
+  int val_read, *register_status;
+  char str[2000], *command=NULL, *unpipeline_response=NULL, *nick;
+  nick = malloc(sizeof(char) * 9);
+  register_status = malloc(sizeof(int));
   syslog (LOG_INFO, "Inicia conexion con... %d", socket_desc);
-  *register_status = 0;
   while(server_status)
   {
     memset(str, 0, 2000);
@@ -134,51 +135,27 @@ void *server_start_communication(int socket_desc){
     syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
     server_execute_function(IRC_CommandQuery(command), command, socket_desc, nick, register_status);
     syslog(LOG_INFO, "PROCESADO");
-    if(command){
-      free(command);
-      command = NULL;
-    }
+    free(command);
+    /* Parseo comando siguiente -> Ejecuto */
 	  while(unpipeline_response!=NULL){
 		 	unpipeline_response=IRC_UnPipelineCommands(unpipeline_response, &command);
       syslog(LOG_INFO, "COMMAND: %s | PIPE: %ld", command, IRC_CommandQuery(command));
       server_execute_function(IRC_CommandQuery(command), command, socket_desc, nick, register_status);
-      if(command){
-        free(command);
-        command = NULL;
-      }
+      free(command);
 		}
     syslog(LOG_INFO, "Mensaje enviado");
   }
-  if(*register_status!=0){
-    syslog(LOG_INFO, "--> FIN CLIENTE: No recibido QUIT, se borran datos de %s", nick);
-    IRCTAD_Quit(nick);
-    if(server_users_find_by_nick(nick)){
-      syslog(LOG_INFO, "--> FIN CLIENTE: Sigue existiendo el usuario %s", nick);
-    }
-  }
-  syslog(LOG_INFO, "--> FIN CLIENTE: Cierra desc %d", socket_desc);
+  syslog(LOG_INFO, "Servicio Cliente: Fin servicio %d", socket_desc);
   /* Cerrar conexion con el usuario y liberar el hilo */
 	close(socket_desc);
-  if(register_status){
-    free(register_status);
-    register_status = NULL;
-  }
-  if(unpipeline_response){
-    free(unpipeline_response);
-    unpipeline_response = NULL;
-  }
-  if(nick){
-    free(nick);
-    nick = NULL;
-  }
-  pthread_exit(NULL);
-  return NULL;
+  free(register_status);
+  free(unpipeline_response);
+  free(nick);
 }
 
 void server_execute_function(long functionName, char* command, int desc, char* nick, int* register_status){
   FunctionCallBack functions[IRC_MAX_USER_COMMANDS];
   int i;
-  char *msg;
   for(i=0; i<IRC_MAX_USER_COMMANDS; i++){
     functions[i]=NULL;
   }
@@ -186,24 +163,9 @@ void server_execute_function(long functionName, char* command, int desc, char* n
   functions[NICK] = &server_command_function_nick;
   functions[USER] = &server_command_function_user;
   functions[JOIN] = &server_command_function_join;
-  functions[QUIT] = &server_command_function_quit;
-  functions[PING] = &server_command_function_ping;
-  functions[LIST] = &server_command_function_list;
-  functions[PRIVMSG] = &server_command_function_privmsg;
-  functions[PART] = &server_command_function_part;
-  functions[NAMES] = &server_command_function_names;
-  functions[KICK] = &server_command_function_kick;
-  functions[MODE] = &server_command_function_mode;
-  functions[AWAY] = &server_command_function_away;
-  functions[WHOIS] = &server_command_function_whois;
   /* Llamar a la funcion del argumento */
   if ((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
-    if(nick!=NULL){
-      if(IRCMsg_ErrUnKnownCommand(&msg, "ip.servidor", nick, command)==IRC_OK){
-        send(desc, msg, strlen(msg), 0);
-        free(msg);
-      }
-    }
+    syslog(LOG_INFO, "NO EXISTE EL MANEJADOR DE LA FUNCION");
   } else {
     functions[functionName](command, desc, nick, register_status);
   }

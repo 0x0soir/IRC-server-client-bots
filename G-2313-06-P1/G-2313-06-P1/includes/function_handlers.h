@@ -15,10 +15,6 @@
 #include <netdb.h>
 #include <pthread.h>
 
-/* Functions */
-int server_users_find_by_nick(char* data);
-int server_users_find_by_socket(int sockdesc);
-int server_channels_find_by_name(char *channel);
-int server_channels_update_nick(char *nick_old, char* nick_new);
-int server_channels_update_away(char* nick, char* away);
-int server_channels_update_whois(char* nick, char* away);
+void server_command_function_nick(char* command, int desc, char* nick_static, int* register_status);
+void server_command_function_user(char* command, int desc, char* nick_static, int* register_status);
+void server_command_function_join(char* command, int desc, char* nick_static, int* register_status);

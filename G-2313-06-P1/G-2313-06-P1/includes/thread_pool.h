@@ -63,8 +63,6 @@ typedef struct thread_pool_t
 /*create a thread pool*/
 thread_pool_t *thread_pool_create(int size);
 
-void thread_pool_delete(thread_pool_t *p);
-
 /*init the thread pool*/
 int thread_pool_init(thread_pool_t *);
 
@@ -93,7 +91,7 @@ void thread_del(thread_t *t);
 task_t *task_create(void);
 
 /*init a task*/
-void task_init(task_t *, void* (*)(int), int);
+void task_init(task_t *, void* (*)(int), void *);
 
 /*add a task into a thread pool*/
 void task_add(thread_pool_t *, task_t *);
