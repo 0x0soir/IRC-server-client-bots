@@ -581,7 +581,6 @@ void server_command_function_mode(char* command, int desc, char * nick_static, i
         }
       } else if(strcmp(mode, "\\+k")==0){
         mode_arg = malloc(sizeof(user)+6);
-        *mode_arg = "";
         strcat(mode_arg, "+k ");
         strcat(mode_arg, user);
         /*strcpy(mode_arg, mode_arg_plain);*/
@@ -668,22 +667,85 @@ void server_command_function_away(char* command, int desc, char * nick_static, i
 }
 
 void server_command_function_whois(char* command, int desc, char * nick_static, int* register_status){
-  char *prefix = NULL, *msg = NULL, *target = NULL, *maskarray = NULL, *awayMsg = NULL;
+  char *prefix = NULL, *msg = NULL, *target = NULL, *maskarray = NULL, *awayMsg = NULL, **arrayChannels = NULL, *stringsWhois = NULL;
+  long find_id = 0, find_creationTS, find_actionTS, numberOfChannels;
+  char *find_user = NULL, *find_real = NULL, *find_host = NULL, *find_ip = NULL, *find_away = NULL;
+  int find_socket = 0, i;
   syslog(LOG_INFO, "-----> EXECUTE WHOIS: %s", command);
   if(IRCParse_Whois(command, &prefix, &target, &maskarray)==IRC_OK){
     if(IRCTADUser_GetAway(0, NULL, maskarray, NULL, &awayMsg)==IRC_OK){
       if(awayMsg!=NULL){
         if(IRCMsg_RplAway(&msg, "ip.servidor", nick_static, maskarray, awayMsg)==IRC_OK){
           send(desc, msg, strlen(msg), 0);
+        }
+        if(msg){
           free(msg);
+          msg = NULL;
+        }
+      } else {
+        if(IRCTADUser_GetData(&find_id, &find_user, &maskarray, &find_real, &find_host, &find_ip,
+          &find_socket, &find_creationTS, &find_actionTS, &find_away)==IRC_OK){
+          if(IRCTAD_ListChannelsOfUserArray(find_user, maskarray, &arrayChannels, &numberOfChannels)==IRC_OK){
+            syslog(LOG_INFO, "WHOIS: LISTA DE CANALES OK");
+            if(IRCMsg_RplWhoIsUser(&msg, "ip.servidor", nick_static, maskarray, find_user, find_host, find_real)==IRC_OK){
+              syslog(LOG_INFO, "WHOIS: mensaje ok");
+              send(desc, msg, strlen(msg), 0);
+            }
+            if(msg){
+              free(msg);
+              msg = NULL;
+            }
+            stringsWhois = (char *) malloc(numberOfChannels*51*sizeof(char));
+            strcpy(stringsWhois, "");
+
+            for(i=0; i<numberOfChannels; i++){
+              if(i>0){
+                strcat(stringsWhois, " ");
+              }
+              if((IRCTAD_GetUserModeOnChannel(arrayChannels[i], maskarray)&2)==2){
+                strcat(stringsWhois, "@");
+              }
+              strcat(stringsWhois, arrayChannels[i]);
+            }
+
+            if(IRCMsg_RplWhoIsChannels(&msg, "ip.servidor", nick_static, maskarray, stringsWhois)==IRC_OK){
+              send(desc, msg, strlen(msg), 0);
+            }
+            IRC_MFree(1, &msg);
+
+            if(IRCMsg_RplEndOfWhoIs(&msg, "ip.servidor", nick_static, maskarray)==IRC_OK){
+              send(desc, msg, strlen(msg), 0);
+            }
+            IRC_MFree(2, &msg, &stringsWhois);
+          } else {
+            syslog(LOG_INFO, "WHOIS: ERROR AL OBTENER CANALES");
+          }
+          IRCTADChan_FreeList(arrayChannels, numberOfChannels);
+          IRC_MFree(5, &find_user, &find_real, &find_ip, &find_host, &find_away);
+          find_socket = find_id = 0;
+          syslog(LOG_INFO, "WHOIS: USUARIO ENCONTRADO");
         }
       }
     }
   } else {
     if(IRCMsg_ErrNoNickNameGiven(&msg, "ip.servidor", nick_static)==IRC_OK){
       send(desc, msg, strlen(msg), 0);
-      if(msg)
-        free(msg);
     }
+    if(msg){
+      free(msg);
+      msg = NULL;
+    }
+  }
+  if(target){
+    free(target);
+    target = NULL;
+  }
+  if(maskarray){
+    free(maskarray);
+    maskarray = NULL;
+  }
+  if(awayMsg){
+    free(awayMsg);
+    awayMsg = NULL;
   }
 }
