@@ -123,10 +123,14 @@ void *server_start_communication(int socket_desc){
   *register_status = 0;
   while(server_status)
   {
+    if(isClosedSocket(socket_desc)){
+      syslog (LOG_INFO, "[DESC: %d] Detectado ausente, desconectando...", socket_desc);
+      break;
+    }
     memset(str, 0, 2000);
     val_read = recv(socket_desc, str, 2000, 0);
-    if(isClosedSocket(val_read, str)){
-      syslog (LOG_INFO, "Cierra conexion");
+    if((val_read<1)||(str[0]=='\0')){
+      syslog (LOG_INFO, "[DESC: %d] Detectado ausente, desconectando...", socket_desc);
       break;
     }
     /* Comando ya parseado -> Ejecuto */
@@ -147,18 +151,20 @@ void *server_start_communication(int socket_desc){
         command = NULL;
       }
 		}
-    syslog(LOG_INFO, "Mensaje enviado");
+    syslog(LOG_INFO, "[DESC: %d] Mensaje enviado", socket_desc);
   }
-  if(*register_status!=0){
-    syslog(LOG_INFO, "--> FIN CLIENTE: No recibido QUIT, se borran datos de %s", nick);
+  if(*register_status>0){
+    syslog(LOG_INFO, "[DESC: %d] FIN CLIENTE: No recibido QUIT, se borran datos de: %s", socket_desc, nick);
     IRCTAD_Quit(nick);
     if(server_users_find_by_nick(nick)){
-      syslog(LOG_INFO, "--> FIN CLIENTE: Sigue existiendo el usuario %s", nick);
+      syslog(LOG_INFO, "[DESC: %d] FIN CLIENTE: Sigue existiendo el usuario: %s", socket_desc, nick);
+    } else {
+      syslog(LOG_INFO, "[DESC: %d] FIN CLIENTE: Cliente eliminado correctamente: %s", socket_desc, nick);
     }
+    syslog(LOG_INFO, "[DESC: %d] FIN CLIENTE: Cierra desc", socket_desc);
+    /* Cerrar conexion con el usuario y liberar el hilo */
+  	close(socket_desc);
   }
-  syslog(LOG_INFO, "--> FIN CLIENTE: Cierra desc %d", socket_desc);
-  /* Cerrar conexion con el usuario y liberar el hilo */
-	close(socket_desc);
   if(register_status){
     free(register_status);
     register_status = NULL;
@@ -171,6 +177,7 @@ void *server_start_communication(int socket_desc){
     free(nick);
     nick = NULL;
   }
+  syslog(LOG_INFO, "--> FIN CLIENTE: MUERE EL HILO");
   pthread_exit(NULL);
   return NULL;
 }
@@ -196,9 +203,11 @@ void server_execute_function(long functionName, char* command, int desc, char* n
   functions[MODE] = &server_command_function_mode;
   functions[AWAY] = &server_command_function_away;
   functions[WHOIS] = &server_command_function_whois;
+  functions[TOPIC] = &server_command_function_topic;
+  functions[MOTD] = &server_command_function_motd;
   /* Llamar a la funcion del argumento */
   if ((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
-    if(nick!=NULL){
+    if(*register_status>0){
       if(IRCMsg_ErrUnKnownCommand(&msg, "ip.servidor", nick, command)==IRC_OK){
         send(desc, msg, strlen(msg), 0);
         free(msg);
@@ -235,8 +244,24 @@ void server_exit(){
  *
  *  returns: true/false dependiendo de si esta cerrada o no
  */
-int isClosedSocket(int val_read, char str[]){
-  return (val_read==0)||(str[0]=='\0');
+int isClosedSocket(int socket_desc){
+  int activity;
+  fd_set readfds;
+  struct timeval timeout;
+  FD_ZERO(&readfds);
+  FD_SET(socket_desc, &readfds);
+  /* Initialize the timeout data structure. */
+  timeout.tv_sec = 0;
+  timeout.tv_usec = 10000;
+  syslog(LOG_INFO, "COMPROBANDO SOCKET CON SELECT...");
+  activity = select(socket_desc, &readfds, NULL, NULL, &timeout);
+  if ((activity < 0) && (errno!=EINTR)){
+    syslog(LOG_INFO, "Socket cerrado");
+    return 1;
+  } else {
+    syslog(LOG_INFO, "Socket abierto");
+    return 0;
+  }
 }
 
 /*

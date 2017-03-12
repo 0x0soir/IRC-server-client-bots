@@ -10,7 +10,7 @@ int server_users_find_by_nick(char* data){
     syslog(LOG_INFO, "NICK: USUARIO ENCONTRADO");
     return_flag = true;
   } else {
-    syslog(LOG_INFO, "NICK: ERROR BUSCANDO POR NICK %ld %s %s", unknown_id, unknown_user, unknown_real);
+    syslog(LOG_INFO, "NICK: USUARIO NO ENCONTRADO %s", data);
   }
   if(unknown_user){
     free(unknown_user);

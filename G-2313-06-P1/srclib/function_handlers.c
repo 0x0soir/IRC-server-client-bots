@@ -21,6 +21,7 @@ void server_command_function_nick(char* command, int desc, char * nick_static, i
     }
   } else if((response=server_users_find_by_nick(nick))==true){
     if(IRCMsg_ErrNickNameInUse(&msg, prefix, nick, nick)==IRC_OK){
+      syslog(LOG_INFO, "[DESC: %d] NICK: %s ya se está usando, idiota (Valor de control: %d)", desc, nick, *register_status);
       send(desc, msg, strlen(msg), 0);
     }
   } else {
@@ -28,14 +29,14 @@ void server_command_function_nick(char* command, int desc, char * nick_static, i
       response = server_channels_update_nick(nick_static, nick);
       if(response==0){
         if(IRCMsg_Nick(&msg, "ip.servidor", NULL, nick)==IRC_OK){
-          syslog(LOG_INFO, "NICK: UPDATED OK");
+          syslog(LOG_INFO, "[DESC: %d] NICK: UPDATED OK", desc);
           send(desc, msg, strlen(msg), 0);
           strcpy(nick_static, nick);
         }
       }
     } else {
       if(IRCMsg_Nick(&msg, "ip.servidor", NULL, nick)==IRC_OK){
-        syslog(LOG_INFO, "NICK: OK");
+        syslog(LOG_INFO, "[DESC: %d] NICK: OK", desc);
         send(desc, msg, strlen(msg), 0);
         strcpy(nick_static, nick);
         *register_status = 1;
@@ -66,43 +67,21 @@ void server_command_function_user(char* command, int desc, char * nick_static, i
   getpeername(desc, (struct sockaddr *)&addr, &sclient);
   IP = inet_ntoa(addr.sin_addr);
   he = gethostbyaddr((char *)&addr.sin_addr, sizeof(addr.sin_addr), AF_INET);
-  syslog(LOG_INFO, "-----> EXECUTE USER: %s", nick_static);
   if((*register_status)==1){
-    syslog(LOG_INFO, "-----> USER: REGISTER STATUS %d", *register_status);
+    syslog(LOG_INFO, "[DESC: %d] -----> EXECUTE USER: %s", desc, nick_static);
+    syslog(LOG_INFO, "[DESC: %d] USER: Valor de control previo %d", desc, *register_status);
     if(IRCParse_User(command, &prefix, &user, &host, &IP, &realname)==IRC_OK){
       if (IRCTADUser_New(user, nick_static, realname, NULL, he->h_name, IP, desc)==IRC_OK){
         if(IRCMsg_RplWelcome(&msg, "ip.servidor", nick_static, nick_static, user, "localhost")==IRC_OK){
           send(desc, msg, strlen(msg), 0);
-          if(msg){
-            free(msg);
-            msg = NULL;
-          }
+          IRC_MFree(1, &msg);
           *register_status = 2;
         }
       }
     }
   }
-  syslog(LOG_INFO, "-----> EXECUTE USER: Libero recursos");
-  if(user){
-    free(user);
-    user = NULL;
-  }
-  if(realname){
-    free(realname);
-    realname = NULL;
-  }
-  if(host){
-    free(host);
-    host = NULL;
-  }
-  if(IP){
-    free(IP);
-    IP = NULL;
-  }
-  if(prefix){
-    free(prefix);
-    prefix = NULL;
-  }
+  syslog(LOG_INFO, "[DESC: %d] EXECUTE USER: Valor de control posterior %d", desc, *register_status);
+  IRC_MFree(6, &user, &realname, &prefix, &host, &IP, &msg);
 }
 
 /*
@@ -119,22 +98,6 @@ void server_command_function_join(char* command, int desc, char * nick_static, i
   if (IRCParse_Join(command, &prefix, &channel, &key, &msg) != IRC_OK){
   	IRCMsg_ErrNeedMoreParams(&msg, "ip.servidor", nick_static, command);
   	send(desc, msg, strlen(msg), 0);
-    if(msg){
-      free(msg);
-      msg = NULL;
-    }
-    if(key){
-      free(key);
-      key = NULL;
-    }
-    if(prefix){
-      free(prefix);
-      prefix = NULL;
-    }
-    if(channel){
-      free(channel);
-      channel = NULL;
-    }
   } else {
     if((response=server_channels_find_by_name(channel))==0){
       strcpy(modeFlag, "o");
@@ -146,10 +109,7 @@ void server_command_function_join(char* command, int desc, char * nick_static, i
         if(IRCMsg_ErrBadChannelKey(&msg, "ip.servidor", nick_static, channel)==IRC_OK){
           send(desc, msg, strlen(msg), 0);
         }
-        if(msg){
-          free(msg);
-          msg = NULL;
-        }
+        IRC_MFree(1, &msg);
       } else {
         syslog(LOG_INFO, "JOIN: CLAVE CORRECTA");
         flag_login_possible = 1;
@@ -160,7 +120,6 @@ void server_command_function_join(char* command, int desc, char * nick_static, i
     if(flag_login_possible){
       syslog(LOG_INFO, "JOIN: HACE JOIN EN CANAL: %s CON CLAVE: %s", channel, key);
       if(IRCTAD_Join(channel, nick_static, modeFlag, key)==IRC_OK){
-        syslog(LOG_INFO, "JOIN: HACE JOIN EN CANAL: %s CON CLAVE: %s", channel, key);
         if(IRCTADUser_GetData(&unknown_id, &unknown_user, &unknown_nick, &unknown_real, &host, &IP, &desc, &creationTS, &actionTS, &away)==IRC_OK){
           syslog(LOG_INFO, "JOIN: %s %s", server, host);
           if(IRC_Prefix(&prefix, nick_static, unknown_user, NULL, "LOCALHOST")==IRC_OK){
@@ -172,114 +131,37 @@ void server_command_function_join(char* command, int desc, char * nick_static, i
                 if(IRCTADUser_GetData(&find_id, &find_user, &arrayNicks[i], &find_real, &find_host, &find_ip,
                   &find_socket, &find_creationTS, &find_actionTS, &find_away)==IRC_OK){
                   send(find_socket, msg, strlen(msg), 0);
-                  if(find_user)
-                    free(find_user);
-                  if(find_real)
-                    free(find_real);
-                  if(find_host)
-                    free(find_host);
-                  if(find_ip)
-                    free(find_ip);
-                  if(find_away)
-                    free(find_away);
-                  find_user = NULL;
-                  find_real = NULL;
-                  find_ip = NULL;
-                  find_host = NULL;
-                  find_away = NULL;
+                  IRC_MFree(5, &find_user, &find_real, &find_host, &find_ip, &find_away);
                   find_socket = 0;
                   find_id = 0;
                 }
               }
               IRCTADChan_FreeList(arrayNicks, numberOfUsers);
             }
-            if(msg){
-              free(msg);
-              msg = NULL;
-            }
+            IRC_MFree(1, &msg);
           }
         }
-        if(unknown_user){
-          free(unknown_user);
-        }
-        if(unknown_nick){
-          free(unknown_nick);
-        }
-        if(unknown_real){
-          free(unknown_real);
-        }
-        if(server){
-          free(server);
-        }
-        if(host){
-          free(host);
-        }
-        if(IP){
-          free(IP);
-        }
-        if(away){
-          free(away);
-        }
+        IRC_MFree(5, &unknown_user, &unknown_nick, &unknown_real, &server, &host, &IP, &away);
       }
     }
-    if(modeFlag){
-      free(modeFlag);
-      modeFlag = NULL;
-    }
-    if(prefix){
-      free(prefix);
-      prefix = NULL;
-    }
-    if(channel){
-      free(channel);
-      channel = NULL;
-    }
   }
+  IRC_MFree(5, &msg, &key, &modeFlag, &prefix, &channel);
 }
 
 /* Msg: Almacena el texto de quit del usuario */
 void server_command_function_quit(char* command, int desc, char * nick_static, int* register_status){
   char *user = NULL, *realname = NULL, *prefix = NULL, *host = NULL, *IP = NULL, *msg = NULL, *msg2 = NULL;
   syslog(LOG_INFO, "-----> EXECUTE QUIT: %s", nick_static);
-  if((*register_status)==2){
-    if(IRCParse_Quit(command, &prefix, &msg2)==IRC_OK){
-      IRCTAD_Quit(nick_static);
-      if(IRCMsg_Quit(&msg, prefix, msg2)==IRC_OK){
-        send(desc, msg, strlen(msg), 0);
-        syslog(LOG_INFO, "MSG: %s", msg);
-        *register_status = 0;
-        close(desc);
-      }
+  if(IRCParse_Quit(command, &prefix, &msg2)==IRC_OK){
+    IRCTAD_Quit(nick_static);
+    if(IRCMsg_Quit(&msg, prefix, msg2)==IRC_OK){
+      send(desc, msg, strlen(msg), 0);
+      syslog(LOG_INFO, "MSG: %s", msg);
+      close(desc);
     }
   }
-  if(user){
-    free(user);
-    user = NULL;
-  }
-  if(realname){
-    free(realname);
-    realname = NULL;
-  }
-  if(host){
-    free(host);
-    host = NULL;
-  }
-  if(IP){
-    free(IP);
-    IP = NULL;
-  }
-  if(prefix){
-    free(prefix);
-    prefix = NULL;
-  }
-  if(msg){
-    free(msg);
-    msg = NULL;
-  }
-  if(msg2){
-    free(msg2);
-    msg2 = NULL;
-  }
+  *register_status = 0;
+  IRC_MFree(7, &user, &realname, &host, &IP, &prefix, &msg, &msg2);
 }
 
 void server_command_function_ping(char* command, int desc, char * nick_static, int* register_status){
@@ -288,17 +170,15 @@ void server_command_function_ping(char* command, int desc, char * nick_static, i
   	if(IRCMsg_Pong(&command, "ip.servidor", ping, pong, ping)==IRC_OK){
   		send(desc, command, strlen(command), 0);
   	}
-    free(ping);
-    free(pong);
-    free(prefix);
-    free(msg);
   }
+  IRC_MFree(4, &ping, &pong, &prefix, &msg);
 }
 
 void server_command_function_list(char* command, int desc, char * nick_static, int* register_status){
-  char *prefix = NULL, *msg = NULL, **channels, *topic, visible[50];
+  char *prefix = NULL, *msg = NULL, **channels = NULL, *topic = NULL, visible[50];
   long size;
   int i;
+  strcpy(visible, "");
   IRCTADChan_GetList(&channels, &size, NULL);
   if(IRCMsg_RplListStart(&msg, "ip.servidor", nick_static)==IRC_OK){
     send(desc, msg, strlen(msg), 0);
@@ -308,6 +188,7 @@ void server_command_function_list(char* command, int desc, char * nick_static, i
           sprintf(visible, "%ld", IRCTADChan_GetNumberOfUsers(channels[i]));
           IRCMsg_RplList(&msg, "ip.servidor", nick_static, channels[i], visible, topic);
           send(desc, msg, strlen(msg), 0);
+          IRC_MFree(1, &msg);
         }
       }
     }
@@ -316,18 +197,7 @@ void server_command_function_list(char* command, int desc, char * nick_static, i
     }
   }
   IRCTADChan_FreeList(channels, size);
-  if(prefix){
-    free(prefix);
-    prefix = NULL;
-  }
-  if(msg){
-    free(msg);
-    msg = NULL;
-  }
-  if(topic){
-    free(topic);
-    topic = NULL;
-  }
+  IRC_MFree(3, &prefix, &msg, &topic);
 }
 
 void server_command_function_privmsg(char* command, int desc, char *nick_static, int* register_status){
@@ -565,12 +435,11 @@ void server_command_function_kick(char* command, int desc, char * nick_static, i
 }
 
 void server_command_function_mode(char* command, int desc, char * nick_static, int* register_status){
-  char *prefix = NULL, *msg = NULL, *channel = NULL, *mode = NULL, *user = NULL, *mode_arg = NULL/*, *mode_arg_plain[100]*/;
-  long response, logic_comparator;
+  char *prefix = NULL, *msg = NULL, *channel = NULL, *mode = NULL, *user = NULL, *mode_arg = NULL;
+  long response = 0, logic_comparator;
   syslog(LOG_INFO, "-----> EXECUTE MODE: %s", command);
-  /*memset(mode_arg_plain, 0, 100);*/
   if((response = IRCParse_Mode(command, &prefix, &channel, &mode, &user))==IRC_OK){
-    if(mode!=NULL){
+    if(mode){
       if((strcmp(mode, "+s")==0)||(strcmp(mode, "+t")==0)){
         if(IRCTAD_Mode(channel, nick_static, mode)==IRC_OK){
           if(IRCMsg_Mode(&msg, "ip.servidor", channel, mode, user)==IRC_OK){
@@ -581,9 +450,9 @@ void server_command_function_mode(char* command, int desc, char * nick_static, i
         }
       } else if(strcmp(mode, "\\+k")==0){
         mode_arg = malloc(sizeof(user)+6);
+        strcpy(mode_arg, "");
         strcat(mode_arg, "+k ");
         strcat(mode_arg, user);
-        /*strcpy(mode_arg, mode_arg_plain);*/
         if(IRCTAD_Mode(channel, nick_static, mode_arg)==IRC_OK){
           if(IRCMsg_Mode(&msg, "ip.servidor", channel, mode, user)==IRC_OK){
             send(desc, msg, strlen(msg), 0);
@@ -655,20 +524,21 @@ void server_command_function_away(char* command, int desc, char * nick_static, i
     if(msg_away!=NULL){
       if(IRCMsg_RplNowAway(&msg, "ip.servidor", nick_static)==IRC_OK){
         send(desc, msg, strlen(msg), 0);
-        free(msg);
       }
+      IRC_MFree(1, &msg);
     } else {
       if(IRCMsg_RplUnaway(&msg, "ip.servidor", nick_static)==IRC_OK){
         send(desc, msg, strlen(msg), 0);
-        free(msg);
       }
+      IRC_MFree(1, &msg);
     }
   }
+  IRC_MFree(2, &prefix, &msg_away);
 }
 
 void server_command_function_whois(char* command, int desc, char * nick_static, int* register_status){
   char *prefix = NULL, *msg = NULL, *target = NULL, *maskarray = NULL, *awayMsg = NULL, **arrayChannels = NULL, *stringsWhois = NULL;
-  long find_id = 0, find_creationTS, find_actionTS, numberOfChannels;
+  long find_id = 0, find_creationTS, find_actionTS, numberOfChannels = 0;
   char *find_user = NULL, *find_real = NULL, *find_host = NULL, *find_ip = NULL, *find_away = NULL;
   int find_socket = 0, i;
   syslog(LOG_INFO, "-----> EXECUTE WHOIS: %s", command);
@@ -748,4 +618,70 @@ void server_command_function_whois(char* command, int desc, char * nick_static, 
     free(awayMsg);
     awayMsg = NULL;
   }
+}
+
+void server_command_function_topic(char* command, int desc, char * nick_static, int* register_status){
+  char *prefix = NULL, *msg = NULL, *channel = NULL, *topic = NULL;
+  syslog(LOG_INFO, "-----> EXECUTE TOPIC: %s", command);
+  if(IRCParse_Topic(command, &prefix, &channel, &topic)==IRC_OK){
+    syslog(LOG_INFO, "TOPIC a");
+    if(topic&&channel){
+      syslog(LOG_INFO, "TOPIC b");
+      if((IRCTADChan_GetModeInt(channel)&IRCMODE_TOPICOP)==IRCMODE_TOPICOP){
+        if(((IRCTAD_GetUserModeOnChannel(channel, nick_static)&1)==1)||((IRCTAD_GetUserModeOnChannel(channel, nick_static)&2)==2)){
+          if(IRCTAD_SetTopic(channel, nick_static, topic)==IRC_OK){
+            if(IRCMsg_Topic(&msg, "ip.servidor", channel, topic)==IRC_OK){
+              send(desc, msg, strlen(msg), 0);
+            }
+          }
+        } else {
+          if(IRCMsg_ErrChanOPrivsNeeded(&msg, "ip.servidor", nick_static, channel)==IRC_OK){
+            send(desc, msg, strlen(msg), 0);
+          }
+        }
+      } else {
+        if(IRCTAD_SetTopic(channel, nick_static, topic)==IRC_OK){
+          if(IRCMsg_Topic(&msg, "ip.servidor", channel, topic)==IRC_OK){
+            send(desc, msg, strlen(msg), 0);
+          }
+        }
+      }
+    } else {
+      syslog(LOG_INFO, "TOPIC c");
+      if(IRCTAD_GetTopic(channel, &topic)==IRC_OK){
+        if(!topic){
+          if(IRCMsg_RplNoTopic(&msg, "ip.servidor", nick_static, channel)==IRC_OK){
+            send(desc, msg, strlen(msg), 0);
+          }
+        } else {
+          if(IRCMsg_RplTopic(&msg, "ip.servidor", nick_static, channel, topic)==IRC_OK){
+            send(desc, msg, strlen(msg), 0);
+          }
+        }
+      }
+    }
+  }
+  IRC_MFree(4, &prefix, &channel, &topic, &msg);
+}
+
+void server_command_function_motd(char* command, int desc, char * nick_static, int* register_status){
+  char *prefix = NULL, *msg = NULL, *target = NULL;
+  syslog(LOG_INFO, "-----> EXECUTE MOTD: %s", command);
+  if(IRCParse_Motd(command, &prefix, &target)==IRC_OK){
+    if(IRCMsg_RplMotdStart(&msg, "ip.servidor", nick_static, "¡BIENVENIDO!")==IRC_OK){
+      send(desc, msg, strlen(msg), 0);
+    }
+    IRC_MFree(1, &msg);
+
+    if(IRCMsg_RplMotd(&msg, "ip.servidor", nick_static, "¡BIENVENIDO!")==IRC_OK){
+      send(desc, msg, strlen(msg), 0);
+    }
+    IRC_MFree(1, &msg);
+
+    if(IRCMsg_RplEndOfMotd(&msg, "ip.servidor", nick_static)==IRC_OK){
+      send(desc, msg, strlen(msg), 0);
+    }
+    IRC_MFree(1, &msg);
+  }
+  IRC_MFree(2, &prefix, &target);
 }

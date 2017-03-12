@@ -226,6 +226,7 @@ void *master_callback(void *arg)
     thread_t *t;
     int busy = 0;
     int idle = 0;
+    int add_num = 0;
     list_for_each_entry(t, (&(p->worker_queue)), worker_entry)
     {
       if(t->state == THREAD_STATE_IDLE)
@@ -238,7 +239,7 @@ void *master_callback(void *arg)
       }
     }
     if(idle<5){
-      int add_num = 5;
+      add_num = 5;
       syslog(LOG_ERR, "POOL: Falta de espacio, incrementa pool en %d hilos", add_num);
       while(add_num--){
         t = thread_create();

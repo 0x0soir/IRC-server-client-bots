@@ -1,3 +1,5 @@
+#include <errno.h>
+#include <sys/time.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -23,7 +25,7 @@
 #include "list.h"
 #include "thread_pool.h"
 
-#define MIN_POOL_THREADS        1
+#define MIN_POOL_THREADS        3
 #define MAX_CONNECTIONS         100
 #define SERVER_PORT             6667
 #define CLIENT_MESSAGE_MAXSIZE  8096
@@ -33,7 +35,7 @@ void server_accept_connection(int socket_id);
 void *server_start_communication(int connval);
 void server_exit();
 void server_execute_function(long functionName, char* command, int desc, char * nick, int * register_status);
-int isClosedSocket(int val_read, char str[]);
+int isClosedSocket(int socket_desc);
 void server_daemon();
 void server_start_pool();
 

@@ -30,3 +30,5 @@ void server_command_function_kick(char* command, int desc, char * nick_static, i
 void server_command_function_mode(char* command, int desc, char * nick_static, int* register_status);
 void server_command_function_away(char* command, int desc, char * nick_static, int* register_status);
 void server_command_function_whois(char* command, int desc, char * nick_static, int* register_status);
+void server_command_function_topic(char* command, int desc, char * nick_static, int* register_status);
+void server_command_function_motd(char* command, int desc, char * nick_static, int* register_status);
