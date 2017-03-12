@@ -40,4 +40,4 @@ void server_daemon();
 void server_start_pool();
 
 /* Tipos */
-typedef int (*FunctionCallBack)(char *, int, char *, int *);
+typedef void (*FunctionCallBack)(char *, int, char *, int *);

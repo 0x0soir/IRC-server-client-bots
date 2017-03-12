@@ -62,9 +62,8 @@ void server_command_function_user(char* command, int desc, char * nick_static, i
   char *user = NULL, *realname = NULL, *prefix = NULL, *host = NULL, *IP = NULL, *msg = NULL;
   struct sockaddr_in addr;
   struct hostent *he;
-  int sclient;
-  sclient = sizeof(addr);
-  getpeername(desc, (struct sockaddr *)&addr, &sclient);
+  socklen_t size_address = sizeof(addr);
+  getpeername(desc, (struct sockaddr *)&addr, &size_address);
   IP = inet_ntoa(addr.sin_addr);
   he = gethostbyaddr((char *)&addr.sin_addr, sizeof(addr.sin_addr), AF_INET);
   if((*register_status)==1){
@@ -201,7 +200,7 @@ void server_command_function_list(char* command, int desc, char * nick_static, i
 }
 
 void server_command_function_privmsg(char* command, int desc, char *nick_static, int* register_status){
-  char *prefix = NULL, *msgtarget = NULL, *msg = NULL, *awayMsg = NULL, *msgSend = NULL, *msgSend2 = NULL;
+  char *prefix = NULL, *msgtarget = NULL, *msg = NULL, *awayMsg = NULL, *msgSend = NULL, *msgSend2 = NULL, *tmpUser = NULL;
   long find_id = 0, find_creationTS, find_actionTS, numberOfUsers;
   char **arrayNicks;
   char *find_user = NULL, *find_real = NULL, *find_host = NULL, *find_ip = NULL, *find_away = NULL;
@@ -212,39 +211,18 @@ void server_command_function_privmsg(char* command, int desc, char *nick_static,
       IRCTAD_ListNicksOnChannelArray(msgtarget, &arrayNicks, &numberOfUsers);
       for(i=0; i< numberOfUsers; i++){
         if(strcmp(nick_static, arrayNicks[i])!=0){
+          tmpUser = server_return_user(nick_static);
           if(IRCTADUser_GetData(&find_id, &find_user, &arrayNicks[i], &find_real, &find_host, &find_ip, &find_socket, &find_creationTS, &find_actionTS, &find_away)==IRC_OK){
-            if(IRC_Prefix(&prefix, arrayNicks[i], find_user, NULL, "LOCALHOST")==IRC_OK){
+            if(IRC_Prefix(&prefix, nick_static, tmpUser, NULL, "LOCALHOST")==IRC_OK){
               if(IRCMsg_Privmsg(&msgSend, prefix+1, msgtarget, msg)==IRC_OK){
                 syslog(LOG_INFO, "-----> EXECUTE PRIVMSG: Socket: %d", find_socket);
                 send(find_socket, msgSend, strlen(msgSend), 0);
               }
-              if(find_user){
-                free(find_user);
-                find_user = NULL;
-              }
-              if(find_real){
-                free(find_real);
-                find_real = NULL;
-              }
-              if(find_host){
-                free(find_host);
-                find_host = NULL;
-              }
-              if(find_ip){
-                free(find_ip);
-                find_ip = NULL;
-              }
-              if(find_away){
-                free(find_away);
-                find_away = NULL;
-              }
-              if(msgSend){
-                free(msgSend);
-                msgSend = NULL;
-              }
+              IRC_MFree(6, &find_user, &find_real, &find_host, &find_ip, &find_away, &msgSend);
               find_socket = find_id = 0;
             }
           }
+          IRC_MFree(2, &tmpUser, &prefix);
         }
       }
       IRCTADChan_FreeList(arrayNicks, numberOfUsers);
@@ -266,39 +244,7 @@ void server_command_function_privmsg(char* command, int desc, char *nick_static,
             }
             syslog(LOG_INFO, "-----> EXECUTE PRIVMSG: Socket: %d", find_socket);
             send(find_socket, msgSend2, strlen(msgSend2), 0);
-            if(find_user){
-              free(find_user);
-              find_user = NULL;
-            }
-            if(find_real){
-              free(find_real);
-              find_real = NULL;
-            }
-            if(find_host){
-              free(find_host);
-              find_host = NULL;
-            }
-            if(find_ip){
-              free(find_ip);
-              find_ip = NULL;
-            }
-            if(find_away){
-              free(find_away);
-              find_away = NULL;
-            }
-            if(prefix){
-              free(prefix);
-              prefix = NULL;
-            }
-            if(msgSend2){
-              free(msgSend2);
-              msgSend2 = NULL;
-            }
-            if(awayMsg){
-              free(awayMsg);
-              awayMsg = NULL;
-            }
-            find_user = find_real = find_host = find_away = prefix = NULL;
+            IRC_MFree(8, &find_user, &find_real, &find_host, &find_ip, &find_away, &prefix, &msgSend2, &awayMsg);
             find_socket = find_id = 0;
           }
         }
@@ -312,18 +258,7 @@ void server_command_function_privmsg(char* command, int desc, char *nick_static,
       }
     }
   }
-  if(prefix){
-    free(prefix);
-    prefix = NULL;
-  }
-  if(msgtarget){
-    free(msgtarget);
-    msgtarget = NULL;
-  }
-  if(msg){
-    free(msg);
-    msg = NULL;
-  }
+  IRC_MFree(3, &prefix, &msgtarget, &msg);
 }
 
 void server_command_function_part(char* command, int desc, char * nick_static, int* register_status){

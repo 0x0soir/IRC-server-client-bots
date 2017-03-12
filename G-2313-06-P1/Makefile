@@ -26,7 +26,7 @@ all: server
 server:
 	@echo "\033[31mCompilando ejecutable...\033[00m"
 	gcc -o ./obj/$(GROUP) $(SRCDIR) $(FFLAGS) $(REDESLIB)
-	@echo "\033[32mEjecutable compilado: $(EXE_NAME)\033[00m"
+	@echo "\033[32mEjecutable compilado: $(GROUP)\033[00m"
 
 #Regla clean: limpia el directorio del ficheros temporales
 clean:

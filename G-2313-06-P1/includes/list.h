@@ -93,8 +93,6 @@ static inline void __list_del(struct list_head *prev, struct list_head *next)
 static inline void list_del(struct list_head *entry)
 {
 	__list_del(entry->prev, entry->next);
-	entry->next = (void *) 0;
-	entry->prev = (void *) 0;
 }
 
 /**
@@ -222,10 +220,10 @@ static inline void list_splice_init(struct list_head *list,
  * @head:	the head for your list.
  * @member:	the name of the list_struct within the struct.
  */
-#define list_for_each_entry(pos, head, member)				\
-	for (pos = list_first_entry((head)->next, typeof(*pos), member);	\
-	     &pos->member != (head); 					\
-	     pos = list_entry(pos->member.next, typeof(*pos), member))
+#define list_for_each_entry(elem_ptr, head, member) \
+   for(elem_ptr = list_first_entry(head, typeof(*elem_ptr), member); \
+       &(elem_ptr->member) != (head); \
+       elem_ptr = list_next_entry(elem_ptr, member))
 
 /**
  * list_for_each_entry_safe - iterate over list of given type safe against removal of list entry

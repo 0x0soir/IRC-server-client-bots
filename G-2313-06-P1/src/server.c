@@ -53,19 +53,6 @@ int server_start(){
     return socket_desc;
 }
 
-void *task_callback(void *arg)
-{
-    int t_pool_id;
-    int sum = 0;
-    syslog(LOG_ERR, "TASK: Entra en task");
-    for(t_pool_id = 0; t_pool_id < 100; t_pool_id++)
-    {
-        sum += t_pool_id;
-    }
-    syslog(LOG_ERR, "TASK: %d", sum);
-    return NULL;
-}
-
 /*
  * Function:  server_accept_connection
  * ----------------------------------------
@@ -214,7 +201,7 @@ void server_execute_function(long functionName, char* command, int desc, char* n
       }
     }
   } else {
-    functions[functionName](command, desc, nick, register_status);
+    (*functions[functionName])(command, desc, nick, register_status);
   }
 }
 

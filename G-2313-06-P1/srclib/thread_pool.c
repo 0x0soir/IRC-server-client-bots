@@ -32,24 +32,22 @@ void thread_pool_delete(thread_pool_t *p){
       syslog(LOG_ERR, "Eliminando hilo");
       pthread_kill(t->tid, SIGINT);
       syslog(LOG_ERR, "Eliminado 1");
-      /*pthread_join(t->tid, NULL);*/
       pthread_detach(t->tid);
-      syslog(LOG_ERR, "Eliminado 2");
+      syslog(LOG_ERR, "Eliminado 2 %d", t->tid);
       thread_del_internal(p, t, 0);
       syslog(LOG_ERR, "Fuera de lista");
     }
   }
   syslog(LOG_ERR, "Termina hijos");
-  list_for_each_entry(t, (&(p->idle_queue)), idle_entry){
+  /*list_for_each_entry(t, (&(p->idle_queue)), idle_entry){
     syslog(LOG_ERR, "Eliminando hilo");
     pthread_exit(&t->tid);
     syslog(LOG_ERR, "Eliminado 1");
-    /*pthread_join(t->tid, NULL);*/
     pthread_detach(t->tid);
     syslog(LOG_ERR, "Eliminado 2");
     thread_del_internal(p, t, 0);
     syslog(LOG_ERR, "Fuera de lista");
-  }
+  }*/
   pthread_mutex_unlock(&p->global);
   if(p->master_thread){
     free(p->master_thread);
@@ -117,7 +115,7 @@ thread_t *thread_create(void)
     t = (thread_t *)calloc(1, sizeof(thread_t));
     if(t == NULL)
     {
-        return NULL;
+      return NULL;
     }
     return t;
 }
@@ -126,6 +124,7 @@ int thread_add(thread_pool_t *p, thread_t *t)
 {
   int ret;
   pthread_attr_t attr;
+  struct thread_args *args;
 
   pthread_attr_init(&attr);
   ret = pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
@@ -140,11 +139,13 @@ int thread_add(thread_pool_t *p, thread_t *t)
   t->state = THREAD_STATE_IDLE;
   t->state = THREAD_RUNNING;
   t->queue_size = 0;
-  t->tp = (void *)p;
   pthread_mutex_init(&t->mutex, NULL);
   pthread_cond_init(&t->cond, NULL);
 
-  pthread_create(&t->tid, &attr, worker_callback, (void *)t);
+  args = malloc(sizeof *args);
+  args->pool = p;
+  args->current = t;
+  pthread_create(&t->tid, &attr, worker_callback, (void *)args);
   pthread_attr_destroy(&attr);
 
   return 0;
@@ -161,19 +162,20 @@ void thread_del_internal(thread_pool_t *p, thread_t *t, int force_lock){
   if (force_lock){
     pthread_mutex_lock(&p->global);
   }
+  syslog(LOG_INFO, "Elimina %d", t->tid);
   list_del(&t->worker_entry);
   list_del(&t->idle_entry);
   p->size--;
   if (force_lock){
     pthread_mutex_unlock(&p->global);
   }
-  free(t);
 }
 
 void *worker_callback(void *arg)
 {
-    thread_t *curr = (thread_t *)arg;
-    thread_pool_t *tp = (thread_pool_t *)(curr->tp);
+    struct thread_args *args = arg;
+    thread_t *curr = (thread_t *) args->current;
+    thread_pool_t *tp = (thread_pool_t *) args->pool;
     task_t *t;
 
     while(1)

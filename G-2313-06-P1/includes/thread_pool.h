@@ -24,10 +24,11 @@
 
 #define MASTER_INTERVAL 10
 
+
 typedef struct task_t
 {
-    void *arg; /*the arg of task callback function*/
-    void *(*task_callback)(void *args); /*task callback function*/
+    int arg; /*the arg of task callback function*/
+    void *(*task_callback)(int arg); /*task callback function*/
     struct list_head entry; /*a node in the task queue*/
 }task_t;
 
@@ -42,7 +43,6 @@ typedef struct thread_t
     struct list_head task_queue; /*the head of task queue*/
     struct list_head worker_entry; /*a node in the thread pool's worker queue*/
     struct list_head idle_entry; /*a node in the thread pool's idle queue*/
-    void *tp;
 }thread_t;
 
 typedef struct thread_pool_t
@@ -59,6 +59,11 @@ typedef struct thread_pool_t
     double high_level; /*the minium proportion threshold of idle threads*/
     int master_interval; /*the working interval of master thread*/
 }thread_pool_t;
+
+typedef struct thread_args {
+    struct thread_pool_t* pool;
+    struct thread_t* current;
+}thread_args;
 
 /*create a thread pool*/
 thread_pool_t *thread_pool_create(int size);
@@ -93,7 +98,7 @@ void thread_del(thread_t *t);
 task_t *task_create(void);
 
 /*init a task*/
-void task_init(task_t *, void* (*)(int), int);
+void task_init(task_t *, void* (*)(int), int arg);
 
 /*add a task into a thread pool*/
 void task_add(thread_pool_t *, task_t *);

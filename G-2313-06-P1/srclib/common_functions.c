@@ -138,3 +138,12 @@ int server_channels_update_away(char* nick, char* away){
   find_socket = find_id = 0;
   return return_value;
 }
+
+char* server_return_user(char* nick){
+  char *unknown_user = NULL, *unknown_real = NULL, *host = NULL, *IP = NULL, *away = NULL;
+  long unknown_id = 0, creationTS, actionTS;
+  int socket = NULL;
+  IRCTADUser_GetData(&unknown_id, &unknown_user, &nick, &unknown_real, &host, &IP, &socket, &creationTS, &actionTS, &away);
+  IRC_MFree(4, &unknown_real, &host, &IP, &away);
+  return unknown_user;
+}

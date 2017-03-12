@@ -22,3 +22,4 @@ int server_channels_find_by_name(char *channel);
 int server_channels_update_nick(char *nick_old, char* nick_new);
 int server_channels_update_away(char* nick, char* away);
 int server_channels_update_whois(char* nick, char* away);
+char* server_return_user(char* nick);
