@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Redes de Comunicaciones II: Fichero Fuente includes/G-2313-06-P1_thread_pool.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo-eps.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Redes de Comunicaciones II
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Documentación de prácticas 1, 2 y 3 generada por Jorge Parrilla y Javier de Marco.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('G-2313-06-P1__thread__pool_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">G-2313-06-P1_thread_pool.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="G-2313-06-P1__thread__pool_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _THREAD_POOL_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _THREAD_POOL_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;syslog.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;signal.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="G-2313-06-P1__list_8h.html">G-2313-06-P1_list.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="G-2313-06-P1__thread__pool_8h.html#a1d5f9a0a6439db9d27573f4ea768e03a">   13</a></span>&#160;<span class="preprocessor">#define THREAD_POOL_MAX_THREADS 100</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="G-2313-06-P1__thread__pool_8h.html#a2dddf10750568983fb5e8793f467e170">   14</a></span>&#160;<span class="preprocessor">#define THREAD_POOL_MIN_THREADS 10</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="G-2313-06-P1__thread__pool_8h.html#a91780ed988c2db43eb70b7106cee217b">   16</a></span>&#160;<span class="preprocessor">#define THREAD_STATE_BUSY 0X1</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="G-2313-06-P1__thread__pool_8h.html#a7fb00c8fb812a4f9a1c08e22a95104a1">   17</a></span>&#160;<span class="preprocessor">#define THREAD_STATE_IDLE 0x2</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="G-2313-06-P1__thread__pool_8h.html#acef14a4788dacf3640cf28745cf49726">   19</a></span>&#160;<span class="preprocessor">#define THREAD_STOPPING 0x1</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="G-2313-06-P1__thread__pool_8h.html#a9c22e7eceaed2a27b40b3bd043c1d057">   20</a></span>&#160;<span class="preprocessor">#define THREAD_RUNNING 0x2</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="G-2313-06-P1__thread__pool_8h.html#a9466670765f7653fc75437eb55c472f3">   22</a></span>&#160;<span class="preprocessor">#define THREAD_IDLE_LEVEL 0.2</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="G-2313-06-P1__thread__pool_8h.html#a09199434ab101700c051a235cf740f30">   23</a></span>&#160;<span class="preprocessor">#define THREAD_BUSY_LEVEL 0.8</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="G-2313-06-P1__thread__pool_8h.html#a562492e441dc328fba8a344c7206758a">   25</a></span>&#160;<span class="preprocessor">#define MASTER_INTERVAL 10</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structtask__t.html">   28</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structtask__t.html">task_t</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structtask__t.html#a9162b404bd1cf5349b2092f69e31c613">   30</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structtask__t.html#a9162b404bd1cf5349b2092f69e31c613">arg</a>; <span class="comment">/*the arg of task callback function*/</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structtask__t.html#ac8c2d416888e415fc6ee54410a4c511c">   31</a></span>&#160;    <span class="keywordtype">void</span> *(*task_callback)(<span class="keywordtype">int</span> <a class="code" href="structtask__t.html#a9162b404bd1cf5349b2092f69e31c613">arg</a>); <span class="comment">/*task callback function*/</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structtask__t.html#ac812553758f9102a7a674ad29e78f98b">   32</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> <a class="code" href="structtask__t.html#ac812553758f9102a7a674ad29e78f98b">entry</a>; <span class="comment">/*a node in the task queue*/</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}<a class="code" href="G-2313-06-P1__thread__pool_8h.html#a989e278a815d7ada960572a3e9fad896">task_t</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structthread__t.html">   35</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structthread__t.html">thread_t</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structthread__t.html#a92c076d58ca307499452b8dfe0c4e598">   37</a></span>&#160;    pthread_t <a class="code" href="structthread__t.html#a92c076d58ca307499452b8dfe0c4e598">tid</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structthread__t.html#abb0dcb82ff12b61776b74c76fa27c964">   38</a></span>&#160;    pthread_mutex_t <a class="code" href="structthread__t.html#abb0dcb82ff12b61776b74c76fa27c964">mutex</a>; <span class="comment">/*mutex lock for task queue*/</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structthread__t.html#a6cb846b84c59d01a8b3a2693d39a4af1">   39</a></span>&#160;    pthread_cond_t <a class="code" href="structthread__t.html#a6cb846b84c59d01a8b3a2693d39a4af1">cond</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structthread__t.html#a3e0780f1c2fc9932258a60b5043fe424">   40</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structthread__t.html#a3e0780f1c2fc9932258a60b5043fe424">state</a>; <span class="comment">/*THREAD_STATE_BUSY or THREAD_STATE_IDLE*/</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structthread__t.html#a8e9f0fd028676d0ebeef8438f2176bb7">   41</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structthread__t.html#a8e9f0fd028676d0ebeef8438f2176bb7">stop</a>;  <span class="comment">/*mark if the thread is going to quit*/</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structthread__t.html#aa99eeab6834595bdff5a7da08314fd89">   42</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structthread__t.html#aa99eeab6834595bdff5a7da08314fd89">queue_size</a>; <span class="comment">/*the number of tasks in the task_queue*/</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structthread__t.html#a69c932ede0de60b66a482fb735fca966">   43</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> <a class="code" href="structthread__t.html#a69c932ede0de60b66a482fb735fca966">task_queue</a>; <span class="comment">/*the head of task queue*/</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structthread__t.html#a03432229de426c5ba35d0dfa325491f0">   44</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> <a class="code" href="structthread__t.html#a03432229de426c5ba35d0dfa325491f0">worker_entry</a>; <span class="comment">/*a node in the thread pool&#39;s worker queue*/</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structthread__t.html#a9386032d478cacdfd680d5691e0eb9d3">   45</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> <a class="code" href="structthread__t.html#a9386032d478cacdfd680d5691e0eb9d3">idle_entry</a>; <span class="comment">/*a node in the thread pool&#39;s idle queue*/</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}<a class="code" href="G-2313-06-P1__thread__pool_8h.html#a6e84f6599234bedf30a8b88f56e8fd48">thread_t</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structthread__pool__t.html">   48</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structthread__pool__t.html">thread_pool_t</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structthread__pool__t.html#a44640e57780a54d437d7589b1c754ac1">   50</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> <a class="code" href="structthread__pool__t.html#a44640e57780a54d437d7589b1c754ac1">worker_queue</a>; <span class="comment">/*the head of worker queue*/</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structthread__pool__t.html#a38a9fa0d0ea1060d5bbff8421a92c1c7">   51</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structlist__head.html">list_head</a> <a class="code" href="structthread__pool__t.html#a38a9fa0d0ea1060d5bbff8421a92c1c7">idle_queue</a>; <span class="comment">/*the head of idle queue*/</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structthread__pool__t.html#a9ad8218717dde39eef701a8bce5ca0a1">   52</a></span>&#160;    <a class="code" href="structthread__t.html">thread_t</a> *<a class="code" href="structthread__pool__t.html#a9ad8218717dde39eef701a8bce5ca0a1">master_thread</a>; <span class="comment">/*the struct of master thread*/</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structthread__pool__t.html#aaa6e0a9d9c28c3f9be7eccbe8003af23">   53</a></span>&#160;    pthread_mutex_t <a class="code" href="structthread__pool__t.html#aaa6e0a9d9c28c3f9be7eccbe8003af23">global</a>; <span class="comment">/*the global lock for thread pool*/</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structthread__pool__t.html#a00ce5a27204f85e624552f7448ba7093">   54</a></span>&#160;    <a class="code" href="structthread__t.html">thread_t</a> *<a class="code" href="structthread__pool__t.html#a00ce5a27204f85e624552f7448ba7093">task_next</a>; <span class="comment">/*a task is going to be which thread*/</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structthread__pool__t.html#a3185c157636a142415699a20042d6dd8">   55</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structthread__pool__t.html#a3185c157636a142415699a20042d6dd8">size</a>; <span class="comment">/*the number of threads*/</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structthread__pool__t.html#a978e7f94032dad6e7a373e7bc1896237">   56</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structthread__pool__t.html#a978e7f94032dad6e7a373e7bc1896237">max_size</a>; <span class="comment">/*maxium number of threads*/</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structthread__pool__t.html#a80aa1805a11e2e6e2bf5811fda0ffc26">   57</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structthread__pool__t.html#a80aa1805a11e2e6e2bf5811fda0ffc26">min_size</a>; <span class="comment">/*minium numbers of threads*/</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structthread__pool__t.html#a815792ab9c936b06d46ef3e149e5fd88">   58</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structthread__pool__t.html#a815792ab9c936b06d46ef3e149e5fd88">low_level</a>; <span class="comment">/*the maxium proportion threshold of idle threads*/</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structthread__pool__t.html#aa771fc181f63c16346fff1c7eb0d9014">   59</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structthread__pool__t.html#aa771fc181f63c16346fff1c7eb0d9014">high_level</a>; <span class="comment">/*the minium proportion threshold of idle threads*/</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structthread__pool__t.html#ae3eaf8d90ef550166e595286a6175d14">   60</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structthread__pool__t.html#ae3eaf8d90ef550166e595286a6175d14">master_interval</a>; <span class="comment">/*the working interval of master thread*/</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}<a class="code" href="G-2313-06-P1__thread__pool_8h.html#a5f14d1f0d9a94d2e45b01104049529eb">thread_pool_t</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structthread__args.html">   63</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structthread__args.html">thread_args</a> {</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structthread__args.html#a425ced5f77dcbb52f61d240a4e207a27">   64</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structthread__pool__t.html">thread_pool_t</a>* <a class="code" href="structthread__args.html#a425ced5f77dcbb52f61d240a4e207a27">pool</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structthread__args.html#a191f3ea514283452d04bde31cde4c7ad">   65</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structthread__t.html">thread_t</a>* <a class="code" href="structthread__args.html#a191f3ea514283452d04bde31cde4c7ad">current</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}<a class="code" href="G-2313-06-P1__thread__pool_8h.html#ae7684b0001f8477707ef97e117e09d31">thread_args</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/*create a thread pool*/</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<a class="code" href="structthread__pool__t.html">thread_pool_t</a> *<a class="code" href="G-2313-06-P1__thread__pool_8h.html#ae4c7364510f378011559c4eb6078e3ea">thread_pool_create</a>(<span class="keywordtype">int</span> size);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P1__thread__pool_8h.html#a46b14e66a9466a68fa4f67a2e08e81fd">thread_pool_delete</a>(<a class="code" href="structthread__pool__t.html">thread_pool_t</a> *p);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">/*init the thread pool*/</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">int</span> <a class="code" href="G-2313-06-P1__thread__pool_8h.html#aa9d4a7977fc5b5b534b60415a3aa7311">thread_pool_init</a>(<a class="code" href="structthread__pool__t.html">thread_pool_t</a> *);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">/*init the thread pool internal*/</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">int</span> <a class="code" href="G-2313-06-P1__thread__pool_8h.html#a6f48d348c6ba66b0f85b6c0cb6d89737">thread_pool_init_internal</a>(<a class="code" href="structthread__pool__t.html">thread_pool_t</a> *, <span class="keywordtype">double</span> low_level, <span class="keywordtype">double</span> high_level, <span class="keywordtype">int</span> master_interval);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">/*the function which master thread executes*/</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> *<a class="code" href="G-2313-06-P1__thread__pool_8h.html#a54703c23462be974a5e2511247921922">master_callback</a>(<span class="keywordtype">void</span> *arg);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">/*the function which a worker thread executes*/</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">void</span> *<a class="code" href="G-2313-06-P1__thread__pool_8h.html#a4ef081fb21acd34e0e2492a9f290b6a3">worker_callback</a>(<span class="keywordtype">void</span> *arg);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">/*create a thread*/</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<a class="code" href="structthread__t.html">thread_t</a> *<a class="code" href="G-2313-06-P1__thread__pool_8h.html#a920e51bce81dfc069372dd87935db55e">thread_create</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/*add a thread to thread pool*/</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">int</span> <a class="code" href="G-2313-06-P1__thread__pool_8h.html#a4820a76ce58452afff503b4ae218be5c">thread_add</a>(<a class="code" href="structthread__pool__t.html">thread_pool_t</a> *, <a class="code" href="structthread__t.html">thread_t</a> *);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/*delete a thread in a thread pool*/</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P1__thread__pool_8h.html#aa2094f3613d648102f798506b1e86347">thread_del_internal</a>(<a class="code" href="structthread__pool__t.html">thread_pool_t</a> *, <a class="code" href="structthread__t.html">thread_t</a> *, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">/*the interface of deleting a thread*/</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P1__thread__pool_8h.html#a95970a6ee2f49963fc3fe7aefa677194">thread_del</a>(<a class="code" href="structthread__t.html">thread_t</a> *t);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/*create a task*/</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<a class="code" href="structtask__t.html">task_t</a> *<a class="code" href="G-2313-06-P1__thread__pool_8h.html#afa05870619a7e753d41b8135b8514a2c">task_create</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">/*init a task*/</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P1__thread__pool_8h.html#a7241a5097164175e730f610eaad0aa5a">task_init</a>(<a class="code" href="structtask__t.html">task_t</a> *, <span class="keywordtype">void</span>* (*)(<span class="keywordtype">int</span>), <span class="keywordtype">int</span> arg);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">/*add a task into a thread pool*/</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P1__thread__pool_8h.html#a113acb632971a3b3acd2cda2c4620bb3">task_add</a>(<a class="code" href="structthread__pool__t.html">thread_pool_t</a> *, <a class="code" href="structtask__t.html">task_t</a> *);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="structthread__t_html"><div class="ttname"><a href="structthread__t.html">thread_t</a></div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00035">G-2313-06-P1_thread_pool.h:35</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a95970a6ee2f49963fc3fe7aefa677194"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a95970a6ee2f49963fc3fe7aefa677194">thread_del</a></div><div class="ttdeci">void thread_del(thread_t *t)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00152">G-2313-06-P1_thread_pool.c:152</a></div></div>
+<div class="ttc" id="structthread__pool__t_html_a38a9fa0d0ea1060d5bbff8421a92c1c7"><div class="ttname"><a href="structthread__pool__t.html#a38a9fa0d0ea1060d5bbff8421a92c1c7">thread_pool_t::idle_queue</a></div><div class="ttdeci">struct list_head idle_queue</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00051">G-2313-06-P1_thread_pool.h:51</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a920e51bce81dfc069372dd87935db55e"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a920e51bce81dfc069372dd87935db55e">thread_create</a></div><div class="ttdeci">thread_t * thread_create(void)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00109">G-2313-06-P1_thread_pool.c:109</a></div></div>
+<div class="ttc" id="structtask__t_html_a9162b404bd1cf5349b2092f69e31c613"><div class="ttname"><a href="structtask__t.html#a9162b404bd1cf5349b2092f69e31c613">task_t::arg</a></div><div class="ttdeci">int arg</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00030">G-2313-06-P1_thread_pool.h:30</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a7241a5097164175e730f610eaad0aa5a"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a7241a5097164175e730f610eaad0aa5a">task_init</a></div><div class="ttdeci">void task_init(task_t *, void *(*)(int), int arg)</div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a5f14d1f0d9a94d2e45b01104049529eb"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a5f14d1f0d9a94d2e45b01104049529eb">thread_pool_t</a></div><div class="ttdeci">struct thread_pool_t thread_pool_t</div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a6e84f6599234bedf30a8b88f56e8fd48"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a6e84f6599234bedf30a8b88f56e8fd48">thread_t</a></div><div class="ttdeci">struct thread_t thread_t</div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a113acb632971a3b3acd2cda2c4620bb3"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a113acb632971a3b3acd2cda2c4620bb3">task_add</a></div><div class="ttdeci">void task_add(thread_pool_t *, task_t *)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00277">G-2313-06-P1_thread_pool.c:277</a></div></div>
+<div class="ttc" id="structthread__t_html_a03432229de426c5ba35d0dfa325491f0"><div class="ttname"><a href="structthread__t.html#a03432229de426c5ba35d0dfa325491f0">thread_t::worker_entry</a></div><div class="ttdeci">struct list_head worker_entry</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00044">G-2313-06-P1_thread_pool.h:44</a></div></div>
+<div class="ttc" id="structthread__pool__t_html_a00ce5a27204f85e624552f7448ba7093"><div class="ttname"><a href="structthread__pool__t.html#a00ce5a27204f85e624552f7448ba7093">thread_pool_t::task_next</a></div><div class="ttdeci">thread_t * task_next</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00054">G-2313-06-P1_thread_pool.h:54</a></div></div>
+<div class="ttc" id="structthread__args_html"><div class="ttname"><a href="structthread__args.html">thread_args</a></div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00063">G-2313-06-P1_thread_pool.h:63</a></div></div>
+<div class="ttc" id="structthread__args_html_a191f3ea514283452d04bde31cde4c7ad"><div class="ttname"><a href="structthread__args.html#a191f3ea514283452d04bde31cde4c7ad">thread_args::current</a></div><div class="ttdeci">struct thread_t * current</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00065">G-2313-06-P1_thread_pool.h:65</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a989e278a815d7ada960572a3e9fad896"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a989e278a815d7ada960572a3e9fad896">task_t</a></div><div class="ttdeci">struct task_t task_t</div></div>
+<div class="ttc" id="structthread__pool__t_html_a815792ab9c936b06d46ef3e149e5fd88"><div class="ttname"><a href="structthread__pool__t.html#a815792ab9c936b06d46ef3e149e5fd88">thread_pool_t::low_level</a></div><div class="ttdeci">double low_level</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00058">G-2313-06-P1_thread_pool.h:58</a></div></div>
+<div class="ttc" id="structlist__head_html"><div class="ttname"><a href="structlist__head.html">list_head</a></div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__list_8h_source.html#l00020">G-2313-06-P1_list.h:20</a></div></div>
+<div class="ttc" id="G-2313-06-P1__list_8h_html"><div class="ttname"><a href="G-2313-06-P1__list_8h.html">G-2313-06-P1_list.h</a></div></div>
+<div class="ttc" id="structthread__pool__t_html_aa771fc181f63c16346fff1c7eb0d9014"><div class="ttname"><a href="structthread__pool__t.html#aa771fc181f63c16346fff1c7eb0d9014">thread_pool_t::high_level</a></div><div class="ttdeci">double high_level</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00059">G-2313-06-P1_thread_pool.h:59</a></div></div>
+<div class="ttc" id="structthread__t_html_a6cb846b84c59d01a8b3a2693d39a4af1"><div class="ttname"><a href="structthread__t.html#a6cb846b84c59d01a8b3a2693d39a4af1">thread_t::cond</a></div><div class="ttdeci">pthread_cond_t cond</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00039">G-2313-06-P1_thread_pool.h:39</a></div></div>
+<div class="ttc" id="structthread__pool__t_html_aaa6e0a9d9c28c3f9be7eccbe8003af23"><div class="ttname"><a href="structthread__pool__t.html#aaa6e0a9d9c28c3f9be7eccbe8003af23">thread_pool_t::global</a></div><div class="ttdeci">pthread_mutex_t global</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00053">G-2313-06-P1_thread_pool.h:53</a></div></div>
+<div class="ttc" id="structthread__t_html_aa99eeab6834595bdff5a7da08314fd89"><div class="ttname"><a href="structthread__t.html#aa99eeab6834595bdff5a7da08314fd89">thread_t::queue_size</a></div><div class="ttdeci">int queue_size</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00042">G-2313-06-P1_thread_pool.h:42</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_aa2094f3613d648102f798506b1e86347"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#aa2094f3613d648102f798506b1e86347">thread_del_internal</a></div><div class="ttdeci">void thread_del_internal(thread_pool_t *, thread_t *, int)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00159">G-2313-06-P1_thread_pool.c:159</a></div></div>
+<div class="ttc" id="structthread__t_html_a69c932ede0de60b66a482fb735fca966"><div class="ttname"><a href="structthread__t.html#a69c932ede0de60b66a482fb735fca966">thread_t::task_queue</a></div><div class="ttdeci">struct list_head task_queue</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00043">G-2313-06-P1_thread_pool.h:43</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a4820a76ce58452afff503b4ae218be5c"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a4820a76ce58452afff503b4ae218be5c">thread_add</a></div><div class="ttdeci">int thread_add(thread_pool_t *, thread_t *)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00121">G-2313-06-P1_thread_pool.c:121</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a54703c23462be974a5e2511247921922"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a54703c23462be974a5e2511247921922">master_callback</a></div><div class="ttdeci">void * master_callback(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00222">G-2313-06-P1_thread_pool.c:222</a></div></div>
+<div class="ttc" id="structthread__pool__t_html_a3185c157636a142415699a20042d6dd8"><div class="ttname"><a href="structthread__pool__t.html#a3185c157636a142415699a20042d6dd8">thread_pool_t::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00055">G-2313-06-P1_thread_pool.h:55</a></div></div>
+<div class="ttc" id="structtask__t_html"><div class="ttname"><a href="structtask__t.html">task_t</a></div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00028">G-2313-06-P1_thread_pool.h:28</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a6f48d348c6ba66b0f85b6c0cb6d89737"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a6f48d348c6ba66b0f85b6c0cb6d89737">thread_pool_init_internal</a></div><div class="ttdeci">int thread_pool_init_internal(thread_pool_t *, double low_level, double high_level, int master_interval)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00064">G-2313-06-P1_thread_pool.c:64</a></div></div>
+<div class="ttc" id="structthread__pool__t_html_a9ad8218717dde39eef701a8bce5ca0a1"><div class="ttname"><a href="structthread__pool__t.html#a9ad8218717dde39eef701a8bce5ca0a1">thread_pool_t::master_thread</a></div><div class="ttdeci">thread_t * master_thread</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00052">G-2313-06-P1_thread_pool.h:52</a></div></div>
+<div class="ttc" id="structthread__t_html_a3e0780f1c2fc9932258a60b5043fe424"><div class="ttname"><a href="structthread__t.html#a3e0780f1c2fc9932258a60b5043fe424">thread_t::state</a></div><div class="ttdeci">int state</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00040">G-2313-06-P1_thread_pool.h:40</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_afa05870619a7e753d41b8135b8514a2c"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#afa05870619a7e753d41b8135b8514a2c">task_create</a></div><div class="ttdeci">task_t * task_create(void)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00259">G-2313-06-P1_thread_pool.c:259</a></div></div>
+<div class="ttc" id="structthread__pool__t_html_ae3eaf8d90ef550166e595286a6175d14"><div class="ttname"><a href="structthread__pool__t.html#ae3eaf8d90ef550166e595286a6175d14">thread_pool_t::master_interval</a></div><div class="ttdeci">int master_interval</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00060">G-2313-06-P1_thread_pool.h:60</a></div></div>
+<div class="ttc" id="structthread__t_html_a9386032d478cacdfd680d5691e0eb9d3"><div class="ttname"><a href="structthread__t.html#a9386032d478cacdfd680d5691e0eb9d3">thread_t::idle_entry</a></div><div class="ttdeci">struct list_head idle_entry</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00045">G-2313-06-P1_thread_pool.h:45</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_ae7684b0001f8477707ef97e117e09d31"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#ae7684b0001f8477707ef97e117e09d31">thread_args</a></div><div class="ttdeci">struct thread_args thread_args</div></div>
+<div class="ttc" id="structthread__pool__t_html_a978e7f94032dad6e7a373e7bc1896237"><div class="ttname"><a href="structthread__pool__t.html#a978e7f94032dad6e7a373e7bc1896237">thread_pool_t::max_size</a></div><div class="ttdeci">int max_size</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00056">G-2313-06-P1_thread_pool.h:56</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a46b14e66a9466a68fa4f67a2e08e81fd"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a46b14e66a9466a68fa4f67a2e08e81fd">thread_pool_delete</a></div><div class="ttdeci">void thread_pool_delete(thread_pool_t *p)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00027">G-2313-06-P1_thread_pool.c:27</a></div></div>
+<div class="ttc" id="structthread__t_html_abb0dcb82ff12b61776b74c76fa27c964"><div class="ttname"><a href="structthread__t.html#abb0dcb82ff12b61776b74c76fa27c964">thread_t::mutex</a></div><div class="ttdeci">pthread_mutex_t mutex</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00038">G-2313-06-P1_thread_pool.h:38</a></div></div>
+<div class="ttc" id="structthread__pool__t_html_a80aa1805a11e2e6e2bf5811fda0ffc26"><div class="ttname"><a href="structthread__pool__t.html#a80aa1805a11e2e6e2bf5811fda0ffc26">thread_pool_t::min_size</a></div><div class="ttdeci">int min_size</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00057">G-2313-06-P1_thread_pool.h:57</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_a4ef081fb21acd34e0e2492a9f290b6a3"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#a4ef081fb21acd34e0e2492a9f290b6a3">worker_callback</a></div><div class="ttdeci">void * worker_callback(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00171">G-2313-06-P1_thread_pool.c:171</a></div></div>
+<div class="ttc" id="structthread__args_html_a425ced5f77dcbb52f61d240a4e207a27"><div class="ttname"><a href="structthread__args.html#a425ced5f77dcbb52f61d240a4e207a27">thread_args::pool</a></div><div class="ttdeci">struct thread_pool_t * pool</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00064">G-2313-06-P1_thread_pool.h:64</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_aa9d4a7977fc5b5b534b60415a3aa7311"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#aa9d4a7977fc5b5b534b60415a3aa7311">thread_pool_init</a></div><div class="ttdeci">int thread_pool_init(thread_pool_t *)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00058">G-2313-06-P1_thread_pool.c:58</a></div></div>
+<div class="ttc" id="structtask__t_html_ac812553758f9102a7a674ad29e78f98b"><div class="ttname"><a href="structtask__t.html#ac812553758f9102a7a674ad29e78f98b">task_t::entry</a></div><div class="ttdeci">struct list_head entry</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00032">G-2313-06-P1_thread_pool.h:32</a></div></div>
+<div class="ttc" id="structthread__t_html_a8e9f0fd028676d0ebeef8438f2176bb7"><div class="ttname"><a href="structthread__t.html#a8e9f0fd028676d0ebeef8438f2176bb7">thread_t::stop</a></div><div class="ttdeci">int stop</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00041">G-2313-06-P1_thread_pool.h:41</a></div></div>
+<div class="ttc" id="structthread__pool__t_html"><div class="ttname"><a href="structthread__pool__t.html">thread_pool_t</a></div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00048">G-2313-06-P1_thread_pool.h:48</a></div></div>
+<div class="ttc" id="structthread__pool__t_html_a44640e57780a54d437d7589b1c754ac1"><div class="ttname"><a href="structthread__pool__t.html#a44640e57780a54d437d7589b1c754ac1">thread_pool_t::worker_queue</a></div><div class="ttdeci">struct list_head worker_queue</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00050">G-2313-06-P1_thread_pool.h:50</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html_ae4c7364510f378011559c4eb6078e3ea"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html#ae4c7364510f378011559c4eb6078e3ea">thread_pool_create</a></div><div class="ttdeci">thread_pool_t * thread_pool_create(int size)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8c_source.html#l00003">G-2313-06-P1_thread_pool.c:3</a></div></div>
+<div class="ttc" id="structthread__t_html_a92c076d58ca307499452b8dfe0c4e598"><div class="ttname"><a href="structthread__t.html#a92c076d58ca307499452b8dfe0c4e598">thread_t::tid</a></div><div class="ttdeci">pthread_t tid</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__thread__pool_8h_source.html#l00037">G-2313-06-P1_thread_pool.h:37</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="G-2313-06-P1__thread__pool_8h.html">G-2313-06-P1_thread_pool.h</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

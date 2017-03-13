@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Redes de Comunicaciones II: Fichero Fuente includes/G-2313-06-P1_server.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo-eps.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Redes de Comunicaciones II
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Documentación de prácticas 1, 2 y 3 generada por Jorge Parrilla y Javier de Marco.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('G-2313-06-P1__server_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">G-2313-06-P1_server.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="G-2313-06-P1__server_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;errno.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;sys/time.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;sys/socket.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;sys/stat.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;netinet/in.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;syslog.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;strings.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;signal.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;arpa/inet.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;redes2/irc.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;netdb.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/* Custom includes */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="G-2313-06-P1__function__handlers_8h.html">G-2313-06-P1_function_handlers.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="G-2313-06-P1__common__functions_8h.html">G-2313-06-P1_common_functions.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="G-2313-06-P1__list_8h.html">G-2313-06-P1_list.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="G-2313-06-P1__thread__pool_8h.html">G-2313-06-P1_thread_pool.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="G-2313-06-P1__server_8h.html#a80c7be19e867e55f90be3fa66cf65300">   26</a></span>&#160;<span class="preprocessor">#define MIN_POOL_THREADS        3</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="G-2313-06-P1__server_8h.html#a053b7859476cc9867ec62c49e68d3fa1">   27</a></span>&#160;<span class="preprocessor">#define MAX_CONNECTIONS         100</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="G-2313-06-P1__server_8h.html#ac42367fe5c999ec6650de83e9d72fe8c">   28</a></span>&#160;<span class="preprocessor">#define SERVER_PORT             6667</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="G-2313-06-P1__server_8h.html#a97ed8e840fc4086fc86554e6d1277ca8">   29</a></span>&#160;<span class="preprocessor">#define CLIENT_MESSAGE_MAXSIZE  8096</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">int</span> <a class="code" href="G-2313-06-P1__server_8h.html#a85f40553bba77ada6c4329db58f68630">server_start</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P1__server_8h.html#ab201db206f26ab6fb26bb0e36dac4589">server_accept_connection</a>(<span class="keywordtype">int</span> socket_id);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> *<a class="code" href="G-2313-06-P1__server_8h.html#a567404fb6edb67d9035359fef8e5acf3">server_start_communication</a>(<span class="keywordtype">int</span> connval);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P1__server_8h.html#a0e947005d451a8f3bf3af01f54b59f11">server_exit</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P1__server_8h.html#a775161328c3264fb8f96981f7a9c83ae">server_execute_function</a>(<span class="keywordtype">long</span> functionName, <span class="keywordtype">char</span>* command, <span class="keywordtype">int</span> desc, <span class="keywordtype">char</span> * nick, <span class="keywordtype">int</span> * register_status);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">int</span> <a class="code" href="G-2313-06-P1__server_8h.html#a64f1fffc5903ccf0350845cd21a95b6e">server_check_socket_status</a>(<span class="keywordtype">int</span> socket_desc);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P1__server_8h.html#aa0e8000b12d9c52fc1e87847d00c9c47">server_daemon</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P1__server_8h.html#a48d522cd984dc64ecd084f05416b1a94">server_start_pool</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/* Tipos */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="G-2313-06-P1__server_8h.html#ae102cd0a63430b827183f70ce476a887">   41</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="G-2313-06-P1__server_8h.html#ae102cd0a63430b827183f70ce476a887">FunctionCallBack</a>)(<span class="keywordtype">char</span> *, int, <span class="keywordtype">char</span> *, <span class="keywordtype">int</span> *);</div>
+<div class="ttc" id="G-2313-06-P1__server_8h_html_a567404fb6edb67d9035359fef8e5acf3"><div class="ttname"><a href="G-2313-06-P1__server_8h.html#a567404fb6edb67d9035359fef8e5acf3">server_start_communication</a></div><div class="ttdeci">void * server_start_communication(int connval)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__server_8c_source.html#l00252">G-2313-06-P1_server.c:252</a></div></div>
+<div class="ttc" id="G-2313-06-P1__server_8h_html_ab201db206f26ab6fb26bb0e36dac4589"><div class="ttname"><a href="G-2313-06-P1__server_8h.html#ab201db206f26ab6fb26bb0e36dac4589">server_accept_connection</a></div><div class="ttdeci">void server_accept_connection(int socket_id)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__server_8c_source.html#l00171">G-2313-06-P1_server.c:171</a></div></div>
+<div class="ttc" id="G-2313-06-P1__server_8h_html_a85f40553bba77ada6c4329db58f68630"><div class="ttname"><a href="G-2313-06-P1__server_8h.html#a85f40553bba77ada6c4329db58f68630">server_start</a></div><div class="ttdeci">int server_start(void)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__server_8c_source.html#l00101">G-2313-06-P1_server.c:101</a></div></div>
+<div class="ttc" id="G-2313-06-P1__server_8h_html_a775161328c3264fb8f96981f7a9c83ae"><div class="ttname"><a href="G-2313-06-P1__server_8h.html#a775161328c3264fb8f96981f7a9c83ae">server_execute_function</a></div><div class="ttdeci">void server_execute_function(long functionName, char *command, int desc, char *nick, int *register_status)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__server_8c_source.html#l00368">G-2313-06-P1_server.c:368</a></div></div>
+<div class="ttc" id="G-2313-06-P1__function__handlers_8h_html"><div class="ttname"><a href="G-2313-06-P1__function__handlers_8h.html">G-2313-06-P1_function_handlers.h</a></div></div>
+<div class="ttc" id="G-2313-06-P1__server_8h_html_a64f1fffc5903ccf0350845cd21a95b6e"><div class="ttname"><a href="G-2313-06-P1__server_8h.html#a64f1fffc5903ccf0350845cd21a95b6e">server_check_socket_status</a></div><div class="ttdeci">int server_check_socket_status(int socket_desc)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__server_8c_source.html#l00473">G-2313-06-P1_server.c:473</a></div></div>
+<div class="ttc" id="G-2313-06-P1__list_8h_html"><div class="ttname"><a href="G-2313-06-P1__list_8h.html">G-2313-06-P1_list.h</a></div></div>
+<div class="ttc" id="G-2313-06-P1__server_8h_html_a0e947005d451a8f3bf3af01f54b59f11"><div class="ttname"><a href="G-2313-06-P1__server_8h.html#a0e947005d451a8f3bf3af01f54b59f11">server_exit</a></div><div class="ttdeci">void server_exit()</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__server_8c_source.html#l00436">G-2313-06-P1_server.c:436</a></div></div>
+<div class="ttc" id="G-2313-06-P1__server_8h_html_ae102cd0a63430b827183f70ce476a887"><div class="ttname"><a href="G-2313-06-P1__server_8h.html#ae102cd0a63430b827183f70ce476a887">FunctionCallBack</a></div><div class="ttdeci">void(* FunctionCallBack)(char *, int, char *, int *)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__server_8h_source.html#l00041">G-2313-06-P1_server.h:41</a></div></div>
+<div class="ttc" id="G-2313-06-P1__thread__pool_8h_html"><div class="ttname"><a href="G-2313-06-P1__thread__pool_8h.html">G-2313-06-P1_thread_pool.h</a></div></div>
+<div class="ttc" id="G-2313-06-P1__server_8h_html_a48d522cd984dc64ecd084f05416b1a94"><div class="ttname"><a href="G-2313-06-P1__server_8h.html#a48d522cd984dc64ecd084f05416b1a94">server_start_pool</a></div><div class="ttdeci">void server_start_pool()</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__server_8c_source.html#l00558">G-2313-06-P1_server.c:558</a></div></div>
+<div class="ttc" id="G-2313-06-P1__common__functions_8h_html"><div class="ttname"><a href="G-2313-06-P1__common__functions_8h.html">G-2313-06-P1_common_functions.h</a></div></div>
+<div class="ttc" id="G-2313-06-P1__server_8h_html_aa0e8000b12d9c52fc1e87847d00c9c47"><div class="ttname"><a href="G-2313-06-P1__server_8h.html#aa0e8000b12d9c52fc1e87847d00c9c47">server_daemon</a></div><div class="ttdeci">void server_daemon()</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__server_8c_source.html#l00518">G-2313-06-P1_server.c:518</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="G-2313-06-P1__server_8h.html">G-2313-06-P1_server.h</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

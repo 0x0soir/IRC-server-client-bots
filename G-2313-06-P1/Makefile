@@ -1,27 +1,25 @@
 #Makefile Jorge y Javi
-#Nombre de ejecutable
-
 GROUP=G-2313-06-P1
 
 #Ficheros para la realizacion de la compilacion
-SRCDIR = src/server.c
-SRCDIR += includes/server.h
-SRCDIR += srclib/common_functions.c
-SRCDIR += includes/common_functions.h
-SRCDIR += srclib/function_handlers.c
-SRCDIR += includes/function_handlers.h
-SRCDIR += srclib/thread_pool.c
-SRCDIR += includes/list.h
-SRCDIR += includes/thread_pool.h
+SRCDIR = src/$(GROUP)_server.c
+SRCDIR += includes/$(GROUP)_server.h
+SRCDIR += src/$(GROUP)_common_functions.c
+SRCDIR += includes/$(GROUP)_common_functions.h
+SRCDIR += src/$(GROUP)_function_handlers.c
+SRCDIR += includes/$(GROUP)_function_handlers.h
+SRCDIR += src/$(GROUP)_thread_pool.c
+SRCDIR += includes/$(GROUP)_list.h
+SRCDIR += includes/$(GROUP)_thread_pool.h
 
 #Flags para el compilador
-FFLAGS= -Wall -pedantic -pthread
+FFLAGS= -Wall -pedantic -pthread -w
 REDESLIB= -lircredes -lirctad -lircinterface -lsoundredes
 
 #Comienzo del makefile
 #Regla All: compila todo el programa
 
-all: server
+all: clean tar server
 
 server:
 	@echo "\033[31mCompilando ejecutable...\033[00m"
@@ -31,9 +29,10 @@ server:
 #Regla clean: limpia el directorio del ficheros temporales
 clean:
 	@echo "Borrando ficheros temporales"
-	rm -rf *.o $(GROUP)
-
+	rm -rf obj/*.o $(GROUP)
+	rm -rf objlib/*.o $(GROUP)
+	rm -rf $(GROUP)
 tar:
 	@echo "\033[31mComprimiendo...\033[00m"
-	tar --exclude .git -czvf $(GROUP).tar.gz ../$(GROUP) --exclude $(GROUP).tar.gz
-	@echo "\033[32mFichero comprimido: $(GROUP)\033[00m"
+	tar --exclude .git -czf $(GROUP).tar.gz ../$(GROUP) --exclude $(GROUP).tar.gz
+	@echo "\033[32mFichero comprimido: $(GROUP).tar.gz\033[00m"

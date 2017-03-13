@@ -1,0 +1,45 @@
+.TH "server_command_whois" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_command_whois \- server_command_whois 
+Función handler del comando WHOIS del IRC\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_function_handlers\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_command_whois(char* command, int desc, char * nick_static, int* register_status)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBParse:\fP Comprueba que el parseo del comando WHOIS sea correcto\&. 
+.PP
+.PP
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBDevolución de información del usuario:\fP Si se especifica un usuario, la función devuelve la información de dicho usuario mediante un mensaje generado con la función del TAD \fBIRCMsg_RplWhoIsUser\fP\&.  
+.IP "\(bu" 2
+\fBMensaje de error:\fP Si no se especifica un usuario para el WHOIS, la función devuelve al usuario un mensaje de confirmación utilizando la función del TAD \fBIRCMsg_ErrNoNickNameGiven\fP\&.  
+.PP
+.PP
+Al finalizar el flujo de la función se liberan los recursos utilizados\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

@@ -1,0 +1,28 @@
+.TH "server_common_functions" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_common_functions \- Funciones auxiliares 
+Esta sección incluye las funciones auxiliares utilizadas por los comandos para obtener datos de los usuarios como por ejemplo el nick, username, etc\&. Además incluye funciones para buscar coincidencias por un descriptor del socket de un cliente o si un canal existe con un nombre dado\&.
+.SH "Cabeceras"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_common_functions\&.h\fP>\fP \fP 
+.SH "Funciones implementadas"
+.PP
+Se incluyen las siguientes funciones: 
+.PD 0
+
+.IP "\(bu" 2
+\fBserver_users_find_by_nick\fP 
+.IP "\(bu" 2
+\fBserver_users_find_by_socket\fP 
+.IP "\(bu" 2
+\fBserver_channels_find_by_name\fP 
+.IP "\(bu" 2
+\fBserver_channels_update_nick\fP 
+.IP "\(bu" 2
+\fBserver_channels_update_away\fP 
+.IP "\(bu" 2
+\fBserver_return_user\fP 
+.PP
+

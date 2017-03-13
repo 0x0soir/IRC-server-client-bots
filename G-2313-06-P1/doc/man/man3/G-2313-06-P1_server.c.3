@@ -1,0 +1,96 @@
+.TH "src/G-2313-06-P1_server.c" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/G-2313-06-P1_server.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./includes/G-2313-06-P1_server\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBserver_start\fP ()"
+.br
+.ti -1c
+.RI "void \fBserver_accept_connection\fP (int socket_desc)"
+.br
+.ti -1c
+.RI "void * \fBserver_start_communication\fP (int socket_desc)"
+.br
+.ti -1c
+.RI "void \fBserver_execute_function\fP (long functionName, char *command, int desc, char *nick, int *register_status)"
+.br
+.ti -1c
+.RI "void \fBserver_exit\fP ()"
+.br
+.ti -1c
+.RI "int \fBserver_check_socket_status\fP (int socket_desc)"
+.br
+.ti -1c
+.RI "void \fBserver_daemon\fP ()"
+.br
+.ti -1c
+.RI "void \fBserver_start_pool\fP ()"
+.br
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBthread_pool_t\fP * \fBpool\fP = NULL"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "int main ()"
+
+.PP
+Definición en la línea 565 del archivo G-2313-06-P1_server\&.c\&.
+.SS "void server_accept_connection (int socket_desc)"
+
+.PP
+Definición en la línea 171 del archivo G-2313-06-P1_server\&.c\&.
+.SS "int server_check_socket_status (int socket_desc)"
+
+.PP
+Definición en la línea 473 del archivo G-2313-06-P1_server\&.c\&.
+.SS "void server_daemon ()"
+
+.PP
+Definición en la línea 518 del archivo G-2313-06-P1_server\&.c\&.
+.SS "void server_execute_function (long functionName, char * command, int desc, char * nick, int * register_status)"
+
+.PP
+Definición en la línea 368 del archivo G-2313-06-P1_server\&.c\&.
+.SS "void server_exit ()"
+
+.PP
+Definición en la línea 436 del archivo G-2313-06-P1_server\&.c\&.
+.SS "int server_start (void)"
+
+.PP
+Definición en la línea 101 del archivo G-2313-06-P1_server\&.c\&.
+.SS "void* server_start_communication (int socket_desc)"
+
+.PP
+Definición en la línea 252 del archivo G-2313-06-P1_server\&.c\&.
+.SS "void server_start_pool ()"
+
+.PP
+Definición en la línea 558 del archivo G-2313-06-P1_server\&.c\&.
+.SH "Documentación de las variables"
+.PP 
+.SS "\fBthread_pool_t\fP* pool = NULL"
+
+.PP
+Definición en la línea 51 del archivo G-2313-06-P1_server\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

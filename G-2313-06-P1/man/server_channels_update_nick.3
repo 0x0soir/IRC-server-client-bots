@@ -1,0 +1,31 @@
+.TH "server_channels_update_nick" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_channels_update_nick \- server_channels_update_nick 
+Actualiza el nick de un usuario\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_common_functions\&.h\fP>\fP 
+.br
+ \fBint server_channels_update_nick(char \fInick_old, char\fP nick_new)\fP \fP 
+.SH "Descripción"
+.PP
+Actualiza el nick de un usuario mediante la función del TAD \fBIRCTADUser_Set\fP para actualizar datos de los usuarios\&. 
+.PP
+Comprueba previamente que el usuario exista mediante la función \fBIRCTADUser_GetData\fP utilizando los parámetros recibidos \fBchar *nick_old\fP y \fBchar *nick_new\fP\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBint\fP Devuelve valor verdado/falso dependiendo de la búsqueda\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

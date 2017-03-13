@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Redes de Comunicaciones II: Referencia del Archivo includes/G-2313-06-P1_common_functions.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo-eps.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Redes de Comunicaciones II
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Documentación de prácticas 1, 2 y 3 generada por Jorge Parrilla y Javier de Marco.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('G-2313-06-P1__common__functions_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo G-2313-06-P1_common_functions.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;sys/socket.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &lt;netinet/in.h&gt;</code><br />
+<code>#include &lt;syslog.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;strings.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;arpa/inet.h&gt;</code><br />
+<code>#include &lt;redes2/irc.h&gt;</code><br />
+<code>#include &lt;netdb.h&gt;</code><br />
+<code>#include &lt;pthread.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para G-2313-06-P1_common_functions.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="G-2313-06-P1__common__functions_8h__incl.png" border="0" usemap="#includes_2G-2313-06-P1__common__functions_8h" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="G-2313-06-P1__common__functions_8h__dep__incl.png" border="0" usemap="#includes_2G-2313-06-P1__common__functions_8hdep" alt=""/></div>
+<map name="includes_2G-2313-06-P1__common__functions_8hdep" id="includes_2G-2313-06-P1__common__functions_8hdep">
+<area shape="rect" id="node2" href="G-2313-06-P1__function__handlers_8h.html" title="includes/G&#45;2313&#45;06\l&#45;P1_function_handlers.h" alt="" coords="132,95,295,136"/><area shape="rect" id="node3" href="G-2313-06-P1__server_8h.html" title="includes/G&#45;2313&#45;06\l&#45;P1_server.h" alt="" coords="27,184,162,225"/><area shape="rect" id="node6" href="G-2313-06-P1__common__functions_8c.html" title="src/G&#45;2313&#45;06&#45;P1_common\l_functions.c" alt="" coords="319,95,500,136"/><area shape="rect" id="node5" href="G-2313-06-P1__function__handlers_8c.html" title="src/G&#45;2313&#45;06&#45;P1_function\l_handlers.c" alt="" coords="186,184,363,225"/><area shape="rect" id="node4" href="G-2313-06-P1__server_8c.html" title="src/G&#45;2313&#45;06&#45;P1_server.c" alt="" coords="5,273,184,300"/></map>
+</div>
+</div>
+<p><a href="G-2313-06-P1__common__functions_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a61cca6f1a1adeb81f722ecc2ff35aab5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P1__common__functions_8h.html#a61cca6f1a1adeb81f722ecc2ff35aab5">server_users_find_by_nick</a> (char *data)</td></tr>
+<tr class="separator:a61cca6f1a1adeb81f722ecc2ff35aab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485e68f66db6ae4b7297d99c32afe30a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P1__common__functions_8h.html#a485e68f66db6ae4b7297d99c32afe30a">server_users_find_by_socket</a> (int sockdesc)</td></tr>
+<tr class="separator:a485e68f66db6ae4b7297d99c32afe30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a875ae5278d95716b494b26f96cf4ae6e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P1__common__functions_8h.html#a875ae5278d95716b494b26f96cf4ae6e">server_channels_find_by_name</a> (char *channel)</td></tr>
+<tr class="separator:a875ae5278d95716b494b26f96cf4ae6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8a282d9cdfc8187b8e74e368bc56d92"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P1__common__functions_8h.html#ae8a282d9cdfc8187b8e74e368bc56d92">server_channels_update_nick</a> (char *nick_old, char *nick_new)</td></tr>
+<tr class="separator:ae8a282d9cdfc8187b8e74e368bc56d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9aeb632d55a4cbbe842ab97001b5128"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P1__common__functions_8h.html#af9aeb632d55a4cbbe842ab97001b5128">server_channels_update_away</a> (char *nick, char *away)</td></tr>
+<tr class="separator:af9aeb632d55a4cbbe842ab97001b5128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c6f52d9a2461877178a1a0905d14ea9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P1__common__functions_8h.html#a5c6f52d9a2461877178a1a0905d14ea9">server_channels_update_whois</a> (char *nick, char *away)</td></tr>
+<tr class="separator:a5c6f52d9a2461877178a1a0905d14ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a230bf24ab7ae18d2e81ebc1d3575a6ad"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P1__common__functions_8h.html#a230bf24ab7ae18d2e81ebc1d3575a6ad">server_return_user</a> (char *nick)</td></tr>
+<tr class="separator:a230bf24ab7ae18d2e81ebc1d3575a6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a class="anchor" id="a875ae5278d95716b494b26f96cf4ae6e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int server_channels_find_by_name </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P1__common__functions_8c_source.html#l00178">178</a> del archivo <a class="el" href="G-2313-06-P1__common__functions_8c_source.html">G-2313-06-P1_common_functions.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af9aeb632d55a4cbbe842ab97001b5128"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int server_channels_update_away </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>away</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P1__common__functions_8c_source.html#l00275">275</a> del archivo <a class="el" href="G-2313-06-P1__common__functions_8c_source.html">G-2313-06-P1_common_functions.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae8a282d9cdfc8187b8e74e368bc56d92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int server_channels_update_nick </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick_new</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P1__common__functions_8c_source.html#l00221">221</a> del archivo <a class="el" href="G-2313-06-P1__common__functions_8c_source.html">G-2313-06-P1_common_functions.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c6f52d9a2461877178a1a0905d14ea9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int server_channels_update_whois </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>away</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a230bf24ab7ae18d2e81ebc1d3575a6ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* server_return_user </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P1__common__functions_8c_source.html#l00327">327</a> del archivo <a class="el" href="G-2313-06-P1__common__functions_8c_source.html">G-2313-06-P1_common_functions.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a61cca6f1a1adeb81f722ecc2ff35aab5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int server_users_find_by_nick </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P1__common__functions_8c_source.html#l00052">52</a> del archivo <a class="el" href="G-2313-06-P1__common__functions_8c_source.html">G-2313-06-P1_common_functions.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a485e68f66db6ae4b7297d99c32afe30a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int server_users_find_by_socket </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockdesc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P1__common__functions_8c_source.html#l00113">113</a> del archivo <a class="el" href="G-2313-06-P1__common__functions_8c_source.html">G-2313-06-P1_common_functions.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="G-2313-06-P1__common__functions_8h.html">G-2313-06-P1_common_functions.h</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

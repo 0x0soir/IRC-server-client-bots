@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.9.1"/>
+<title>Redes de Comunicaciones II: server_start_communication</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo-eps.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Redes de Comunicaciones II
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Documentación de prácticas 1, 2 y 3 generada por Jorge Parrilla y Javier de Marco.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.9.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li class="current"><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('server_start_communication.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">server_start_communication </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Ejecuta el control (main) principal para cada hilo.</p>
+<h1><a class="anchor" id="synopsis4"></a>
+Synopsis</h1>
+<p><code> <b>#include</b> <b>&lt;<a class="el" href="G-2313-06-P1__server_8h.html">G-2313-06-P1_server.h</a>&gt;</b> <br />
+ <b>void *server_start_communication(int socket_desc)</b> </code> </p>
+<h1><a class="anchor" id="descripcion4"></a>
+Descripción</h1>
+<p>Contiene el código que ejecutan los hijos al recibir la conexión de un cliente en <b><a class="el" href="G-2313-06-P1__server_8c.html#aaac8642d2e699e0f9d942d28a9b233c2">server_accept_connection()</a></b>. Declara varias variables que se pasan como parámetros al resto de funciones utilizadas para el parseo de comandos:</p>
+<ul>
+<li>
+<b>char *nick:</b> Almacena el nick del personaje, se reserva memoria y se pasa como puntero a las funciones de parseo de comandos en la que la función destinada al comando nick utilizará un <b>strcpy</b> para actualizar dicho valor. </li>
+<li>
+<b>int *register_status:</b> Entero que representa el estado actual del cliente del hilo, sirve de control para las funciones de parseo y cierre de socket: <ul>
+<li>
+0: Indica que no se ha efectuado un registro válido del usuario (comando NICK y USER). </li>
+<li>
+1: Indica que se ha parseado correctamente el nick y es posible realizar el registro del usuario (comando USER). </li>
+<li>
+2: Indica que se ha registrado correctamente usuario y es posible realizar cualquier otro comando del IRC. Sirve de control para no ejecutar otros comandos hasta que el usuario no envíe los comandos válidos (NICK y USER) para el registro. A su vez, esto permitirá que en caso de cerrarse el socket se comprobará que si el valor de esta variable es 2 se utilizará la función del TAD para eliminar al usuario de la lista. </li>
+</ul>
+</li>
+</ul>
+<p>Contiene un bucle que comprueba si el socket sigue abierto y parsea los comandos del usuario mediante las funciones apropiadas para ello (<b>IRC_UnPipelineCommands y IRC_CommandQuery</b>). Dichos comandos parseados envían a la función <b>server_execute_function</b> que contiene un array de punteros a función para redirigir cada comando a su función apropiada.</p>
+<p>Una vez se detecta que el socket se ha cerrado, se elimina al usuario del TAD en caso de que <b>register_status</b> tenga el valor adecuado (2) y se liberan los punteros reservados para este hilo.</p>
+<h1><a class="anchor" id="return4"></a>
+Valores devueltos</h1>
+<ul>
+<li>
+<b>void</b> No devuelve nada. </li>
+</ul>
+<h1><a class="anchor" id="authors4"></a>
+Autores</h1>
+<ul>
+<li>
+Jorge Parrilla Llamas (<a href="#" onclick="location.href='mai'+'lto:'+'jor'+'ge'+'.pa'+'rr'+'ill'+'a@'+'est'+'ud'+'ian'+'te'+'.ua'+'m.'+'es'; return false;">jorge<span style="display: none;">.nosp@m.</span>.par<span style="display: none;">.nosp@m.</span>rilla<span style="display: none;">.nosp@m.</span>@est<span style="display: none;">.nosp@m.</span>udian<span style="display: none;">.nosp@m.</span>te.u<span style="display: none;">.nosp@m.</span>am.es</a>) </li>
+<li>
+Javier de Marco Tomás (<a href="#" onclick="location.href='mai'+'lto:'+'jav'+'ie'+'r.m'+'ar'+'co@'+'es'+'tud'+'ia'+'nte'+'.u'+'am.'+'es'; return false;">javie<span style="display: none;">.nosp@m.</span>r.ma<span style="display: none;">.nosp@m.</span>rco@e<span style="display: none;">.nosp@m.</span>stud<span style="display: none;">.nosp@m.</span>iante<span style="display: none;">.nosp@m.</span>.uam<span style="display: none;">.nosp@m.</span>.es</a>) </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="index.html">P1 - Servidor IRC</a></li><li class="navelem"><a class="el" href="server_connection.html">Conexión del servidor</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

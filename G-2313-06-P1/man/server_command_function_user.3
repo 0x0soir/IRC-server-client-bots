@@ -1,0 +1,49 @@
+.TH "server_command_user" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_command_user \- server_command_user 
+Función handler del comando USER del IRC\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_function_handlers\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_command_user(char* command, int desc, char * nick_static, int* register_status)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBregister_status:\fP Comprueba que el valor sea igual a 1 (es decir, el usuario ha parseado el NICK de forma correcta previamente)\&. 
+.PP
+.PP
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBCreación de usuario\fP Es decir, añade el usuario a la lista de usuarios y lo registra de forma correcta mediante la función del TAD \fBIRCTADUser_New\fP\&. 
+.br
+Condición necesaria: El valor de register_status tiene que ser 1 (es decir, nick \fBparseado\fP correctamente de forma previa)\&.  
+.IP "\(bu" 2
+\fBDevuelve mensaje:\fP Es decir, en caso de que se haya registrado de forma correcta, se devuelve al usuario un mensaje de bienvenida mediante la función del TAD \fBIRCMsg_RplWelcome\fP mediante el descriptor del socket y la función \fBsend()\fP\&. 
+.br
+Condición necesaria: La función \fBIRCMsg_RplWelcome\fP debe devolver IRC_OK\&.  
+.PP
+.PP
+Tras finalizar este flujo, la función actualiza el valor del puntero de \fBregister_status\fP a 2, es decir, confirma que el usuario se ha registrado de forma correcta para futuras comprobaciones\&. 
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

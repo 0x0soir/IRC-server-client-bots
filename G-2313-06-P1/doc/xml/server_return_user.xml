@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="server_return_user" kind="page">
+    <compoundname>server_return_user</compoundname>
+    <title>server_return_user</title>
+    <detaileddescription>
+<para>Devuelve el username de un usuario.</para><sect1 id="server_return_user_1synopsis_server_return_user">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P1__common__functions_8h" kindref="compound">G-2313-06-P1_common_functions.h</ref>&gt;</bold> <linebreak/>
+ <bold>char* <ref refid="G-2313-06-P1__common__functions_8c_1a230bf24ab7ae18d2e81ebc1d3575a6ad" kindref="member">server_return_user(char* nick)</ref></bold> </computeroutput> </para></sect1>
+<sect1 id="server_return_user_1descripcion_server_return_user">
+<title>Descripción</title>
+<para>Devuelve el username de un usuario utilizando la función del TAD <bold>IRCTADUser_GetData</bold> para obtener información de los usuarios mediante el parámetro recibido <bold>char *nick</bold>. </para></sect1>
+<sect1 id="server_return_user_1return_server_return_user">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>char*</bold> Devuelve un puntero al username del usuario. </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_return_user_1authors_server_return_user">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

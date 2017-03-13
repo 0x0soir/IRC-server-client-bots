@@ -1,0 +1,111 @@
+.TH "src/G-2313-06-P1_thread_pool.c" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/G-2313-06-P1_thread_pool.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./includes/G-2313-06-P1_thread_pool\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "\fBthread_pool_t\fP * \fBthread_pool_create\fP (int size)"
+.br
+.ti -1c
+.RI "void \fBthread_pool_delete\fP (\fBthread_pool_t\fP *p)"
+.br
+.ti -1c
+.RI "int \fBthread_pool_init\fP (\fBthread_pool_t\fP *p)"
+.br
+.ti -1c
+.RI "int \fBthread_pool_init_internal\fP (\fBthread_pool_t\fP *p, double low_level, double high_level, int master_interval)"
+.br
+.ti -1c
+.RI "\fBthread_t\fP * \fBthread_create\fP (void)"
+.br
+.ti -1c
+.RI "int \fBthread_add\fP (\fBthread_pool_t\fP *p, \fBthread_t\fP *t)"
+.br
+.ti -1c
+.RI "void \fBthread_del\fP (\fBthread_t\fP *t)"
+.br
+.ti -1c
+.RI "void \fBthread_del_internal\fP (\fBthread_pool_t\fP *p, \fBthread_t\fP *t, int force_lock)"
+.br
+.ti -1c
+.RI "void * \fBworker_callback\fP (void *arg)"
+.br
+.ti -1c
+.RI "void * \fBmaster_callback\fP (void *arg)"
+.br
+.ti -1c
+.RI "\fBtask_t\fP * \fBtask_create\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtask_init\fP (\fBtask_t\fP *t, void *(*task_callback)(int), int arg)"
+.br
+.ti -1c
+.RI "void \fBtask_add\fP (\fBthread_pool_t\fP *p, \fBtask_t\fP *t)"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "void* master_callback (void * arg)"
+
+.PP
+Definición en la línea 222 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "void task_add (\fBthread_pool_t\fP * p, \fBtask_t\fP * t)"
+
+.PP
+Definición en la línea 277 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "\fBtask_t\fP* task_create (void)"
+
+.PP
+Definición en la línea 259 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "void task_init (\fBtask_t\fP * t, void *(*)(int) task_callback, int arg)"
+
+.PP
+Definición en la línea 271 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "int thread_add (\fBthread_pool_t\fP * p, \fBthread_t\fP * t)"
+
+.PP
+Definición en la línea 121 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "\fBthread_t\fP* thread_create (void)"
+
+.PP
+Definición en la línea 109 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "void thread_del (\fBthread_t\fP * t)"
+
+.PP
+Definición en la línea 152 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "void thread_del_internal (\fBthread_pool_t\fP * p, \fBthread_t\fP * t, int force_lock)"
+
+.PP
+Definición en la línea 159 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "\fBthread_pool_t\fP* thread_pool_create (int size)"
+
+.PP
+Definición en la línea 3 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "void thread_pool_delete (\fBthread_pool_t\fP * p)"
+
+.PP
+Definición en la línea 27 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "int thread_pool_init (\fBthread_pool_t\fP * p)"
+
+.PP
+Definición en la línea 58 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "int thread_pool_init_internal (\fBthread_pool_t\fP * p, double low_level, double high_level, int master_interval)"
+
+.PP
+Definición en la línea 64 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SS "void* worker_callback (void * arg)"
+
+.PP
+Definición en la línea 171 del archivo G-2313-06-P1_thread_pool\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.
