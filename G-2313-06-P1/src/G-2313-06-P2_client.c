@@ -26,57 +26,6 @@ pthread_t thread_ping, thread_response;
  * <hr>
  */
 
-void* client_function_ping(void *arg) {
-  char* command, *server, *nick, *user, *realname, *password;
-  int port, ssl;
-  IRCInterface_GetMyUserInfoThread(&nick, &user, &realname, &password, &server, &port, &ssl);
-  free(nick);
-  free(user);
-  free(realname);
-  syslog (LOG_INFO, "[CLIENTE] Inicia ping");
-  while (TRUE) {
-    syslog (LOG_INFO, "[CLIENTE] Entra en ping bucle");
-    IRCMsg_Ping(&command, NULL, server, NULL);
-    syslog (LOG_INFO, "[CLIENTE] : Entra en ping bucle %s %d", command, socket_desc);
-    if(send(socket_desc, command, strlen(command), 0) < 0) {
-      syslog (LOG_INFO, "[CLIENTE] Envia ping ok");
-      return NULL;
-    }
-    IRCInterface_PlaneRegisterOutMessageThread(command);
-    sleep(30);
-  }
-}
-
-void* client_function_response(void *arg) {
-  int tid;
-  long value;
-  char buff[CLIENT_MESSAGE_MAXSIZE] = "";
-  tid = pthread_self();
-  char* next;
-  char* resultado;
-  int valread;
-
-  while (TRUE) {
-    valread = read(socket_desc, buff, 8192);
-    if (valread < 0) {
-      pthread_exit(NULL);
-    }
-
-    buff[valread] = '\0';
-    next = IRC_UnPipelineCommands(buff, &resultado);
-    syslog (LOG_INFO, "[CLIENTE] Mensaje recibido: %s", resultado);
-    /*manejarComandos(resultado, socket_desc);*/
-    free(resultado);
-    while (next != NULL) {
-        next = IRC_UnPipelineCommands(next, &resultado);
-        if (resultado != ((void *) 0)) {
-          /*manejarComandos(resultado, socket_desc);*/
-        }
-        free(resultado);
-    }
-  }
-}
-
 /**
  * @ingroup IRCInterfaceCallbacks
  *
@@ -987,6 +936,8 @@ void IRCInterface_KickNick(char *channel, char *nick)
 
 void IRCInterface_NewCommandText(char *command)
 {
+  syslog(LOG_INFO, "[CLIENTE] Parseo de: %s", command);
+  client_pre_out_function(command);
 }
 
 /**

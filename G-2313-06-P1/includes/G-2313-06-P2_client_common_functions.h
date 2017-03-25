@@ -1,5 +1,3 @@
-#include <errno.h>
-#include <sys/time.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -17,12 +15,14 @@
 #include <netdb.h>
 #include <pthread.h>
 
-#include "G-2313-06-P2_client_common_functions.h"
 #include "G-2313-06-P2_client_function_handlers.h"
+
+#define CLIENT_MESSAGE_MAXSIZE  8096
 
 void* client_function_ping(void *arg);
 void* client_function_response(void *arg);
-void client_pre_in_function(char* command);
-void client_execute_in_function(long functionName, char* command);
-void client_pre_out_function(char* command);
-void client_execute_out_function(long functionName, char* command);
+void client_pre_function(char* command);
+void client_execute_function(long functionName, char* command);
+
+/* Tipos */
+typedef void (*FunctionCallBack)(char *, int, char *, int *);
