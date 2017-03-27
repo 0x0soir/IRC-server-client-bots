@@ -2,6 +2,7 @@
 #include "../includes/G-2313-06-P2_client.h"
 
 int socket_desc;
+char* nick_cliente;
 pthread_t thread_ping, thread_response;
 
 /**
