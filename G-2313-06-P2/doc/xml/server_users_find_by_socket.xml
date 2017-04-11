@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="server_users_find_by_socket" kind="page">
+    <compoundname>server_users_find_by_socket</compoundname>
+    <title>server_users_find_by_socket</title>
+    <detaileddescription>
+<para>Busca un usuario por un socket dado.</para><sect1 id="server_users_find_by_socket_1synopsis_server_users_find_by_socket">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P1__common__functions_8h" kindref="compound">G-2313-06-P1_common_functions.h</ref>&gt;</bold> <linebreak/>
+ <bold>int <ref refid="G-2313-06-P1__common__functions_8c_1a485e68f66db6ae4b7297d99c32afe30a" kindref="member">server_users_find_by_socket(int sockdesc)</ref></bold> </computeroutput> </para></sect1>
+<sect1 id="server_users_find_by_socket_1descripcion_server_users_find_by_socket">
+<title>Descripción</title>
+<para>Utiliza la función <bold>IRCTADUser_GetData</bold> del TAD para buscar un usuario que cumpla las características de socket recibidas como parámetro <bold>int sockdesc</bold>.</para></sect1>
+<sect1 id="server_users_find_by_socket_1return_server_users_find_by_socket">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>int</bold> Devuelve valor verdado/falso dependiendo de la búsqueda. </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_users_find_by_socket_1authors_server_users_find_by_socket">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

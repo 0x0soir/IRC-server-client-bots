@@ -1,0 +1,455 @@
+Esta sección incluye las funciones de comandos utilizadas para parsear los comandos recibidos del I\+R\+C. A estas funciones accede el array de punteros a función descrito en {\bfseries server\+\_\+execute\+\_\+function}.\hypertarget{server_commands_cabeceras3}{}\section{Cabeceras}\label{server_commands_cabeceras3}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h.\+h$>$} } \hypertarget{server_commands_functions3}{}\section{Funciones implementadas}\label{server_commands_functions3}
+Se incluyen las siguientes funciones\+: 
+\begin{DoxyItemize}
+\item \hyperlink{server_command_nick}{server\+\_\+command\+\_\+nick} 
+\item \hyperlink{server_command_user}{server\+\_\+command\+\_\+user} 
+\item \hyperlink{server_command_join}{server\+\_\+command\+\_\+join} 
+\item \hyperlink{server_command_quit}{server\+\_\+command\+\_\+quit} 
+\item \hyperlink{server_command_ping}{server\+\_\+command\+\_\+ping} 
+\item \hyperlink{server_command_list}{server\+\_\+command\+\_\+list} 
+\item \hyperlink{server_command_privmsg}{server\+\_\+command\+\_\+privmsg} 
+\item \hyperlink{server_command_part}{server\+\_\+command\+\_\+part} 
+\item \hyperlink{server_command_names}{server\+\_\+command\+\_\+names} 
+\item \hyperlink{server_command_kick}{server\+\_\+command\+\_\+kick} 
+\item \hyperlink{server_command_mode}{server\+\_\+command\+\_\+mode} 
+\item \hyperlink{server_command_away}{server\+\_\+command\+\_\+away} 
+\item \hyperlink{server_command_whois}{server\+\_\+command\+\_\+whois} 
+\item \hyperlink{server_command_topic}{server\+\_\+command\+\_\+topic} 
+\item \hyperlink{server_command_motd}{server\+\_\+command\+\_\+motd} 
+\end{DoxyItemize}\hypertarget{server_command_nick}{}\section{server\+\_\+command\+\_\+nick}\label{server_command_nick}
+Función handler del comando N\+I\+C\+K del I\+R\+C.\hypertarget{server_command_nick_synopsis_nick}{}\subsection{Synopsis}\label{server_command_nick_synopsis_nick}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_aeefab469ba48ce1655dd5afd14f104b4}{server\+\_\+command\+\_\+nick(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_nick_descripcion_nick}{}\subsection{Descripción}\label{server_command_nick_descripcion_nick}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries I\+R\+C\+Msg\+\_\+\+Err\+No\+Nick\+Name\+Given\+:} Comprueba que el nick no sea nulo. 
+\item {\bfseries I\+R\+C\+Msg\+\_\+\+Err\+Erroneus\+Nick\+Name\+:} Comprueba que el nick no sea erróneo (máx. 9 carácteres). 
+\item {\bfseries I\+R\+C\+Msg\+\_\+\+Err\+Nick\+Name\+In\+Use\+:} Comprueba que el nick no esté siendo utilizado por otro usuario. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta de dos formas posibles\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Actualiza nick existente\+:} Es decir, en caso de que se esté actualizando el nick de un usuario existente, se actualiza el valor utilizando la función {\bfseries server\+\_\+channels\+\_\+update\+\_\+nick}. ~\newline
+Condición necesaria\+: El valor de register\+\_\+status tiene que ser 2 (es decir, usuario {\bfseries registrado} correctamente de forma previa).  
+\item {\bfseries Guarda nick para registro\+:} Es decir, en caso de que no se haya producido un registro previo, se guarda el valor del nick para usarlo posteriormente en el comando U\+S\+E\+R. ~\newline
+Condición necesaria\+: El valor de register\+\_\+status tiene que ser distinto de 2 (es decir, usuario {\bfseries no registrado} correctamente de forma previa).  
+\end{DoxyItemize}
+
+En ambos casos se devuelve un mensaje generado por {\bfseries I\+R\+C\+Msg\+\_\+\+Nick} y libera los recursos utilizados en la función (punteros). \hypertarget{server_command_nick_return_nick}{}\subsection{Valores devueltos}\label{server_command_nick_return_nick}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_nick_authors_nick}{}\subsection{Autores}\label{server_command_nick_authors_nick}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_user}{}\section{server\+\_\+command\+\_\+user}\label{server_command_user}
+Función handler del comando U\+S\+E\+R del I\+R\+C.\hypertarget{server_command_user_synopsis_user}{}\subsection{Synopsis}\label{server_command_user_synopsis_user}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_ad09156d6bd4cf58f4345e0bf851ff099}{server\+\_\+command\+\_\+user(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_user_descripcion_user}{}\subsection{Descripción}\label{server_command_user_descripcion_user}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries register\+\_\+status\+:} Comprueba que el valor sea igual a 1 (es decir, el usuario ha parseado el N\+I\+C\+K de forma correcta previamente). 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Creación de usuario} Es decir, añade el usuario a la lista de usuarios y lo registra de forma correcta mediante la función del T\+A\+D {\bfseries I\+R\+C\+T\+A\+D\+User\+\_\+\+New}. ~\newline
+Condición necesaria\+: El valor de register\+\_\+status tiene que ser 1 (es decir, nick {\bfseries parseado} correctamente de forma previa).  
+\item {\bfseries Devuelve mensaje\+:} Es decir, en caso de que se haya registrado de forma correcta, se devuelve al usuario un mensaje de bienvenida mediante la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+Welcome} mediante el descriptor del socket y la función {\bfseries send()}. ~\newline
+Condición necesaria\+: La función {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+Welcome} debe devolver I\+R\+C\+\_\+\+O\+K.  
+\end{DoxyItemize}
+
+Tras finalizar este flujo, la función actualiza el valor del puntero de {\bfseries register\+\_\+status} a 2, es decir, confirma que el usuario se ha registrado de forma correcta para futuras comprobaciones. \hypertarget{server_command_user_return_user}{}\subsection{Valores devueltos}\label{server_command_user_return_user}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_user_authors_user}{}\subsection{Autores}\label{server_command_user_authors_user}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_join}{}\section{server\+\_\+command\+\_\+join}\label{server_command_join}
+Función handler del comando J\+O\+I\+N del I\+R\+C.\hypertarget{server_command_join_synopsis_join}{}\subsection{Synopsis}\label{server_command_join_synopsis_join}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_a375c143c5469d1bb4fa7793b310ad68e}{server\+\_\+command\+\_\+join(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_join_descripcion_join}{}\subsection{Descripción}\label{server_command_join_descripcion_join}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando J\+O\+I\+N sea correcto, en caso contrario devuelve un mensaje de error generado por la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Err\+Need\+More\+Params} que se envía mediante el descriptor del socket del cliente recibido por el parámetro {\bfseries int desc}. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Comprueba el modo del canal\+:} Es decir, comprueba que el canal no esté protegido por una clave de acceso mediante la función {\bfseries I\+R\+C\+T\+A\+D\+Chan\+\_\+\+Get\+Mode\+Int}. En caso de que si tenga clave, se comprueba que se haya introducido una clave correcta, en caso de ser incorrecta se devuelve un mensaje generado con la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Err\+Bad\+Channel\+Key}.  
+\item {\bfseries Realiza el J\+O\+I\+N en el canal\+:} Es decir, asigna el canal al usuario de forma correcta, se devuelve al usuario un mensaje de bienvenida mediante la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+Welcome} mediante el descriptor del socket y la función {\bfseries send()}. 
+\item {\bfseries Devuelve mensaje\+:} Es decir, en caso de que se haya registrado de forma correcta, se devuelve al usuario un mensaje de bienvenida mediante la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Join} mediante el descriptor del socket y la función {\bfseries send()}. ~\newline
+Condición necesaria\+: En caso de tener clave, debe ser correcta.  
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_join_return_join}{}\subsection{Valores devueltos}\label{server_command_join_return_join}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_join_authors_join}{}\subsection{Autores}\label{server_command_join_authors_join}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_quit}{}\section{server\+\_\+command\+\_\+quit}\label{server_command_quit}
+Función handler del comando Q\+U\+I\+T del I\+R\+C.\hypertarget{server_command_quit_synopsis_quit}{}\subsection{Synopsis}\label{server_command_quit_synopsis_quit}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_a3df99a1f2cefc2d91d65cbb6dd555f96}{server\+\_\+command\+\_\+quit(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_quit_descripcion_quit}{}\subsection{Descripción}\label{server_command_quit_descripcion_quit}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando Q\+U\+I\+T sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Elimina al usuario\+:} Es decir, elimina los datos del usuario existentes en el T\+A\+D mediante la propia función del T\+A\+D {\bfseries I\+R\+C\+T\+A\+D\+\_\+\+Quit}. En caso de que se realice de forma correcta, se devuelve un mensaje de confirmación al descriptor del cliente mediante la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Quit}.  
+\item {\bfseries Cierre del socket\+:} Es decir, cierra la conexión del descriptor del socket del cliente mediante la función {\bfseries close()}.  
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_quit_return_quit}{}\subsection{Valores devueltos}\label{server_command_quit_return_quit}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_quit_authors_quit}{}\subsection{Autores}\label{server_command_quit_authors_quit}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_ping}{}\section{server\+\_\+command\+\_\+ping}\label{server_command_ping}
+Función handler del comando P\+I\+N\+G del I\+R\+C.\hypertarget{server_command_ping_synopsis_ping}{}\subsection{Synopsis}\label{server_command_ping_synopsis_ping}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_acc1c181bf44087b9216d1b59809937aa}{server\+\_\+command\+\_\+ping(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_ping_descripcion_ping}{}\subsection{Descripción}\label{server_command_ping_descripcion_ping}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando P\+I\+N\+G sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Recibe ping\+:} Es decir, recibe de un usuario el comando P\+I\+N\+G con el que el usuario espera recibir un P\+O\+N\+G con la misma cadena recibida.  
+\item {\bfseries Envío pong\+:} Es decir, se devuelve al usuario el P\+O\+N\+G generado por la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Pong} al descriptor del socket del cliente utilizando la función {\bfseries send()}. 
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_ping_return_ping}{}\subsection{Valores devueltos}\label{server_command_ping_return_ping}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_ping_authors_ping}{}\subsection{Autores}\label{server_command_ping_authors_ping}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_list}{}\section{server\+\_\+command\+\_\+list}\label{server_command_list}
+Función handler del comando L\+I\+S\+T del I\+R\+C.\hypertarget{server_command_list_synopsis_list}{}\subsection{Synopsis}\label{server_command_list_synopsis_list}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_af289e3cc397e24e9b8c12c35bce68285}{server\+\_\+command\+\_\+list(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_list_descripcion_list}{}\subsection{Descripción}\label{server_command_list_descripcion_list}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando L\+I\+S\+T sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Recupera la lista de canales\+:} Es decir, solicita un array de canales al T\+A\+D utilizando la función {\bfseries I\+R\+C\+T\+A\+D\+Chan\+\_\+\+Get\+List} a la que se le pasan los parámetros {\bfseries char $\ast$$\ast$$\ast$ channels} y {\bfseries int $\ast$size} para tener los datos.  
+\item {\bfseries Devuelve mensaje de inicio\+:} Es decir, se devuelve al usuario un mensaje generado por la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+List\+Start} utilizando el descriptor del socket del cliente y la función {\bfseries send()}. 
+\item {\bfseries Genera la lista de canales\+:} Es decir, se devuelve al usuario la lista de canales utilizando el descriptor del socket del cliente y la función {\bfseries send()}. Para ello, se realizan el siguiente flujo sobre la lista adquirida de canales\+: 
+\begin{DoxyItemize}
+\item {\bfseries Comprobación del modo del canal\+:} Antes de enviar el canal se comprueba el modo, únicamente se enviará la lista de canales que sean públicos, nunca los secretos. 
+\item {\bfseries Nombre del canal\+:} Se devuelve el nombre del canal. 
+\item {\bfseries Número de usuarios\+:} Junto al nombre del canal se devuelve el número de usuarios que están en ese momento en el canal. 
+\item {\bfseries Topic del canal\+:} Junto al nombre del canal y el número de usuarios, se devuelve también el topic del canal actual. 
+\end{DoxyItemize}
+\item {\bfseries Devuelve mensaje de fin\+:} Es decir, se devuelve al usuario un mensaje generado por la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+List\+End} indicándole que se ha finalizado con la comunicación de la lista de canales. 
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_list_return_list}{}\subsection{Valores devueltos}\label{server_command_list_return_list}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_list_authors_list}{}\subsection{Autores}\label{server_command_list_authors_list}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_privmsg}{}\section{server\+\_\+command\+\_\+privmsg}\label{server_command_privmsg}
+Función handler del comando P\+R\+I\+V\+M\+S\+G del I\+R\+C.\hypertarget{server_command_privmsg_synopsis_privmsg}{}\subsection{Synopsis}\label{server_command_privmsg_synopsis_privmsg}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_a8daf68135f2d9e9412c04a2980bdfb2f}{server\+\_\+command\+\_\+privmsg(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_privmsg_descripcion_privmsg}{}\subsection{Descripción}\label{server_command_privmsg_descripcion_privmsg}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando P\+R\+I\+V\+M\+S\+G sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Si el objetivo es un canal\+:} Si el objetivo del mensaje es un canal se recupera la lista de usuarios de dicho canal mediante la función del T\+A\+D {\bfseries I\+R\+C\+T\+A\+D\+\_\+\+List\+Nicks\+On\+Channel\+Array} y se envía el mensaje a todos los usuarios de dicho canal exceptuando al usuario que envía el mensaje.  
+\item {\bfseries Si el objetivo es un usuario\+:} Si el objetivo del mensaje es un usuario se envía un mensaje al usuario destinatario (target) recuperando su información mediante la función del T\+A\+D {\bfseries I\+R\+C\+T\+A\+D\+User\+\_\+\+Get\+Data}. Se comprueba si el usuario al que se desea enviar el mensaje está {\bfseries A\+W\+A\+Y} con la función del T\+A\+D {\bfseries I\+R\+C\+T\+A\+D\+User\+\_\+\+Get\+Away}, en caso afirmativo se devuelve un mensaje al usuario que envía el mensaje informándole de que el usuario destinatario está ausente.  
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_privmsg_return_privmsg}{}\subsection{Valores devueltos}\label{server_command_privmsg_return_privmsg}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_privmsg_authors_privmsg}{}\subsection{Autores}\label{server_command_privmsg_authors_privmsg}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_part}{}\section{server\+\_\+command\+\_\+part}\label{server_command_part}
+Función handler del comando P\+A\+R\+T del I\+R\+C.\hypertarget{server_command_part_synopsis_part}{}\subsection{Synopsis}\label{server_command_part_synopsis_part}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_aba1a3da1fb58bb35076e7ea56037463e}{server\+\_\+command\+\_\+part(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_part_descripcion_part}{}\subsection{Descripción}\label{server_command_part_descripcion_part}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando P\+A\+R\+T sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Comprobación del canal\+:} Se comprueba que el canal exista en el T\+A\+D obteniendo la lista de canales, en caso de que no exista se devuelve un mensaje de error al usuario.  
+\item {\bfseries Salida del canal\+:} Si el canal existe, se abandona el canal por parte del usuario utilizando la función del T\+A\+D {\bfseries I\+R\+C\+T\+A\+D\+\_\+\+Part} y se devuelve un mensaje de confirmación al usuario.  
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_part_return_part}{}\subsection{Valores devueltos}\label{server_command_part_return_part}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_part_authors_part}{}\subsection{Autores}\label{server_command_part_authors_part}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_names}{}\section{server\+\_\+command\+\_\+names}\label{server_command_names}
+Función handler del comando N\+A\+M\+E\+S del I\+R\+C.\hypertarget{server_command_names_synopsis_names}{}\subsection{Synopsis}\label{server_command_names_synopsis_names}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_a0fe05d80af27ae220f8fa631468606ea}{server\+\_\+command\+\_\+names(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_names_descripcion_names}{}\subsection{Descripción}\label{server_command_names_descripcion_names}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando N\+A\+M\+E\+S sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Lista de usuarios del canal\+:} Se solicita la lista de usuarios en el canal mediante la función del T\+A\+D {\bfseries I\+R\+C\+T\+A\+D\+\_\+\+List\+Nicks\+On\+Channel\+Array}. Se devuelven todos los usuarios del canal comprobando además el modo del usuario en dicho canal, en caso de ser el operador se coloca un @ al comienzo del nombre.  
+\item {\bfseries Mensaje final\+:} Se envía un mensaje de confirmación al usuario para indicarle de que se ha finalizado el envío de la lista de usuarios del canal mediante la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+End\+Of\+Names}.  
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_names_return_names}{}\subsection{Valores devueltos}\label{server_command_names_return_names}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_names_authors_names}{}\subsection{Autores}\label{server_command_names_authors_names}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_kick}{}\section{server\+\_\+command\+\_\+kick}\label{server_command_kick}
+Función handler del comando K\+I\+C\+K del I\+R\+C.\hypertarget{server_command_kick_synopsis_kick}{}\subsection{Synopsis}\label{server_command_kick_synopsis_kick}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_a33025bd9c7bf8fbb2bf9cf722c07465c}{server\+\_\+command\+\_\+kick(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_kick_descripcion_kick}{}\subsection{Descripción}\label{server_command_kick_descripcion_kick}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando K\+I\+C\+K sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Modo del usuario en el canal\+:} Se comprueba los permisos del usuario para verificar que sea el operador del canal, en caso afirmativo se procede a expulsar al usuario destinatario del kick mediante la función del T\+A\+D {\bfseries I\+R\+C\+T\+A\+D\+\_\+\+Kick\+User\+From\+Channel}. En caso de que no sea operador, se devuelve al usuario un mensaje de error generado por la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Err\+Chan\+O\+Privs\+Needed}.  
+\item {\bfseries Mensaje final\+:} Se envía un mensaje de confirmación al usuario para indicarle de que se ha realizado la expulsión de forma correcta mediante la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Kick}.  
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_kick_return_kick}{}\subsection{Valores devueltos}\label{server_command_kick_return_kick}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_kick_authors_kick}{}\subsection{Autores}\label{server_command_kick_authors_kick}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_mode}{}\section{server\+\_\+command\+\_\+mode}\label{server_command_mode}
+Función handler del comando M\+O\+D\+E del I\+R\+C.\hypertarget{server_command_mode_synopsis_mode}{}\subsection{Synopsis}\label{server_command_mode_synopsis_mode}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_a44a8736512c1df49d94c8194ae9b8a50}{server\+\_\+command\+\_\+mode(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_mode_descripcion_mode}{}\subsection{Descripción}\label{server_command_mode_descripcion_mode}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando M\+O\+D\+E sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Información del modo actual del canal\+:} Si no se especifica un M\+O\+D\+E el comando devuelve el modo actual del canal al usuario. Se han contemplado tres modos (los más importantes) a la hora de realizar el comando\+: {\bfseries I\+R\+C\+M\+O\+D\+E\+\_\+\+T\+O\+P\+I\+C\+O\+P}, {\bfseries I\+R\+C\+M\+O\+D\+E\+\_\+\+S\+E\+C\+R\+E\+T} y {\bfseries I\+R\+C\+M\+O\+D\+E\+\_\+\+C\+H\+A\+N\+N\+E\+L\+P\+A\+S\+S\+W\+O\+R\+D}.  
+\item {\bfseries Modificar modo del canal\+:} La otra opción del comando es actualizar el modo de un canal, para ello se introduce una string representando al modo ( +s para canal secreto, +k para añadir una clave de acceso y +t para proteger el cambio del T\+O\+P\+I\+C únicamente al operador del canal). El modo se actualiza utilizando la función del T\+A\+D {\bfseries I\+R\+C\+T\+A\+D\+\_\+\+Mode}.  
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_mode_return_mode}{}\subsection{Valores devueltos}\label{server_command_mode_return_mode}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_mode_authors_mode}{}\subsection{Autores}\label{server_command_mode_authors_mode}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_away}{}\section{server\+\_\+command\+\_\+away}\label{server_command_away}
+Función handler del comando A\+W\+A\+Y del I\+R\+C.\hypertarget{server_command_away_synopsis_away}{}\subsection{Synopsis}\label{server_command_away_synopsis_away}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_a327516a6c48e34b58428f7a502938928}{server\+\_\+command\+\_\+away(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_away_descripcion_away}{}\subsection{Descripción}\label{server_command_away_descripcion_away}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando A\+W\+A\+Y sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Activa el modo away\+:} Si se especifica un mensaje de A\+W\+A\+Y, la función asigna el mensaje y el modo away al usuario y le devuelve un mensaje de confirmación utilizando la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+Now\+Away}.  
+\item {\bfseries Desactiva el modo away\+:} Si no se especifica un mensaje de A\+W\+A\+Y, la función elimina el mensaje y el modo away al usuario y le devuelve un mensaje de confirmación utilizando la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+Unaway}.  
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_away_return_away}{}\subsection{Valores devueltos}\label{server_command_away_return_away}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_away_authors_away}{}\subsection{Autores}\label{server_command_away_authors_away}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_whois}{}\section{server\+\_\+command\+\_\+whois}\label{server_command_whois}
+Función handler del comando W\+H\+O\+I\+S del I\+R\+C.\hypertarget{server_command_whois_synopsis_whois}{}\subsection{Synopsis}\label{server_command_whois_synopsis_whois}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_a8bb934f01707fcb12ebac41f1fe69441}{server\+\_\+command\+\_\+whois(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_whois_descripcion_whois}{}\subsection{Descripción}\label{server_command_whois_descripcion_whois}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando W\+H\+O\+I\+S sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Devolución de información del usuario\+:} Si se especifica un usuario, la función devuelve la información de dicho usuario mediante un mensaje generado con la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+Who\+Is\+User}.  
+\item {\bfseries Mensaje de error\+:} Si no se especifica un usuario para el W\+H\+O\+I\+S, la función devuelve al usuario un mensaje de confirmación utilizando la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Err\+No\+Nick\+Name\+Given}.  
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_whois_return_whois}{}\subsection{Valores devueltos}\label{server_command_whois_return_whois}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_whois_authors_whois}{}\subsection{Autores}\label{server_command_whois_authors_whois}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_topic}{}\section{server\+\_\+command\+\_\+topic}\label{server_command_topic}
+Función handler del comando T\+O\+P\+I\+C del I\+R\+C.\hypertarget{server_command_topic_synopsis_topic}{}\subsection{Synopsis}\label{server_command_topic_synopsis_topic}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_a894ae019e03841e9d54fdad31d79f218}{server\+\_\+command\+\_\+topic(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_topic_descripcion_topic}{}\subsection{Descripción}\label{server_command_topic_descripcion_topic}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando T\+O\+P\+I\+C sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Actualizar el topic del canal\+:} Si se especifica un mensaje de T\+O\+P\+I\+C, la función asigna el nuevo topic al canal y le devuelve un mensaje de confirmación al usuario utilizando la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Topic}.  
+\item {\bfseries Devuelve el topic del canal\+:} Si no se especifica un mensaje de T\+O\+P\+I\+C, la función devuelve el mensaje topic al usuario mediante un mensaje de confirmación utilizando la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+Topic} o error en caso de que no exista un topic en el canal usando la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+No\+Topic}.  
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_topic_return_topic}{}\subsection{Valores devueltos}\label{server_command_topic_return_topic}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_topic_authors_topic}{}\subsection{Autores}\label{server_command_topic_authors_topic}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_command_motd}{}\section{server\+\_\+command\+\_\+motd}\label{server_command_motd}
+Función handler del comando M\+O\+T\+D del I\+R\+C.\hypertarget{server_command_motd_synopsis_motd}{}\subsection{Synopsis}\label{server_command_motd_synopsis_motd}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__function__handlers_8h}{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}$>$} ~\newline
+ {\bfseries void \hyperlink{G-2313-06-P1__function__handlers_8c_a1258d3bdf779b82c3f952bdde3d62631}{server\+\_\+command\+\_\+motd(char$\ast$ command, int desc, char $\ast$ nick\+\_\+static, int$\ast$ register\+\_\+status)}} } \hypertarget{server_command_motd_descripcion_motd}{}\subsection{Descripción}\label{server_command_motd_descripcion_motd}
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Parse\+:} Comprueba que el parseo del comando M\+O\+T\+D sea correcto. 
+\end{DoxyItemize}
+
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries Devuelve el M\+O\+T\+D\+:} Se devuelve el mensaje diario (M\+O\+T\+D) al usuario utilizando la función del T\+A\+D {\bfseries I\+R\+C\+Msg\+\_\+\+Rpl\+Motd}.  
+\end{DoxyItemize}
+
+Al finalizar el flujo de la función se liberan los recursos utilizados.\hypertarget{server_command_motd_return_motd}{}\subsection{Valores devueltos}\label{server_command_motd_return_motd}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada. 
+\end{DoxyItemize}\hypertarget{server_command_motd_authors_motd}{}\subsection{Autores}\label{server_command_motd_authors_motd}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}

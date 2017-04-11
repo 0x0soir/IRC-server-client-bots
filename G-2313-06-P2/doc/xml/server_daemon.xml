@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="server_daemon" kind="page">
+    <compoundname>server_daemon</compoundname>
+    <title>server_daemon</title>
+    <detaileddescription>
+<para>Daemoniza el servidor.</para><sect1 id="server_daemon_1synopsis7">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P1__server_8h" kindref="compound">G-2313-06-P1_server.h</ref>&gt;</bold> <linebreak/>
+ <bold>void <ref refid="G-2313-06-P1__server_8c_1aa0e8000b12d9c52fc1e87847d00c9c47" kindref="member">server_daemon()</ref></bold> </computeroutput> </para></sect1>
+<sect1 id="server_daemon_1descripcion7">
+<title>Descripción</title>
+<para>Crea un nuevo proceso mediante un <bold>fork()</bold> y provoca el proceso de damonización por la que el servidor deja de depender de la terminal actual desde la que se ejecuta el servidor y pasa a ejecutarse en segundo plano.</para></sect1>
+<sect1 id="server_daemon_1return7">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>void</bold> No devuelve nada. </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_daemon_1authors7">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

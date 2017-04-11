@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="Conexi_xC3_xB3n" kind="page">
+    <compoundname>Conexión</compoundname>
+    <title>TCP server_start</title>
+    <detaileddescription>
+<para>Inicia el servidor (TCP)</para><sect1 id="Conexi_xC3_xB3n_1SYNOPSIS">
+<title>SYNOPSIS</title>
+<para><bold>int</bold> <bold>server_start</bold> <bold></bold>( <bold>void</bold> )</para></sect1>
+<sect1 id="Conexi_xC3_xB3n_1descripcion">
+<title>DESCRIPCIÓN</title>
+<para>Inicializa el socket</para></sect1>
+<sect1 id="Conexi_xC3_xB3n_1retorno">
+<title>RETORNO</title>
+<para>Descriptor del master socket generado para atender las peticiones.</para></sect1>
+<sect1 id="Conexi_xC3_xB3n_1authors">
+<title>AUTOR</title>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,114 @@
+\hypertarget{structthread__t}{}\section{Referencia de la Estructura thread\+\_\+t}
+\label{structthread__t}\index{thread\+\_\+t@{thread\+\_\+t}}
+
+
+{\ttfamily \#include $<$G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h$>$}
+
+
+
+Diagrama de colaboración para thread\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{structthread__t__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+pthread\+\_\+t \hyperlink{structthread__t_a92c076d58ca307499452b8dfe0c4e598}{tid}
+\item 
+pthread\+\_\+mutex\+\_\+t \hyperlink{structthread__t_abb0dcb82ff12b61776b74c76fa27c964}{mutex}
+\item 
+pthread\+\_\+cond\+\_\+t \hyperlink{structthread__t_a6cb846b84c59d01a8b3a2693d39a4af1}{cond}
+\item 
+int \hyperlink{structthread__t_a3e0780f1c2fc9932258a60b5043fe424}{state}
+\item 
+int \hyperlink{structthread__t_a8e9f0fd028676d0ebeef8438f2176bb7}{stop}
+\item 
+int \hyperlink{structthread__t_aa99eeab6834595bdff5a7da08314fd89}{queue\+\_\+size}
+\item 
+struct \hyperlink{structlist__head}{list\+\_\+head} \hyperlink{structthread__t_a69c932ede0de60b66a482fb735fca966}{task\+\_\+queue}
+\item 
+struct \hyperlink{structlist__head}{list\+\_\+head} \hyperlink{structthread__t_a03432229de426c5ba35d0dfa325491f0}{worker\+\_\+entry}
+\item 
+struct \hyperlink{structlist__head}{list\+\_\+head} \hyperlink{structthread__t_a9386032d478cacdfd680d5691e0eb9d3}{idle\+\_\+entry}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+
+
+Definición en la línea 35 del archivo G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h.
+
+
+
+\subsection{Documentación de los datos miembro}
+\hypertarget{structthread__t_a6cb846b84c59d01a8b3a2693d39a4af1}{}\index{thread\+\_\+t@{thread\+\_\+t}!cond@{cond}}
+\index{cond@{cond}!thread\+\_\+t@{thread\+\_\+t}}
+\subsubsection[{cond}]{\setlength{\rightskip}{0pt plus 5cm}pthread\+\_\+cond\+\_\+t thread\+\_\+t\+::cond}\label{structthread__t_a6cb846b84c59d01a8b3a2693d39a4af1}
+
+
+Definición en la línea 39 del archivo G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h.
+
+\hypertarget{structthread__t_a9386032d478cacdfd680d5691e0eb9d3}{}\index{thread\+\_\+t@{thread\+\_\+t}!idle\+\_\+entry@{idle\+\_\+entry}}
+\index{idle\+\_\+entry@{idle\+\_\+entry}!thread\+\_\+t@{thread\+\_\+t}}
+\subsubsection[{idle\+\_\+entry}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf list\+\_\+head} thread\+\_\+t\+::idle\+\_\+entry}\label{structthread__t_a9386032d478cacdfd680d5691e0eb9d3}
+
+
+Definición en la línea 45 del archivo G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h.
+
+\hypertarget{structthread__t_abb0dcb82ff12b61776b74c76fa27c964}{}\index{thread\+\_\+t@{thread\+\_\+t}!mutex@{mutex}}
+\index{mutex@{mutex}!thread\+\_\+t@{thread\+\_\+t}}
+\subsubsection[{mutex}]{\setlength{\rightskip}{0pt plus 5cm}pthread\+\_\+mutex\+\_\+t thread\+\_\+t\+::mutex}\label{structthread__t_abb0dcb82ff12b61776b74c76fa27c964}
+
+
+Definición en la línea 38 del archivo G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h.
+
+\hypertarget{structthread__t_aa99eeab6834595bdff5a7da08314fd89}{}\index{thread\+\_\+t@{thread\+\_\+t}!queue\+\_\+size@{queue\+\_\+size}}
+\index{queue\+\_\+size@{queue\+\_\+size}!thread\+\_\+t@{thread\+\_\+t}}
+\subsubsection[{queue\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}int thread\+\_\+t\+::queue\+\_\+size}\label{structthread__t_aa99eeab6834595bdff5a7da08314fd89}
+
+
+Definición en la línea 42 del archivo G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h.
+
+\hypertarget{structthread__t_a3e0780f1c2fc9932258a60b5043fe424}{}\index{thread\+\_\+t@{thread\+\_\+t}!state@{state}}
+\index{state@{state}!thread\+\_\+t@{thread\+\_\+t}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}int thread\+\_\+t\+::state}\label{structthread__t_a3e0780f1c2fc9932258a60b5043fe424}
+
+
+Definición en la línea 40 del archivo G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h.
+
+\hypertarget{structthread__t_a8e9f0fd028676d0ebeef8438f2176bb7}{}\index{thread\+\_\+t@{thread\+\_\+t}!stop@{stop}}
+\index{stop@{stop}!thread\+\_\+t@{thread\+\_\+t}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}int thread\+\_\+t\+::stop}\label{structthread__t_a8e9f0fd028676d0ebeef8438f2176bb7}
+
+
+Definición en la línea 41 del archivo G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h.
+
+\hypertarget{structthread__t_a69c932ede0de60b66a482fb735fca966}{}\index{thread\+\_\+t@{thread\+\_\+t}!task\+\_\+queue@{task\+\_\+queue}}
+\index{task\+\_\+queue@{task\+\_\+queue}!thread\+\_\+t@{thread\+\_\+t}}
+\subsubsection[{task\+\_\+queue}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf list\+\_\+head} thread\+\_\+t\+::task\+\_\+queue}\label{structthread__t_a69c932ede0de60b66a482fb735fca966}
+
+
+Definición en la línea 43 del archivo G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h.
+
+\hypertarget{structthread__t_a92c076d58ca307499452b8dfe0c4e598}{}\index{thread\+\_\+t@{thread\+\_\+t}!tid@{tid}}
+\index{tid@{tid}!thread\+\_\+t@{thread\+\_\+t}}
+\subsubsection[{tid}]{\setlength{\rightskip}{0pt plus 5cm}pthread\+\_\+t thread\+\_\+t\+::tid}\label{structthread__t_a92c076d58ca307499452b8dfe0c4e598}
+
+
+Definición en la línea 37 del archivo G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h.
+
+\hypertarget{structthread__t_a03432229de426c5ba35d0dfa325491f0}{}\index{thread\+\_\+t@{thread\+\_\+t}!worker\+\_\+entry@{worker\+\_\+entry}}
+\index{worker\+\_\+entry@{worker\+\_\+entry}!thread\+\_\+t@{thread\+\_\+t}}
+\subsubsection[{worker\+\_\+entry}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf list\+\_\+head} thread\+\_\+t\+::worker\+\_\+entry}\label{structthread__t_a03432229de426c5ba35d0dfa325491f0}
+
+
+Definición en la línea 44 del archivo G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h.
+
+
+
+La documentación para esta estructura fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+includes/\hyperlink{G-2313-06-P1__thread__pool_8h}{G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h}\end{DoxyCompactItemize}

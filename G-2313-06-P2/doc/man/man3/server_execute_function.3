@@ -1,0 +1,64 @@
+.TH "server_execute_function" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_execute_function \- server_execute_function 
+Envía a los comandos a las funciones apropiadas por punteros\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_server\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_execute_function(long functionName, char* command, int desc, char* nick, int* register_status)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Genera un array de punteros a función para enviar a los comandos a su función de parseo y procesamiento\&. Utiliza el index del TAD como índice del array y reserva sitio en el array mediante la variable del TAD \fBIRC_MAX_USER_COMMANDS\fP:
+.PP
+\fC FunctionCallBack functions[IRC_MAX_USER_COMMANDS]; 
+.br
+int i; 
+.br
+char *msg; 
+.br
+for(i=0; i<IRC_MAX_USER_COMMANDS; i++){ 
+.br
+ functions[i]=NULL; 
+.br
+} 
+.br
+functions[NICK] = & server_command_nick; 
+.br
+functions[USER] = & server_command_user; 
+.br
+\&.\&.\&.\fP 
+.PP
+Una vez generado el array con todos los comandos implementados, envía dicho comando a su función pasándole como parámetro las variables adecuadas para ello:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBchar *command:\fP String que contiene el comando completo recibido\&. 
+.IP "\(bu" 2
+\fBint *desc:\fP Entero que representa el descriptor del socket del cliente\&. 
+.IP "\(bu" 2
+\fBchar *nick:\fP String que contiene el nick del cliente del hilo\&. 
+.IP "\(bu" 2
+\fBint *register_status:\fP Entero que representa el estado del registro\&. 
+.PP
+.PP
+La llamada a la función se hace de la siguiente manera:
+.PP
+\fC (*functions[functionName])(command, desc, nick, register_status); \fP
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

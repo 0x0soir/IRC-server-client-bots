@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="server_start" kind="page">
+    <compoundname>server_start</compoundname>
+    <title>server_start</title>
+    <detaileddescription>
+<para>Inicia el servidor (TCP)</para><sect1 id="server_start_1synopsis2">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P1__server_8h" kindref="compound">G-2313-06-P1_server.h</ref>&gt;</bold> <linebreak/>
+ <bold>int</bold> <bold>server_start</bold> <bold></bold>() </computeroutput> </para></sect1>
+<sect1 id="server_start_1descripcion2">
+<title>Descripción</title>
+<para>Inicializa el socket principal del servidor, para ello se genera una llamada a <bold>socket()</bold> para iniciar el socket. A dicha función se le pasan como parámetros valores adecuados para la inicialización: <itemizedlist>
+<listitem>
+<para>AF_INET </para></listitem>
+<listitem>
+<para>SOCK_STREAM </para></listitem>
+</itemizedlist>
+Tras generar el identificador del socket con la llamada anterior, se asignan parámetros adicionales (como SOL_SOCKET y SO_REUSEADDR), además se genera la estructura sockaddr_in de dirección, en la que se especifican ciertos parámetros: <itemizedlist>
+<listitem>
+<para><bold>sin_family:</bold> Se indica que la conexión es TCP/IP. </para></listitem>
+<listitem>
+<para><bold>sin_port:</bold> Se indica que el puerto por defecto es 6667. </para></listitem>
+<listitem>
+<para><bold>sin_addr:</bold> Se indica que cualquier IP es admitida al conectar (INADDR_ANY). </para></listitem>
+</itemizedlist>
+Tras generar la configuración básica del socket, se utilizan las funciones bind() y listen() para finalizar con la conexión del socket principal al que accederán los clientes mediante el puerto por defecto: <itemizedlist>
+<listitem>
+<para><bold>bind():</bold> Realiza una unión entre el identificador del socket generado y el struct de Direccion mencionado anteriormente para asignar los parametros del struct a ese socket. </para></listitem>
+<listitem>
+<para><bold>listen():</bold> Indica al socket que debe admitir conexiones en el identificador del socket generado anteriormente y además le pasa el parámetros de conexiones máximas que en este caso está fijado por MAX_CONNECTIONS (100). </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_start_1return2">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>int</bold> Descriptor del master socket generado para atender las peticiones. </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_start_1authors2">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

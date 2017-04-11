@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="structthread__t" kind="struct" language="C++" prot="public">
+    <compoundname>thread_t</compoundname>
+    <includes refid="G-2313-06-P1__thread__pool_8h" local="no">G-2313-06-P1_thread_pool.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structthread__t_1a92c076d58ca307499452b8dfe0c4e598" prot="public" static="no" mutable="no">
+        <type>pthread_t</type>
+        <definition>pthread_t thread_t::tid</definition>
+        <argsstring></argsstring>
+        <name>tid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="37" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" prot="public" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t thread_t::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="38" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structthread__t_1a6cb846b84c59d01a8b3a2693d39a4af1" prot="public" static="no" mutable="no">
+        <type>pthread_cond_t</type>
+        <definition>pthread_cond_t thread_t::cond</definition>
+        <argsstring></argsstring>
+        <name>cond</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="39" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structthread__t_1a3e0780f1c2fc9932258a60b5043fe424" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int thread_t::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="40" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structthread__t_1a8e9f0fd028676d0ebeef8438f2176bb7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int thread_t::stop</definition>
+        <argsstring></argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="41" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structthread__t_1aa99eeab6834595bdff5a7da08314fd89" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int thread_t::queue_size</definition>
+        <argsstring></argsstring>
+        <name>queue_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="42" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structthread__t_1a69c932ede0de60b66a482fb735fca966" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref></type>
+        <definition>struct list_head thread_t::task_queue</definition>
+        <argsstring></argsstring>
+        <name>task_queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="42" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structthread__t_1a03432229de426c5ba35d0dfa325491f0" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref></type>
+        <definition>struct list_head thread_t::worker_entry</definition>
+        <argsstring></argsstring>
+        <name>worker_entry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="42" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structthread__t_1a9386032d478cacdfd680d5691e0eb9d3" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref></type>
+        <definition>struct list_head thread_t::idle_entry</definition>
+        <argsstring></argsstring>
+        <name>idle_entry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="42" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="32">
+        <label>thread_t</label>
+        <link refid="structthread__t"/>
+        <childnode refid="33" relation="usage">
+          <edgelabel>task_queue</edgelabel>
+          <edgelabel>worker_entry</edgelabel>
+          <edgelabel>idle_entry</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>list_head</label>
+        <link refid="structlist__head"/>
+        <childnode refid="33" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="36" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="35" bodyend="46"/>
+    <listofallmembers>
+      <member refid="structthread__t_1a6cb846b84c59d01a8b3a2693d39a4af1" prot="public" virt="non-virtual"><scope>thread_t</scope><name>cond</name></member>
+      <member refid="structthread__t_1a9386032d478cacdfd680d5691e0eb9d3" prot="public" virt="non-virtual"><scope>thread_t</scope><name>idle_entry</name></member>
+      <member refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" prot="public" virt="non-virtual"><scope>thread_t</scope><name>mutex</name></member>
+      <member refid="structthread__t_1aa99eeab6834595bdff5a7da08314fd89" prot="public" virt="non-virtual"><scope>thread_t</scope><name>queue_size</name></member>
+      <member refid="structthread__t_1a3e0780f1c2fc9932258a60b5043fe424" prot="public" virt="non-virtual"><scope>thread_t</scope><name>state</name></member>
+      <member refid="structthread__t_1a8e9f0fd028676d0ebeef8438f2176bb7" prot="public" virt="non-virtual"><scope>thread_t</scope><name>stop</name></member>
+      <member refid="structthread__t_1a69c932ede0de60b66a482fb735fca966" prot="public" virt="non-virtual"><scope>thread_t</scope><name>task_queue</name></member>
+      <member refid="structthread__t_1a92c076d58ca307499452b8dfe0c4e598" prot="public" virt="non-virtual"><scope>thread_t</scope><name>tid</name></member>
+      <member refid="structthread__t_1a03432229de426c5ba35d0dfa325491f0" prot="public" virt="non-virtual"><scope>thread_t</scope><name>worker_entry</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

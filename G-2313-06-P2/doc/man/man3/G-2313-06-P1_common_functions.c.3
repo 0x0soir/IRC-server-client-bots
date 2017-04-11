@@ -1,0 +1,62 @@
+.TH "src/G-2313-06-P1_common_functions.c" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/G-2313-06-P1_common_functions.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./includes/G-2313-06-P1_common_functions\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBserver_users_find_by_nick\fP (char *data)"
+.br
+.ti -1c
+.RI "int \fBserver_users_find_by_socket\fP (int sockdesc)"
+.br
+.ti -1c
+.RI "int \fBserver_channels_find_by_name\fP (char *channel)"
+.br
+.ti -1c
+.RI "int \fBserver_channels_update_nick\fP (char *nick_old, char *nick_new)"
+.br
+.ti -1c
+.RI "int \fBserver_channels_update_away\fP (char *nick, char *away)"
+.br
+.ti -1c
+.RI "char * \fBserver_return_user\fP (char *nick)"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "int server_channels_find_by_name (char * channel)"
+
+.PP
+Definición en la línea 178 del archivo G-2313-06-P1_common_functions\&.c\&.
+.SS "int server_channels_update_away (char * nick, char * away)"
+
+.PP
+Definición en la línea 275 del archivo G-2313-06-P1_common_functions\&.c\&.
+.SS "int server_channels_update_nick (char * nick_old, char * nick_new)"
+
+.PP
+Definición en la línea 221 del archivo G-2313-06-P1_common_functions\&.c\&.
+.SS "char* server_return_user (char * nick)"
+
+.PP
+Definición en la línea 327 del archivo G-2313-06-P1_common_functions\&.c\&.
+.SS "int server_users_find_by_nick (char * data)"
+
+.PP
+Definición en la línea 52 del archivo G-2313-06-P1_common_functions\&.c\&.
+.SS "int server_users_find_by_socket (int sockdesc)"
+
+.PP
+Definición en la línea 113 del archivo G-2313-06-P1_common_functions\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

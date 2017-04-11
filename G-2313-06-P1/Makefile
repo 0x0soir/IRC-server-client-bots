@@ -1,6 +1,5 @@
 # Makefile Jorge y Javi
 GROUP=G-2313-06-P1
-GROUP_CLIENT=G-2313-06-P2
 
 # Ficheros para la realizacion de la compilacion
 SRCDIR = src/$(GROUP)_server.c
@@ -17,30 +16,15 @@ SRCDIR += includes/$(GROUP)_thread_pool.h
 FFLAGS= -Wall -pedantic -pthread -w -rdynamic
 REDESLIB= -lircredes -lirctad -lircinterface -lsoundredes
 
-# Cliente
-GTK_CONFIG = `pkg-config --cflags gtk+-3.0`
-GTK_LIB = `pkg-config --cflags gtk+-3.0 --libs gtk+-3.0`
-SRCDIR_CLIENT = src/$(GROUP_CLIENT)_client.c
-SRCDIR_CLIENT += includes/$(GROUP_CLIENT)_client.h
-SRCDIR_CLIENT += src/$(GROUP_CLIENT)_client_common_functions.c
-SRCDIR_CLIENT += includes/$(GROUP_CLIENT)_client_common_functions.h
-SRCDIR_CLIENT += src/$(GROUP_CLIENT)_client_function_handlers.c
-SRCDIR_CLIENT += includes/$(GROUP_CLIENT)_client_function_handlers.h
-
 #Comienzo del makefile
 #Regla All: compila todo el programa
 
-all: clean tar server client
+all: clean tar server
 
 server:
 	@echo "\033[31mCompilando servidor...\033[00m"
 	@gcc -o ./obj/$(GROUP)_server $(SRCDIR) $(FFLAGS) $(REDESLIB)
 	@echo "\033[32m--> Servidor compilado: $(GROUP)_server\033[00m"
-
-client:
-	@echo "\033[31mCompilando cliente...\033[00m"
-	gcc $(GTK_CONFIG) -o ./obj/$(GROUP_CLIENT)_client $(SRCDIR_CLIENT) $(FFLAGS) $(REDESLIB) $(GTK_LIB)
-	@echo "\033[32m--> Cliente compilado: $(GROUP)_client\033[00m"
 
 #Regla clean: limpia el directorio del ficheros temporales
 clean:
@@ -48,7 +32,6 @@ clean:
 	rm -rf obj/*.o $(GROUP)
 	rm -rf objlib/*.o $(GROUP)
 	rm -rf $(GROUP)_server
-	rm -rf $(GROUP_CLIENT)_client
 tar:
 	@echo "\033[31mComprimiendo...\033[00m"
 	tar --exclude .git -czf $(GROUP).tar.gz ../$(GROUP) --exclude $(GROUP).tar.gz

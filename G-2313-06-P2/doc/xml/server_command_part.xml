@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="server_command_part" kind="page">
+    <compoundname>server_command_part</compoundname>
+    <title>server_command_part</title>
+    <detaileddescription>
+<para>Función handler del comando PART del IRC.</para><sect1 id="server_command_part_1synopsis_part">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P1__function__handlers_8h" kindref="compound">G-2313-06-P1_function_handlers.h</ref>&gt;</bold> <linebreak/>
+ <bold>void <ref refid="G-2313-06-P1__function__handlers_8c_1aba1a3da1fb58bb35076e7ea56037463e" kindref="member">server_command_part(char* command, int desc, char * nick_static, int* register_status)</ref></bold> </computeroutput> </para></sect1>
+<sect1 id="server_command_part_1descripcion_part">
+<title>Descripción</title>
+<para>Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas:</para><para><itemizedlist>
+<listitem>
+<para><bold>Parse:</bold> Comprueba que el parseo del comando PART sea correcto. </para></listitem>
+</itemizedlist>
+</para><para>Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo:</para><para><itemizedlist>
+<listitem>
+<para><bold>Comprobación del canal:</bold> Se comprueba que el canal exista en el TAD obteniendo la lista de canales, en caso de que no exista se devuelve un mensaje de error al usuario.  </para></listitem>
+<listitem>
+<para><bold>Salida del canal:</bold> Si el canal existe, se abandona el canal por parte del usuario utilizando la función del TAD <bold>IRCTAD_Part</bold> y se devuelve un mensaje de confirmación al usuario.  </para></listitem>
+</itemizedlist>
+</para><para>Al finalizar el flujo de la función se liberan los recursos utilizados.</para></sect1>
+<sect1 id="server_command_part_1return_part">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>void</bold> No devuelve nada. </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_command_part_1authors_part">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

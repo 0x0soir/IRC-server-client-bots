@@ -1,0 +1,1188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="G-2313-06-P1__function__handlers_8c" kind="file" language="C++">
+    <compoundname>G-2313-06-P1_function_handlers.c</compoundname>
+    <includes refid="G-2313-06-P1__function__handlers_8h" local="yes">../includes/G-2313-06-P1_function_handlers.h</includes>
+    <incdepgraph>
+      <node id="277">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="284">
+        <label>stdbool.h</label>
+      </node>
+      <node id="273">
+        <label>../includes/G-2313-06-P1_function_handlers.h</label>
+        <link refid="G-2313-06-P1__function__handlers_8h"/>
+        <childnode refid="274" relation="include">
+        </childnode>
+        <childnode refid="275" relation="include">
+        </childnode>
+        <childnode refid="276" relation="include">
+        </childnode>
+        <childnode refid="277" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+        <childnode refid="283" relation="include">
+        </childnode>
+        <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="287" relation="include">
+        </childnode>
+        <childnode refid="288" relation="include">
+        </childnode>
+        <childnode refid="289" relation="include">
+        </childnode>
+        <childnode refid="290" relation="include">
+        </childnode>
+      </node>
+      <node id="278">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="286">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="290">
+        <label>G-2313-06-P1_common_functions.h</label>
+        <link refid="G-2313-06-P1__common__functions_8h"/>
+        <childnode refid="274" relation="include">
+        </childnode>
+        <childnode refid="275" relation="include">
+        </childnode>
+        <childnode refid="276" relation="include">
+        </childnode>
+        <childnode refid="277" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+        <childnode refid="283" relation="include">
+        </childnode>
+        <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="287" relation="include">
+        </childnode>
+        <childnode refid="288" relation="include">
+        </childnode>
+        <childnode refid="289" relation="include">
+        </childnode>
+      </node>
+      <node id="280">
+        <label>stdlib.h</label>
+      </node>
+      <node id="288">
+        <label>netdb.h</label>
+      </node>
+      <node id="279">
+        <label>syslog.h</label>
+      </node>
+      <node id="272">
+        <label>src/G-2313-06-P1_function_handlers.c</label>
+        <link refid="G-2313-06-P1_function_handlers.c"/>
+        <childnode refid="273" relation="include">
+        </childnode>
+      </node>
+      <node id="289">
+        <label>pthread.h</label>
+      </node>
+      <node id="275">
+        <label>sys/types.h</label>
+      </node>
+      <node id="287">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="274">
+        <label>unistd.h</label>
+      </node>
+      <node id="283">
+        <label>signal.h</label>
+      </node>
+      <node id="285">
+        <label>time.h</label>
+      </node>
+      <node id="282">
+        <label>strings.h</label>
+      </node>
+      <node id="276">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="281">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1aeefab469ba48ce1655dd5afd14f104b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_nick</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_nick</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="82" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="82" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1ad09156d6bd4cf58f4345e0bf851ff099" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_user</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_user</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="179" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="179" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1a375c143c5469d1bb4fa7793b310ad68e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_join</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_join</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="255" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="255" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1a3df99a1f2cefc2d91d65cbb6dd555f96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_quit</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_quit</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="355" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="355" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1acc1c181bf44087b9216d1b59809937aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_ping</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_ping</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="407" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="407" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1af289e3cc397e24e9b8c12c35bce68285" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_list</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_list</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="472" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="472" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1a8daf68135f2d9e9412c04a2980bdfb2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_privmsg</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_privmsg</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="542" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="542" bodyend="602"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1aba1a3da1fb58bb35076e7ea56037463e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_part</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_part</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="644" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="644" bodyend="668"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1a0fe05d80af27ae220f8fa631468606ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_names</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_names</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="711" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="711" bodyend="741"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1a33025bd9c7bf8fbb2bf9cf722c07465c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_kick</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_kick</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="786" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="786" bodyend="834"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1a44a8736512c1df49d94c8194ae9b8a50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_mode</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_mode</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="879" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="879" bodyend="959"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1a327516a6c48e34b58428f7a502938928" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_away</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_away</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="1001" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="1001" bodyend="1019"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1a8bb934f01707fcb12ebac41f1fe69441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_whois</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_whois</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="1061" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="1061" bodyend="1143"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1a894ae019e03841e9d54fdad31d79f218" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_topic</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_topic</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="1186" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="1186" bodyend="1228"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__function__handlers_8c_1a1258d3bdf779b82c3f952bdde3d62631" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_command_motd</definition>
+        <argsstring>(char *command, int desc, char *nick_static, int *register_status)</argsstring>
+        <name>server_command_motd</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_static</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>register_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" line="1265" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c" bodystart="1265" bodyend="1285"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2313-06-P1_function_handlers.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="G-2313-06-P1__function__handlers_8c_1aeefab469ba48ce1655dd5afd14f104b4" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1aeefab469ba48ce1655dd5afd14f104b4" kindref="member">server_command_nick</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nick<sp/>=<sp/>NULL,<sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>response;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_Nick(command,<sp/>&amp;prefix,<sp/>&amp;nick,<sp/>&amp;msg)!=IRC_OK){</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_ErrNoNickNameGiven(&amp;msg,<sp/>prefix,<sp/>nick)==IRC_OK){</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strlen(nick)<sp/>&gt;<sp/>9){</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_ErrErroneusNickName(&amp;msg,<sp/>prefix,<sp/>nick,<sp/>nick)==IRC_OK){</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((response=<ref refid="G-2313-06-P1__common__functions_8h_1a61cca6f1a1adeb81f722ecc2ff35aab5" kindref="member">server_users_find_by_nick</ref>(nick))==</highlight><highlight class="keyword">true</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_ErrNickNameInUse(&amp;msg,<sp/>prefix,<sp/>nick,<sp/>nick)==IRC_OK){</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[DESC:<sp/>%d]<sp/>NICK:<sp/>%s<sp/>ya<sp/>se<sp/>está<sp/>usando,<sp/>idiota<sp/>(Valor<sp/>de<sp/>control:<sp/>%d)&quot;</highlight><highlight class="normal">,<sp/>desc,<sp/>nick,<sp/>*register_status);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*register_status==2){</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>response<sp/>=<sp/><ref refid="G-2313-06-P1__common__functions_8h_1ae8a282d9cdfc8187b8e74e368bc56d92" kindref="member">server_channels_update_nick</ref>(nick_static,<sp/>nick);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(response==0){</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Nick(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/>nick)==IRC_OK){</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[DESC:<sp/>%d]<sp/>NICK:<sp/>UPDATED<sp/>OK&quot;</highlight><highlight class="normal">,<sp/>desc);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(nick_static,<sp/>nick);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Nick(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/>nick)==IRC_OK){</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[DESC:<sp/>%d]<sp/>NICK:<sp/>OK&quot;</highlight><highlight class="normal">,<sp/>desc);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(nick_static,<sp/>nick);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*register_status<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Comprobar<sp/>si<sp/>usuario<sp/>esta<sp/>siendo<sp/>usado<sp/>por<sp/>otro*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(nick){</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>free(nick);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>nick<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(prefix){</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>free(prefix);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>prefix<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(msg){</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179" refid="G-2313-06-P1__function__handlers_8c_1ad09156d6bd4cf58f4345e0bf851ff099" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1ad09156d6bd4cf58f4345e0bf851ff099" kindref="member">server_command_user</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*user<sp/>=<sp/>NULL,<sp/>*realname<sp/>=<sp/>NULL,<sp/>*prefix<sp/>=<sp/>NULL,<sp/>*host<sp/>=<sp/>NULL,<sp/>*IP<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>addr;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hostent<sp/>*he;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>socklen_t<sp/>size_address<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(addr);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>getpeername(desc,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)&amp;addr,<sp/>&amp;size_address);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>IP<sp/>=<sp/>inet_ntoa(addr.sin_addr);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>he<sp/>=<sp/>gethostbyaddr((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)&amp;addr.sin_addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(addr.sin_addr),<sp/>AF_INET);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((*register_status)==1){</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[DESC:<sp/>%d]<sp/>-----&gt;<sp/>EXECUTE<sp/>USER:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>desc,<sp/>nick_static);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[DESC:<sp/>%d]<sp/>USER:<sp/>Valor<sp/>de<sp/>control<sp/>previo<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>desc,<sp/>*register_status);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_User(command,<sp/>&amp;prefix,<sp/>&amp;user,<sp/>&amp;host,<sp/>&amp;IP,<sp/>&amp;realname)==IRC_OK){</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IRCTADUser_New(user,<sp/>nick_static,<sp/>realname,<sp/>NULL,<sp/>he-&gt;h_name,<sp/>IP,<sp/>desc)==IRC_OK){</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplWelcome(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>nick_static,<sp/>user,<sp/></highlight><highlight class="stringliteral">&quot;localhost&quot;</highlight><highlight class="normal">)==IRC_OK){</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(1,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*register_status<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[DESC:<sp/>%d]<sp/>EXECUTE<sp/>USER:<sp/>Valor<sp/>de<sp/>control<sp/>posterior<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>desc,<sp/>*register_status);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/>IRC_MFree(6,<sp/>&amp;user,<sp/>&amp;realname,<sp/>&amp;prefix,<sp/>&amp;host,<sp/>&amp;IP,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255" refid="G-2313-06-P1__function__handlers_8c_1a375c143c5469d1bb4fa7793b310ad68e" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1a375c143c5469d1bb4fa7793b310ad68e" kindref="member">server_command_join</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key<sp/>=<sp/>NULL,<sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>*channel<sp/>=<sp/>NULL,<sp/>*unknown_user<sp/>=<sp/>NULL,<sp/>*unknown_nick<sp/>=<sp/>NULL,<sp/>*unknown_real<sp/>=<sp/>NULL,<sp/>*server<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>unknown_id<sp/>=<sp/>0,<sp/>find_id<sp/>=<sp/>0,<sp/>find_creationTS,<sp/>find_actionTS,<sp/>creationTS,<sp/>actionTS,<sp/>numberOfUsers;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*host,<sp/>*IP,<sp/>*away,<sp/>*modeFlag<sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)*2),<sp/>**arrayNicks;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*find_user<sp/>=<sp/>NULL,<sp/>*find_real<sp/>=<sp/>NULL,<sp/>*find_host<sp/>=<sp/>NULL,<sp/>*find_ip<sp/>=<sp/>NULL,<sp/>*find_away<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/>find_socket<sp/>=<sp/>0,<sp/>response,<sp/>logic_comparator,<sp/>flag_login_possible<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IRCParse_Join(command,<sp/>&amp;prefix,<sp/>&amp;channel,<sp/>&amp;key,<sp/>&amp;msg)<sp/>!=<sp/>IRC_OK){</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCMsg_ErrNeedMoreParams(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>command);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((response=<ref refid="G-2313-06-P1__common__functions_8h_1a875ae5278d95716b494b26f96cf4ae6e" kindref="member">server_channels_find_by_name</ref>(channel))==0){</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(modeFlag,<sp/></highlight><highlight class="stringliteral">&quot;o&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>logic_comparator<sp/>=<sp/>IRCTADChan_GetModeInt(channel);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((logic_comparator&amp;IRCMODE_CHANNELPASSWORD)==IRCMODE_CHANNELPASSWORD){</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;JOIN:<sp/>NECESITA<sp/>CLAVE&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTADChan_TestPassword(channel,<sp/>key)!=IRC_OK){</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_ErrBadChannelKey(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>channel)==IRC_OK){</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(1,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;JOIN:<sp/>CLAVE<sp/>CORRECTA&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flag_login_possible<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>flag_login_possible<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(flag_login_possible){</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;JOIN:<sp/>HACE<sp/>JOIN<sp/>EN<sp/>CANAL:<sp/>%s<sp/>CON<sp/>CLAVE:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>channel,<sp/>key);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTAD_Join(channel,<sp/>nick_static,<sp/>modeFlag,<sp/>key)==IRC_OK){</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTADUser_GetData(&amp;unknown_id,<sp/>&amp;unknown_user,<sp/>&amp;unknown_nick,<sp/>&amp;unknown_real,<sp/>&amp;host,<sp/>&amp;IP,<sp/>&amp;desc,<sp/>&amp;creationTS,<sp/>&amp;actionTS,<sp/>&amp;away)==IRC_OK){</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;JOIN:<sp/>%s<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>server,<sp/>host);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRC_Prefix(&amp;prefix,<sp/>nick_static,<sp/>unknown_user,<sp/>NULL,<sp/></highlight><highlight class="stringliteral">&quot;LOCALHOST&quot;</highlight><highlight class="normal">)==IRC_OK){</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;JOIN<sp/>PREFIX:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>prefix);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Join(&amp;msg,<sp/>prefix<sp/>+<sp/>1,<sp/>NULL,<sp/>NULL,<sp/>channel)==IRC_OK){</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Enviar<sp/>aviso<sp/>a<sp/>todos<sp/>los<sp/>usuarios<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRCTAD_ListNicksOnChannelArray(channel,<sp/>&amp;arrayNicks,<sp/>&amp;numberOfUsers);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;<sp/>numberOfUsers;<sp/>i++){</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTADUser_GetData(&amp;find_id,<sp/>&amp;find_user,<sp/>&amp;arrayNicks[i],<sp/>&amp;find_real,<sp/>&amp;find_host,<sp/>&amp;find_ip,</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;find_socket,<sp/>&amp;find_creationTS,<sp/>&amp;find_actionTS,<sp/>&amp;find_away)==IRC_OK){</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(find_socket,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(5,<sp/>&amp;find_user,<sp/>&amp;find_real,<sp/>&amp;find_host,<sp/>&amp;find_ip,<sp/>&amp;find_away);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>find_socket<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>find_id<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRCTADChan_FreeList(arrayNicks,<sp/>numberOfUsers);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(1,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(5,<sp/>&amp;unknown_user,<sp/>&amp;unknown_nick,<sp/>&amp;unknown_real,<sp/>&amp;server,<sp/>&amp;host,<sp/>&amp;IP,<sp/>&amp;away);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/>IRC_MFree(5,<sp/>&amp;msg,<sp/>&amp;key,<sp/>&amp;modeFlag,<sp/>&amp;prefix,<sp/>&amp;channel);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355" refid="G-2313-06-P1__function__handlers_8c_1a3df99a1f2cefc2d91d65cbb6dd555f96" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1a3df99a1f2cefc2d91d65cbb6dd555f96" kindref="member">server_command_quit</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*user<sp/>=<sp/>NULL,<sp/>*realname<sp/>=<sp/>NULL,<sp/>*prefix<sp/>=<sp/>NULL,<sp/>*host<sp/>=<sp/>NULL,<sp/>*IP<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>*msg2<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>QUIT:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>nick_static);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_Quit(command,<sp/>&amp;prefix,<sp/>&amp;msg2)==IRC_OK){</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCTAD_Quit(nick_static);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Quit(&amp;msg,<sp/>prefix,<sp/>msg2)==IRC_OK){</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;MSG:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>msg);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>close(desc);</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/>*register_status<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/>IRC_MFree(7,<sp/>&amp;user,<sp/>&amp;realname,<sp/>&amp;host,<sp/>&amp;IP,<sp/>&amp;prefix,<sp/>&amp;msg,<sp/>&amp;msg2);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="407" refid="G-2313-06-P1__function__handlers_8c_1acc1c181bf44087b9216d1b59809937aa" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1acc1c181bf44087b9216d1b59809937aa" kindref="member">server_command_ping</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*ping<sp/>=<sp/>NULL,<sp/>*pong<sp/>=<sp/>NULL,<sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_Ping(command,<sp/>&amp;prefix,<sp/>&amp;ping,<sp/>&amp;pong,<sp/>&amp;msg)==IRC_OK){</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Pong(&amp;command,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>ping,<sp/>pong,<sp/>ping)==IRC_OK){</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>command,<sp/>strlen(command),<sp/>0);</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;ping,<sp/>&amp;pong,<sp/>&amp;prefix,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="415"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight></codeline>
+<codeline lineno="472" refid="G-2313-06-P1__function__handlers_8c_1af289e3cc397e24e9b8c12c35bce68285" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1af289e3cc397e24e9b8c12c35bce68285" kindref="member">server_command_list</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>**channels<sp/>=<sp/>NULL,<sp/>*topic<sp/>=<sp/>NULL,<sp/>visible[50];</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>size;</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/>strcpy(visible,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/>IRCTADChan_GetList(&amp;channels,<sp/>&amp;size,<sp/>NULL);</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplListStart(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static)==IRC_OK){</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(IRCTADChan_GetModeInt(channels[i])!=IRCMODE_SECRET)<sp/>{</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTAD_GetTopic(channels[i],<sp/>&amp;topic)==IRC_OK){</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(visible,<sp/></highlight><highlight class="stringliteral">&quot;%ld&quot;</highlight><highlight class="normal">,<sp/>IRCTADChan_GetNumberOfUsers(channels[i]));</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRCMsg_RplList(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>channels[i],<sp/>visible,<sp/>topic);</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(1,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplListEnd(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static)==IRC_OK){</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/>IRCTADChan_FreeList(channels,<sp/>size);</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/>IRC_MFree(3,<sp/>&amp;prefix,<sp/>&amp;msg,<sp/>&amp;topic);</highlight></codeline>
+<codeline lineno="496"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight></codeline>
+<codeline lineno="542" refid="G-2313-06-P1__function__handlers_8c_1a8daf68135f2d9e9412c04a2980bdfb2f" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1a8daf68135f2d9e9412c04a2980bdfb2f" kindref="member">server_command_privmsg</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msgtarget<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>*awayMsg<sp/>=<sp/>NULL,<sp/>*msgSend<sp/>=<sp/>NULL,<sp/>*msgSend2<sp/>=<sp/>NULL,<sp/>*tmpUser<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>find_id<sp/>=<sp/>0,<sp/>find_creationTS,<sp/>find_actionTS,<sp/>numberOfUsers;</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**arrayNicks;</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*find_user<sp/>=<sp/>NULL,<sp/>*find_real<sp/>=<sp/>NULL,<sp/>*find_host<sp/>=<sp/>NULL,<sp/>*find_ip<sp/>=<sp/>NULL,<sp/>*find_away<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/>find_socket<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_Privmsg(command,<sp/>&amp;prefix,<sp/>&amp;msgtarget,<sp/>&amp;msg)==IRC_OK){</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(msgtarget[0]==</highlight><highlight class="charliteral">&apos;#&apos;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Es<sp/>canal<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>IRCTAD_ListNicksOnChannelArray(msgtarget,<sp/>&amp;arrayNicks,<sp/>&amp;numberOfUsers);</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;<sp/>numberOfUsers;<sp/>i++){</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strcmp(nick_static,<sp/>arrayNicks[i])!=0){</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmpUser<sp/>=<sp/><ref refid="G-2313-06-P1__common__functions_8h_1a230bf24ab7ae18d2e81ebc1d3575a6ad" kindref="member">server_return_user</ref>(nick_static);</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTADUser_GetData(&amp;find_id,<sp/>&amp;find_user,<sp/>&amp;arrayNicks[i],<sp/>&amp;find_real,<sp/>&amp;find_host,<sp/>&amp;find_ip,<sp/>&amp;find_socket,<sp/>&amp;find_creationTS,<sp/>&amp;find_actionTS,<sp/>&amp;find_away)==IRC_OK){</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRC_Prefix(&amp;prefix,<sp/>nick_static,<sp/>tmpUser,<sp/>NULL,<sp/></highlight><highlight class="stringliteral">&quot;LOCALHOST&quot;</highlight><highlight class="normal">)==IRC_OK){</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Privmsg(&amp;msgSend,<sp/>prefix+1,<sp/>msgtarget,<sp/>msg)==IRC_OK){</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>PRIVMSG:<sp/>Socket:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>find_socket);</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(find_socket,<sp/>msgSend,<sp/>strlen(msgSend),<sp/>0);</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(6,<sp/>&amp;find_user,<sp/>&amp;find_real,<sp/>&amp;find_host,<sp/>&amp;find_ip,<sp/>&amp;find_away,<sp/>&amp;msgSend);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>find_socket<sp/>=<sp/>find_id<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(2,<sp/>&amp;tmpUser,<sp/>&amp;prefix);</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>IRCTADChan_FreeList(arrayNicks,<sp/>numberOfUsers);</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Es<sp/>usuario<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTADUser_GetData(&amp;find_id,<sp/>&amp;find_user,<sp/>&amp;msgtarget,<sp/>&amp;find_real,<sp/>&amp;find_host,<sp/>&amp;find_ip,<sp/>&amp;find_socket,<sp/>&amp;find_creationTS,<sp/>&amp;find_actionTS,<sp/>&amp;find_away)==IRC_OK){</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRC_Prefix(&amp;prefix,<sp/>nick_static,<sp/>find_user,<sp/>NULL,<sp/></highlight><highlight class="stringliteral">&quot;LOCALHOST&quot;</highlight><highlight class="normal">)==IRC_OK){</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Privmsg(&amp;msgSend2,<sp/>prefix+1,<sp/>msgtarget,<sp/>msg)==IRC_OK){</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTADUser_GetAway(0,<sp/>NULL,<sp/>msgtarget,<sp/>NULL,<sp/>&amp;awayMsg)==IRC_OK){</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(awayMsg!=NULL){</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplAway(&amp;msgSend,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>msgtarget,<sp/>awayMsg)==IRC_OK){</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msgSend,<sp/>strlen(msgSend),<sp/>0);</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(msgSend){</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msgSend);</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msgSend<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>PRIVMSG:<sp/>Socket:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>find_socket);</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(find_socket,<sp/>msgSend2,<sp/>strlen(msgSend2),<sp/>0);</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(8,<sp/>&amp;find_user,<sp/>&amp;find_real,<sp/>&amp;find_host,<sp/>&amp;find_ip,<sp/>&amp;find_away,<sp/>&amp;prefix,<sp/>&amp;msgSend2,<sp/>&amp;awayMsg);</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>find_socket<sp/>=<sp/>find_id<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRCMsg_ErrNoSuchNick(&amp;msgSend,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>msgtarget);</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msgSend,<sp/>strlen(msgSend),<sp/>0);</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(msgSend){</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msgSend);</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msgSend<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/>IRC_MFree(3,<sp/>&amp;prefix,<sp/>&amp;msgtarget,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="602"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"></highlight></codeline>
+<codeline lineno="644" refid="G-2313-06-P1__function__handlers_8c_1aba1a3da1fb58bb35076e7ea56037463e" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1aba1a3da1fb58bb35076e7ea56037463e" kindref="member">server_command_part</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>**channels,<sp/>*target_channel;</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>size;</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>PART:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>command);</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_Part(command,<sp/>&amp;prefix,<sp/>&amp;target_channel,<sp/>&amp;msg)==IRC_OK){</highlight></codeline>
+<codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCTADChan_GetList(&amp;channels,<sp/>&amp;size,<sp/>NULL);</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(size<sp/>&lt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>IRCMsg_ErrNoSuchChannel(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>target_channel);</highlight></codeline>
+<codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTAD_Part(target_channel,<sp/>nick_static)==IRC_OK){</highlight></codeline>
+<codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Part(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>target_channel,<sp/>msg)==IRC_OK){</highlight></codeline>
+<codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="659"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRCMsg_ErrNoSuchChannel(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>target_channel);</highlight></codeline>
+<codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="663"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/>IRCTADChan_FreeList(channels,<sp/>size);</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="668"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"></highlight></codeline>
+<codeline lineno="711" refid="G-2313-06-P1__function__handlers_8c_1a0fe05d80af27ae220f8fa631468606ea" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1a0fe05d80af27ae220f8fa631468606ea" kindref="member">server_command_names</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="712"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>*channel,<sp/>*target,<sp/>**arrayNicks,<sp/>string_nicks[100],<sp/>type[7]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;=&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="713"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>numberOfUsers;</highlight></codeline>
+<codeline lineno="714"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="715"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>NAMES:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>command);</highlight></codeline>
+<codeline lineno="716"><highlight class="normal"><sp/><sp/>memset(string_nicks,<sp/>0,<sp/>100);</highlight></codeline>
+<codeline lineno="717"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_Names(command,<sp/>&amp;prefix,<sp/>&amp;channel,<sp/>&amp;target)==IRC_OK){</highlight></codeline>
+<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTAD_ListNicksOnChannelArray(channel,<sp/>&amp;arrayNicks,<sp/>&amp;numberOfUsers)==IRC_OK){</highlight></codeline>
+<codeline lineno="719"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>numberOfUsers;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>&gt;<sp/>0){</highlight></codeline>
+<codeline lineno="721"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcat(string_nicks,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((IRCTAD_GetUserModeOnChannel(channel,<sp/>arrayNicks[i])&amp;2)==2){</highlight></codeline>
+<codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcat(string_nicks,<sp/></highlight><highlight class="stringliteral">&quot;@&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcat(string_nicks,<sp/>arrayNicks[i]);</highlight></codeline>
+<codeline lineno="727"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>IRCTADChan_FreeList(arrayNicks,<sp/>numberOfUsers);</highlight></codeline>
+<codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="730"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strcmp(string_nicks,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)!=0){</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplNamReply(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>type,<sp/>channel,<sp/>string_nicks)==IRC_OK){</highlight></codeline>
+<codeline lineno="732"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="733"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="735"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="736"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplEndOfNames(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>channel)==IRC_OK){</highlight></codeline>
+<codeline lineno="737"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="738"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="739"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="740"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="741"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"></highlight></codeline>
+<codeline lineno="786" refid="G-2313-06-P1__function__handlers_8c_1a33025bd9c7bf8fbb2bf9cf722c07465c" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1a33025bd9c7bf8fbb2bf9cf722c07465c" kindref="member">server_command_kick</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="787"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>*channel,<sp/>*nick,<sp/>*comment;</highlight></codeline>
+<codeline lineno="788"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>response,<sp/>find_id<sp/>=<sp/>0,<sp/>find_creationTS,<sp/>find_actionTS;</highlight></codeline>
+<codeline lineno="789"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*find_user<sp/>=<sp/>NULL,<sp/>*find_real<sp/>=<sp/>NULL,<sp/>*find_host<sp/>=<sp/>NULL,<sp/>*find_ip<sp/>=<sp/>NULL,<sp/>*find_away<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="790"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>find_socket<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="791"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>KICK:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>command);</highlight></codeline>
+<codeline lineno="792"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_Kick(command,<sp/>&amp;prefix,<sp/>&amp;channel,<sp/>&amp;nick,<sp/>&amp;comment)==IRC_OK){</highlight></codeline>
+<codeline lineno="793"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((IRCTAD_GetUserModeOnChannel(channel,<sp/>nick_static)&amp;2)==2){</highlight></codeline>
+<codeline lineno="794"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>response<sp/>=<sp/>IRCTAD_KickUserFromChannel(channel,<sp/>nick);</highlight></codeline>
+<codeline lineno="795"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(response==IRC_OK){</highlight></codeline>
+<codeline lineno="796"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTADUser_GetData(&amp;find_id,<sp/>&amp;find_user,<sp/>&amp;nick,<sp/>&amp;find_real,<sp/>&amp;find_host,<sp/>&amp;find_ip,<sp/>&amp;find_socket,<sp/>&amp;find_creationTS,<sp/>&amp;find_actionTS,<sp/>&amp;find_away)==IRC_OK){</highlight></codeline>
+<codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Kick(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>channel,<sp/>nick,<sp/>comment)==IRC_OK){</highlight></codeline>
+<codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(find_socket,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="799"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="800"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="801"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="802"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find_user)</highlight></codeline>
+<codeline lineno="803"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(find_user);</highlight></codeline>
+<codeline lineno="804"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find_real)</highlight></codeline>
+<codeline lineno="805"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(find_real);</highlight></codeline>
+<codeline lineno="806"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find_host)</highlight></codeline>
+<codeline lineno="807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(find_host);</highlight></codeline>
+<codeline lineno="808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find_ip)</highlight></codeline>
+<codeline lineno="809"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(find_ip);</highlight></codeline>
+<codeline lineno="810"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find_away)</highlight></codeline>
+<codeline lineno="811"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(find_away);</highlight></codeline>
+<codeline lineno="812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(prefix)</highlight></codeline>
+<codeline lineno="813"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(prefix);</highlight></codeline>
+<codeline lineno="814"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>find_user<sp/>=<sp/>find_real<sp/>=<sp/>find_host<sp/>=<sp/>find_away<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="815"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>find_socket<sp/>=<sp/>find_id<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="816"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(response==IRCERR_NOVALIDUSER){</highlight></codeline>
+<codeline lineno="817"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_ErrNoLogin(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>nick)==IRC_OK){</highlight></codeline>
+<codeline lineno="818"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="819"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="820"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="821"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(response==IRCERR_NOVALIDCHANNEL){</highlight></codeline>
+<codeline lineno="822"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_ErrNoSuchChannel(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>channel)==IRC_OK){</highlight></codeline>
+<codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_ErrChanOPrivsNeeded(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>channel)==IRC_OK){</highlight></codeline>
+<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="832"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="833"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="834"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="835"><highlight class="normal"></highlight></codeline>
+<codeline lineno="879" refid="G-2313-06-P1__function__handlers_8c_1a44a8736512c1df49d94c8194ae9b8a50" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1a44a8736512c1df49d94c8194ae9b8a50" kindref="member">server_command_mode</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="880"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>*channel<sp/>=<sp/>NULL,<sp/>*mode<sp/>=<sp/>NULL,<sp/>*user<sp/>=<sp/>NULL,<sp/>*mode_arg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="881"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>response<sp/>=<sp/>0,<sp/>logic_comparator;</highlight></codeline>
+<codeline lineno="882"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>MODE:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>command);</highlight></codeline>
+<codeline lineno="883"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((response<sp/>=<sp/>IRCParse_Mode(command,<sp/>&amp;prefix,<sp/>&amp;channel,<sp/>&amp;mode,<sp/>&amp;user))==IRC_OK){</highlight></codeline>
+<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mode){</highlight></codeline>
+<codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((strcmp(mode,<sp/></highlight><highlight class="stringliteral">&quot;+s&quot;</highlight><highlight class="normal">)==0)||(strcmp(mode,<sp/></highlight><highlight class="stringliteral">&quot;+t&quot;</highlight><highlight class="normal">)==0)){</highlight></codeline>
+<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTAD_Mode(channel,<sp/>nick_static,<sp/>mode)==IRC_OK){</highlight></codeline>
+<codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Mode(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>channel,<sp/>mode,<sp/>user)==IRC_OK){</highlight></codeline>
+<codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="889"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="890"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="892"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="893"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(strcmp(mode,<sp/></highlight><highlight class="stringliteral">&quot;\\+k&quot;</highlight><highlight class="normal">)==0){</highlight></codeline>
+<codeline lineno="894"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mode_arg<sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(user)+6);</highlight></codeline>
+<codeline lineno="895"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(mode_arg,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="896"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcat(mode_arg,<sp/></highlight><highlight class="stringliteral">&quot;+k<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcat(mode_arg,<sp/>user);</highlight></codeline>
+<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTAD_Mode(channel,<sp/>nick_static,<sp/>mode_arg)==IRC_OK){</highlight></codeline>
+<codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Mode(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>channel,<sp/>mode,<sp/>user)==IRC_OK){</highlight></codeline>
+<codeline lineno="900"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="901"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="902"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="903"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="904"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="905"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="906"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_ErrUnknownMode(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>mode,<sp/>channel)==IRC_OK){</highlight></codeline>
+<codeline lineno="907"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="910"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="911"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="912"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>logic_comparator<sp/>=<sp/>IRCTADChan_GetModeInt(channel);</highlight></codeline>
+<codeline lineno="914"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((logic_comparator&amp;IRCMODE_TOPICOP)==IRCMODE_TOPICOP){</highlight></codeline>
+<codeline lineno="915"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplChannelModeIs(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>channel,<sp/></highlight><highlight class="stringliteral">&quot;+t&quot;</highlight><highlight class="normal">)==IRC_OK){</highlight></codeline>
+<codeline lineno="916"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="917"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="918"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="919"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="920"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((logic_comparator&amp;IRCMODE_SECRET)==IRCMODE_SECRET){</highlight></codeline>
+<codeline lineno="921"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplChannelModeIs(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>channel,<sp/></highlight><highlight class="stringliteral">&quot;+s&quot;</highlight><highlight class="normal">)==IRC_OK){</highlight></codeline>
+<codeline lineno="922"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="923"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="924"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="925"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="926"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((logic_comparator&amp;IRCMODE_CHANNELPASSWORD)==IRCMODE_CHANNELPASSWORD){</highlight></codeline>
+<codeline lineno="927"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplChannelModeIs(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>channel,<sp/></highlight><highlight class="stringliteral">&quot;\\+k&quot;</highlight><highlight class="normal">)==IRC_OK){</highlight></codeline>
+<codeline lineno="928"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="929"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="930"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="931"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="932"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="933"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="934"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(response==IRCERR_NOSTRING){</highlight></codeline>
+<codeline lineno="935"><highlight class="normal"><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>MODE:<sp/>IRCERR_NOSTRING&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="936"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(response==IRCERR_ERRONEUSCOMMAND){</highlight></codeline>
+<codeline lineno="937"><highlight class="normal"><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>MODE:<sp/>IRCERR_ERRONEUSCOMMAND&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="938"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="939"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(channel){</highlight></codeline>
+<codeline lineno="940"><highlight class="normal"><sp/><sp/><sp/><sp/>free(channel);</highlight></codeline>
+<codeline lineno="941"><highlight class="normal"><sp/><sp/><sp/><sp/>channel<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="942"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="943"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mode){</highlight></codeline>
+<codeline lineno="944"><highlight class="normal"><sp/><sp/><sp/><sp/>free(mode);</highlight></codeline>
+<codeline lineno="945"><highlight class="normal"><sp/><sp/><sp/><sp/>mode<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="946"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="947"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(user){</highlight></codeline>
+<codeline lineno="948"><highlight class="normal"><sp/><sp/><sp/><sp/>free(user);</highlight></codeline>
+<codeline lineno="949"><highlight class="normal"><sp/><sp/><sp/><sp/>user<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="950"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="951"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mode_arg){</highlight></codeline>
+<codeline lineno="952"><highlight class="normal"><sp/><sp/><sp/><sp/>free(mode_arg);</highlight></codeline>
+<codeline lineno="953"><highlight class="normal"><sp/><sp/><sp/><sp/>mode_arg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="954"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="955"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(prefix){</highlight></codeline>
+<codeline lineno="956"><highlight class="normal"><sp/><sp/><sp/><sp/>free(prefix);</highlight></codeline>
+<codeline lineno="957"><highlight class="normal"><sp/><sp/><sp/><sp/>prefix<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="958"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="959"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="960"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1001" refid="G-2313-06-P1__function__handlers_8c_1a327516a6c48e34b58428f7a502938928" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1a327516a6c48e34b58428f7a502938928" kindref="member">server_command_away</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="1002"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>*msg_away<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="1003"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>AWAY:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>command);</highlight></codeline>
+<codeline lineno="1004"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_Away(command,<sp/>&amp;prefix,<sp/>&amp;msg_away)==IRC_OK){</highlight></codeline>
+<codeline lineno="1005"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__common__functions_8h_1af9aeb632d55a4cbbe842ab97001b5128" kindref="member">server_channels_update_away</ref>(nick_static,<sp/>msg_away);</highlight></codeline>
+<codeline lineno="1006"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(msg_away!=NULL){</highlight></codeline>
+<codeline lineno="1007"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplNowAway(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static)==IRC_OK){</highlight></codeline>
+<codeline lineno="1008"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1009"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(1,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1012"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplUnaway(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static)==IRC_OK){</highlight></codeline>
+<codeline lineno="1013"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1014"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1015"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(1,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="1016"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1017"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1018"><highlight class="normal"><sp/><sp/>IRC_MFree(2,<sp/>&amp;prefix,<sp/>&amp;msg_away);</highlight></codeline>
+<codeline lineno="1019"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1020"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1061" refid="G-2313-06-P1__function__handlers_8c_1a8bb934f01707fcb12ebac41f1fe69441" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1a8bb934f01707fcb12ebac41f1fe69441" kindref="member">server_command_whois</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="1062"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>*target<sp/>=<sp/>NULL,<sp/>*maskarray<sp/>=<sp/>NULL,<sp/>*awayMsg<sp/>=<sp/>NULL,<sp/>**arrayChannels<sp/>=<sp/>NULL,<sp/>*stringsWhois<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="1063"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>find_id<sp/>=<sp/>0,<sp/>find_creationTS,<sp/>find_actionTS,<sp/>numberOfChannels<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1064"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*find_user<sp/>=<sp/>NULL,<sp/>*find_real<sp/>=<sp/>NULL,<sp/>*find_host<sp/>=<sp/>NULL,<sp/>*find_ip<sp/>=<sp/>NULL,<sp/>*find_away<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="1065"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>find_socket<sp/>=<sp/>0,<sp/>i;</highlight></codeline>
+<codeline lineno="1066"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>WHOIS:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>command);</highlight></codeline>
+<codeline lineno="1067"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_Whois(command,<sp/>&amp;prefix,<sp/>&amp;target,<sp/>&amp;maskarray)==IRC_OK){</highlight></codeline>
+<codeline lineno="1068"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTADUser_GetAway(0,<sp/>NULL,<sp/>maskarray,<sp/>NULL,<sp/>&amp;awayMsg)==IRC_OK){</highlight></codeline>
+<codeline lineno="1069"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(awayMsg!=NULL){</highlight></codeline>
+<codeline lineno="1070"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplAway(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>maskarray,<sp/>awayMsg)==IRC_OK){</highlight></codeline>
+<codeline lineno="1071"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1072"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1073"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(msg){</highlight></codeline>
+<codeline lineno="1074"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="1075"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="1076"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1077"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1078"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTADUser_GetData(&amp;find_id,<sp/>&amp;find_user,<sp/>&amp;maskarray,<sp/>&amp;find_real,<sp/>&amp;find_host,<sp/>&amp;find_ip,</highlight></codeline>
+<codeline lineno="1079"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;find_socket,<sp/>&amp;find_creationTS,<sp/>&amp;find_actionTS,<sp/>&amp;find_away)==IRC_OK){</highlight></codeline>
+<codeline lineno="1080"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTAD_ListChannelsOfUserArray(find_user,<sp/>maskarray,<sp/>&amp;arrayChannels,<sp/>&amp;numberOfChannels)==IRC_OK){</highlight></codeline>
+<codeline lineno="1081"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;WHOIS:<sp/>LISTA<sp/>DE<sp/>CANALES<sp/>OK&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1082"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplWhoIsUser(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>maskarray,<sp/>find_user,<sp/>find_host,<sp/>find_real)==IRC_OK){</highlight></codeline>
+<codeline lineno="1083"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;WHOIS:<sp/>mensaje<sp/>ok&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1084"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1085"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1086"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(msg){</highlight></codeline>
+<codeline lineno="1087"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="1088"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="1089"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1090"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stringsWhois<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>malloc(numberOfChannels*51*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="1091"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(stringsWhois,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1092"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1093"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;numberOfChannels;<sp/>i++){</highlight></codeline>
+<codeline lineno="1094"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(i&gt;0){</highlight></codeline>
+<codeline lineno="1095"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcat(stringsWhois,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1096"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1097"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((IRCTAD_GetUserModeOnChannel(arrayChannels[i],<sp/>maskarray)&amp;2)==2){</highlight></codeline>
+<codeline lineno="1098"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcat(stringsWhois,<sp/></highlight><highlight class="stringliteral">&quot;@&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1099"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcat(stringsWhois,<sp/>arrayChannels[i]);</highlight></codeline>
+<codeline lineno="1101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplWhoIsChannels(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>maskarray,<sp/>stringsWhois)==IRC_OK){</highlight></codeline>
+<codeline lineno="1104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(1,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="1107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplEndOfWhoIs(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>maskarray)==IRC_OK){</highlight></codeline>
+<codeline lineno="1109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(2,<sp/>&amp;msg,<sp/>&amp;stringsWhois);</highlight></codeline>
+<codeline lineno="1112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;WHOIS:<sp/>ERROR<sp/>AL<sp/>OBTENER<sp/>CANALES&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRCTADChan_FreeList(arrayChannels,<sp/>numberOfChannels);</highlight></codeline>
+<codeline lineno="1116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IRC_MFree(5,<sp/>&amp;find_user,<sp/>&amp;find_real,<sp/>&amp;find_ip,<sp/>&amp;find_host,<sp/>&amp;find_away);</highlight></codeline>
+<codeline lineno="1117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>find_socket<sp/>=<sp/>find_id<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="1118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;WHOIS:<sp/>USUARIO<sp/>ENCONTRADO&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1122"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_ErrNoNickNameGiven(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static)==IRC_OK){</highlight></codeline>
+<codeline lineno="1124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1125"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(msg){</highlight></codeline>
+<codeline lineno="1127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>free(msg);</highlight></codeline>
+<codeline lineno="1128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="1129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1130"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1131"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(target){</highlight></codeline>
+<codeline lineno="1132"><highlight class="normal"><sp/><sp/><sp/><sp/>free(target);</highlight></codeline>
+<codeline lineno="1133"><highlight class="normal"><sp/><sp/><sp/><sp/>target<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="1134"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1135"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(maskarray){</highlight></codeline>
+<codeline lineno="1136"><highlight class="normal"><sp/><sp/><sp/><sp/>free(maskarray);</highlight></codeline>
+<codeline lineno="1137"><highlight class="normal"><sp/><sp/><sp/><sp/>maskarray<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="1138"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(awayMsg){</highlight></codeline>
+<codeline lineno="1140"><highlight class="normal"><sp/><sp/><sp/><sp/>free(awayMsg);</highlight></codeline>
+<codeline lineno="1141"><highlight class="normal"><sp/><sp/><sp/><sp/>awayMsg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="1142"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1186" refid="G-2313-06-P1__function__handlers_8c_1a894ae019e03841e9d54fdad31d79f218" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1a894ae019e03841e9d54fdad31d79f218" kindref="member">server_command_topic</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="1187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>*channel<sp/>=<sp/>NULL,<sp/>*topic<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="1188"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>TOPIC:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>command);</highlight></codeline>
+<codeline lineno="1189"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_Topic(command,<sp/>&amp;prefix,<sp/>&amp;channel,<sp/>&amp;topic)==IRC_OK){</highlight></codeline>
+<codeline lineno="1190"><highlight class="normal"><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;TOPIC<sp/>a&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(topic&amp;&amp;channel){</highlight></codeline>
+<codeline lineno="1192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;TOPIC<sp/>b&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((IRCTADChan_GetModeInt(channel)&amp;IRCMODE_TOPICOP)==IRCMODE_TOPICOP){</highlight></codeline>
+<codeline lineno="1194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(((IRCTAD_GetUserModeOnChannel(channel,<sp/>nick_static)&amp;1)==1)||((IRCTAD_GetUserModeOnChannel(channel,<sp/>nick_static)&amp;2)==2)){</highlight></codeline>
+<codeline lineno="1195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTAD_SetTopic(channel,<sp/>nick_static,<sp/>topic)==IRC_OK){</highlight></codeline>
+<codeline lineno="1196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Topic(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>channel,<sp/>topic)==IRC_OK){</highlight></codeline>
+<codeline lineno="1197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_ErrChanOPrivsNeeded(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>channel)==IRC_OK){</highlight></codeline>
+<codeline lineno="1202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTAD_SetTopic(channel,<sp/>nick_static,<sp/>topic)==IRC_OK){</highlight></codeline>
+<codeline lineno="1207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_Topic(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>channel,<sp/>topic)==IRC_OK){</highlight></codeline>
+<codeline lineno="1208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1212"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;TOPIC<sp/>c&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCTAD_GetTopic(channel,<sp/>&amp;topic)==IRC_OK){</highlight></codeline>
+<codeline lineno="1215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!topic){</highlight></codeline>
+<codeline lineno="1216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplNoTopic(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>channel)==IRC_OK){</highlight></codeline>
+<codeline lineno="1217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplTopic(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/>channel,<sp/>topic)==IRC_OK){</highlight></codeline>
+<codeline lineno="1221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1225"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1226"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1227"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;prefix,<sp/>&amp;channel,<sp/>&amp;topic,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="1228"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1265" refid="G-2313-06-P1__function__handlers_8c_1a1258d3bdf779b82c3f952bdde3d62631" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__function__handlers_8c_1a1258d3bdf779b82c3f952bdde3d62631" kindref="member">server_command_motd</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>nick_static,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>register_status){</highlight></codeline>
+<codeline lineno="1266"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix<sp/>=<sp/>NULL,<sp/>*msg<sp/>=<sp/>NULL,<sp/>*target<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="1267"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;-----&gt;<sp/>EXECUTE<sp/>MOTD:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>command);</highlight></codeline>
+<codeline lineno="1268"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCParse_Motd(command,<sp/>&amp;prefix,<sp/>&amp;target)==IRC_OK){</highlight></codeline>
+<codeline lineno="1269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplMotdStart(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/></highlight><highlight class="stringliteral">&quot;¡BIENVENIDO!&quot;</highlight><highlight class="normal">)==IRC_OK){</highlight></codeline>
+<codeline lineno="1270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1271"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1272"><highlight class="normal"><sp/><sp/><sp/><sp/>IRC_MFree(1,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="1273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplMotd(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static,<sp/></highlight><highlight class="stringliteral">&quot;¡BIENVENIDO!&quot;</highlight><highlight class="normal">)==IRC_OK){</highlight></codeline>
+<codeline lineno="1275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1276"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1277"><highlight class="normal"><sp/><sp/><sp/><sp/>IRC_MFree(1,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="1278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(IRCMsg_RplEndOfMotd(&amp;msg,<sp/></highlight><highlight class="stringliteral">&quot;ip.servidor&quot;</highlight><highlight class="normal">,<sp/>nick_static)==IRC_OK){</highlight></codeline>
+<codeline lineno="1280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>send(desc,<sp/>msg,<sp/>strlen(msg),<sp/>0);</highlight></codeline>
+<codeline lineno="1281"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1282"><highlight class="normal"><sp/><sp/><sp/><sp/>IRC_MFree(1,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="1283"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1284"><highlight class="normal"><sp/><sp/>IRC_MFree(2,<sp/>&amp;prefix,<sp/>&amp;target);</highlight></codeline>
+<codeline lineno="1285"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/G-2313-06-P1_function_handlers.c"/>
+  </compounddef>
+</doxygen>

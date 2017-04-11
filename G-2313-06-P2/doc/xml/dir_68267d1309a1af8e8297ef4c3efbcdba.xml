@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerfile refid="G-2313-06-P1__common__functions_8c">G-2313-06-P1_common_functions.c</innerfile>
+    <innerfile refid="G-2313-06-P1__function__handlers_8c">G-2313-06-P1_function_handlers.c</innerfile>
+    <innerfile refid="G-2313-06-P1__server_8c">G-2313-06-P1_server.c</innerfile>
+    <innerfile refid="G-2313-06-P1__thread__pool_8c">G-2313-06-P1_thread_pool.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/src/"/>
+  </compounddef>
+</doxygen>
