@@ -1230,26 +1230,35 @@ void server_command_whois(char* command, int desc, char * nick_static, int* regi
 */
 void server_command_topic(char* command, int desc, char * nick_static, int* register_status){
   char *prefix = NULL, *msg = NULL, *channel = NULL, *topic = NULL;
+  long find_id = 0, find_creationTS, find_actionTS;
+  char *find_nick = NULL, *find_user = NULL, *find_real = NULL, *find_host = NULL, *find_ip = NULL, *find_away = NULL;
+  int find_socket = 0;
   syslog(LOG_INFO, "-----> EXECUTE TOPIC: %s", command);
   if(IRCParse_Topic(command, &prefix, &channel, &topic)==IRC_OK){
+    if(IRCTADUser_GetData(&find_id, &find_user, &find_nick, &find_real, &find_host, &find_ip, &desc, &find_creationTS, &find_actionTS, &find_away)==IRC_OK){
+      if(IRC_Prefix(&prefix, find_nick, find_user, NULL, find_host)==IRC_OK){
+        syslog(LOG_INFO, "-----> Prefix: %s", prefix);
+      }
+      IRC_MFree(6, &find_nick, &find_user, &find_real, &find_host, &find_ip, &find_away);
+    }
     syslog(LOG_INFO, "TOPIC a");
     if(topic&&channel){
       syslog(LOG_INFO, "TOPIC b");
       if((IRCTADChan_GetModeInt(channel)&IRCMODE_TOPICOP)==IRCMODE_TOPICOP){
         if(((IRCTAD_GetUserModeOnChannel(channel, nick_static)&1)==1)||((IRCTAD_GetUserModeOnChannel(channel, nick_static)&2)==2)){
           if(IRCTAD_SetTopic(channel, nick_static, topic)==IRC_OK){
-            if(IRCMsg_Topic(&msg, "ip.servidor", channel, topic)==IRC_OK){
+            if(IRCMsg_Topic(&msg, prefix + 1, channel, topic)==IRC_OK){
               send(desc, msg, strlen(msg), 0);
             }
           }
         } else {
-          if(IRCMsg_ErrChanOPrivsNeeded(&msg, "ip.servidor", nick_static, channel)==IRC_OK){
+          if(IRCMsg_ErrChanOPrivsNeeded(&msg, prefix + 1, nick_static, channel)==IRC_OK){
             send(desc, msg, strlen(msg), 0);
           }
         }
       } else {
         if(IRCTAD_SetTopic(channel, nick_static, topic)==IRC_OK){
-          if(IRCMsg_Topic(&msg, "ip.servidor", channel, topic)==IRC_OK){
+          if(IRCMsg_Topic(&msg, prefix + 1, channel, topic)==IRC_OK){
             send(desc, msg, strlen(msg), 0);
           }
         }
@@ -1258,11 +1267,11 @@ void server_command_topic(char* command, int desc, char * nick_static, int* regi
       syslog(LOG_INFO, "TOPIC c");
       if(IRCTAD_GetTopic(channel, &topic)==IRC_OK){
         if(!topic){
-          if(IRCMsg_RplNoTopic(&msg, "ip.servidor", nick_static, channel)==IRC_OK){
+          if(IRCMsg_RplNoTopic(&msg, prefix + 1, nick_static, channel)==IRC_OK){
             send(desc, msg, strlen(msg), 0);
           }
         } else {
-          if(IRCMsg_RplTopic(&msg, "ip.servidor", nick_static, channel, topic)==IRC_OK){
+          if(IRCMsg_RplTopic(&msg, prefix + 1, nick_static, channel, topic)==IRC_OK){
             send(desc, msg, strlen(msg), 0);
           }
         }

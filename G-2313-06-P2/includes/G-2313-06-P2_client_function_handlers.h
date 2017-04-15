@@ -21,6 +21,8 @@ void server_in_command_pong(char* command, int desc, char* nick_static, int* reg
 void server_in_command_join(char* command, int desc, char* nick_static, int* register_status);
 void server_in_command_part(char* command, int desc, char* nick_static, int* register_status);
 void server_in_command_mode(char* command, int desc, char* nick_static, int* register_status);
+void server_in_command_topic(char* command, int desc, char* nick_static, int* register_status);
+void server_in_command_kick(char* command, int desc, char* nick_static, int* register_status);
 
 void server_out_command_nick(char* command, int desc, char* nick_static, int* register_status);
 void server_out_command_join(char* command, int desc, char* nick_static, int* register_status);

@@ -469,7 +469,6 @@ void IRCInterface_BanNick(char *channel, char *nick)
 
 long IRCInterface_Connect(char *nick, char *user, char *realname, char *password, char *server, int port, boolean ssl)
 {
-  int puerto;
   struct sockaddr_in socket_address;
   struct hostent *server_info;
   char *command, *msgNick, *msgUser, *msgPass;
@@ -504,23 +503,31 @@ long IRCInterface_Connect(char *nick, char *user, char *realname, char *password
     } else {
       syslog(LOG_ERR, "[CLIENTE] Conexion con servidor OK");
     }
+    pthread_create(&thread_response, NULL, client_function_response, NULL);
 
     /* Ya conectados, parseamos nick/user y lo enviamos */
     IRCMsg_Nick(&msgNick, NULL, nick, NULL);
     IRCMsg_User(&msgUser, NULL, user, server, realname);
     IRCMsg_Pass(&msgPass, NULL, password);
     IRC_PipelineCommands(&command, msgNick, msgUser, msgPass, NULL);
+    syslog(LOG_ERR, "[CLIENTE] Registro pipelined: %s", command);
 
     if(send(socket_desc, command, strlen(command), 0) < 0) {
         return IRCERR_NOCONNECT;
     }
     IRCInterface_PlaneRegisterOutMessage(command);
+
+    if(!nick_cliente){
+      syslog(LOG_INFO, "[CLIENTE] Nuevo nick almacenado");
+      nick_cliente = malloc(sizeof(nick));
+      strcpy(nick_cliente, nick);
+    }
+
     syslog(LOG_ERR, "[CLIENTE] Socket desc: %d", socket_desc);
     free(command);
   }
 
   pthread_create(&thread_ping, NULL, client_function_ping, NULL);
-  pthread_create(&thread_response, NULL, client_function_response, NULL);
 
 	return IRC_OK;
 }
@@ -936,7 +943,7 @@ boolean IRCInterface_DisconnectServer(char *server, int port)
   shutdown(socket_desc, 2);
   socket_desc = 0;
 
-  IRC_MFree(1, &msg);
+  IRC_MFree(2, &msg, &nick_cliente);
 	return TRUE;
 }
 

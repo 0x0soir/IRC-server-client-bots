@@ -11,6 +11,7 @@ void* client_function_ping(void *arg){
   free(realname);
   syslog(LOG_INFO, "[CLIENTE] Inicia hilo ping");
   while(TRUE) {
+    syslog(LOG_INFO, "[CLIENTE] PING");
     IRCMsg_Ping(&command, NULL, server, NULL);
     if(send(socket_desc, command, strlen(command), 0) < 0) {
       syslog(LOG_INFO, "[CLIENTE] PING error");
@@ -22,28 +23,30 @@ void* client_function_ping(void *arg){
 }
 
 void* client_function_response(void *arg){
-  int tid;
-  long value;
   char buff[CLIENT_MESSAGE_MAXSIZE] = "";
-  tid = pthread_self();
   char* next;
   char* resultado;
   int valread;
+  /*int tid;*/
+  /* tid = pthread_self(); */
 
   while(TRUE) {
+    syslog(LOG_INFO, "[CLIENTE] Esperando a recibir mensajes...");
     valread = read(socket_desc, buff, 8192);
     if(valread < 0) {
       pthread_exit(NULL);
     }
 
     buff[valread] = '\0';
+    syslog(LOG_INFO, "[CLIENTE] Mensaje recibido: %s", buff);
     next = IRC_UnPipelineCommands(buff, &resultado);
-    syslog(LOG_INFO, "[CLIENTE] Mensaje recibido: %s", resultado);
+    syslog(LOG_INFO, "[CLIENTE] Procesa: %s", resultado);
     client_pre_in_function(resultado);
     free(resultado);
     while(next != NULL) {
       next = IRC_UnPipelineCommands(next, &resultado);
       if(resultado !=((void *) 0)) {
+        syslog(LOG_INFO, "[CLIENTE] Procesa: %s", resultado);
         client_pre_in_function(resultado);
       }
       free(resultado);
@@ -68,6 +71,8 @@ void client_execute_in_function(long functionName, char* command){
   functions[JOIN] = &server_in_command_join;
   functions[PART] = &server_in_command_part;
   functions[MODE] = &server_in_command_mode;
+  functions[TOPIC] = &server_in_command_topic;
+  functions[KICK] = &server_in_command_kick;
   /* Llamar a la funcion del argumento */
   if((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
     /* Default aqui */
@@ -84,7 +89,6 @@ void client_pre_out_function(char* command){
 void client_execute_out_function(long functionName, char* command){
   FunctionCallBack functions[IRC_MAX_USER_COMMANDS];
   int i;
-  char *msg;
   for(i=0; i<IRC_MAX_USER_COMMANDS; i++){
     functions[i]=NULL;
   }

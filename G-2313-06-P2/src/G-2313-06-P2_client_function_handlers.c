@@ -5,11 +5,11 @@ extern char* nick_cliente;
 
 /* IN FUNCTIONS */
 void server_in_command_nick(char* command, int desc, char * nick_static, int* register_status){
-  char *prefix, *nick, *msg, *msgEnvio[150];
+  char *prefix, *nick, *msg, msgEnvio[150];
   IRCInterface_PlaneRegisterInMessageThread(command);
   if(IRCParse_Nick(command, &prefix, &nick, &msg)==IRC_OK){
     if(!nick_cliente){
-      syslog(LOG_INFO, "[CLIENTE] No hay puntero reservado ");
+      syslog(LOG_INFO, "[CLIENTE] No hay puntero reservado");
       nick_cliente = malloc(sizeof(msg));
       strcpy(nick_cliente, msg);
     }
@@ -33,17 +33,21 @@ void server_in_command_pong(char* command, int desc, char * nick_static, int* re
 }
 
 void server_in_command_join(char* command, int desc, char * nick_static, int* register_status){
-  char *prefix, *channel, *key, *msg, *msgEnvio[150], *join_nick, *join_user, *join_host, *join_server;
-  long mode = 1L;
+  char *prefix, *channel, *key, *msg, msgEnvio[200], *join_nick, *join_user, *join_host, *join_server;
   IRCInterface_PlaneRegisterInMessageThread(command);
   if(IRCParse_Join(command, &prefix, &channel, &key, &msg)==IRC_OK){
     syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN PREFIX %s", prefix);
     if(IRCParse_ComplexUser(prefix, &join_nick, &join_user, &join_host, &join_server)==IRC_OK){
+      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN parseado complex");
+      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN complex: %s", join_nick);
+      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN complex: %s", nick_cliente);
       if(strcmp(join_nick, nick_cliente)==0){
         sprintf(msgEnvio, "Ahora estás hablando en %s", msg);
       } else {
-        sprintf(msgEnvio, "%s (~%s@%s) ha entrado %s", join_nick, join_nick, join_server, msg);
+        sprintf(msgEnvio, "%s (~%s@%s) ha entrado en %s", join_nick, join_nick, join_server, msg);
       }
+      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN generado mensaje para chat");
+      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN mensaje: %s", msgEnvio);
       if(IRCInterface_QueryChannelExistThread(msg)!=0){
         IRCInterface_AddNickChannel(msg, join_nick, join_user, join_user, join_server, 0);
         syslog(LOG_INFO, "[CLIENTE] [IN]: Canal existente, añado nick");
@@ -54,16 +58,21 @@ void server_in_command_join(char* command, int desc, char * nick_static, int* re
         /*strcpy(msgEnvio, msg);*/
         /*pthread_create(&thread1, NULL, func_who, (void *) buff);*/
       }
+      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN antes de write");
+      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN msg: %s", msg);
+      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN msgEnvio: %s", msgEnvio);
       IRCInterface_WriteChannelThread(msg, NULL, msgEnvio);
+      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN despues de write");
     } else {
       syslog(LOG_INFO, "[CLIENTE] [IN]: Error en Parse Complex");
     }
   }
+  syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN antes de free");
   IRC_MFree(8, &prefix, &channel, &key, &msg, &join_nick, &join_user, &join_host, &join_server);
 }
 
 void server_in_command_part(char* command, int desc, char * nick_static, int* register_status){
-  char *prefix, *channel, *msg, *msgEnvio[150], *part_nick, *part_user, *part_host, *part_server;
+  char *prefix, *channel, *msg, msgEnvio[150], *part_nick, *part_user, *part_host, *part_server;
   IRCInterface_PlaneRegisterInMessageThread(command);
   if(IRCParse_Part(command, &prefix, &channel, &msg)==IRC_OK){
     if(IRCParse_ComplexUser(prefix, &part_nick, &part_user, &part_host, &part_server)==IRC_OK){
@@ -85,7 +94,7 @@ void server_in_command_part(char* command, int desc, char * nick_static, int* re
 }
 
 void server_in_command_mode(char* command, int desc, char * nick_static, int* register_status){
-  char *prefix, *channel, *msg, *msgEnvio[150], *mode, *mode_nick, *mode_user, *mode_host, *mode_server, *user_target;
+  char *prefix, *channel, *mode, *mode_nick, *mode_user, *mode_host, *mode_server, *user_target;
   char buff[200];
   IRCInterface_PlaneRegisterInMessageThread(command);
   syslog(LOG_INFO, "[CLIENTE] [IN]: MODE");
@@ -106,8 +115,11 @@ void server_in_command_mode(char* command, int desc, char * nick_static, int* re
         sprintf(buff, "%s quita contraseña del canal", mode_nick);
         IRCInterface_WriteChannelThread(channel, "*", buff);
       } else if (strstr(mode, "+m")) {
+        syslog(LOG_INFO, "[CLIENTE] [IN]: MODE M %s %s", mode_nick, channel);
         sprintf(buff, "%s establece el modo +m %s", mode_nick, channel);
+        syslog(LOG_INFO, "[CLIENTE] [IN]: MODE M tras sprintf");
         IRCInterface_WriteChannelThread(channel, "*", buff);
+        syslog(LOG_INFO, "[CLIENTE] [IN]: MODE M tras writechannel");
       } else if (strstr(mode, "-m")) {
         sprintf(buff, "%s establece el modo -m %s", mode_nick, channel);
         IRCInterface_WriteChannelThread(channel, "*", buff);
@@ -161,11 +173,53 @@ void server_in_command_mode(char* command, int desc, char * nick_static, int* re
         IRCInterface_WriteChannelThread(channel, "*", buff);
         IRCInterface_ChangeNickStateChannelThread(channel, user_target, VOICE);
       }
+      syslog(LOG_INFO, "[CLIENTE] [IN]: Mode termina");
     } else {
       syslog(LOG_INFO, "[CLIENTE] [IN]: Error en Parse Complex");
     }
   }
-  IRC_MFree(8, &prefix, &channel, &msg, &mode_nick, &mode_user, &mode_host, &mode_server);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: Mode antes de free");
+  IRC_MFree(6, &prefix, &channel, &mode_nick, &mode_user, &mode_host, &mode_server);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: Mode despues de free");
+}
+
+void server_in_command_topic(char* command, int desc, char * nick_static, int* register_status){
+  char *prefix, *channel, *msg, *parse_nick, *parse_user, *parse_host, *parse_server;
+  char buffer[200];
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: TOPIC");
+  if(IRCParse_Topic(command, &prefix, &channel, &msg)==IRC_OK){
+    if(IRCParse_ComplexUser(prefix, &parse_nick, &parse_user, &parse_host, &parse_server)==IRC_OK){
+      syslog(LOG_INFO, "[CLIENTE] [IN]: TOPIC parseado");
+      sprintf(buffer, "%s ha cambiado el tema a: %s", parse_nick, msg);
+      IRCInterface_SetTopicThread(msg);
+      IRCInterface_WriteChannelThread(channel, "*", buffer);
+    }
+  }
+  IRC_MFree(7, &prefix, &channel, &msg, &parse_nick, &parse_user, &parse_host, &parse_server);
+}
+
+void server_in_command_kick(char* command, int desc, char * nick_static, int* register_status){
+  char *prefix, *channel, *msg, *user_target, *parse_nick, *parse_user, *parse_host, *parse_server;
+  char buffer[200];
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: KICK");
+  if(IRCParse_Kick(command, &prefix, &channel, &user_target, &msg)==IRC_OK){
+    if(IRCParse_ComplexUser(prefix, &parse_nick, &parse_user, &parse_host, &parse_server)==IRC_OK){
+      syslog(LOG_INFO, "[CLIENTE] [IN]: KICK parseado");
+      if(strcmp(user_target, nick_static)==0){
+        sprintf(buffer, "Has sido expulsado de %s por %s (Motivo: %s)", channel, parse_nick, msg);
+        IRCInterface_DeleteNickChannel(channel, user_target);
+        IRCInterface_RemoveChannelThread(channel);
+        IRCInterface_WriteSystemThread("*", buffer);
+      } else {
+        IRCInterface_DeleteNickChannel(channel, user_target);
+        sprintf(buffer, "%s ha expulsado a %s de %s (%s)", parse_nick, user_target, channel, msg);
+        IRCInterface_WriteChannelThread(channel, NULL, buffer);
+      }
+    }
+  }
+  IRC_MFree(8, &prefix, &channel, &msg, &user_target, &parse_nick, &parse_user, &parse_host, &parse_server);
 }
 
 /* OUT FUNCTIONS */
