@@ -65,6 +65,9 @@ void client_execute_in_function(long functionName, char* command){
   /* Definir lista de funciones para cada comando*/
   functions[NICK] = &server_in_command_nick;
   functions[PONG] = &server_in_command_pong;
+  functions[JOIN] = &server_in_command_join;
+  functions[PART] = &server_in_command_part;
+  functions[MODE] = &server_in_command_mode;
   /* Llamar a la funcion del argumento */
   if((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
     /* Default aqui */
@@ -87,6 +90,12 @@ void client_execute_out_function(long functionName, char* command){
   }
   /* Definir lista de funciones para cada comando*/
   functions[NICK] = &server_out_command_nick;
+  functions[JOIN] = &server_out_command_join;
+  functions[NAMES] = &server_out_command_names;
+  functions[LIST] = &server_out_command_list;
+  functions[PART] = &server_out_command_part;
+  functions[MODE] = &server_out_command_mode;
+
   /* Llamar a la funcion del argumento */
   if((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
     /* Default aqui */

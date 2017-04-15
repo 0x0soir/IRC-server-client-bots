@@ -1,0 +1,45 @@
+.TH "server_command_ping" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_command_ping \- server_command_ping 
+Función handler del comando PING del IRC\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_function_handlers\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_command_ping(char* command, int desc, char * nick_static, int* register_status)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBParse:\fP Comprueba que el parseo del comando PING sea correcto\&. 
+.PP
+.PP
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBRecibe ping:\fP Es decir, recibe de un usuario el comando PING con el que el usuario espera recibir un PONG con la misma cadena recibida\&.  
+.IP "\(bu" 2
+\fBEnvío pong:\fP Es decir, se devuelve al usuario el PONG generado por la función del TAD \fBIRCMsg_Pong\fP al descriptor del socket del cliente utilizando la función \fBsend()\fP\&. 
+.PP
+.PP
+Al finalizar el flujo de la función se liberan los recursos utilizados\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

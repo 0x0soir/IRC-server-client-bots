@@ -2,7 +2,7 @@
 GROUP_CLIENT=G-2313-06-P2
 
 # Flags para el compilador
-FFLAGS= -Wall -pedantic -pthread -w -rdynamic
+FFLAGS= -Wall -pedantic -w -pthread -rdynamic
 REDESLIB= -lircredes -lirctad -lircinterface -lsoundredes
 
 # Cliente

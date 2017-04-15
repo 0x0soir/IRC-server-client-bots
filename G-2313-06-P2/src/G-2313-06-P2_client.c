@@ -60,6 +60,17 @@ pthread_t thread_ping, thread_response;
 
 void IRCInterface_ActivateChannelKey(char *channel, char *key)
 {
+  char *msg = NULL;
+  if(channel&&key){
+  	IRCMsg_Mode(&msg, NULL, channel, "+k", key);
+  	IRCInterface_PlaneRegisterOutMessage(msg);
+
+  	send(socket_desc, msg, strlen(msg), 0);
+
+  	IRCInterface_SetChannelKey(key);
+
+  	IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -94,6 +105,16 @@ void IRCInterface_ActivateChannelKey(char *channel, char *key)
 
 void IRCInterface_ActivateExternalMessages(char *channel)
 {
+  char *msg = NULL;
+
+	IRCMsg_Mode(&msg, NULL, channel, "+n", NULL);
+	IRCInterface_PlaneRegisterOutMessage(msg);
+
+	send(socket_desc, msg, strlen(msg), 0);
+
+	IRCInterface_SetExternalMessages();
+
+	IRC_MFree(1, &msg);
 }
 
 /**
@@ -128,6 +149,16 @@ void IRCInterface_ActivateExternalMessages(char *channel)
 
 void IRCInterface_ActivateInvite(char *channel)
 {
+  char *msg = NULL;
+
+	IRCMsg_Mode(&msg, NULL, channel, "+i", NULL);
+	IRCInterface_PlaneRegisterOutMessage(msg);
+
+	send(socket_desc, msg, strlen(msg), 0);
+
+	IRCInterface_SetInvite();
+
+	IRC_MFree(1, &msg);
 }
 
 /**
@@ -162,6 +193,16 @@ void IRCInterface_ActivateInvite(char *channel)
 
 void IRCInterface_ActivateModerated(char *channel)
 {
+  char *msg = NULL;
+
+	IRCMsg_Mode(&msg, NULL, channel, "+m", NULL);
+	IRCInterface_PlaneRegisterOutMessage(msg);
+
+	send(socket_desc, msg, strlen(msg), 0);
+
+	IRCInterface_SetModerated();
+
+	IRC_MFree(1, &msg);
 }
 
 /**
@@ -199,6 +240,19 @@ void IRCInterface_ActivateModerated(char *channel)
 
 void IRCInterface_ActivateNicksLimit(char *channel, int limit)
 {
+  char *msg;
+  char aux[10];
+
+  if (channel && limit > 0) {
+    sprintf(aux, "%d", limit);
+    IRCMsg_Mode(&msg, NULL, channel, "+l", aux);
+
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+
+    IRCInterface_SetNicksLimit(limit);
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -233,6 +287,16 @@ void IRCInterface_ActivateNicksLimit(char *channel, int limit)
 
 void IRCInterface_ActivatePrivate(char *channel)
 {
+  char *msg = NULL;
+
+	IRCMsg_Mode(&msg, NULL, channel, "+p", NULL);
+	IRCInterface_PlaneRegisterOutMessage(msg);
+
+	send(socket_desc, msg, strlen(msg), 0);
+
+	IRCInterface_SetPrivate();
+
+	IRC_MFree(1, &msg);
 }
 
 /**
@@ -267,6 +331,16 @@ void IRCInterface_ActivatePrivate(char *channel)
 
 void IRCInterface_ActivateProtectTopic(char *channel)
 {
+  char *msg = NULL;
+
+	IRCMsg_Mode(&msg, NULL, channel, "+t", NULL);
+	IRCInterface_PlaneRegisterOutMessage(msg);
+
+	send(socket_desc, msg, strlen(msg), 0);
+
+	IRCInterface_SetProtectTopic();
+
+	IRC_MFree(1, &msg);
 }
 
 /**
@@ -301,6 +375,16 @@ void IRCInterface_ActivateProtectTopic(char *channel)
 
 void IRCInterface_ActivateSecret(char *channel)
 {
+  char *msg = NULL;
+
+	IRCMsg_Mode(&msg, NULL, channel, "+s", NULL);
+	IRCInterface_PlaneRegisterOutMessage(msg);
+
+	send(socket_desc, msg, strlen(msg), 0);
+
+	IRCInterface_SetSecret();
+
+	IRC_MFree(1, &msg);
 }
 
 /**
@@ -474,6 +558,17 @@ long IRCInterface_Connect(char *nick, char *user, char *realname, char *password
 
 void IRCInterface_DeactivateChannelKey(char *channel)
 {
+  char *msg;
+
+  if (channel) {
+    IRCMsg_Mode(&msg, NULL, channel, "-k", NULL);
+
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+
+    IRCInterface_UnsetChannelKey();
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -508,6 +603,17 @@ void IRCInterface_DeactivateChannelKey(char *channel)
 
 void IRCInterface_DeactivateExternalMessages(char *channel)
 {
+  char *msg;
+
+  if (channel) {
+    IRCMsg_Mode(&msg, NULL, channel, "-n", NULL);
+
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+
+    IRCInterface_UnsetExternalMessages();
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -542,6 +648,17 @@ void IRCInterface_DeactivateExternalMessages(char *channel)
 
 void IRCInterface_DeactivateInvite(char *channel)
 {
+  char *msg;
+
+  if (channel) {
+    IRCMsg_Mode(&msg, NULL, channel, "-i", NULL);
+
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+
+    IRCInterface_UnsetInvite();
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -576,6 +693,17 @@ void IRCInterface_DeactivateInvite(char *channel)
 
 void IRCInterface_DeactivateModerated(char *channel)
 {
+  char *msg;
+
+  if (channel) {
+    IRCMsg_Mode(&msg, NULL, channel, "-m", NULL);
+
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+
+    IRCInterface_UnsetModerated();
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -610,6 +738,17 @@ void IRCInterface_DeactivateModerated(char *channel)
 
 void IRCInterface_DeactivateNicksLimit(char *channel)
 {
+  char *msg;
+
+  if (channel) {
+    IRCMsg_Mode(&msg, NULL, channel, "-l", NULL);
+
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+
+    IRCInterface_UnsetNicksLimit();
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -646,6 +785,17 @@ void IRCInterface_DeactivateNicksLimit(char *channel)
 
 void IRCInterface_DeactivatePrivate(char *channel)
 {
+  char *msg;
+
+  if (channel) {
+    IRCMsg_Mode(&msg, NULL, channel, "-p", NULL);
+
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+
+    IRCInterface_UnsetPrivate();
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -680,6 +830,16 @@ void IRCInterface_DeactivatePrivate(char *channel)
 
 void IRCInterface_DeactivateProtectTopic(char *channel)
 {
+  char *msg = NULL;
+
+	IRCMsg_Mode(&msg, NULL, channel, "-t", NULL);
+	IRCInterface_PlaneRegisterOutMessage(msg);
+
+	send(socket_desc, msg, strlen(msg), 0);
+
+	IRCInterface_UnsetProtectTopic();
+
+	free(msg);
 }
 
 /**
@@ -714,6 +874,17 @@ void IRCInterface_DeactivateProtectTopic(char *channel)
 
 void IRCInterface_DeactivateSecret(char *channel)
 {
+  char *msg;
+
+  if (channel) {
+    IRCMsg_Mode(&msg, NULL, channel, "-s", NULL);
+
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+
+    IRCInterface_UnsetSecret();
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -752,6 +923,20 @@ void IRCInterface_DeactivateSecret(char *channel)
 
 boolean IRCInterface_DisconnectServer(char *server, int port)
 {
+  char *msg;
+
+  IRCMsg_Quit(&msg, NULL, "Leaving");
+
+  if(send(socket_desc, msg, strlen(msg), 0) < 0){
+    return FALSE;
+  }
+  IRCInterface_PlaneRegisterOutMessage(msg);
+  pthread_cancel(thread_ping);
+  pthread_cancel(thread_response);
+  shutdown(socket_desc, 2);
+  socket_desc = 0;
+
+  IRC_MFree(1, &msg);
 	return TRUE;
 }
 
@@ -829,6 +1014,13 @@ boolean IRCInterface_ExitAudioChat(char *nick)
 
 void IRCInterface_GiveOp(char *channel, char *nick)
 {
+  char *msg;
+  if (channel && nick) {
+    IRCMsg_Mode(&msg, NULL, channel, "+o", nick);
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -865,6 +1057,13 @@ void IRCInterface_GiveOp(char *channel, char *nick)
 
 void IRCInterface_GiveVoice(char *channel, char *nick)
 {
+  char *msg;
+  if (channel && nick) {
+    IRCMsg_Mode(&msg, NULL, channel, "+v", nick);
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -901,6 +1100,13 @@ void IRCInterface_GiveVoice(char *channel, char *nick)
 
 void IRCInterface_KickNick(char *channel, char *nick)
 {
+  char *msg;
+  if (channel && nick) {
+    IRCMsg_Kick(&msg, NULL, channel, nick, NULL);
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -974,6 +1180,13 @@ void IRCInterface_NewCommandText(char *command)
 
 void IRCInterface_NewTopicEnter(char *topicdata)
 {
+  char *msg;
+  if (topicdata) {
+    IRCMsg_Topic(&msg, NULL, IRCInterface_ActiveChannelName(), topicdata);
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -1135,6 +1348,13 @@ boolean IRCInterface_StopAudioChat(char *nick)
 
 void IRCInterface_TakeOp(char *channel, char *nick)
 {
+  char *msg;
+  if (channel && nick) {
+    IRCMsg_Mode(&msg, NULL, channel, "-o", nick);
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+    IRC_MFree(1, &msg);
+  }
 }
 
 /**
@@ -1171,6 +1391,13 @@ void IRCInterface_TakeOp(char *channel, char *nick)
 
 void IRCInterface_TakeVoice(char *channel, char *nick)
 {
+  char *msg;
+  if (channel && nick) {
+    IRCMsg_Mode(&msg, NULL, channel, "-v", nick);
+    send(socket_desc, msg, strlen(msg), 0);
+    IRCInterface_PlaneRegisterOutMessage(msg);
+    IRC_MFree(1, &msg);
+  }
 }
 
 

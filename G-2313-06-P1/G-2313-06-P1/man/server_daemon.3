@@ -1,0 +1,29 @@
+.TH "server_daemon" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_daemon \- server_daemon 
+Daemoniza el servidor\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_server\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_daemon()\fP\fP \fP 
+.SH "Descripción"
+.PP
+Crea un nuevo proceso mediante un \fBfork()\fP y provoca el proceso de damonización por la que el servidor deja de depender de la terminal actual desde la que se ejecuta el servidor y pasa a ejecutarse en segundo plano\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

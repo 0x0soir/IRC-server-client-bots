@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="server_start_communication" kind="page">
+    <compoundname>server_start_communication</compoundname>
+    <title>server_start_communication</title>
+    <detaileddescription>
+<para>Ejecuta el control (main) principal para cada hilo.</para><sect1 id="server_start_communication_1synopsis4">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P1__server_8h" kindref="compound">G-2313-06-P1_server.h</ref>&gt;</bold> <linebreak/>
+ <bold>void *server_start_communication(int socket_desc)</bold> </computeroutput> </para></sect1>
+<sect1 id="server_start_communication_1descripcion4">
+<title>Descripción</title>
+<para>Contiene el código que ejecutan los hijos al recibir la conexión de un cliente en <bold><ref refid="G-2313-06-P1__server_8c_1aaac8642d2e699e0f9d942d28a9b233c2" kindref="member">server_accept_connection()</ref></bold>. Declara varias variables que se pasan como parámetros al resto de funciones utilizadas para el parseo de comandos:</para><para><itemizedlist>
+<listitem>
+<para><bold>char *nick:</bold> Almacena el nick del personaje, se reserva memoria y se pasa como puntero a las funciones de parseo de comandos en la que la función destinada al comando nick utilizará un <bold>strcpy</bold> para actualizar dicho valor. </para></listitem>
+<listitem>
+<para><bold>int *register_status:</bold> Entero que representa el estado actual del cliente del hilo, sirve de control para las funciones de parseo y cierre de socket: <itemizedlist>
+<listitem>
+<para>0: Indica que no se ha efectuado un registro válido del usuario (comando NICK y USER). </para></listitem>
+<listitem>
+<para>1: Indica que se ha parseado correctamente el nick y es posible realizar el registro del usuario (comando USER). </para></listitem>
+<listitem>
+<para>2: Indica que se ha registrado correctamente usuario y es posible realizar cualquier otro comando del IRC. Sirve de control para no ejecutar otros comandos hasta que el usuario no envíe los comandos válidos (NICK y USER) para el registro. A su vez, esto permitirá que en caso de cerrarse el socket se comprobará que si el valor de esta variable es 2 se utilizará la función del TAD para eliminar al usuario de la lista. </para></listitem>
+</itemizedlist>
+</para></listitem>
+</itemizedlist>
+</para><para>Contiene un bucle que comprueba si el socket sigue abierto y parsea los comandos del usuario mediante las funciones apropiadas para ello (<bold>IRC_UnPipelineCommands y IRC_CommandQuery</bold>). Dichos comandos parseados envían a la función <bold>server_execute_function</bold> que contiene un array de punteros a función para redirigir cada comando a su función apropiada.</para><para>Una vez se detecta que el socket se ha cerrado, se elimina al usuario del TAD en caso de que <bold>register_status</bold> tenga el valor adecuado (2) y se liberan los punteros reservados para este hilo.</para></sect1>
+<sect1 id="server_start_communication_1return4">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>void</bold> No devuelve nada. </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_start_communication_1authors4">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

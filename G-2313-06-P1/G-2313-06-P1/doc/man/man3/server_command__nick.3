@@ -1,0 +1,53 @@
+.TH "server_command_nick" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_command_nick \- server_command_nick 
+Función handler del comando NICK del IRC\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_function_handlers\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_command_nick(char* command, int desc, char * nick_static, int* register_status)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBIRCMsg_ErrNoNickNameGiven:\fP Comprueba que el nick no sea nulo\&. 
+.IP "\(bu" 2
+\fBIRCMsg_ErrErroneusNickName:\fP Comprueba que el nick no sea erróneo (máx\&. 9 carácteres)\&. 
+.IP "\(bu" 2
+\fBIRCMsg_ErrNickNameInUse:\fP Comprueba que el nick no esté siendo utilizado por otro usuario\&. 
+.PP
+.PP
+Una vez realizadas las comprobaciones, dicha función se ejecuta de dos formas posibles:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBActualiza nick existente:\fP Es decir, en caso de que se esté actualizando el nick de un usuario existente, se actualiza el valor utilizando la función \fBserver_channels_update_nick\fP\&. 
+.br
+Condición necesaria: El valor de register_status tiene que ser 2 (es decir, usuario \fBregistrado\fP correctamente de forma previa)\&.  
+.IP "\(bu" 2
+\fBGuarda nick para registro:\fP Es decir, en caso de que no se haya producido un registro previo, se guarda el valor del nick para usarlo posteriormente en el comando USER\&. 
+.br
+Condición necesaria: El valor de register_status tiene que ser distinto de 2 (es decir, usuario \fBno registrado\fP correctamente de forma previa)\&.  
+.PP
+.PP
+En ambos casos se devuelve un mensaje generado por \fBIRCMsg_Nick\fP y libera los recursos utilizados en la función (punteros)\&. 
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

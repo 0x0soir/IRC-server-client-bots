@@ -1,0 +1,49 @@
+.TH "server_command_join" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_command_join \- server_command_join 
+Función handler del comando JOIN del IRC\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_function_handlers\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_command_join(char* command, int desc, char * nick_static, int* register_status)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBParse:\fP Comprueba que el parseo del comando JOIN sea correcto, en caso contrario devuelve un mensaje de error generado por la función del TAD \fBIRCMsg_ErrNeedMoreParams\fP que se envía mediante el descriptor del socket del cliente recibido por el parámetro \fBint desc\fP\&. 
+.PP
+.PP
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBComprueba el modo del canal:\fP Es decir, comprueba que el canal no esté protegido por una clave de acceso mediante la función \fBIRCTADChan_GetModeInt\fP\&. En caso de que si tenga clave, se comprueba que se haya introducido una clave correcta, en caso de ser incorrecta se devuelve un mensaje generado con la función del TAD \fBIRCMsg_ErrBadChannelKey\fP\&.  
+.IP "\(bu" 2
+\fBRealiza el JOIN en el canal:\fP Es decir, asigna el canal al usuario de forma correcta, se devuelve al usuario un mensaje de bienvenida mediante la función del TAD \fBIRCMsg_RplWelcome\fP mediante el descriptor del socket y la función \fBsend()\fP\&. 
+.IP "\(bu" 2
+\fBDevuelve mensaje:\fP Es decir, en caso de que se haya registrado de forma correcta, se devuelve al usuario un mensaje de bienvenida mediante la función del TAD \fBIRCMsg_Join\fP mediante el descriptor del socket y la función \fBsend()\fP\&. 
+.br
+Condición necesaria: En caso de tener clave, debe ser correcta\&.  
+.PP
+.PP
+Al finalizar el flujo de la función se liberan los recursos utilizados\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

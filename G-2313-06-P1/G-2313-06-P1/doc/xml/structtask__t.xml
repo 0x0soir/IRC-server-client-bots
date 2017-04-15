@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="structtask__t" kind="struct" language="C++" prot="public">
+    <compoundname>task_t</compoundname>
+    <includes refid="G-2313-06-P1__thread__pool_8h" local="no">G-2313-06-P1_thread_pool.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtask__t_1a9162b404bd1cf5349b2092f69e31c613" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int task_t::arg</definition>
+        <argsstring></argsstring>
+        <name>arg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="30" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtask__t_1ac8c2d416888e415fc6ee54410a4c511c" prot="public" static="no" mutable="no">
+        <type>void *(*</type>
+        <definition>void*(* task_t::task_callback) (int arg)</definition>
+        <argsstring>)(int arg)</argsstring>
+        <name>task_callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="31" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtask__t_1ac812553758f9102a7a674ad29e78f98b" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref></type>
+        <definition>struct list_head task_t::entry</definition>
+        <argsstring></argsstring>
+        <name>entry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="31" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="21">
+        <label>list_head</label>
+        <link refid="structlist__head"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>task_t</label>
+        <link refid="structtask__t"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>entry</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="29" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="28" bodyend="33"/>
+    <listofallmembers>
+      <member refid="structtask__t_1a9162b404bd1cf5349b2092f69e31c613" prot="public" virt="non-virtual"><scope>task_t</scope><name>arg</name></member>
+      <member refid="structtask__t_1ac812553758f9102a7a674ad29e78f98b" prot="public" virt="non-virtual"><scope>task_t</scope><name>entry</name></member>
+      <member refid="structtask__t_1ac8c2d416888e415fc6ee54410a4c511c" prot="public" virt="non-virtual"><scope>task_t</scope><name>task_callback</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

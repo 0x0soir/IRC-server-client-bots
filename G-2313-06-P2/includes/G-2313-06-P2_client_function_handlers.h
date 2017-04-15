@@ -12,9 +12,19 @@
 #include <time.h>
 #include <arpa/inet.h>
 #include <redes2/irc.h>
+#include <redes2/ircxchat.h>
 #include <netdb.h>
 #include <pthread.h>
 
 void server_in_command_nick(char* command, int desc, char* nick_static, int* register_status);
 void server_in_command_pong(char* command, int desc, char* nick_static, int* register_status);
+void server_in_command_join(char* command, int desc, char* nick_static, int* register_status);
+void server_in_command_part(char* command, int desc, char* nick_static, int* register_status);
+void server_in_command_mode(char* command, int desc, char* nick_static, int* register_status);
+
 void server_out_command_nick(char* command, int desc, char* nick_static, int* register_status);
+void server_out_command_join(char* command, int desc, char* nick_static, int* register_status);
+void server_out_command_names(char* command, int desc, char * nick_static, int* register_status);
+void server_out_command_list(char* command, int desc, char * nick_static, int* register_status);
+void server_out_command_part(char* command, int desc, char * nick_static, int* register_status);
+void server_out_command_mode(char* command, int desc, char * nick_static, int* register_status);

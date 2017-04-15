@@ -1,0 +1,45 @@
+.TH "server_command_topic" 3 "Lunes, 13 de Marzo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_command_topic \- server_command_topic 
+Función handler del comando TOPIC del IRC\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_function_handlers\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_command_topic(char* command, int desc, char * nick_static, int* register_status)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBParse:\fP Comprueba que el parseo del comando TOPIC sea correcto\&. 
+.PP
+.PP
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBActualizar el topic del canal:\fP Si se especifica un mensaje de TOPIC, la función asigna el nuevo topic al canal y le devuelve un mensaje de confirmación al usuario utilizando la función del TAD \fBIRCMsg_Topic\fP\&.  
+.IP "\(bu" 2
+\fBDevuelve el topic del canal:\fP Si no se especifica un mensaje de TOPIC, la función devuelve el mensaje topic al usuario mediante un mensaje de confirmación utilizando la función del TAD \fBIRCMsg_RplTopic\fP o error en caso de que no exista un topic en el canal usando la función del TAD \fBIRCMsg_RplNoTopic\fP\&.  
+.PP
+.PP
+Al finalizar el flujo de la función se liberan los recursos utilizados\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

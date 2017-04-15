@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="structthread__args" kind="struct" language="C++" prot="public">
+    <compoundname>thread_args</compoundname>
+    <includes refid="G-2313-06-P1__thread__pool_8h" local="no">G-2313-06-P1_thread_pool.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structthread__args_1a425ced5f77dcbb52f61d240a4e207a27" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref> *</type>
+        <definition>struct thread_pool_t* thread_args::pool</definition>
+        <argsstring></argsstring>
+        <name>pool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="64" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structthread__args_1a191f3ea514283452d04bde31cde4c7ad" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structthread__t" kindref="compound">thread_t</ref> *</type>
+        <definition>struct thread_t* thread_args::current</definition>
+        <argsstring></argsstring>
+        <name>current</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="65" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="23">
+        <label>thread_args</label>
+        <link refid="structthread__args"/>
+        <childnode refid="24" relation="usage">
+          <edgelabel>current</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>pool</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>thread_pool_t</label>
+        <link refid="structthread__pool__t"/>
+        <childnode refid="24" relation="usage">
+          <edgelabel>master_thread</edgelabel>
+          <edgelabel>task_next</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>idle_queue</edgelabel>
+          <edgelabel>worker_queue</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>thread_t</label>
+        <link refid="structthread__t"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>task_queue</edgelabel>
+          <edgelabel>worker_entry</edgelabel>
+          <edgelabel>idle_entry</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>list_head</label>
+        <link refid="structlist__head"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" line="63" column="1" bodyfile="/media/psf/Tercer curso/Segundo semestre/REDES2/IRCServer/G-2313-06-P1/includes/G-2313-06-P1_thread_pool.h" bodystart="63" bodyend="66"/>
+    <listofallmembers>
+      <member refid="structthread__args_1a191f3ea514283452d04bde31cde4c7ad" prot="public" virt="non-virtual"><scope>thread_args</scope><name>current</name></member>
+      <member refid="structthread__args_1a425ced5f77dcbb52f61d240a4e207a27" prot="public" virt="non-virtual"><scope>thread_args</scope><name>pool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="server_check_socket_status" kind="page">
+    <compoundname>server_check_socket_status</compoundname>
+    <title>server_check_socket_status</title>
+    <detaileddescription>
+<para>Comprueba si el socket del cliente sigue abierto.</para><sect1 id="server_check_socket_status_1Synopsis">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P1__server_8h" kindref="compound">G-2313-06-P1_server.h</ref>&gt;</bold> <linebreak/>
+ <bold>int <ref refid="G-2313-06-P1__server_8c_1a64f1fffc5903ccf0350845cd21a95b6e" kindref="member">server_check_socket_status(int socket_desc)</ref></bold> </computeroutput> </para></sect1>
+<sect1 id="server_check_socket_status_1descripcion">
+<title>Descripción</title>
+<para>Es una función simple que comprueba mediante la función <bold>select()</bold> si el socket del cliente recibido como parámetro <bold>socket_desc</bold> sigue abierto o no. Para ello se hace una selección de dicho socket y si devuelve error o salta el timeout se indica que el socket está cerrado y en la función <bold>server_start_communication</bold> se liberan los recursos necesarios.</para></sect1>
+<sect1 id="server_check_socket_status_1return">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>int</bold> Devuelve el valor verdadero/falso sobre el estado del socket. </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_check_socket_status_1authors">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
