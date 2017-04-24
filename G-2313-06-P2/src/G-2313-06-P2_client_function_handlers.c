@@ -5,7 +5,7 @@ extern char* nick_cliente;
 
 /* IN FUNCTIONS */
 void server_in_command_nick(char* command, int desc, char * nick_static, int* register_status){
-  char *prefix, *nick, *msg, msgEnvio[150];
+  char *prefix, *nick, *msg, msgEnvio[512] = "";
   IRCInterface_PlaneRegisterInMessageThread(command);
   if(IRCParse_Nick(command, &prefix, &nick, &msg)==IRC_OK){
     if(!nick_cliente){
@@ -33,7 +33,7 @@ void server_in_command_pong(char* command, int desc, char * nick_static, int* re
 }
 
 void server_in_command_join(char* command, int desc, char * nick_static, int* register_status){
-  char *prefix, *channel, *key, *msg, msgEnvio[200], *join_nick, *join_user, *join_host, *join_server;
+  char *prefix, *channel, *key, *msg, msgEnvio[512] = "", *join_nick, *join_user, *join_host, *join_server;
   IRCInterface_PlaneRegisterInMessageThread(command);
   if(IRCParse_Join(command, &prefix, &channel, &key, &msg)==IRC_OK){
     syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN PREFIX %s", prefix);
@@ -61,7 +61,7 @@ void server_in_command_join(char* command, int desc, char * nick_static, int* re
       syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN antes de write");
       syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN msg: %s", msg);
       syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN msgEnvio: %s", msgEnvio);
-      IRCInterface_WriteChannelThread(msg, NULL, msgEnvio);
+      IRCInterface_WriteChannel(msg, "*", msgEnvio);
       syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN despues de write");
     } else {
       syslog(LOG_INFO, "[CLIENTE] [IN]: Error en Parse Complex");
@@ -72,7 +72,7 @@ void server_in_command_join(char* command, int desc, char * nick_static, int* re
 }
 
 void server_in_command_part(char* command, int desc, char * nick_static, int* register_status){
-  char *prefix, *channel, *msg, msgEnvio[150], *part_nick, *part_user, *part_host, *part_server;
+  char *prefix, *channel, *msg, msgEnvio[512] = "", *part_nick, *part_user, *part_host, *part_server;
   IRCInterface_PlaneRegisterInMessageThread(command);
   if(IRCParse_Part(command, &prefix, &channel, &msg)==IRC_OK){
     if(IRCParse_ComplexUser(prefix, &part_nick, &part_user, &part_host, &part_server)==IRC_OK){
@@ -201,22 +201,33 @@ void server_in_command_topic(char* command, int desc, char * nick_static, int* r
 
 void server_in_command_kick(char* command, int desc, char * nick_static, int* register_status){
   char *prefix, *channel, *msg, *user_target, *parse_nick, *parse_user, *parse_host, *parse_server;
-  char buffer[200];
+  char buffer[512] = "";
   IRCInterface_PlaneRegisterInMessageThread(command);
   syslog(LOG_INFO, "[CLIENTE] [IN]: KICK");
   if(IRCParse_Kick(command, &prefix, &channel, &user_target, &msg)==IRC_OK){
     if(IRCParse_ComplexUser(prefix, &parse_nick, &parse_user, &parse_host, &parse_server)==IRC_OK){
       syslog(LOG_INFO, "[CLIENTE] [IN]: KICK parseado");
-      if(strcmp(user_target, nick_static)==0){
+      syslog(LOG_INFO, "[CLIENTE] [IN]: user_target: %s", user_target);
+      syslog(LOG_INFO, "[CLIENTE] [IN]: nick_cliente: %s", nick_cliente);
+      if(strcmp(user_target, nick_cliente)==0){
         sprintf(buffer, "Has sido expulsado de %s por %s (Motivo: %s)", channel, parse_nick, msg);
+        syslog(LOG_INFO, "[CLIENTE] [IN]: 1");
         IRCInterface_DeleteNickChannel(channel, user_target);
+        syslog(LOG_INFO, "[CLIENTE] [IN]: 2");
         IRCInterface_RemoveChannelThread(channel);
+        syslog(LOG_INFO, "[CLIENTE] [IN]: 3");
         IRCInterface_WriteSystemThread("*", buffer);
+        syslog(LOG_INFO, "[CLIENTE] [IN]: 4");
       } else {
+        syslog(LOG_INFO, "[CLIENTE] [IN]: 01");
         IRCInterface_DeleteNickChannel(channel, user_target);
+        syslog(LOG_INFO, "[CLIENTE] [IN]: 02");
         sprintf(buffer, "%s ha expulsado a %s de %s (%s)", parse_nick, user_target, channel, msg);
+        syslog(LOG_INFO, "[CLIENTE] [IN]: 03");
         IRCInterface_WriteChannelThread(channel, NULL, buffer);
+        syslog(LOG_INFO, "[CLIENTE] [IN]: 04");
       }
+      syslog(LOG_INFO, "[CLIENTE] [IN]: 5");
     }
   }
   IRC_MFree(8, &prefix, &channel, &msg, &user_target, &parse_nick, &parse_user, &parse_host, &parse_server);
