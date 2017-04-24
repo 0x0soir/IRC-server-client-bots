@@ -49,14 +49,11 @@ void server_in_command_join(char* command, int desc, char * nick_static, int* re
       syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN generado mensaje para chat");
       syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN mensaje: %s", msgEnvio);
       if(IRCInterface_QueryChannelExistThread(msg)!=0){
-        IRCInterface_AddNickChannel(msg, join_nick, join_user, join_user, join_server, 0);
+        IRCInterface_AddNickChannelThread(msg, join_nick, join_user, join_user, join_server, 0);
         syslog(LOG_INFO, "[CLIENTE] [IN]: Canal existente, añado nick");
       } else {
         IRCInterface_AddNewChannelThread(msg, 0);
-        IRCInterface_AddNickChannel(msg, join_nick, join_user, join_user, join_server, 0);
         syslog(LOG_INFO, "[CLIENTE] [IN]: Canal no existente, lo creo");
-        /*strcpy(msgEnvio, msg);*/
-        /*pthread_create(&thread1, NULL, func_who, (void *) buff);*/
       }
       syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN antes de write");
       syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN msg: %s", msg);
