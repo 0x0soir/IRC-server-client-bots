@@ -72,6 +72,7 @@ void client_execute_in_function(long functionName, char* command){
   functions[MODE] = &server_in_command_mode;
   functions[TOPIC] = &server_in_command_topic;
   functions[KICK] = &server_in_command_kick;
+  functions[PRIVMSG] = &server_in_command_privmsg;
   functions[RPL_WELCOME] = &server_in_command_rpl_welcome;
   functions[RPL_CREATED] = &server_in_command_rpl_created;
   functions[RPL_YOURHOST] = &server_in_command_rpl_yourhost;
@@ -109,10 +110,12 @@ void client_execute_out_function(long functionName, char* command){
   functions[LIST] = &server_out_command_list;
   functions[PART] = &server_out_command_part;
   functions[MODE] = &server_out_command_mode;
+  functions[KICK] = &server_out_command_kick;
+  functions[PRIVMSG] = &server_out_command_privmsg;
 
   /* Llamar a la funcion del argumento */
   if((functionName<0)||(functionName>IRC_MAX_USER_COMMANDS)||(functions[functionName]==NULL)){
-    /* Default aqui */
+    (*functions[PRIVMSG])(command);
   } else {
     (*functions[functionName])(command);
   }

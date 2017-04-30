@@ -6,26 +6,45 @@ extern char* nick_cliente;
 /* IN FUNCTIONS */
 void server_in_command_nick(char* command){
   char *prefix, *nick, *msg, msgEnvio[512] = "";
+  char *my_nick, *my_user, *my_realname, *my_password, *my_server,
+   *nick_nick, *nick_user, *nick_host, *nick_server;
+  int my_port, my_ssl;
+  char *channelActual;
+  channelActual = IRCInterface_ActiveChannelName();
   IRCInterface_PlaneRegisterInMessageThread(command);
   if(IRCParse_Nick(command, &prefix, &nick, &msg)==IRC_OK){
-    if(!nick_cliente){
-      syslog(LOG_INFO, "[CLIENTE] No hay puntero reservado");
-      nick_cliente = malloc(sizeof(msg));
-      strcpy(nick_cliente, msg);
+    if(IRCParse_ComplexUser(prefix, &nick_nick, &nick_user, &nick_host, &nick_server)==IRC_OK){
+      IRCInterface_GetMyUserInfoThread(&my_nick, &my_user, &my_realname, &my_password, &my_server, &my_port, &my_ssl);
+      if(strcmp(nick_user+1, my_user)==0){
+        if(!nick_cliente){
+          syslog(LOG_INFO, "[CLIENTE] No hay puntero reservado");
+          nick_cliente = malloc(sizeof(msg));
+          strcpy(nick_cliente, msg);
+        }
+        sprintf(msgEnvio, "Ahora eres conocido como: %s", msg);
+        syslog(LOG_INFO, "[CLIENTE] NICK OLD: %s NEW: %s", nick_cliente, msg);
+        if((channelActual!=NULL)&&(strcmp(channelActual, "System")!=0)){
+          IRCInterface_WriteChannelThread(IRCInterface_ActiveChannelName(), "*", msgEnvio);
+        } else {
+          IRCInterface_WriteSystemThread(NULL, msgEnvio);
+        }
+        IRCInterface_ChangeNick(nick_cliente, msg);
+        if(nick_cliente){
+          free(nick_cliente);
+          nick_cliente = NULL;
+          nick_cliente = malloc(sizeof(msg));
+          strcpy(nick_cliente, msg);
+        }
+        syslog(LOG_INFO, "[CLIENTE] NICK NEW: %s", nick_cliente);
+      } else {
+        syslog(LOG_INFO, "[CLIENTE] NICK NO ERES TU %s %s", nick_nick, msg);
+        sprintf(msgEnvio, "%s ahora es conocido como: %s", nick_nick, msg);
+        IRCInterface_WriteChannelThread(IRCInterface_ActiveChannelName(), "*", msgEnvio);
+      }
     }
-    sprintf(msgEnvio, "Ahora tu nick es: %s", msg);
-    syslog(LOG_INFO, "[CLIENTE] NICK OLD: %s NEW: %s", nick_cliente, msg);
-    IRCInterface_WriteSystemThread(NULL, msgEnvio);
-    IRCInterface_ChangeNick(nick_cliente, msg);
-    if(nick_cliente){
-      free(nick_cliente);
-      nick_cliente = NULL;
-      nick_cliente = malloc(sizeof(msg));
-      strcpy(nick_cliente, msg);
-    }
-    syslog(LOG_INFO, "[CLIENTE] NICK NEW: %s", nick_cliente);
   }
-  IRC_MFree(3, &prefix, &nick, &msg);
+  IRC_MFree(12, &prefix, &nick, &msg, &my_nick, &my_user, &my_realname,
+    &my_password, &my_server, &nick_nick, &nick_user, &nick_host, &nick_server);
 }
 
 void server_in_command_pong(char* command){
@@ -230,6 +249,30 @@ void server_in_command_kick(char* command){
   IRC_MFree(8, &prefix, &channel, &msg, &user_target, &parse_nick, &parse_user, &parse_host, &parse_server);
 }
 
+void server_in_command_privmsg(char* command){
+  char *prefix, *channel, *msg, *parse_nick, *parse_user, *parse_host, *parse_server;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: PRIVMSG");
+  if(IRCParse_Privmsg(command, &prefix, &channel, &msg)==IRC_OK){
+    if(IRCParse_ComplexUser(prefix, &parse_nick, &parse_user, &parse_host, &parse_server)==IRC_OK){
+      syslog(LOG_INFO, "[CLIENTE] [IN]: Channel: %s", channel);
+      if(channel[0]=='#'){
+        syslog(LOG_INFO, "[CLIENTE] [IN]: Es canal");
+        IRCInterface_WriteChannelThread(channel, parse_nick, msg);
+      } else {
+        syslog(LOG_INFO, "[CLIENTE] [IN]: No es canal");
+        if(IRCInterface_QueryChannelExist(channel)==FALSE){
+          IRCInterface_AddNewChannelThread(parse_nick, 0);
+          IRCInterface_WriteChannelThread(parse_nick, parse_nick, msg);
+        } else {
+          IRCInterface_WriteChannelThread(parse_nick, parse_nick, msg);
+        }
+      }
+    }
+  }
+  IRC_MFree(7, &prefix, &channel, &msg, &parse_nick, &parse_user, &parse_host, &parse_server);
+}
+
 void server_in_command_rpl_welcome(char* command){
   char *prefix, *msg, *parse_nick;
   IRCInterface_PlaneRegisterInMessageThread(command);
@@ -393,7 +436,7 @@ void server_out_command_mode(char* command){
   syslog(LOG_INFO, "[CLIENTE] [OUT] Send mode %s", command);
   if(IRCUserParse_Mode(command, &mode, &filter)==IRC_OK){
     if(IRCMsg_Mode(&msg, NULL, channelActual, mode, NULL)==IRC_OK){
-      if(send(socket_desc, msg, strlen(msg), 0)==0){
+      if(send(socket_desc, msg, strlen(msg), 0)<0){
         syslog(LOG_INFO, "[CLIENTE] Mode envia: %s", msg);
         IRCInterface_PlaneRegisterOutMessage(msg);
       }
@@ -404,4 +447,48 @@ void server_out_command_mode(char* command){
     syslog(LOG_INFO, "[CLIENTE] [OUT] Mode error en UserParse_Mode");
   }
   IRC_MFree(4, &msg, &channelActual, &mode, &filter);
+}
+
+void server_out_command_kick(char* command){
+  char *msg = NULL, *channelActual = NULL, *user_target = NULL;
+  channelActual = IRCInterface_ActiveChannelName();
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send kick %s", command);
+  if(IRCUserParse_Kick(command, &user_target, &msg)==IRC_OK){
+    if(IRCMsg_Kick(&msg, NULL, channelActual, user_target, msg)==IRC_OK){
+      if(send(socket_desc, msg, strlen(msg), 0)<0){
+        syslog(LOG_INFO, "[CLIENTE] Kick envia: %s", msg);
+        IRCInterface_PlaneRegisterOutMessage(msg);
+      }
+    } else {
+      syslog(LOG_INFO, "[CLIENTE] [OUT] Mode error en IRCMsg_Kick");
+    }
+  } else {
+    syslog(LOG_INFO, "[CLIENTE] [OUT] Mode error en UserParse_Kick");
+  }
+  IRC_MFree(3, &msg, &channelActual, &user_target);
+}
+
+
+void server_out_command_privmsg(char* command){
+  char *msg = NULL, *channelActual = NULL, msgEnvio[512]="";
+  channelActual = IRCInterface_ActiveChannelName();
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send privmsg %s", command);
+  if (channelActual != NULL){
+    syslog(LOG_INFO, "[CLIENTE] [OUT] 1");
+    IRCMsg_Privmsg(&msg, NULL, channelActual, command);
+    syslog(LOG_INFO, "[CLIENTE] [OUT] 2");
+    IRCInterface_WriteChannel(channelActual, nick_cliente, command);
+    syslog(LOG_INFO, "[CLIENTE] [OUT] 3: %s", msg);
+    if(send(socket_desc, msg, strlen(msg), 0)<0){
+      syslog(LOG_INFO, "[CLIENTE] [OUT] Privmsg envia: %s", msg);
+      IRCInterface_PlaneRegisterOutMessage(msg);
+    } else {
+      syslog(LOG_INFO, "[CLIENTE] [OUT] Error al enviar: %s", msg);
+    }
+  } else {
+    syslog(LOG_INFO, "[CLIENTE] [OUT] ...");
+    sprintf(msgEnvio, "Para enviar un mensaje de texto debes unirte a un canal antes.");
+    IRCInterface_WriteSystemThread(nick_cliente, command);
+  }
+  IRC_MFree(1, &msg);
 }
