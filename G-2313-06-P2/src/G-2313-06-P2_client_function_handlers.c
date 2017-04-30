@@ -4,7 +4,7 @@ extern int socket_desc;
 extern char* nick_cliente;
 
 /* IN FUNCTIONS */
-void server_in_command_nick(char* command, int desc, char * nick_static, int* register_status){
+void server_in_command_nick(char* command){
   char *prefix, *nick, *msg, msgEnvio[512] = "";
   IRCInterface_PlaneRegisterInMessageThread(command);
   if(IRCParse_Nick(command, &prefix, &nick, &msg)==IRC_OK){
@@ -28,11 +28,11 @@ void server_in_command_nick(char* command, int desc, char * nick_static, int* re
   IRC_MFree(3, &prefix, &nick, &msg);
 }
 
-void server_in_command_pong(char* command, int desc, char * nick_static, int* register_status){
+void server_in_command_pong(char* command){
   IRCInterface_PlaneRegisterInMessageThread(command);
 }
 
-void server_in_command_join(char* command, int desc, char * nick_static, int* register_status){
+void server_in_command_join(char* command){
   char *prefix, *channel, *key, *msg, msgEnvio[512] = "", *join_nick, *join_user, *join_host, *join_server;
   IRCInterface_PlaneRegisterInMessageThread(command);
   if(IRCParse_Join(command, &prefix, &channel, &key, &msg)==IRC_OK){
@@ -68,7 +68,7 @@ void server_in_command_join(char* command, int desc, char * nick_static, int* re
   IRC_MFree(8, &prefix, &channel, &key, &msg, &join_nick, &join_user, &join_host, &join_server);
 }
 
-void server_in_command_part(char* command, int desc, char * nick_static, int* register_status){
+void server_in_command_part(char* command){
   char *prefix, *channel, *msg, msgEnvio[512] = "", *part_nick, *part_user, *part_host, *part_server;
   IRCInterface_PlaneRegisterInMessageThread(command);
   if(IRCParse_Part(command, &prefix, &channel, &msg)==IRC_OK){
@@ -90,7 +90,7 @@ void server_in_command_part(char* command, int desc, char * nick_static, int* re
   IRC_MFree(8, &prefix, &channel, &msg, &part_nick, &part_user, &part_host, &part_server);
 }
 
-void server_in_command_mode(char* command, int desc, char * nick_static, int* register_status){
+void server_in_command_mode(char* command){
   char *prefix, *channel, *mode, *mode_nick, *mode_user, *mode_host, *mode_server, *user_target;
   char buff[200];
   IRCInterface_PlaneRegisterInMessageThread(command);
@@ -180,7 +180,7 @@ void server_in_command_mode(char* command, int desc, char * nick_static, int* re
   syslog(LOG_INFO, "[CLIENTE] [IN]: Mode despues de free");
 }
 
-void server_in_command_topic(char* command, int desc, char * nick_static, int* register_status){
+void server_in_command_topic(char* command){
   char *prefix, *channel, *msg, *parse_nick, *parse_user, *parse_host, *parse_server;
   char buffer[200];
   IRCInterface_PlaneRegisterInMessageThread(command);
@@ -196,7 +196,7 @@ void server_in_command_topic(char* command, int desc, char * nick_static, int* r
   IRC_MFree(7, &prefix, &channel, &msg, &parse_nick, &parse_user, &parse_host, &parse_server);
 }
 
-void server_in_command_kick(char* command, int desc, char * nick_static, int* register_status){
+void server_in_command_kick(char* command){
   char *prefix, *channel, *msg, *user_target, *parse_nick, *parse_user, *parse_host, *parse_server;
   char buffer[512] = "";
   IRCInterface_PlaneRegisterInMessageThread(command);
@@ -230,8 +230,82 @@ void server_in_command_kick(char* command, int desc, char * nick_static, int* re
   IRC_MFree(8, &prefix, &channel, &msg, &user_target, &parse_nick, &parse_user, &parse_host, &parse_server);
 }
 
+void server_in_command_rpl_welcome(char* command){
+  char *prefix, *msg, *parse_nick;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL WELCOME");
+  IRCParse_RplWelcome(command, &prefix, &parse_nick, &msg);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
+}
+
+void server_in_command_rpl_created(char* command){
+  char *prefix, *msg, *parse_nick, *parse_timedate;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL CREATED");
+  IRCParse_RplCreated(command, &prefix, &parse_nick, &parse_timedate, &msg);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(4, &prefix, &parse_nick, &parse_timedate, &msg);
+}
+
+void server_in_command_rpl_yourhost(char* command){
+  char *prefix, *msg, *parse_nick, *parse_servername, *parse_versionname;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL YOURHOST");
+  IRCParse_RplYourHost(command, &prefix, &parse_nick, &msg, &parse_servername, &parse_versionname);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(5, &prefix, &parse_nick, &parse_servername, &parse_versionname, &msg);
+}
+
+void server_in_command_rpl_luserclient(char* command){
+  char *prefix, *msg, *parse_nick;
+  int parse_nusers, parse_ninvisibles, parse_nservers;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL LUSERCLIENT");
+  IRCParse_RplLuserClient(command, &prefix, &parse_nick, &msg, &parse_nusers, &parse_ninvisibles, &parse_nservers);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
+}
+
+void server_in_command_rpl_luserme(char* command){
+  char *prefix, *msg, *parse_nick;
+  int parse_nclientes, parse_nservers;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL LUSERME");
+  IRCParse_RplLuserMe(command, &prefix, &parse_nick, &msg, &parse_nclientes, &parse_nservers);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
+}
+
+void server_in_command_rpl_motdstart(char* command){
+  char *prefix, *msg, *parse_nick, *parse_servername;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL START OF MOTD");
+  IRCParse_RplMotdStart(command, &prefix, &parse_nick, &msg, &parse_servername);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(4, &prefix, &parse_nick, &parse_servername, &msg);
+}
+
+void server_in_command_rpl_motd(char* command){
+  char *prefix, *msg, *parse_nick;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL MOTD");
+  IRCParse_RplMotd(command, &prefix, &parse_nick, &msg);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
+}
+
+void server_in_command_rpl_endofmotd(char* command){
+  char *prefix, *msg, *parse_nick;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL END OF MOTD");
+  IRCParse_RplEndOfMotd(command, &prefix, &parse_nick, &msg);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
+}
+
 /* OUT FUNCTIONS */
-void server_out_command_nick(char* command, int desc, char * nick_static, int* register_status){
+void server_out_command_nick(char* command){
   char *newNick, *msg;
   syslog(LOG_INFO, "[CLIENTE] Send nick %s", command);
   if(IRCUserParse_Nick(command, &newNick)==IRC_OK){
@@ -251,7 +325,7 @@ void server_out_command_nick(char* command, int desc, char * nick_static, int* r
   }
 }
 
-void server_out_command_join(char* command, int desc, char * nick_static, int* register_status){
+void server_out_command_join(char* command){
   char *msg, *channel, *password;
   syslog(LOG_INFO, "[CLIENTE] Send join %s", command);
   if(IRCUserParse_Join(command, &channel, &password)==IRC_OK){
@@ -264,7 +338,7 @@ void server_out_command_join(char* command, int desc, char * nick_static, int* r
   IRC_MFree(3, &msg, &channel, &password);
 }
 
-void server_out_command_names(char* command, int desc, char * nick_static, int* register_status){
+void server_out_command_names(char* command){
   char *msg, *channel, *targetserver;
   syslog(LOG_INFO, "[CLIENTE] Send join %s", command);
   if(IRCUserParse_Names(command, &channel, &targetserver)==IRC_OK){
@@ -276,7 +350,7 @@ void server_out_command_names(char* command, int desc, char * nick_static, int* 
   }
 }
 
-void server_out_command_list(char* command, int desc, char * nick_static, int* register_status){
+void server_out_command_list(char* command){
   char *msg, *channel, *search;
   syslog(LOG_INFO, "[CLIENTE] Send join %s", command);
   if(IRCUserParse_List(command, &channel, &search)==IRC_OK){
@@ -289,7 +363,7 @@ void server_out_command_list(char* command, int desc, char * nick_static, int* r
   IRC_MFree(3, &msg, &channel, &search);
 }
 
-void server_out_command_part(char* command, int desc, char * nick_static, int* register_status){
+void server_out_command_part(char* command){
   char *msg = NULL, *channelActual = NULL, *channel = NULL;
   channelActual = IRCInterface_ActiveChannelName();
   syslog(LOG_INFO, "[CLIENTE] Send part %s %s", command, channelActual);
@@ -313,7 +387,7 @@ void server_out_command_part(char* command, int desc, char * nick_static, int* r
   IRC_MFree(1, &channel);
 }
 
-void server_out_command_mode(char* command, int desc, char * nick_static, int* register_status){
+void server_out_command_mode(char* command){
   char *msg = NULL, *channelActual = NULL, *mode = NULL, *filter = NULL;
   channelActual = IRCInterface_ActiveChannelName();
   syslog(LOG_INFO, "[CLIENTE] [OUT] Send mode %s", command);

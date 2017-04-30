@@ -471,7 +471,7 @@ long IRCInterface_Connect(char *nick, char *user, char *realname, char *password
 {
   struct sockaddr_in socket_address;
   struct hostent *server_info;
-  char *command, *msgNick, *msgUser, *msgPass;
+  char *command, *msgNick, *msgUser;
   syslog (LOG_INFO, "[CLIENTE] Inicia conexion");
   if(!nick||!user||!realname||!server){
     return IRCERR_NOCONNECT;
@@ -508,8 +508,9 @@ long IRCInterface_Connect(char *nick, char *user, char *realname, char *password
     /* Ya conectados, parseamos nick/user y lo enviamos */
     IRCMsg_Nick(&msgNick, NULL, nick, NULL);
     IRCMsg_User(&msgUser, NULL, user, server, realname);
-    IRCMsg_Pass(&msgPass, NULL, password);
-    IRC_PipelineCommands(&command, msgNick, msgUser, msgPass, NULL);
+    /*IRCMsg_Pass(&msgPass, NULL, password);*/
+    syslog(LOG_ERR, "[CLIENTE] Password: %s", password);
+    IRC_PipelineCommands(&command, msgNick, msgUser, NULL);
     syslog(LOG_ERR, "[CLIENTE] Registro pipelined: %s", command);
 
     if(send(socket_desc, command, strlen(command), 0) < 0) {

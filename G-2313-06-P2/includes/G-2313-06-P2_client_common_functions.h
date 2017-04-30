@@ -17,7 +17,7 @@
 
 #include "G-2313-06-P2_client_function_handlers.h"
 
-#define CLIENT_MESSAGE_MAXSIZE  8096
+#define CLIENT_MESSAGE_MAXSIZE  16192
 
 void* client_function_ping(void *arg);
 void* client_function_response(void *arg);
@@ -27,4 +27,4 @@ void client_pre_out_function(char* command);
 void client_execute_out_function(long functionName, char* command);
 
 /* Tipos */
-typedef void (*FunctionCallBack)(char *, int, char *, int *);
+typedef void (*FunctionCallBack)(char *);

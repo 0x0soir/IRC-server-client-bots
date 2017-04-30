@@ -16,17 +16,25 @@
 #include <netdb.h>
 #include <pthread.h>
 
-void server_in_command_nick(char* command, int desc, char* nick_static, int* register_status);
-void server_in_command_pong(char* command, int desc, char* nick_static, int* register_status);
-void server_in_command_join(char* command, int desc, char* nick_static, int* register_status);
-void server_in_command_part(char* command, int desc, char* nick_static, int* register_status);
-void server_in_command_mode(char* command, int desc, char* nick_static, int* register_status);
-void server_in_command_topic(char* command, int desc, char* nick_static, int* register_status);
-void server_in_command_kick(char* command, int desc, char* nick_static, int* register_status);
+void server_in_command_nick(char* command);
+void server_in_command_pong(char* command);
+void server_in_command_join(char* command);
+void server_in_command_part(char* command);
+void server_in_command_mode(char* command);
+void server_in_command_topic(char* command);
+void server_in_command_kick(char* command);
+void server_in_command_rpl_welcome(char* command);
+void server_in_command_rpl_created(char* command);
+void server_in_command_rpl_yourhost(char* command);
+void server_in_command_rpl_luserclient(char* command);
+void server_in_command_rpl_luserme(char* command);
+void server_in_command_rpl_motdstart(char* command);
+void server_in_command_rpl_motd(char* command);
+void server_in_command_rpl_endofmotd(char* command);
 
-void server_out_command_nick(char* command, int desc, char* nick_static, int* register_status);
-void server_out_command_join(char* command, int desc, char* nick_static, int* register_status);
-void server_out_command_names(char* command, int desc, char * nick_static, int* register_status);
-void server_out_command_list(char* command, int desc, char * nick_static, int* register_status);
-void server_out_command_part(char* command, int desc, char * nick_static, int* register_status);
-void server_out_command_mode(char* command, int desc, char * nick_static, int* register_status);
+void server_out_command_nick(char* command);
+void server_out_command_join(char* command);
+void server_out_command_names(char* command);
+void server_out_command_list(char* command);
+void server_out_command_part(char* command);
+void server_out_command_mode(char* command);
