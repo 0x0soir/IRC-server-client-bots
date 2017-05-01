@@ -27,26 +27,18 @@ pthread_t thread_ficheros, thread_ping, thread_response;
  * <hr>
  */
 
- void *hilo_ficheros (void *vrecv){
-
+void *hilo_ficheros(void *vrecv){
  	srecv *sr;
  	char intimsg[512], aux[4096], ip[16];
  	struct timeval tv;
  	struct ifaddrs *addrs, *tmp;
  	int fd;
  	long ret;
-
- ///////////////////////////////////////////////////
  	char *comm, msg[512]="", lengthstr[128]="", portstr[6]="";
  	int recvsck, port, i;
- ///////////////////////////////////////////////////
 
  	sr = (srecv *) vrecv;
 
-
- ////////////////////////////////////////////////////
-
- 	// Escuchamos por un puerto libre aleatorio
  	srand(time(NULL));
 
  	for (i = 0; i < 10; ++i){
@@ -68,9 +60,6 @@ pthread_t thread_ficheros, thread_ping, thread_response;
  		return FALSE;
  	}
 
- 	// Obtenemos nuestra ip
- 	// Cogemos todas las interfaces, la primera que no sea 0.0.0.0 ni 127.0.0.1 es la que usaremos
- 	// OJO!! Daria problemas en maquinas conectadas a distintas redes por diferentes interfaces.
  	getifaddrs(&addrs);
  	tmp = addrs;
 
@@ -81,24 +70,20 @@ pthread_t thread_ficheros, thread_ping, thread_response;
  	        struct sockaddr_in *pAddr = (struct sockaddr_in *)tmp->ifa_addr;
  	        sprintf (ip, "%s", inet_ntoa(pAddr->sin_addr));
  	    }
-
  	    if (strcmp (ip, "0.0.0.0") != 0 && strcmp (ip, "127.0.0.1") != 0 && strcmp (ip, "") != 0 && strlen (ip) >= 7){
  	    	break;
  	    }
-
  	    tmp = tmp->ifa_next;
  	}
 
  	freeifaddrs(addrs);
 
+ 	sprintf(lengthstr, "%lu", sr->length);
+ 	sprintf(portstr, "%d", port);
 
- 	// Enviamos el comando especial de transferencia de archivo
- 	sprintf (lengthstr, "%lu", sr->length);
- 	sprintf (portstr, "%d", port);
+ 	sprintf(msg, "%cFS %s %s %s %s %s", 1, nick_cliente, sr->filename, lengthstr, ip, portstr);
 
- 	sprintf (msg, "%cFS %s %s %s %s %s", 1, nick_cliente, sr->filename, lengthstr, ip, portstr);
-
- 	ret = IRCMsg_Privmsg (&comm, NULL, sr->nick, msg);
+ 	ret = IRCMsg_Privmsg(&comm, NULL, sr->nick, msg);
  	if (ret != IRC_OK){
  		IRCInterface_ErrorDialog ("Error al crear mensaje de handshake.");
  		IRCInterface_WriteSystem("System", "Error!");
@@ -124,7 +109,7 @@ pthread_t thread_ficheros, thread_ping, thread_response;
 
  		free (sr->data);
  		free (sr);
- 		return NULL;
+ 		return FALSE;
  	}
 
  	if (tcp_receive (fd, intimsg, 512) < 0){
@@ -133,7 +118,7 @@ pthread_t thread_ficheros, thread_ping, thread_response;
 
  		free (sr->data);
  		free (sr);
- 		return NULL;
+ 		return FALSE;
  	}
 
  	// Enviamos el archivo
@@ -146,7 +131,7 @@ pthread_t thread_ficheros, thread_ping, thread_response;
 
  			free (sr->data);
  			free (sr);
- 			return NULL;
+ 			return FALSE;
  		}
  	}
 
@@ -157,7 +142,8 @@ pthread_t thread_ficheros, thread_ping, thread_response;
 
  	free (sr->data);
  	free (sr);
- }
+  return (void *) TRUE;
+}
 
 /**
  * @ingroup IRCInterfaceCallbacks
@@ -553,6 +539,14 @@ void IRCInterface_ActivateSecret(char *channel)
 
 void IRCInterface_BanNick(char *channel, char *nick)
 {
+  char *msg = NULL;
+
+	IRCMsg_Mode(&msg, NULL, channel, "+b", nick);
+	IRCInterface_PlaneRegisterOutMessage(msg);
+
+	send(socket_desc, msg, strlen(msg), 0);
+
+	IRC_MFree(1, &msg);
 }
 
 /**
@@ -1370,23 +1364,23 @@ void IRCInterface_NewTopicEnter(char *topicdata)
 
 boolean IRCInterface_SendFile(char *filename, char *nick, char *data, long unsigned int length)
 {
-  long ret;
-  	pthread_t tid;
-  	srecv *sr;
+  long thread_response;
+  pthread_t tid;
+  srecv *sr;
 
-  	sr = (srecv *) malloc (sizeof(srecv));
-  	sr->nick = nick;
-  	sr->filename = filename;
-  	sr->data = data;
-  	sr->length = length;
+  sr = (srecv *) malloc (sizeof(srecv));
+  sr->nick = nick;
+  sr->filename = filename;
+  sr->data = data;
+  sr->length = length;
 
-  	ret = pthread_create(&tid, NULL, &hilo_ficheros, (void *)sr);
-  	if (ret != 0){
-  		IRCInterface_ErrorDialog ("Error al lanzar el hilo de escucha y envio de fichero.");
-  		IRCInterface_WriteSystem("System", "Error!");
-  		return FALSE;
-  	}
-  	pthread_detach (tid);
+  thread_response = pthread_create(&tid, NULL, &hilo_ficheros, (void *)sr);
+  if (thread_response != 0){
+  	IRCInterface_ErrorDialog ("Error al lanzar el hilo de escucha y envio de fichero.");
+  	IRCInterface_WriteSystem("System", "Error!");
+  	return FALSE;
+  }
+  pthread_detach(tid);
 	return TRUE;
 }
 

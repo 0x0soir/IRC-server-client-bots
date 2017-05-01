@@ -1,4 +1,4 @@
-#include "../includes/tcp.h"
+#include "../includes/G-2313-06-P2_tcp.h"
 #include <sys/socket.h>
 #include <string.h>
 #include <netdb.h>
@@ -72,14 +72,14 @@ int tcp_listen (int port, int max_conn){
 }
 
 int tcp_send (int fd, char *msg){
-	if (socket < 0 || msg == NULL){
+	if (fd < 0 || msg == NULL){
 		return -1;
 	}
 	return send (fd, msg, strlen(msg)*sizeof(char), 0);
 }
 
 int tcp_receive (int fd, char *msg, int len){
-	if (socket < 0 || msg == NULL || len < 0){
+	if (fd < 0 || msg == NULL || len < 0){
 		return -1;
 	}
 	return read (fd, msg, len*sizeof(char));

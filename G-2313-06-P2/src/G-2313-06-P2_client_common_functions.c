@@ -73,6 +73,8 @@ void client_execute_in_function(long functionName, char* command){
   functions[TOPIC] = &server_in_command_topic;
   functions[KICK] = &server_in_command_kick;
   functions[PRIVMSG] = &server_in_command_privmsg;
+
+  /* Mensajes de respuesta*/
   functions[RPL_WELCOME] = &server_in_command_rpl_welcome;
   functions[RPL_CREATED] = &server_in_command_rpl_created;
   functions[RPL_YOURHOST] = &server_in_command_rpl_yourhost;
@@ -82,6 +84,9 @@ void client_execute_in_function(long functionName, char* command){
   functions[RPL_MOTD] = &server_in_command_rpl_motd;
   functions[RPL_ENDOFMOTD] = &server_in_command_rpl_endofmotd;
   functions[RPL_WHOREPLY] = &server_in_command_rpl_whoreply;
+
+  /* Mensajes de error */
+  functions[ERR_CANNOTSENDTOCHAN] = &server_in_command_err_cannotsendtochan;
 
   /* Llamar a la funcion del argumento */
   if((functionName<0)||(functionName>IRC_MAX_COMMANDS)||(functions[functionName]==NULL)){

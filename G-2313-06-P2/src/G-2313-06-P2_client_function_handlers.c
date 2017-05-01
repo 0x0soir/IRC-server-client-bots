@@ -22,6 +22,7 @@ void server_in_command_nick(char* command){
           strcpy(nick_cliente, msg);
         }
         sprintf(msgEnvio, "Ahora eres conocido como: %s", msg);
+        IRCInterface_ErrorDialogThread(msgEnvio);
         syslog(LOG_INFO, "[CLIENTE] NICK OLD: %s NEW: %s", nick_cliente, msg);
         if((channelActual!=NULL)&&(strcmp(channelActual, "System")!=0)){
           IRCInterface_WriteChannelThread(IRCInterface_ActiveChannelName(), "*", msgEnvio);
@@ -59,34 +60,24 @@ void server_in_command_join(char* command){
   if(IRCParse_Join(command, &prefix, &channel, &key, &msg)==IRC_OK){
     syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN PREFIX %s", prefix);
     if(IRCParse_ComplexUser(prefix, &join_nick, &join_user, &join_host, &join_server)==IRC_OK){
-      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN parseado complex");
-      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN complex: %s", join_nick);
-      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN complex: %s", nick_cliente);
       if(strcmp(join_nick, nick_cliente)==0){
         sprintf(msgEnvio, "Te has unido al canal %s", msg);
       } else {
         sprintf(msgEnvio, "%s (~%s@%s) ha entrado en %s", join_nick, join_nick, join_server, msg);
       }
-      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN generado mensaje para chat");
       syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN mensaje: %s", msgEnvio);
-      if(IRCInterface_QueryChannelExistThread(msg)!=0){
-        syslog(LOG_INFO, "[CLIENTE] [IN]: Canal existente, añado nick");
-        /*IRCInterface_AddNickChannelThread(msg, join_nick, join_user, join_user, join_server, 0);*/
-      } else {
+      if(IRCInterface_QueryChannelExistThread(msg)==0){
         IRCInterface_AddNewChannelThread(msg, 0);
-        syslog(LOG_INFO, "[CLIENTE] [IN]: Canal no existente, lo creo");
-        if(IRCMsg_Who(&msgWho, NULL, msg, NULL) == IRC_OK) {
-          if(send(socket_desc, msgWho, strlen(msgWho), 0)<0){
-            IRCInterface_PlaneRegisterOutMessageThread(msgWho);
-          }
-        }
-        if(msgWho){
-          IRC_MFree(1, &msgWho);
+      }
+      if(IRCMsg_Who(&msgWho, NULL, msg, NULL) == IRC_OK) {
+        if(send(socket_desc, msgWho, strlen(msgWho), 0)<0){
+          IRCInterface_PlaneRegisterOutMessageThread(msgWho);
         }
       }
-      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN antes de write: %s - %s", msg, msgEnvio);
+      if(msgWho){
+        IRC_MFree(1, &msgWho);
+      }
       IRCInterface_WriteChannelThread(msg, "*", msgEnvio);
-      syslog(LOG_INFO, "[CLIENTE] [IN]: JOIN despues de write");
     }
   }
   IRC_MFree(8, &prefix, &channel, &key, &msg, &join_nick, &join_user,
@@ -108,8 +99,6 @@ void server_in_command_part(char* command){
         IRCInterface_WriteChannelThread(channel, NULL, msgEnvio);
       }
       syslog(LOG_INFO, "[CLIENTE] [IN]: Part OK %s %s %s", part_nick, msg, msgEnvio);
-    } else {
-      syslog(LOG_INFO, "[CLIENTE] [IN]: Error en Parse Complex");
     }
   }
   IRC_MFree(8, &prefix, &channel, &msg, &part_nick, &part_user, &part_host, &part_server);
@@ -193,16 +182,11 @@ void server_in_command_mode(char* command){
       } else if (strstr(mode, "-o")) {
         sprintf(buff, "%s quita OP a %s", mode_nick, user_target);
         IRCInterface_WriteChannelThread(channel, "*", buff);
-        IRCInterface_ChangeNickStateChannelThread(channel, user_target, VOICE);
+        IRCInterface_ChangeNickStateChannelThread(channel, user_target, NONE);
       }
-      syslog(LOG_INFO, "[CLIENTE] [IN]: Mode termina");
-    } else {
-      syslog(LOG_INFO, "[CLIENTE] [IN]: Error en Parse Complex");
     }
   }
-  syslog(LOG_INFO, "[CLIENTE] [IN]: Mode antes de free");
-  IRC_MFree(6, &prefix, &channel, &mode_nick, &mode_user, &mode_host, &mode_server);
-  syslog(LOG_INFO, "[CLIENTE] [IN]: Mode despues de free");
+  IRC_MFree(6, &prefix, &channel, &mode_nick, &mode_user, &mode_host, &mode_server);;
 }
 
 void server_in_command_topic(char* command){
@@ -233,124 +217,29 @@ void server_in_command_kick(char* command){
       syslog(LOG_INFO, "[CLIENTE] [IN]: nick_cliente: %s", nick_cliente);
       if(strcmp(user_target, nick_cliente)==0){
         sprintf(buffer, "Has sido expulsado de %s por %s (Motivo: %s)", channel, parse_nick, msg);
-        syslog(LOG_INFO, "[CLIENTE] [IN]: 1");
+        IRCInterface_ErrorDialogThread(buffer);
         IRCInterface_DeleteNickChannel(channel, user_target);
-        syslog(LOG_INFO, "[CLIENTE] [IN]: 2");
         IRCInterface_RemoveChannelThread(channel);
-        syslog(LOG_INFO, "[CLIENTE] [IN]: 3");
         IRCInterface_WriteSystemThread("*", buffer);
-        syslog(LOG_INFO, "[CLIENTE] [IN]: 4");
       } else {
-        syslog(LOG_INFO, "[CLIENTE] [IN]: 01");
         IRCInterface_DeleteNickChannel(channel, user_target);
-        syslog(LOG_INFO, "[CLIENTE] [IN]: 02");
         sprintf(buffer, "%s ha expulsado a %s de %s (%s)", parse_nick, user_target, channel, msg);
-        syslog(LOG_INFO, "[CLIENTE] [IN]: 03");
         IRCInterface_WriteChannelThread(channel, NULL, buffer);
-        syslog(LOG_INFO, "[CLIENTE] [IN]: 04");
       }
-      syslog(LOG_INFO, "[CLIENTE] [IN]: 5");
     }
   }
   IRC_MFree(8, &prefix, &channel, &msg, &user_target, &parse_nick, &parse_user, &parse_host, &parse_server);
 }
 
-void *server_especial_ficheros(void *vmsg){
-
-  	char *msg;
-  	char *nick = NULL, *filename = NULL, *server = NULL;
-  	int length, port;
-  	int sck, i, brecv = 0;
-  	char data[4096];
-  	FILE *f;
-
-  	msg = (char *) vmsg;
-
-  	// Obtenemos los datos de la nueva conexion
-  	sscanf (msg, "\001FS %ms %ms %d %ms %d", &nick, &filename, &length, &server, &port);
-
-  	// Preguntamos si se desea recibir el archivo
-  	if (IRCInterface_ReceiveDialogThread(nick, filename) == FALSE){
-  		free (nick);
-  		free (filename);
-  		free (server);
-  		free (vmsg);
-  		return NULL;
-  	}
-
-  	// Conectamos con el usuario que nos envia el archivo
-  	sck = tcp_connect (server, port);
-  	if (sck < 0){
-  		IRCInterface_ErrorDialogThread ("No se pudo establecer la conexion para recibir el fichero.");
-  		IRCInterface_WriteSystemThread("System", "Error recibiendo archivo");
-
-  		g_print ("ERRORNO: %s; sck: %d\n", strerror (errno), sck);
-
-  		free (nick);
-  		free (filename);
-  		free (server);
-  		free (vmsg);
-  		return NULL;
-  	}
-
-  	// Enviamos un mensaje de confirmacion que sera ignorado.
-  	if (tcp_send (sck, "\002GO") < 0){
-  		IRCInterface_ErrorDialogThread ("No se pudo enviar el mensaje de handshake.");
-  		IRCInterface_WriteSystemThread("System", "Error recibiendo archivo");
-
-  		free (nick);
-  		free (filename);
-  		free (server);
-  		free (vmsg);
-  		return NULL;
-  	}
-
-  	// Abrimos un archivo para guardar los datos
-  	f = fopen (filename, "w");
-  	if (f == NULL){
-  		IRCInterface_ErrorDialogThread ("No se pudo crear el fichero en el sistema de archivos local.");
-  		IRCInterface_WriteSystemThread("System", "Error recibiendo archivo");
-
-  		free (nick);
-  		free (filename);
-  		free (server);
-  		free (vmsg);
-  		return NULL;
-  	}
-
-  	// Recibimos y guardamos los datos
-  	for (i = 0; i < length; brecv = 0){
-  		bzero (data, 4096);
-  		brecv = tcp_receive (sck, data, 4096);
-  		if (brecv < 1){
-  			continue;
-  		}
-  		i += brecv;
-  		fprintf(f, "%.*s", brecv, data);
-  	}
-
-  	fclose (f);
-
-  	// Notificamos el final de la transferencia
-  	IRCInterface_ErrorDialogThread ("Transferencia de fichero completada.");
-
-  	tcp_disconnect (sck);
-
-  	free (nick);
-  	free (filename);
-  	free (server);
-  	free (vmsg);
-}
-
 void server_in_command_who(char* command, int desc, char * nick_static, int* register_status){
-  char *prefix, *channel, *msg, *user_target, *parse_nick, *parse_user, *parse_host, *parse_server, *parse_type, *parse_hopcount, *parse_realname;
-  char buffer[512] = "";
+  char *prefix, *channel, *msg, *user_target, *parse_nick, *parse_user, *parse_host, *parse_server, *parse_type, *parse_realname;
+  int parse_hopcount;
   IRCInterface_PlaneRegisterInMessageThread(command);
-  syslog(LOG_INFO, "[CLIENTE] [IN]: WHOOOOOOOOOOO");
+  syslog(LOG_INFO, "[CLIENTE] [IN]: WHO");
   if (IRCParse_RplWhoReply(command, &prefix, &parse_nick, &channel, &parse_user, &parse_host, &parse_server, &user_target, &parse_type, &msg, &parse_hopcount, &parse_realname) == IRC_OK) {
     IRCInterface_AddNickChannelThread(channel, user_target, parse_user, parse_realname, parse_host, 0);
   }
-  IRC_MFree(8, &prefix, &channel, &msg, &user_target, &parse_nick, &parse_user, &parse_host, &parse_server, &parse_type, &parse_hopcount, &parse_realname);
+  IRC_MFree(7, &prefix, &channel, &msg, &user_target, &parse_nick, &parse_user, &parse_host, &parse_server, &parse_type, &parse_realname);
 }
 
 void server_in_command_privmsg(char* command){
@@ -460,11 +349,22 @@ void server_in_command_rpl_endofmotd(char* command){
 void server_in_command_rpl_whoreply(char* command){
   char *prefix, *nick, *channel, *user, *host, *server, *nick2, *type, *msg, *realname;
   int hopcount;
+  size_t length;
+  nickstate ns;
   IRCInterface_PlaneRegisterInMessageThread(command);
-  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL ");
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL WHO");
   if (IRCParse_RplWhoReply(command, &prefix, &nick, &channel, &user, &host, &server, &nick2, &type, &msg, &hopcount, &realname) == IRC_OK) {
-    IRCInterface_PlaneRegisterInMessageThread(command);
-    IRCInterface_AddNickChannelThread(channel, nick2, user, realname, host, 0);
+    length = strlen(type);
+    if(length==2){
+      if(type[1]=='@'){
+        ns = OPERATOR;
+      } else {
+        ns = NONE;
+      }
+    } else {
+      ns = NONE;
+    }
+    IRCInterface_AddNickChannelThread(channel, nick2, user, realname, host, ns);
     IRC_MFree(10, &prefix, &nick, &channel, &user, &host, &server, &nick2, &type, &msg, &realname);
   }
 }
@@ -592,7 +492,7 @@ void server_out_command_kick(char* command){
 
 
 void server_out_command_privmsg(char* command){
-  char *msg = NULL, *channelActual = NULL, msgEnvio[512]="";
+  char *msg = NULL, *channelActual = NULL;
   channelActual = IRCInterface_ActiveChannelName();
   syslog(LOG_INFO, "[CLIENTE] [OUT] Send privmsg %s", command);
   IRCMsg_Privmsg(&msg, NULL, channelActual, command);

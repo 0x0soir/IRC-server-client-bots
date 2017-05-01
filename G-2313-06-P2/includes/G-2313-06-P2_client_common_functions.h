@@ -16,6 +16,7 @@
 #include <pthread.h>
 
 #include "G-2313-06-P2_client_function_handlers.h"
+#include "G-2313-06-P2_client_err_handlers.h"
 
 #define CLIENT_MESSAGE_MAXSIZE  16192
 

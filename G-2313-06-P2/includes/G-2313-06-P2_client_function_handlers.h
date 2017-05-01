@@ -16,6 +16,8 @@
 #include <netdb.h>
 #include <pthread.h>
 
+#include "G-2313-06-P2_files.h"
+
 void server_in_command_nick(char* command);
 void server_in_command_pong(char* command);
 void server_in_command_join(char* command);
