@@ -14,6 +14,8 @@ SRCDIR_CLIENT += src/$(GROUP_CLIENT)_client_common_functions.c
 SRCDIR_CLIENT += includes/$(GROUP_CLIENT)_client_common_functions.h
 SRCDIR_CLIENT += src/$(GROUP_CLIENT)_client_function_handlers.c
 SRCDIR_CLIENT += includes/$(GROUP_CLIENT)_client_function_handlers.h
+SRCDIR_CLIENT += srclib/$(GROUP_CLIENT)_tcp.c
+SRCDIR_CLIENT += includes/$(GROUP_CLIENT)_tcp.h
 
 #Comienzo del makefile
 #Regla All: compila todo el programa

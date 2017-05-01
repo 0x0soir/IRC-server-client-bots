@@ -81,8 +81,7 @@ void client_execute_in_function(long functionName, char* command){
   functions[RPL_MOTDSTART] = &server_in_command_rpl_motdstart;
   functions[RPL_MOTD] = &server_in_command_rpl_motd;
   functions[RPL_ENDOFMOTD] = &server_in_command_rpl_endofmotd;
-
-
+  functions[RPL_WHOREPLY] = &server_in_command_rpl_whoreply;
 
   /* Llamar a la funcion del argumento */
   if((functionName<0)||(functionName>IRC_MAX_COMMANDS)||(functions[functionName]==NULL)){
