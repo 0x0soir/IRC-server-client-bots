@@ -1,3 +1,5 @@
+#include <errno.h>
+#include <sys/time.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -12,10 +14,25 @@
 #include <time.h>
 #include <arpa/inet.h>
 #include <redes2/irc.h>
-#include <redes2/ircxchat.h>
 #include <netdb.h>
 #include <pthread.h>
+#include <sys/ioctl.h>
+#include <net/if.h>
+#include <sys/types.h>
+#include <ifaddrs.h>
+#include <redes2/ircxchat.h>
 
 #include "G-2313-06-P2_tcp.h"
 
-void *server_especial_ficheros(void *vmsg);
+#ifndef A_FWD_H
+#define A_FWD_H
+typedef struct {
+	char *nick;
+	char *filename;
+	char *data;
+	long unsigned length;
+}srecv;
+#endif
+
+void *server_especial_enviar_ficheros(void *vrecv);
+void *server_especial_recibir_ficheros(void *vmsg);

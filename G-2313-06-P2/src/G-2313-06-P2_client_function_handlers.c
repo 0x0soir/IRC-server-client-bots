@@ -70,7 +70,7 @@ void server_in_command_join(char* command){
         IRCInterface_AddNewChannelThread(msg, 0);
       }
       if(IRCMsg_Who(&msgWho, NULL, msg, NULL) == IRC_OK) {
-        if(send(socket_desc, msgWho, strlen(msgWho), 0)<0){
+        if(send(socket_desc, msgWho, strlen(msgWho), 0)>0){
           IRCInterface_PlaneRegisterOutMessageThread(msgWho);
         }
       }
@@ -231,7 +231,7 @@ void server_in_command_kick(char* command){
   IRC_MFree(8, &prefix, &channel, &msg, &user_target, &parse_nick, &parse_user, &parse_host, &parse_server);
 }
 
-void server_in_command_who(char* command, int desc, char * nick_static, int* register_status){
+void server_in_command_who(char* command){
   char *prefix, *channel, *msg, *user_target, *parse_nick, *parse_user, *parse_host, *parse_server, *parse_type, *parse_realname;
   int parse_hopcount;
   IRCInterface_PlaneRegisterInMessageThread(command);
@@ -243,7 +243,7 @@ void server_in_command_who(char* command, int desc, char * nick_static, int* reg
 }
 
 void server_in_command_privmsg(char* command){
-  char *prefix, *channel, *msg, *parse_nick, *parse_user, *parse_host, *parse_server;
+  char *prefix, *channel, *msg, *parse_nick, *parse_user, *parse_host, *parse_server, *msgFichero;
   pthread_t tid;
   IRCInterface_PlaneRegisterInMessageThread(command);
   syslog(LOG_INFO, "[CLIENTE] [IN]: PRIVMSG");
@@ -252,24 +252,42 @@ void server_in_command_privmsg(char* command){
       syslog(LOG_INFO, "[CLIENTE] [IN]: Channel: %s", channel);
       if(msg[0]==1){
         if (msg[1] == 'F' && msg[2] == 'S'){	// Envio de ficheros
-    			pthread_create(&tid, NULL, &server_especial_ficheros, (void *)msg);
+          msgFichero = malloc(strlen(msg) + 1);
+          strcpy(msgFichero, msg);
+    			pthread_create(&tid, NULL, &server_especial_recibir_ficheros, (void *)msgFichero);
     		}
-      }
-      if(channel[0]=='#'){
-        syslog(LOG_INFO, "[CLIENTE] [IN]: Es canal");
-        IRCInterface_WriteChannelThread(channel, parse_nick, msg);
       } else {
-        syslog(LOG_INFO, "[CLIENTE] [IN]: No es canal");
-        if(IRCInterface_QueryChannelExist(channel)==FALSE){
-          IRCInterface_AddNewChannelThread(parse_nick, 0);
-          IRCInterface_WriteChannelThread(parse_nick, parse_nick, msg);
+        if(channel[0]=='#'){
+          syslog(LOG_INFO, "[CLIENTE] [IN]: Es canal");
+          IRCInterface_WriteChannelThread(channel, parse_nick, msg);
         } else {
-          IRCInterface_WriteChannelThread(parse_nick, parse_nick, msg);
+          syslog(LOG_INFO, "[CLIENTE] [IN]: No es canal");
+          if(IRCInterface_QueryChannelExist(channel)==FALSE){
+            IRCInterface_AddNewChannelThread(parse_nick, 0);
+            IRCInterface_WriteChannelThread(parse_nick, parse_nick, msg);
+          } else {
+            IRCInterface_WriteChannelThread(parse_nick, parse_nick, msg);
+          }
         }
       }
     }
   }
   IRC_MFree(7, &prefix, &channel, &msg, &parse_nick, &parse_user, &parse_host, &parse_server);
+}
+
+void server_in_command_ping(char* command){
+  char *prefix, *msg, *msg2, *parse_server, *parse_host;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: PING");
+  if(IRCParse_Ping(command, &prefix, &parse_server, &parse_host, &msg2)==IRC_OK){
+    if(IRCMsg_Pong(&msg, prefix, parse_server, parse_host, msg2)==IRC_OK){
+      if(send(socket_desc, msg, strlen(msg), 0)>0){
+        syslog(LOG_INFO, "[CLIENTE] [IN] PING envia: %s", msg);
+        IRCInterface_PlaneRegisterOutMessage(msg);
+      }
+    }
+  }
+  IRC_MFree(5, &prefix, &msg, &msg2, &parse_host, &parse_server);
 }
 
 void server_in_command_rpl_welcome(char* command){
@@ -376,7 +394,7 @@ void server_out_command_nick(char* command){
   if(IRCUserParse_Nick(command, &newNick)==IRC_OK){
     syslog(LOG_INFO, "[CLIENTE] NICK PARSE OK");
     IRCMsg_Nick(&msg, NULL, newNick, NULL);
-    if(send(socket_desc, msg, strlen(msg), 0) < 0){
+    if(send(socket_desc, msg, strlen(msg), 0)>0){
       IRCInterface_PlaneRegisterOutMessage(msg);
     }
   }
@@ -396,7 +414,7 @@ void server_out_command_join(char* command){
   if(IRCUserParse_Join(command, &channel, &password)==IRC_OK){
     syslog(LOG_INFO, "[CLIENTE] JOIN PARSE OK");
     IRCMsg_Join(&msg, NULL, channel, password, NULL);
-    if(send(socket_desc, msg, strlen(msg), 0) < 0){
+    if(send(socket_desc, msg, strlen(msg), 0)>0){
       IRCInterface_PlaneRegisterOutMessage(msg);
     }
   }
@@ -409,7 +427,7 @@ void server_out_command_names(char* command){
   if(IRCUserParse_Names(command, &channel, &targetserver)==IRC_OK){
     syslog(LOG_INFO, "[CLIENTE] NAMES PARSE OK");
     IRCMsg_Names(&msg, NULL, channel, targetserver);
-    if(send(socket_desc, msg, strlen(msg), 0) < 0){
+    if(send(socket_desc, msg, strlen(msg), 0)>0){
       IRCInterface_PlaneRegisterOutMessage(msg);
     }
   }
@@ -421,7 +439,7 @@ void server_out_command_list(char* command){
   if(IRCUserParse_List(command, &channel, &search)==IRC_OK){
     syslog(LOG_INFO, "[CLIENTE] LIST PARSE OK");
     IRCMsg_List(&msg, NULL, channel, search);
-    if(send(socket_desc, msg, strlen(msg), 0) < 0){
+    if(send(socket_desc, msg, strlen(msg), 0)>0){
       IRCInterface_PlaneRegisterOutMessage(msg);
     }
   }
@@ -443,7 +461,7 @@ void server_out_command_part(char* command){
     } else {
       IRCMsg_Part(&msg, NULL, channelActual, "Adios");
     }
-    if(send(socket_desc, msg, strlen(msg), 0) < 0){
+    if(send(socket_desc, msg, strlen(msg), 0)>0){
       syslog(LOG_INFO, "[CLIENTE] Part envia: %s", msg);
       IRCInterface_PlaneRegisterOutMessage(msg);
     }
@@ -458,7 +476,7 @@ void server_out_command_mode(char* command){
   syslog(LOG_INFO, "[CLIENTE] [OUT] Send mode %s", command);
   if(IRCUserParse_Mode(command, &mode, &filter)==IRC_OK){
     if(IRCMsg_Mode(&msg, NULL, channelActual, mode, NULL)==IRC_OK){
-      if(send(socket_desc, msg, strlen(msg), 0)<0){
+      if(send(socket_desc, msg, strlen(msg), 0)>0){
         syslog(LOG_INFO, "[CLIENTE] Mode envia: %s", msg);
         IRCInterface_PlaneRegisterOutMessage(msg);
       }
@@ -477,7 +495,7 @@ void server_out_command_kick(char* command){
   syslog(LOG_INFO, "[CLIENTE] [OUT] Send kick %s", command);
   if(IRCUserParse_Kick(command, &user_target, &msg)==IRC_OK){
     if(IRCMsg_Kick(&msg, NULL, channelActual, user_target, msg)==IRC_OK){
-      if(send(socket_desc, msg, strlen(msg), 0)<0){
+      if(send(socket_desc, msg, strlen(msg), 0)>0){
         syslog(LOG_INFO, "[CLIENTE] Kick envia: %s", msg);
         IRCInterface_PlaneRegisterOutMessage(msg);
       }
@@ -490,7 +508,6 @@ void server_out_command_kick(char* command){
   IRC_MFree(3, &msg, &channelActual, &user_target);
 }
 
-
 void server_out_command_privmsg(char* command){
   char *msg = NULL, *channelActual = NULL;
   channelActual = IRCInterface_ActiveChannelName();
@@ -500,7 +517,7 @@ void server_out_command_privmsg(char* command){
     IRCInterface_ErrorDialog("Para enviar un mensaje de texto debes unirte a un canal antes.");
   } else {
     IRCInterface_WriteChannel(channelActual, nick_cliente, command);
-    if(send(socket_desc, msg, strlen(msg), 0)<0){
+    if(send(socket_desc, msg, strlen(msg), 0)>0){
       syslog(LOG_INFO, "[CLIENTE] [OUT] Privmsg envia: %s", msg);
       IRCInterface_PlaneRegisterOutMessage(msg);
     } else {
@@ -508,4 +525,152 @@ void server_out_command_privmsg(char* command){
     }
   }
   IRC_MFree(1, &msg);
+}
+
+void server_out_command_whois(char* command){
+  char *msg = NULL, *msg2 = NULL;
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send whois %s", command);
+  if(IRCUserParse_Whois(command, &msg)==IRC_OK){
+    if(IRCMsg_Whois(&msg2, NULL, NULL, msg)==IRC_OK){
+      if(send(socket_desc, msg2, strlen(msg2), 0)>0){
+        syslog(LOG_INFO, "[CLIENTE] Whois envia: %s", msg2);
+        IRCInterface_PlaneRegisterOutMessage(msg2);
+      }
+    }
+  }
+  IRC_MFree(2, &msg, &msg2);
+}
+
+void server_out_command_invite(char* command){
+  char *msg = NULL, *nick = NULL, *channel = NULL;
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send invite %s", command);
+  if(IRCUserParse_Invite(command, &nick, &channel)==IRC_OK){
+    if(IRCMsg_Invite(&msg, NULL, nick, channel)==IRC_OK){
+      if(send(socket_desc, msg, strlen(msg), 0)>0){
+        syslog(LOG_INFO, "[CLIENTE] Invite envia: %s", msg);
+        IRCInterface_PlaneRegisterOutMessage(msg);
+      }
+    }
+  }
+  IRC_MFree(3, &msg, &nick, &channel);
+}
+
+void server_out_command_topic(char* command){
+  char *msg = NULL, *topic = NULL,*channelActual = NULL;
+  channelActual = IRCInterface_ActiveChannelName();
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send topic %s", command);
+  if(IRCUserParse_Topic(command, &topic)==IRC_OK){
+    if(strcmp(channelActual, "System")==0){
+      IRCInterface_ErrorDialog("Debes estar en un canal para ejecutar este comando. (/join #<canal>)");
+    } else {
+      if(IRCMsg_Topic(&msg, NULL, channelActual, topic)==IRC_OK){
+        if(send(socket_desc, msg, strlen(msg), 0)>0){
+          syslog(LOG_INFO, "[CLIENTE] Topic envia: %s", msg);
+          IRCInterface_PlaneRegisterOutMessage(msg);
+        }
+      }
+    }
+  }
+  IRC_MFree(3, &msg, &topic, &channelActual);
+}
+
+void server_out_command_me(char* command){
+  char *msg = NULL, *msg2 = NULL,*channelActual = NULL;
+  channelActual = IRCInterface_ActiveChannelName();
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send me %s", command);
+  if(IRCUserParse_Me(command, &msg2)==IRC_OK){
+    if(strcmp(channelActual, "System")==0){
+      IRCInterface_ErrorDialog("Debes estar en un canal para ejecutar este comando. (/join #<canal>)");
+    } else {
+      if(IRCMsg_Privmsg(&msg, NULL, channelActual, msg2)==IRC_OK){
+        if(send(socket_desc, msg, strlen(msg), 0)>0){
+          syslog(LOG_INFO, "[CLIENTE] Me envia: %s", msg);
+          IRCInterface_PlaneRegisterOutMessage(msg);
+        }
+      }
+    }
+  }
+  IRC_MFree(3, &msg, &msg2, &channelActual);
+}
+
+void server_out_command_msg(char* command){
+  char *msg = NULL, *msg2 = NULL, *target = NULL;
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send msg %s", command);
+  if(IRCUserParse_Msg(command, &target, &msg2)==IRC_OK){
+    if(IRCMsg_Privmsg(&msg, NULL, target, msg2)==IRC_OK){
+      if(send(socket_desc, msg, strlen(msg), 0)>0){
+        syslog(LOG_INFO, "[CLIENTE] Msg envia: %s", msg);
+        IRCInterface_PlaneRegisterOutMessage(msg);
+      }
+    }
+  }
+  IRC_MFree(3, &msg, &msg2, &target);
+}
+
+void server_out_command_notice(char* command){
+  char *msg = NULL, *msg2 = NULL, *target = NULL;
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send notice %s", command);
+  if(IRCUserParse_Notice(command, &target, &msg2)==IRC_OK){
+    if(IRCMsg_Notice(&msg, NULL, target, msg2)==IRC_OK){
+      if(send(socket_desc, msg, strlen(msg), 0)>0){
+        syslog(LOG_INFO, "[CLIENTE] Notice envia: %s", msg);
+        IRCInterface_PlaneRegisterOutMessage(msg);
+      }
+    }
+  }
+  IRC_MFree(3, &msg, &msg2, &target);
+}
+
+void server_out_command_ignore(char* command){
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send ignore %s", command);
+  IRCInterface_ErrorDialog("Este comando no funciona completamente ya que la libreria de Metis es limitada.");
+}
+
+void server_out_command_who(char* command){
+  char *msg = NULL, *target = NULL;
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send who %s", command);
+  if(IRCUserParse_Who(command, &target)==IRC_OK){
+    if(IRCMsg_Who(&msg, NULL, target, NULL)==IRC_OK){
+      if(send(socket_desc, msg, strlen(msg), 0)>0){
+        syslog(LOG_INFO, "[CLIENTE] who envia: %s", msg);
+        IRCInterface_PlaneRegisterOutMessage(msg);
+      }
+    }
+  } else {
+    IRCInterface_ErrorDialog("Comando mal introducido. Formato: (/who #<canal>)");
+  }
+  IRC_MFree(2, &msg, &target);
+}
+
+void server_out_command_whowas(char* command){
+  char *msg = NULL, *target = NULL;
+  int max;
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send whowas %s", command);
+  if(IRCUserParse_WhoWas(command, &target, &max)==IRC_OK){
+    if(IRCMsg_Whowas(&msg, NULL, target, 0, NULL)==IRC_OK){
+      if(send(socket_desc, msg, strlen(msg), 0)>0){
+        syslog(LOG_INFO, "[CLIENTE] Whowas envia: %s", msg);
+        IRCInterface_PlaneRegisterOutMessage(msg);
+      }
+    }
+  } else {
+    IRCInterface_ErrorDialog("Comando mal introducido. Formato: (/whowas #<canal>)");
+  }
+  IRC_MFree(2, &msg, &target);
+}
+
+void server_out_command_motd(char* command){
+  char *msg = NULL, *target = NULL;
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send motd %s", command);
+  if(IRCUserParse_Motd(command, &target)==IRC_OK){
+    if(IRCMsg_Motd(&msg, NULL, target)==IRC_OK){
+      if(send(socket_desc, msg, strlen(msg), 0)>0){
+        syslog(LOG_INFO, "[CLIENTE] Motd envia: %s", msg);
+        IRCInterface_PlaneRegisterOutMessage(msg);
+      }
+    }
+  } else {
+    IRCInterface_ErrorDialog("Comando mal introducido. Formato: (/motd #<servidor>)");
+  }
+  IRC_MFree(2, &msg, &target);
 }

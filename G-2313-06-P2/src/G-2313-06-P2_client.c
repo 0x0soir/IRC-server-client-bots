@@ -27,124 +27,6 @@ pthread_t thread_ficheros, thread_ping, thread_response;
  * <hr>
  */
 
-void *hilo_ficheros(void *vrecv){
- 	srecv *sr;
- 	char intimsg[512], aux[4096], ip[16];
- 	struct timeval tv;
- 	struct ifaddrs *addrs, *tmp;
- 	int fd;
- 	long ret;
- 	char *comm, msg[512]="", lengthstr[128]="", portstr[6]="";
- 	int recvsck, port, i;
-
- 	sr = (srecv *) vrecv;
-
- 	srand(time(NULL));
-
- 	for (i = 0; i < 10; ++i){
-
- 		port = rand() % 65000;
- 		if (port < 1024){
- 			port+=1024;
- 		}
-
- 		recvsck = tcp_listen (port, 1);
- 		if (recvsck < 0){
- 			continue;
- 		}
- 		break;
- 	}
- 	if (recvsck < 0){
- 		IRCInterface_ErrorDialog ("Error al abrir nuevo socket para conexión.");
- 		IRCInterface_WriteSystem("System", "Error!");
- 		return FALSE;
- 	}
-
- 	getifaddrs(&addrs);
- 	tmp = addrs;
-
- 	while (tmp)
- 	{
- 	    if (tmp->ifa_addr && tmp->ifa_addr->sa_family == AF_INET)
- 	    {
- 	        struct sockaddr_in *pAddr = (struct sockaddr_in *)tmp->ifa_addr;
- 	        sprintf (ip, "%s", inet_ntoa(pAddr->sin_addr));
- 	    }
- 	    if (strcmp (ip, "0.0.0.0") != 0 && strcmp (ip, "127.0.0.1") != 0 && strcmp (ip, "") != 0 && strlen (ip) >= 7){
- 	    	break;
- 	    }
- 	    tmp = tmp->ifa_next;
- 	}
-
- 	freeifaddrs(addrs);
-
- 	sprintf(lengthstr, "%lu", sr->length);
- 	sprintf(portstr, "%d", port);
-
- 	sprintf(msg, "%cFS %s %s %s %s %s", 1, nick_cliente, sr->filename, lengthstr, ip, portstr);
-
- 	ret = IRCMsg_Privmsg(&comm, NULL, sr->nick, msg);
- 	if (ret != IRC_OK){
- 		IRCInterface_ErrorDialog ("Error al crear mensaje de handshake.");
- 		IRCInterface_WriteSystem("System", "Error!");
- 		return FALSE;
- 	}
-
- 	send(socket_desc, comm, strlen(comm), 0);
- 	IRCInterface_PlaneRegisterOutMessage (comm);
-
- 	free (comm);
-
- 	// Esperamos a una conexion y a la recepcion de un mensaje
-
- 	tv.tv_sec = 60;	// Damos 1 minuto al otro usuario para decidir
- 	tv.tv_usec = 0;
-
- 	setsockopt(recvsck, SOL_SOCKET, SO_RCVTIMEO, (char *)&tv, sizeof(struct timeval));
-
- 	fd = accept (recvsck, NULL, 0);
- 	if (fd < 0){
- 		IRCInterface_ErrorDialogThread ("No se pudo enviar el archivo. Error iniciando la comunicacion o archivo no aceptado.");
- 		IRCInterface_WriteSystemThread("System", "Error enviando archivo");
-
- 		free (sr->data);
- 		free (sr);
- 		return FALSE;
- 	}
-
- 	if (tcp_receive (fd, intimsg, 512) < 0){
- 		IRCInterface_ErrorDialogThread ("No se pudo enviar el archivo. Error en la conexion.");
- 		IRCInterface_WriteSystemThread("System", "Error enviando archivo");
-
- 		free (sr->data);
- 		free (sr);
- 		return FALSE;
- 	}
-
- 	// Enviamos el archivo
- 	for (i = 0; i < sr->length; i+=4096){
- 		bzero (aux, 4096);
- 		strncpy (aux, &(sr->data[i]), 4096*sizeof(char));
- 		if (send(socket_desc, aux, strlen(aux), 0)< 0){
- 			IRCInterface_ErrorDialogThread ("No se pudo enviar el archivo. Error durante el envio.");
- 			IRCInterface_WriteSystemThread("System", "Error enviando archivo");
-
- 			free (sr->data);
- 			free (sr);
- 			return FALSE;
- 		}
- 	}
-
- 	// Notificamos que se ha completado la transferencia
- 	IRCInterface_ErrorDialogThread ("Transferencia de archivo completada.");
-
- 	tcp_disconnect (fd);
-
- 	free (sr->data);
- 	free (sr);
-  return (void *) TRUE;
-}
-
 /**
  * @ingroup IRCInterfaceCallbacks
  *
@@ -1374,10 +1256,10 @@ boolean IRCInterface_SendFile(char *filename, char *nick, char *data, long unsig
   sr->data = data;
   sr->length = length;
 
-  thread_response = pthread_create(&tid, NULL, &hilo_ficheros, (void *)sr);
+  thread_response = pthread_create(&tid, NULL, &server_especial_enviar_ficheros, (void *)sr);
   if (thread_response != 0){
-  	IRCInterface_ErrorDialog ("Error al lanzar el hilo de escucha y envio de fichero.");
-  	IRCInterface_WriteSystem("System", "Error!");
+  	IRCInterface_ErrorDialog("Error al lanzar el hilo de escucha y envio de fichero.");
+  	IRCInterface_WriteSystem("System", "Error al enviar el fichero.");
   	return FALSE;
   }
   pthread_detach(tid);
