@@ -15,13 +15,17 @@
 #include <netdb.h>
 #include <pthread.h>
 
+#ifndef SPECIAL_HEADERS
+#define SPECIAL_HEADERS
 #include "G-2313-06-P2_client_function_handlers.h"
 #include "G-2313-06-P2_client_err_handlers.h"
+#endif
 
 #define CLIENT_MESSAGE_MAXSIZE  16192
 
 void* client_function_ping(void *arg);
 void* client_function_response(void *arg);
+void client_show_error(char* msg);
 void client_pre_in_function(char* command);
 void client_execute_in_function(long functionName, char* command);
 void client_pre_out_function(char* command);

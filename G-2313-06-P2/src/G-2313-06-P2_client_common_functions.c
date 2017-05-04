@@ -50,6 +50,16 @@ void* client_function_response(void *arg){
   }
 }
 
+void client_show_error(char* msg){
+  char *channelActual;
+  channelActual = IRCInterface_ActiveChannelName();
+  if((channelActual!=NULL)&&(strcmp(channelActual, "System")!=0)){
+    IRCInterface_WriteChannelThread(IRCInterface_ActiveChannelName(), "*", msg);
+  } else {
+    IRCInterface_WriteSystemThread(NULL, msg);
+  }
+}
+
 void client_pre_in_function(char* command){
   client_execute_in_function(IRC_CommandQuery(command), command);
 }
@@ -84,6 +94,23 @@ void client_execute_in_function(long functionName, char* command){
 
   /* Mensajes de error */
   functions[ERR_CANNOTSENDTOCHAN] = &server_in_command_err_cannotsendtochan;
+  functions[ERR_ALREADYREGISTRED] = &server_in_command_err_alreadyregistred;
+  functions[ERR_NONICKNAMEGIVEN] = &server_in_command_err_nonicknamegiven;
+  functions[ERR_ERRONEUSNICKNAME] = &server_in_command_err_erroneusnickname;
+  functions[ERR_NICKNAMEINUSE] = &server_in_command_err_nicknameinuse;
+  functions[ERR_NICKCOLLISION] = &server_in_command_err_nickcollision;
+  functions[ERR_UNAVAILRESOURCE] = &server_in_command_err_unavailresource;
+  functions[ERR_RESTRICTED] = &server_in_command_err_restricted;
+  functions[ERR_PASSWDMISMATCH] = &server_in_command_err_passwdmismatch;
+  functions[ERR_BANNEDFROMCHAN] = &server_in_command_err_bannedfromchan;
+  functions[ERR_CHANNELISFULL] = &server_in_command_err_channelisfull;
+  functions[ERR_CHANOPRIVSNEEDED] = &server_in_command_err_chanoprivsneeded;
+  functions[ERR_INVITEONLYCHAN] = &server_in_command_err_inviteonlychan;
+  functions[ERR_NOCHANMODES] = &server_in_command_err_nochanmodes;
+  functions[ERR_NOSUCHCHANNEL] = &server_in_command_err_nosuchchannel;
+  functions[ERR_UNKNOWNMODE] = &server_in_command_err_unknownmode;
+  functions[ERR_NOMOTD] = &server_in_command_err_nomotd;
+  functions[ERR_NOSUCHNICK] = &server_in_command_err_nosuchnick;
 
   /* Llamar a la funcion del argumento */
   if((functionName<0)||(functionName>IRC_MAX_COMMANDS)||(functions[functionName]==NULL)){
