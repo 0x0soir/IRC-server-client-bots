@@ -17,6 +17,7 @@
 #include <pthread.h>
 
 #include "G-2313-06-P2_files.h"
+#include "G-2313-06-P2_client_common_functions.h"
 
 void server_in_command_nick(char* command);
 void server_in_command_pong(char* command);
@@ -28,6 +29,7 @@ void server_in_command_kick(char* command);
 void server_in_command_who(char* command);
 void server_in_command_privmsg(char* command);
 void server_in_command_ping(char* command);
+
 void server_in_command_rpl_welcome(char* command);
 void server_in_command_rpl_created(char* command);
 void server_in_command_rpl_yourhost(char* command);
@@ -37,6 +39,27 @@ void server_in_command_rpl_motdstart(char* command);
 void server_in_command_rpl_motd(char* command);
 void server_in_command_rpl_endofmotd(char* command);
 void server_in_command_rpl_whoreply(char* command);
+void server_in_command_rpl_away(char* command);
+void server_in_command_rpl_topic(char* command);
+void server_in_command_rpl_notopic(char* command);
+void server_in_command_rpl_youroper(char* command);
+void server_in_command_rpl_luserop(char* command);
+void server_in_command_rpl_luserchannels(char* command);
+void server_in_command_rpl_youreservice(char* command);
+void server_in_command_rpl_myinfo(char* command);
+void server_in_command_rpl_endofwho(char* command);
+void server_in_command_rpl_endofwhois(char* command);
+void server_in_command_rpl_info(char* command);
+void server_in_command_rpl_whoisuser(char* command);
+void server_in_command_rpl_whoischannels(char* command);
+void server_in_command_rpl_whoisoperator(char* command);
+void server_in_command_rpl_whoisserver(char* command);
+void server_in_command_rpl_whoisidle(char* command);
+void server_in_command_rpl_channelmodeis(char* command);
+void server_in_command_rpl_endofnames(char* command);
+void server_in_command_rpl_list(char* command);
+void server_in_command_rpl_listend(char* command);
+void server_in_command_rpl_namreply(char* command);
 
 void server_out_command_nick(char* command);
 void server_out_command_join(char* command);

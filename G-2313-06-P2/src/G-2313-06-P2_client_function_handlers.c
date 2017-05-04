@@ -80,8 +80,8 @@ void server_in_command_join(char* command){
       IRCInterface_WriteChannelThread(msg, "*", msgEnvio);
     }
   }
-  IRC_MFree(8, &prefix, &channel, &key, &msg, &join_nick, &join_user,
-    &join_host, &join_server);
+  IRC_MFree(9, &prefix, &channel, &key, &msg, &join_nick, &join_user,
+    &join_host, &join_server, &msgWho);
 }
 
 void server_in_command_part(char* command){
@@ -101,7 +101,7 @@ void server_in_command_part(char* command){
       syslog(LOG_INFO, "[CLIENTE] [IN]: Part OK %s %s %s", part_nick, msg, msgEnvio);
     }
   }
-  IRC_MFree(8, &prefix, &channel, &msg, &part_nick, &part_user, &part_host, &part_server);
+  IRC_MFree(7, &prefix, &channel, &msg, &part_nick, &part_user, &part_host, &part_server);
 }
 
 void server_in_command_mode(char* command){
@@ -387,6 +387,235 @@ void server_in_command_rpl_whoreply(char* command){
   }
 }
 
+void server_in_command_rpl_away(char* command){
+  char *prefix, *msg, *parse_nick, *parse_nick_2;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_AWAY");
+  IRCParse_RplAway(command, &prefix, &parse_nick, &parse_nick_2, &msg);
+  client_show_error(msg);
+  IRCInterface_ErrorDialogThread("[RPL_AWAY] El usuario se encuentra ausente.");
+  IRC_MFree(4, &prefix, &parse_nick, &parse_nick_2, &msg);
+}
+
+void server_in_command_rpl_topic(char* command){
+  char *prefix, *msg, *parse_nick, *parse_channel, msgEnvio[2048];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_TOPIC");
+  IRCParse_RplTopic(command, &prefix, &parse_nick, &parse_channel, &msg);
+  sprintf(msgEnvio, "El tema del canal es: %s", msg);
+  client_show_error(msgEnvio);
+  IRC_MFree(4, &prefix, &parse_nick, &parse_channel, &msg);
+}
+
+void server_in_command_rpl_notopic(char* command){
+  char *prefix, *msg, *parse_nick, *parse_channel, msgEnvio[2048];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_NOTOPIC");
+  IRCParse_RplNoTopic(command, &prefix, &parse_nick, &parse_channel, &msg);
+  sprintf(msgEnvio, "El canal no tiene ningún tema definido.");
+  client_show_error(msgEnvio);
+  IRC_MFree(4, &prefix, &parse_nick, &parse_channel, &msg);
+}
+
+void server_in_command_rpl_youroper(char* command){
+  char *prefix, *msg, *parse_nick, msgEnvio[2048];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_YOUROPER");
+  IRCParse_RplYoureOper(command, &prefix, &parse_nick, &msg);
+  sprintf(msgEnvio, "Ahora eres un operador del canal.");
+  client_show_error(msgEnvio);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
+}
+
+void server_in_command_rpl_luserop(char* command){
+  char *prefix, *msg, *parse_nick, msgEnvio[2048];
+  int nops;
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_LUSEROP");
+  IRCParse_RplLuserOp(command, &prefix, &parse_nick, &nops, &msg);
+  sprintf(msgEnvio, "En este momento hay %d operadores conectados en el servidor.", nops);
+  client_show_error(msgEnvio);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
+}
+
+void server_in_command_rpl_luserchannels(char* command){
+  char *prefix, *msg, *parse_nick, msgEnvio[2048];
+  int nops;
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_LUSERCHANNELS");
+  IRCParse_RplLuserChannels(command, &prefix, &parse_nick, &nops, &msg);
+  sprintf(msgEnvio, "En este momento hay %d canales disponibles en el servidor.", nops);
+  client_show_error(msgEnvio);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
+}
+
+void server_in_command_rpl_youreservice(char* command){
+  char *prefix, *msg, *parse_nick, *parse_servicename, msgEnvio[2048];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_YOURESERVICE");
+  IRCParse_RplYoureService(command, &prefix, &parse_nick, &msg, &parse_servicename);
+  sprintf(msgEnvio, "Servicio registrado de forma correcta: %s", parse_servicename);
+  client_show_error(msgEnvio);
+  IRC_MFree(4, &prefix, &parse_nick, &msg, &parse_servicename);
+}
+
+void server_in_command_rpl_myinfo(char* command){
+  char *prefix, *parse_nick, *parse_servername, *parse_version, *parse_availableusermodes,
+  *parse_availablechannelmodes, *parse_addedg, msgEnvio[2048];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_MYINFO");
+  IRCParse_RplMyInfo(command, &prefix, &parse_nick, &parse_servername, &parse_version, &parse_availableusermodes, &parse_availablechannelmodes, &parse_addedg);
+  sprintf(msgEnvio, "Información recibida correctamente: Servidor: (%s) Versión: (%s)", parse_servername, parse_version);
+  client_show_error(msgEnvio);
+  IRC_MFree(7, &prefix, &parse_nick, &parse_servername, &parse_version, &parse_availableusermodes,
+  &parse_availablechannelmodes, &parse_addedg);
+}
+
+void server_in_command_rpl_endofwho(char* command){
+  char *prefix, *msg, *parse_nick, *parse_name;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_ENDOFWHO");
+  IRCParse_RplEndOfWho(command, &prefix, &parse_nick, &parse_name, &msg);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(4, &prefix, &parse_nick, &parse_name, &msg);
+}
+
+void server_in_command_rpl_endofwhois(char* command){
+  char *prefix, *msg, *parse_nick, *parse_name;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_ENDOFWHOIS");
+  IRCParse_RplEndOfWhoIs(command, &prefix, &parse_nick, &parse_name, &msg);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(4, &prefix, &parse_nick, &parse_name, &msg);
+}
+
+void server_in_command_rpl_info(char* command){
+  char *prefix, *msg, *parse_nick;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_INFO");
+  IRCParse_RplInfo(command, &prefix, &parse_nick, &msg);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
+}
+
+void server_in_command_rpl_whoisuser(char* command){
+  char *prefix, *parse_nick, *parse_nick2, *parse_name, *parse_host,
+  *parse_realname, msgEnvio[2048];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_WHOISUSER");
+  IRCParse_RplWhoIsUser(command, &prefix, &parse_nick, &parse_nick2, &parse_name, &parse_host, &parse_realname);
+  sprintf(msgEnvio, "Información de usuario: Nick: (%s) Name: (%s) Host: (%s) Realname: (%s)", parse_nick2,
+  parse_name, parse_host, parse_realname);
+  client_show_error(msgEnvio);
+  IRC_MFree(6, &prefix, &parse_nick, &parse_nick2, &parse_name, &parse_host,
+  &parse_realname);
+}
+
+void server_in_command_rpl_whoischannels(char* command){
+  char *prefix, *parse_nick, *parse_nick2, *parse_channels, msgEnvio[2048];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_WHOISUSER");
+  IRCParse_RplWhoIsChannels(command, &prefix, &parse_nick, &parse_nick2, &parse_channels);
+  sprintf(msgEnvio, "Información de usuario: Nick: (%s) Listado de canales: (%s)", parse_nick2,
+  parse_channels);
+  client_show_error(msgEnvio);
+  IRC_MFree(4, &prefix, &parse_nick, &parse_nick2, &parse_channels);
+}
+
+void server_in_command_rpl_whoisoperator(char* command){
+  char *prefix, *parse_nick, *parse_nick2, *msg;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_WHOISOPERATOR");
+  IRCParse_RplWhoIsOperator(command, &prefix, &parse_nick, &parse_nick2, &msg);
+  client_show_error(msg);
+  IRC_MFree(4, &prefix, &parse_nick, &parse_nick2, &msg);
+}
+
+void server_in_command_rpl_whoisserver(char* command){
+  char *prefix, *parse_nick, *parse_nick2, *server, *server_info, msgEnvio[2048];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_WHOISSERVER");
+  IRCParse_RplWhoIsServer(command, &prefix, &parse_nick, &parse_nick2, &server, &server_info);
+  sprintf(msgEnvio, "Información de usuario: Nick: (%s) Server: (%s) Server info: (%s)", parse_nick2,
+  server, server_info);
+  client_show_error(msgEnvio);
+  IRC_MFree(5, &prefix, &parse_nick, &parse_nick2, &server, &server_info);
+}
+
+void server_in_command_rpl_whoisidle(char* command){
+  char *prefix, *parse_nick, *parse_nick2, *msg, msgEnvio[2048];
+  int sec_idle, signon;
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_WHOISIDLE");
+  IRCParse_RplWhoIsIdle(command, &prefix, &parse_nick, &parse_nick2, &sec_idle, &signon, &msg);
+  sprintf(msgEnvio, "[Idle] Información de usuario: Nick: (%s) Segundos idle: (%d) Signon: (%d)", parse_nick2,
+  sec_idle, signon);
+  client_show_error(msgEnvio);
+  IRC_MFree(4, &prefix, &parse_nick, &parse_nick2, &msg);
+}
+
+void server_in_command_rpl_channelmodeis(char* command){
+  char *prefix, *parse_nick, *parse_channel, *msg, msgEnvio[2048];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_CHANNELMODEIS");
+  IRCParse_RplChannelModeIs(command, &prefix, &parse_nick, &parse_channel, &msg);
+  sprintf(msgEnvio, "El modo del canal #%s es %s", parse_channel, msg);
+  client_show_error(msgEnvio);
+  IRC_MFree(4, &prefix, &parse_nick, &parse_channel, &msg);
+}
+
+void server_in_command_rpl_endofnames(char* command){
+  char *prefix, *msg, *parse_nick, *parse_channel;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_ENDOFNAMES");
+  IRCParse_RplEndOfNames(command, &prefix, &parse_nick, &parse_channel, &msg);
+  IRCInterface_WriteSystemThread(NULL, msg);
+  IRC_MFree(4, &prefix, &parse_nick, &msg, &parse_channel);
+}
+
+void server_in_command_rpl_list(char* command){
+  char *prefix, *parse_nick, *parse_channel, *parse_visible, *parse_topic, msgEnvio[8192];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_LIST");
+  IRCParse_RplList(command, &prefix, &parse_nick, &parse_channel, &parse_visible, &parse_topic);
+  sprintf(msgEnvio, "Canal: %s \tUsuarios: %s - Tema: %s", parse_channel, parse_visible, parse_topic);
+  client_show_error(msgEnvio);
+  IRC_MFree(5, &prefix, &parse_nick, &parse_channel, &parse_visible, &parse_topic);
+}
+
+void server_in_command_rpl_listend(char* command){
+  char *prefix, *parse_nick, *msg;
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_LISTEND");
+  IRCParse_RplListEnd(command, &prefix, &parse_nick, &msg);
+  client_show_error(msg);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
+}
+
+void server_in_command_rpl_namreply(char* command){
+  char *prefix, *parse_nick, *parse_type, *parse_channel, *msg, msgEnvio[8192];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_LIST");
+  IRCParse_RplNamReply(command, &prefix, &parse_nick, &parse_type, &parse_channel, &msg);
+  sprintf(msgEnvio, "Nick: %s \tCanal: %s", parse_nick, parse_channel);
+  client_show_error(msgEnvio);
+  IRC_MFree(5, &prefix, &parse_nick, &parse_channel, &parse_type, &msg);
+}
+
 /* OUT FUNCTIONS */
 void server_out_command_nick(char* command){
   char *newNick, *msg;
@@ -486,7 +715,7 @@ void server_out_command_mode(char* command){
   } else {
     syslog(LOG_INFO, "[CLIENTE] [OUT] Mode error en UserParse_Mode");
   }
-  IRC_MFree(4, &msg, &channelActual, &mode, &filter);
+  IRC_MFree(3, &msg, &mode, &filter);
 }
 
 void server_out_command_kick(char* command){
@@ -505,7 +734,7 @@ void server_out_command_kick(char* command){
   } else {
     syslog(LOG_INFO, "[CLIENTE] [OUT] Mode error en UserParse_Kick");
   }
-  IRC_MFree(3, &msg, &channelActual, &user_target);
+  IRC_MFree(2, &msg, &user_target);
 }
 
 void server_out_command_privmsg(char* command){
@@ -571,7 +800,7 @@ void server_out_command_topic(char* command){
       }
     }
   }
-  IRC_MFree(3, &msg, &topic, &channelActual);
+  IRC_MFree(2, &msg, &topic);
 }
 
 void server_out_command_me(char* command){
@@ -590,7 +819,7 @@ void server_out_command_me(char* command){
       }
     }
   }
-  IRC_MFree(3, &msg, &msg2, &channelActual);
+  IRC_MFree(2, &msg, &msg2);
 }
 
 void server_out_command_msg(char* command){

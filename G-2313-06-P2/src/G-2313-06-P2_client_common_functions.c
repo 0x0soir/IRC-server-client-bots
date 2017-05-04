@@ -91,6 +91,28 @@ void client_execute_in_function(long functionName, char* command){
   functions[RPL_MOTD]         = &server_in_command_rpl_motd;
   functions[RPL_ENDOFMOTD]    = &server_in_command_rpl_endofmotd;
   functions[RPL_WHOREPLY]     = &server_in_command_rpl_whoreply;
+  functions[RPL_AWAY]         = &server_in_command_rpl_away;
+  functions[RPL_TOPIC]        = &server_in_command_rpl_topic;
+  functions[RPL_NOTOPIC]      = &server_in_command_rpl_notopic;
+  functions[RPL_YOUREOPER]    = &server_in_command_rpl_youroper;
+  functions[RPL_LUSEROP]      = &server_in_command_rpl_luserop;
+  functions[RPL_LUSERCHANNELS]= &server_in_command_rpl_luserchannels;
+  functions[RPL_YOURESERVICE] = &server_in_command_rpl_youreservice;
+  functions[RPL_MYINFO]       = &server_in_command_rpl_myinfo;
+  functions[RPL_ENDOFWHO]     = &server_in_command_rpl_endofwho;
+  functions[RPL_ENDOFWHOIS]   = &server_in_command_rpl_endofwhois;
+  functions[RPL_INFO]         = &server_in_command_rpl_info;
+  functions[RPL_WHOISUSER]    = &server_in_command_rpl_whoisuser;
+  functions[RPL_WHOISCHANNELS]= &server_in_command_rpl_whoischannels;
+  functions[RPL_WHOISOPERATOR]= &server_in_command_rpl_whoisoperator;
+  functions[RPL_WHOISSERVER]  = &server_in_command_rpl_whoisserver;
+  functions[RPL_WHOISIDLE]    = &server_in_command_rpl_whoisidle;
+  functions[RPL_CHANNELMODEIS]= &server_in_command_rpl_channelmodeis;
+  functions[RPL_ENDOFNAMES]   = &server_in_command_rpl_endofnames;
+  functions[RPL_LIST]         = &server_in_command_rpl_list;
+  functions[RPL_LISTEND]      = &server_in_command_rpl_listend;
+  functions[RPL_NAMREPLY]     = &server_in_command_rpl_namreply;
+
 
   /* Mensajes de error */
   functions[ERR_CANNOTSENDTOCHAN] = &server_in_command_err_cannotsendtochan;

@@ -70,6 +70,8 @@ void IRCInterface_ActivateChannelKey(char *channel, char *key)
   	IRCInterface_SetChannelKey(key);
 
   	IRC_MFree(1, &msg);
+  }else {
+    IRCInterface_ErrorDialogThread("Para activar la clave del canal debes unirte a un canal primero e introducir una clave válida.");
   }
 }
 
@@ -107,14 +109,18 @@ void IRCInterface_ActivateExternalMessages(char *channel)
 {
   char *msg = NULL;
 
-	IRCMsg_Mode(&msg, NULL, channel, "+n", NULL);
-	IRCInterface_PlaneRegisterOutMessage(msg);
+  if(channel){
+  	IRCMsg_Mode(&msg, NULL, channel, "+n", NULL);
+  	IRCInterface_PlaneRegisterOutMessage(msg);
 
-	send(socket_desc, msg, strlen(msg), 0);
+  	send(socket_desc, msg, strlen(msg), 0);
 
-	IRCInterface_SetExternalMessages();
+  	IRCInterface_SetExternalMessages();
 
-	IRC_MFree(1, &msg);
+  	IRC_MFree(1, &msg);
+  }else {
+    IRCInterface_ErrorDialogThread("Para activar los mensajes externos del canal debes unirte a un canal primero.");
+  }
 }
 
 /**
@@ -195,14 +201,18 @@ void IRCInterface_ActivateModerated(char *channel)
 {
   char *msg = NULL;
 
-	IRCMsg_Mode(&msg, NULL, channel, "+m", NULL);
-	IRCInterface_PlaneRegisterOutMessage(msg);
+  if(channel){
+  	IRCMsg_Mode(&msg, NULL, channel, "+m", NULL);
+  	IRCInterface_PlaneRegisterOutMessage(msg);
 
-	send(socket_desc, msg, strlen(msg), 0);
+  	send(socket_desc, msg, strlen(msg), 0);
 
-	IRCInterface_SetModerated();
+  	IRCInterface_SetModerated();
 
-	IRC_MFree(1, &msg);
+  	IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para activar la moderación del canal debes unirte a un canal primero.");
+  }
 }
 
 /**
@@ -252,6 +262,8 @@ void IRCInterface_ActivateNicksLimit(char *channel, int limit)
 
     IRCInterface_SetNicksLimit(limit);
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialog("Para activar el límite de nicks debes unirte a un canal e introducir un valor superior a 0.");
   }
 }
 
@@ -333,14 +345,18 @@ void IRCInterface_ActivateProtectTopic(char *channel)
 {
   char *msg = NULL;
 
-	IRCMsg_Mode(&msg, NULL, channel, "+t", NULL);
-	IRCInterface_PlaneRegisterOutMessage(msg);
+  if(channel){
+  	IRCMsg_Mode(&msg, NULL, channel, "+t", NULL);
+  	IRCInterface_PlaneRegisterOutMessage(msg);
 
-	send(socket_desc, msg, strlen(msg), 0);
+  	send(socket_desc, msg, strlen(msg), 0);
 
-	IRCInterface_SetProtectTopic();
+  	IRCInterface_SetProtectTopic();
 
-	IRC_MFree(1, &msg);
+  	IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para activar la protección del tema del canal debes unirte a un canal primero.");
+  }
 }
 
 /**
@@ -377,14 +393,18 @@ void IRCInterface_ActivateSecret(char *channel)
 {
   char *msg = NULL;
 
-	IRCMsg_Mode(&msg, NULL, channel, "+s", NULL);
-	IRCInterface_PlaneRegisterOutMessage(msg);
+  if(channel){
+  	IRCMsg_Mode(&msg, NULL, channel, "+s", NULL);
+  	IRCInterface_PlaneRegisterOutMessage(msg);
 
-	send(socket_desc, msg, strlen(msg), 0);
+  	send(socket_desc, msg, strlen(msg), 0);
 
-	IRCInterface_SetSecret();
+  	IRCInterface_SetSecret();
 
-	IRC_MFree(1, &msg);
+  	IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para activar el secreto del canal debes unirte a un canal primero.");
+  }
 }
 
 /**
@@ -423,12 +443,16 @@ void IRCInterface_BanNick(char *channel, char *nick)
 {
   char *msg = NULL;
 
-	IRCMsg_Mode(&msg, NULL, channel, "+b", nick);
-	IRCInterface_PlaneRegisterOutMessage(msg);
+  if(channel && nick){
+  	IRCMsg_Mode(&msg, NULL, channel, "+b", nick);
+  	IRCInterface_PlaneRegisterOutMessage(msg);
 
-	send(socket_desc, msg, strlen(msg), 0);
+  	send(socket_desc, msg, strlen(msg), 0);
 
-	IRC_MFree(1, &msg);
+  	IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para expulsar a alguien del canal debes unirte a un canal primero y seleccionar a un usuario de la lista.");
+  }
 }
 
 /**
@@ -584,6 +608,8 @@ void IRCInterface_DeactivateChannelKey(char *channel)
 
     IRCInterface_UnsetChannelKey();
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para desactivar esta opción del canal debes unirte a un canal primero.");
   }
 }
 
@@ -629,6 +655,8 @@ void IRCInterface_DeactivateExternalMessages(char *channel)
 
     IRCInterface_UnsetExternalMessages();
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para desactivar esta opción del canal debes unirte a un canal primero.");
   }
 }
 
@@ -674,6 +702,8 @@ void IRCInterface_DeactivateInvite(char *channel)
 
     IRCInterface_UnsetInvite();
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para desactivar esta opción del canal debes unirte a un canal primero.");
   }
 }
 
@@ -719,6 +749,8 @@ void IRCInterface_DeactivateModerated(char *channel)
 
     IRCInterface_UnsetModerated();
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para desactivar esta opción del canal debes unirte a un canal primero.");
   }
 }
 
@@ -764,6 +796,8 @@ void IRCInterface_DeactivateNicksLimit(char *channel)
 
     IRCInterface_UnsetNicksLimit();
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para desactivar esta opción del canal debes unirte a un canal primero.");
   }
 }
 
@@ -811,6 +845,8 @@ void IRCInterface_DeactivatePrivate(char *channel)
 
     IRCInterface_UnsetPrivate();
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para desactivar esta opción del canal debes unirte a un canal primero.");
   }
 }
 
@@ -848,14 +884,18 @@ void IRCInterface_DeactivateProtectTopic(char *channel)
 {
   char *msg = NULL;
 
-	IRCMsg_Mode(&msg, NULL, channel, "-t", NULL);
-	IRCInterface_PlaneRegisterOutMessage(msg);
+  if(channel){
+  	IRCMsg_Mode(&msg, NULL, channel, "-t", NULL);
+  	IRCInterface_PlaneRegisterOutMessage(msg);
 
-	send(socket_desc, msg, strlen(msg), 0);
+  	send(socket_desc, msg, strlen(msg), 0);
 
-	IRCInterface_UnsetProtectTopic();
+  	IRCInterface_UnsetProtectTopic();
 
-	free(msg);
+  	free(msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para desactivar esta opción del canal debes unirte a un canal primero.");
+  }
 }
 
 /**
@@ -900,6 +940,8 @@ void IRCInterface_DeactivateSecret(char *channel)
 
     IRCInterface_UnsetSecret();
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para desactivar esta opción del canal debes unirte a un canal primero.");
   }
 }
 
@@ -1036,6 +1078,8 @@ void IRCInterface_GiveOp(char *channel, char *nick)
     send(socket_desc, msg, strlen(msg), 0);
     IRCInterface_PlaneRegisterOutMessage(msg);
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para hacer eso debes unirte a un canal primero y seleccionar a un usuario de la lista.");
   }
 }
 
@@ -1079,6 +1123,8 @@ void IRCInterface_GiveVoice(char *channel, char *nick)
     send(socket_desc, msg, strlen(msg), 0);
     IRCInterface_PlaneRegisterOutMessage(msg);
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para hacer eso debes unirte a un canal primero y seleccionar a un usuario de la lista.");
   }
 }
 
@@ -1122,6 +1168,8 @@ void IRCInterface_KickNick(char *channel, char *nick)
     send(socket_desc, msg, strlen(msg), 0);
     IRCInterface_PlaneRegisterOutMessage(msg);
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para hacer eso debes unirte a un canal primero y seleccionar a un usuario de la lista.");
   }
 }
 
@@ -1196,12 +1244,15 @@ void IRCInterface_NewCommandText(char *command)
 
 void IRCInterface_NewTopicEnter(char *topicdata)
 {
-  char *msg;
-  if (topicdata) {
-    IRCMsg_Topic(&msg, NULL, IRCInterface_ActiveChannelName(), topicdata);
+  char *msg, *channelActual;
+  channelActual = IRCInterface_ActiveChannelName();
+  if (topicdata && channelActual) {
+    IRCMsg_Topic(&msg, NULL, channelActual, topicdata);
     send(socket_desc, msg, strlen(msg), 0);
     IRCInterface_PlaneRegisterOutMessage(msg);
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para hacer eso debes unirte a un canal primero e introducir un nuevo tema.");
   }
 }
 
@@ -1387,6 +1438,8 @@ void IRCInterface_TakeOp(char *channel, char *nick)
     send(socket_desc, msg, strlen(msg), 0);
     IRCInterface_PlaneRegisterOutMessage(msg);
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para hacer eso debes unirte a un canal primero y seleccionar a un usuario de la lista.");
   }
 }
 
@@ -1430,6 +1483,8 @@ void IRCInterface_TakeVoice(char *channel, char *nick)
     send(socket_desc, msg, strlen(msg), 0);
     IRCInterface_PlaneRegisterOutMessage(msg);
     IRC_MFree(1, &msg);
+  } else {
+    IRCInterface_ErrorDialogThread("Para hacer eso debes unirte a un canal primero y seleccionar a un usuario de la lista.");
   }
 }
 
