@@ -20,7 +20,6 @@
 #include "G-2313-06-P2_client_common_functions.h"
 
 void server_in_command_nick(char* command);
-void server_in_command_pong(char* command);
 void server_in_command_join(char* command);
 void server_in_command_part(char* command);
 void server_in_command_mode(char* command);
@@ -29,6 +28,7 @@ void server_in_command_kick(char* command);
 void server_in_command_who(char* command);
 void server_in_command_privmsg(char* command);
 void server_in_command_ping(char* command);
+void server_in_command_pong(char* command);
 
 void server_in_command_rpl_welcome(char* command);
 void server_in_command_rpl_created(char* command);
@@ -40,6 +40,7 @@ void server_in_command_rpl_motd(char* command);
 void server_in_command_rpl_endofmotd(char* command);
 void server_in_command_rpl_whoreply(char* command);
 void server_in_command_rpl_away(char* command);
+void server_in_command_rpl_nowaway(char* command);
 void server_in_command_rpl_topic(char* command);
 void server_in_command_rpl_notopic(char* command);
 void server_in_command_rpl_youroper(char* command);
@@ -79,3 +80,5 @@ void server_out_command_ignore(char* command);
 void server_out_command_who(char* command);
 void server_out_command_whowas(char* command);
 void server_out_command_motd(char* command);
+void server_out_command_away(char* command);
+void server_out_command_ping(char* command);

@@ -72,7 +72,6 @@ void client_execute_in_function(long functionName, char* command){
   }
   /* Definir lista de funciones para cada comando*/
   functions[NICK]             = &server_in_command_nick;
-  functions[PONG]             = &server_in_command_pong;
   functions[JOIN]             = &server_in_command_join;
   functions[PART]             = &server_in_command_part;
   functions[MODE]             = &server_in_command_mode;
@@ -80,6 +79,7 @@ void client_execute_in_function(long functionName, char* command){
   functions[KICK]             = &server_in_command_kick;
   functions[PRIVMSG]          = &server_in_command_privmsg;
   functions[PING]             = &server_in_command_ping;
+  functions[PONG]             = &server_in_command_pong;
 
   /* Mensajes de respuesta*/
   functions[RPL_WELCOME]      = &server_in_command_rpl_welcome;
@@ -92,6 +92,7 @@ void client_execute_in_function(long functionName, char* command){
   functions[RPL_ENDOFMOTD]    = &server_in_command_rpl_endofmotd;
   functions[RPL_WHOREPLY]     = &server_in_command_rpl_whoreply;
   functions[RPL_AWAY]         = &server_in_command_rpl_away;
+  functions[RPL_NOWAWAY]      = &server_in_command_rpl_nowaway;
   functions[RPL_TOPIC]        = &server_in_command_rpl_topic;
   functions[RPL_NOTOPIC]      = &server_in_command_rpl_notopic;
   functions[RPL_YOUREOPER]    = &server_in_command_rpl_youroper;
@@ -172,6 +173,8 @@ void client_execute_out_function(long functionName, char* command){
   functions[UWHO]       = &server_out_command_who;
   functions[UWHOWAS]    = &server_out_command_whowas;
   functions[UMOTD]      = &server_out_command_motd;
+  functions[UAWAY]      = &server_out_command_away;
+  functions[UPING]      = &server_out_command_ping;
 
   /* Llamar a la funcion del argumento */
   if((functionName<0)||(functionName>IRC_MAX_COMMANDS)||(functions[functionName]==NULL)){

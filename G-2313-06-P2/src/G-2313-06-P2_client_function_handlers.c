@@ -48,10 +48,6 @@ void server_in_command_nick(char* command){
     &my_password, &my_server, &nick_nick, &nick_user, &nick_host, &nick_server);
 }
 
-void server_in_command_pong(char* command){
-  IRCInterface_PlaneRegisterInMessageThread(command);
-}
-
 void server_in_command_join(char* command){
   char *prefix, *channel, *key, *msg, msgEnvio[512] = "", *join_nick,
    *join_user, *join_host, *join_server, *msgWho;
@@ -290,6 +286,26 @@ void server_in_command_ping(char* command){
   IRC_MFree(5, &prefix, &msg, &msg2, &parse_host, &parse_server);
 }
 
+void server_in_command_pong(char* command){
+  char *prefix, *msg, *parse_server, *parse_server2, msgEnvio[2048];
+  char *my_server, *my_nick, *my_user, *my_realname, *my_password;
+  int port, ssl;
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: PONG");
+  if(IRCParse_Pong(command, &prefix, &parse_server, &parse_server2, &msg)==IRC_OK){
+    IRCInterface_GetMyUserInfoThread(&my_nick, &my_user, &my_realname, &my_password, &my_server, &port, &ssl);
+    if(my_server){
+      if(strcmp(my_server, msg)!=0){
+        sprintf(msgEnvio, "Recibido PONG del usuario: %s", msg);
+        client_show_error(msgEnvio);
+      }
+    }
+  }
+  IRC_MFree(9, &prefix, &msg, &parse_server, &parse_server2, &my_server,
+     &my_nick, &my_user, &my_realname, &my_password);
+}
+
 void server_in_command_rpl_welcome(char* command){
   char *prefix, *msg, *parse_nick;
   IRCInterface_PlaneRegisterInMessageThread(command);
@@ -365,8 +381,10 @@ void server_in_command_rpl_endofmotd(char* command){
 }
 
 void server_in_command_rpl_whoreply(char* command){
-  char *prefix, *nick, *channel, *user, *host, *server, *nick2, *type, *msg, *realname;
+  char *prefix, *nick, *channel, *user, *host, *server, *nick2,
+  *type, *msg, *realname, msgEnvio[2048];
   int hopcount;
+  memset(msgEnvio,0,sizeof(msgEnvio));
   size_t length;
   nickstate ns;
   IRCInterface_PlaneRegisterInMessageThread(command);
@@ -382,19 +400,35 @@ void server_in_command_rpl_whoreply(char* command){
     } else {
       ns = NONE;
     }
+    sprintf(msgEnvio, "Nick: %s \t Realname: %s", nick2, realname);
+    client_show_error(msgEnvio);
     IRCInterface_AddNickChannelThread(channel, nick2, user, realname, host, ns);
     IRC_MFree(10, &prefix, &nick, &channel, &user, &host, &server, &nick2, &type, &msg, &realname);
   }
 }
 
 void server_in_command_rpl_away(char* command){
-  char *prefix, *msg, *parse_nick, *parse_nick_2;
+  char *prefix, *msg, *parse_nick, *parse_nick_2, msgEnvio[2048];
+  memset(msgEnvio,0,sizeof(msgEnvio));
   IRCInterface_PlaneRegisterInMessageThread(command);
   syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_AWAY");
   IRCParse_RplAway(command, &prefix, &parse_nick, &parse_nick_2, &msg);
-  client_show_error(msg);
-  IRCInterface_ErrorDialogThread("[RPL_AWAY] El usuario se encuentra ausente.");
+  sprintf(msgEnvio, "El usuario %s se encuentra ausente: %s", parse_nick_2, msg);
+  client_show_error(msgEnvio);
+  IRCInterface_ErrorDialogThread(msgEnvio);
   IRC_MFree(4, &prefix, &parse_nick, &parse_nick_2, &msg);
+}
+
+void server_in_command_rpl_nowaway(char* command){
+  char *prefix, *msg, *parse_nick, msgEnvio[2048];
+  memset(msgEnvio,0,sizeof(msgEnvio));
+  IRCInterface_PlaneRegisterInMessageThread(command);
+  syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_NOWAWAY");
+  IRCParse_RplNowAway(command, &prefix, &parse_nick, &msg);
+  sprintf(msgEnvio, "Ahora te encuentras ausente: %s", msg);
+  client_show_error(msgEnvio);
+  IRCInterface_ErrorDialogThread(msgEnvio);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
 }
 
 void server_in_command_rpl_topic(char* command){
@@ -483,7 +517,7 @@ void server_in_command_rpl_endofwho(char* command){
   IRCInterface_PlaneRegisterInMessageThread(command);
   syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_ENDOFWHO");
   IRCParse_RplEndOfWho(command, &prefix, &parse_nick, &parse_name, &msg);
-  IRCInterface_WriteSystemThread(NULL, msg);
+  client_show_error(msg);
   IRC_MFree(4, &prefix, &parse_nick, &parse_name, &msg);
 }
 
@@ -492,7 +526,7 @@ void server_in_command_rpl_endofwhois(char* command){
   IRCInterface_PlaneRegisterInMessageThread(command);
   syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_ENDOFWHOIS");
   IRCParse_RplEndOfWhoIs(command, &prefix, &parse_nick, &parse_name, &msg);
-  IRCInterface_WriteSystemThread(NULL, msg);
+  client_show_error(msg);
   IRC_MFree(4, &prefix, &parse_nick, &parse_name, &msg);
 }
 
@@ -581,7 +615,7 @@ void server_in_command_rpl_endofnames(char* command){
   IRCInterface_PlaneRegisterInMessageThread(command);
   syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_ENDOFNAMES");
   IRCParse_RplEndOfNames(command, &prefix, &parse_nick, &parse_channel, &msg);
-  IRCInterface_WriteSystemThread(NULL, msg);
+  client_show_error(msg);
   IRC_MFree(4, &prefix, &parse_nick, &msg, &parse_channel);
 }
 
@@ -652,13 +686,15 @@ void server_out_command_join(char* command){
 
 void server_out_command_names(char* command){
   char *msg, *channel, *targetserver;
-  syslog(LOG_INFO, "[CLIENTE] Send join %s", command);
+  syslog(LOG_INFO, "[CLIENTE] Send names %s", command);
   if(IRCUserParse_Names(command, &channel, &targetserver)==IRC_OK){
     syslog(LOG_INFO, "[CLIENTE] NAMES PARSE OK");
     IRCMsg_Names(&msg, NULL, channel, targetserver);
     if(send(socket_desc, msg, strlen(msg), 0)>0){
       IRCInterface_PlaneRegisterOutMessage(msg);
     }
+  } else {
+    IRCInterface_ErrorDialog("Debes especificar un canal para ejecutar este comando. (/names #<canal>)");
   }
 }
 
@@ -899,7 +935,39 @@ void server_out_command_motd(char* command){
       }
     }
   } else {
-    IRCInterface_ErrorDialog("Comando mal introducido. Formato: (/motd #<servidor>)");
+    IRCInterface_ErrorDialog("Comando mal introducido. Formato: (/motd <servidor>)");
   }
   IRC_MFree(2, &msg, &target);
+}
+
+void server_out_command_away(char* command){
+  char *msg = NULL;
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send away %s", command);
+  if(IRCUserParse_Away(command, &msg)==IRC_OK){
+    if(IRCMsg_Away(&msg, NULL, msg)==IRC_OK){
+      if(send(socket_desc, msg, strlen(msg), 0)>0){
+        syslog(LOG_INFO, "[CLIENTE] Motd away: %s", msg);
+        IRCInterface_PlaneRegisterOutMessage(msg);
+      }
+    }
+  } else {
+    IRCInterface_ErrorDialog("Comando mal introducido. Formato: (/away <mensaje>)");
+  }
+  IRC_MFree(1, &msg);
+}
+
+void server_out_command_ping(char* command){
+  char *user = NULL, *msg = NULL;
+  syslog(LOG_INFO, "[CLIENTE] [OUT] Send ping %s", command);
+  if(IRCUserParse_Ping(command, &user)==IRC_OK){
+    if(IRCMsg_Ping(&msg, NULL, user, NULL)==IRC_OK){
+      if(send(socket_desc, msg, strlen(msg), 0)>0){
+        syslog(LOG_INFO, "[CLIENTE] Envio ping: %s", msg);
+        IRCInterface_PlaneRegisterOutMessage(msg);
+      }
+    }
+  } else {
+    IRCInterface_ErrorDialog("Comando mal introducido. Formato: (/ping <usuario>)");
+  }
+  IRC_MFree(2, &user, &msg);
 }
