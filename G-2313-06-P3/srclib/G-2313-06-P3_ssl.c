@@ -8,13 +8,11 @@ void ssl_start_client(){
 	struct addrinfo hints, *res;
 	char ssl_cert_1[100];
 	char ssl_cert_2[100];
-	char ssl_cert_3[100];
 	char message[2048];
 	char buffer[8096];
 
-	strcpy(ssl_cert_1, "./certs/ca.pem");
-	strcpy(ssl_cert_2, "./certs/clientkey.pem");
-	strcpy(ssl_cert_3, "./certs/clientcert.pem");
+	strcpy(ssl_cert_1, "./certs/cliente.pem");
+	strcpy(ssl_cert_2, "./certs/ca.pem");
 
 	memset(&hints, 0, sizeof(hints));
 	hints.ai_family = AF_UNSPEC;
@@ -29,7 +27,7 @@ void ssl_start_client(){
 		return;
 	}
 	/*printf("fijar_contexto_SSL\n");*/
-	fijar_contexto_SSL(ctx, ssl_cert_1, ssl_cert_2, ssl_cert_3);
+	fijar_contexto_SSL(ctx, ssl_cert_1, ssl_cert_2);
 	/*printf("fijar_contexto_SSL OK\n");*/
 
 	ERR_print_errors_fp(stdout);
@@ -58,7 +56,7 @@ void ssl_start_client(){
 		/*strcat(message, "\n\0");*/
 		syslog(LOG_INFO, "[CLIENTE ECHO] [%d] Envia %s", k, message);
 		enviar_datos_SSL(ssl, message);
-		recibir_datos_SSL(ssl, &buffer);
+		recibir_datos_SSL(ssl, &buffer[0]);
 		fflush(stdout);
 		fprintf(stdout, "%s", buffer);
 		syslog(LOG_INFO, "[CLIENTE ECHO] [%d] Recibe %s", k, buffer);
@@ -83,20 +81,19 @@ void ssl_start_server(){
 	char ssl_cert_3[100];
 	char buffer[8096];
 
-	strcpy(ssl_cert_1, "./certs/ca.pem");
-	strcpy(ssl_cert_2, "./certs/serverkey.pem");
-	strcpy(ssl_cert_3, "./certs/servercert.pem");
+	strcpy(ssl_cert_1, "./certs/servidor.pem");
+	strcpy(ssl_cert_2, "./certs/ca.pem");
 
 	ssl_ctx = inicializar_nivel_SSL(&desc);
 	if(desc<=0){
 		return;
 	}
 	ERR_print_errors_fp(stdout);
-	fijar_contexto_SSL(ssl_ctx, ssl_cert_1, ssl_cert_2, ssl_cert_3);
+	fijar_contexto_SSL(ssl_ctx, ssl_cert_1, ssl_cert_2);
 	ERR_print_errors_fp(stdout);
 
 
-	ssl=aceptar_canal_seguro_SSL(ssl_ctx, desc, 8080, 80, ip4addr);
+	aceptar_canal_seguro_SSL(ssl_ctx, &ssl, desc, 8080, 80, ip4addr);
 	ERR_print_errors_fp(stdout);
 
 	if(!evaluar_post_connectar_SSL(ssl)){
@@ -106,7 +103,7 @@ void ssl_start_server(){
 	while(whileStatus){
 		k++;
 		bzero(buffer, sizeof(char)*8096);
-		state = recibir_datos_SSL(ssl, &buffer);
+		state = recibir_datos_SSL(ssl, &buffer[0]);
 		if(state>0){
 			fflush(stdout);
 			/*for(i = (strlen(buffer)-1); buffer[i] != '\n'; i--){
@@ -141,35 +138,31 @@ SSL_CTX* inicializar_nivel_SSL(int *desc){
 	return response;
 }
 
-SSL* aceptar_canal_seguro_SSL(SSL_CTX* ctx_ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr){
-	SSL * ssl=NULL;
+int aceptar_canal_seguro_SSL(SSL_CTX* ctx_ssl, SSL **ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr){
 	int sockclient=-1;
 	tcp_bind(desc,puerto);
 	tcp_new_listen(desc,tam);
 	sockclient=tcp_new_accept(desc, ip4addr);
-	ssl=SSL_new(ctx_ssl);
-	if(ssl==NULL)
+	*ssl=SSL_new(ctx_ssl);
+	if(ssl==NULL){
+		printf("error en null ssl");
+		return NULL;
+	}
+	ERR_print_errors_fp(stdout);
+
+	if(!SSL_set_fd(*ssl, sockclient))
 		return NULL;
 	ERR_print_errors_fp(stdout);
 
-	if(!SSL_set_fd(ssl, sockclient))
-		return NULL;
-	ERR_print_errors_fp(stdout);
-
-	if(!SSL_accept(ssl))
-		return NULL;
-	return ssl;
+	return SSL_accept(*ssl);
 }
 
 int evaluar_post_connectar_SSL(SSL * ssl){
 	if(SSL_get_peer_certificate(ssl)==NULL){
-
-		return 0;
+		return -1;
 	}
-	/*printf("%ld\n", SSL_get_verify_result(ssl));*/
-	/*printf("%d\n", X509_V_OK);*/
 	if(SSL_get_verify_result(ssl)!=X509_V_OK){
-		return 0;
+		return -1;
 	}
 	return 1;
 }
@@ -184,48 +177,24 @@ int enviar_datos_SSL(SSL *ssl, const char *buf){
 
 int recibir_datos_SSL(SSL * ssl, char *buf){
 	int size = 8096;
-	if(ssl){
-		/*if(*buf==NULL){
-			*buf = (char *) malloc(size * sizeof(char));
-		} else {
-			free(*buf);
-			*buf = (char *) malloc(size * sizeof(char));
-		}*/
-	}
-	if(buf==NULL){
-		return -1;
-	}
 	return SSL_read(ssl, buf, size);
 }
 
-int fijar_contexto_SSL(SSL_CTX* ssl_ctx, const char* CAfile, const char* prvKeyFile,const char* certFile){
-	char CApath [1024];
-	char buf[2048];
-
-	SSL_CTX_set_verify(ssl_ctx, SSL_VERIFY_PEER, NULL);
-
-	sprintf(CApath, "%s%s", getcwd(buf, sizeof(buf)), "/certs/");
-
-	/*printf("CApath:%s, CAfile:%s, prvKeyFile:%s, certFile:%s\n",CApath, CAfile, prvKeyFile, certFile );*/
-	if (!SSL_CTX_load_verify_locations(ssl_ctx, CAfile, CApath)){
-		return 0;
-	}
-
-	SSL_CTX_set_default_verify_paths(ssl_ctx);
-	ERR_print_errors_fp(stdout);
-
-	if(!SSL_CTX_use_certificate_chain_file(ssl_ctx, certFile)){
-		printf("ERROR SSL_CTX_use_certificate_chain_file\n");
+int fijar_contexto_SSL(SSL_CTX* ssl_ctx, char * certFile, char * certRoot){
+	if (!SSL_CTX_load_verify_locations(ssl_ctx, certRoot, certFile)){
 		ERR_print_errors_fp(stdout);
+		syslog (LOG_INFO, "Error al verificar los paths");
 		return 0;
 	}
+	SSL_CTX_set_default_verify_paths(ssl_ctx);
 
-	SSL_CTX_use_PrivateKey_file(ssl_ctx, prvKeyFile, SSL_FILETYPE_PEM);
-	ERR_print_errors_fp(stdout);
-
-	SSL_CTX_set_verify(ssl_ctx, SSL_VERIFY_PEER | SSL_VERIFY_FAIL_IF_NO_PEER_CERT, NULL);
-
-	ERR_print_errors_fp(stdout);
+	if(!SSL_CTX_use_certificate_file(ssl_ctx, certFile, SSL_FILETYPE_PEM)){
+		ERR_print_errors_fp(stdout);
+		syslog (LOG_INFO, "Error al usar chain file");
+		return 0;
+	}
+	SSL_CTX_use_PrivateKey_file(ssl_ctx, certFile, SSL_FILETYPE_PEM);
+	SSL_CTX_set_verify(ssl_ctx, SSL_VERIFY_PEER, NULL);
 	return 1;
 }
 

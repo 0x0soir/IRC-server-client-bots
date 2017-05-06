@@ -18,8 +18,8 @@
 void ssl_start_client();
 void ssl_start_server();
 SSL_CTX* inicializar_nivel_SSL(int *desc);
-int fijar_contexto_SSL(SSL_CTX* ssl_ctx, const char* CAfile, const char* prvKeyFile,const char* certFile);
-SSL* aceptar_canal_seguro_SSL(SSL_CTX* ctx_ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr);
+int fijar_contexto_SSL(SSL_CTX* ssl_ctx, char * certFile, char * certRoot);
+int aceptar_canal_seguro_SSL(SSL_CTX* ctx_ssl, SSL **ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr);
 int evaluar_post_connectar_SSL(SSL * ssl);
 int enviar_datos_SSL(SSL * ssl, const char *buf);
 int recibir_datos_SSL(SSL * ssl, char *buf);

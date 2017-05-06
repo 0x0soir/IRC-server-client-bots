@@ -15,31 +15,45 @@ SRC_CLIENT_ECHO += includes/$(GROUP)_tcp.h
 SRC_CLIENT_ECHO += srclib/$(GROUP)_ssl.c
 SRC_CLIENT_ECHO += includes/$(GROUP)_ssl.h
 
+SRC_SERVER_IRC = src/server_irc/$(GROUP)_server.c
+SRC_SERVER_IRC += includes/server_irc/$(GROUP)_server.h
+SRC_SERVER_IRC += src/server_irc/$(GROUP)_common_functions.c
+SRC_SERVER_IRC += includes/server_irc/$(GROUP)_common_functions.h
+SRC_SERVER_IRC += src/server_irc/$(GROUP)_function_handlers.c
+SRC_SERVER_IRC += includes/server_irc/$(GROUP)_function_handlers.h
+SRC_SERVER_IRC += src/server_irc/$(GROUP)_thread_pool.c
+SRC_SERVER_IRC += includes/server_irc/$(GROUP)_list.h
+SRC_SERVER_IRC += includes/server_irc/$(GROUP)_thread_pool.h
+SRC_SERVER_IRC += srclib/$(GROUP)_ssl.c
+SRC_SERVER_IRC += includes/$(GROUP)_ssl.h
+SRC_SERVER_IRC += srclib/$(GROUP)_tcp.c
+SRC_SERVER_IRC += includes/$(GROUP)_tcp.h
+
 # Flags para el compilador
-FFLAGS= -Wall -pedantic -pthread -w -rdynamic
+FFLAGS= -Wall -pedantic -pthread -rdynamic
 REDESLIB= -lircredes -lirctad -lircinterface -lsoundredes
 LIB_SSL = -lssl -lcrypto
 
 #Comienzo del makefile
 #Regla All: compila todo el programa
 
-all: certificados claves
+all: certificados claves server_echo client_echo
 
 certificados:
 		@echo "\033[31mGenerando certificados...\033[00m"
 		@rm -Rf $(SRC_CERTIFICADOS)
 		@mkdir -p $(SRC_CERTIFICADOS)
-		@openssl genrsa -out $(SRC_CERTIFICADOS)/rootkey.pem 2048 > /dev/null 2>&1
+		@openssl genrsa -out $(SRC_CERTIFICADOS)/rootkey.pem 2048
 		@echo "\033[33m\tCertificado generado: $(SRC_CERTIFICADOS)/rootkey.pem\033[00m"
 		@openssl req -new -x509 -key $(SRC_CERTIFICADOS)/rootkey.pem -out $(SRC_CERTIFICADOS)/rootcert.pem -subj "/C=ES/ST=Madrid/L=Madrid/O=UAM/CN=Redes2 CA"
 		@echo "\033[33m\tCertificado generado: $(SRC_CERTIFICADOS)/rootcert.pem\033[00m"
-		@cat $(SRC_CERTIFICADOS)/rootkey.pem $(SRC_CERTIFICADOS)/rootcert.pem > $(SRC_CERTIFICADOS)/ca.pem
+		@cat $(SRC_CERTIFICADOS)/rootcert.pem $(SRC_CERTIFICADOS)/rootkey.pem > $(SRC_CERTIFICADOS)/ca.pem
 		@echo "\033[32m--> Certificados generados en: $(SRC_CERTIFICADOS)\033[00m"
 
 claves:
 	@echo "\033[31mGenerando claves del cliente...\033[00m"
 	@openssl req -nodes -newkey rsa:2048 -keyout $(SRC_CERTIFICADOS)/clientkey.pem -out $(SRC_CERTIFICADOS)/clientreq.pem -subj "/C=ES/ST=Madrid/L=Madrid/O=UAM/CN=G-2313-06-P3-client" > /dev/null 2>&1
-	@openssl x509 -req -in $(SRC_CERTIFICADOS)/clientreq.pem  -CA $(SRC_CERTIFICADOS)/ca.pem -CAkey $(SRC_CERTIFICADOS)/ca.pem -CAcreateserial -out $(SRC_CERTIFICADOS)/clientcert.pem  > /dev/null 2>&1
+	@openssl x509 -req -in $(SRC_CERTIFICADOS)/clientreq.pem -CA $(SRC_CERTIFICADOS)/ca.pem -CAkey $(SRC_CERTIFICADOS)/ca.pem -CAcreateserial -out $(SRC_CERTIFICADOS)/clientcert.pem  > /dev/null 2>&1
 	@cat $(SRC_CERTIFICADOS)/clientcert.pem $(SRC_CERTIFICADOS)/clientkey.pem $(SRC_CERTIFICADOS)/rootcert.pem > $(SRC_CERTIFICADOS)/cliente.pem
 	@echo "\033[33m\tCertificado generado: $(SRC_CERTIFICADOS)/clientcert.pem\033[00m"
 	@echo "\033[33m\tCertificado generado: $(SRC_CERTIFICADOS)/clientkey.pem\033[00m"
@@ -54,21 +68,31 @@ claves:
 	@echo "\033[32m--> Claves generadas en: $(SRC_CERTIFICADOS)\033[00m"
 
 server_echo:
+	@mkdir -p "echo"
 	@echo "\033[31mCompilando servidor echo...\033[00m"
 	gcc -o ./echo/servidor_echo $(SRC_SERVER_ECHO) $(FFLAGS) $(REDESLIB) $(LIB_SSL)
 	@echo "\033[32m--> Servidor compilado: ./echo/servidor_echo\033[00m"
 
 client_echo:
+	@mkdir -p "echo"
 	@echo "\033[31mCompilando cliente echo...\033[00m"
 	gcc -o ./echo/cliente_echo $(SRC_CLIENT_ECHO) $(FFLAGS) $(REDESLIB) $(LIB_SSL)
 	@echo "\033[32m--> Cliente compilado: ./echo/cliente_echo\033[00m"
 
+server_irc:
+	@mkdir -p "cliente_servidor"
+	@echo "\033[31mCompilando servidor IRC...\033[00m"
+	gcc -o ./cliente_servidor/servidor_IRC $(SRC_SERVER_IRC) $(FFLAGS) $(REDESLIB) $(LIB_SSL)
+	@echo "\033[32m--> Servidor compilado: ./cliente_servidor/servidor_IRC\033[00m"
+
 #Regla clean: limpia el directorio del ficheros temporales
+entrega: clean tar
+
 clean:
-	@echo "Borrando ficheros temporales"
+	@echo "\033[31mBorrando ficheros temporales...\033[00m"
 	rm -rf obj/*.o $(GROUP)
 	rm -rf objlib/*.o $(GROUP)
-	rm -rf $(GROUP)_server
+	rm -rf "echo"
 tar:
 	@echo "\033[31mComprimiendo...\033[00m"
 	tar --exclude .git -czf $(GROUP).tar.gz ../$(GROUP) --exclude $(GROUP).tar.gz
