@@ -11,6 +11,7 @@
 #include <netinet/in.h>
 #include <linux/udp.h>
 #include <linux/tcp.h>
+#include <syslog.h>
 
 #include "../includes/G-2313-06-P3_tcp.h"
 
@@ -20,7 +21,7 @@ SSL_CTX* inicializar_nivel_SSL(int *desc);
 int fijar_contexto_SSL(SSL_CTX* ssl_ctx, const char* CAfile, const char* prvKeyFile,const char* certFile);
 SSL* aceptar_canal_seguro_SSL(SSL_CTX* ctx_ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr);
 int evaluar_post_connectar_SSL(SSL * ssl);
-int enviar_datos_SSL(SSL * ssl,const void * buf);
-int recibir_datos_SSL(SSL * ssl, void * buf);
+int enviar_datos_SSL(SSL * ssl, const char *buf);
+int recibir_datos_SSL(SSL * ssl, char *buf);
 void cerrar_canal_SSL(SSL *ssl, SSL_CTX *ctl_ssl, int desc);
 SSL* conectar_canal_seguro_SSL(SSL_CTX* ctx_ssl, int desc, struct sockaddr res);

@@ -2,35 +2,40 @@
 #include "../includes/G-2313-06-P3_ssl.h"
 
 void ssl_start_client(){
-	int desc;
+	int desc, whileStatus = 1, k = 0;
 	SSL_CTX* ctx=NULL;
 	SSL * ssl=NULL;
 	struct addrinfo hints, *res;
-	char buf [20];
-	char ssl_cert_client[70];
-	char ssl_cert_server[70];
+	char ssl_cert_1[100];
+	char ssl_cert_2[100];
+	char ssl_cert_3[100];
+	char message[2048];
+	char buffer[8096];
 
-	strcpy(ssl_cert_client, "./certs/ca.pem");
-	strcpy(ssl_cert_server, "./certs/cliente.pem");
+	strcpy(ssl_cert_1, "./certs/ca.pem");
+	strcpy(ssl_cert_2, "./certs/clientkey.pem");
+	strcpy(ssl_cert_3, "./certs/clientcert.pem");
 
 	memset(&hints, 0, sizeof(hints));
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
 	/*printf("inicializar_nivel_SSL\n");*/
+
+	fflush(stdout);
 	ctx = inicializar_nivel_SSL(&desc);
 	/*printf("inicializar_nivel_SSL OK\n");*/
-	ERR_print_errors_fp(stdout);
+
 	if(ctx==NULL){
 		return;
 	}
 	/*printf("fijar_contexto_SSL\n");*/
-	fijar_contexto_SSL(ctx, ssl_cert_client, ssl_cert_server, ssl_cert_server);
+	fijar_contexto_SSL(ctx, ssl_cert_1, ssl_cert_2, ssl_cert_3);
 	/*printf("fijar_contexto_SSL OK\n");*/
 
 	ERR_print_errors_fp(stdout);
 	/*printf("getaddrinfo\n");*/
 
-	if(0!=getaddrinfo("localhost", "8080", &hints, &res)){
+	if(getaddrinfo("localhost", "8080", &hints, &res)!=0){
 		return;
 	}
 	/*printf("getaddrinfo ok\n");*/
@@ -45,31 +50,49 @@ void ssl_start_client(){
 		return;
 	}
 	/*printf("evaluar_post_connectar_SSL ok\n");*/
-	/*printf("recibir\n");*/
-	recibir_datos_SSL(ssl, buf);
-	/*printf("recibido:[%s]\n",buf );*/
-	enviar_datos_SSL(ssl, buf);
-	ERR_print_errors_fp(stdout);
+	while(whileStatus){
+		k++;
+		bzero(message, sizeof(char)*8096);
+		bzero(buffer, sizeof(char)*8096);
+		fgets(message, 8096, stdin);
+		/*strcat(message, "\n\0");*/
+		syslog(LOG_INFO, "[CLIENTE ECHO] [%d] Envia %s", k, message);
+		enviar_datos_SSL(ssl, message);
+		recibir_datos_SSL(ssl, &buffer);
+		fflush(stdout);
+		fprintf(stdout, "%s", buffer);
+		syslog(LOG_INFO, "[CLIENTE ECHO] [%d] Recibe %s", k, buffer);
+		fflush(stdout);
+		if(strcmp(message,"exit")==0){
+			whileStatus=0;
+		}
+	}
+
 	cerrar_canal_SSL(ssl,ctx,desc);
 	freeaddrinfo(res);
 }
 
 void ssl_start_server(){
-	int desc;
+	int desc, k = 0;
 	SSL_CTX *ssl_ctx;
 	SSL *ssl=NULL;
-	char buff[8096]="test";
 	struct sockaddr_in ip4addr;
+	int state, whileStatus = 1;
+	char ssl_cert_1[100];
+	char ssl_cert_2[100];
+	char ssl_cert_3[100];
+	char buffer[8096];
 
-	char ssl_cert_client[70];
-	char ssl_cert_server[70];
-
-	strcpy(ssl_cert_client, "./certs/ca.pem");
-	strcpy(ssl_cert_server, "./certs/cliente.pem");
+	strcpy(ssl_cert_1, "./certs/ca.pem");
+	strcpy(ssl_cert_2, "./certs/serverkey.pem");
+	strcpy(ssl_cert_3, "./certs/servercert.pem");
 
 	ssl_ctx = inicializar_nivel_SSL(&desc);
+	if(desc<=0){
+		return;
+	}
 	ERR_print_errors_fp(stdout);
-	fijar_contexto_SSL(ssl_ctx, ssl_cert_client, ssl_cert_server, ssl_cert_server);
+	fijar_contexto_SSL(ssl_ctx, ssl_cert_1, ssl_cert_2, ssl_cert_3);
 	ERR_print_errors_fp(stdout);
 
 
@@ -80,27 +103,42 @@ void ssl_start_server(){
 		ERR_print_errors_fp(stdout);
 		return;
 	}
-
-	enviar_datos_SSL(ssl,buff);
-	ERR_print_errors_fp(stdout);
-
-	recibir_datos_SSL(ssl, buff);
-
-	cerrar_canal_SSL(ssl,ssl_ctx,desc);
+	while(whileStatus){
+		k++;
+		bzero(buffer, sizeof(char)*8096);
+		state = recibir_datos_SSL(ssl, &buffer);
+		if(state>0){
+			fflush(stdout);
+			/*for(i = (strlen(buffer)-1); buffer[i] != '\n'; i--){
+				buffer[i+1] = '\0';
+			}*/
+			printf("%s", buffer);
+			syslog(LOG_INFO, "[SERVIDOR ECHO] [%d] Recibe %s", k, buffer);
+			fflush(stdout);
+			if(state > 0){
+				fflush(stdout);
+				enviar_datos_SSL(ssl, buffer);
+				syslog(LOG_INFO, "[SERVIDOR ECHO] [%d] Envia %s", k, buffer);
+			}
+			if(strcmp(buffer,"exit")==0){
+				whileStatus=0;
+			}
+		}
+	}
+	cerrar_canal_SSL(ssl, ssl_ctx, desc);
 }
 
 SSL_CTX* inicializar_nivel_SSL(int *desc){
-	if(desc==NULL){
-		return NULL;
-	}
-	*desc=tcp_new_socket();
-	if(*desc==-1)
-		return NULL;
+	SSL_CTX* response;
+
 	SSL_load_error_strings();
 	SSL_library_init();
-	/*ERR_print_errors_fp(stdout);*/
 
-	return SSL_CTX_new(SSLv23_method());
+	response = SSL_CTX_new(SSLv23_method());
+	ERR_print_errors_fp(stdout);
+
+	*desc = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	return response;
 }
 
 SSL* aceptar_canal_seguro_SSL(SSL_CTX* ctx_ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr){
@@ -136,27 +174,46 @@ int evaluar_post_connectar_SSL(SSL * ssl){
 	return 1;
 }
 
-int enviar_datos_SSL(SSL * ssl,const void * buf){
-	return SSL_write(ssl, buf, strlen(buf)+1);
+int enviar_datos_SSL(SSL *ssl, const char *buf){
+	if(!ssl|!buf){
+		printf("No existe ssl o buff\n");
+		return -1;
+	}
+	return SSL_write(ssl, buf, strlen(buf));
 }
 
-int recibir_datos_SSL(SSL * ssl, void * buf){
-	return SSL_read(ssl, buf, 8096);
+int recibir_datos_SSL(SSL * ssl, char *buf){
+	int size = 8096;
+	if(ssl){
+		/*if(*buf==NULL){
+			*buf = (char *) malloc(size * sizeof(char));
+		} else {
+			free(*buf);
+			*buf = (char *) malloc(size * sizeof(char));
+		}*/
+	}
+	if(buf==NULL){
+		return -1;
+	}
+	return SSL_read(ssl, buf, size);
 }
 
 int fijar_contexto_SSL(SSL_CTX* ssl_ctx, const char* CAfile, const char* prvKeyFile,const char* certFile){
 	char CApath [1024];
-	if (ssl_ctx==NULL)
-		return 0;
-	if(getcwd(CApath, sizeof(CApath))==NULL)
-		return 0;
-	strcat(CApath, "/cert");
+	char buf[2048];
+
+	SSL_CTX_set_verify(ssl_ctx, SSL_VERIFY_PEER, NULL);
+
+	sprintf(CApath, "%s%s", getcwd(buf, sizeof(buf)), "/certs/");
+
 	/*printf("CApath:%s, CAfile:%s, prvKeyFile:%s, certFile:%s\n",CApath, CAfile, prvKeyFile, certFile );*/
-	if (!SSL_CTX_load_verify_locations(ssl_ctx,CAfile,CApath)){
+	if (!SSL_CTX_load_verify_locations(ssl_ctx, CAfile, CApath)){
 		return 0;
 	}
+
 	SSL_CTX_set_default_verify_paths(ssl_ctx);
 	ERR_print_errors_fp(stdout);
+
 	if(!SSL_CTX_use_certificate_chain_file(ssl_ctx, certFile)){
 		printf("ERROR SSL_CTX_use_certificate_chain_file\n");
 		ERR_print_errors_fp(stdout);
@@ -187,7 +244,7 @@ void cerrar_canal_SSL(SSL *ssl, SSL_CTX *ctl_ssl, int desc){
 
 SSL* conectar_canal_seguro_SSL(SSL_CTX* ctx_ssl, int desc, struct sockaddr res){
 	SSL * ssl=NULL;
-	/*printf("connect:%d\n",tcp_new_open_connection(desc,res));*/
+	tcp_new_open_connection(desc,res);
 	/*printf("errno:%d\n",errno );*/
 	ssl=SSL_new(ctx_ssl);
 
