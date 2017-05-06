@@ -27,7 +27,7 @@ all: certificados claves
 
 certificados:
 		@echo "\033[31mGenerando certificados...\033[00m"
-		@rm -R $(SRC_CERTIFICADOS)
+		@rm -Rf $(SRC_CERTIFICADOS)
 		@mkdir -p $(SRC_CERTIFICADOS)
 		@openssl genrsa -out $(SRC_CERTIFICADOS)/rootkey.pem 2048 > /dev/null 2>&1
 		@echo "\033[33m\tCertificado generado: $(SRC_CERTIFICADOS)/rootkey.pem\033[00m"
