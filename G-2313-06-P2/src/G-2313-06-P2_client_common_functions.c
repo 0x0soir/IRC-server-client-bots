@@ -15,6 +15,12 @@ extern int socket_desc;
 * <ul>
 *	<li>@subpage client_function_response</li>
 * </ul>
+* <h1>Envío de ficheros</h1>
+* <ul>
+*	<li>@subpage server_especial_enviar_ficheros</li>
+*	<li>@subpage server_especial_recibir_ficheros</li>
+* </ul>
+* <hr>
 * La práctica se ha diseñado de una forma parecia a como funcionaba el servidor,
 * utilizando en este caso dos arrays de punteros a función mediante los cuales
 * somos capaces de repartir los distintos comandos que recibimos o enviamos a
@@ -31,6 +37,7 @@ extern int socket_desc;
 * saber qué tipo de comando es y tras ello lo enviamos a su función de salida
 * mediante un array de punteros a función.
 * </li></ul>
+* <hr>
 * <h1>Parseo de recepciones</h1>
 * <h2>Servidor a Cliente</h2>
 * <ul>
@@ -42,70 +49,70 @@ extern int socket_desc;
 * servidor envía al cliente.
 *
 * @code
-* functions[[NICK]             = &server_in_command_nick;
-* functions[[JOIN]             = &server_in_command_join;
-* functions[[PART]             = &server_in_command_part;
-* functions[[MODE]             = &server_in_command_mode;
-* functions[[TOPIC]            = &server_in_command_topic;
-* functions[[KICK]             = &server_in_command_kick;
-* functions[[PRIVMSG]          = &server_in_command_privmsg;
-* functions[[PING]             = &server_in_command_ping;
-* functions[[PONG]             = &server_in_command_pong;
+* functions[NICK]             = &server_in_command_nick;
+* functions[JOIN]             = &server_in_command_join;
+* functions[PART]             = &server_in_command_part;
+* functions[MODE]             = &server_in_command_mode;
+* functions[TOPIC]            = &server_in_command_topic;
+* functions[KICK]             = &server_in_command_kick;
+* functions[PRIVMSG]          = &server_in_command_privmsg;
+* functions[PING]             = &server_in_command_ping;
+* functions[PONG]             = &server_in_command_pong;
 * @endcode
 * <br><h2>Listado de respuestas parseadas:</h2>
 * @code
-* functions[[RPL_WELCOME]      = &server_in_command_rpl_welcome;
-* functions[[RPL_CREATED]      = &server_in_command_rpl_created;
-* functions[[RPL_YOURHOST]     = &server_in_command_rpl_yourhost;
-* functions[[RPL_LUSERCLIENT]  = &server_in_command_rpl_luserclient;
-* functions[[RPL_LUSERME]      = &server_in_command_rpl_luserme;
-* functions[[RPL_MOTDSTART]    = &server_in_command_rpl_motdstart;
-* functions[[RPL_MOTD]         = &server_in_command_rpl_motd;
-* functions[[RPL_ENDOFMOTD]    = &server_in_command_rpl_endofmotd;
-* functions[[RPL_WHOREPLY]     = &server_in_command_rpl_whoreply;
-* functions[[RPL_AWAY]         = &server_in_command_rpl_away;
-* functions[[RPL_NOWAWAY]      = &server_in_command_rpl_nowaway;
-* functions[[RPL_TOPIC]        = &server_in_command_rpl_topic;
-* functions[[RPL_NOTOPIC]      = &server_in_command_rpl_notopic;
-* functions[[RPL_YOUREOPER]    = &server_in_command_rpl_youroper;
-* functions[[RPL_LUSEROP]      = &server_in_command_rpl_luserop;
-* functions[[RPL_LUSERCHANNELS]= &server_in_command_rpl_luserchannels;
-* functions[[RPL_YOURESERVICE] = &server_in_command_rpl_youreservice;
-* functions[[RPL_MYINFO]       = &server_in_command_rpl_myinfo;
-* functions[[RPL_ENDOFWHO]     = &server_in_command_rpl_endofwho;
-* functions[[RPL_ENDOFWHOIS]   = &server_in_command_rpl_endofwhois;
-* functions[[RPL_INFO]         = &server_in_command_rpl_info;
-* functions[[RPL_WHOISUSER]    = &server_in_command_rpl_whoisuser;
-* functions[[RPL_WHOISCHANNELS]= &server_in_command_rpl_whoischannels;
-* functions[[RPL_WHOISOPERATOR]= &server_in_command_rpl_whoisoperator;
-* functions[[RPL_WHOISSERVER]  = &server_in_command_rpl_whoisserver;
-* functions[[RPL_WHOISIDLE]    = &server_in_command_rpl_whoisidle;
-* functions[[RPL_CHANNELMODEIS]= &server_in_command_rpl_channelmodeis;
-* functions[[RPL_ENDOFNAMES]   = &server_in_command_rpl_endofnames;
-* functions[[RPL_LIST]         = &server_in_command_rpl_list;
-* functions[[RPL_LISTEND]      = &server_in_command_rpl_listend;
-* functions[[RPL_NAMREPLY]     = &server_in_command_rpl_namreply;
+* functions[RPL_WELCOME]      = &server_in_command_rpl_welcome;
+* functions[RPL_CREATED]      = &server_in_command_rpl_created;
+* functions[RPL_YOURHOST]     = &server_in_command_rpl_yourhost;
+* functions[RPL_LUSERCLIENT]  = &server_in_command_rpl_luserclient;
+* functions[RPL_LUSERME]      = &server_in_command_rpl_luserme;
+* functions[RPL_MOTDSTART]    = &server_in_command_rpl_motdstart;
+* functions[RPL_MOTD]         = &server_in_command_rpl_motd;
+* functions[RPL_ENDOFMOTD]    = &server_in_command_rpl_endofmotd;
+* functions[RPL_WHOREPLY]     = &server_in_command_rpl_whoreply;
+* functions[RPL_AWAY]         = &server_in_command_rpl_away;
+* functions[RPL_NOWAWAY]      = &server_in_command_rpl_nowaway;
+* functions[RPL_TOPIC]        = &server_in_command_rpl_topic;
+* functions[RPL_NOTOPIC]      = &server_in_command_rpl_notopic;
+* functions[RPL_YOUREOPER]    = &server_in_command_rpl_youroper;
+* functions[RPL_LUSEROP]      = &server_in_command_rpl_luserop;
+* functions[RPL_LUSERCHANNELS]= &server_in_command_rpl_luserchannels;
+* functions[RPL_YOURESERVICE] = &server_in_command_rpl_youreservice;
+* functions[RPL_MYINFO]       = &server_in_command_rpl_myinfo;
+* functions[RPL_ENDOFWHO]     = &server_in_command_rpl_endofwho;
+* functions[RPL_ENDOFWHOIS]   = &server_in_command_rpl_endofwhois;
+* functions[RPL_INFO]         = &server_in_command_rpl_info;
+* functions[RPL_WHOISUSER]    = &server_in_command_rpl_whoisuser;
+* functions[RPL_WHOISCHANNELS]= &server_in_command_rpl_whoischannels;
+* functions[RPL_WHOISOPERATOR]= &server_in_command_rpl_whoisoperator;
+* functions[RPL_WHOISSERVER]  = &server_in_command_rpl_whoisserver;
+* functions[RPL_WHOISIDLE]    = &server_in_command_rpl_whoisidle;
+* functions[RPL_CHANNELMODEIS]= &server_in_command_rpl_channelmodeis;
+* functions[RPL_ENDOFNAMES]   = &server_in_command_rpl_endofnames;
+* functions[RPL_LIST]         = &server_in_command_rpl_list;
+* functions[RPL_LISTEND]      = &server_in_command_rpl_listend;
+* functions[RPL_NAMREPLY]     = &server_in_command_rpl_namreply;
 * @endcode
 * <br><h2>Listado de errores parseados:</h2>
 * @code
-* functions[[ERR_CANNOTSENDTOCHAN]       = &server_in_command_err_cannotsendtochan;
-* functions[[ERR_ALREADYREGISTRED]       = &server_in_command_err_alreadyregistred;
-* functions[[ERR_NONICKNAMEGIVEN]        = &server_in_command_err_nonicknamegiven;
-* functions[[ERR_ERRONEUSNICKNAME]       = &server_in_command_err_erroneusnickname;
-* functions[[ERR_NICKNAMEINUSE]          = &server_in_command_err_nicknameinuse;
-* functions[[ERR_NICKCOLLISION]          = &server_in_command_err_nickcollision;
-* functions[[ERR_UNAVAILRESOURCE]        = &server_in_command_err_unavailresource;
-* functions[[ERR_RESTRICTED]             = &server_in_command_err_restricted;
-* functions[[ERR_PASSWDMISMATCH]         = &server_in_command_err_passwdmismatch;
-* functions[[ERR_BANNEDFROMCHAN]         = &server_in_command_err_bannedfromchan;
-* functions[[ERR_CHANNELISFULL]          = &server_in_command_err_channelisfull;
-* functions[[ERR_CHANOPRIVSNEEDED]       = &server_in_command_err_chanoprivsneeded;
-* functions[[ERR_INVITEONLYCHAN]         = &server_in_command_err_inviteonlychan;
-* functions[[ERR_NOCHANMODES]            = &server_in_command_err_nochanmodes;
-* functions[[ERR_NOSUCHCHANNEL]          = &server_in_command_err_nosuchchannel;
-* functions[[ERR_UNKNOWNMODE]            = &server_in_command_err_unknownmode;
-* functions[[ERR_NOMOTD]                 = &server_in_command_err_nomotd;
-* functions[[ERR_NOSUCHNICK]             = &server_in_command_err_nosuchnick;
+* functions[ERR_CANNOTSENDTOCHAN]       = &server_in_command_err_cannotsendtochan;
+* functions[ERR_ALREADYREGISTRED]       = &server_in_command_err_alreadyregistred;
+* functions[ERR_NONICKNAMEGIVEN]        = &server_in_command_err_nonicknamegiven;
+* functions[ERR_ERRONEUSNICKNAME]       = &server_in_command_err_erroneusnickname;
+* functions[ERR_NICKNAMEINUSE]          = &server_in_command_err_nicknameinuse;
+* functions[ERR_NICKCOLLISION]          = &server_in_command_err_nickcollision;
+* functions[ERR_UNAVAILRESOURCE]        = &server_in_command_err_unavailresource;
+* functions[ERR_RESTRICTED]             = &server_in_command_err_restricted;
+* functions[ERR_PASSWDMISMATCH]         = &server_in_command_err_passwdmismatch;
+* functions[ERR_BANNEDFROMCHAN]         = &server_in_command_err_bannedfromchan;
+* functions[ERR_CHANNELISFULL]          = &server_in_command_err_channelisfull;
+* functions[ERR_CHANOPRIVSNEEDED]       = &server_in_command_err_chanoprivsneeded;
+* functions[ERR_INVITEONLYCHAN]         = &server_in_command_err_inviteonlychan;
+* functions[ERR_NOCHANMODES]            = &server_in_command_err_nochanmodes;
+* functions[ERR_NOSUCHCHANNEL]          = &server_in_command_err_nosuchchannel;
+* functions[ERR_UNKNOWNMODE]            = &server_in_command_err_unknownmode;
+* functions[ERR_NOMOTD]                 = &server_in_command_err_nomotd;
+* functions[ERR_NOSUCHNICK]             = &server_in_command_err_nosuchnick;
 * @endcode
 * <h1>Parseo de envíos</h1>
 * <h2>Cliente a Servidor</h2>
@@ -146,7 +153,7 @@ extern int socket_desc;
 * @page client_function_ping Hilo de PING-PONG
 * @section synopsis_1 Synopsis
 * @code
-*	#include <G-2313-06-P3_ssl.h>
+*	#include <G-2313-06-P2_client_common_functions.h>
 *
 *   void* client_function_ping(void *arg);
 * @endcode
@@ -204,7 +211,7 @@ void* client_function_ping(void *arg){
 * @page client_function_response Hilo de recepción de datos
 * @section synopsis_2 Synopsis
 * @code
-*	#include <G-2313-06-P3_ssl.h>
+*	#include <G-2313-06-P2_client_common_functions.h>
 *
 *   void* client_function_response(void *arg);
 * @endcode
@@ -274,11 +281,21 @@ void client_show_error(char* msg){
   }
 }
 
+void client_show_error_main(char* msg){
+  char *channelActual;
+  channelActual = IRCInterface_ActiveChannelName();
+  if((channelActual!=NULL)&&(strcmp(channelActual, "System")!=0)){
+    IRCInterface_WriteChannel(IRCInterface_ActiveChannelName(), "*", msg);
+  } else {
+    IRCInterface_WriteSystem(NULL, msg);
+  }
+}
+
 /**
 * @page client_pre_in_function Preprocesado de entradas
 * @section synopsis_3 Synopsis
 * @code
-*	#include <G-2313-06-P3_ssl.h>
+*	#include <G-2313-06-P2_client_common_functions.h>
 *
 *   void client_pre_in_function(char* command);
 * @endcode
@@ -311,7 +328,7 @@ void client_pre_in_function(char* command){
 * @page client_execute_in_function Parseo de entradas
 * @section synopsis_4 Synopsis
 * @code
-*	#include <G-2313-06-P3_ssl.h>
+*	#include <G-2313-06-P2_client_common_functions.h>
 *
 *   void client_execute_in_function(long functionName, char* command);
 * @endcode
@@ -323,70 +340,70 @@ void client_pre_in_function(char* command){
 * por defecto.
 * <br><h2>Listado de comandos parseados:</h2>
 * @code
-* functions[[NICK]             = &server_in_command_nick;
-* functions[[JOIN]             = &server_in_command_join;
-* functions[[PART]             = &server_in_command_part;
-* functions[[MODE]             = &server_in_command_mode;
-* functions[[TOPIC]            = &server_in_command_topic;
-* functions[[KICK]             = &server_in_command_kick;
-* functions[[PRIVMSG]          = &server_in_command_privmsg;
-* functions[[PING]             = &server_in_command_ping;
-* functions[[PONG]             = &server_in_command_pong;
+* functions[NICK]             = &server_in_command_nick;
+* functions[JOIN]             = &server_in_command_join;
+* functions[PART]             = &server_in_command_part;
+* functions[MODE]             = &server_in_command_mode;
+* functions[TOPIC]            = &server_in_command_topic;
+* functions[KICK]             = &server_in_command_kick;
+* functions[PRIVMSG]          = &server_in_command_privmsg;
+* functions[PING]             = &server_in_command_ping;
+* functions[PONG]             = &server_in_command_pong;
 * @endcode
 * <br><h2>Listado de respuestas parseadas:</h2>
 * @code
-* functions[[RPL_WELCOME]      = &server_in_command_rpl_welcome;
-* functions[[RPL_CREATED]      = &server_in_command_rpl_created;
-* functions[[RPL_YOURHOST]     = &server_in_command_rpl_yourhost;
-* functions[[RPL_LUSERCLIENT]  = &server_in_command_rpl_luserclient;
-* functions[[RPL_LUSERME]      = &server_in_command_rpl_luserme;
-* functions[[RPL_MOTDSTART]    = &server_in_command_rpl_motdstart;
-* functions[[RPL_MOTD]         = &server_in_command_rpl_motd;
-* functions[[RPL_ENDOFMOTD]    = &server_in_command_rpl_endofmotd;
-* functions[[RPL_WHOREPLY]     = &server_in_command_rpl_whoreply;
-* functions[[RPL_AWAY]         = &server_in_command_rpl_away;
-* functions[[RPL_NOWAWAY]      = &server_in_command_rpl_nowaway;
-* functions[[RPL_TOPIC]        = &server_in_command_rpl_topic;
-* functions[[RPL_NOTOPIC]      = &server_in_command_rpl_notopic;
-* functions[[RPL_YOUREOPER]    = &server_in_command_rpl_youroper;
-* functions[[RPL_LUSEROP]      = &server_in_command_rpl_luserop;
-* functions[[RPL_LUSERCHANNELS]= &server_in_command_rpl_luserchannels;
-* functions[[RPL_YOURESERVICE] = &server_in_command_rpl_youreservice;
-* functions[[RPL_MYINFO]       = &server_in_command_rpl_myinfo;
-* functions[[RPL_ENDOFWHO]     = &server_in_command_rpl_endofwho;
-* functions[[RPL_ENDOFWHOIS]   = &server_in_command_rpl_endofwhois;
-* functions[[RPL_INFO]         = &server_in_command_rpl_info;
-* functions[[RPL_WHOISUSER]    = &server_in_command_rpl_whoisuser;
-* functions[[RPL_WHOISCHANNELS]= &server_in_command_rpl_whoischannels;
-* functions[[RPL_WHOISOPERATOR]= &server_in_command_rpl_whoisoperator;
-* functions[[RPL_WHOISSERVER]  = &server_in_command_rpl_whoisserver;
-* functions[[RPL_WHOISIDLE]    = &server_in_command_rpl_whoisidle;
-* functions[[RPL_CHANNELMODEIS]= &server_in_command_rpl_channelmodeis;
-* functions[[RPL_ENDOFNAMES]   = &server_in_command_rpl_endofnames;
-* functions[[RPL_LIST]         = &server_in_command_rpl_list;
-* functions[[RPL_LISTEND]      = &server_in_command_rpl_listend;
-* functions[[RPL_NAMREPLY]     = &server_in_command_rpl_namreply;
+* functions[RPL_WELCOME]      = &server_in_command_rpl_welcome;
+* functions[RPL_CREATED]      = &server_in_command_rpl_created;
+* functions[RPL_YOURHOST]     = &server_in_command_rpl_yourhost;
+* functions[RPL_LUSERCLIENT]  = &server_in_command_rpl_luserclient;
+* functions[RPL_LUSERME]      = &server_in_command_rpl_luserme;
+* functions[RPL_MOTDSTART]    = &server_in_command_rpl_motdstart;
+* functions[RPL_MOTD]         = &server_in_command_rpl_motd;
+* functions[RPL_ENDOFMOTD]    = &server_in_command_rpl_endofmotd;
+* functions[RPL_WHOREPLY]     = &server_in_command_rpl_whoreply;
+* functions[RPL_AWAY]         = &server_in_command_rpl_away;
+* functions[RPL_NOWAWAY]      = &server_in_command_rpl_nowaway;
+* functions[RPL_TOPIC]        = &server_in_command_rpl_topic;
+* functions[RPL_NOTOPIC]      = &server_in_command_rpl_notopic;
+* functions[RPL_YOUREOPER]    = &server_in_command_rpl_youroper;
+* functions[RPL_LUSEROP]      = &server_in_command_rpl_luserop;
+* functions[RPL_LUSERCHANNELS]= &server_in_command_rpl_luserchannels;
+* functions[RPL_YOURESERVICE] = &server_in_command_rpl_youreservice;
+* functions[RPL_MYINFO]       = &server_in_command_rpl_myinfo;
+* functions[RPL_ENDOFWHO]     = &server_in_command_rpl_endofwho;
+* functions[RPL_ENDOFWHOIS]   = &server_in_command_rpl_endofwhois;
+* functions[RPL_INFO]         = &server_in_command_rpl_info;
+* functions[RPL_WHOISUSER]    = &server_in_command_rpl_whoisuser;
+* functions[RPL_WHOISCHANNELS]= &server_in_command_rpl_whoischannels;
+* functions[RPL_WHOISOPERATOR]= &server_in_command_rpl_whoisoperator;
+* functions[RPL_WHOISSERVER]  = &server_in_command_rpl_whoisserver;
+* functions[RPL_WHOISIDLE]    = &server_in_command_rpl_whoisidle;
+* functions[RPL_CHANNELMODEIS]= &server_in_command_rpl_channelmodeis;
+* functions[RPL_ENDOFNAMES]   = &server_in_command_rpl_endofnames;
+* functions[RPL_LIST]         = &server_in_command_rpl_list;
+* functions[RPL_LISTEND]      = &server_in_command_rpl_listend;
+* functions[RPL_NAMREPLY]     = &server_in_command_rpl_namreply;
 * @endcode
 * <br><h2>Listado de errores parseados:</h2>
 * @code
-* functions[[ERR_CANNOTSENDTOCHAN]       = &server_in_command_err_cannotsendtochan;
-* functions[[ERR_ALREADYREGISTRED]       = &server_in_command_err_alreadyregistred;
-* functions[[ERR_NONICKNAMEGIVEN]        = &server_in_command_err_nonicknamegiven;
-* functions[[ERR_ERRONEUSNICKNAME]       = &server_in_command_err_erroneusnickname;
-* functions[[ERR_NICKNAMEINUSE]          = &server_in_command_err_nicknameinuse;
-* functions[[ERR_NICKCOLLISION]          = &server_in_command_err_nickcollision;
-* functions[[ERR_UNAVAILRESOURCE]        = &server_in_command_err_unavailresource;
-* functions[[ERR_RESTRICTED]             = &server_in_command_err_restricted;
-* functions[[ERR_PASSWDMISMATCH]         = &server_in_command_err_passwdmismatch;
-* functions[[ERR_BANNEDFROMCHAN]         = &server_in_command_err_bannedfromchan;
-* functions[[ERR_CHANNELISFULL]          = &server_in_command_err_channelisfull;
-* functions[[ERR_CHANOPRIVSNEEDED]       = &server_in_command_err_chanoprivsneeded;
-* functions[[ERR_INVITEONLYCHAN]         = &server_in_command_err_inviteonlychan;
-* functions[[ERR_NOCHANMODES]            = &server_in_command_err_nochanmodes;
-* functions[[ERR_NOSUCHCHANNEL]          = &server_in_command_err_nosuchchannel;
-* functions[[ERR_UNKNOWNMODE]            = &server_in_command_err_unknownmode;
-* functions[[ERR_NOMOTD]                 = &server_in_command_err_nomotd;
-* functions[[ERR_NOSUCHNICK]             = &server_in_command_err_nosuchnick;
+* functions[ERR_CANNOTSENDTOCHAN]       = &server_in_command_err_cannotsendtochan;
+* functions[ERR_ALREADYREGISTRED]       = &server_in_command_err_alreadyregistred;
+* functions[ERR_NONICKNAMEGIVEN]        = &server_in_command_err_nonicknamegiven;
+* functions[ERR_ERRONEUSNICKNAME]       = &server_in_command_err_erroneusnickname;
+* functions[ERR_NICKNAMEINUSE]          = &server_in_command_err_nicknameinuse;
+* functions[ERR_NICKCOLLISION]          = &server_in_command_err_nickcollision;
+* functions[ERR_UNAVAILRESOURCE]        = &server_in_command_err_unavailresource;
+* functions[ERR_RESTRICTED]             = &server_in_command_err_restricted;
+* functions[ERR_PASSWDMISMATCH]         = &server_in_command_err_passwdmismatch;
+* functions[ERR_BANNEDFROMCHAN]         = &server_in_command_err_bannedfromchan;
+* functions[ERR_CHANNELISFULL]          = &server_in_command_err_channelisfull;
+* functions[ERR_CHANOPRIVSNEEDED]       = &server_in_command_err_chanoprivsneeded;
+* functions[ERR_INVITEONLYCHAN]         = &server_in_command_err_inviteonlychan;
+* functions[ERR_NOCHANMODES]            = &server_in_command_err_nochanmodes;
+* functions[ERR_NOSUCHCHANNEL]          = &server_in_command_err_nosuchchannel;
+* functions[ERR_UNKNOWNMODE]            = &server_in_command_err_unknownmode;
+* functions[ERR_NOMOTD]                 = &server_in_command_err_nomotd;
+* functions[ERR_NOSUCHNICK]             = &server_in_command_err_nosuchnick;
 * @endcode
 *
 * @section return_4 Valores devueltos
@@ -401,81 +418,81 @@ void client_pre_in_function(char* command){
 * </ul>
 */
 void client_execute_in_function(long functionName, char* command){
-  FunctionCallBack * functions[IRC_MAX_COMMANDS];
+  FunctionCallBack functions[IRC_MAX_COMMANDS];
   int i;
   for(i=0; i<IRC_MAX_COMMANDS; i++){
-    * functions[i]=NULL;
+    functions[i]=NULL;
   }
   /* Definir lista de funciones para cada comando*/
-  * functions[NICK]             = &server_in_command_nick;
-  * functions[JOIN]             = &server_in_command_join;
-  * functions[PART]             = &server_in_command_part;
-  * functions[MODE]             = &server_in_command_mode;
-  * functions[TOPIC]            = &server_in_command_topic;
-  * functions[KICK]             = &server_in_command_kick;
-  * functions[PRIVMSG]          = &server_in_command_privmsg;
-  * functions[PING]             = &server_in_command_ping;
-  * functions[PONG]             = &server_in_command_pong;
+  functions[NICK]             = &server_in_command_nick;
+  functions[JOIN]             = &server_in_command_join;
+  functions[PART]             = &server_in_command_part;
+  functions[MODE]             = &server_in_command_mode;
+  functions[TOPIC]            = &server_in_command_topic;
+  functions[KICK]             = &server_in_command_kick;
+  functions[PRIVMSG]          = &server_in_command_privmsg;
+  functions[PING]             = &server_in_command_ping;
+  functions[PONG]             = &server_in_command_pong;
 
   /* Mensajes de respuesta*/
-  * functions[RPL_WELCOME]      = &server_in_command_rpl_welcome;
-  * functions[RPL_CREATED]      = &server_in_command_rpl_created;
-  * functions[RPL_YOURHOST]     = &server_in_command_rpl_yourhost;
-  * functions[RPL_LUSERCLIENT]  = &server_in_command_rpl_luserclient;
-  * functions[RPL_LUSERME]      = &server_in_command_rpl_luserme;
-  * functions[RPL_MOTDSTART]    = &server_in_command_rpl_motdstart;
-  * functions[RPL_MOTD]         = &server_in_command_rpl_motd;
-  * functions[RPL_ENDOFMOTD]    = &server_in_command_rpl_endofmotd;
-  * functions[RPL_WHOREPLY]     = &server_in_command_rpl_whoreply;
-  * functions[RPL_AWAY]         = &server_in_command_rpl_away;
-  * functions[RPL_NOWAWAY]      = &server_in_command_rpl_nowaway;
-  * functions[RPL_TOPIC]        = &server_in_command_rpl_topic;
-  * functions[RPL_NOTOPIC]      = &server_in_command_rpl_notopic;
-  * functions[RPL_YOUREOPER]    = &server_in_command_rpl_youroper;
-  * functions[RPL_LUSEROP]      = &server_in_command_rpl_luserop;
-  * functions[RPL_LUSERCHANNELS]= &server_in_command_rpl_luserchannels;
-  * functions[RPL_YOURESERVICE] = &server_in_command_rpl_youreservice;
-  * functions[RPL_MYINFO]       = &server_in_command_rpl_myinfo;
-  * functions[RPL_ENDOFWHO]     = &server_in_command_rpl_endofwho;
-  * functions[RPL_ENDOFWHOIS]   = &server_in_command_rpl_endofwhois;
-  * functions[RPL_INFO]         = &server_in_command_rpl_info;
-  * functions[RPL_WHOISUSER]    = &server_in_command_rpl_whoisuser;
-  * functions[RPL_WHOISCHANNELS]= &server_in_command_rpl_whoischannels;
-  * functions[RPL_WHOISOPERATOR]= &server_in_command_rpl_whoisoperator;
-  * functions[RPL_WHOISSERVER]  = &server_in_command_rpl_whoisserver;
-  * functions[RPL_WHOISIDLE]    = &server_in_command_rpl_whoisidle;
-  * functions[RPL_CHANNELMODEIS]= &server_in_command_rpl_channelmodeis;
-  * functions[RPL_ENDOFNAMES]   = &server_in_command_rpl_endofnames;
-  * functions[RPL_LIST]         = &server_in_command_rpl_list;
-  * functions[RPL_LISTEND]      = &server_in_command_rpl_listend;
-  * functions[RPL_NAMREPLY]     = &server_in_command_rpl_namreply;
+  functions[RPL_WELCOME]      = &server_in_command_rpl_welcome;
+  functions[RPL_CREATED]      = &server_in_command_rpl_created;
+  functions[RPL_YOURHOST]     = &server_in_command_rpl_yourhost;
+  functions[RPL_LUSERCLIENT]  = &server_in_command_rpl_luserclient;
+  functions[RPL_LUSERME]      = &server_in_command_rpl_luserme;
+  functions[RPL_MOTDSTART]    = &server_in_command_rpl_motdstart;
+  functions[RPL_MOTD]         = &server_in_command_rpl_motd;
+  functions[RPL_ENDOFMOTD]    = &server_in_command_rpl_endofmotd;
+  functions[RPL_WHOREPLY]     = &server_in_command_rpl_whoreply;
+  functions[RPL_AWAY]         = &server_in_command_rpl_away;
+  functions[RPL_NOWAWAY]      = &server_in_command_rpl_nowaway;
+  functions[RPL_TOPIC]        = &server_in_command_rpl_topic;
+  functions[RPL_NOTOPIC]      = &server_in_command_rpl_notopic;
+  functions[RPL_YOUREOPER]    = &server_in_command_rpl_youroper;
+  functions[RPL_LUSEROP]      = &server_in_command_rpl_luserop;
+  functions[RPL_LUSERCHANNELS]= &server_in_command_rpl_luserchannels;
+  functions[RPL_YOURESERVICE] = &server_in_command_rpl_youreservice;
+  functions[RPL_MYINFO]       = &server_in_command_rpl_myinfo;
+  functions[RPL_ENDOFWHO]     = &server_in_command_rpl_endofwho;
+  functions[RPL_ENDOFWHOIS]   = &server_in_command_rpl_endofwhois;
+  functions[RPL_INFO]         = &server_in_command_rpl_info;
+  functions[RPL_WHOISUSER]    = &server_in_command_rpl_whoisuser;
+  functions[RPL_WHOISCHANNELS]= &server_in_command_rpl_whoischannels;
+  functions[RPL_WHOISOPERATOR]= &server_in_command_rpl_whoisoperator;
+  functions[RPL_WHOISSERVER]  = &server_in_command_rpl_whoisserver;
+  functions[RPL_WHOISIDLE]    = &server_in_command_rpl_whoisidle;
+  functions[RPL_CHANNELMODEIS]= &server_in_command_rpl_channelmodeis;
+  functions[RPL_ENDOFNAMES]   = &server_in_command_rpl_endofnames;
+  functions[RPL_LIST]         = &server_in_command_rpl_list;
+  functions[RPL_LISTEND]      = &server_in_command_rpl_listend;
+  functions[RPL_NAMREPLY]     = &server_in_command_rpl_namreply;
 
 
   /* Mensajes de error */
-  * functions[ERR_CANNOTSENDTOCHAN] = &server_in_command_err_cannotsendtochan;
-  * functions[ERR_ALREADYREGISTRED] = &server_in_command_err_alreadyregistred;
-  * functions[ERR_NONICKNAMEGIVEN] = &server_in_command_err_nonicknamegiven;
-  * functions[ERR_ERRONEUSNICKNAME] = &server_in_command_err_erroneusnickname;
-  * functions[ERR_NICKNAMEINUSE] = &server_in_command_err_nicknameinuse;
-  * functions[ERR_NICKCOLLISION] = &server_in_command_err_nickcollision;
-  * functions[ERR_UNAVAILRESOURCE] = &server_in_command_err_unavailresource;
-  * functions[ERR_RESTRICTED] = &server_in_command_err_restricted;
-  * functions[ERR_PASSWDMISMATCH] = &server_in_command_err_passwdmismatch;
-  * functions[ERR_BANNEDFROMCHAN] = &server_in_command_err_bannedfromchan;
-  * functions[ERR_CHANNELISFULL] = &server_in_command_err_channelisfull;
-  * functions[ERR_CHANOPRIVSNEEDED] = &server_in_command_err_chanoprivsneeded;
-  * functions[ERR_INVITEONLYCHAN] = &server_in_command_err_inviteonlychan;
-  * functions[ERR_NOCHANMODES] = &server_in_command_err_nochanmodes;
-  * functions[ERR_NOSUCHCHANNEL] = &server_in_command_err_nosuchchannel;
-  * functions[ERR_UNKNOWNMODE] = &server_in_command_err_unknownmode;
-  * functions[ERR_NOMOTD] = &server_in_command_err_nomotd;
-  * functions[ERR_NOSUCHNICK] = &server_in_command_err_nosuchnick;
+  functions[ERR_CANNOTSENDTOCHAN] = &server_in_command_err_cannotsendtochan;
+  functions[ERR_ALREADYREGISTRED] = &server_in_command_err_alreadyregistred;
+  functions[ERR_NONICKNAMEGIVEN] = &server_in_command_err_nonicknamegiven;
+  functions[ERR_ERRONEUSNICKNAME] = &server_in_command_err_erroneusnickname;
+  functions[ERR_NICKNAMEINUSE] = &server_in_command_err_nicknameinuse;
+  functions[ERR_NICKCOLLISION] = &server_in_command_err_nickcollision;
+  functions[ERR_UNAVAILRESOURCE] = &server_in_command_err_unavailresource;
+  functions[ERR_RESTRICTED] = &server_in_command_err_restricted;
+  functions[ERR_PASSWDMISMATCH] = &server_in_command_err_passwdmismatch;
+  functions[ERR_BANNEDFROMCHAN] = &server_in_command_err_bannedfromchan;
+  functions[ERR_CHANNELISFULL] = &server_in_command_err_channelisfull;
+  functions[ERR_CHANOPRIVSNEEDED] = &server_in_command_err_chanoprivsneeded;
+  functions[ERR_INVITEONLYCHAN] = &server_in_command_err_inviteonlychan;
+  functions[ERR_NOCHANMODES] = &server_in_command_err_nochanmodes;
+  functions[ERR_NOSUCHCHANNEL] = &server_in_command_err_nosuchchannel;
+  functions[ERR_UNKNOWNMODE] = &server_in_command_err_unknownmode;
+  functions[ERR_NOMOTD] = &server_in_command_err_nomotd;
+  functions[ERR_NOSUCHNICK] = &server_in_command_err_nosuchnick;
 
   /* Llamar a la funcion del argumento */
-  if((functionName<0)||(functionName>IRC_MAX_COMMANDS)||(* functions[functionName]==NULL)){
+  if((functionName<0)||(functionName>IRC_MAX_COMMANDS)||(functions[functionName]==NULL)){
     /* Default aqui */
   } else {
-   (** functions[functionName])(command);
+   (*functions[functionName])(command);
   }
 }
 
@@ -483,7 +500,7 @@ void client_execute_in_function(long functionName, char* command){
 * @page client_pre_out_function Preprocesado de salidas
 * @section synopsis_5 Synopsis
 * @code
-*	#include <G-2313-06-P3_ssl.h>
+*	#include <G-2313-06-P2_client_common_functions.h>
 *
 *   void client_pre_out_function(char* command);
 * @endcode
@@ -517,7 +534,7 @@ void client_pre_out_function(char* command){
 * @page client_execute_out_function Parseo de salidas
 * @section synopsis_6 Synopsis
 * @code
-*	#include <G-2313-06-P3_ssl.h>
+*	#include <G-2313-06-P2_client_common_functions.h>
 *
 *   void client_execute_out_function(long functionName, char* command);
 * @endcode
@@ -563,41 +580,65 @@ void client_pre_out_function(char* command){
 * </ul>
 */
 void client_execute_out_function(long functionName, char* command){
-  FunctionCallBack * functions[IRC_MAX_COMMANDS];
+  FunctionCallBack functions[IRC_MAX_COMMANDS];
   int i;
   for(i=0; i<IRC_MAX_COMMANDS; i++){
-    * functions[i]=NULL;
+    functions[i]=NULL;
   }
   /* Definir lista de funciones para cada comando*/
-  * functions[UNICK]      = &server_out_command_nick;
-  * functions[UJOIN]      = &server_out_command_join;
-  * functions[UNAMES]     = &server_out_command_names;
-  * functions[ULIST]      = &server_out_command_list;
-  * functions[UPART]      = &server_out_command_part;
-  * functions[UMODE]      = &server_out_command_mode;
-  * functions[UKICK]      = &server_out_command_kick;
-  * functions[PRIVMSG]    = &server_out_command_privmsg;
-  * functions[UWHOIS]     = &server_out_command_whois;
-  * functions[UINVITE]    = &server_out_command_invite;
-  * functions[UTOPIC]     = &server_out_command_topic;
-  * functions[UME]        = &server_out_command_me;
-  * functions[UMSG]       = &server_out_command_msg;
-  * functions[UNOTICE]    = &server_out_command_notice;
-  * functions[UIGNORE]    = &server_out_command_ignore;
-  * functions[UWHO]       = &server_out_command_who;
-  * functions[UWHOWAS]    = &server_out_command_whowas;
-  * functions[UMOTD]      = &server_out_command_motd;
-  * functions[UAWAY]      = &server_out_command_away;
-  * functions[UPING]      = &server_out_command_ping;
+  functions[UNICK]      = &server_out_command_nick;
+  functions[UJOIN]      = &server_out_command_join;
+  functions[UNAMES]     = &server_out_command_names;
+  functions[ULIST]      = &server_out_command_list;
+  functions[UPART]      = &server_out_command_part;
+  functions[UMODE]      = &server_out_command_mode;
+  functions[UKICK]      = &server_out_command_kick;
+  functions[PRIVMSG]    = &server_out_command_privmsg;
+  functions[UWHOIS]     = &server_out_command_whois;
+  functions[UINVITE]    = &server_out_command_invite;
+  functions[UTOPIC]     = &server_out_command_topic;
+  functions[UME]        = &server_out_command_me;
+  functions[UMSG]       = &server_out_command_msg;
+  functions[UNOTICE]    = &server_out_command_notice;
+  functions[UIGNORE]    = &server_out_command_ignore;
+  functions[UWHO]       = &server_out_command_who;
+  functions[UWHOWAS]    = &server_out_command_whowas;
+  functions[UMOTD]      = &server_out_command_motd;
+  functions[UAWAY]      = &server_out_command_away;
+  functions[UPING]      = &server_out_command_ping;
 
   /* Llamar a la funcion del argumento */
-  if((functionName<0)||(functionName>IRC_MAX_COMMANDS)||(* functions[functionName]==NULL)){
+  if((functionName<0)||(functionName>IRC_MAX_COMMANDS)||(functions[functionName]==NULL)){
     if(command[0]=='/'){
-      IRCInterface_ErrorDialog("Ese comando no existe, introduce un nuevo comando.");
+      IRCInterface_ErrorDialog("Ese comando no existe, introduce un nuevo comando. Puedes consultar el helper en la ventana del chat.");
+      client_show_error_main("****************************");
+      client_show_error_main("Comandos disponibles:");
+      client_show_error_main("[01] /JOIN [<#canal>]");
+      client_show_error_main("[02] /NICK [nick]");
+      client_show_error_main("[03] /NAMES [<#canal>]");
+      client_show_error_main("[04] /LIST [<#canal>]");
+      client_show_error_main("[05] /PART [<#canal>]");
+      client_show_error_main("[06] /PART [<#canal>]");
+      client_show_error_main("[07] /MODE [<#canal> <flags> [<args>]]");
+      client_show_error_main("[08] /KICK [<#canal> <client> [<message>]]");
+      client_show_error_main("[09] /PRIVMSG [<target> <message>]");
+      client_show_error_main("[10] /WHOIS [<server>] <nicknames>");
+      client_show_error_main("[11] /INVITE <target> <#canal>");
+      client_show_error_main("[12] /TOPIC <#canal> [<topic>]");
+      client_show_error_main("[13] /ME");
+      client_show_error_main("[14] /MSG <mensaje>");
+      client_show_error_main("[15] /NOTICE <target> <mensaje>");
+      client_show_error_main("[16] /IGNORE <target>");
+      client_show_error_main("[17] /WHO [<target>]");
+      client_show_error_main("[18] /WHOWAS [<target>]");
+      client_show_error_main("[19] /MOTD [<server>]");
+      client_show_error_main("[20] /AWAY [<mensaje>]");
+      client_show_error_main("[21] /PING [<target>]");
+      client_show_error_main("****************************");
     } else {
-      (** functions[PRIVMSG])(command);
+      (*functions[PRIVMSG])(command);
     }
   } else {
-    (** functions[functionName])(command);
+    (*functions[functionName])(command);
   }
 }

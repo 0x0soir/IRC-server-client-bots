@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('client_pre_out_function.html','');});
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="synopsis_5"></a>
 Synopsis</h1>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;G-2313-06-P3_ssl.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8h.html#a68019fe1e0edcc71bb3dadeb70a86dcd">client_pre_out_function</a>(<span class="keywordtype">char</span>* command);</div></div><!-- fragment --> <h1><a class="anchor" id="descripcion_5"></a>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="G-2313-06-P2__client__common__functions_8h.html">G-2313-06-P2_client_common_functions.h</a>&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8h.html#a68019fe1e0edcc71bb3dadeb70a86dcd">client_pre_out_function</a>(<span class="keywordtype">char</span>* command);</div></div><!-- fragment --> <h1><a class="anchor" id="descripcion_5"></a>
 Descripción</h1>
 <p>Recibe como parámetro un mensaje del cliente, lo desfragmenta mediante la función IRC_CommandQuery para saber exactamente qué comando es el que se ha recibido y se lo envía a la función que controla el procesamiento de los comandos mediante un array de punteros a función. </p><div class="fragment"><div class="line"><a class="code" href="G-2313-06-P2__client_8h.html#a26512d35b24fec46c8fa4c803dc00867">client_execute_out_function</a>(IRC_CommandQuery(command), command);</div></div><!-- fragment --><h1><a class="anchor" id="return_5"></a>
 Valores devueltos</h1>

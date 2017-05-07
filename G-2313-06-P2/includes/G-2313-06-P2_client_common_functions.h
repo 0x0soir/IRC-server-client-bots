@@ -28,6 +28,7 @@
 void* client_function_ping(void *arg);
 void* client_function_response(void *arg);
 void client_show_error(char* msg);
+void client_show_error_main(char* msg);
 void client_pre_in_function(char* command);
 void client_execute_in_function(long functionName, char* command);
 void client_pre_out_function(char* command);

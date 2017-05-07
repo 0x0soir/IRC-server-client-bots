@@ -6,7 +6,7 @@
     <detaileddescription>
 <sect1 id="client_pre_out_function_1synopsis_5">
 <title>Synopsis</title>
-<para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;G-2313-06-P3_ssl.h&gt;</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;G-2313-06-P2_client_common_functions.h&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">void<sp/>client_pre_out_function(char*<sp/>command);</highlight></codeline>
 </programlisting> </para></sect1>

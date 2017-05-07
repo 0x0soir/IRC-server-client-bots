@@ -12,6 +12,16 @@ var index =
       [ "Valores devueltos", "client_function_response.html#return_2", null ],
       [ "Autores", "client_function_response.html#authors_2", null ]
     ] ],
+    [ "Enviar ficheros", "server_especial_enviar_ficheros.html", [
+      [ "Synopsis", "server_especial_enviar_ficheros.html#synopsis_file", null ],
+      [ "Descripción", "server_especial_enviar_ficheros.html#descripcion_file", null ],
+      [ "Autores", "server_especial_enviar_ficheros.html#authors_file", null ]
+    ] ],
+    [ "Recibir ficheros", "server_especial_recibir_ficheros.html", [
+      [ "Synopsis", "server_especial_recibir_ficheros.html#synopsis_file_2", null ],
+      [ "Descripción", "server_especial_recibir_ficheros.html#descripcion_file_2", null ],
+      [ "Autores", "server_especial_recibir_ficheros.html#authors_file_2", null ]
+    ] ],
     [ "Preprocesado de entradas", "client_pre_in_function.html", [
       [ "Synopsis", "client_pre_in_function.html#synopsis_3", null ],
       [ "Descripción", "client_pre_in_function.html#descripcion_3", null ],

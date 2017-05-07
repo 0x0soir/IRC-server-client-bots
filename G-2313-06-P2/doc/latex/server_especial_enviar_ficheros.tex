@@ -1,0 +1,27 @@
+\hypertarget{server_especial_enviar_ficheros_synopsis_file}{}\section{Synopsis}\label{server_especial_enviar_ficheros_synopsis_file}
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <\hyperlink{G-2313-06-P2__files_8h}{G-2313-06-P2\_files.h}>}
+
+\textcolor{keywordtype}{void} *\hyperlink{G-2313-06-P2__files_8h_ad00af19306b45db3947f1b89ae4b5def}{server\_especial\_enviar\_ficheros}(\textcolor{keywordtype}{void} *vrecv);
+\end{DoxyCode}
+ \hypertarget{server_especial_enviar_ficheros_descripcion_file}{}\section{Descripción}\label{server_especial_enviar_ficheros_descripcion_file}
+Inicia la transferencia de ficheros de un cliente a otro, para ello ejecuta un socket mediante el que se solicita la transferencia. Si el usuario B acepta, se inicia la transferencia del fichero\+:
+
+Este punto de uno de los más importantes para el cliente ya que nos permite la transferencia de ficheros entre los distintos clientes del canal I\+RC. Funciona de forma sencilla pero intensa, es decir, se requiere el uso de un socket entre los dos clientes de forma directa ya que como se menciona en el enunciado de la práctica se debe implementar de esta manera para evitar costes excesivos en el servidor. Por ello, cuando un cliente inicia la transferencia de un fichero a otro cliente se crea un socket único para la petición de transferencia del fichero. Supongamos que un usuario A desea enviar un fichero a un usuario B, podemos resumir el protocol de transferencia de ficheros de la siguiente forma\+: 
+\begin{DoxyItemize}
+\item 1) El usuario A envía la petición de transferencia al usuario B. 
+\item 2) El usuario B recibe la petición de transferencia del fichero y responde con una confirmación o rechazo a dicha transferencia. 
+\item 3) El usuario A recibe la confirmación/rechazo de la petición de transferecia. 
+\item 4) En caso de que se haya confirmado, el usuario A crea un nuevo socket con el usuario B únicamente destinado a la transferencia del fichero. En caso de rechazo, se cierra el socket generado previamente para la confirmación y se da por finalizada la transferencia. 
+\item 5) El usuario B recibe los datos del fichero del usuario A. 
+\end{DoxyItemize}\hypertarget{server_especial_recibir_ficheros_return_2}{}\section{Valores devueltos}\label{server_especial_recibir_ficheros_return_2}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada 
+\end{DoxyItemize}\hypertarget{server_especial_enviar_ficheros_authors_file}{}\section{Autores}\label{server_especial_enviar_ficheros_authors_file}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}

@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['parseo_20de_20entradas',['Parseo de entradas',['../client_execute_in_function.html',1,'index']]],
-  ['parseo_20de_20salidas',['Parseo de salidas',['../client_execute_out_function.html',1,'index']]],
-  ['preprocesado_20de_20entradas',['Preprocesado de entradas',['../client_pre_in_function.html',1,'index']]],
-  ['preprocesado_20de_20salidas',['Preprocesado de salidas',['../client_pre_out_function.html',1,'index']]],
-  ['p2_20_2d_20cliente_20irc',['P2 - Cliente IRC',['../index.html',1,'']]]
+  ['nick',['nick',['../structsrecv.html#abe3a30e845f4f2f6e47aac6583af3166',1,'srecv']]],
+  ['nick_5fcliente',['nick_cliente',['../G-2313-06-P2__client_8c.html#ab93a317ee9a27c82844c9128a76b136a',1,'nick_cliente():&#160;G-2313-06-P2_client.c'],['../G-2313-06-P2__client__err__handlers_8c.html#ab93a317ee9a27c82844c9128a76b136a',1,'nick_cliente():&#160;G-2313-06-P2_client.c'],['../G-2313-06-P2__client__function__handlers_8c.html#ab93a317ee9a27c82844c9128a76b136a',1,'nick_cliente():&#160;G-2313-06-P2_client.c'],['../G-2313-06-P2__files_8c.html#ab93a317ee9a27c82844c9128a76b136a',1,'nick_cliente():&#160;G-2313-06-P2_client.c']]]
 ];

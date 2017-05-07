@@ -25,7 +25,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "G-2313-06-P2__client_8c.html",
-"G-2313-06-P2__tcp_8c.html#af3354e60e1181adcd72f9f242063fafe"
+"G-2313-06-P2__tcp_8c.html#a2d1f9e76e5da3a7c1e172d1294a33611"
 ];
 
 var SYNCONMSG = 'click en deshabilitar sincronización';

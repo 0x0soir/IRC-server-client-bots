@@ -18,6 +18,7 @@
     <member refid="G-2313-06-P2__client__common__functions_8h_1a7297f848d5b0bd4990857d03cf3111e4" kind="function"><name>client_function_ping</name></member>
     <member refid="G-2313-06-P2__client__common__functions_8h_1afbd2dc7b3224fc3d2c5c9233b307c376" kind="function"><name>client_function_response</name></member>
     <member refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kind="function"><name>client_show_error</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8h_1aa1f1dfdb0122f771b6c56edab7bc3613" kind="function"><name>client_show_error_main</name></member>
     <member refid="G-2313-06-P2__client__common__functions_8h_1aa74c686c447b275e6a8cf36419033e81" kind="function"><name>client_pre_in_function</name></member>
     <member refid="G-2313-06-P2__client__common__functions_8h_1a6dd72e0b56b87f85d8cac2a30066198b" kind="function"><name>client_execute_in_function</name></member>
     <member refid="G-2313-06-P2__client__common__functions_8h_1a68019fe1e0edcc71bb3dadeb70a86dcd" kind="function"><name>client_pre_out_function</name></member>
@@ -160,6 +161,7 @@
     <member refid="G-2313-06-P2__client__common__functions_8c_1a7297f848d5b0bd4990857d03cf3111e4" kind="function"><name>client_function_ping</name></member>
     <member refid="G-2313-06-P2__client__common__functions_8c_1afbd2dc7b3224fc3d2c5c9233b307c376" kind="function"><name>client_function_response</name></member>
     <member refid="G-2313-06-P2__client__common__functions_8c_1a03942275c5a503be4f7288cda71fb139" kind="function"><name>client_show_error</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8c_1aa1f1dfdb0122f771b6c56edab7bc3613" kind="function"><name>client_show_error_main</name></member>
     <member refid="G-2313-06-P2__client__common__functions_8c_1aa74c686c447b275e6a8cf36419033e81" kind="function"><name>client_pre_in_function</name></member>
     <member refid="G-2313-06-P2__client__common__functions_8c_1a6dd72e0b56b87f85d8cac2a30066198b" kind="function"><name>client_execute_in_function</name></member>
     <member refid="G-2313-06-P2__client__common__functions_8c_1a68019fe1e0edcc71bb3dadeb70a86dcd" kind="function"><name>client_pre_out_function</name></member>
@@ -340,6 +342,10 @@
   <compound refid="client_pre_out_function" kind="page"><name>client_pre_out_function</name>
   </compound>
   <compound refid="client_execute_out_function" kind="page"><name>client_execute_out_function</name>
+  </compound>
+  <compound refid="server_especial_enviar_ficheros" kind="page"><name>server_especial_enviar_ficheros</name>
+  </compound>
+  <compound refid="server_especial_recibir_ficheros" kind="page"><name>server_especial_recibir_ficheros</name>
   </compound>
   <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>includes</name>
   </compound>

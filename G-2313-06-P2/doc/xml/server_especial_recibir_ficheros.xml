@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="server_especial_recibir_ficheros" kind="page">
+    <compoundname>server_especial_recibir_ficheros</compoundname>
+    <title>Recibir ficheros</title>
+    <detaileddescription>
+<sect1 id="server_especial_recibir_ficheros_1synopsis_file_2">
+<title>Synopsis</title>
+<para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;G-2313-06-P2_files.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>*server_especial_recibir_ficheros(void<sp/>*vmsg);</highlight></codeline>
+</programlisting> </para></sect1>
+<sect1 id="server_especial_recibir_ficheros_1descripcion_file_2">
+<title>Descripción</title>
+<para>Inicia la transferencia de ficheros de un cliente a otro, para ello acepta o rechaza la petición que le llega del usuario A.</para><para>Este punto de uno de los más importantes para el cliente ya que nos permite la transferencia de ficheros entre los distintos clientes del canal IRC. Funciona de forma sencilla pero intensa, es decir, se requiere el uso de un socket entre los dos clientes de forma directa ya que como se menciona en el enunciado de la práctica se debe implementar de esta manera para evitar costes excesivos en el servidor. Por ello, cuando un cliente inicia la transferencia de un fichero a otro cliente se crea un socket único para la petición de transferencia del fichero. Supongamos que un usuario A desea enviar un fichero a un usuario B, podemos resumir el protocol de transferencia de ficheros de la siguiente forma: <itemizedlist>
+<listitem>
+<para>1) El usuario A envía la petición de transferencia al usuario B. </para></listitem>
+<listitem>
+<para>2) El usuario B recibe la petición de transferencia del fichero y responde con una confirmación o rechazo a dicha transferencia. </para></listitem>
+<listitem>
+<para>3) El usuario A recibe la confirmación/rechazo de la petición de transferecia. </para></listitem>
+<listitem>
+<para>4) En caso de que se haya confirmado, el usuario A crea un nuevo socket con el usuario B únicamente destinado a la transferencia del fichero. En caso de rechazo, se cierra el socket generado previamente para la confirmación y se da por finalizada la transferencia. </para></listitem>
+<listitem>
+<para>5) El usuario B recibe los datos del fichero del usuario A. </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_especial_recibir_ficheros_1return_2">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>void</bold> No devuelve nada </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_especial_recibir_ficheros_1authors_file_2">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -382,9 +382,8 @@ void server_in_command_rpl_endofmotd(char* command){
 
 void server_in_command_rpl_whoreply(char* command){
   char *prefix, *nick, *channel, *user, *host, *server, *nick2,
-  *type, *msg, *realname, msgEnvio[2048];
+  *type, *msg, *realname;
   int hopcount;
-  memset(msgEnvio,0,sizeof(msgEnvio));
   size_t length;
   nickstate ns;
   IRCInterface_PlaneRegisterInMessageThread(command);
@@ -400,8 +399,6 @@ void server_in_command_rpl_whoreply(char* command){
     } else {
       ns = NONE;
     }
-    sprintf(msgEnvio, "Nick: %s \t Realname: %s", nick2, realname);
-    client_show_error(msgEnvio);
     IRCInterface_AddNickChannelThread(channel, nick2, user, realname, host, ns);
     IRC_MFree(10, &prefix, &nick, &channel, &user, &host, &server, &nick2, &type, &msg, &realname);
   }
@@ -517,7 +514,7 @@ void server_in_command_rpl_endofwho(char* command){
   IRCInterface_PlaneRegisterInMessageThread(command);
   syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_ENDOFWHO");
   IRCParse_RplEndOfWho(command, &prefix, &parse_nick, &parse_name, &msg);
-  client_show_error(msg);
+  /*client_show_error(msg);*/
   IRC_MFree(4, &prefix, &parse_nick, &parse_name, &msg);
 }
 
@@ -615,7 +612,7 @@ void server_in_command_rpl_endofnames(char* command){
   IRCInterface_PlaneRegisterInMessageThread(command);
   syslog(LOG_INFO, "[CLIENTE] [IN]: RPL_ENDOFNAMES");
   IRCParse_RplEndOfNames(command, &prefix, &parse_nick, &parse_channel, &msg);
-  client_show_error(msg);
+  /*client_show_error(msg);*/
   IRC_MFree(4, &prefix, &parse_nick, &msg, &parse_channel);
 }
 

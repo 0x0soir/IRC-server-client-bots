@@ -6,7 +6,7 @@
     <detaileddescription>
 <sect1 id="client_function_ping_1synopsis_1">
 <title>Synopsis</title>
-<para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;G-2313-06-P3_ssl.h&gt;</highlight></codeline>
+<para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;G-2313-06-P2_client_common_functions.h&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">void*<sp/>client_function_ping(void<sp/>*arg);</highlight></codeline>
 </programlisting> </para></sect1>

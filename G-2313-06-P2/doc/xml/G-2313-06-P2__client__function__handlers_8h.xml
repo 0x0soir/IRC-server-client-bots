@@ -644,7 +644,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="41" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="383" bodyend="408"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="41" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="383" bodyend="405"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1add282510a7e92a90d45091e6dc3a3488" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -661,7 +661,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="42" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="410" bodyend="420"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="42" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="407" bodyend="417"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1ada377e1754f9a22a2ebe0bada8838b5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -678,7 +678,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="43" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="422" bodyend="432"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="43" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="419" bodyend="429"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1abc030e3bc9ce4ad126ea2c66e304e2d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -695,7 +695,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="44" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="434" bodyend="443"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="44" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="431" bodyend="440"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1ab9b55bd1e18bde61e8327fcf6936d91f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -712,7 +712,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="45" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="445" bodyend="454"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="45" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="442" bodyend="451"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a24bb76a5941798964a8dd18e1cfb1d81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -729,7 +729,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="46" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="456" bodyend="465"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="46" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="453" bodyend="462"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1aa885b5d729d8a920a1c38678abdbe6b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -746,7 +746,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="47" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="467" bodyend="477"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="47" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="464" bodyend="474"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1ae53c29cff5b1b8b3981be92c317cf29d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -763,7 +763,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="48" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="479" bodyend="489"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="48" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="476" bodyend="486"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a9a54a1989e86596904bc4d1c2618ba84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -780,7 +780,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="49" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="491" bodyend="500"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="49" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="488" bodyend="497"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1aa4c4d377b1cde9f0b40997a54c81c3de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -797,7 +797,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="50" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="502" bodyend="513"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="50" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="499" bodyend="510"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a441993de1d4be974fab21e17aacc553e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -814,7 +814,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="51" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="515" bodyend="522"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="51" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="512" bodyend="519"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a56185c77cfea8620c1ce413a44865bc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -831,7 +831,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="52" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="524" bodyend="531"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="52" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="521" bodyend="528"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a6477df39f199931be3274e311a18b276" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -848,7 +848,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="53" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="533" bodyend="540"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="53" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="530" bodyend="537"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1af2190c9ca68abe019cde6f3a18e380c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -865,7 +865,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="54" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="542" bodyend="554"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="54" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="539" bodyend="551"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a7ed4d1bd7f485fe7c6d26bd1d8eef662" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -882,7 +882,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="55" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="556" bodyend="566"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="55" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="553" bodyend="563"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a890fb67530ca5c1f5c14da877fc9ba21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -899,7 +899,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="56" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="568" bodyend="575"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="56" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="565" bodyend="572"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a27bc970f66b7e5a2f3806853c3fa156f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -916,7 +916,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="57" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="577" bodyend="587"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="57" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="574" bodyend="584"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1ada14de5a081899ca2b5eccbfb9779d62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -933,7 +933,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="58" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="589" bodyend="600"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="58" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="586" bodyend="597"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a23ae57a558e401f83bc03209efb34be2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -950,7 +950,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="59" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="602" bodyend="611"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="59" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="599" bodyend="608"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a11fdd753a098bb69dc7ca93a89433abb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -967,7 +967,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="60" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="613" bodyend="620"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="60" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="610" bodyend="617"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a032cc47903f14a4fbdcec9e54f6a8e4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -984,7 +984,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="61" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="622" bodyend="631"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="61" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="619" bodyend="628"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1ad4a1e3d492ae6907a5e15e92cb9b69f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1001,7 +1001,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="62" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="633" bodyend="640"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="62" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="630" bodyend="637"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a770ed57ba6c48c4a349208439e3f19ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1018,7 +1018,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="63" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="642" bodyend="651"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="63" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="639" bodyend="648"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a43f3e63fcf23bd087e02911f79b789b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1035,7 +1035,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="65" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="654" bodyend="672"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="65" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="651" bodyend="669"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a49e60d29aef3725ab2a91c7f99e61021" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1052,7 +1052,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="66" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="674" bodyend="685"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="66" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="671" bodyend="682"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1ab2f3bd779063c27074a6cdce0f98ee0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1069,7 +1069,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="67" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="687" bodyend="699"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="67" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="684" bodyend="696"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a0a66dad6908cd303ae31f06dda298e5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1086,7 +1086,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="68" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="701" bodyend="712"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="68" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="698" bodyend="709"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a39f81214b8394e2b7fb0989e5fe10fb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1103,7 +1103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="69" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="714" bodyend="736"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="69" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="711" bodyend="733"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1afa583197101ff2eb07ab93ccd10da962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1120,7 +1120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="70" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="738" bodyend="755"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="70" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="735" bodyend="752"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a4e94d9864089e10109fc24ce92d4368b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1137,7 +1137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="71" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="757" bodyend="774"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="71" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="754" bodyend="771"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a4c442d20949a3a3e84551a5f23ce8263" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1154,7 +1154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="72" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="776" bodyend="793"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="72" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="773" bodyend="790"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1af34c02fb3b13802e2c457a302c66cb89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1171,7 +1171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="73" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="795" bodyend="807"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="73" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="792" bodyend="804"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a6760491bb5560bf6db1e652022f0720f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1188,7 +1188,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="74" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="809" bodyend="821"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="74" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="806" bodyend="818"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1affd97f456e87778153ec551468bb7f25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1205,7 +1205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="75" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="823" bodyend="840"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="75" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="820" bodyend="837"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a9680c711ecaa492727c14a9c5d7e82ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1222,7 +1222,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="76" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="842" bodyend="859"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="76" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="839" bodyend="856"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1ad2280719361affeaf8d3a663b48f0b3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1239,7 +1239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="77" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="861" bodyend="873"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="77" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="858" bodyend="870"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a6e05dad9592e0e473e84647cfe263034" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1256,7 +1256,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="78" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="875" bodyend="887"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="78" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="872" bodyend="884"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a3b0bef634e60a6e59223cfb7e444fb36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1273,7 +1273,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="79" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="889" bodyend="892"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="79" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="886" bodyend="889"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a4f8f2db21b7edd9e6b7fbad232ee27fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1290,7 +1290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="80" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="894" bodyend="908"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="80" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="891" bodyend="905"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a74f475c007446256a2cbada71f51f30a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1307,7 +1307,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="81" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="910" bodyend="925"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="81" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="907" bodyend="922"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1ae721ae6a65ec5f0790d6b6883dcf94a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1324,7 +1324,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="82" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="927" bodyend="941"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="82" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="924" bodyend="938"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1ac0c8a1e0d4144fd3d78c124bad9228d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1341,7 +1341,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="83" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="943" bodyend="957"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="83" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="940" bodyend="954"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__function__handlers_8h_1a3719651e6671245a46f4994fcf462c7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1358,7 +1358,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="84" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="959" bodyend="973"/>
+        <location file="includes/G-2313-06-P2_client_function_handlers.h" line="84" column="1" bodyfile="src/G-2313-06-P2_client_function_handlers.c" bodystart="956" bodyend="970"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -33,14 +33,14 @@ client:
 
 clean:
 	@echo "Borrando ficheros temporales"
-	rm -rf obj/*.o $(GROUP_CLIENT)
-	rm -rf objlib/*.o $(GROUP_CLIENT)
+	rm -rf obj
+	rm -rf objlib
 	rm -rf $(GROUP_CLIENT)_client
 
 tar:
 	@echo "\033[31mComprimiendo...\033[00m"
 	@tar --exclude .git -czf $(GROUP_CLIENT).tar.gz ../$(GROUP_CLIENT) --exclude $(GROUP_CLIENT).tar.gz
-	@echo "\033[32mFichero comprimido: $(GROUP).tar.gz\033[00m"
+	@echo "\033[32mFichero comprimido: $(GROUP_CLIENT).tar.gz\033[00m"
 
 doxy:
 	@echo "\033[31mGenerando documentación...\033[00m"

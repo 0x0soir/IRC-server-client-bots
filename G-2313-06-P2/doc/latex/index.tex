@@ -10,11 +10,21 @@ En esta página se encuentra disponible la documentación de la práctica 3 de R
 
 \begin{DoxyItemize}
 \item \hyperlink{client_function_response}{Hilo de recepción de datos} 
-\end{DoxyItemize}La práctica se ha diseñado de una forma parecia a como funcionaba el servidor, utilizando en este caso dos arrays de punteros a función mediante los cuales somos capaces de repartir los distintos comandos que recibimos o enviamos a la función destinada para ello. Distinguimos dos grandes estructuras\+: 
+\end{DoxyItemize}\section*{Envío de ficheros}
+
+
+\begin{DoxyItemize}
+\item \hyperlink{server_especial_enviar_ficheros}{Enviar ficheros} 
+\item \hyperlink{server_especial_recibir_ficheros}{Recibir ficheros} 
+\end{DoxyItemize}
+
+ La práctica se ha diseñado de una forma parecia a como funcionaba el servidor, utilizando en este caso dos arrays de punteros a función mediante los cuales somos capaces de repartir los distintos comandos que recibimos o enviamos a la función destinada para ello. Distinguimos dos grandes estructuras\+: 
 \begin{DoxyItemize}
 \item Entradas\+: Las denominamos así y se refieren a los mensajes que recibimos desde el servidor. Cada vez que recibimos un mensaje del servidor lo preprocesamos para saber exactamente a qué función corresponde y tras ello lo enviamos a la función encarga de repartir cada comando a su función correspondiente mediante un array de punteros a dichas funciones. 
 \item Salidas\+: Con ellas nos referimos a los comandos que escriben los usuarios en el cliente desarrollado para tal efecto. Gestionamos dichas salidas de la misma forma que las entradas, primero preprocesamos la salida para saber qué tipo de comando es y tras ello lo enviamos a su función de salida mediante un array de punteros a función. 
-\end{DoxyItemize}\section*{Parseo de recepciones}
+\end{DoxyItemize}
+
+ \section*{Parseo de recepciones}
 
 \subsection*{Servidor a Cliente}
 
@@ -29,91 +39,91 @@ Este listado de comandos se compone de los comandos que el servidor envía al cl
 \end{DoxyWarning}
 
 \begin{DoxyCode}
-functions[[NICK]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a3271de16b2f7077059343bd6f52e4866}{server\_in\_command\_nick};
-functions[[JOIN]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a64c324e32edf01774722861d3abc7be3}{server\_in\_command\_join};
-functions[[PART]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a53568ffb9d2301140815861c2f7178ad}{server\_in\_command\_part};
-functions[[MODE]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ae5f66619469f8ea0efa0a7a5d75938dc}{server\_in\_command\_mode};
-functions[[TOPIC]            = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ad908abfd32d53b9483d5afa4ca18ff14}{server\_in\_command\_topic};
-functions[[KICK]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_aa3d18c616914957b9794f086466788bb}{server\_in\_command\_kick};
-functions[[PRIVMSG]          = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a32594eebe5482f63993568825a9e126a}{server\_in\_command\_privmsg};
-functions[[PING]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a09a9d4d13037bd783036a70d5a76ac46}{server\_in\_command\_ping};
-functions[[PONG]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a06042a6459e89e0ae7586e66f8595fa3}{server\_in\_command\_pong};
+functions[NICK]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a3271de16b2f7077059343bd6f52e4866}{server\_in\_command\_nick};
+functions[JOIN]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a64c324e32edf01774722861d3abc7be3}{server\_in\_command\_join};
+functions[PART]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a53568ffb9d2301140815861c2f7178ad}{server\_in\_command\_part};
+functions[MODE]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ae5f66619469f8ea0efa0a7a5d75938dc}{server\_in\_command\_mode};
+functions[TOPIC]            = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ad908abfd32d53b9483d5afa4ca18ff14}{server\_in\_command\_topic};
+functions[KICK]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_aa3d18c616914957b9794f086466788bb}{server\_in\_command\_kick};
+functions[PRIVMSG]          = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a32594eebe5482f63993568825a9e126a}{server\_in\_command\_privmsg};
+functions[PING]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a09a9d4d13037bd783036a70d5a76ac46}{server\_in\_command\_ping};
+functions[PONG]             = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a06042a6459e89e0ae7586e66f8595fa3}{server\_in\_command\_pong};
 \end{DoxyCode}
  ~\newline
 \subsection*{Listado de respuestas parseadas\+:}
 
 
 \begin{DoxyCode}
-functions[[RPL\_WELCOME]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a294ef5e5070e9859d88beb603ef950f2}{server\_in\_command\_rpl\_welcome};
-functions[[RPL\_CREATED]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a40e46db4017fb76fc547536d9c51f5d9}{server\_in\_command\_rpl\_created};
-functions[[RPL\_YOURHOST]     = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a3f4cf6c0d74b06a0916f7a9619972eee}{server\_in\_command\_rpl\_yourhost};
-functions[[RPL\_LUSERCLIENT]  = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_af5091cf59cbab7ce259c405c019fa8dd}{server\_in\_command\_rpl\_luserclient};
-functions[[RPL\_LUSERME]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a5764225aa28906c7ccebf0996b2c5a08}{server\_in\_command\_rpl\_luserme};
-functions[[RPL\_MOTDSTART]    = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_acd688f18855dcb6ee9bf10a72e0c8f6c}{server\_in\_command\_rpl\_motdstart};
-functions[[RPL\_MOTD]         = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a774c98f4ea94eb6f92a5b22d33030674}{server\_in\_command\_rpl\_motd};
-functions[[RPL\_ENDOFMOTD]    = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ad22233e08c30cad9e0598f80b5b38744}{server\_in\_command\_rpl\_endofmotd};
-functions[[RPL\_WHOREPLY]     = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a86782df5d9b151dd061b9831a47a2c5f}{server\_in\_command\_rpl\_whoreply};
-functions[[RPL\_AWAY]         = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_add282510a7e92a90d45091e6dc3a3488}{server\_in\_command\_rpl\_away};
-functions[[RPL\_NOWAWAY]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ada377e1754f9a22a2ebe0bada8838b5b}{server\_in\_command\_rpl\_nowaway};
-functions[[RPL\_TOPIC]        = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_abc030e3bc9ce4ad126ea2c66e304e2d5}{server\_in\_command\_rpl\_topic};
-functions[[RPL\_NOTOPIC]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ab9b55bd1e18bde61e8327fcf6936d91f}{server\_in\_command\_rpl\_notopic};
-functions[[RPL\_YOUREOPER]    = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a24bb76a5941798964a8dd18e1cfb1d81}{server\_in\_command\_rpl\_youroper};
-functions[[RPL\_LUSEROP]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_aa885b5d729d8a920a1c38678abdbe6b7}{server\_in\_command\_rpl\_luserop};
-functions[[RPL\_LUSERCHANNELS]= &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ae53c29cff5b1b8b3981be92c317cf29d}{server\_in\_command\_rpl\_luserchannels};
-functions[[RPL\_YOURESERVICE] = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a9a54a1989e86596904bc4d1c2618ba84}{server\_in\_command\_rpl\_youreservice};
-functions[[RPL\_MYINFO]       = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_aa4c4d377b1cde9f0b40997a54c81c3de}{server\_in\_command\_rpl\_myinfo};
-functions[[RPL\_ENDOFWHO]     = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a441993de1d4be974fab21e17aacc553e}{server\_in\_command\_rpl\_endofwho};
-functions[[RPL\_ENDOFWHOIS]   = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a56185c77cfea8620c1ce413a44865bc4}{server\_in\_command\_rpl\_endofwhois};
-functions[[RPL\_INFO]         = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a6477df39f199931be3274e311a18b276}{server\_in\_command\_rpl\_info};
-functions[[RPL\_WHOISUSER]    = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_af2190c9ca68abe019cde6f3a18e380c2}{server\_in\_command\_rpl\_whoisuser};
-functions[[RPL\_WHOISCHANNELS]= &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a7ed4d1bd7f485fe7c6d26bd1d8eef662}{server\_in\_command\_rpl\_whoischannels};
-functions[[RPL\_WHOISOPERATOR]= &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a890fb67530ca5c1f5c14da877fc9ba21}{server\_in\_command\_rpl\_whoisoperator};
-functions[[RPL\_WHOISSERVER]  = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a27bc970f66b7e5a2f3806853c3fa156f}{server\_in\_command\_rpl\_whoisserver};
-functions[[RPL\_WHOISIDLE]    = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ada14de5a081899ca2b5eccbfb9779d62}{server\_in\_command\_rpl\_whoisidle};
-functions[[RPL\_CHANNELMODEIS]= &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a23ae57a558e401f83bc03209efb34be2}{server\_in\_command\_rpl\_channelmodeis};
-functions[[RPL\_ENDOFNAMES]   = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a11fdd753a098bb69dc7ca93a89433abb}{server\_in\_command\_rpl\_endofnames};
-functions[[RPL\_LIST]         = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a032cc47903f14a4fbdcec9e54f6a8e4a}{server\_in\_command\_rpl\_list};
-functions[[RPL\_LISTEND]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ad4a1e3d492ae6907a5e15e92cb9b69f7}{server\_in\_command\_rpl\_listend};
-functions[[RPL\_NAMREPLY]     = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a770ed57ba6c48c4a349208439e3f19ef}{server\_in\_command\_rpl\_namreply};
+functions[RPL\_WELCOME]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a294ef5e5070e9859d88beb603ef950f2}{server\_in\_command\_rpl\_welcome};
+functions[RPL\_CREATED]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a40e46db4017fb76fc547536d9c51f5d9}{server\_in\_command\_rpl\_created};
+functions[RPL\_YOURHOST]     = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a3f4cf6c0d74b06a0916f7a9619972eee}{server\_in\_command\_rpl\_yourhost};
+functions[RPL\_LUSERCLIENT]  = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_af5091cf59cbab7ce259c405c019fa8dd}{server\_in\_command\_rpl\_luserclient};
+functions[RPL\_LUSERME]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a5764225aa28906c7ccebf0996b2c5a08}{server\_in\_command\_rpl\_luserme};
+functions[RPL\_MOTDSTART]    = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_acd688f18855dcb6ee9bf10a72e0c8f6c}{server\_in\_command\_rpl\_motdstart};
+functions[RPL\_MOTD]         = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a774c98f4ea94eb6f92a5b22d33030674}{server\_in\_command\_rpl\_motd};
+functions[RPL\_ENDOFMOTD]    = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ad22233e08c30cad9e0598f80b5b38744}{server\_in\_command\_rpl\_endofmotd};
+functions[RPL\_WHOREPLY]     = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a86782df5d9b151dd061b9831a47a2c5f}{server\_in\_command\_rpl\_whoreply};
+functions[RPL\_AWAY]         = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_add282510a7e92a90d45091e6dc3a3488}{server\_in\_command\_rpl\_away};
+functions[RPL\_NOWAWAY]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ada377e1754f9a22a2ebe0bada8838b5b}{server\_in\_command\_rpl\_nowaway};
+functions[RPL\_TOPIC]        = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_abc030e3bc9ce4ad126ea2c66e304e2d5}{server\_in\_command\_rpl\_topic};
+functions[RPL\_NOTOPIC]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ab9b55bd1e18bde61e8327fcf6936d91f}{server\_in\_command\_rpl\_notopic};
+functions[RPL\_YOUREOPER]    = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a24bb76a5941798964a8dd18e1cfb1d81}{server\_in\_command\_rpl\_youroper};
+functions[RPL\_LUSEROP]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_aa885b5d729d8a920a1c38678abdbe6b7}{server\_in\_command\_rpl\_luserop};
+functions[RPL\_LUSERCHANNELS]= &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ae53c29cff5b1b8b3981be92c317cf29d}{server\_in\_command\_rpl\_luserchannels};
+functions[RPL\_YOURESERVICE] = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a9a54a1989e86596904bc4d1c2618ba84}{server\_in\_command\_rpl\_youreservice};
+functions[RPL\_MYINFO]       = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_aa4c4d377b1cde9f0b40997a54c81c3de}{server\_in\_command\_rpl\_myinfo};
+functions[RPL\_ENDOFWHO]     = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a441993de1d4be974fab21e17aacc553e}{server\_in\_command\_rpl\_endofwho};
+functions[RPL\_ENDOFWHOIS]   = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a56185c77cfea8620c1ce413a44865bc4}{server\_in\_command\_rpl\_endofwhois};
+functions[RPL\_INFO]         = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a6477df39f199931be3274e311a18b276}{server\_in\_command\_rpl\_info};
+functions[RPL\_WHOISUSER]    = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_af2190c9ca68abe019cde6f3a18e380c2}{server\_in\_command\_rpl\_whoisuser};
+functions[RPL\_WHOISCHANNELS]= &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a7ed4d1bd7f485fe7c6d26bd1d8eef662}{server\_in\_command\_rpl\_whoischannels};
+functions[RPL\_WHOISOPERATOR]= &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a890fb67530ca5c1f5c14da877fc9ba21}{server\_in\_command\_rpl\_whoisoperator};
+functions[RPL\_WHOISSERVER]  = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a27bc970f66b7e5a2f3806853c3fa156f}{server\_in\_command\_rpl\_whoisserver};
+functions[RPL\_WHOISIDLE]    = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ada14de5a081899ca2b5eccbfb9779d62}{server\_in\_command\_rpl\_whoisidle};
+functions[RPL\_CHANNELMODEIS]= &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a23ae57a558e401f83bc03209efb34be2}{server\_in\_command\_rpl\_channelmodeis};
+functions[RPL\_ENDOFNAMES]   = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a11fdd753a098bb69dc7ca93a89433abb}{server\_in\_command\_rpl\_endofnames};
+functions[RPL\_LIST]         = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a032cc47903f14a4fbdcec9e54f6a8e4a}{server\_in\_command\_rpl\_list};
+functions[RPL\_LISTEND]      = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_ad4a1e3d492ae6907a5e15e92cb9b69f7}{server\_in\_command\_rpl\_listend};
+functions[RPL\_NAMREPLY]     = &\hyperlink{G-2313-06-P2__client__function__handlers_8h_a770ed57ba6c48c4a349208439e3f19ef}{server\_in\_command\_rpl\_namreply};
 \end{DoxyCode}
  ~\newline
 \subsection*{Listado de errores parseados\+:}
 
 
 \begin{DoxyCode}
-functions[[ERR\_CANNOTSENDTOCHAN]       = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_aee5973ae831d1c7c63b1a62b59f561c2}{server\_in\_command\_err\_cannotsendtochan}
+functions[ERR\_CANNOTSENDTOCHAN]       = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_aee5973ae831d1c7c63b1a62b59f561c2}{server\_in\_command\_err\_cannotsendtochan}
       ;
-functions[[ERR\_ALREADYREGISTRED]       = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a14bfb17eb95d0f2bef1869aa2ebf520c}{server\_in\_command\_err\_alreadyregistred}
+functions[ERR\_ALREADYREGISTRED]       = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a14bfb17eb95d0f2bef1869aa2ebf520c}{server\_in\_command\_err\_alreadyregistred}
       ;
-functions[[ERR\_NONICKNAMEGIVEN]        = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_aaa9cfb1b5050bd1218c227d8d0a041fe}{server\_in\_command\_err\_nonicknamegiven}
+functions[ERR\_NONICKNAMEGIVEN]        = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_aaa9cfb1b5050bd1218c227d8d0a041fe}{server\_in\_command\_err\_nonicknamegiven}
       ;
-functions[[ERR\_ERRONEUSNICKNAME]       = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_abeb8ead21ebba982eb59f161eda735cb}{server\_in\_command\_err\_erroneusnickname}
+functions[ERR\_ERRONEUSNICKNAME]       = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_abeb8ead21ebba982eb59f161eda735cb}{server\_in\_command\_err\_erroneusnickname}
       ;
-functions[[ERR\_NICKNAMEINUSE]          = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_ab6d8f2d05566bf6ee9dfcfc4a20f5d23}{server\_in\_command\_err\_nicknameinuse}
+functions[ERR\_NICKNAMEINUSE]          = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_ab6d8f2d05566bf6ee9dfcfc4a20f5d23}{server\_in\_command\_err\_nicknameinuse}
       ;
-functions[[ERR\_NICKCOLLISION]          = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a4af95b292b293c08c0989b4e7334c7eb}{server\_in\_command\_err\_nickcollision}
+functions[ERR\_NICKCOLLISION]          = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a4af95b292b293c08c0989b4e7334c7eb}{server\_in\_command\_err\_nickcollision}
       ;
-functions[[ERR\_UNAVAILRESOURCE]        = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_ae4fcb567dc7685f5d7a4abbc7c6506b4}{server\_in\_command\_err\_unavailresource}
+functions[ERR\_UNAVAILRESOURCE]        = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_ae4fcb567dc7685f5d7a4abbc7c6506b4}{server\_in\_command\_err\_unavailresource}
       ;
-functions[[ERR\_RESTRICTED]             = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_ada432444f58d5effbb05fd558a8ce289}{server\_in\_command\_err\_restricted};
-functions[[ERR\_PASSWDMISMATCH]         = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a548a7ad35236521dca4b829e466f3379}{server\_in\_command\_err\_passwdmismatch}
+functions[ERR\_RESTRICTED]             = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_ada432444f58d5effbb05fd558a8ce289}{server\_in\_command\_err\_restricted};
+functions[ERR\_PASSWDMISMATCH]         = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a548a7ad35236521dca4b829e466f3379}{server\_in\_command\_err\_passwdmismatch}
       ;
-functions[[ERR\_BANNEDFROMCHAN]         = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a0e4059ef132eaac2218fdd89b20ca852}{server\_in\_command\_err\_bannedfromchan}
+functions[ERR\_BANNEDFROMCHAN]         = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a0e4059ef132eaac2218fdd89b20ca852}{server\_in\_command\_err\_bannedfromchan}
       ;
-functions[[ERR\_CHANNELISFULL]          = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a05db0aa32f2ec2925cba3b952435bf59}{server\_in\_command\_err\_channelisfull}
+functions[ERR\_CHANNELISFULL]          = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a05db0aa32f2ec2925cba3b952435bf59}{server\_in\_command\_err\_channelisfull}
       ;
-functions[[ERR\_CHANOPRIVSNEEDED]       = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a9fcb3f66fbcc994c7a78b36ebc0fe63d}{server\_in\_command\_err\_chanoprivsneeded}
+functions[ERR\_CHANOPRIVSNEEDED]       = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a9fcb3f66fbcc994c7a78b36ebc0fe63d}{server\_in\_command\_err\_chanoprivsneeded}
       ;
-functions[[ERR\_INVITEONLYCHAN]         = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_ae5512c3dd8e1584fd8bafc4f5dd15d8c}{server\_in\_command\_err\_inviteonlychan}
+functions[ERR\_INVITEONLYCHAN]         = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_ae5512c3dd8e1584fd8bafc4f5dd15d8c}{server\_in\_command\_err\_inviteonlychan}
       ;
-functions[[ERR\_NOCHANMODES]            = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_aade31864807344a9961ffdab697b5727}{server\_in\_command\_err\_nochanmodes}
+functions[ERR\_NOCHANMODES]            = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_aade31864807344a9961ffdab697b5727}{server\_in\_command\_err\_nochanmodes}
       ;
-functions[[ERR\_NOSUCHCHANNEL]          = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a83109e15e2a8f93c9523a84a546098c0}{server\_in\_command\_err\_nosuchchannel}
+functions[ERR\_NOSUCHCHANNEL]          = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a83109e15e2a8f93c9523a84a546098c0}{server\_in\_command\_err\_nosuchchannel}
       ;
-functions[[ERR\_UNKNOWNMODE]            = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_af262f3569e06c21e3e466266fa4e2c80}{server\_in\_command\_err\_unknownmode}
+functions[ERR\_UNKNOWNMODE]            = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_af262f3569e06c21e3e466266fa4e2c80}{server\_in\_command\_err\_unknownmode}
       ;
-functions[[ERR\_NOMOTD]                 = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a678f368edc1fd437f5f115ef897bdcd9}{server\_in\_command\_err\_nomotd};
-functions[[ERR\_NOSUCHNICK]             = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a01f8c9822aac18d5424ebbaf67c06a51}{server\_in\_command\_err\_nosuchnick};
+functions[ERR\_NOMOTD]                 = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a678f368edc1fd437f5f115ef897bdcd9}{server\_in\_command\_err\_nomotd};
+functions[ERR\_NOSUCHNICK]             = &\hyperlink{G-2313-06-P2__client__err__handlers_8h_a01f8c9822aac18d5424ebbaf67c06a51}{server\_in\_command\_err\_nosuchnick};
 \end{DoxyCode}
  \section*{Parseo de envíos}
 

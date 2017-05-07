@@ -338,7 +338,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="28" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="185" bodyend="201"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="28" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="192" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1afbd2dc7b3224fc3d2c5c9233b307c376" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -355,7 +355,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="29" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="237" bodyend="265"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="29" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="244" bodyend="272"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -372,7 +372,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="30" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="267" bodyend="275"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="30" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="274" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1aa1f1dfdb0122f771b6c56edab7bc3613" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void client_show_error_main</definition>
+        <argsstring>(char *msg)</argsstring>
+        <name>client_show_error_main</name>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="31" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="284" bodyend="292"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1aa74c686c447b275e6a8cf36419033e81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -389,7 +406,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="31" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="306" bodyend="308"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="32" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="323" bodyend="325"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1a6dd72e0b56b87f85d8cac2a30066198b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -410,7 +427,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="32" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="403" bodyend="480"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="33" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="420" bodyend="497"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1a68019fe1e0edcc71bb3dadeb70a86dcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -427,7 +444,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="33" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="511" bodyend="514"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="34" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="528" bodyend="531"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1a26512d35b24fec46c8fa4c803dc00867" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -448,7 +465,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="34" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="565" bodyend="603"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="35" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="582" bodyend="644"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -486,16 +503,17 @@
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a7297f848d5b0bd4990857d03cf3111e4" kindref="member">client_function_ping</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg);</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1afbd2dc7b3224fc3d2c5c9233b307c376" kindref="member">client_function_response</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg);</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1aa74c686c447b275e6a8cf36419033e81" kindref="member">client_pre_in_function</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a6dd72e0b56b87f85d8cac2a30066198b" kindref="member">client_execute_in_function</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>functionName,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a68019fe1e0edcc71bb3dadeb70a86dcd" kindref="member">client_pre_out_function</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a26512d35b24fec46c8fa4c803dc00867" kindref="member">client_execute_out_function</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>functionName,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Tipos<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>COMMON_TYPES</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COMMON_TYPES</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*FunctionCallBack)(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1aa1f1dfdb0122f771b6c56edab7bc3613" kindref="member">client_show_error_main</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1aa74c686c447b275e6a8cf36419033e81" kindref="member">client_pre_in_function</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a6dd72e0b56b87f85d8cac2a30066198b" kindref="member">client_execute_in_function</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>functionName,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a68019fe1e0edcc71bb3dadeb70a86dcd" kindref="member">client_pre_out_function</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a26512d35b24fec46c8fa4c803dc00867" kindref="member">client_execute_out_function</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>functionName,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Tipos<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>COMMON_TYPES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COMMON_TYPES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*FunctionCallBack)(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="includes/G-2313-06-P2_client_common_functions.h"/>
   </compounddef>

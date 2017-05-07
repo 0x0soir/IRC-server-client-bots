@@ -50,17 +50,17 @@ SRC_CLIENT_IRC += includes/$(GROUP)_ssl.h
 FFLAGS= -Wall -w -pedantic -pthread -rdynamic
 REDESLIB= -lircredes -lirctad -lircinterface -lsoundredes
 LIB_SSL = -lssl -lcrypto
+LIB = ./lib/
+OBJ = ./obj/
+SRCLIB = ./srclib/
 
-#Comienzo del makefile
-#Regla All: compila todo el programa
-
-all: clean certificados claves server_echo client_echo servidor_irc
+all: clean certificados claves server_echo client_echo servidor_irc prelibreria libreria
 
 certificados:
 		@echo "\033[31mGenerando certificados...\033[00m"
 		@rm -Rf $(SRC_CERTIFICADOS)
 		@mkdir -p $(SRC_CERTIFICADOS)
-		@openssl genrsa -out $(SRC_CERTIFICADOS)/rootkey.pem 2048  > /dev/null 2>&1
+		@openssl genrsa -out $(SRC_CERTIFICADOS)/rootkey.pem 2048 > /dev/null 2>&1
 		@echo "\033[33m\tCertificado generado: $(SRC_CERTIFICADOS)/rootkey.pem\033[00m"
 		@openssl req -new -x509 -key $(SRC_CERTIFICADOS)/rootkey.pem -out $(SRC_CERTIFICADOS)/rootcert.pem -subj "/C=ES/ST=Madrid/L=Madrid/O=UAM/CN=Redes2 CA"
 		@echo "\033[33m\tCertificado generado: $(SRC_CERTIFICADOS)/rootcert.pem\033[00m"
@@ -112,6 +112,20 @@ doxy:
 	@doxygen Doxyfile  > /dev/null 2>&1
 	@echo "\033[32m--> Documentación generada en: ./doc/html/index.html\033[00m"
 
+prelibreria:
+	@echo "\033[31mGenerando librería...\033[00m"
+	@mkdir -p "obj"
+	@mkdir -p "lib"
+
+libreria: $(LIB)$(GROUP)_ssl.a
+
+$(LIB)$(GROUP)_ssl.a: $(OBJ)$(GROUP)_ssl.o
+	@ar -rv $@ $^ -lssl > /dev/null 2>&1
+	@echo "\033[32m--> Libreria generada en: ./lib/$(GROUP)_ssl.a\033[00m"
+
+$(OBJ)$(GROUP)_ssl.o: $(SRCLIB)$(GROUP)_ssl.c
+	@$(CC) $(CCFLAGS) -o $@ -c $^
+
 entrega: clean tar
 
 clean:
@@ -120,6 +134,9 @@ clean:
 	rm -rf objlib/*.o $(GROUP)
 	rm -rf "echo"
 	rm -rf "cliente_servidor"
+	rm -rf lib
+	rm -rf obj
+	rm -rf certs
 tar:
 	@echo "\033[31mComprimiendo...\033[00m"
 	tar --exclude .git -czf $(GROUP).tar.gz ../$(GROUP) --exclude $(GROUP).tar.gz
