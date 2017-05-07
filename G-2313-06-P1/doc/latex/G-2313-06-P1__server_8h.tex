@@ -1,0 +1,199 @@
+\hypertarget{G-2313-06-P1__server_8h}{}\section{Referencia del Archivo includes/\+G-\/2313-\/06-\/\+P1\+\_\+server.h}
+\label{G-2313-06-P1__server_8h}\index{includes/\+G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{includes/\+G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$sys/time.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\+h$>$}\\*
+{\ttfamily \#include $<$syslog.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$strings.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\\*
+{\ttfamily \#include $<$redes2/irc.\+h$>$}\\*
+{\ttfamily \#include $<$netdb.\+h$>$}\\*
+{\ttfamily \#include $<$pthread.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}G-\/2313-\/06-\/\+P1\+\_\+list.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}G-\/2313-\/06-\/\+P1\+\_\+thread\+\_\+pool.\+h\char`\"{}}\\*
+Dependencia gráfica adjunta para G-\/2313-\/06-\/\+P1\+\_\+server.h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\subsection*{\textquotesingle{}defines\textquotesingle{}}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{G-2313-06-P1__server_8h_a80c7be19e867e55f90be3fa66cf65300}{M\+I\+N\+\_\+\+P\+O\+O\+L\+\_\+\+T\+H\+R\+E\+A\+DS}~3
+\item 
+\#define \hyperlink{G-2313-06-P1__server_8h_a053b7859476cc9867ec62c49e68d3fa1}{M\+A\+X\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+NS}~100
+\item 
+\#define \hyperlink{G-2313-06-P1__server_8h_ac42367fe5c999ec6650de83e9d72fe8c}{S\+E\+R\+V\+E\+R\+\_\+\+P\+O\+RT}~6667
+\item 
+\#define \hyperlink{G-2313-06-P1__server_8h_a97ed8e840fc4086fc86554e6d1277ca8}{C\+L\+I\+E\+N\+T\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+M\+A\+X\+S\+I\+ZE}~8096
+\end{DoxyCompactItemize}
+\subsection*{\textquotesingle{}typedefs\textquotesingle{}}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{G-2313-06-P1__server_8h_ae102cd0a63430b827183f70ce476a887}{Function\+Call\+Back}) (char $\ast$, int, char $\ast$, int $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{G-2313-06-P1__server_8h_a85f40553bba77ada6c4329db58f68630}{server\+\_\+start} (void)
+\item 
+void \hyperlink{G-2313-06-P1__server_8h_ab201db206f26ab6fb26bb0e36dac4589}{server\+\_\+accept\+\_\+connection} (int socket\+\_\+id)
+\item 
+void $\ast$ \hyperlink{G-2313-06-P1__server_8h_a567404fb6edb67d9035359fef8e5acf3}{server\+\_\+start\+\_\+communication} (int connval)
+\item 
+void \hyperlink{G-2313-06-P1__server_8h_a0e947005d451a8f3bf3af01f54b59f11}{server\+\_\+exit} ()
+\item 
+void \hyperlink{G-2313-06-P1__server_8h_a775161328c3264fb8f96981f7a9c83ae}{server\+\_\+execute\+\_\+function} (long function\+Name, char $\ast$command, int desc, char $\ast$nick, int $\ast$register\+\_\+status)
+\item 
+int \hyperlink{G-2313-06-P1__server_8h_a64f1fffc5903ccf0350845cd21a95b6e}{server\+\_\+check\+\_\+socket\+\_\+status} (int socket\+\_\+desc)
+\item 
+void \hyperlink{G-2313-06-P1__server_8h_aa0e8000b12d9c52fc1e87847d00c9c47}{server\+\_\+daemon} ()
+\item 
+void \hyperlink{G-2313-06-P1__server_8h_a48d522cd984dc64ecd084f05416b1a94}{server\+\_\+start\+\_\+pool} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación de los \textquotesingle{}defines\textquotesingle{}}
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!C\+L\+I\+E\+N\+T\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+M\+A\+X\+S\+I\+ZE@{C\+L\+I\+E\+N\+T\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+M\+A\+X\+S\+I\+ZE}}
+\index{C\+L\+I\+E\+N\+T\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+M\+A\+X\+S\+I\+ZE@{C\+L\+I\+E\+N\+T\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+M\+A\+X\+S\+I\+ZE}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{C\+L\+I\+E\+N\+T\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+M\+A\+X\+S\+I\+ZE}{CLIENT_MESSAGE_MAXSIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+L\+I\+E\+N\+T\+\_\+\+M\+E\+S\+S\+A\+G\+E\+\_\+\+M\+A\+X\+S\+I\+ZE~8096}\hypertarget{G-2313-06-P1__server_8h_a97ed8e840fc4086fc86554e6d1277ca8}{}\label{G-2313-06-P1__server_8h_a97ed8e840fc4086fc86554e6d1277ca8}
+
+
+Definición en la línea 29 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+h.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!M\+A\+X\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+NS@{M\+A\+X\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+NS}}
+\index{M\+A\+X\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+NS@{M\+A\+X\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+NS}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+NS}{MAX_CONNECTIONS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+C\+O\+N\+N\+E\+C\+T\+I\+O\+NS~100}\hypertarget{G-2313-06-P1__server_8h_a053b7859476cc9867ec62c49e68d3fa1}{}\label{G-2313-06-P1__server_8h_a053b7859476cc9867ec62c49e68d3fa1}
+
+
+Definición en la línea 27 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+h.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!M\+I\+N\+\_\+\+P\+O\+O\+L\+\_\+\+T\+H\+R\+E\+A\+DS@{M\+I\+N\+\_\+\+P\+O\+O\+L\+\_\+\+T\+H\+R\+E\+A\+DS}}
+\index{M\+I\+N\+\_\+\+P\+O\+O\+L\+\_\+\+T\+H\+R\+E\+A\+DS@{M\+I\+N\+\_\+\+P\+O\+O\+L\+\_\+\+T\+H\+R\+E\+A\+DS}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{M\+I\+N\+\_\+\+P\+O\+O\+L\+\_\+\+T\+H\+R\+E\+A\+DS}{MIN_POOL_THREADS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+I\+N\+\_\+\+P\+O\+O\+L\+\_\+\+T\+H\+R\+E\+A\+DS~3}\hypertarget{G-2313-06-P1__server_8h_a80c7be19e867e55f90be3fa66cf65300}{}\label{G-2313-06-P1__server_8h_a80c7be19e867e55f90be3fa66cf65300}
+
+
+Definición en la línea 26 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+h.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!S\+E\+R\+V\+E\+R\+\_\+\+P\+O\+RT@{S\+E\+R\+V\+E\+R\+\_\+\+P\+O\+RT}}
+\index{S\+E\+R\+V\+E\+R\+\_\+\+P\+O\+RT@{S\+E\+R\+V\+E\+R\+\_\+\+P\+O\+RT}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{S\+E\+R\+V\+E\+R\+\_\+\+P\+O\+RT}{SERVER_PORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+R\+V\+E\+R\+\_\+\+P\+O\+RT~6667}\hypertarget{G-2313-06-P1__server_8h_ac42367fe5c999ec6650de83e9d72fe8c}{}\label{G-2313-06-P1__server_8h_ac42367fe5c999ec6650de83e9d72fe8c}
+
+
+Definición en la línea 28 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+h.
+
+
+
+\subsection{Documentación de los \textquotesingle{}typedefs\textquotesingle{}}
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!Function\+Call\+Back@{Function\+Call\+Back}}
+\index{Function\+Call\+Back@{Function\+Call\+Back}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{Function\+Call\+Back}{FunctionCallBack}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ Function\+Call\+Back) (char $\ast$, int, char $\ast$, int $\ast$)}\hypertarget{G-2313-06-P1__server_8h_ae102cd0a63430b827183f70ce476a887}{}\label{G-2313-06-P1__server_8h_ae102cd0a63430b827183f70ce476a887}
+
+
+Definición en la línea 41 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+h.
+
+
+
+\subsection{Documentación de las funciones}
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!server\+\_\+accept\+\_\+connection@{server\+\_\+accept\+\_\+connection}}
+\index{server\+\_\+accept\+\_\+connection@{server\+\_\+accept\+\_\+connection}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+accept\+\_\+connection(int socket\+\_\+id)}{server_accept_connection(int socket_id)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+accept\+\_\+connection (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+\_\+id}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__server_8h_ab201db206f26ab6fb26bb0e36dac4589}{}\label{G-2313-06-P1__server_8h_ab201db206f26ab6fb26bb0e36dac4589}
+
+
+Definición en la línea 171 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!server\+\_\+check\+\_\+socket\+\_\+status@{server\+\_\+check\+\_\+socket\+\_\+status}}
+\index{server\+\_\+check\+\_\+socket\+\_\+status@{server\+\_\+check\+\_\+socket\+\_\+status}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+check\+\_\+socket\+\_\+status(int socket\+\_\+desc)}{server_check_socket_status(int socket_desc)}}]{\setlength{\rightskip}{0pt plus 5cm}int server\+\_\+check\+\_\+socket\+\_\+status (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+\_\+desc}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__server_8h_a64f1fffc5903ccf0350845cd21a95b6e}{}\label{G-2313-06-P1__server_8h_a64f1fffc5903ccf0350845cd21a95b6e}
+
+
+Definición en la línea 473 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!server\+\_\+daemon@{server\+\_\+daemon}}
+\index{server\+\_\+daemon@{server\+\_\+daemon}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+daemon()}{server_daemon()}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+daemon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__server_8h_aa0e8000b12d9c52fc1e87847d00c9c47}{}\label{G-2313-06-P1__server_8h_aa0e8000b12d9c52fc1e87847d00c9c47}
+
+
+Definición en la línea 518 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!server\+\_\+execute\+\_\+function@{server\+\_\+execute\+\_\+function}}
+\index{server\+\_\+execute\+\_\+function@{server\+\_\+execute\+\_\+function}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+execute\+\_\+function(long function\+Name, char $\ast$command, int desc, char $\ast$nick, int $\ast$register\+\_\+status)}{server_execute_function(long functionName, char *command, int desc, char *nick, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+execute\+\_\+function (
+\begin{DoxyParamCaption}
+\item[{long}]{function\+Name, }
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__server_8h_a775161328c3264fb8f96981f7a9c83ae}{}\label{G-2313-06-P1__server_8h_a775161328c3264fb8f96981f7a9c83ae}
+
+
+Definición en la línea 368 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!server\+\_\+exit@{server\+\_\+exit}}
+\index{server\+\_\+exit@{server\+\_\+exit}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+exit()}{server_exit()}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+exit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__server_8h_a0e947005d451a8f3bf3af01f54b59f11}{}\label{G-2313-06-P1__server_8h_a0e947005d451a8f3bf3af01f54b59f11}
+
+
+Definición en la línea 436 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!server\+\_\+start@{server\+\_\+start}}
+\index{server\+\_\+start@{server\+\_\+start}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+start(void)}{server_start(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int server\+\_\+start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__server_8h_a85f40553bba77ada6c4329db58f68630}{}\label{G-2313-06-P1__server_8h_a85f40553bba77ada6c4329db58f68630}
+
+
+Definición en la línea 101 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!server\+\_\+start\+\_\+communication@{server\+\_\+start\+\_\+communication}}
+\index{server\+\_\+start\+\_\+communication@{server\+\_\+start\+\_\+communication}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+start\+\_\+communication(int connval)}{server_start_communication(int connval)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ server\+\_\+start\+\_\+communication (
+\begin{DoxyParamCaption}
+\item[{int}]{connval}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__server_8h_a567404fb6edb67d9035359fef8e5acf3}{}\label{G-2313-06-P1__server_8h_a567404fb6edb67d9035359fef8e5acf3}
+
+
+Definición en la línea 252 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}!server\+\_\+start\+\_\+pool@{server\+\_\+start\+\_\+pool}}
+\index{server\+\_\+start\+\_\+pool@{server\+\_\+start\+\_\+pool}!G-\/2313-\/06-\/\+P1\+\_\+server.\+h@{G-\/2313-\/06-\/\+P1\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+start\+\_\+pool()}{server_start_pool()}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+start\+\_\+pool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__server_8h_a48d522cd984dc64ecd084f05416b1a94}{}\label{G-2313-06-P1__server_8h_a48d522cd984dc64ecd084f05416b1a94}
+
+
+Definición en la línea 567 del archivo G-\/2313-\/06-\/\+P1\+\_\+server.\+c.
+

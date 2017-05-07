@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Redes de Comunicaciones II: Fichero Fuente includes/G-2313-06-P1_common_functions.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo-eps.gif"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Redes de Comunicaciones II
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Documentación de prácticas 1, 2 y 3 generada por Jorge Parrilla y Javier de Marco.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('G-2313-06-P1__common__functions_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">G-2313-06-P1_common_functions.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="G-2313-06-P1__common__functions_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;sys/types.h&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;sys/socket.h&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;sys/stat.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;netinet/in.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;syslog.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;strings.h&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;signal.h&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;arpa/inet.h&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;redes2/irc.h&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;netdb.h&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/* Functions */</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">int</span> <a class="code" href="G-2313-06-P1__common__functions_8h.html#a61cca6f1a1adeb81f722ecc2ff35aab5">server_users_find_by_nick</a>(<span class="keywordtype">char</span>* data);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">int</span> <a class="code" href="G-2313-06-P1__common__functions_8h.html#a485e68f66db6ae4b7297d99c32afe30a">server_users_find_by_socket</a>(<span class="keywordtype">int</span> sockdesc);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">int</span> <a class="code" href="G-2313-06-P1__common__functions_8h.html#a875ae5278d95716b494b26f96cf4ae6e">server_channels_find_by_name</a>(<span class="keywordtype">char</span> *channel);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">int</span> <a class="code" href="G-2313-06-P1__common__functions_8h.html#ae8a282d9cdfc8187b8e74e368bc56d92">server_channels_update_nick</a>(<span class="keywordtype">char</span> *nick_old, <span class="keywordtype">char</span>* nick_new);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">int</span> <a class="code" href="G-2313-06-P1__common__functions_8h.html#af9aeb632d55a4cbbe842ab97001b5128">server_channels_update_away</a>(<span class="keywordtype">char</span>* nick, <span class="keywordtype">char</span>* away);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span> <a class="code" href="G-2313-06-P1__common__functions_8h.html#a5c6f52d9a2461877178a1a0905d14ea9">server_channels_update_whois</a>(<span class="keywordtype">char</span>* nick, <span class="keywordtype">char</span>* away);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="G-2313-06-P1__common__functions_8h.html#a230bf24ab7ae18d2e81ebc1d3575a6ad">server_return_user</a>(<span class="keywordtype">char</span>* nick);</div><div class="ttc" id="G-2313-06-P1__common__functions_8h_html_af9aeb632d55a4cbbe842ab97001b5128"><div class="ttname"><a href="G-2313-06-P1__common__functions_8h.html#af9aeb632d55a4cbbe842ab97001b5128">server_channels_update_away</a></div><div class="ttdeci">int server_channels_update_away(char *nick, char *away)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__common__functions_8c_source.html#l00275">G-2313-06-P1_common_functions.c:275</a></div></div>
+<div class="ttc" id="G-2313-06-P1__common__functions_8h_html_a5c6f52d9a2461877178a1a0905d14ea9"><div class="ttname"><a href="G-2313-06-P1__common__functions_8h.html#a5c6f52d9a2461877178a1a0905d14ea9">server_channels_update_whois</a></div><div class="ttdeci">int server_channels_update_whois(char *nick, char *away)</div></div>
+<div class="ttc" id="G-2313-06-P1__common__functions_8h_html_a485e68f66db6ae4b7297d99c32afe30a"><div class="ttname"><a href="G-2313-06-P1__common__functions_8h.html#a485e68f66db6ae4b7297d99c32afe30a">server_users_find_by_socket</a></div><div class="ttdeci">int server_users_find_by_socket(int sockdesc)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__common__functions_8c_source.html#l00113">G-2313-06-P1_common_functions.c:113</a></div></div>
+<div class="ttc" id="G-2313-06-P1__common__functions_8h_html_a230bf24ab7ae18d2e81ebc1d3575a6ad"><div class="ttname"><a href="G-2313-06-P1__common__functions_8h.html#a230bf24ab7ae18d2e81ebc1d3575a6ad">server_return_user</a></div><div class="ttdeci">char * server_return_user(char *nick)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__common__functions_8c_source.html#l00327">G-2313-06-P1_common_functions.c:327</a></div></div>
+<div class="ttc" id="G-2313-06-P1__common__functions_8h_html_a875ae5278d95716b494b26f96cf4ae6e"><div class="ttname"><a href="G-2313-06-P1__common__functions_8h.html#a875ae5278d95716b494b26f96cf4ae6e">server_channels_find_by_name</a></div><div class="ttdeci">int server_channels_find_by_name(char *channel)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__common__functions_8c_source.html#l00178">G-2313-06-P1_common_functions.c:178</a></div></div>
+<div class="ttc" id="G-2313-06-P1__common__functions_8h_html_a61cca6f1a1adeb81f722ecc2ff35aab5"><div class="ttname"><a href="G-2313-06-P1__common__functions_8h.html#a61cca6f1a1adeb81f722ecc2ff35aab5">server_users_find_by_nick</a></div><div class="ttdeci">int server_users_find_by_nick(char *data)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__common__functions_8c_source.html#l00052">G-2313-06-P1_common_functions.c:52</a></div></div>
+<div class="ttc" id="G-2313-06-P1__common__functions_8h_html_ae8a282d9cdfc8187b8e74e368bc56d92"><div class="ttname"><a href="G-2313-06-P1__common__functions_8h.html#ae8a282d9cdfc8187b8e74e368bc56d92">server_channels_update_nick</a></div><div class="ttdeci">int server_channels_update_nick(char *nick_old, char *nick_new)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P1__common__functions_8c_source.html#l00221">G-2313-06-P1_common_functions.c:221</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="G-2313-06-P1__common__functions_8h.html">G-2313-06-P1_common_functions.h</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

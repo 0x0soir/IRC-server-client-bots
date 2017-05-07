@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>P1 - Servidor IRC</title>
+    <innerpage refid="server_connection">Conexión del servidor</innerpage>
+    <innerpage refid="server_common_functions">Funciones auxiliares</innerpage>
+    <innerpage refid="server_commands">Comandos</innerpage>
+    <detaileddescription>
+<para>Funciones generales de conexión al servidor</para><para>Esta sección incluye:<itemizedlist>
+<listitem><para><ref refid="server_connection" kindref="compound">Conexión del servidor</ref></para></listitem><listitem><para><ref refid="server_common_functions" kindref="compound">Funciones auxiliares</ref></para></listitem><listitem><para><ref refid="server_commands" kindref="compound">Comandos</ref> </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

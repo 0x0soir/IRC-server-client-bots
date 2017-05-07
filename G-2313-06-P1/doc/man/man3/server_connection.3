@@ -1,0 +1,43 @@
+.TH "server_connection" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_connection \- Conexión del servidor 
+Esta sección incluye las funciones de conexión, inicialización del socket, listen de nuevos clientes, parseo de comandos de IRC, declaración y manejo del array de punteros a funciones para el parseo de comandos, inicalización del ThreadPool para los hilos que se asignarán a los clientes y el proceso de daemonización del servidor\&.
+.SH "Cabeceras"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_server\&.h\fP>\fP \fP 
+.SH "Variables definidas"
+.PP
+Se utilizan las siguientes variables definidas en \fBG-2313-06-P1_server\&.h\fP 
+.PP
+\fC #define MIN_POOL_THREADS 3 
+.br
+#define MAX_CONNECTIONS 100 
+.br
+#define SERVER_PORT 6667 
+.br
+#define CLIENT_MESSAGE_MAXSIZE 8096 \fP
+.SH "Funciones implementadas"
+.PP
+Se incluyen las siguientes funciones: 
+.PD 0
+
+.IP "\(bu" 2
+\fBserver_start\fP 
+.IP "\(bu" 2
+\fBserver_accept_connection\fP 
+.IP "\(bu" 2
+\fBserver_start_communication\fP 
+.IP "\(bu" 2
+\fBserver_execute_function\fP 
+.IP "\(bu" 2
+\fBserver_exit\fP 
+.IP "\(bu" 2
+\fBserver_check_socket_status\fP 
+.IP "\(bu" 2
+\fBserver_daemon\fP 
+.IP "\(bu" 2
+\fBserver_start_pool\fP 
+.PP
+

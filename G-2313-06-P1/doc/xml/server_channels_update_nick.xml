@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="server_channels_update_nick" kind="page">
+    <compoundname>server_channels_update_nick</compoundname>
+    <title>server_channels_update_nick</title>
+    <detaileddescription>
+<para>Actualiza el nick de un usuario.</para><sect1 id="server_channels_update_nick_1synopsis_server_channels_update_nick">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P1__common__functions_8h" kindref="compound">G-2313-06-P1_common_functions.h</ref>&gt;</bold> <linebreak/>
+ <bold>int server_channels_update_nick(char <emphasis>nick_old, char</emphasis> nick_new)</bold> </computeroutput> </para></sect1>
+<sect1 id="server_channels_update_nick_1descripcion_server_channels_update_nick">
+<title>Descripción</title>
+<para>Actualiza el nick de un usuario mediante la función del TAD <bold>IRCTADUser_Set</bold> para actualizar datos de los usuarios. </para><para>Comprueba previamente que el usuario exista mediante la función <bold>IRCTADUser_GetData</bold> utilizando los parámetros recibidos <bold>char *nick_old</bold> y <bold>char *nick_new</bold>.</para></sect1>
+<sect1 id="server_channels_update_nick_1return_server_channels_update_nick">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>int</bold> Devuelve valor verdado/falso dependiendo de la búsqueda. </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_channels_update_nick_1authors_server_channels_update_nick">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="structlist__head" kind="struct"><name>list_head</name>
+    <member refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kind="variable"><name>next</name></member>
+    <member refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kind="variable"><name>prev</name></member>
+  </compound>
+  <compound refid="structtask__t" kind="struct"><name>task_t</name>
+    <member refid="structtask__t_1a9162b404bd1cf5349b2092f69e31c613" kind="variable"><name>arg</name></member>
+    <member refid="structtask__t_1ac8c2d416888e415fc6ee54410a4c511c" kind="variable"><name>task_callback</name></member>
+    <member refid="structtask__t_1ac812553758f9102a7a674ad29e78f98b" kind="variable"><name>entry</name></member>
+  </compound>
+  <compound refid="structthread__args" kind="struct"><name>thread_args</name>
+    <member refid="structthread__args_1a425ced5f77dcbb52f61d240a4e207a27" kind="variable"><name>pool</name></member>
+    <member refid="structthread__args_1a191f3ea514283452d04bde31cde4c7ad" kind="variable"><name>current</name></member>
+  </compound>
+  <compound refid="structthread__pool__t" kind="struct"><name>thread_pool_t</name>
+    <member refid="structthread__pool__t_1a44640e57780a54d437d7589b1c754ac1" kind="variable"><name>worker_queue</name></member>
+    <member refid="structthread__pool__t_1a38a9fa0d0ea1060d5bbff8421a92c1c7" kind="variable"><name>idle_queue</name></member>
+    <member refid="structthread__pool__t_1a9ad8218717dde39eef701a8bce5ca0a1" kind="variable"><name>master_thread</name></member>
+    <member refid="structthread__pool__t_1aaa6e0a9d9c28c3f9be7eccbe8003af23" kind="variable"><name>global</name></member>
+    <member refid="structthread__pool__t_1a00ce5a27204f85e624552f7448ba7093" kind="variable"><name>task_next</name></member>
+    <member refid="structthread__pool__t_1a3185c157636a142415699a20042d6dd8" kind="variable"><name>size</name></member>
+    <member refid="structthread__pool__t_1a978e7f94032dad6e7a373e7bc1896237" kind="variable"><name>max_size</name></member>
+    <member refid="structthread__pool__t_1a80aa1805a11e2e6e2bf5811fda0ffc26" kind="variable"><name>min_size</name></member>
+    <member refid="structthread__pool__t_1a815792ab9c936b06d46ef3e149e5fd88" kind="variable"><name>low_level</name></member>
+    <member refid="structthread__pool__t_1aa771fc181f63c16346fff1c7eb0d9014" kind="variable"><name>high_level</name></member>
+    <member refid="structthread__pool__t_1ae3eaf8d90ef550166e595286a6175d14" kind="variable"><name>master_interval</name></member>
+  </compound>
+  <compound refid="structthread__t" kind="struct"><name>thread_t</name>
+    <member refid="structthread__t_1a92c076d58ca307499452b8dfe0c4e598" kind="variable"><name>tid</name></member>
+    <member refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" kind="variable"><name>mutex</name></member>
+    <member refid="structthread__t_1a6cb846b84c59d01a8b3a2693d39a4af1" kind="variable"><name>cond</name></member>
+    <member refid="structthread__t_1a3e0780f1c2fc9932258a60b5043fe424" kind="variable"><name>state</name></member>
+    <member refid="structthread__t_1a8e9f0fd028676d0ebeef8438f2176bb7" kind="variable"><name>stop</name></member>
+    <member refid="structthread__t_1aa99eeab6834595bdff5a7da08314fd89" kind="variable"><name>queue_size</name></member>
+    <member refid="structthread__t_1a69c932ede0de60b66a482fb735fca966" kind="variable"><name>task_queue</name></member>
+    <member refid="structthread__t_1a03432229de426c5ba35d0dfa325491f0" kind="variable"><name>worker_entry</name></member>
+    <member refid="structthread__t_1a9386032d478cacdfd680d5691e0eb9d3" kind="variable"><name>idle_entry</name></member>
+  </compound>
+  <compound refid="G-2313-06-P1__common__functions_8h" kind="file"><name>G-2313-06-P1_common_functions.h</name>
+    <member refid="G-2313-06-P1__common__functions_8h_1a61cca6f1a1adeb81f722ecc2ff35aab5" kind="function"><name>server_users_find_by_nick</name></member>
+    <member refid="G-2313-06-P1__common__functions_8h_1a485e68f66db6ae4b7297d99c32afe30a" kind="function"><name>server_users_find_by_socket</name></member>
+    <member refid="G-2313-06-P1__common__functions_8h_1a875ae5278d95716b494b26f96cf4ae6e" kind="function"><name>server_channels_find_by_name</name></member>
+    <member refid="G-2313-06-P1__common__functions_8h_1ae8a282d9cdfc8187b8e74e368bc56d92" kind="function"><name>server_channels_update_nick</name></member>
+    <member refid="G-2313-06-P1__common__functions_8h_1af9aeb632d55a4cbbe842ab97001b5128" kind="function"><name>server_channels_update_away</name></member>
+    <member refid="G-2313-06-P1__common__functions_8h_1a5c6f52d9a2461877178a1a0905d14ea9" kind="function"><name>server_channels_update_whois</name></member>
+    <member refid="G-2313-06-P1__common__functions_8h_1a230bf24ab7ae18d2e81ebc1d3575a6ad" kind="function"><name>server_return_user</name></member>
+  </compound>
+  <compound refid="G-2313-06-P1__function__handlers_8h" kind="file"><name>G-2313-06-P1_function_handlers.h</name>
+    <member refid="G-2313-06-P1__function__handlers_8h_1aeefab469ba48ce1655dd5afd14f104b4" kind="function"><name>server_command_nick</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1ad09156d6bd4cf58f4345e0bf851ff099" kind="function"><name>server_command_user</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1a375c143c5469d1bb4fa7793b310ad68e" kind="function"><name>server_command_join</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1a3df99a1f2cefc2d91d65cbb6dd555f96" kind="function"><name>server_command_quit</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1acc1c181bf44087b9216d1b59809937aa" kind="function"><name>server_command_ping</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1af289e3cc397e24e9b8c12c35bce68285" kind="function"><name>server_command_list</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1a8daf68135f2d9e9412c04a2980bdfb2f" kind="function"><name>server_command_privmsg</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1aba1a3da1fb58bb35076e7ea56037463e" kind="function"><name>server_command_part</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1a0fe05d80af27ae220f8fa631468606ea" kind="function"><name>server_command_names</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1a33025bd9c7bf8fbb2bf9cf722c07465c" kind="function"><name>server_command_kick</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1a44a8736512c1df49d94c8194ae9b8a50" kind="function"><name>server_command_mode</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1a327516a6c48e34b58428f7a502938928" kind="function"><name>server_command_away</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1a8bb934f01707fcb12ebac41f1fe69441" kind="function"><name>server_command_whois</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1a894ae019e03841e9d54fdad31d79f218" kind="function"><name>server_command_topic</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8h_1a1258d3bdf779b82c3f952bdde3d62631" kind="function"><name>server_command_motd</name></member>
+  </compound>
+  <compound refid="G-2313-06-P1__list_8h" kind="file"><name>G-2313-06-P1_list.h</name>
+    <member refid="G-2313-06-P1__list_8h_1a4642d4b7df28478bb762fe43c85b5c63" kind="define"><name>LIST_HEAD_INIT</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a42f0e72af970a790b60a740af8c9ecd0" kind="define"><name>LIST_HEAD</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a0ffe9d28c36d7b018a9cfae33bae45c0" kind="define"><name>INIT_LIST_HEAD</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a26c976b7f654e70df318c1843e5094de" kind="define"><name>list_entry</name></member>
+    <member refid="G-2313-06-P1__list_8h_1ab8b24e6660ab3760c923e4b4db3fa502" kind="define"><name>list_for_each</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a19fc06b83f3502a83ce566b8887e6aec" kind="define"><name>list_for_each_prev</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a9e4b9328744994b9d3878f5dad75c09f" kind="define"><name>list_for_each_safe</name></member>
+    <member refid="G-2313-06-P1__list_8h_1aa728613529c4fc5383f80b3d733b4153" kind="define"><name>list_for_each_entry</name></member>
+    <member refid="G-2313-06-P1__list_8h_1ac3f72d6bd5144c7970824813810d2da1" kind="define"><name>list_for_each_entry_safe</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a853740b546497b17a28faf076cf3f6a0" kind="define"><name>list_next_entry</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a894172f609f0f81a2d6ffdcd7ac1954f" kind="define"><name>list_first_entry</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a8a28f150a191624bf6923a48cdace7e3" kind="function"><name>__list_add</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a0373c4b3c8ce51a451a569ad978b32e1" kind="function"><name>list_add</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a588bec046f1e9797b33a5c5ab250f447" kind="function"><name>list_add_tail</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a24b474717d65a296695e8b79b4adefda" kind="function"><name>__list_del</name></member>
+    <member refid="G-2313-06-P1__list_8h_1ab1708206f0f7e0a56550b35372203ba5" kind="function"><name>list_del</name></member>
+    <member refid="G-2313-06-P1__list_8h_1ae1cde0f50b85945cfff23be4fc1586f4" kind="function"><name>list_del_init</name></member>
+    <member refid="G-2313-06-P1__list_8h_1aee8df43e41969c2272acfd6ed6e75d4c" kind="function"><name>list_move</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a1c5ac6a6b04a03f5782e818daacf96e9" kind="function"><name>list_move_tail</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a0fce12be81e8f2677b3a272fee1652ac" kind="function"><name>list_empty</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a25979c80a2d71dd02ada121a46c71a59" kind="function"><name>__list_splice</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a2c4399cfbde5e5d5eddf2e13c97bd5d5" kind="function"><name>list_splice</name></member>
+    <member refid="G-2313-06-P1__list_8h_1a948b15519bb72e3d42f3e56975580d30" kind="function"><name>list_splice_init</name></member>
+  </compound>
+  <compound refid="G-2313-06-P1__server_8h" kind="file"><name>G-2313-06-P1_server.h</name>
+    <member refid="G-2313-06-P1__server_8h_1a80c7be19e867e55f90be3fa66cf65300" kind="define"><name>MIN_POOL_THREADS</name></member>
+    <member refid="G-2313-06-P1__server_8h_1a053b7859476cc9867ec62c49e68d3fa1" kind="define"><name>MAX_CONNECTIONS</name></member>
+    <member refid="G-2313-06-P1__server_8h_1ac42367fe5c999ec6650de83e9d72fe8c" kind="define"><name>SERVER_PORT</name></member>
+    <member refid="G-2313-06-P1__server_8h_1a97ed8e840fc4086fc86554e6d1277ca8" kind="define"><name>CLIENT_MESSAGE_MAXSIZE</name></member>
+    <member refid="G-2313-06-P1__server_8h_1ae102cd0a63430b827183f70ce476a887" kind="typedef"><name>FunctionCallBack</name></member>
+    <member refid="G-2313-06-P1__server_8h_1a85f40553bba77ada6c4329db58f68630" kind="function"><name>server_start</name></member>
+    <member refid="G-2313-06-P1__server_8h_1ab201db206f26ab6fb26bb0e36dac4589" kind="function"><name>server_accept_connection</name></member>
+    <member refid="G-2313-06-P1__server_8h_1a567404fb6edb67d9035359fef8e5acf3" kind="function"><name>server_start_communication</name></member>
+    <member refid="G-2313-06-P1__server_8h_1a0e947005d451a8f3bf3af01f54b59f11" kind="function"><name>server_exit</name></member>
+    <member refid="G-2313-06-P1__server_8h_1a775161328c3264fb8f96981f7a9c83ae" kind="function"><name>server_execute_function</name></member>
+    <member refid="G-2313-06-P1__server_8h_1a64f1fffc5903ccf0350845cd21a95b6e" kind="function"><name>server_check_socket_status</name></member>
+    <member refid="G-2313-06-P1__server_8h_1aa0e8000b12d9c52fc1e87847d00c9c47" kind="function"><name>server_daemon</name></member>
+    <member refid="G-2313-06-P1__server_8h_1a48d522cd984dc64ecd084f05416b1a94" kind="function"><name>server_start_pool</name></member>
+  </compound>
+  <compound refid="G-2313-06-P1__thread__pool_8h" kind="file"><name>G-2313-06-P1_thread_pool.h</name>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a1d5f9a0a6439db9d27573f4ea768e03a" kind="define"><name>THREAD_POOL_MAX_THREADS</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a2dddf10750568983fb5e8793f467e170" kind="define"><name>THREAD_POOL_MIN_THREADS</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a91780ed988c2db43eb70b7106cee217b" kind="define"><name>THREAD_STATE_BUSY</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a7fb00c8fb812a4f9a1c08e22a95104a1" kind="define"><name>THREAD_STATE_IDLE</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1acef14a4788dacf3640cf28745cf49726" kind="define"><name>THREAD_STOPPING</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a9c22e7eceaed2a27b40b3bd043c1d057" kind="define"><name>THREAD_RUNNING</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a9466670765f7653fc75437eb55c472f3" kind="define"><name>THREAD_IDLE_LEVEL</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a09199434ab101700c051a235cf740f30" kind="define"><name>THREAD_BUSY_LEVEL</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a562492e441dc328fba8a344c7206758a" kind="define"><name>MASTER_INTERVAL</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a989e278a815d7ada960572a3e9fad896" kind="typedef"><name>task_t</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a6e84f6599234bedf30a8b88f56e8fd48" kind="typedef"><name>thread_t</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a5f14d1f0d9a94d2e45b01104049529eb" kind="typedef"><name>thread_pool_t</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1ae7684b0001f8477707ef97e117e09d31" kind="typedef"><name>thread_args</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1ae4c7364510f378011559c4eb6078e3ea" kind="function"><name>thread_pool_create</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a46b14e66a9466a68fa4f67a2e08e81fd" kind="function"><name>thread_pool_delete</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1aa9d4a7977fc5b5b534b60415a3aa7311" kind="function"><name>thread_pool_init</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a6f48d348c6ba66b0f85b6c0cb6d89737" kind="function"><name>thread_pool_init_internal</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a54703c23462be974a5e2511247921922" kind="function"><name>master_callback</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a4ef081fb21acd34e0e2492a9f290b6a3" kind="function"><name>worker_callback</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a920e51bce81dfc069372dd87935db55e" kind="function"><name>thread_create</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a4820a76ce58452afff503b4ae218be5c" kind="function"><name>thread_add</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1aa2094f3613d648102f798506b1e86347" kind="function"><name>thread_del_internal</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a95970a6ee2f49963fc3fe7aefa677194" kind="function"><name>thread_del</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1afa05870619a7e753d41b8135b8514a2c" kind="function"><name>task_create</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a7241a5097164175e730f610eaad0aa5a" kind="function"><name>task_init</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8h_1a113acb632971a3b3acd2cda2c4620bb3" kind="function"><name>task_add</name></member>
+  </compound>
+  <compound refid="G-2313-06-P1__common__functions_8c" kind="file"><name>G-2313-06-P1_common_functions.c</name>
+    <member refid="G-2313-06-P1__common__functions_8c_1a61cca6f1a1adeb81f722ecc2ff35aab5" kind="function"><name>server_users_find_by_nick</name></member>
+    <member refid="G-2313-06-P1__common__functions_8c_1a485e68f66db6ae4b7297d99c32afe30a" kind="function"><name>server_users_find_by_socket</name></member>
+    <member refid="G-2313-06-P1__common__functions_8c_1a875ae5278d95716b494b26f96cf4ae6e" kind="function"><name>server_channels_find_by_name</name></member>
+    <member refid="G-2313-06-P1__common__functions_8c_1ae8a282d9cdfc8187b8e74e368bc56d92" kind="function"><name>server_channels_update_nick</name></member>
+    <member refid="G-2313-06-P1__common__functions_8c_1af9aeb632d55a4cbbe842ab97001b5128" kind="function"><name>server_channels_update_away</name></member>
+    <member refid="G-2313-06-P1__common__functions_8c_1a230bf24ab7ae18d2e81ebc1d3575a6ad" kind="function"><name>server_return_user</name></member>
+  </compound>
+  <compound refid="G-2313-06-P1__function__handlers_8c" kind="file"><name>G-2313-06-P1_function_handlers.c</name>
+    <member refid="G-2313-06-P1__function__handlers_8c_1aeefab469ba48ce1655dd5afd14f104b4" kind="function"><name>server_command_nick</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1ad09156d6bd4cf58f4345e0bf851ff099" kind="function"><name>server_command_user</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1a375c143c5469d1bb4fa7793b310ad68e" kind="function"><name>server_command_join</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1a3df99a1f2cefc2d91d65cbb6dd555f96" kind="function"><name>server_command_quit</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1acc1c181bf44087b9216d1b59809937aa" kind="function"><name>server_command_ping</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1af289e3cc397e24e9b8c12c35bce68285" kind="function"><name>server_command_list</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1a8daf68135f2d9e9412c04a2980bdfb2f" kind="function"><name>server_command_privmsg</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1aba1a3da1fb58bb35076e7ea56037463e" kind="function"><name>server_command_part</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1a0fe05d80af27ae220f8fa631468606ea" kind="function"><name>server_command_names</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1a33025bd9c7bf8fbb2bf9cf722c07465c" kind="function"><name>server_command_kick</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1a44a8736512c1df49d94c8194ae9b8a50" kind="function"><name>server_command_mode</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1a327516a6c48e34b58428f7a502938928" kind="function"><name>server_command_away</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1a8bb934f01707fcb12ebac41f1fe69441" kind="function"><name>server_command_whois</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1a894ae019e03841e9d54fdad31d79f218" kind="function"><name>server_command_topic</name></member>
+    <member refid="G-2313-06-P1__function__handlers_8c_1a1258d3bdf779b82c3f952bdde3d62631" kind="function"><name>server_command_motd</name></member>
+  </compound>
+  <compound refid="G-2313-06-P1__server_8c" kind="file"><name>G-2313-06-P1_server.c</name>
+    <member refid="G-2313-06-P1__server_8c_1a30ca306f43cfccb8fd3efa98d77062d8" kind="variable"><name>server_status</name></member>
+    <member refid="G-2313-06-P1__server_8c_1a31fb5a902c59b78b39f2de4f26fd1fb1" kind="variable"><name>server_socket_desc</name></member>
+    <member refid="G-2313-06-P1__server_8c_1a57d8a6a060b67bdc5946cd0e7331575a" kind="variable"><name>pool</name></member>
+    <member refid="G-2313-06-P1__server_8c_1aa8cae03a9b52c7a550cbbdcc8aa74ede" kind="function"><name>server_start</name></member>
+    <member refid="G-2313-06-P1__server_8c_1aaac8642d2e699e0f9d942d28a9b233c2" kind="function"><name>server_accept_connection</name></member>
+    <member refid="G-2313-06-P1__server_8c_1a81394df6131e7cf998bd06f63f9e3995" kind="function"><name>server_start_communication</name></member>
+    <member refid="G-2313-06-P1__server_8c_1a775161328c3264fb8f96981f7a9c83ae" kind="function"><name>server_execute_function</name></member>
+    <member refid="G-2313-06-P1__server_8c_1a0e947005d451a8f3bf3af01f54b59f11" kind="function"><name>server_exit</name></member>
+    <member refid="G-2313-06-P1__server_8c_1a64f1fffc5903ccf0350845cd21a95b6e" kind="function"><name>server_check_socket_status</name></member>
+    <member refid="G-2313-06-P1__server_8c_1aa0e8000b12d9c52fc1e87847d00c9c47" kind="function"><name>server_daemon</name></member>
+    <member refid="G-2313-06-P1__server_8c_1a48d522cd984dc64ecd084f05416b1a94" kind="function"><name>server_start_pool</name></member>
+    <member refid="G-2313-06-P1__server_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="G-2313-06-P1__thread__pool_8c" kind="file"><name>G-2313-06-P1_thread_pool.c</name>
+    <member refid="G-2313-06-P1__thread__pool_8c_1ae4c7364510f378011559c4eb6078e3ea" kind="function"><name>thread_pool_create</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1a46b14e66a9466a68fa4f67a2e08e81fd" kind="function"><name>thread_pool_delete</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1a46e84068eca615afa66b5544ea7a2518" kind="function"><name>thread_pool_init</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1ae2a8c98f4f014e5b9d632bb678d7127a" kind="function"><name>thread_pool_init_internal</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1a920e51bce81dfc069372dd87935db55e" kind="function"><name>thread_create</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1a9aa2b7b210972e06e1a7d0775ba520b3" kind="function"><name>thread_add</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1a95970a6ee2f49963fc3fe7aefa677194" kind="function"><name>thread_del</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1a1fe4c198a9a46014fbac70eb443018a1" kind="function"><name>thread_del_internal</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1a4ef081fb21acd34e0e2492a9f290b6a3" kind="function"><name>worker_callback</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1a54703c23462be974a5e2511247921922" kind="function"><name>master_callback</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1afa05870619a7e753d41b8135b8514a2c" kind="function"><name>task_create</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1a5665a923c48ff85abd630ddf83eb9999" kind="function"><name>task_init</name></member>
+    <member refid="G-2313-06-P1__thread__pool_8c_1a90a0cb9adb9500b4f205edd942fc8272" kind="function"><name>task_add</name></member>
+  </compound>
+  <compound refid="server_common_functions" kind="page"><name>server_common_functions</name>
+  </compound>
+  <compound refid="server_users_find_by_nick" kind="page"><name>server_users_find_by_nick</name>
+  </compound>
+  <compound refid="server_users_find_by_socket" kind="page"><name>server_users_find_by_socket</name>
+  </compound>
+  <compound refid="server_channels_find_by_name" kind="page"><name>server_channels_find_by_name</name>
+  </compound>
+  <compound refid="server_channels_update_nick" kind="page"><name>server_channels_update_nick</name>
+  </compound>
+  <compound refid="server_channels_update_away" kind="page"><name>server_channels_update_away</name>
+  </compound>
+  <compound refid="server_return_user" kind="page"><name>server_return_user</name>
+  </compound>
+  <compound refid="server_commands" kind="page"><name>server_commands</name>
+  </compound>
+  <compound refid="server_command_nick" kind="page"><name>server_command_nick</name>
+  </compound>
+  <compound refid="server_command_user" kind="page"><name>server_command_user</name>
+  </compound>
+  <compound refid="server_command_join" kind="page"><name>server_command_join</name>
+  </compound>
+  <compound refid="server_command_quit" kind="page"><name>server_command_quit</name>
+  </compound>
+  <compound refid="server_command_ping" kind="page"><name>server_command_ping</name>
+  </compound>
+  <compound refid="server_command_list" kind="page"><name>server_command_list</name>
+  </compound>
+  <compound refid="server_command_privmsg" kind="page"><name>server_command_privmsg</name>
+  </compound>
+  <compound refid="server_command_part" kind="page"><name>server_command_part</name>
+  </compound>
+  <compound refid="server_command_names" kind="page"><name>server_command_names</name>
+  </compound>
+  <compound refid="server_command_kick" kind="page"><name>server_command_kick</name>
+  </compound>
+  <compound refid="server_command_mode" kind="page"><name>server_command_mode</name>
+  </compound>
+  <compound refid="server_command_away" kind="page"><name>server_command_away</name>
+  </compound>
+  <compound refid="server_command_whois" kind="page"><name>server_command_whois</name>
+  </compound>
+  <compound refid="server_command_topic" kind="page"><name>server_command_topic</name>
+  </compound>
+  <compound refid="server_command_motd" kind="page"><name>server_command_motd</name>
+  </compound>
+  <compound refid="server_connection" kind="page"><name>server_connection</name>
+  </compound>
+  <compound refid="server_start" kind="page"><name>server_start</name>
+  </compound>
+  <compound refid="server_accept_connection" kind="page"><name>server_accept_connection</name>
+  </compound>
+  <compound refid="server_start_communication" kind="page"><name>server_start_communication</name>
+  </compound>
+  <compound refid="server_execute_function" kind="page"><name>server_execute_function</name>
+  </compound>
+  <compound refid="server_exit" kind="page"><name>server_exit</name>
+  </compound>
+  <compound refid="server_check_socket_status" kind="page"><name>server_check_socket_status</name>
+  </compound>
+  <compound refid="server_daemon" kind="page"><name>server_daemon</name>
+  </compound>
+  <compound refid="server_start_pool" kind="page"><name>server_start_pool</name>
+  </compound>
+  <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>includes</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

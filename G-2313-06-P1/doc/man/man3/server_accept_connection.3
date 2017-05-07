@@ -1,0 +1,31 @@
+.TH "server_accept_connection" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_accept_connection \- server_accept_connection 
+Acepta las conexiones recibidas en el socket\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_server\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_accept_connection(int socket_desc)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Acepta las conexiones recibidas mediante el descriptor \fBsocket_desc\fP recibido como parámetro de la función\&. Inicia un bucle que realiza un \fBaccept()\fP a los clientes recibidos mediante el descriptor del socket\&. Esta función genera un identificador único para los clientes (un descriptor del socket)\&. En caso encontrar un error, finaliza la ejecución del servidor\&. 
+.PP
+Tras recibir al cliente y asignarle un descriptor, genera una tarea (task) para dicho cliente utilizando la librería generada para tal efecto (ThreadPool)\&. Esta tarea se añade a un hilo de ejecución exclusivo para el cliente\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

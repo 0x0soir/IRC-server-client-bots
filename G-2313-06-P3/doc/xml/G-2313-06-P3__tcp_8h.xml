@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="G-2313-06-P3__tcp_8h" kind="file" language="C++">
+    <compoundname>G-2313-06-P3_tcp.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">netdb.h</includes>
+    <includedby refid="G-2313-06-P3__ssl_8h" local="yes">includes/G-2313-06-P3_ssl.h</includedby>
+    <incdepgraph>
+      <node id="87">
+        <label>includes/G-2313-06-P3_tcp.h</label>
+        <link refid="G-2313-06-P3_tcp.h"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="90" relation="include">
+        </childnode>
+        <childnode refid="91" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>netdb.h</label>
+      </node>
+      <node id="89">
+        <label>sys/types.h</label>
+      </node>
+      <node id="90">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="88">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="92">
+        <label>includes/G-2313-06-P3_tcp.h</label>
+        <link refid="G-2313-06-P3_tcp.h"/>
+        <childnode refid="93" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>includes/G-2313-06-P3_ssl.h</label>
+        <link refid="G-2313-06-P3__ssl_8h"/>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>src/G-2313-06-P3_client_echo.c</label>
+        <link refid="G-2313-06-P3__client__echo_8c"/>
+      </node>
+      <node id="95">
+        <label>src/G-2313-06-P3_server_echo.c</label>
+        <link refid="G-2313-06-P3__server__echo_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8h_1a25c77773298f02f1e8135829713d7f3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_new_socket</definition>
+        <argsstring>()</argsstring>
+        <name>tcp_new_socket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_tcp.h" line="9" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8h_1a383b8c763aedca0e2ed838e32073fde6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_bind</definition>
+        <argsstring>(int desc, int puerto)</argsstring>
+        <name>tcp_bind</name>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>puerto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_tcp.h" line="10" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8h_1a9c9d03de1e87014ced69f8d36bb37f86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_new_listen</definition>
+        <argsstring>(int desc, int tam)</argsstring>
+        <name>tcp_new_listen</name>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tam</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_tcp.h" line="11" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8h_1a4e5ce422aa030ac8b3998e858b79cae2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_connect</definition>
+        <argsstring>(char *server, int port)</argsstring>
+        <name>tcp_connect</name>
+        <param>
+          <type>char *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_tcp.h" line="12" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8h_1a14d727cfbcd2ce3c5f4fae5a470a84da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_listen</definition>
+        <argsstring>(int port, int max_conn)</argsstring>
+        <name>tcp_listen</name>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_conn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_tcp.h" line="13" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8h_1a6bae59be22b410f157347083f2e43987" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_new_accept</definition>
+        <argsstring>(int desc, struct sockaddr_in ip4addr)</argsstring>
+        <name>tcp_new_accept</name>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in</type>
+          <declname>ip4addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_tcp.h" line="14" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8h_1a3e15d12d1405c959da073cabab3a8520" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_new_open_connection</definition>
+        <argsstring>(int desc, struct sockaddr res)</argsstring>
+        <name>tcp_new_open_connection</name>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>struct sockaddr</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_tcp.h" line="15" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8h_1a1e2b75e457a02f23d433a6821f6902b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_send</definition>
+        <argsstring>(int fd, char *msg)</argsstring>
+        <name>tcp_send</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_tcp.h" line="16" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8h_1af3354e60e1181adcd72f9f242063fafe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_receive</definition>
+        <argsstring>(int fd, char *msg, int len)</argsstring>
+        <name>tcp_receive</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_tcp.h" line="17" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8h_1a2d1f9e76e5da3a7c1e172d1294a33611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_disconnect</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>tcp_disconnect</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_tcp.h" line="18" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netdb.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_TCP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_TCP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8h_1a25c77773298f02f1e8135829713d7f3a" kindref="member">tcp_new_socket</ref>();</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8h_1a383b8c763aedca0e2ed838e32073fde6" kindref="member">tcp_bind</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>puerto);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8h_1a9c9d03de1e87014ced69f8d36bb37f86" kindref="member">tcp_new_listen</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tam);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8h_1a4e5ce422aa030ac8b3998e858b79cae2" kindref="member">tcp_connect</ref><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*server,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8h_1a14d727cfbcd2ce3c5f4fae5a470a84da" kindref="member">tcp_listen</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_conn);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8h_1a6bae59be22b410f157347083f2e43987" kindref="member">tcp_new_accept</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>ip4addr);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8h_1a3e15d12d1405c959da073cabab3a8520" kindref="member">tcp_new_open_connection</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>res);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8h_1a1e2b75e457a02f23d433a6821f6902b7" kindref="member">tcp_send</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*msg);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8h_1af3354e60e1181adcd72f9f242063fafe" kindref="member">tcp_receive</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*msg,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8h_1a2d1f9e76e5da3a7c1e172d1294a33611" kindref="member">tcp_disconnect</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="includes/G-2313-06-P3_tcp.h"/>
+  </compounddef>
+</doxygen>

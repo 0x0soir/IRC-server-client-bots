@@ -1,0 +1,234 @@
+.TH "includes/G-2313-06-P1_thread_pool.h" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2313-06-P1_thread_pool.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <syslog\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include 'G\-2313\-06\-P1_list\&.h'\fP
+.br
+
+.SS "Clases"
+
+.in +1c
+.ti -1c
+.RI "struct \fBtask_t\fP"
+.br
+.ti -1c
+.RI "struct \fBthread_t\fP"
+.br
+.ti -1c
+.RI "struct \fBthread_pool_t\fP"
+.br
+.ti -1c
+.RI "struct \fBthread_args\fP"
+.br
+.in -1c
+.SS "'defines'"
+
+.in +1c
+.ti -1c
+.RI "#define \fBTHREAD_POOL_MAX_THREADS\fP   100"
+.br
+.ti -1c
+.RI "#define \fBTHREAD_POOL_MIN_THREADS\fP   10"
+.br
+.ti -1c
+.RI "#define \fBTHREAD_STATE_BUSY\fP   0X1"
+.br
+.ti -1c
+.RI "#define \fBTHREAD_STATE_IDLE\fP   0x2"
+.br
+.ti -1c
+.RI "#define \fBTHREAD_STOPPING\fP   0x1"
+.br
+.ti -1c
+.RI "#define \fBTHREAD_RUNNING\fP   0x2"
+.br
+.ti -1c
+.RI "#define \fBTHREAD_IDLE_LEVEL\fP   0\&.2"
+.br
+.ti -1c
+.RI "#define \fBTHREAD_BUSY_LEVEL\fP   0\&.8"
+.br
+.ti -1c
+.RI "#define \fBMASTER_INTERVAL\fP   10"
+.br
+.in -1c
+.SS "'typedefs'"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBtask_t\fP \fBtask_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBthread_t\fP \fBthread_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBthread_pool_t\fP \fBthread_pool_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBthread_args\fP \fBthread_args\fP"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "\fBthread_pool_t\fP * \fBthread_pool_create\fP (int size)"
+.br
+.ti -1c
+.RI "void \fBthread_pool_delete\fP (\fBthread_pool_t\fP *p)"
+.br
+.ti -1c
+.RI "int \fBthread_pool_init\fP (\fBthread_pool_t\fP *)"
+.br
+.ti -1c
+.RI "int \fBthread_pool_init_internal\fP (\fBthread_pool_t\fP *, double low_level, double high_level, int master_interval)"
+.br
+.ti -1c
+.RI "void * \fBmaster_callback\fP (void *arg)"
+.br
+.ti -1c
+.RI "void * \fBworker_callback\fP (void *arg)"
+.br
+.ti -1c
+.RI "\fBthread_t\fP * \fBthread_create\fP (void)"
+.br
+.ti -1c
+.RI "int \fBthread_add\fP (\fBthread_pool_t\fP *, \fBthread_t\fP *)"
+.br
+.ti -1c
+.RI "void \fBthread_del_internal\fP (\fBthread_pool_t\fP *, \fBthread_t\fP *, int)"
+.br
+.ti -1c
+.RI "void \fBthread_del\fP (\fBthread_t\fP *t)"
+.br
+.ti -1c
+.RI "\fBtask_t\fP * \fBtask_create\fP (void)"
+.br
+.ti -1c
+.RI "void \fBtask_init\fP (\fBtask_t\fP *, void *(*)(int), int arg)"
+.br
+.ti -1c
+.RI "void \fBtask_add\fP (\fBthread_pool_t\fP *, \fBtask_t\fP *)"
+.br
+.in -1c
+.SH "Documentación de los 'defines'"
+.PP 
+.SS "#define MASTER_INTERVAL   10"
+
+.PP
+Definición en la línea 25 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "#define THREAD_BUSY_LEVEL   0\&.8"
+
+.PP
+Definición en la línea 23 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "#define THREAD_IDLE_LEVEL   0\&.2"
+
+.PP
+Definición en la línea 22 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "#define THREAD_POOL_MAX_THREADS   100"
+
+.PP
+Definición en la línea 13 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "#define THREAD_POOL_MIN_THREADS   10"
+
+.PP
+Definición en la línea 14 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "#define THREAD_RUNNING   0x2"
+
+.PP
+Definición en la línea 20 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "#define THREAD_STATE_BUSY   0X1"
+
+.PP
+Definición en la línea 16 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "#define THREAD_STATE_IDLE   0x2"
+
+.PP
+Definición en la línea 17 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "#define THREAD_STOPPING   0x1"
+
+.PP
+Definición en la línea 19 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SH "Documentación de los 'typedefs'"
+.PP 
+.SS "typedef struct \fBtask_t\fP \fBtask_t\fP"
+
+.SS "typedef struct \fBthread_args\fP \fBthread_args\fP"
+
+.SS "typedef struct \fBthread_pool_t\fP \fBthread_pool_t\fP"
+
+.SS "typedef struct \fBthread_t\fP \fBthread_t\fP"
+
+.SH "Documentación de las funciones"
+.PP 
+.SS "void* master_callback (void * arg)"
+
+.PP
+Definición en la línea 222 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SS "void task_add (\fBthread_pool_t\fP *, \fBtask_t\fP *)"
+
+.PP
+Definición en la línea 277 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SS "\fBtask_t\fP* task_create (void)"
+
+.PP
+Definición en la línea 259 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SS "void task_init (\fBtask_t\fP *, void **)(int, int arg)"
+
+.SS "int thread_add (\fBthread_pool_t\fP *, \fBthread_t\fP *)"
+
+.PP
+Definición en la línea 121 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SS "\fBthread_t\fP* thread_create (void)"
+
+.PP
+Definición en la línea 109 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SS "void thread_del (\fBthread_t\fP * t)"
+
+.PP
+Definición en la línea 152 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SS "void thread_del_internal (\fBthread_pool_t\fP *, \fBthread_t\fP *, int)"
+
+.PP
+Definición en la línea 159 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SS "\fBthread_pool_t\fP* thread_pool_create (int size)"
+
+.PP
+Definición en la línea 3 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SS "void thread_pool_delete (\fBthread_pool_t\fP * p)"
+
+.PP
+Definición en la línea 27 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SS "int thread_pool_init (\fBthread_pool_t\fP *)"
+
+.PP
+Definición en la línea 58 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SS "int thread_pool_init_internal (\fBthread_pool_t\fP *, double low_level, double high_level, int master_interval)"
+
+.PP
+Definición en la línea 64 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SS "void* worker_callback (void * arg)"
+
+.PP
+Definición en la línea 171 del archivo G\-2313\-06\-P1_thread_pool\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

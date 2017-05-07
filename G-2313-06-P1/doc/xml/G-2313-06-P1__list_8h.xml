@@ -1,0 +1,616 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="G-2313-06-P1__list_8h" kind="file" language="C++">
+    <compoundname>G-2313-06-P1_list.h</compoundname>
+    <includedby refid="G-2313-06-P1__server_8h" local="yes">includes/G-2313-06-P1_server.h</includedby>
+    <includedby refid="G-2313-06-P1__thread__pool_8h" local="yes">includes/G-2313-06-P1_thread_pool.h</includedby>
+    <invincdepgraph>
+      <node id="212">
+        <label>src/G-2313-06-P1_server.c</label>
+        <link refid="G-2313-06-P1__server_8c"/>
+      </node>
+      <node id="211">
+        <label>includes/G-2313-06-P1_server.h</label>
+        <link refid="G-2313-06-P1__server_8h"/>
+        <childnode refid="212" relation="include">
+        </childnode>
+      </node>
+      <node id="213">
+        <label>includes/G-2313-06-P1_thread_pool.h</label>
+        <link refid="G-2313-06-P1__thread__pool_8h"/>
+        <childnode refid="211" relation="include">
+        </childnode>
+        <childnode refid="214" relation="include">
+        </childnode>
+      </node>
+      <node id="210">
+        <label>includes/G-2313-06-P1_list.h</label>
+        <link refid="G-2313-06-P1_list.h"/>
+        <childnode refid="211" relation="include">
+        </childnode>
+        <childnode refid="213" relation="include">
+        </childnode>
+      </node>
+      <node id="214">
+        <label>src/G-2313-06-P1_thread_pool.c</label>
+        <link refid="G-2313-06-P1__thread__pool_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structlist__head" prot="public">list_head</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="G-2313-06-P1__list_8h_1a4642d4b7df28478bb762fe43c85b5c63" prot="public" static="no">
+        <name>LIST_HEAD_INIT</name>
+        <param><defname>name</defname></param>
+        <initializer>{ &amp;(name), &amp;(name) }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="24" column="9" bodyfile="includes/G-2313-06-P1_list.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="G-2313-06-P1__list_8h_1a42f0e72af970a790b60a740af8c9ecd0" prot="public" static="no">
+        <name>LIST_HEAD</name>
+        <param><defname>name</defname></param>
+        <initializer>struct <ref refid="structlist__head" kindref="compound">list_head</ref> name = <ref refid="G-2313-06-P1__list_8h_1a4642d4b7df28478bb762fe43c85b5c63" kindref="member">LIST_HEAD_INIT</ref>(name)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="26" column="9" bodyfile="includes/G-2313-06-P1_list.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="G-2313-06-P1__list_8h_1a0ffe9d28c36d7b018a9cfae33bae45c0" prot="public" static="no">
+        <name>INIT_LIST_HEAD</name>
+        <param><defname>ptr</defname></param>
+        <initializer>do { \
+	(ptr)-&gt;next = (ptr); (ptr)-&gt;prev = (ptr); \
+} while (0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="29" column="9" bodyfile="includes/G-2313-06-P1_list.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="G-2313-06-P1__list_8h_1a26c976b7f654e70df318c1843e5094de" prot="public" static="no">
+        <name>list_entry</name>
+        <param><defname>ptr</defname></param>
+        <param><defname>type</defname></param>
+        <param><defname>member</defname></param>
+        <initializer>((type *)((char *)(ptr)-(unsigned long)(&amp;((type *)0)-&gt;member)))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_entry - get the struct for this entry : the &amp;struct <ref refid="structlist__head" kindref="compound">list_head</ref> pointer. : the type of the struct this is embedded in. : the name of the list_struct within the struct. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="187" column="9" bodyfile="includes/G-2313-06-P1_list.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="G-2313-06-P1__list_8h_1ab8b24e6660ab3760c923e4b4db3fa502" prot="public" static="no">
+        <name>list_for_each</name>
+        <param><defname>pos</defname></param>
+        <param><defname>head</defname></param>
+        <initializer>for (pos = (head)-&gt;next; pos != (head); \
+        	pos = pos-&gt;next)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_for_each - iterate over a list : the &amp;struct <ref refid="structlist__head" kindref="compound">list_head</ref> to use as a loop counter. : the head for your list. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="195" column="9" bodyfile="includes/G-2313-06-P1_list.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="G-2313-06-P1__list_8h_1a19fc06b83f3502a83ce566b8887e6aec" prot="public" static="no">
+        <name>list_for_each_prev</name>
+        <param><defname>pos</defname></param>
+        <param><defname>head</defname></param>
+        <initializer>for (pos = (head)-&gt;prev; pos != (head); \
+        	pos = pos-&gt;prev)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_for_each_prev - iterate over a list backwards : the &amp;struct <ref refid="structlist__head" kindref="compound">list_head</ref> to use as a loop counter. : the head for your list. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="203" column="9" bodyfile="includes/G-2313-06-P1_list.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="G-2313-06-P1__list_8h_1a9e4b9328744994b9d3878f5dad75c09f" prot="public" static="no">
+        <name>list_for_each_safe</name>
+        <param><defname>pos</defname></param>
+        <param><defname>n</defname></param>
+        <param><defname>head</defname></param>
+        <initializer>for (pos = (head)-&gt;next, n = pos-&gt;next; pos != (head); \
+		pos = n, n = pos-&gt;next)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_for_each_safe - iterate over a list safe against removal of list entry : the &amp;struct <ref refid="structlist__head" kindref="compound">list_head</ref> to use as a loop counter. <linebreak/>
+: another &amp;struct <ref refid="structlist__head" kindref="compound">list_head</ref> to use as temporary storage : the head for your list. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="213" column="9" bodyfile="includes/G-2313-06-P1_list.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="G-2313-06-P1__list_8h_1aa728613529c4fc5383f80b3d733b4153" prot="public" static="no">
+        <name>list_for_each_entry</name>
+        <param><defname>elem_ptr</defname></param>
+        <param><defname>head</defname></param>
+        <param><defname>member</defname></param>
+        <initializer>for(elem_ptr = <ref refid="G-2313-06-P1__list_8h_1a894172f609f0f81a2d6ffdcd7ac1954f" kindref="member">list_first_entry</ref>(head, typeof(*elem_ptr), member); \
+       &amp;(elem_ptr-&gt;member) != (head); \
+       elem_ptr = <ref refid="G-2313-06-P1__list_8h_1a853740b546497b17a28faf076cf3f6a0" kindref="member">list_next_entry</ref>(elem_ptr, member))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_for_each_entry - iterate over list of given type : the type * to use as a loop counter. : the head for your list. : the name of the list_struct within the struct. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="223" column="9" bodyfile="includes/G-2313-06-P1_list.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="G-2313-06-P1__list_8h_1ac3f72d6bd5144c7970824813810d2da1" prot="public" static="no">
+        <name>list_for_each_entry_safe</name>
+        <param><defname>pos</defname></param>
+        <param><defname>n</defname></param>
+        <param><defname>head</defname></param>
+        <param><defname>member</defname></param>
+        <initializer>for (pos = <ref refid="G-2313-06-P1__list_8h_1a26c976b7f654e70df318c1843e5094de" kindref="member">list_entry</ref>((head)-&gt;next, typeof(*pos), member),	\
+		n = <ref refid="G-2313-06-P1__list_8h_1a26c976b7f654e70df318c1843e5094de" kindref="member">list_entry</ref>(pos-&gt;member.next, typeof(*pos), member);	\
+	     &amp;pos-&gt;member != (head); 					\
+	     pos = n, n = <ref refid="G-2313-06-P1__list_8h_1a26c976b7f654e70df318c1843e5094de" kindref="member">list_entry</ref>(n-&gt;member.next, typeof(*n), member))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_for_each_entry_safe - iterate over list of given type safe against removal of list entry : the type * to use as a loop counter. <linebreak/>
+: another type * to use as temporary storage : the head for your list. : the name of the list_struct within the struct. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="235" column="9" bodyfile="includes/G-2313-06-P1_list.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="G-2313-06-P1__list_8h_1a853740b546497b17a28faf076cf3f6a0" prot="public" static="no">
+        <name>list_next_entry</name>
+        <param><defname>elem_ptr</defname></param>
+        <param><defname>member</defname></param>
+        <initializer><ref refid="G-2313-06-P1__list_8h_1a26c976b7f654e70df318c1843e5094de" kindref="member">list_entry</ref>((elem_ptr)-&gt;member.next, typeof(*(elem_ptr)), member)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="241" column="9" bodyfile="includes/G-2313-06-P1_list.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="G-2313-06-P1__list_8h_1a894172f609f0f81a2d6ffdcd7ac1954f" prot="public" static="no">
+        <name>list_first_entry</name>
+        <param><defname>list_ptr</defname></param>
+        <param><defname>type</defname></param>
+        <param><defname>member</defname></param>
+        <initializer><ref refid="G-2313-06-P1__list_8h_1a26c976b7f654e70df318c1843e5094de" kindref="member">list_entry</ref>(list_ptr-&gt;next, type, member)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="244" column="9" bodyfile="includes/G-2313-06-P1_list.h" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1a8a28f150a191624bf6923a48cdace7e3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void __list_add</definition>
+        <argsstring>(struct list_head *new, struct list_head *prev, struct list_head *next)</argsstring>
+        <name>__list_add</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>new</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>prev</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>next</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="39" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="39" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1a0373c4b3c8ce51a451a569ad978b32e1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void list_add</definition>
+        <argsstring>(struct list_head *new, struct list_head *head)</argsstring>
+        <name>list_add</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>new</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>head</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_add - add a new entry : new entry to be added : list head to add it after</para><para>Insert a new entry after the specified head. This is good for implementing stacks. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="57" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1a588bec046f1e9797b33a5c5ab250f447" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void list_add_tail</definition>
+        <argsstring>(struct list_head *new, struct list_head *head)</argsstring>
+        <name>list_add_tail</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>new</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>head</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_add_tail - add a new entry : new entry to be added : list head to add it before</para><para>Insert a new entry before the specified head. This is useful for implementing queues. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="70" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1a24b474717d65a296695e8b79b4adefda" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void __list_del</definition>
+        <argsstring>(struct list_head *prev, struct list_head *next)</argsstring>
+        <name>__list_del</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>prev</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>next</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="82" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="82" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1ab1708206f0f7e0a56550b35372203ba5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void list_del</definition>
+        <argsstring>(struct list_head *entry)</argsstring>
+        <name>list_del</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_del - deletes entry from list. : the element to delete from the list. Note: list_empty on entry does not return true after this, the entry is in an undefined state. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="93" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="93" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1ae1cde0f50b85945cfff23be4fc1586f4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void list_del_init</definition>
+        <argsstring>(struct list_head *entry)</argsstring>
+        <name>list_del_init</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_del_init - deletes entry from list and reinitialize it. : the element to delete from the list. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="102" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="102" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1aee8df43e41969c2272acfd6ed6e75d4c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void list_move</definition>
+        <argsstring>(struct list_head *list, struct list_head *head)</argsstring>
+        <name>list_move</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>head</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_move - delete from one list and add as another&apos;s head : the entry to move : the head that will precede our entry </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="113" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="113" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1a1c5ac6a6b04a03f5782e818daacf96e9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void list_move_tail</definition>
+        <argsstring>(struct list_head *list, struct list_head *head)</argsstring>
+        <name>list_move_tail</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>head</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_move_tail - delete from one list and add as another&apos;s tail : the entry to move : the head that will follow our entry </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="124" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="124" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1a0fce12be81e8f2677b3a272fee1652ac" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int list_empty</definition>
+        <argsstring>(struct list_head *head)</argsstring>
+        <name>list_empty</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>head</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_empty - tests whether a list is empty : the list to test. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="135" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1a25979c80a2d71dd02ada121a46c71a59" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void __list_splice</definition>
+        <argsstring>(struct list_head *list, struct list_head *head)</argsstring>
+        <name>__list_splice</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>head</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="140" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="140" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1a2c4399cfbde5e5d5eddf2e13c97bd5d5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void list_splice</definition>
+        <argsstring>(struct list_head *list, struct list_head *head)</argsstring>
+        <name>list_splice</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>head</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_splice - join two lists : the new list to add. : the place to add it in the first list. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="159" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="159" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__list_8h_1a948b15519bb72e3d42f3e56975580d30" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void list_splice_init</definition>
+        <argsstring>(struct list_head *list, struct list_head *head)</argsstring>
+        <name>list_splice_init</name>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+          <declname>head</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>list_splice_init - join two lists and reinitialise the emptied list. : the new list to add. : the place to add it in the first list.</para><para>The list at  is reinitialised </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="172" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="172" bodyend="179"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__LIST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__LIST_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>file<sp/>is<sp/>from<sp/>Linux<sp/>Kernel<sp/>(include/linux/list.h)</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>and<sp/>modified<sp/>by<sp/>simply<sp/>removing<sp/>hardware<sp/>prefetching<sp/>of<sp/>list<sp/>items.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Here<sp/>by<sp/>copyright,<sp/>credits<sp/>attributed<sp/>to<sp/>wherever<sp/>they<sp/>belong.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Kulesh<sp/>Shanmugasundaram<sp/>(kulesh<sp/>[squiggly]<sp/>isis.poly.edu)</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Simple<sp/>doubly<sp/>linked<sp/>list<sp/>implementation.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Some<sp/>of<sp/>the<sp/>internal<sp/>functions<sp/>(&quot;__xxx&quot;)<sp/>are<sp/>useful<sp/>when</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>manipulating<sp/>whole<sp/>lists<sp/>rather<sp/>than<sp/>single<sp/>entries,<sp/>as</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>sometimes<sp/>we<sp/>already<sp/>know<sp/>the<sp/>next/prev<sp/>entries<sp/>and<sp/>we<sp/>can</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>generate<sp/>better<sp/>code<sp/>by<sp/>using<sp/>them<sp/>directly<sp/>rather<sp/>than</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>using<sp/>the<sp/>generic<sp/>single-entry<sp/>routines.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="structlist__head" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>{</highlight></codeline>
+<codeline lineno="21" refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>,<sp/>*<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="G-2313-06-P1__list_8h_1a4642d4b7df28478bb762fe43c85b5c63" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIST_HEAD_INIT(name)<sp/>{<sp/>&amp;(name),<sp/>&amp;(name)<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="G-2313-06-P1__list_8h_1a42f0e72af970a790b60a740af8c9ecd0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIST_HEAD(name)<sp/>\</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>struct<sp/>list_head<sp/>name<sp/>=<sp/>LIST_HEAD_INIT(name)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="G-2313-06-P1__list_8h_1a0ffe9d28c36d7b018a9cfae33bae45c0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INIT_LIST_HEAD(ptr)<sp/>do<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>(ptr)-&gt;next<sp/>=<sp/>(ptr);<sp/>(ptr)-&gt;prev<sp/>=<sp/>(ptr);<sp/>\</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor">}<sp/>while<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>Insert<sp/>a<sp/>new<sp/>entry<sp/>between<sp/>two<sp/>known<sp/>consecutive<sp/>entries.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>This<sp/>is<sp/>only<sp/>for<sp/>internal<sp/>list<sp/>manipulation<sp/>where<sp/>we<sp/>know</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>the<sp/>prev/next<sp/>entries<sp/>already!</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>__list_add(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*</highlight><highlight class="keyword">new</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>next-&gt;<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref><sp/>=<sp/><ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">-&gt;<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref><sp/>=<sp/><ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>prev-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>list_add(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*</highlight><highlight class="keyword">new</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*head)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>__list_add(</highlight><highlight class="keyword">new</highlight><highlight class="normal">,<sp/>head,<sp/>head-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>list_add_tail(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*</highlight><highlight class="keyword">new</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*head)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>__list_add(</highlight><highlight class="keyword">new</highlight><highlight class="normal">,<sp/>head-&gt;<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>,<sp/>head);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>Delete<sp/>a<sp/>list<sp/>entry<sp/>by<sp/>making<sp/>the<sp/>prev/next<sp/>entries</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>point<sp/>to<sp/>each<sp/>other.</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>This<sp/>is<sp/>only<sp/>for<sp/>internal<sp/>list<sp/>manipulation<sp/>where<sp/>we<sp/>know</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>the<sp/>prev/next<sp/>entries<sp/>already!</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>__list_del(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>next-&gt;<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref><sp/>=<sp/><ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>prev-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref><sp/>=<sp/><ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>list_del(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*entry)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>__list_del(entry-&gt;<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>,<sp/>entry-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>list_del_init(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*entry)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>__list_del(entry-&gt;<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>,<sp/>entry-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__list_8h_1a0ffe9d28c36d7b018a9cfae33bae45c0" kindref="member">INIT_LIST_HEAD</ref>(entry);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>list_move(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*list,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*head)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__list_del(list-&gt;<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>,<sp/>list-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_add(list,<sp/>head);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>list_move_tail(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*list,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*head)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__list_del(list-&gt;<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>,<sp/>list-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_add_tail(list,<sp/>head);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>list_empty(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*head)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>head-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref><sp/>==<sp/>head;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>__list_splice(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*list,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*head)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*first<sp/>=<sp/>list-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*last<sp/>=<sp/>list-&gt;<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*at<sp/>=<sp/>head-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>first-&gt;<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref><sp/>=<sp/>head;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>head-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref><sp/>=<sp/>first;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>last-&gt;<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref><sp/>=<sp/>at;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>at-&gt;<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref><sp/>=<sp/>last;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>list_splice(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*list,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*head)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!list_empty(list))</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__list_splice(list,<sp/>head);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>list_splice_init(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*list,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="structlist__head" kindref="compound">list_head</ref><sp/>*head)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!list_empty(list))<sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__list_splice(list,<sp/>head);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__list_8h_1a0ffe9d28c36d7b018a9cfae33bae45c0" kindref="member">INIT_LIST_HEAD</ref>(list);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187" refid="G-2313-06-P1__list_8h_1a26c976b7f654e70df318c1843e5094de" refkind="member"><highlight class="preprocessor">#define<sp/>list_entry(ptr,<sp/>type,<sp/>member)<sp/>\</highlight></codeline>
+<codeline lineno="188"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>((type<sp/>*)((char<sp/>*)(ptr)-(unsigned<sp/>long)(&amp;((type<sp/>*)0)-&gt;member)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="G-2313-06-P1__list_8h_1ab8b24e6660ab3760c923e4b4db3fa502" refkind="member"><highlight class="preprocessor">#define<sp/>list_for_each(pos,<sp/>head)<sp/>\</highlight></codeline>
+<codeline lineno="196"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(pos<sp/>=<sp/>(head)-&gt;next;<sp/>pos<sp/>!=<sp/>(head);<sp/>\</highlight></codeline>
+<codeline lineno="197"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos<sp/>=<sp/>pos-&gt;next)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203" refid="G-2313-06-P1__list_8h_1a19fc06b83f3502a83ce566b8887e6aec" refkind="member"><highlight class="preprocessor">#define<sp/>list_for_each_prev(pos,<sp/>head)<sp/>\</highlight></codeline>
+<codeline lineno="204"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(pos<sp/>=<sp/>(head)-&gt;prev;<sp/>pos<sp/>!=<sp/>(head);<sp/>\</highlight></codeline>
+<codeline lineno="205"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos<sp/>=<sp/>pos-&gt;prev)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="G-2313-06-P1__list_8h_1a9e4b9328744994b9d3878f5dad75c09f" refkind="member"><highlight class="preprocessor">#define<sp/>list_for_each_safe(pos,<sp/>n,<sp/>head)<sp/>\</highlight></codeline>
+<codeline lineno="214"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(pos<sp/>=<sp/>(head)-&gt;next,<sp/>n<sp/>=<sp/>pos-&gt;next;<sp/>pos<sp/>!=<sp/>(head);<sp/>\</highlight></codeline>
+<codeline lineno="215"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos<sp/>=<sp/>n,<sp/>n<sp/>=<sp/>pos-&gt;next)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223" refid="G-2313-06-P1__list_8h_1aa728613529c4fc5383f80b3d733b4153" refkind="member"><highlight class="preprocessor">#define<sp/>list_for_each_entry(elem_ptr,<sp/>head,<sp/>member)<sp/>\</highlight></codeline>
+<codeline lineno="224"><highlight class="preprocessor"><sp/><sp/><sp/>for(elem_ptr<sp/>=<sp/>list_first_entry(head,<sp/>typeof(*elem_ptr),<sp/>member);<sp/>\</highlight></codeline>
+<codeline lineno="225"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;(elem_ptr-&gt;member)<sp/>!=<sp/>(head);<sp/>\</highlight></codeline>
+<codeline lineno="226"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>elem_ptr<sp/>=<sp/>list_next_entry(elem_ptr,<sp/>member))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235" refid="G-2313-06-P1__list_8h_1ac3f72d6bd5144c7970824813810d2da1" refkind="member"><highlight class="preprocessor">#define<sp/>list_for_each_entry_safe(pos,<sp/>n,<sp/>head,<sp/>member)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="236"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(pos<sp/>=<sp/>list_entry((head)-&gt;next,<sp/>typeof(*pos),<sp/>member),<sp/><sp/>\</highlight></codeline>
+<codeline lineno="237"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n<sp/>=<sp/>list_entry(pos-&gt;member.next,<sp/>typeof(*pos),<sp/>member);<sp/>\</highlight></codeline>
+<codeline lineno="238"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;pos-&gt;member<sp/>!=<sp/>(head);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="239"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos<sp/>=<sp/>n,<sp/>n<sp/>=<sp/>list_entry(n-&gt;member.next,<sp/>typeof(*n),<sp/>member))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241" refid="G-2313-06-P1__list_8h_1a853740b546497b17a28faf076cf3f6a0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>list_next_entry(elem_ptr,<sp/>member)<sp/>\</highlight></codeline>
+<codeline lineno="242"><highlight class="preprocessor"><sp/><sp/><sp/>list_entry((elem_ptr)-&gt;member.next,<sp/>typeof(*(elem_ptr)),<sp/>member)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="G-2313-06-P1__list_8h_1a894172f609f0f81a2d6ffdcd7ac1954f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>list_first_entry(list_ptr,<sp/>type,<sp/>member)<sp/>\</highlight></codeline>
+<codeline lineno="245"><highlight class="preprocessor"><sp/><sp/><sp/>list_entry(list_ptr-&gt;next,<sp/>type,<sp/>member)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="includes/G-2313-06-P1_list.h"/>
+  </compounddef>
+</doxygen>

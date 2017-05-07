@@ -1,0 +1,91 @@
+\hypertarget{G-2313-06-P1__common__functions_8c}{}\section{Referencia del Archivo src/\+G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.c}
+\label{G-2313-06-P1__common__functions_8c}\index{src/\+G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{src/\+G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}}
+{\ttfamily \#include \char`\"{}../includes/\+G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+h\char`\"{}}\\*
+Dependencia gráfica adjunta para G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.c\+:
+% FIG 0
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{G-2313-06-P1__common__functions_8c_a61cca6f1a1adeb81f722ecc2ff35aab5}{server\+\_\+users\+\_\+find\+\_\+by\+\_\+nick} (char $\ast$data)
+\item 
+int \hyperlink{G-2313-06-P1__common__functions_8c_a485e68f66db6ae4b7297d99c32afe30a}{server\+\_\+users\+\_\+find\+\_\+by\+\_\+socket} (int sockdesc)
+\item 
+int \hyperlink{G-2313-06-P1__common__functions_8c_a875ae5278d95716b494b26f96cf4ae6e}{server\+\_\+channels\+\_\+find\+\_\+by\+\_\+name} (char $\ast$channel)
+\item 
+int \hyperlink{G-2313-06-P1__common__functions_8c_ae8a282d9cdfc8187b8e74e368bc56d92}{server\+\_\+channels\+\_\+update\+\_\+nick} (char $\ast$nick\+\_\+old, char $\ast$nick\+\_\+new)
+\item 
+int \hyperlink{G-2313-06-P1__common__functions_8c_af9aeb632d55a4cbbe842ab97001b5128}{server\+\_\+channels\+\_\+update\+\_\+away} (char $\ast$nick, char $\ast$away)
+\item 
+char $\ast$ \hyperlink{G-2313-06-P1__common__functions_8c_a230bf24ab7ae18d2e81ebc1d3575a6ad}{server\+\_\+return\+\_\+user} (char $\ast$nick)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación de las funciones}
+\index{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}!server\+\_\+channels\+\_\+find\+\_\+by\+\_\+name@{server\+\_\+channels\+\_\+find\+\_\+by\+\_\+name}}
+\index{server\+\_\+channels\+\_\+find\+\_\+by\+\_\+name@{server\+\_\+channels\+\_\+find\+\_\+by\+\_\+name}!G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}}
+\subsubsection[{\texorpdfstring{server\+\_\+channels\+\_\+find\+\_\+by\+\_\+name(char $\ast$channel)}{server_channels_find_by_name(char *channel)}}]{\setlength{\rightskip}{0pt plus 5cm}int server\+\_\+channels\+\_\+find\+\_\+by\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__common__functions_8c_a875ae5278d95716b494b26f96cf4ae6e}{}\label{G-2313-06-P1__common__functions_8c_a875ae5278d95716b494b26f96cf4ae6e}
+
+
+Definición en la línea 178 del archivo G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}!server\+\_\+channels\+\_\+update\+\_\+away@{server\+\_\+channels\+\_\+update\+\_\+away}}
+\index{server\+\_\+channels\+\_\+update\+\_\+away@{server\+\_\+channels\+\_\+update\+\_\+away}!G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}}
+\subsubsection[{\texorpdfstring{server\+\_\+channels\+\_\+update\+\_\+away(char $\ast$nick, char $\ast$away)}{server_channels_update_away(char *nick, char *away)}}]{\setlength{\rightskip}{0pt plus 5cm}int server\+\_\+channels\+\_\+update\+\_\+away (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{nick, }
+\item[{char $\ast$}]{away}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__common__functions_8c_af9aeb632d55a4cbbe842ab97001b5128}{}\label{G-2313-06-P1__common__functions_8c_af9aeb632d55a4cbbe842ab97001b5128}
+
+
+Definición en la línea 275 del archivo G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}!server\+\_\+channels\+\_\+update\+\_\+nick@{server\+\_\+channels\+\_\+update\+\_\+nick}}
+\index{server\+\_\+channels\+\_\+update\+\_\+nick@{server\+\_\+channels\+\_\+update\+\_\+nick}!G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}}
+\subsubsection[{\texorpdfstring{server\+\_\+channels\+\_\+update\+\_\+nick(char $\ast$nick\+\_\+old, char $\ast$nick\+\_\+new)}{server_channels_update_nick(char *nick_old, char *nick_new)}}]{\setlength{\rightskip}{0pt plus 5cm}int server\+\_\+channels\+\_\+update\+\_\+nick (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{nick\+\_\+old, }
+\item[{char $\ast$}]{nick\+\_\+new}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__common__functions_8c_ae8a282d9cdfc8187b8e74e368bc56d92}{}\label{G-2313-06-P1__common__functions_8c_ae8a282d9cdfc8187b8e74e368bc56d92}
+
+
+Definición en la línea 221 del archivo G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}!server\+\_\+return\+\_\+user@{server\+\_\+return\+\_\+user}}
+\index{server\+\_\+return\+\_\+user@{server\+\_\+return\+\_\+user}!G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}}
+\subsubsection[{\texorpdfstring{server\+\_\+return\+\_\+user(char $\ast$nick)}{server_return_user(char *nick)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ server\+\_\+return\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{nick}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__common__functions_8c_a230bf24ab7ae18d2e81ebc1d3575a6ad}{}\label{G-2313-06-P1__common__functions_8c_a230bf24ab7ae18d2e81ebc1d3575a6ad}
+
+
+Definición en la línea 327 del archivo G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}!server\+\_\+users\+\_\+find\+\_\+by\+\_\+nick@{server\+\_\+users\+\_\+find\+\_\+by\+\_\+nick}}
+\index{server\+\_\+users\+\_\+find\+\_\+by\+\_\+nick@{server\+\_\+users\+\_\+find\+\_\+by\+\_\+nick}!G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}}
+\subsubsection[{\texorpdfstring{server\+\_\+users\+\_\+find\+\_\+by\+\_\+nick(char $\ast$data)}{server_users_find_by_nick(char *data)}}]{\setlength{\rightskip}{0pt plus 5cm}int server\+\_\+users\+\_\+find\+\_\+by\+\_\+nick (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__common__functions_8c_a61cca6f1a1adeb81f722ecc2ff35aab5}{}\label{G-2313-06-P1__common__functions_8c_a61cca6f1a1adeb81f722ecc2ff35aab5}
+
+
+Definición en la línea 52 del archivo G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}!server\+\_\+users\+\_\+find\+\_\+by\+\_\+socket@{server\+\_\+users\+\_\+find\+\_\+by\+\_\+socket}}
+\index{server\+\_\+users\+\_\+find\+\_\+by\+\_\+socket@{server\+\_\+users\+\_\+find\+\_\+by\+\_\+socket}!G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c@{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c}}
+\subsubsection[{\texorpdfstring{server\+\_\+users\+\_\+find\+\_\+by\+\_\+socket(int sockdesc)}{server_users_find_by_socket(int sockdesc)}}]{\setlength{\rightskip}{0pt plus 5cm}int server\+\_\+users\+\_\+find\+\_\+by\+\_\+socket (
+\begin{DoxyParamCaption}
+\item[{int}]{sockdesc}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__common__functions_8c_a485e68f66db6ae4b7297d99c32afe30a}{}\label{G-2313-06-P1__common__functions_8c_a485e68f66db6ae4b7297d99c32afe30a}
+
+
+Definición en la línea 113 del archivo G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+c.
+

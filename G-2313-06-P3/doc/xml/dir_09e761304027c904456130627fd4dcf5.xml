@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_09e761304027c904456130627fd4dcf5" kind="dir">
+    <compoundname>includes</compoundname>
+    <innerfile refid="G-2313-06-P3__ssl_8h">G-2313-06-P3_ssl.h</innerfile>
+    <innerfile refid="G-2313-06-P3__tcp_8h">G-2313-06-P3_tcp.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/"/>
+  </compounddef>
+</doxygen>

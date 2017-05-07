@@ -1,0 +1,76 @@
+.TH "includes/G-2313-06-P3_tcp.h" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2313-06-P3_tcp.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <netdb\&.h>\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBtcp_new_socket\fP ()"
+.br
+.ti -1c
+.RI "int \fBtcp_bind\fP (int desc, int puerto)"
+.br
+.ti -1c
+.RI "int \fBtcp_new_listen\fP (int desc, int tam)"
+.br
+.ti -1c
+.RI "int \fBtcp_connect\fP (char *server, int port)"
+.br
+.ti -1c
+.RI "int \fBtcp_listen\fP (int port, int max_conn)"
+.br
+.ti -1c
+.RI "int \fBtcp_new_accept\fP (int desc, struct sockaddr_in ip4addr)"
+.br
+.ti -1c
+.RI "int \fBtcp_new_open_connection\fP (int desc, struct sockaddr res)"
+.br
+.ti -1c
+.RI "int \fBtcp_send\fP (int fd, char *msg)"
+.br
+.ti -1c
+.RI "int \fBtcp_receive\fP (int fd, char *msg, int len)"
+.br
+.ti -1c
+.RI "int \fBtcp_disconnect\fP (int fd)"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "int tcp_bind (int desc, int puerto)"
+
+.SS "int tcp_connect (char * server, int port)"
+
+.SS "int tcp_disconnect (int fd)"
+
+.SS "int tcp_listen (int port, int max_conn)"
+
+.SS "int tcp_new_accept (int desc, struct sockaddr_in ip4addr)"
+
+.SS "int tcp_new_listen (int desc, int tam)"
+
+.SS "int tcp_new_open_connection (int desc, struct sockaddr res)"
+
+.SS "int tcp_new_socket ()"
+
+.SS "int tcp_receive (int fd, char * msg, int len)"
+
+.SS "int tcp_send (int fd, char * msg)"
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

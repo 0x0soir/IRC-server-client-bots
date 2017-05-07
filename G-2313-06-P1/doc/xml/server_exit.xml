@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="server_exit" kind="page">
+    <compoundname>server_exit</compoundname>
+    <title>server_exit</title>
+    <detaileddescription>
+<para>Finaliza el servidor IRC y cierra el socket.</para><sect1 id="server_exit_1synopsis6">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P1__server_8h" kindref="compound">G-2313-06-P1_server.h</ref>&gt;</bold> <linebreak/>
+ <bold>void <ref refid="G-2313-06-P1__server_8c_1a0e947005d451a8f3bf3af01f54b59f11" kindref="member">server_exit()</ref></bold> </computeroutput> </para></sect1>
+<sect1 id="server_exit_1descripcion6">
+<title>Descripción</title>
+<para>Una vez se finaliza el servidor (se recibe la señal adecuada para ello) se procede a finalizar el servicio actual. Para ello se finaliza el bucle de <bold><ref refid="G-2313-06-P1__server_8c_1aaac8642d2e699e0f9d942d28a9b233c2" kindref="member">server_accept_connection()</ref></bold> actualizando la variable global <bold>server_status=false</bold> que provoca una interrupción en el while que acepta las conexiones de los clientes.</para><para>Además, se finaliza el socket con la función <bold>close(server_socket_desc)</bold>, tras esto se realiza una llamada la función <bold>thread_pool_delete(pool)</bold> para eliminar todos los hilos generados en el ThreadPool y se liberan los recursos para proceder a la salida del proceso general.</para></sect1>
+<sect1 id="server_exit_1return6">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>void</bold> No devuelve nada. </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="server_exit_1authors6">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

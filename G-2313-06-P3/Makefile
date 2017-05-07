@@ -54,13 +54,13 @@ LIB_SSL = -lssl -lcrypto
 #Comienzo del makefile
 #Regla All: compila todo el programa
 
-all: certificados claves server_echo client_echo servidor_irc
+all: clean certificados claves server_echo client_echo servidor_irc doxy
 
 certificados:
 		@echo "\033[31mGenerando certificados...\033[00m"
 		@rm -Rf $(SRC_CERTIFICADOS)
 		@mkdir -p $(SRC_CERTIFICADOS)
-		@openssl genrsa -out $(SRC_CERTIFICADOS)/rootkey.pem 2048
+		@openssl genrsa -out $(SRC_CERTIFICADOS)/rootkey.pem 2048  > /dev/null 2>&1
 		@echo "\033[33m\tCertificado generado: $(SRC_CERTIFICADOS)/rootkey.pem\033[00m"
 		@openssl req -new -x509 -key $(SRC_CERTIFICADOS)/rootkey.pem -out $(SRC_CERTIFICADOS)/rootcert.pem -subj "/C=ES/ST=Madrid/L=Madrid/O=UAM/CN=Redes2 CA"
 		@echo "\033[33m\tCertificado generado: $(SRC_CERTIFICADOS)/rootcert.pem\033[00m"
@@ -87,27 +87,31 @@ claves:
 server_echo:
 	@mkdir -p "echo"
 	@echo "\033[31mCompilando servidor echo...\033[00m"
-	gcc -o ./echo/servidor_echo $(SRC_SERVER_ECHO) $(FFLAGS) $(REDESLIB) $(LIB_SSL)
+	@gcc -o ./echo/servidor_echo $(SRC_SERVER_ECHO) $(FFLAGS) $(REDESLIB) $(LIB_SSL)
 	@echo "\033[32m--> Servidor compilado: ./echo/servidor_echo\033[00m"
 
 client_echo:
 	@mkdir -p "echo"
 	@echo "\033[31mCompilando cliente echo...\033[00m"
-	gcc -o ./echo/cliente_echo $(SRC_CLIENT_ECHO) $(FFLAGS) $(REDESLIB) $(LIB_SSL)
+	@gcc -o ./echo/cliente_echo $(SRC_CLIENT_ECHO) $(FFLAGS) $(REDESLIB) $(LIB_SSL)
 	@echo "\033[32m--> Cliente compilado: ./echo/cliente_echo\033[00m"
 
 servidor_irc:
 	@mkdir -p "cliente_servidor"
 	@echo "\033[31mCompilando servidor IRC...\033[00m"
-	gcc -o ./cliente_servidor/servidor_IRC $(SRC_SERVER_IRC) $(FFLAGS) $(REDESLIB) $(LIB_SSL)
+	@gcc -o ./cliente_servidor/servidor_IRC $(SRC_SERVER_IRC) $(FFLAGS) $(REDESLIB) $(LIB_SSL)
 	@echo "\033[32m--> Servidor compilado: ./cliente_servidor/servidor_IRC\033[00m"
 
 cliente_irc:
 	@echo "\033[31mCompilando cliente IRC...\033[00m"
-	gcc $(GTK_CONFIG) -o ./cliente_servidor/cliente_IRC $(SRC_CLIENT_IRC) $(FFLAGS) $(REDESLIB) $(GTK_LIB) $(LIB_SSL)
+	@gcc $(GTK_CONFIG) -o ./cliente_servidor/cliente_IRC $(SRC_CLIENT_IRC) $(FFLAGS) $(REDESLIB) $(GTK_LIB) $(LIB_SSL)
 	@echo "\033[32m--> Cliente compilado: ./cliente_servidor/cliente_IRC\033[00m"
 
-#Regla clean: limpia el directorio del ficheros temporales
+doxy:
+	@echo "\033[31mGenerando documentación...\033[00m"
+	@doxygen Doxyfile  > /dev/null 2>&1
+	@echo "\033[32m--> Documentación generada en: ./doc/html/index.html\033[00m"
+
 entrega: clean tar
 
 clean:

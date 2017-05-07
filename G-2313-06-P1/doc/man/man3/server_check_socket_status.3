@@ -1,0 +1,29 @@
+.TH "server_check_socket_status" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_check_socket_status \- server_check_socket_status 
+Comprueba si el socket del cliente sigue abierto\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_server\&.h\fP>\fP 
+.br
+ \fBint \fBserver_check_socket_status(int socket_desc)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Es una función simple que comprueba mediante la función \fBselect()\fP si el socket del cliente recibido como parámetro \fBsocket_desc\fP sigue abierto o no\&. Para ello se hace una selección de dicho socket y si devuelve error o salta el timeout se indica que el socket está cerrado y en la función \fBserver_start_communication\fP se liberan los recursos necesarios\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBint\fP Devuelve el valor verdadero/falso sobre el estado del socket\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

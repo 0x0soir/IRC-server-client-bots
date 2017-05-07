@@ -1,0 +1,33 @@
+.TH "server_start_pool" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_start_pool \- server_start_pool 
+Inicializa el ThreadPool con los hilos\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_server\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_start_pool()\fP\fP \fP 
+.SH "Descripción"
+.PP
+Inicializa el ThreadPool con los hilos seleccionados por defecto mediante la variable \fBMIN_POOL_THREADS\fP\&. Para ello ejecuta una llamada la función de la siguiente manera:
+.PP
+\fC pool = thread_pool_create(MIN_POOL_THREADS); 
+.br
+thread_pool_init(pool); \fP 
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

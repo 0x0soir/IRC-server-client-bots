@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="G-2313-06-P1__common__functions_8h" kind="file" language="C++">
+    <compoundname>G-2313-06-P1_common_functions.h</compoundname>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">sys/stat.h</includes>
+    <includes local="no">netinet/in.h</includes>
+    <includes local="no">syslog.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">strings.h</includes>
+    <includes local="no">signal.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">time.h</includes>
+    <includes local="no">arpa/inet.h</includes>
+    <includes local="no">redes2/irc.h</includes>
+    <includes local="no">netdb.h</includes>
+    <includes local="no">pthread.h</includes>
+    <includedby refid="G-2313-06-P1__function__handlers_8h" local="yes">includes/G-2313-06-P1_function_handlers.h</includedby>
+    <includedby refid="G-2313-06-P1__server_8h" local="yes">includes/G-2313-06-P1_server.h</includedby>
+    <includedby refid="G-2313-06-P1__common__functions_8c" local="yes">src/G-2313-06-P1_common_functions.c</includedby>
+    <incdepgraph>
+      <node id="168">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="175">
+        <label>stdbool.h</label>
+      </node>
+      <node id="169">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="177">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="171">
+        <label>stdlib.h</label>
+      </node>
+      <node id="164">
+        <label>includes/G-2313-06-P1_common_functions.h</label>
+        <link refid="G-2313-06-P1_common_functions.h"/>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="178" relation="include">
+        </childnode>
+        <childnode refid="179" relation="include">
+        </childnode>
+        <childnode refid="180" relation="include">
+        </childnode>
+      </node>
+      <node id="179">
+        <label>netdb.h</label>
+      </node>
+      <node id="170">
+        <label>syslog.h</label>
+      </node>
+      <node id="180">
+        <label>pthread.h</label>
+      </node>
+      <node id="166">
+        <label>sys/types.h</label>
+      </node>
+      <node id="178">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="165">
+        <label>unistd.h</label>
+      </node>
+      <node id="174">
+        <label>signal.h</label>
+      </node>
+      <node id="176">
+        <label>time.h</label>
+      </node>
+      <node id="173">
+        <label>strings.h</label>
+      </node>
+      <node id="167">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="172">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="184">
+        <label>src/G-2313-06-P1_server.c</label>
+        <link refid="G-2313-06-P1__server_8c"/>
+      </node>
+      <node id="183">
+        <label>includes/G-2313-06-P1_server.h</label>
+        <link refid="G-2313-06-P1__server_8h"/>
+        <childnode refid="184" relation="include">
+        </childnode>
+      </node>
+      <node id="181">
+        <label>includes/G-2313-06-P1_common_functions.h</label>
+        <link refid="G-2313-06-P1_common_functions.h"/>
+        <childnode refid="182" relation="include">
+        </childnode>
+        <childnode refid="183" relation="include">
+        </childnode>
+        <childnode refid="186" relation="include">
+        </childnode>
+      </node>
+      <node id="186">
+        <label>src/G-2313-06-P1_common_functions.c</label>
+        <link refid="G-2313-06-P1__common__functions_8c"/>
+      </node>
+      <node id="182">
+        <label>includes/G-2313-06-P1_function_handlers.h</label>
+        <link refid="G-2313-06-P1__function__handlers_8h"/>
+        <childnode refid="183" relation="include">
+        </childnode>
+        <childnode refid="185" relation="include">
+        </childnode>
+      </node>
+      <node id="185">
+        <label>src/G-2313-06-P1_function_handlers.c</label>
+        <link refid="G-2313-06-P1__function__handlers_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="G-2313-06-P1__common__functions_8h_1a61cca6f1a1adeb81f722ecc2ff35aab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int server_users_find_by_nick</definition>
+        <argsstring>(char *data)</argsstring>
+        <name>server_users_find_by_nick</name>
+        <param>
+          <type>char *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_common_functions.h" line="19" column="1" bodyfile="src/G-2313-06-P1_common_functions.c" bodystart="52" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__common__functions_8h_1a485e68f66db6ae4b7297d99c32afe30a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int server_users_find_by_socket</definition>
+        <argsstring>(int sockdesc)</argsstring>
+        <name>server_users_find_by_socket</name>
+        <param>
+          <type>int</type>
+          <declname>sockdesc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_common_functions.h" line="20" column="1" bodyfile="src/G-2313-06-P1_common_functions.c" bodystart="113" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__common__functions_8h_1a875ae5278d95716b494b26f96cf4ae6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int server_channels_find_by_name</definition>
+        <argsstring>(char *channel)</argsstring>
+        <name>server_channels_find_by_name</name>
+        <param>
+          <type>char *</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_common_functions.h" line="21" column="1" bodyfile="src/G-2313-06-P1_common_functions.c" bodystart="178" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__common__functions_8h_1ae8a282d9cdfc8187b8e74e368bc56d92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int server_channels_update_nick</definition>
+        <argsstring>(char *nick_old, char *nick_new)</argsstring>
+        <name>server_channels_update_nick</name>
+        <param>
+          <type>char *</type>
+          <declname>nick_old</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>nick_new</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_common_functions.h" line="22" column="1" bodyfile="src/G-2313-06-P1_common_functions.c" bodystart="221" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__common__functions_8h_1af9aeb632d55a4cbbe842ab97001b5128" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int server_channels_update_away</definition>
+        <argsstring>(char *nick, char *away)</argsstring>
+        <name>server_channels_update_away</name>
+        <param>
+          <type>char *</type>
+          <declname>nick</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>away</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_common_functions.h" line="23" column="1" bodyfile="src/G-2313-06-P1_common_functions.c" bodystart="275" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__common__functions_8h_1a5c6f52d9a2461877178a1a0905d14ea9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int server_channels_update_whois</definition>
+        <argsstring>(char *nick, char *away)</argsstring>
+        <name>server_channels_update_whois</name>
+        <param>
+          <type>char *</type>
+          <declname>nick</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>away</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_common_functions.h" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__common__functions_8h_1a230bf24ab7ae18d2e81ebc1d3575a6ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* server_return_user</definition>
+        <argsstring>(char *nick)</argsstring>
+        <name>server_return_user</name>
+        <param>
+          <type>char *</type>
+          <declname>nick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_common_functions.h" line="25" column="1" bodyfile="src/G-2313-06-P1_common_functions.c" bodystart="327" bodyend="334"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/stat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netinet/in.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;syslog.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;strings.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;arpa/inet.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;redes2/irc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netdb.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pthread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__common__functions_8h_1a61cca6f1a1adeb81f722ecc2ff35aab5" kindref="member">server_users_find_by_nick</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>data);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__common__functions_8h_1a485e68f66db6ae4b7297d99c32afe30a" kindref="member">server_users_find_by_socket</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sockdesc);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__common__functions_8h_1a875ae5278d95716b494b26f96cf4ae6e" kindref="member">server_channels_find_by_name</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*channel);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__common__functions_8h_1ae8a282d9cdfc8187b8e74e368bc56d92" kindref="member">server_channels_update_nick</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nick_old,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>nick_new);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__common__functions_8h_1af9aeb632d55a4cbbe842ab97001b5128" kindref="member">server_channels_update_away</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>nick,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>away);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__common__functions_8h_1a5c6f52d9a2461877178a1a0905d14ea9" kindref="member">server_channels_update_whois</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>nick,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>away);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="G-2313-06-P1__common__functions_8h_1a230bf24ab7ae18d2e81ebc1d3575a6ad" kindref="member">server_return_user</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>nick);</highlight></codeline>
+    </programlisting>
+    <location file="includes/G-2313-06-P1_common_functions.h"/>
+  </compounddef>
+</doxygen>

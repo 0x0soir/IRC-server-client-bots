@@ -1518,7 +1518,8 @@ int conexion_ssl(char *ssl_data){
   struct addrinfo hints, *res;
   char ssl_cert_1[100];
   char ssl_cert_2[100];
-
+	char buffer[8096];
+  bzero(buffer, sizeof(char)*8096);
   strcpy(ssl_cert_1, "./certs/cliente.pem");
   strcpy(ssl_cert_2, "./certs/ca.pem");
 
@@ -1534,30 +1535,21 @@ int conexion_ssl(char *ssl_data){
 		return 0;
 	}
 
-  server.sin_addr.s_addr = inet_addr("127.0.0.1");
-  server.sin_family = AF_INET;
-  server.sin_port = htons(6669);
-
-  if (connect(desc, (struct sockaddr *)&server, sizeof(server)) < 0) {
-    perror("connect failed. Error");
-    return 1;
-  }
-  ssl = SSL_new(ctx);
-  SSL_set_fd(ssl, ctx);
-  SSL_connect(ssl);
-  /*ssl=conectar_canal_seguro_SSL(ctx, desc, *(res->ai_addr));*/
+  ssl=conectar_canal_seguro_SSL(ctx, desc, *(res->ai_addr));
 	ERR_print_errors_fp(stdout);
 	/*printf("conectar_canal_seguro_SSL ok\n");*/
 	if(!evaluar_post_connectar_SSL(ssl)){
 		ERR_print_errors_fp(stdout);
-		return 0;
+		return;
 	}
 
   syslog(LOG_INFO, "[CLIENTE IRC] Enviamos Data %s\n", ssl_data);
-  if (enviar_datos_SSL(ssl, ssl_data) < 0) {
+  if (enviar_datos_SSL(ssl, "NICK yoda") < 0) {
     syslog(LOG_ERR, "[CLIENTE IRC] Send SSL failed");
     return 0;
   }
+  recibir_datos_SSL(ssl, &buffer[0]);
+  syslog(LOG_INFO, "[CLIENTE IRC] Recibe %s", buffer);
 
   // bzero(user, 512);
   // strcpy(user, "USER yoda 0 * :miservidor.com");
@@ -1565,7 +1557,7 @@ int conexion_ssl(char *ssl_data){
     syslog(LOG_ERR, "[CLIENTE IRC] Send SSL failed");
     return 0;
   }
-  cerrar_canal_SSL(ctx, ssl, desc);
+  /*cerrar_canal_SSL(ctx, ssl, desc);*/
   return 1;
 }
 

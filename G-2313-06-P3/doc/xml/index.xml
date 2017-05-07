@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="G-2313-06-P3__ssl_8h" kind="file"><name>G-2313-06-P3_ssl.h</name>
+    <member refid="G-2313-06-P3__ssl_8h_1a0fc205ff57c9c0a489d8154f94cd2f4a" kind="function"><name>ssl_start_client</name></member>
+    <member refid="G-2313-06-P3__ssl_8h_1a6dcf2890813db3e4f8f2f423716d4883" kind="function"><name>ssl_start_server</name></member>
+    <member refid="G-2313-06-P3__ssl_8h_1a32d6d68d1f64d25effa1ea5ec1e6bdb3" kind="function"><name>inicializar_nivel_SSL</name></member>
+    <member refid="G-2313-06-P3__ssl_8h_1a006acb44fc7dae799271a48117f5a398" kind="function"><name>fijar_contexto_SSL</name></member>
+    <member refid="G-2313-06-P3__ssl_8h_1a44410967ff9e0a1b4219c85f0e62e926" kind="function"><name>aceptar_canal_seguro_SSL</name></member>
+    <member refid="G-2313-06-P3__ssl_8h_1ac5f32cf09e3c0efd5cbc25452ed192a9" kind="function"><name>evaluar_post_connectar_SSL</name></member>
+    <member refid="G-2313-06-P3__ssl_8h_1adf9cb4f6b9c27081fcf12a942db1b288" kind="function"><name>enviar_datos_SSL</name></member>
+    <member refid="G-2313-06-P3__ssl_8h_1af7dca116c6dbb68e9609293102c208c5" kind="function"><name>recibir_datos_SSL</name></member>
+    <member refid="G-2313-06-P3__ssl_8h_1a307ee105b4b24b555d8df68603c2deff" kind="function"><name>cerrar_canal_SSL</name></member>
+    <member refid="G-2313-06-P3__ssl_8h_1aa58ddc931cb106d430ab49223b9394fc" kind="function"><name>conectar_canal_seguro_SSL</name></member>
+  </compound>
+  <compound refid="G-2313-06-P3__tcp_8h" kind="file"><name>G-2313-06-P3_tcp.h</name>
+    <member refid="G-2313-06-P3__tcp_8h_1a25c77773298f02f1e8135829713d7f3a" kind="function"><name>tcp_new_socket</name></member>
+    <member refid="G-2313-06-P3__tcp_8h_1a383b8c763aedca0e2ed838e32073fde6" kind="function"><name>tcp_bind</name></member>
+    <member refid="G-2313-06-P3__tcp_8h_1a9c9d03de1e87014ced69f8d36bb37f86" kind="function"><name>tcp_new_listen</name></member>
+    <member refid="G-2313-06-P3__tcp_8h_1a4e5ce422aa030ac8b3998e858b79cae2" kind="function"><name>tcp_connect</name></member>
+    <member refid="G-2313-06-P3__tcp_8h_1a14d727cfbcd2ce3c5f4fae5a470a84da" kind="function"><name>tcp_listen</name></member>
+    <member refid="G-2313-06-P3__tcp_8h_1a6bae59be22b410f157347083f2e43987" kind="function"><name>tcp_new_accept</name></member>
+    <member refid="G-2313-06-P3__tcp_8h_1a3e15d12d1405c959da073cabab3a8520" kind="function"><name>tcp_new_open_connection</name></member>
+    <member refid="G-2313-06-P3__tcp_8h_1a1e2b75e457a02f23d433a6821f6902b7" kind="function"><name>tcp_send</name></member>
+    <member refid="G-2313-06-P3__tcp_8h_1af3354e60e1181adcd72f9f242063fafe" kind="function"><name>tcp_receive</name></member>
+    <member refid="G-2313-06-P3__tcp_8h_1a2d1f9e76e5da3a7c1e172d1294a33611" kind="function"><name>tcp_disconnect</name></member>
+  </compound>
+  <compound refid="G-2313-06-P3__client__echo_8c" kind="file"><name>G-2313-06-P3_client_echo.c</name>
+    <member refid="G-2313-06-P3__client__echo_8c_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="G-2313-06-P3__server__echo_8c" kind="file"><name>G-2313-06-P3_server_echo.c</name>
+    <member refid="G-2313-06-P3__server__echo_8c_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>includes</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

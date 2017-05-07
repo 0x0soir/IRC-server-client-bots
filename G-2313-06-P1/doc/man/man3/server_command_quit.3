@@ -1,0 +1,45 @@
+.TH "server_command_quit" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_command_quit \- server_command_quit 
+Función handler del comando QUIT del IRC\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_function_handlers\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_command_quit(char* command, int desc, char * nick_static, int* register_status)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Esta función ejecuta el handler del comando en cuestión, para ello realiza una serie de comprobaciones previas:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBParse:\fP Comprueba que el parseo del comando QUIT sea correcto\&. 
+.PP
+.PP
+Una vez realizadas las comprobaciones, dicha función se ejecuta con el siguiente flujo:
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBElimina al usuario:\fP Es decir, elimina los datos del usuario existentes en el TAD mediante la propia función del TAD \fBIRCTAD_Quit\fP\&. En caso de que se realice de forma correcta, se devuelve un mensaje de confirmación al descriptor del cliente mediante la función del TAD \fBIRCMsg_Quit\fP\&.  
+.IP "\(bu" 2
+\fBCierre del socket:\fP Es decir, cierra la conexión del descriptor del socket del cliente mediante la función \fBclose()\fP\&.  
+.PP
+.PP
+Al finalizar el flujo de la función se liberan los recursos utilizados\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

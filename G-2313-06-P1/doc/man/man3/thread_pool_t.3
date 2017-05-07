@@ -1,0 +1,100 @@
+.TH "thread_pool_t" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+thread_pool_t \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <G\-2313\-06\-P1_thread_pool\&.h>\fP
+.SS "Atributos públicos"
+
+.in +1c
+.ti -1c
+.RI "struct \fBlist_head\fP \fBworker_queue\fP"
+.br
+.ti -1c
+.RI "struct \fBlist_head\fP \fBidle_queue\fP"
+.br
+.ti -1c
+.RI "\fBthread_t\fP * \fBmaster_thread\fP"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBglobal\fP"
+.br
+.ti -1c
+.RI "\fBthread_t\fP * \fBtask_next\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "int \fBmax_size\fP"
+.br
+.ti -1c
+.RI "int \fBmin_size\fP"
+.br
+.ti -1c
+.RI "double \fBlow_level\fP"
+.br
+.ti -1c
+.RI "double \fBhigh_level\fP"
+.br
+.ti -1c
+.RI "int \fBmaster_interval\fP"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+Definición en la línea 48 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SH "Documentación de los datos miembro"
+.PP 
+.SS "pthread_mutex_t thread_pool_t::global"
+
+.PP
+Definición en la línea 53 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "double thread_pool_t::high_level"
+
+.PP
+Definición en la línea 59 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "struct \fBlist_head\fP thread_pool_t::idle_queue"
+
+.PP
+Definición en la línea 51 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "double thread_pool_t::low_level"
+
+.PP
+Definición en la línea 58 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "int thread_pool_t::master_interval"
+
+.PP
+Definición en la línea 60 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "\fBthread_t\fP* thread_pool_t::master_thread"
+
+.PP
+Definición en la línea 52 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "int thread_pool_t::max_size"
+
+.PP
+Definición en la línea 56 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "int thread_pool_t::min_size"
+
+.PP
+Definición en la línea 57 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "int thread_pool_t::size"
+
+.PP
+Definición en la línea 55 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "\fBthread_t\fP* thread_pool_t::task_next"
+
+.PP
+Definición en la línea 54 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "struct \fBlist_head\fP thread_pool_t::worker_queue"
+
+.PP
+Definición en la línea 50 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

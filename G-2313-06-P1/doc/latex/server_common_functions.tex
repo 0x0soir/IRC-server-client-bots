@@ -1,0 +1,93 @@
+Esta sección incluye las funciones auxiliares utilizadas por los comandos para obtener datos de los usuarios como por ejemplo el nick, username, etc. Además incluye funciones para buscar coincidencias por un descriptor del socket de un cliente o si un canal existe con un nombre dado.\hypertarget{server_common_functions_cabeceras2}{}\section{Cabeceras}\label{server_common_functions_cabeceras2}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__common__functions_8h}{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+h}$>$} } \hypertarget{server_common_functions_functions2}{}\section{Funciones implementadas}\label{server_common_functions_functions2}
+Se incluyen las siguientes funciones\+: 
+\begin{DoxyItemize}
+\item \hyperlink{server_users_find_by_nick}{server\+\_\+users\+\_\+find\+\_\+by\+\_\+nick} 
+\item \hyperlink{server_users_find_by_socket}{server\+\_\+users\+\_\+find\+\_\+by\+\_\+socket} 
+\item \hyperlink{server_channels_find_by_name}{server\+\_\+channels\+\_\+find\+\_\+by\+\_\+name} 
+\item \hyperlink{server_channels_update_nick}{server\+\_\+channels\+\_\+update\+\_\+nick} 
+\item \hyperlink{server_channels_update_away}{server\+\_\+channels\+\_\+update\+\_\+away} 
+\item \hyperlink{server_return_user}{server\+\_\+return\+\_\+user} 
+\end{DoxyItemize}\hypertarget{server_users_find_by_nick}{}\section{server\+\_\+users\+\_\+find\+\_\+by\+\_\+nick}\label{server_users_find_by_nick}
+Busca un usuario por un nick dado.\hypertarget{server_users_find_by_nick_synopsis_server_users_find_by_nick}{}\subsection{Synopsis}\label{server_users_find_by_nick_synopsis_server_users_find_by_nick}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__common__functions_8h}{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+h}$>$} ~\newline
+ {\bfseries int \hyperlink{G-2313-06-P1__common__functions_8c_a61cca6f1a1adeb81f722ecc2ff35aab5}{server\+\_\+users\+\_\+find\+\_\+by\+\_\+nick(char$\ast$ data)}} } \hypertarget{server_users_find_by_nick_descripcion_server_users_find_by_nick}{}\subsection{Descripción}\label{server_users_find_by_nick_descripcion_server_users_find_by_nick}
+Utiliza la función {\bfseries I\+R\+C\+T\+A\+D\+User\+\_\+\+Get\+Data} del T\+AD para buscar un usuario que cumpla las características de nick recibidas como parámetro {\bfseries char $\ast$data}. Devuelve un valor booleano.\hypertarget{server_users_find_by_nick_return_server_users_find_by_nick}{}\subsection{Valores devueltos}\label{server_users_find_by_nick_return_server_users_find_by_nick}
+
+\begin{DoxyItemize}
+\item {\bfseries int} Devuelve valor verdado/falso dependiendo de la búsqueda. 
+\end{DoxyItemize}\hypertarget{server_users_find_by_nick_authors_server_users_find_by_nick}{}\subsection{Autores}\label{server_users_find_by_nick_authors_server_users_find_by_nick}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_users_find_by_socket}{}\section{server\+\_\+users\+\_\+find\+\_\+by\+\_\+socket}\label{server_users_find_by_socket}
+Busca un usuario por un socket dado.\hypertarget{server_users_find_by_socket_synopsis_server_users_find_by_socket}{}\subsection{Synopsis}\label{server_users_find_by_socket_synopsis_server_users_find_by_socket}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__common__functions_8h}{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+h}$>$} ~\newline
+ {\bfseries int \hyperlink{G-2313-06-P1__common__functions_8c_a485e68f66db6ae4b7297d99c32afe30a}{server\+\_\+users\+\_\+find\+\_\+by\+\_\+socket(int sockdesc)}} } \hypertarget{server_users_find_by_socket_descripcion_server_users_find_by_socket}{}\subsection{Descripción}\label{server_users_find_by_socket_descripcion_server_users_find_by_socket}
+Utiliza la función {\bfseries I\+R\+C\+T\+A\+D\+User\+\_\+\+Get\+Data} del T\+AD para buscar un usuario que cumpla las características de socket recibidas como parámetro {\bfseries int sockdesc}.\hypertarget{server_users_find_by_socket_return_server_users_find_by_socket}{}\subsection{Valores devueltos}\label{server_users_find_by_socket_return_server_users_find_by_socket}
+
+\begin{DoxyItemize}
+\item {\bfseries int} Devuelve valor verdado/falso dependiendo de la búsqueda. 
+\end{DoxyItemize}\hypertarget{server_users_find_by_socket_authors_server_users_find_by_socket}{}\subsection{Autores}\label{server_users_find_by_socket_authors_server_users_find_by_socket}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_channels_find_by_name}{}\section{server\+\_\+channels\+\_\+find\+\_\+by\+\_\+name}\label{server_channels_find_by_name}
+Busca un canal por un nombre dado.\hypertarget{server_channels_find_by_name_synopsis_server_users_find_by_name}{}\subsection{Synopsis}\label{server_channels_find_by_name_synopsis_server_users_find_by_name}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__common__functions_8h}{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+h}$>$} ~\newline
+ {\bfseries int \hyperlink{G-2313-06-P1__common__functions_8c_a875ae5278d95716b494b26f96cf4ae6e}{server\+\_\+channels\+\_\+find\+\_\+by\+\_\+name(char $\ast$channel)}} } \hypertarget{server_channels_find_by_name_descripcion_server_channels_find_by_name}{}\subsection{Descripción}\label{server_channels_find_by_name_descripcion_server_channels_find_by_name}
+Utiliza la función {\bfseries I\+R\+C\+T\+A\+D\+User\+\_\+\+Get\+Data} del T\+AD para buscar un canal que cumpla las características de nombre recibidas como parámetro {\bfseries char $\ast$channel}.\hypertarget{server_channels_find_by_name_return_server_channels_find_by_name}{}\subsection{Valores devueltos}\label{server_channels_find_by_name_return_server_channels_find_by_name}
+
+\begin{DoxyItemize}
+\item {\bfseries int} Devuelve valor verdado/falso dependiendo de la búsqueda. 
+\end{DoxyItemize}\hypertarget{server_channels_find_by_name_authors_server_channels_find_by_name}{}\subsection{Autores}\label{server_channels_find_by_name_authors_server_channels_find_by_name}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_channels_update_nick}{}\section{server\+\_\+channels\+\_\+update\+\_\+nick}\label{server_channels_update_nick}
+Actualiza el nick de un usuario.\hypertarget{server_channels_update_nick_synopsis_server_channels_update_nick}{}\subsection{Synopsis}\label{server_channels_update_nick_synopsis_server_channels_update_nick}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__common__functions_8h}{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+h}$>$} ~\newline
+ {\bfseries int server\+\_\+channels\+\_\+update\+\_\+nick(char {\itshape nick\+\_\+old, char} nick\+\_\+new)} } \hypertarget{server_channels_update_nick_descripcion_server_channels_update_nick}{}\subsection{Descripción}\label{server_channels_update_nick_descripcion_server_channels_update_nick}
+Actualiza el nick de un usuario mediante la función del T\+AD {\bfseries I\+R\+C\+T\+A\+D\+User\+\_\+\+Set} para actualizar datos de los usuarios. 
+
+Comprueba previamente que el usuario exista mediante la función {\bfseries I\+R\+C\+T\+A\+D\+User\+\_\+\+Get\+Data} utilizando los parámetros recibidos {\bfseries char $\ast$nick\+\_\+old} y {\bfseries char $\ast$nick\+\_\+new}.\hypertarget{server_channels_update_nick_return_server_channels_update_nick}{}\subsection{Valores devueltos}\label{server_channels_update_nick_return_server_channels_update_nick}
+
+\begin{DoxyItemize}
+\item {\bfseries int} Devuelve valor verdado/falso dependiendo de la búsqueda. 
+\end{DoxyItemize}\hypertarget{server_channels_update_nick_authors_server_channels_update_nick}{}\subsection{Autores}\label{server_channels_update_nick_authors_server_channels_update_nick}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_channels_update_away}{}\section{server\+\_\+channels\+\_\+update\+\_\+away}\label{server_channels_update_away}
+Actualiza el mensaje away de un usuario.\hypertarget{server_channels_update_away_synopsis_server_channels_update_away}{}\subsection{Synopsis}\label{server_channels_update_away_synopsis_server_channels_update_away}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__common__functions_8h}{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+h}$>$} ~\newline
+ {\bfseries int \hyperlink{G-2313-06-P1__common__functions_8c_af9aeb632d55a4cbbe842ab97001b5128}{server\+\_\+channels\+\_\+update\+\_\+away(char$\ast$ nick, char$\ast$ away)}} } \hypertarget{server_channels_update_away_descripcion_server_channels_update_away}{}\subsection{Descripción}\label{server_channels_update_away_descripcion_server_channels_update_away}
+Actualiza el mensaje away de un usuario mediante la función del T\+AD {\bfseries I\+R\+C\+T\+A\+D\+User\+\_\+\+Set\+Away} para actualizar los away de los usuarios mediante el parámetro recibido {\bfseries char $\ast$away}. 
+
+Comprueba previamente que el usuario exista mediante la función {\bfseries I\+R\+C\+T\+A\+D\+User\+\_\+\+Get\+Data} utilizando el parámetro recibido {\bfseries char $\ast$nick}.\hypertarget{server_channels_update_away_return_server_channels_update_away}{}\subsection{Valores devueltos}\label{server_channels_update_away_return_server_channels_update_away}
+
+\begin{DoxyItemize}
+\item {\bfseries int} Devuelve valor verdado/falso dependiendo de la búsqueda. 
+\end{DoxyItemize}\hypertarget{server_channels_update_away_authors_server_channels_update_away}{}\subsection{Autores}\label{server_channels_update_away_authors_server_channels_update_away}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}\hypertarget{server_return_user}{}\section{server\+\_\+return\+\_\+user}\label{server_return_user}
+Devuelve el username de un usuario.\hypertarget{server_return_user_synopsis_server_return_user}{}\subsection{Synopsis}\label{server_return_user_synopsis_server_return_user}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P1__common__functions_8h}{G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+h}$>$} ~\newline
+ {\bfseries char$\ast$ \hyperlink{G-2313-06-P1__common__functions_8c_a230bf24ab7ae18d2e81ebc1d3575a6ad}{server\+\_\+return\+\_\+user(char$\ast$ nick)}} } \hypertarget{server_return_user_descripcion_server_return_user}{}\subsection{Descripción}\label{server_return_user_descripcion_server_return_user}
+Devuelve el username de un usuario utilizando la función del T\+AD {\bfseries I\+R\+C\+T\+A\+D\+User\+\_\+\+Get\+Data} para obtener información de los usuarios mediante el parámetro recibido {\bfseries char $\ast$nick}. \hypertarget{server_return_user_return_server_return_user}{}\subsection{Valores devueltos}\label{server_return_user_return_server_return_user}
+
+\begin{DoxyItemize}
+\item {\bfseries char$\ast$} Devuelve un puntero al username del usuario. 
+\end{DoxyItemize}\hypertarget{server_return_user_authors_server_return_user}{}\subsection{Autores}\label{server_return_user_authors_server_return_user}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}

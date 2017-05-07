@@ -1,0 +1,29 @@
+.TH "server_return_user" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_return_user \- server_return_user 
+Devuelve el username de un usuario\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_common_functions\&.h\fP>\fP 
+.br
+ \fBchar* \fBserver_return_user(char* nick)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Devuelve el username de un usuario utilizando la función del TAD \fBIRCTADUser_GetData\fP para obtener información de los usuarios mediante el parámetro recibido \fBchar *nick\fP\&. 
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBchar*\fP Devuelve un puntero al username del usuario\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

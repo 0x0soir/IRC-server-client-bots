@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="G-2313-06-P3__ssl_8h" kind="file" language="C++">
+    <compoundname>G-2313-06-P3_ssl.h</compoundname>
+    <includes local="no">string.h</includes>
+    <includes local="no">openssl/bio.h</includes>
+    <includes local="no">openssl/err.h</includes>
+    <includes local="no">openssl/rand.h</includes>
+    <includes local="no">openssl/ssl.h</includes>
+    <includes local="no">openssl/x509v3.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">netdb.h</includes>
+    <includes local="no">netinet/in.h</includes>
+    <includes local="no">linux/udp.h</includes>
+    <includes local="no">linux/tcp.h</includes>
+    <includes local="no">syslog.h</includes>
+    <includes refid="G-2313-06-P3__tcp_8h" local="yes">../includes/G-2313-06-P3_tcp.h</includes>
+    <includedby refid="G-2313-06-P3__client__echo_8c" local="yes">src/G-2313-06-P3_client_echo.c</includedby>
+    <includedby refid="G-2313-06-P3__server__echo_8c" local="yes">src/G-2313-06-P3_server_echo.c</includedby>
+    <incdepgraph>
+      <node id="78">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="71">
+        <label>openssl/rand.h</label>
+      </node>
+      <node id="82">
+        <label>../includes/G-2313-06-P3_tcp.h</label>
+        <link refid="G-2313-06-P3__tcp_8h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>includes/G-2313-06-P3_ssl.h</label>
+        <link refid="G-2313-06-P3_ssl.h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>netdb.h</label>
+      </node>
+      <node id="81">
+        <label>syslog.h</label>
+      </node>
+      <node id="69">
+        <label>openssl/bio.h</label>
+      </node>
+      <node id="70">
+        <label>openssl/err.h</label>
+      </node>
+      <node id="73">
+        <label>openssl/x509v3.h</label>
+      </node>
+      <node id="76">
+        <label>sys/types.h</label>
+      </node>
+      <node id="68">
+        <label>string.h</label>
+      </node>
+      <node id="74">
+        <label>unistd.h</label>
+      </node>
+      <node id="80">
+        <label>linux/tcp.h</label>
+      </node>
+      <node id="75">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="79">
+        <label>linux/udp.h</label>
+      </node>
+      <node id="83">
+        <label>stdio.h</label>
+      </node>
+      <node id="72">
+        <label>openssl/ssl.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="84">
+        <label>includes/G-2313-06-P3_ssl.h</label>
+        <link refid="G-2313-06-P3_ssl.h"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>src/G-2313-06-P3_client_echo.c</label>
+        <link refid="G-2313-06-P3__client__echo_8c"/>
+      </node>
+      <node id="86">
+        <label>src/G-2313-06-P3_server_echo.c</label>
+        <link refid="G-2313-06-P3__server__echo_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="G-2313-06-P3__ssl_8h_1a0fc205ff57c9c0a489d8154f94cd2f4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ssl_start_client</definition>
+        <argsstring>()</argsstring>
+        <name>ssl_start_client</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_ssl.h" line="18" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__ssl_8h_1a6dcf2890813db3e4f8f2f423716d4883" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ssl_start_server</definition>
+        <argsstring>()</argsstring>
+        <name>ssl_start_server</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_ssl.h" line="19" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__ssl_8h_1a32d6d68d1f64d25effa1ea5ec1e6bdb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SSL_CTX *</type>
+        <definition>SSL_CTX* inicializar_nivel_SSL</definition>
+        <argsstring>(int *desc)</argsstring>
+        <name>inicializar_nivel_SSL</name>
+        <param>
+          <type>int *</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_ssl.h" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__ssl_8h_1a006acb44fc7dae799271a48117f5a398" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fijar_contexto_SSL</definition>
+        <argsstring>(SSL_CTX *ssl_ctx, char *certFile, char *certRoot)</argsstring>
+        <name>fijar_contexto_SSL</name>
+        <param>
+          <type>SSL_CTX *</type>
+          <declname>ssl_ctx</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>certFile</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>certRoot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_ssl.h" line="21" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__ssl_8h_1a44410967ff9e0a1b4219c85f0e62e926" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int aceptar_canal_seguro_SSL</definition>
+        <argsstring>(SSL_CTX *ctx_ssl, SSL **ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr)</argsstring>
+        <name>aceptar_canal_seguro_SSL</name>
+        <param>
+          <type>SSL_CTX *</type>
+          <declname>ctx_ssl</declname>
+        </param>
+        <param>
+          <type>SSL **</type>
+          <declname>ssl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>puerto</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tam</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in</type>
+          <declname>ip4addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_ssl.h" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__ssl_8h_1ac5f32cf09e3c0efd5cbc25452ed192a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int evaluar_post_connectar_SSL</definition>
+        <argsstring>(SSL *ssl)</argsstring>
+        <name>evaluar_post_connectar_SSL</name>
+        <param>
+          <type>SSL *</type>
+          <declname>ssl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_ssl.h" line="23" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__ssl_8h_1adf9cb4f6b9c27081fcf12a942db1b288" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int enviar_datos_SSL</definition>
+        <argsstring>(SSL *ssl, const char *buf)</argsstring>
+        <name>enviar_datos_SSL</name>
+        <param>
+          <type>SSL *</type>
+          <declname>ssl</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_ssl.h" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__ssl_8h_1af7dca116c6dbb68e9609293102c208c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int recibir_datos_SSL</definition>
+        <argsstring>(SSL *ssl, char *buf)</argsstring>
+        <name>recibir_datos_SSL</name>
+        <param>
+          <type>SSL *</type>
+          <declname>ssl</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_ssl.h" line="25" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__ssl_8h_1a307ee105b4b24b555d8df68603c2deff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void cerrar_canal_SSL</definition>
+        <argsstring>(SSL *ssl, SSL_CTX *ctl_ssl, int desc)</argsstring>
+        <name>cerrar_canal_SSL</name>
+        <param>
+          <type>SSL *</type>
+          <declname>ssl</declname>
+        </param>
+        <param>
+          <type>SSL_CTX *</type>
+          <declname>ctl_ssl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_ssl.h" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__ssl_8h_1aa58ddc931cb106d430ab49223b9394fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SSL *</type>
+        <definition>SSL* conectar_canal_seguro_SSL</definition>
+        <argsstring>(SSL_CTX *ctx_ssl, int desc, struct sockaddr res)</argsstring>
+        <name>conectar_canal_seguro_SSL</name>
+        <param>
+          <type>SSL_CTX *</type>
+          <declname>ctx_ssl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>struct sockaddr</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P3_ssl.h" line="27" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/bio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/err.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/rand.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/ssl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/x509v3.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netdb.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netinet/in.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;linux/udp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;linux/tcp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;syslog.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2313-06-P3_tcp.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__ssl_8h_1a0fc205ff57c9c0a489d8154f94cd2f4a" kindref="member">ssl_start_client</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__ssl_8h_1a6dcf2890813db3e4f8f2f423716d4883" kindref="member">ssl_start_server</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">SSL_CTX*<sp/><ref refid="G-2313-06-P3__ssl_8h_1a32d6d68d1f64d25effa1ea5ec1e6bdb3" kindref="member">inicializar_nivel_SSL</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*desc);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__ssl_8h_1a006acb44fc7dae799271a48117f5a398" kindref="member">fijar_contexto_SSL</ref>(SSL_CTX*<sp/>ssl_ctx,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>certFile,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>certRoot);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__ssl_8h_1a44410967ff9e0a1b4219c85f0e62e926" kindref="member">aceptar_canal_seguro_SSL</ref>(SSL_CTX*<sp/>ctx_ssl,<sp/>SSL<sp/>**ssl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>puerto,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tam,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>ip4addr);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__ssl_8h_1ac5f32cf09e3c0efd5cbc25452ed192a9" kindref="member">evaluar_post_connectar_SSL</ref>(SSL<sp/>*<sp/>ssl);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__ssl_8h_1adf9cb4f6b9c27081fcf12a942db1b288" kindref="member">enviar_datos_SSL</ref>(SSL<sp/>*<sp/>ssl,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buf);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__ssl_8h_1af7dca116c6dbb68e9609293102c208c5" kindref="member">recibir_datos_SSL</ref>(SSL<sp/>*<sp/>ssl,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buf);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__ssl_8h_1a307ee105b4b24b555d8df68603c2deff" kindref="member">cerrar_canal_SSL</ref>(SSL<sp/>*ssl,<sp/>SSL_CTX<sp/>*ctl_ssl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">SSL*<sp/><ref refid="G-2313-06-P3__ssl_8h_1aa58ddc931cb106d430ab49223b9394fc" kindref="member">conectar_canal_seguro_SSL</ref>(SSL_CTX*<sp/>ctx_ssl,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>res);</highlight></codeline>
+    </programlisting>
+    <location file="includes/G-2313-06-P3_ssl.h"/>
+  </compounddef>
+</doxygen>

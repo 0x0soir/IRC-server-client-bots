@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="server_commands" kind="page">
+    <compoundname>server_commands</compoundname>
+    <title>Comandos</title>
+    <innerpage refid="server_command_nick">server_command_nick</innerpage>
+    <innerpage refid="server_command_user">server_command_user</innerpage>
+    <innerpage refid="server_command_join">server_command_join</innerpage>
+    <innerpage refid="server_command_quit">server_command_quit</innerpage>
+    <innerpage refid="server_command_ping">server_command_ping</innerpage>
+    <innerpage refid="server_command_list">server_command_list</innerpage>
+    <innerpage refid="server_command_privmsg">server_command_privmsg</innerpage>
+    <innerpage refid="server_command_part">server_command_part</innerpage>
+    <innerpage refid="server_command_names">server_command_names</innerpage>
+    <innerpage refid="server_command_kick">server_command_kick</innerpage>
+    <innerpage refid="server_command_mode">server_command_mode</innerpage>
+    <innerpage refid="server_command_away">server_command_away</innerpage>
+    <innerpage refid="server_command_whois">server_command_whois</innerpage>
+    <innerpage refid="server_command_topic">server_command_topic</innerpage>
+    <innerpage refid="server_command_motd">server_command_motd</innerpage>
+    <detaileddescription>
+<para>Esta sección incluye las funciones de comandos utilizadas para parsear los comandos recibidos del IRC. A estas funciones accede el array de punteros a función descrito en <bold>server_execute_function</bold>.</para><sect1 id="server_commands_1cabeceras3">
+<title>Cabeceras</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;G-2313-06-P1_function_handlers.h.h&gt;</bold> </computeroutput> </para></sect1>
+<sect1 id="server_commands_1functions3">
+<title>Funciones implementadas</title>
+<para>Se incluyen las siguientes funciones: <itemizedlist>
+<listitem>
+<para><ref refid="server_command_nick" kindref="compound">server_command_nick</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_user" kindref="compound">server_command_user</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_join" kindref="compound">server_command_join</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_quit" kindref="compound">server_command_quit</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_ping" kindref="compound">server_command_ping</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_list" kindref="compound">server_command_list</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_privmsg" kindref="compound">server_command_privmsg</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_part" kindref="compound">server_command_part</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_names" kindref="compound">server_command_names</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_kick" kindref="compound">server_command_kick</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_mode" kindref="compound">server_command_mode</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_away" kindref="compound">server_command_away</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_whois" kindref="compound">server_command_whois</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_topic" kindref="compound">server_command_topic</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_command_motd" kindref="compound">server_command_motd</ref> </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

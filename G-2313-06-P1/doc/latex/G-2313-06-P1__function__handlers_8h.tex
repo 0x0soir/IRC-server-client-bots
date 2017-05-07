@@ -1,0 +1,269 @@
+\hypertarget{G-2313-06-P1__function__handlers_8h}{}\section{Referencia del Archivo includes/\+G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.h}
+\label{G-2313-06-P1__function__handlers_8h}\index{includes/\+G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{includes/\+G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\+h$>$}\\*
+{\ttfamily \#include $<$syslog.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$strings.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\\*
+{\ttfamily \#include $<$redes2/irc.\+h$>$}\\*
+{\ttfamily \#include $<$netdb.\+h$>$}\\*
+{\ttfamily \#include $<$pthread.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}G-\/2313-\/06-\/\+P1\+\_\+common\+\_\+functions.\+h\char`\"{}}\\*
+Dependencia gráfica adjunta para G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_aeefab469ba48ce1655dd5afd14f104b4}{server\+\_\+command\+\_\+nick} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_ad09156d6bd4cf58f4345e0bf851ff099}{server\+\_\+command\+\_\+user} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_a375c143c5469d1bb4fa7793b310ad68e}{server\+\_\+command\+\_\+join} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_a3df99a1f2cefc2d91d65cbb6dd555f96}{server\+\_\+command\+\_\+quit} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_acc1c181bf44087b9216d1b59809937aa}{server\+\_\+command\+\_\+ping} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_af289e3cc397e24e9b8c12c35bce68285}{server\+\_\+command\+\_\+list} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_a8daf68135f2d9e9412c04a2980bdfb2f}{server\+\_\+command\+\_\+privmsg} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_aba1a3da1fb58bb35076e7ea56037463e}{server\+\_\+command\+\_\+part} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_a0fe05d80af27ae220f8fa631468606ea}{server\+\_\+command\+\_\+names} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_a33025bd9c7bf8fbb2bf9cf722c07465c}{server\+\_\+command\+\_\+kick} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_a44a8736512c1df49d94c8194ae9b8a50}{server\+\_\+command\+\_\+mode} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_a327516a6c48e34b58428f7a502938928}{server\+\_\+command\+\_\+away} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_a8bb934f01707fcb12ebac41f1fe69441}{server\+\_\+command\+\_\+whois} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_a894ae019e03841e9d54fdad31d79f218}{server\+\_\+command\+\_\+topic} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\item 
+void \hyperlink{G-2313-06-P1__function__handlers_8h_a1258d3bdf779b82c3f952bdde3d62631}{server\+\_\+command\+\_\+motd} (char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación de las funciones}
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+away@{server\+\_\+command\+\_\+away}}
+\index{server\+\_\+command\+\_\+away@{server\+\_\+command\+\_\+away}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+away(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_away(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+away (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_a327516a6c48e34b58428f7a502938928}{}\label{G-2313-06-P1__function__handlers_8h_a327516a6c48e34b58428f7a502938928}
+
+
+Definición en la línea 1046 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+join@{server\+\_\+command\+\_\+join}}
+\index{server\+\_\+command\+\_\+join@{server\+\_\+command\+\_\+join}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+join(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_join(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+join (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_a375c143c5469d1bb4fa7793b310ad68e}{}\label{G-2313-06-P1__function__handlers_8h_a375c143c5469d1bb4fa7793b310ad68e}
+
+
+Definición en la línea 255 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+kick@{server\+\_\+command\+\_\+kick}}
+\index{server\+\_\+command\+\_\+kick@{server\+\_\+command\+\_\+kick}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+kick(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_kick(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+kick (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_a33025bd9c7bf8fbb2bf9cf722c07465c}{}\label{G-2313-06-P1__function__handlers_8h_a33025bd9c7bf8fbb2bf9cf722c07465c}
+
+
+Definición en la línea 808 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+list@{server\+\_\+command\+\_\+list}}
+\index{server\+\_\+command\+\_\+list@{server\+\_\+command\+\_\+list}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+list(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_list(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+list (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_af289e3cc397e24e9b8c12c35bce68285}{}\label{G-2313-06-P1__function__handlers_8h_af289e3cc397e24e9b8c12c35bce68285}
+
+
+Definición en la línea 472 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+mode@{server\+\_\+command\+\_\+mode}}
+\index{server\+\_\+command\+\_\+mode@{server\+\_\+command\+\_\+mode}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+mode(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_mode(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+mode (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_a44a8736512c1df49d94c8194ae9b8a50}{}\label{G-2313-06-P1__function__handlers_8h_a44a8736512c1df49d94c8194ae9b8a50}
+
+
+Definición en la línea 901 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+motd@{server\+\_\+command\+\_\+motd}}
+\index{server\+\_\+command\+\_\+motd@{server\+\_\+command\+\_\+motd}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+motd(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_motd(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+motd (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_a1258d3bdf779b82c3f952bdde3d62631}{}\label{G-2313-06-P1__function__handlers_8h_a1258d3bdf779b82c3f952bdde3d62631}
+
+
+Definición en la línea 1319 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+names@{server\+\_\+command\+\_\+names}}
+\index{server\+\_\+command\+\_\+names@{server\+\_\+command\+\_\+names}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+names(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_names(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+names (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_a0fe05d80af27ae220f8fa631468606ea}{}\label{G-2313-06-P1__function__handlers_8h_a0fe05d80af27ae220f8fa631468606ea}
+
+
+Definición en la línea 733 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+nick@{server\+\_\+command\+\_\+nick}}
+\index{server\+\_\+command\+\_\+nick@{server\+\_\+command\+\_\+nick}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+nick(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_nick(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+nick (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_aeefab469ba48ce1655dd5afd14f104b4}{}\label{G-2313-06-P1__function__handlers_8h_aeefab469ba48ce1655dd5afd14f104b4}
+
+
+Definición en la línea 82 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+part@{server\+\_\+command\+\_\+part}}
+\index{server\+\_\+command\+\_\+part@{server\+\_\+command\+\_\+part}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+part(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_part(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+part (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_aba1a3da1fb58bb35076e7ea56037463e}{}\label{G-2313-06-P1__function__handlers_8h_aba1a3da1fb58bb35076e7ea56037463e}
+
+
+Definición en la línea 644 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+ping@{server\+\_\+command\+\_\+ping}}
+\index{server\+\_\+command\+\_\+ping@{server\+\_\+command\+\_\+ping}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+ping(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_ping(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+ping (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_acc1c181bf44087b9216d1b59809937aa}{}\label{G-2313-06-P1__function__handlers_8h_acc1c181bf44087b9216d1b59809937aa}
+
+
+Definición en la línea 407 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+privmsg@{server\+\_\+command\+\_\+privmsg}}
+\index{server\+\_\+command\+\_\+privmsg@{server\+\_\+command\+\_\+privmsg}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+privmsg(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_privmsg(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+privmsg (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_a8daf68135f2d9e9412c04a2980bdfb2f}{}\label{G-2313-06-P1__function__handlers_8h_a8daf68135f2d9e9412c04a2980bdfb2f}
+
+
+Definición en la línea 542 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+quit@{server\+\_\+command\+\_\+quit}}
+\index{server\+\_\+command\+\_\+quit@{server\+\_\+command\+\_\+quit}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+quit(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_quit(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+quit (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_a3df99a1f2cefc2d91d65cbb6dd555f96}{}\label{G-2313-06-P1__function__handlers_8h_a3df99a1f2cefc2d91d65cbb6dd555f96}
+
+
+Definición en la línea 355 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+topic@{server\+\_\+command\+\_\+topic}}
+\index{server\+\_\+command\+\_\+topic@{server\+\_\+command\+\_\+topic}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+topic(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_topic(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+topic (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_a894ae019e03841e9d54fdad31d79f218}{}\label{G-2313-06-P1__function__handlers_8h_a894ae019e03841e9d54fdad31d79f218}
+
+
+Definición en la línea 1231 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+user@{server\+\_\+command\+\_\+user}}
+\index{server\+\_\+command\+\_\+user@{server\+\_\+command\+\_\+user}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+user(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_user(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_ad09156d6bd4cf58f4345e0bf851ff099}{}\label{G-2313-06-P1__function__handlers_8h_ad09156d6bd4cf58f4345e0bf851ff099}
+
+
+Definición en la línea 179 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+
+\index{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}!server\+\_\+command\+\_\+whois@{server\+\_\+command\+\_\+whois}}
+\index{server\+\_\+command\+\_\+whois@{server\+\_\+command\+\_\+whois}!G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h@{G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+command\+\_\+whois(char $\ast$command, int desc, char $\ast$nick\+\_\+static, int $\ast$register\+\_\+status)}{server_command_whois(char *command, int desc, char *nick_static, int *register_status)}}]{\setlength{\rightskip}{0pt plus 5cm}void server\+\_\+command\+\_\+whois (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int}]{desc, }
+\item[{char $\ast$}]{nick\+\_\+static, }
+\item[{int $\ast$}]{register\+\_\+status}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P1__function__handlers_8h_a8bb934f01707fcb12ebac41f1fe69441}{}\label{G-2313-06-P1__function__handlers_8h_a8bb934f01707fcb12ebac41f1fe69441}
+
+
+Definición en la línea 1106 del archivo G-\/2313-\/06-\/\+P1\+\_\+function\+\_\+handlers.\+c.
+

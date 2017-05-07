@@ -1,0 +1,29 @@
+.TH "server_channels_find_by_name" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_channels_find_by_name \- server_channels_find_by_name 
+Busca un canal por un nombre dado\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_common_functions\&.h\fP>\fP 
+.br
+ \fBint \fBserver_channels_find_by_name(char *channel)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Utiliza la función \fBIRCTADUser_GetData\fP del TAD para buscar un canal que cumpla las características de nombre recibidas como parámetro \fBchar *channel\fP\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBint\fP Devuelve valor verdado/falso dependiendo de la búsqueda\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

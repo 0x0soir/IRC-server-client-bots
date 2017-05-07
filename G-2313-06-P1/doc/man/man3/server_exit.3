@@ -1,0 +1,31 @@
+.TH "server_exit" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_exit \- server_exit 
+Finaliza el servidor IRC y cierra el socket\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_server\&.h\fP>\fP 
+.br
+ \fBvoid \fBserver_exit()\fP\fP \fP 
+.SH "Descripción"
+.PP
+Una vez se finaliza el servidor (se recibe la señal adecuada para ello) se procede a finalizar el servicio actual\&. Para ello se finaliza el bucle de \fB\fBserver_accept_connection()\fP\fP actualizando la variable global \fBserver_status=false\fP que provoca una interrupción en el while que acepta las conexiones de los clientes\&.
+.PP
+Además, se finaliza el socket con la función \fBclose(server_socket_desc)\fP, tras esto se realiza una llamada la función \fBthread_pool_delete(pool)\fP para eliminar todos los hilos generados en el ThreadPool y se liberan los recursos para proceder a la salida del proceso general\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

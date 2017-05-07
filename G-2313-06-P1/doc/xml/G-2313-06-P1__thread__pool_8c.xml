@@ -1,0 +1,630 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="G-2313-06-P1__thread__pool_8c" kind="file" language="C++">
+    <compoundname>G-2313-06-P1_thread_pool.c</compoundname>
+    <includes refid="G-2313-06-P1__thread__pool_8h" local="yes">../includes/G-2313-06-P1_thread_pool.h</includes>
+    <incdepgraph>
+      <node id="320">
+        <label>stdlib.h</label>
+      </node>
+      <node id="318">
+        <label>../includes/G-2313-06-P1_thread_pool.h</label>
+        <link refid="G-2313-06-P1__thread__pool_8h"/>
+        <childnode refid="319" relation="include">
+        </childnode>
+        <childnode refid="320" relation="include">
+        </childnode>
+        <childnode refid="321" relation="include">
+        </childnode>
+        <childnode refid="322" relation="include">
+        </childnode>
+        <childnode refid="323" relation="include">
+        </childnode>
+        <childnode refid="324" relation="include">
+        </childnode>
+        <childnode refid="325" relation="include">
+        </childnode>
+        <childnode refid="326" relation="include">
+        </childnode>
+      </node>
+      <node id="323">
+        <label>syslog.h</label>
+      </node>
+      <node id="326">
+        <label>G-2313-06-P1_list.h</label>
+        <link refid="G-2313-06-P1__list_8h"/>
+      </node>
+      <node id="319">
+        <label>pthread.h</label>
+      </node>
+      <node id="325">
+        <label>unistd.h</label>
+      </node>
+      <node id="324">
+        <label>signal.h</label>
+      </node>
+      <node id="322">
+        <label>time.h</label>
+      </node>
+      <node id="317">
+        <label>src/G-2313-06-P1_thread_pool.c</label>
+        <link refid="G-2313-06-P1_thread_pool.c"/>
+        <childnode refid="318" relation="include">
+        </childnode>
+      </node>
+      <node id="321">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1ae4c7364510f378011559c4eb6078e3ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref> *</type>
+        <definition>thread_pool_t* thread_pool_create</definition>
+        <argsstring>(int size)</argsstring>
+        <name>thread_pool_create</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="3" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="3" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1a46b14e66a9466a68fa4f67a2e08e81fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thread_pool_delete</definition>
+        <argsstring>(thread_pool_t *p)</argsstring>
+        <name>thread_pool_delete</name>
+        <param>
+          <type><ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="27" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="27" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1a46e84068eca615afa66b5544ea7a2518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int thread_pool_init</definition>
+        <argsstring>(thread_pool_t *p)</argsstring>
+        <name>thread_pool_init</name>
+        <param>
+          <type><ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="58" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="58" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1ae2a8c98f4f014e5b9d632bb678d7127a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int thread_pool_init_internal</definition>
+        <argsstring>(thread_pool_t *p, double low_level, double high_level, int master_interval)</argsstring>
+        <name>thread_pool_init_internal</name>
+        <param>
+          <type><ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>low_level</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>high_level</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>master_interval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="64" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="64" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1a920e51bce81dfc069372dd87935db55e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structthread__t" kindref="compound">thread_t</ref> *</type>
+        <definition>thread_t* thread_create</definition>
+        <argsstring>(void)</argsstring>
+        <name>thread_create</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="109" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="109" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1a9aa2b7b210972e06e1a7d0775ba520b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int thread_add</definition>
+        <argsstring>(thread_pool_t *p, thread_t *t)</argsstring>
+        <name>thread_add</name>
+        <param>
+          <type><ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="structthread__t" kindref="compound">thread_t</ref> *</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="121" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="121" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1a95970a6ee2f49963fc3fe7aefa677194" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thread_del</definition>
+        <argsstring>(thread_t *t)</argsstring>
+        <name>thread_del</name>
+        <param>
+          <type><ref refid="structthread__t" kindref="compound">thread_t</ref> *</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="152" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="152" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1a1fe4c198a9a46014fbac70eb443018a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void thread_del_internal</definition>
+        <argsstring>(thread_pool_t *p, thread_t *t, int force_lock)</argsstring>
+        <name>thread_del_internal</name>
+        <param>
+          <type><ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="structthread__t" kindref="compound">thread_t</ref> *</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>force_lock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="159" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="159" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1a4ef081fb21acd34e0e2492a9f290b6a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* worker_callback</definition>
+        <argsstring>(void *arg)</argsstring>
+        <name>worker_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="171" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="171" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1a54703c23462be974a5e2511247921922" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* master_callback</definition>
+        <argsstring>(void *arg)</argsstring>
+        <name>master_callback</name>
+        <param>
+          <type>void *</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="222" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="222" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1afa05870619a7e753d41b8135b8514a2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structtask__t" kindref="compound">task_t</ref> *</type>
+        <definition>task_t* task_create</definition>
+        <argsstring>(void)</argsstring>
+        <name>task_create</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="259" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="259" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1a5665a923c48ff85abd630ddf83eb9999" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void task_init</definition>
+        <argsstring>(task_t *t, void *(*task_callback)(int), int arg)</argsstring>
+        <name>task_init</name>
+        <param>
+          <type><ref refid="structtask__t" kindref="compound">task_t</ref> *</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>void *(*)(int)</type>
+          <declname>task_callback</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="271" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="271" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P1__thread__pool_8c_1a90a0cb9adb9500b4f205edd942fc8272" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void task_add</definition>
+        <argsstring>(thread_pool_t *p, task_t *t)</argsstring>
+        <name>task_add</name>
+        <param>
+          <type><ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="structtask__t" kindref="compound">task_t</ref> *</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P1_thread_pool.c" line="277" column="1" bodyfile="src/G-2313-06-P1_thread_pool.c" bodystart="277" bodyend="306"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2313-06-P1_thread_pool.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="G-2313-06-P1__thread__pool_8c_1ae4c7364510f378011559c4eb6078e3ea" refkind="member"><highlight class="normal"><ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*<ref refid="G-2313-06-P1__thread__pool_8c_1ae4c7364510f378011559c4eb6078e3ea" kindref="member">thread_pool_create</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*p;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*master_thread;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/>(<ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref>));</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(p<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>master_thread<sp/>=<sp/>(<ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structthread__t" kindref="compound">thread_t</ref>));</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(master_thread<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(p);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a9ad8218717dde39eef701a8bce5ca0a1" kindref="member">master_thread</ref><sp/>=<sp/>master_thread;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a3185c157636a142415699a20042d6dd8" kindref="member">size</ref><sp/>=<sp/>size;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_init(&amp;p-&gt;<ref refid="structthread__pool__t_1aaa6e0a9d9c28c3f9be7eccbe8003af23" kindref="member">global</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="G-2313-06-P1__thread__pool_8c_1a46b14e66a9466a68fa4f67a2e08e81fd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a46b14e66a9466a68fa4f67a2e08e81fd" kindref="member">thread_pool_delete</ref>(<ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*p){</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*t<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>pthread_mutex_lock(&amp;p-&gt;<ref refid="structthread__pool__t_1aaa6e0a9d9c28c3f9be7eccbe8003af23" kindref="member">global</ref>);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P1__list_8h_1aa728613529c4fc5383f80b3d733b4153" kindref="member">list_for_each_entry</ref>(t,<sp/>(&amp;(p-&gt;<ref refid="structthread__pool__t_1a44640e57780a54d437d7589b1c754ac1" kindref="member">worker_queue</ref>)),<sp/>worker_entry){</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(p-&gt;<ref refid="structthread__pool__t_1a3185c157636a142415699a20042d6dd8" kindref="member">size</ref>&gt;0){</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_ERR,<sp/></highlight><highlight class="stringliteral">&quot;Eliminando<sp/>hilo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pthread_kill(t-&gt;<ref refid="structthread__t_1a92c076d58ca307499452b8dfe0c4e598" kindref="member">tid</ref>,<sp/>SIGINT);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pthread_detach(t-&gt;<ref refid="structthread__t_1a92c076d58ca307499452b8dfe0c4e598" kindref="member">tid</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a1fe4c198a9a46014fbac70eb443018a1" kindref="member">thread_del_internal</ref>(p,<sp/>t,<sp/>0);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_ERR,<sp/></highlight><highlight class="stringliteral">&quot;Fuera<sp/>de<sp/>lista&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>syslog(LOG_ERR,<sp/></highlight><highlight class="stringliteral">&quot;Termina<sp/>hijos&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*list_for_each_entry(t,<sp/>(&amp;(p-&gt;idle_queue)),<sp/>idle_entry){</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/>syslog(LOG_ERR,<sp/>&quot;Eliminando<sp/>hilo&quot;);</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/><sp/>pthread_exit(&amp;t-&gt;tid);</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/><sp/>syslog(LOG_ERR,<sp/>&quot;Eliminado<sp/>1&quot;);</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/><sp/>pthread_detach(t-&gt;tid);</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/>syslog(LOG_ERR,<sp/>&quot;Eliminado<sp/>2&quot;);</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/><sp/>thread_del_internal(p,<sp/>t,<sp/>0);</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/>syslog(LOG_ERR,<sp/>&quot;Fuera<sp/>de<sp/>lista&quot;);</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>pthread_mutex_unlock(&amp;p-&gt;<ref refid="structthread__pool__t_1aaa6e0a9d9c28c3f9be7eccbe8003af23" kindref="member">global</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(p-&gt;<ref refid="structthread__pool__t_1a9ad8218717dde39eef701a8bce5ca0a1" kindref="member">master_thread</ref>){</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>free(p-&gt;<ref refid="structthread__pool__t_1a9ad8218717dde39eef701a8bce5ca0a1" kindref="member">master_thread</ref>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a9ad8218717dde39eef701a8bce5ca0a1" kindref="member">master_thread</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;POOL:<sp/>Termina<sp/>de<sp/>liberar&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="G-2313-06-P1__thread__pool_8c_1a46e84068eca615afa66b5544ea7a2518" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a46e84068eca615afa66b5544ea7a2518" kindref="member">thread_pool_init</ref>(<ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*p)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1ae2a8c98f4f014e5b9d632bb678d7127a" kindref="member">thread_pool_init_internal</ref>(p,<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1a9466670765f7653fc75437eb55c472f3" kindref="member">THREAD_IDLE_LEVEL</ref>,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__thread__pool_8h_1a09199434ab101700c051a235cf740f30" kindref="member">THREAD_BUSY_LEVEL</ref>,<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1a562492e441dc328fba8a344c7206758a" kindref="member">MASTER_INTERVAL</ref>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="G-2313-06-P1__thread__pool_8c_1ae2a8c98f4f014e5b9d632bb678d7127a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1ae2a8c98f4f014e5b9d632bb678d7127a" kindref="member">thread_pool_init_internal</ref>(<ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*p,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>low_level,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>high_level,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>master_interval)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*t<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_attr_t<sp/>attr;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_attr_init(&amp;attr);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>pthread_attr_setdetachstate(&amp;attr,<sp/>PTHREAD_CREATE_DETACHED);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ret<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_init(&amp;p-&gt;<ref refid="structthread__pool__t_1aaa6e0a9d9c28c3f9be7eccbe8003af23" kindref="member">global</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a978e7f94032dad6e7a373e7bc1896237" kindref="member">max_size</ref><sp/>=<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1a1d5f9a0a6439db9d27573f4ea768e03a" kindref="member">THREAD_POOL_MAX_THREADS</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a80aa1805a11e2e6e2bf5811fda0ffc26" kindref="member">min_size</ref><sp/>=<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1a2dddf10750568983fb5e8793f467e170" kindref="member">THREAD_POOL_MIN_THREADS</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a815792ab9c936b06d46ef3e149e5fd88" kindref="member">low_level</ref><sp/>=<sp/>low_level;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1aa771fc181f63c16346fff1c7eb0d9014" kindref="member">high_level</ref><sp/>=<sp/>high_level;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1ae3eaf8d90ef550166e595286a6175d14" kindref="member">master_interval</ref><sp/>=<sp/>master_interval;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__list_8h_1a0ffe9d28c36d7b018a9cfae33bae45c0" kindref="member">INIT_LIST_HEAD</ref>(&amp;p-&gt;<ref refid="structthread__pool__t_1a44640e57780a54d437d7589b1c754ac1" kindref="member">worker_queue</ref>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__list_8h_1a0ffe9d28c36d7b018a9cfae33bae45c0" kindref="member">INIT_LIST_HEAD</ref>(&amp;p-&gt;<ref refid="structthread__pool__t_1a38a9fa0d0ea1060d5bbff8421a92c1c7" kindref="member">idle_queue</ref>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>size<sp/>=<sp/>p-&gt;<ref refid="structthread__pool__t_1a3185c157636a142415699a20042d6dd8" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a3185c157636a142415699a20042d6dd8" kindref="member">size</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size;<sp/>i++)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a920e51bce81dfc069372dd87935db55e" kindref="member">thread_create</ref>();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a9aa2b7b210972e06e1a7d0775ba520b3" kindref="member">thread_add</ref>(p,<sp/>t);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*pthread_create(&amp;p-&gt;master_thread-&gt;tid,<sp/>&amp;attr,</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>master_callback,<sp/>(void<sp/>*)p);*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_attr_destroy(&amp;attr);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a00ce5a27204f85e624552f7448ba7093" kindref="member">task_next</ref><sp/>=<sp/><ref refid="G-2313-06-P1__list_8h_1a894172f609f0f81a2d6ffdcd7ac1954f" kindref="member">list_first_entry</ref>((&amp;p-&gt;<ref refid="structthread__pool__t_1a44640e57780a54d437d7589b1c754ac1" kindref="member">worker_queue</ref>),<sp/><ref refid="structthread__t" kindref="compound">thread_t</ref>,<sp/>worker_entry);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="G-2313-06-P1__thread__pool_8c_1a920e51bce81dfc069372dd87935db55e" refkind="member"><highlight class="normal"><ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*<ref refid="G-2313-06-P1__thread__pool_8c_1a920e51bce81dfc069372dd87935db55e" kindref="member">thread_create</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*t<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>=<sp/>(<ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*)calloc(1,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structthread__t" kindref="compound">thread_t</ref>));</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>t;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="G-2313-06-P1__thread__pool_8c_1a9aa2b7b210972e06e1a7d0775ba520b3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a9aa2b7b210972e06e1a7d0775ba520b3" kindref="member">thread_add</ref>(<ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*p,<sp/><ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*t)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>pthread_attr_t<sp/>attr;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structthread__args" kindref="compound">thread_args</ref><sp/>*args;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>pthread_attr_init(&amp;attr);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>ret<sp/>=<sp/>pthread_attr_setdetachstate(&amp;attr,<sp/>PTHREAD_CREATE_DETACHED);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ret<sp/>!=<sp/>0){</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_attr_destroy(&amp;attr);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P1__list_8h_1a0ffe9d28c36d7b018a9cfae33bae45c0" kindref="member">INIT_LIST_HEAD</ref>(&amp;t-&gt;<ref refid="structthread__t_1a69c932ede0de60b66a482fb735fca966" kindref="member">task_queue</ref>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>list_add_tail(&amp;(t-&gt;<ref refid="structthread__t_1a03432229de426c5ba35d0dfa325491f0" kindref="member">worker_entry</ref>),<sp/>&amp;(p-&gt;<ref refid="structthread__pool__t_1a44640e57780a54d437d7589b1c754ac1" kindref="member">worker_queue</ref>));</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>list_add_tail(&amp;(t-&gt;<ref refid="structthread__t_1a9386032d478cacdfd680d5691e0eb9d3" kindref="member">idle_entry</ref>),<sp/>&amp;(p-&gt;<ref refid="structthread__pool__t_1a38a9fa0d0ea1060d5bbff8421a92c1c7" kindref="member">idle_queue</ref>));</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a3185c157636a142415699a20042d6dd8" kindref="member">size</ref>++;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>t-&gt;<ref refid="structthread__t_1a3e0780f1c2fc9932258a60b5043fe424" kindref="member">state</ref><sp/>=<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1a7fb00c8fb812a4f9a1c08e22a95104a1" kindref="member">THREAD_STATE_IDLE</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>t-&gt;<ref refid="structthread__t_1a3e0780f1c2fc9932258a60b5043fe424" kindref="member">state</ref><sp/>=<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1a9c22e7eceaed2a27b40b3bd043c1d057" kindref="member">THREAD_RUNNING</ref>;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>t-&gt;<ref refid="structthread__t_1aa99eeab6834595bdff5a7da08314fd89" kindref="member">queue_size</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>pthread_mutex_init(&amp;t-&gt;<ref refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" kindref="member">mutex</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>pthread_cond_init(&amp;t-&gt;<ref refid="structthread__t_1a6cb846b84c59d01a8b3a2693d39a4af1" kindref="member">cond</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>args<sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>*args);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>args-&gt;<ref refid="structthread__args_1a425ced5f77dcbb52f61d240a4e207a27" kindref="member">pool</ref><sp/>=<sp/>p;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>args-&gt;<ref refid="structthread__args_1a191f3ea514283452d04bde31cde4c7ad" kindref="member">current</ref><sp/>=<sp/>t;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>pthread_create(&amp;t-&gt;<ref refid="structthread__t_1a92c076d58ca307499452b8dfe0c4e598" kindref="member">tid</ref>,<sp/>&amp;attr,<sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a4ef081fb21acd34e0e2492a9f290b6a3" kindref="member">worker_callback</ref>,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)args);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>pthread_attr_destroy(&amp;attr);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="G-2313-06-P1__thread__pool_8c_1a95970a6ee2f49963fc3fe7aefa677194" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a95970a6ee2f49963fc3fe7aefa677194" kindref="member">thread_del</ref>(<ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*t){</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;t-&gt;<ref refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>t-&gt;<ref refid="structthread__t_1a8e9f0fd028676d0ebeef8438f2176bb7" kindref="member">stop</ref><sp/>=<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1acef14a4788dacf3640cf28745cf49726" kindref="member">THREAD_STOPPING</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_cond_signal(&amp;t-&gt;<ref refid="structthread__t_1a6cb846b84c59d01a8b3a2693d39a4af1" kindref="member">cond</ref>);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;t-&gt;<ref refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="G-2313-06-P1__thread__pool_8c_1a1fe4c198a9a46014fbac70eb443018a1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a1fe4c198a9a46014fbac70eb443018a1" kindref="member">thread_del_internal</ref>(<ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*p,<sp/><ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*t,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>force_lock){</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(force_lock){</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;p-&gt;<ref refid="structthread__pool__t_1aaa6e0a9d9c28c3f9be7eccbe8003af23" kindref="member">global</ref>);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>list_del(&amp;t-&gt;<ref refid="structthread__t_1a03432229de426c5ba35d0dfa325491f0" kindref="member">worker_entry</ref>);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>list_del(&amp;t-&gt;<ref refid="structthread__t_1a9386032d478cacdfd680d5691e0eb9d3" kindref="member">idle_entry</ref>);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a3185c157636a142415699a20042d6dd8" kindref="member">size</ref>--;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(force_lock){</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;p-&gt;<ref refid="structthread__pool__t_1aaa6e0a9d9c28c3f9be7eccbe8003af23" kindref="member">global</ref>);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="G-2313-06-P1__thread__pool_8c_1a4ef081fb21acd34e0e2492a9f290b6a3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="G-2313-06-P1__thread__pool_8c_1a4ef081fb21acd34e0e2492a9f290b6a3" kindref="member">worker_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structthread__args" kindref="compound">thread_args</ref><sp/>*args<sp/>=<sp/>arg;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*curr<sp/>=<sp/>(<ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*)<sp/>args-&gt;<ref refid="structthread__args_1a191f3ea514283452d04bde31cde4c7ad" kindref="member">current</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*tp<sp/>=<sp/>(<ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*)<sp/>args-&gt;<ref refid="structthread__args_1a425ced5f77dcbb52f61d240a4e207a27" kindref="member">pool</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structtask__t" kindref="compound">task_t</ref><sp/>*t;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;curr-&gt;<ref refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(curr-&gt;<ref refid="structthread__t_1aa99eeab6834595bdff5a7da08314fd89" kindref="member">queue_size</ref><sp/>==<sp/>0<sp/>&amp;&amp;<sp/>curr-&gt;<ref refid="structthread__t_1a8e9f0fd028676d0ebeef8438f2176bb7" kindref="member">stop</ref><sp/>!=<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1acef14a4788dacf3640cf28745cf49726" kindref="member">THREAD_STOPPING</ref>)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_cond_wait(&amp;curr-&gt;<ref refid="structthread__t_1a6cb846b84c59d01a8b3a2693d39a4af1" kindref="member">cond</ref>,<sp/>&amp;curr-&gt;<ref refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(curr-&gt;<ref refid="structthread__t_1a8e9f0fd028676d0ebeef8438f2176bb7" kindref="member">stop</ref><sp/>==<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1acef14a4788dacf3640cf28745cf49726" kindref="member">THREAD_STOPPING</ref>)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(curr-&gt;<ref refid="structthread__t_1aa99eeab6834595bdff5a7da08314fd89" kindref="member">queue_size</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;curr-&gt;<ref refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a1fe4c198a9a46014fbac70eb443018a1" kindref="member">thread_del_internal</ref>(tp,<sp/>curr,<sp/>1);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;curr-&gt;<ref refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/><ref refid="G-2313-06-P1__list_8h_1a26c976b7f654e70df318c1843e5094de" kindref="member">list_entry</ref>(curr-&gt;<ref refid="structthread__t_1a69c932ede0de60b66a482fb735fca966" kindref="member">task_queue</ref>.<ref refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" kindref="member">next</ref>,<sp/><ref refid="structtask__t" kindref="compound">task_t</ref>,<sp/>entry);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t)</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t-&gt;<ref refid="structtask__t_1ac8c2d416888e415fc6ee54410a4c511c" kindref="member">task_callback</ref>(t-&gt;<ref refid="structtask__t_1a9162b404bd1cf5349b2092f69e31c613" kindref="member">arg</ref>);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_del(&amp;t-&gt;<ref refid="structtask__t_1ac812553758f9102a7a674ad29e78f98b" kindref="member">entry</ref>);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(t);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curr-&gt;<ref refid="structthread__t_1aa99eeab6834595bdff5a7da08314fd89" kindref="member">queue_size</ref>--;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(curr-&gt;<ref refid="structthread__t_1aa99eeab6834595bdff5a7da08314fd89" kindref="member">queue_size</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;tp-&gt;global);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_add_tail(&amp;(curr-&gt;<ref refid="structthread__t_1a9386032d478cacdfd680d5691e0eb9d3" kindref="member">idle_entry</ref>),<sp/>&amp;(tp-&gt;idle_queue));</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;tp-&gt;global);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>curr-&gt;<ref refid="structthread__t_1a3e0780f1c2fc9932258a60b5043fe424" kindref="member">state</ref><sp/>=<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1a7fb00c8fb812a4f9a1c08e22a95104a1" kindref="member">THREAD_STATE_IDLE</ref>;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;curr-&gt;<ref refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="G-2313-06-P1__thread__pool_8c_1a54703c23462be974a5e2511247921922" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="G-2313-06-P1__thread__pool_8c_1a54703c23462be974a5e2511247921922" kindref="member">master_callback</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*p<sp/>=<sp/>(<ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*)arg;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*t;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>busy<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idle<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>add_num<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__list_8h_1aa728613529c4fc5383f80b3d733b4153" kindref="member">list_for_each_entry</ref>(t,<sp/>(&amp;(p-&gt;<ref refid="structthread__pool__t_1a44640e57780a54d437d7589b1c754ac1" kindref="member">worker_queue</ref>)),<sp/>worker_entry)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t-&gt;<ref refid="structthread__t_1a3e0780f1c2fc9932258a60b5043fe424" kindref="member">state</ref><sp/>==<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1a7fb00c8fb812a4f9a1c08e22a95104a1" kindref="member">THREAD_STATE_IDLE</ref>)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idle++;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t-&gt;<ref refid="structthread__t_1a3e0780f1c2fc9932258a60b5043fe424" kindref="member">state</ref><sp/>==<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1a91780ed988c2db43eb70b7106cee217b" kindref="member">THREAD_STATE_BUSY</ref>)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>busy++;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(idle&lt;5){</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>add_num<sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_ERR,<sp/></highlight><highlight class="stringliteral">&quot;POOL:<sp/>Falta<sp/>de<sp/>espacio,<sp/>incrementa<sp/>pool<sp/>en<sp/>%d<sp/>hilos&quot;</highlight><highlight class="normal">,<sp/>add_num);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(add_num--){</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t<sp/>=<sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a920e51bce81dfc069372dd87935db55e" kindref="member">thread_create</ref>();</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_ERR,<sp/></highlight><highlight class="stringliteral">&quot;POOL:<sp/>Crea<sp/>nuevo<sp/>hilo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a9aa2b7b210972e06e1a7d0775ba520b3" kindref="member">thread_add</ref>(p,<sp/>t);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syslog(LOG_ERR,<sp/></highlight><highlight class="stringliteral">&quot;POOL:<sp/>Add<sp/>hilo<sp/>al<sp/>pool&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>syslog(LOG_ERR,<sp/></highlight><highlight class="stringliteral">&quot;POOL:<sp/>Busy:<sp/>%d<sp/>|<sp/>Idle:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>busy,<sp/>idle);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259" refid="G-2313-06-P1__thread__pool_8c_1afa05870619a7e753d41b8135b8514a2c" refkind="member"><highlight class="normal"><ref refid="structtask__t" kindref="compound">task_t</ref><sp/>*<ref refid="G-2313-06-P1__thread__pool_8c_1afa05870619a7e753d41b8135b8514a2c" kindref="member">task_create</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structtask__t" kindref="compound">task_t</ref><sp/>*t;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>=<sp/>(<ref refid="structtask__t" kindref="compound">task_t</ref><sp/>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structtask__t" kindref="compound">task_t</ref>));</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t<sp/>==<sp/>NULL)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>t;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271" refid="G-2313-06-P1__thread__pool_8c_1a5665a923c48ff85abd630ddf83eb9999" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a5665a923c48ff85abd630ddf83eb9999" kindref="member">task_init</ref>(<ref refid="structtask__t" kindref="compound">task_t</ref><sp/>*t,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>(*task_callback)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">),<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>arg)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>t-&gt;<ref refid="structtask__t_1ac8c2d416888e415fc6ee54410a4c511c" kindref="member">task_callback</ref><sp/>=<sp/>task_callback;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>t-&gt;<ref refid="structtask__t_1a9162b404bd1cf5349b2092f69e31c613" kindref="member">arg</ref><sp/>=<sp/>arg;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277" refid="G-2313-06-P1__thread__pool_8c_1a90a0cb9adb9500b4f205edd942fc8272" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a90a0cb9adb9500b4f205edd942fc8272" kindref="member">task_add</ref>(<ref refid="structthread__pool__t" kindref="compound">thread_pool_t</ref><sp/>*p,<sp/><ref refid="structtask__t" kindref="compound">task_t</ref><sp/>*t)</highlight></codeline>
+<codeline lineno="278"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*th<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structthread__t" kindref="compound">thread_t</ref><sp/>*last<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;p-&gt;<ref refid="structthread__pool__t_1aaa6e0a9d9c28c3f9be7eccbe8003af23" kindref="member">global</ref>);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="G-2313-06-P1__thread__pool_8c_1a54703c23462be974a5e2511247921922" kindref="member">master_callback</ref>((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)p);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>th<sp/>=<sp/>p-&gt;<ref refid="structthread__pool__t_1a00ce5a27204f85e624552f7448ba7093" kindref="member">task_next</ref>;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>last<sp/>=<sp/><ref refid="G-2313-06-P1__list_8h_1a26c976b7f654e70df318c1843e5094de" kindref="member">list_entry</ref>(p-&gt;<ref refid="structthread__pool__t_1a44640e57780a54d437d7589b1c754ac1" kindref="member">worker_queue</ref>.<ref refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" kindref="member">prev</ref>,<sp/><ref refid="structthread__t" kindref="compound">thread_t</ref>,<sp/>worker_entry);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(th<sp/>==<sp/>last)</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a00ce5a27204f85e624552f7448ba7093" kindref="member">task_next</ref><sp/>=<sp/><ref refid="G-2313-06-P1__list_8h_1a894172f609f0f81a2d6ffdcd7ac1954f" kindref="member">list_first_entry</ref>((&amp;p-&gt;<ref refid="structthread__pool__t_1a44640e57780a54d437d7589b1c754ac1" kindref="member">worker_queue</ref>),<sp/><ref refid="structthread__t" kindref="compound">thread_t</ref>,<sp/>worker_entry);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>p-&gt;<ref refid="structthread__pool__t_1a00ce5a27204f85e624552f7448ba7093" kindref="member">task_next</ref><sp/>=<sp/><ref refid="G-2313-06-P1__list_8h_1a853740b546497b17a28faf076cf3f6a0" kindref="member">list_next_entry</ref>(th,<sp/>worker_entry);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;p-&gt;<ref refid="structthread__pool__t_1aaa6e0a9d9c28c3f9be7eccbe8003af23" kindref="member">global</ref>);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_trylock(&amp;th-&gt;<ref refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>list_add_tail(&amp;(t-&gt;<ref refid="structtask__t_1ac812553758f9102a7a674ad29e78f98b" kindref="member">entry</ref>),<sp/>&amp;(th-&gt;<ref refid="structthread__t_1a69c932ede0de60b66a482fb735fca966" kindref="member">task_queue</ref>));</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>th-&gt;<ref refid="structthread__t_1aa99eeab6834595bdff5a7da08314fd89" kindref="member">queue_size</ref>++;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(th-&gt;<ref refid="structthread__t_1aa99eeab6834595bdff5a7da08314fd89" kindref="member">queue_size</ref><sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>th-&gt;<ref refid="structthread__t_1a3e0780f1c2fc9932258a60b5043fe424" kindref="member">state</ref><sp/>=<sp/><ref refid="G-2313-06-P1__thread__pool_8h_1a91780ed988c2db43eb70b7106cee217b" kindref="member">THREAD_STATE_BUSY</ref>;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;p-&gt;<ref refid="structthread__pool__t_1aaa6e0a9d9c28c3f9be7eccbe8003af23" kindref="member">global</ref>);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list_del(&amp;(th-&gt;<ref refid="structthread__t_1a9386032d478cacdfd680d5691e0eb9d3" kindref="member">idle_entry</ref>));</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;p-&gt;<ref refid="structthread__pool__t_1aaa6e0a9d9c28c3f9be7eccbe8003af23" kindref="member">global</ref>);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_cond_signal(&amp;th-&gt;<ref refid="structthread__t_1a6cb846b84c59d01a8b3a2693d39a4af1" kindref="member">cond</ref>);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;th-&gt;<ref refid="structthread__t_1abb0dcb82ff12b61776b74c76fa27c964" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/G-2313-06-P1_thread_pool.c"/>
+  </compounddef>
+</doxygen>

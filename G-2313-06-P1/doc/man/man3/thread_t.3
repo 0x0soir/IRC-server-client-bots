@@ -1,0 +1,86 @@
+.TH "thread_t" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+thread_t \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <G\-2313\-06\-P1_thread_pool\&.h>\fP
+.SS "Atributos públicos"
+
+.in +1c
+.ti -1c
+.RI "pthread_t \fBtid\fP"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBmutex\fP"
+.br
+.ti -1c
+.RI "pthread_cond_t \fBcond\fP"
+.br
+.ti -1c
+.RI "int \fBstate\fP"
+.br
+.ti -1c
+.RI "int \fBstop\fP"
+.br
+.ti -1c
+.RI "int \fBqueue_size\fP"
+.br
+.ti -1c
+.RI "struct \fBlist_head\fP \fBtask_queue\fP"
+.br
+.ti -1c
+.RI "struct \fBlist_head\fP \fBworker_entry\fP"
+.br
+.ti -1c
+.RI "struct \fBlist_head\fP \fBidle_entry\fP"
+.br
+.in -1c
+.SH "Descripción detallada"
+.PP 
+Definición en la línea 35 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SH "Documentación de los datos miembro"
+.PP 
+.SS "pthread_cond_t thread_t::cond"
+
+.PP
+Definición en la línea 39 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "struct \fBlist_head\fP thread_t::idle_entry"
+
+.PP
+Definición en la línea 45 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "pthread_mutex_t thread_t::mutex"
+
+.PP
+Definición en la línea 38 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "int thread_t::queue_size"
+
+.PP
+Definición en la línea 42 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "int thread_t::state"
+
+.PP
+Definición en la línea 40 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "int thread_t::stop"
+
+.PP
+Definición en la línea 41 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "struct \fBlist_head\fP thread_t::task_queue"
+
+.PP
+Definición en la línea 43 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "pthread_t thread_t::tid"
+
+.PP
+Definición en la línea 37 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+.SS "struct \fBlist_head\fP thread_t::worker_entry"
+
+.PP
+Definición en la línea 44 del archivo G\-2313\-06\-P1_thread_pool\&.h\&.
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

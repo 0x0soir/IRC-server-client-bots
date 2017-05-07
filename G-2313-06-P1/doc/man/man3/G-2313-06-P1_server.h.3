@@ -1,0 +1,165 @@
+.TH "includes/G-2313-06-P1_server.h" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2313-06-P1_server.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <errno\&.h>\fP
+.br
+\fC#include <sys/time\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <syslog\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <strings\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include <redes2/irc\&.h>\fP
+.br
+\fC#include <netdb\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include 'G\-2313\-06\-P1_function_handlers\&.h'\fP
+.br
+\fC#include 'G\-2313\-06\-P1_common_functions\&.h'\fP
+.br
+\fC#include 'G\-2313\-06\-P1_list\&.h'\fP
+.br
+\fC#include 'G\-2313\-06\-P1_thread_pool\&.h'\fP
+.br
+
+.SS "'defines'"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMIN_POOL_THREADS\fP   3"
+.br
+.ti -1c
+.RI "#define \fBMAX_CONNECTIONS\fP   100"
+.br
+.ti -1c
+.RI "#define \fBSERVER_PORT\fP   6667"
+.br
+.ti -1c
+.RI "#define \fBCLIENT_MESSAGE_MAXSIZE\fP   8096"
+.br
+.in -1c
+.SS "'typedefs'"
+
+.in +1c
+.ti -1c
+.RI "typedef void(* \fBFunctionCallBack\fP) (char *, int, char *, int *)"
+.br
+.in -1c
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBserver_start\fP (void)"
+.br
+.ti -1c
+.RI "void \fBserver_accept_connection\fP (int socket_id)"
+.br
+.ti -1c
+.RI "void * \fBserver_start_communication\fP (int connval)"
+.br
+.ti -1c
+.RI "void \fBserver_exit\fP ()"
+.br
+.ti -1c
+.RI "void \fBserver_execute_function\fP (long functionName, char *command, int desc, char *nick, int *register_status)"
+.br
+.ti -1c
+.RI "int \fBserver_check_socket_status\fP (int socket_desc)"
+.br
+.ti -1c
+.RI "void \fBserver_daemon\fP ()"
+.br
+.ti -1c
+.RI "void \fBserver_start_pool\fP ()"
+.br
+.in -1c
+.SH "Documentación de los 'defines'"
+.PP 
+.SS "#define CLIENT_MESSAGE_MAXSIZE   8096"
+
+.PP
+Definición en la línea 29 del archivo G\-2313\-06\-P1_server\&.h\&.
+.SS "#define MAX_CONNECTIONS   100"
+
+.PP
+Definición en la línea 27 del archivo G\-2313\-06\-P1_server\&.h\&.
+.SS "#define MIN_POOL_THREADS   3"
+
+.PP
+Definición en la línea 26 del archivo G\-2313\-06\-P1_server\&.h\&.
+.SS "#define SERVER_PORT   6667"
+
+.PP
+Definición en la línea 28 del archivo G\-2313\-06\-P1_server\&.h\&.
+.SH "Documentación de los 'typedefs'"
+.PP 
+.SS "typedef void(* FunctionCallBack) (char *, int, char *, int *)"
+
+.PP
+Definición en la línea 41 del archivo G\-2313\-06\-P1_server\&.h\&.
+.SH "Documentación de las funciones"
+.PP 
+.SS "void server_accept_connection (int socket_id)"
+
+.PP
+Definición en la línea 171 del archivo G\-2313\-06\-P1_server\&.c\&.
+.SS "int server_check_socket_status (int socket_desc)"
+
+.PP
+Definición en la línea 473 del archivo G\-2313\-06\-P1_server\&.c\&.
+.SS "void server_daemon ()"
+
+.PP
+Definición en la línea 518 del archivo G\-2313\-06\-P1_server\&.c\&.
+.SS "void server_execute_function (long functionName, char * command, int desc, char * nick, int * register_status)"
+
+.PP
+Definición en la línea 368 del archivo G\-2313\-06\-P1_server\&.c\&.
+.SS "void server_exit ()"
+
+.PP
+Definición en la línea 436 del archivo G\-2313\-06\-P1_server\&.c\&.
+.SS "int server_start (void)"
+
+.PP
+Definición en la línea 101 del archivo G\-2313\-06\-P1_server\&.c\&.
+.SS "void* server_start_communication (int connval)"
+
+.PP
+Definición en la línea 252 del archivo G\-2313\-06\-P1_server\&.c\&.
+.SS "void server_start_pool ()"
+
+.PP
+Definición en la línea 567 del archivo G\-2313\-06\-P1_server\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

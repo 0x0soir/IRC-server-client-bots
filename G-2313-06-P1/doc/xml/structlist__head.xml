@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structlist__head" kind="struct" language="C++" prot="public">
+    <compoundname>list_head</compoundname>
+    <includes refid="G-2313-06-P1__list_8h" local="no">G-2313-06-P1_list.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+        <definition>struct list_head* list_head::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="21" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structlist__head" kindref="compound">list_head</ref> *</type>
+        <definition>struct list_head * list_head::prev</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P1_list.h" line="21" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="18">
+        <label>list_head</label>
+        <link refid="structlist__head"/>
+        <childnode refid="18" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="includes/G-2313-06-P1_list.h" line="20" column="1" bodyfile="includes/G-2313-06-P1_list.h" bodystart="20" bodyend="22"/>
+    <listofallmembers>
+      <member refid="structlist__head_1ac3b0ff0dfb978a0cfbdad6b9d19cdcfe" prot="public" virt="non-virtual"><scope>list_head</scope><name>next</name></member>
+      <member refid="structlist__head_1aaa0eabda8877e1d6de73a33f223ad004" prot="public" virt="non-virtual"><scope>list_head</scope><name>prev</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

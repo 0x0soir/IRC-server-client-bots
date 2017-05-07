@@ -1,0 +1,98 @@
+.TH "includes/G-2313-06-P3_ssl.h" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2313-06-P3_ssl.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string\&.h>\fP
+.br
+\fC#include <openssl/bio\&.h>\fP
+.br
+\fC#include <openssl/err\&.h>\fP
+.br
+\fC#include <openssl/rand\&.h>\fP
+.br
+\fC#include <openssl/ssl\&.h>\fP
+.br
+\fC#include <openssl/x509v3\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <netdb\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <linux/udp\&.h>\fP
+.br
+\fC#include <linux/tcp\&.h>\fP
+.br
+\fC#include <syslog\&.h>\fP
+.br
+\fC#include '\&.\&./includes/G\-2313\-06\-P3_tcp\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "void \fBssl_start_client\fP ()"
+.br
+.ti -1c
+.RI "void \fBssl_start_server\fP ()"
+.br
+.ti -1c
+.RI "SSL_CTX * \fBinicializar_nivel_SSL\fP (int *desc)"
+.br
+.ti -1c
+.RI "int \fBfijar_contexto_SSL\fP (SSL_CTX *ssl_ctx, char *certFile, char *certRoot)"
+.br
+.ti -1c
+.RI "int \fBaceptar_canal_seguro_SSL\fP (SSL_CTX *ctx_ssl, SSL **ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr)"
+.br
+.ti -1c
+.RI "int \fBevaluar_post_connectar_SSL\fP (SSL *ssl)"
+.br
+.ti -1c
+.RI "int \fBenviar_datos_SSL\fP (SSL *ssl, const char *buf)"
+.br
+.ti -1c
+.RI "int \fBrecibir_datos_SSL\fP (SSL *ssl, char *buf)"
+.br
+.ti -1c
+.RI "void \fBcerrar_canal_SSL\fP (SSL *ssl, SSL_CTX *ctl_ssl, int desc)"
+.br
+.ti -1c
+.RI "SSL * \fBconectar_canal_seguro_SSL\fP (SSL_CTX *ctx_ssl, int desc, struct sockaddr res)"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "int aceptar_canal_seguro_SSL (SSL_CTX * ctx_ssl, SSL ** ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr)"
+
+.SS "void cerrar_canal_SSL (SSL * ssl, SSL_CTX * ctl_ssl, int desc)"
+
+.SS "SSL* conectar_canal_seguro_SSL (SSL_CTX * ctx_ssl, int desc, struct sockaddr res)"
+
+.SS "int enviar_datos_SSL (SSL * ssl, const char * buf)"
+
+.SS "int evaluar_post_connectar_SSL (SSL * ssl)"
+
+.SS "int fijar_contexto_SSL (SSL_CTX * ssl_ctx, char * certFile, char * certRoot)"
+
+.SS "SSL_CTX* inicializar_nivel_SSL (int * desc)"
+
+.SS "int recibir_datos_SSL (SSL * ssl, char * buf)"
+
+.SS "void ssl_start_client ()"
+
+.SS "void ssl_start_server ()"
+
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

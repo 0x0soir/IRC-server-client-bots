@@ -1,0 +1,29 @@
+.TH "server_users_find_by_socket" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+server_users_find_by_socket \- server_users_find_by_socket 
+Busca un usuario por un socket dado\&.
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P1_common_functions\&.h\fP>\fP 
+.br
+ \fBint \fBserver_users_find_by_socket(int sockdesc)\fP\fP \fP 
+.SH "Descripción"
+.PP
+Utiliza la función \fBIRCTADUser_GetData\fP del TAD para buscar un usuario que cumpla las características de socket recibidas como parámetro \fBint sockdesc\fP\&.
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBint\fP Devuelve valor verdado/falso dependiendo de la búsqueda\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

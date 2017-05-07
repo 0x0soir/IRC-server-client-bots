@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="server_connection" kind="page">
+    <compoundname>server_connection</compoundname>
+    <title>Conexión del servidor</title>
+    <innerpage refid="server_start">server_start</innerpage>
+    <innerpage refid="server_accept_connection">server_accept_connection</innerpage>
+    <innerpage refid="server_start_communication">server_start_communication</innerpage>
+    <innerpage refid="server_execute_function">server_execute_function</innerpage>
+    <innerpage refid="server_exit">server_exit</innerpage>
+    <innerpage refid="server_check_socket_status">server_check_socket_status</innerpage>
+    <innerpage refid="server_daemon">server_daemon</innerpage>
+    <innerpage refid="server_start_pool">server_start_pool</innerpage>
+    <detaileddescription>
+<para>Esta sección incluye las funciones de conexión, inicialización del socket, listen de nuevos clientes, parseo de comandos de IRC, declaración y manejo del array de punteros a funciones para el parseo de comandos, inicalización del ThreadPool para los hilos que se asignarán a los clientes y el proceso de daemonización del servidor.</para><sect1 id="server_connection_1cabeceras">
+<title>Cabeceras</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P1__server_8h" kindref="compound">G-2313-06-P1_server.h</ref>&gt;</bold> </computeroutput> </para></sect1>
+<sect1 id="server_connection_1variables">
+<title>Variables definidas</title>
+<para>Se utilizan las siguientes variables definidas en <ref refid="G-2313-06-P1__server_8h" kindref="compound">G-2313-06-P1_server.h</ref> </para><para><computeroutput> #define MIN_POOL_THREADS 3 <linebreak/>
+#define MAX_CONNECTIONS 100 <linebreak/>
+#define SERVER_PORT 6667 <linebreak/>
+#define CLIENT_MESSAGE_MAXSIZE 8096 </computeroutput></para></sect1>
+<sect1 id="server_connection_1functions">
+<title>Funciones implementadas</title>
+<para>Se incluyen las siguientes funciones: <itemizedlist>
+<listitem>
+<para><ref refid="server_start" kindref="compound">server_start</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_accept_connection" kindref="compound">server_accept_connection</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_start_communication" kindref="compound">server_start_communication</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_execute_function" kindref="compound">server_execute_function</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_exit" kindref="compound">server_exit</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_check_socket_status" kindref="compound">server_check_socket_status</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_daemon" kindref="compound">server_daemon</ref> </para></listitem>
+<listitem>
+<para><ref refid="server_start_pool" kindref="compound">server_start_pool</ref> </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+digraph "thread_pool_t"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="thread_pool_t",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" master_thread\ntask_next" ];
+  Node2 [label="thread_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structthread__t.html"];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" task_queue\nworker_entry\nidle_entry" ];
+  Node3 [label="list_head",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structlist__head.html"];
+  Node3 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" prev\nnext" ];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" idle_queue\nworker_queue" ];
+}

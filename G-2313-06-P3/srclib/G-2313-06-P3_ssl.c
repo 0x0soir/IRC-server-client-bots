@@ -172,10 +172,6 @@ int evaluar_post_connectar_SSL(SSL * ssl){
 }
 
 int enviar_datos_SSL(SSL *ssl, const char *buf){
-	if(!ssl|!buf){
-		printf("No existe ssl o buff\n");
-		return -1;
-	}
 	return SSL_write(ssl, buf, strlen(buf));
 }
 

@@ -650,6 +650,7 @@ int main(int argc, char* argv[]){
   }
   if(daemon==1)
     server_daemon();
+  fprintf(stdout, "******** HOLAAAAAAA\n");
   signal(SIGINT, server_exit);
   server_start_pool();
   server_accept_connection(server_start());
