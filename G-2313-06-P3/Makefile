@@ -29,6 +29,23 @@ SRC_SERVER_IRC += includes/$(GROUP)_ssl.h
 SRC_SERVER_IRC += srclib/$(GROUP)_tcp.c
 SRC_SERVER_IRC += includes/$(GROUP)_tcp.h
 
+GTK_CONFIG = `pkg-config --cflags gtk+-3.0`
+GTK_LIB = `pkg-config --cflags gtk+-3.0 --libs gtk+-3.0`
+SRC_CLIENT_IRC = src/client_irc/$(GROUP)_client.c
+SRC_CLIENT_IRC += includes/client_irc/$(GROUP)_client.h
+SRC_CLIENT_IRC += srclib/$(GROUP)_tcp.c
+SRC_CLIENT_IRC += includes/$(GROUP)_tcp.h
+SRC_CLIENT_IRC += srclib/client_irc/$(GROUP)_files.c
+SRC_CLIENT_IRC += includes/client_irc/$(GROUP)_files.h
+SRC_CLIENT_IRC += src/client_irc/$(GROUP)_client_common_functions.c
+SRC_CLIENT_IRC += includes/client_irc/$(GROUP)_client_common_functions.h
+SRC_CLIENT_IRC += src/client_irc/$(GROUP)_client_function_handlers.c
+SRC_CLIENT_IRC += includes/client_irc/$(GROUP)_client_function_handlers.h
+SRC_CLIENT_IRC += src/client_irc/$(GROUP)_client_err_handlers.c
+SRC_CLIENT_IRC += includes/client_irc/$(GROUP)_client_err_handlers.h
+SRC_CLIENT_IRC += srclib/$(GROUP)_ssl.c
+SRC_CLIENT_IRC += includes/$(GROUP)_ssl.h
+
 # Flags para el compilador
 FFLAGS= -Wall -w -pedantic -pthread -rdynamic
 REDESLIB= -lircredes -lirctad -lircinterface -lsoundredes
@@ -85,6 +102,11 @@ servidor_irc:
 	gcc -o ./cliente_servidor/servidor_IRC $(SRC_SERVER_IRC) $(FFLAGS) $(REDESLIB) $(LIB_SSL)
 	@echo "\033[32m--> Servidor compilado: ./cliente_servidor/servidor_IRC\033[00m"
 
+cliente_irc:
+	@echo "\033[31mCompilando cliente IRC...\033[00m"
+	gcc $(GTK_CONFIG) -o ./cliente_servidor/cliente_IRC $(SRC_CLIENT_IRC) $(FFLAGS) $(REDESLIB) $(GTK_LIB) $(LIB_SSL)
+	@echo "\033[32m--> Cliente compilado: ./cliente_servidor/cliente_IRC\033[00m"
+
 #Regla clean: limpia el directorio del ficheros temporales
 entrega: clean tar
 
@@ -93,6 +115,7 @@ clean:
 	rm -rf obj/*.o $(GROUP)
 	rm -rf objlib/*.o $(GROUP)
 	rm -rf "echo"
+	rm -rf "cliente_servidor"
 tar:
 	@echo "\033[31mComprimiendo...\033[00m"
 	tar --exclude .git -czf $(GROUP).tar.gz ../$(GROUP) --exclude $(GROUP).tar.gz

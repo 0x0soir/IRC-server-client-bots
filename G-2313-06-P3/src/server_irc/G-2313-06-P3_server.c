@@ -195,8 +195,9 @@ void server_accept_connection(int socket_desc){
 
 	while(server_status){
     if(server_ssl){
-      syslog(LOG_ERR, "Vamos a evaluar SSL... %d", socket_desc);
+      syslog(LOG_ERR, "Vamos a evaluar SSL... %d %d", socket_desc, port);
       aceptar_canal_seguro_SSL(ssl_ctx, &ssl, socket_desc, port, MAX_CONNECTIONS, ip4addr);
+      syslog(LOG_ERR, "Conexion recibida en SSL");
       ERR_print_errors_fp(stdout);
       if(!evaluar_post_connectar_SSL(ssl)){
         syslog(LOG_ERR, "ERROR evaluando conexion SSL");
@@ -295,9 +296,9 @@ void *server_start_communication(SSL *ssl_arg){
     if(server_ssl){
       bzero(str, sizeof(char)*8096);
   		state = recibir_datos_SSL(ssl_arg, &str[0]);
-      if(state<0){
+      if(state<1){
         cerrar_canal_SSL(ssl_arg, ssl_ctx, socket_desc);
-        syslog (LOG_INFO, "[DESC: %d] [SSL] Detectado ausente, desconectando... %d", socket_desc, state);
+        syslog (LOG_INFO, "[DESC: %d] [SSL] Detectado ausente, desconectando... %s %d", socket_desc, str, state);
         break;
       }
     } else {

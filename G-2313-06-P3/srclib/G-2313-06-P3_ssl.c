@@ -140,20 +140,24 @@ SSL_CTX* inicializar_nivel_SSL(int *desc){
 
 int aceptar_canal_seguro_SSL(SSL_CTX* ctx_ssl, SSL **ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr){
 	int sockclient=-1;
+	syslog(LOG_ERR, "SSL BIND en desc: %d %d", desc, puerto);
 	tcp_bind(desc,puerto);
+	syslog(LOG_ERR, "SSL LISTEN");
 	tcp_new_listen(desc,tam);
+	syslog(LOG_ERR, "SSL ACCEPT");
 	sockclient=tcp_new_accept(desc, ip4addr);
+	syslog(LOG_ERR, "SSL ACCEPTADO");
 	*ssl=SSL_new(ctx_ssl);
 	if(ssl==NULL){
-		printf("error en null ssl");
-		return NULL;
+		syslog(LOG_ERR, "Error en SSL null");
+		return 0;
 	}
 	ERR_print_errors_fp(stdout);
 
 	if(!SSL_set_fd(*ssl, sockclient))
-		return NULL;
+		return 0;
 	ERR_print_errors_fp(stdout);
-
+	syslog(LOG_ERR, "SSL PRE RETURN con sockclient %d", sockclient);
 	return SSL_accept(*ssl);
 }
 
