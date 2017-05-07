@@ -1,0 +1,22 @@
+\hypertarget{client_function_response_synopsis_2}{}\section{Synopsis}\label{client_function_response_synopsis_2}
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <G-2313-06-P3\_ssl.h>}
+
+\textcolor{keywordtype}{void}* \hyperlink{G-2313-06-P2__client_8h_afbd2dc7b3224fc3d2c5c9233b307c376}{client\_function\_response}(\textcolor{keywordtype}{void} *arg);
+\end{DoxyCode}
+ \hypertarget{client_function_response_descripcion_2}{}\section{Descripción}\label{client_function_response_descripcion_2}
+Inicia el hilo que controla el método de recepción de datos del servidor mediante el cual el cliente recibe los mensajes que el servidor le envía. Desde este hilo se procesa cada mensaje y se envían a la función adecuada para procesarlos\+: 
+\begin{DoxyCode}
+\hyperlink{G-2313-06-P2__client_8h_aa74c686c447b275e6a8cf36419033e81}{client\_pre\_in\_function}(resultado);
+\end{DoxyCode}
+ Es importante destacar que hemos tenido especial consideración con las llegadas del servidor al cliente, para ello hemos diseñado un hilo específico y exclusivo para la recepción de dichas llegadas a través del socket. Los mensajes son recibidos y preprocesados, una vez que el mensaje se considera íntegro es enviado a la función de preprocesado de las entradas del servidor (detallado más arriba). \hypertarget{client_function_response_return_2}{}\section{Valores devueltos}\label{client_function_response_return_2}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada 
+\end{DoxyItemize}\hypertarget{client_function_response_authors_2}{}\section{Autores}\label{client_function_response_authors_2}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}

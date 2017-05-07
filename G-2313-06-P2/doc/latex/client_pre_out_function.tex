@@ -1,0 +1,22 @@
+\hypertarget{client_pre_out_function_synopsis_5}{}\section{Synopsis}\label{client_pre_out_function_synopsis_5}
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <G-2313-06-P3\_ssl.h>}
+
+\textcolor{keywordtype}{void} \hyperlink{G-2313-06-P2__client_8h_a68019fe1e0edcc71bb3dadeb70a86dcd}{client\_pre\_out\_function}(\textcolor{keywordtype}{char}* command);
+\end{DoxyCode}
+ \hypertarget{client_pre_out_function_descripcion_5}{}\section{Descripción}\label{client_pre_out_function_descripcion_5}
+Recibe como parámetro un mensaje del cliente, lo desfragmenta mediante la función I\+R\+C\+\_\+\+Command\+Query para saber exactamente qué comando es el que se ha recibido y se lo envía a la función que controla el procesamiento de los comandos mediante un array de punteros a función. 
+\begin{DoxyCode}
+\hyperlink{G-2313-06-P2__client_8h_a26512d35b24fec46c8fa4c803dc00867}{client\_execute\_out\_function}(IRC\_CommandQuery(command), command);
+\end{DoxyCode}
+\hypertarget{client_pre_out_function_return_5}{}\section{Valores devueltos}\label{client_pre_out_function_return_5}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada 
+\end{DoxyItemize}\hypertarget{client_pre_out_function_authors_5}{}\section{Autores}\label{client_pre_out_function_authors_5}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}

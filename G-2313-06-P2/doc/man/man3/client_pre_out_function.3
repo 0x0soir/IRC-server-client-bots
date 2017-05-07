@@ -1,0 +1,40 @@
+.TH "client_pre_out_function" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client_pre_out_function \- Preprocesado de salidas 
+
+.SH "Synopsis"
+.PP
+.PP
+.nf
+#include <G-2313-06-P3_ssl\&.h>
+
+void client_pre_out_function(char* command);
+.fi
+.PP
+ 
+.SH "Descripción"
+.PP
+Recibe como parámetro un mensaje del cliente, lo desfragmenta mediante la función IRC_CommandQuery para saber exactamente qué comando es el que se ha recibido y se lo envía a la función que controla el procesamiento de los comandos mediante un array de punteros a función\&. 
+.PP
+.nf
+client_execute_out_function(IRC_CommandQuery(command), command);
+
+.fi
+.PP
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

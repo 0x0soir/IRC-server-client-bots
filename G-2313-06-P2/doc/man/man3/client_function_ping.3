@@ -1,0 +1,44 @@
+.TH "client_function_ping" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client_function_ping \- Hilo de PING-PONG 
+
+.SH "Synopsis"
+.PP
+.PP
+.nf
+#include <G-2313-06-P3_ssl\&.h>
+
+void* client_function_ping(void *arg);
+.fi
+.PP
+ 
+.SH "Descripción"
+.PP
+Inicia el hilo que controla el método PING-PONG mediante el cual el cliente es capaz de saber si el servidor sigue encendido o no\&. 
+.br
+Funciona de la siguiente manera: 
+.PD 0
+
+.IP "\(bu" 2
+\fBEnvío de PING:\fP El hilo envía un mensaje PING al servidor y se mantiene a la espera\&. 
+.IP "\(bu" 2
+\fBRecepción de PONG:\fP El hilo espera recibir una respuesta PONG del servidor, en caso de no recibirla da por finalizada la conexión y desconecta al cliente del servidor\&. 
+.PP
+Hemos imitado el funcionamiento de un cliente real de IRC mediante el uso de este protocolo\&. El funcionamiento del PING-PONG es básico y necesario para el buen desarrollo de una sesión de chat mediante IRC, para ello el cliente realiza una comprobación de PING cada 30 segundos\&. Mediante un hilo del cliente enviamos cada 30 segundos un PING al servidor, el cliente espera recibir PONG en un periodo de tiempo determinado\&. En caso de que el cliente no reciba el PONG de parte del servidor se procede a desconectar la sesión actual ya que se interpreta que el servidor a dejado de estar disponible\&. 
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

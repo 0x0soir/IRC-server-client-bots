@@ -1,0 +1,61 @@
+.TH "client_execute_out_function" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client_execute_out_function \- Parseo de salidas 
+
+.SH "Synopsis"
+.PP
+.PP
+.nf
+#include <G-2313-06-P3_ssl\&.h>
+
+void client_execute_out_function(long functionName, char* command);
+.fi
+.PP
+ 
+.SH "Descripción"
+.PP
+Recibe como parámetro un mensaje desfragmentado y lo pasa por un array de punteros a función a la función correspondiente\&. En caso de no tener ninguna función disponible para el comando se le enviará a la función por defecto\&. 
+.br
+.SS "Listado de comandos parseados:"
+.PP
+.PP
+.nf
+functions[UNICK]      = &server_out_command_nick;
+functions[UJOIN]      = &server_out_command_join;
+functions[UNAMES]     = &server_out_command_names;
+functions[ULIST]      = &server_out_command_list;
+functions[UPART]      = &server_out_command_part;
+functions[UMODE]      = &server_out_command_mode;
+functions[UKICK]      = &server_out_command_kick;
+functions[PRIVMSG]    = &server_out_command_privmsg;
+functions[UWHOIS]     = &server_out_command_whois;
+functions[UINVITE]    = &server_out_command_invite;
+functions[UTOPIC]     = &server_out_command_topic;
+functions[UME]        = &server_out_command_me;
+functions[UMSG]       = &server_out_command_msg;
+functions[UNOTICE]    = &server_out_command_notice;
+functions[UIGNORE]    = &server_out_command_ignore;
+functions[UWHO]       = &server_out_command_who;
+functions[UWHOWAS]    = &server_out_command_whowas;
+functions[UMOTD]      = &server_out_command_motd;
+functions[UAWAY]      = &server_out_command_away;
+functions[UPING]      = &server_out_command_ping;
+.fi
+.PP
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="client_execute_out_function" kind="page">
+    <compoundname>client_execute_out_function</compoundname>
+    <title>Parseo de salidas</title>
+    <detaileddescription>
+<sect1 id="client_execute_out_function_1synopsis_6">
+<title>Synopsis</title>
+<para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;G-2313-06-P3_ssl.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>client_execute_out_function(long<sp/>functionName,<sp/>char*<sp/>command);</highlight></codeline>
+</programlisting> </para></sect1>
+<sect1 id="client_execute_out_function_1descripcion_6">
+<title>Descripción</title>
+<para>Recibe como parámetro un mensaje desfragmentado y lo pasa por un array de punteros a función a la función correspondiente. En caso de no tener ninguna función disponible para el comando se le enviará a la función por defecto. <linebreak/>
+<heading level="2">Listado de comandos parseados:</heading>
+</para><para><programlisting><codeline><highlight class="normal">functions[UNICK]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_nick;</highlight></codeline>
+<codeline><highlight class="normal">functions[UJOIN]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_join;</highlight></codeline>
+<codeline><highlight class="normal">functions[UNAMES]<sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_names;</highlight></codeline>
+<codeline><highlight class="normal">functions[ULIST]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_list;</highlight></codeline>
+<codeline><highlight class="normal">functions[UPART]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_part;</highlight></codeline>
+<codeline><highlight class="normal">functions[UMODE]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_mode;</highlight></codeline>
+<codeline><highlight class="normal">functions[UKICK]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_kick;</highlight></codeline>
+<codeline><highlight class="normal">functions[PRIVMSG]<sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_privmsg;</highlight></codeline>
+<codeline><highlight class="normal">functions[UWHOIS]<sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_whois;</highlight></codeline>
+<codeline><highlight class="normal">functions[UINVITE]<sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_invite;</highlight></codeline>
+<codeline><highlight class="normal">functions[UTOPIC]<sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_topic;</highlight></codeline>
+<codeline><highlight class="normal">functions[UME]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_me;</highlight></codeline>
+<codeline><highlight class="normal">functions[UMSG]<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_msg;</highlight></codeline>
+<codeline><highlight class="normal">functions[UNOTICE]<sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_notice;</highlight></codeline>
+<codeline><highlight class="normal">functions[UIGNORE]<sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_ignore;</highlight></codeline>
+<codeline><highlight class="normal">functions[UWHO]<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_who;</highlight></codeline>
+<codeline><highlight class="normal">functions[UWHOWAS]<sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_whowas;</highlight></codeline>
+<codeline><highlight class="normal">functions[UMOTD]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_motd;</highlight></codeline>
+<codeline><highlight class="normal">functions[UAWAY]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_away;</highlight></codeline>
+<codeline><highlight class="normal">functions[UPING]<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>&amp;server_out_command_ping;</highlight></codeline>
+</programlisting></para></sect1>
+<sect1 id="client_execute_out_function_1return_6">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>void</bold> No devuelve nada </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="client_execute_out_function_1authors_6">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

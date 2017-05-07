@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="client_function_response" kind="page">
+    <compoundname>client_function_response</compoundname>
+    <title>Hilo de recepción de datos</title>
+    <detaileddescription>
+<sect1 id="client_function_response_1synopsis_2">
+<title>Synopsis</title>
+<para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;G-2313-06-P3_ssl.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void*<sp/>client_function_response(void<sp/>*arg);</highlight></codeline>
+</programlisting> </para></sect1>
+<sect1 id="client_function_response_1descripcion_2">
+<title>Descripción</title>
+<para>Inicia el hilo que controla el método de recepción de datos del servidor mediante el cual el cliente recibe los mensajes que el servidor le envía. Desde este hilo se procesa cada mensaje y se envían a la función adecuada para procesarlos: <programlisting><codeline><highlight class="normal">client_pre_in_function(resultado);</highlight></codeline>
+</programlisting> Es importante destacar que hemos tenido especial consideración con las llegadas del servidor al cliente, para ello hemos diseñado un hilo específico y exclusivo para la recepción de dichas llegadas a través del socket. Los mensajes son recibidos y preprocesados, una vez que el mensaje se considera íntegro es enviado a la función de preprocesado de las entradas del servidor (detallado más arriba). </para></sect1>
+<sect1 id="client_function_response_1return_2">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>void</bold> No devuelve nada </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="client_function_response_1authors_2">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

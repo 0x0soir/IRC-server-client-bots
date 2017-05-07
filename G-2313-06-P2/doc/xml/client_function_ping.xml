@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="client_function_ping" kind="page">
+    <compoundname>client_function_ping</compoundname>
+    <title>Hilo de PING-PONG</title>
+    <detaileddescription>
+<sect1 id="client_function_ping_1synopsis_1">
+<title>Synopsis</title>
+<para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;G-2313-06-P3_ssl.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void*<sp/>client_function_ping(void<sp/>*arg);</highlight></codeline>
+</programlisting> </para></sect1>
+<sect1 id="client_function_ping_1descripcion_1">
+<title>Descripción</title>
+<para>Inicia el hilo que controla el método PING-PONG mediante el cual el cliente es capaz de saber si el servidor sigue encendido o no. <linebreak/>
+Funciona de la siguiente manera: <itemizedlist>
+<listitem>
+<para><bold>Envío de PING:</bold> El hilo envía un mensaje PING al servidor y se mantiene a la espera. </para></listitem>
+<listitem>
+<para><bold>Recepción de PONG:</bold> El hilo espera recibir una respuesta PONG del servidor, en caso de no recibirla da por finalizada la conexión y desconecta al cliente del servidor. </para></listitem>
+</itemizedlist>
+Hemos imitado el funcionamiento de un cliente real de IRC mediante el uso de este protocolo. El funcionamiento del PING-PONG es básico y necesario para el buen desarrollo de una sesión de chat mediante IRC, para ello el cliente realiza una comprobación de PING cada 30 segundos. Mediante un hilo del cliente enviamos cada 30 segundos un PING al servidor, el cliente espera recibir PONG en un periodo de tiempo determinado. En caso de que el cliente no reciba el PONG de parte del servidor se procede a desconectar la sesión actual ya que se interpreta que el servidor a dejado de estar disponible. </para></sect1>
+<sect1 id="client_function_ping_1return_1">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>void</bold> No devuelve nada </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="client_function_ping_1authors_1">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

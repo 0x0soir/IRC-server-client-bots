@@ -338,7 +338,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="28" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="5" bodyend="21"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="28" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="185" bodyend="201"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1afbd2dc7b3224fc3d2c5c9233b307c376" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -355,7 +355,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="29" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="23" bodyend="51"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="29" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="237" bodyend="265"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -372,7 +372,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="30" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="53" bodyend="61"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="30" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="267" bodyend="275"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1aa74c686c447b275e6a8cf36419033e81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -389,7 +389,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="31" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="63" bodyend="65"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="31" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="306" bodyend="308"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1a6dd72e0b56b87f85d8cac2a30066198b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -410,7 +410,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="32" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="67" bodyend="144"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="32" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="403" bodyend="480"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1a68019fe1e0edcc71bb3dadeb70a86dcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -427,7 +427,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="33" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="146" bodyend="149"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="33" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="511" bodyend="514"/>
       </memberdef>
       <memberdef kind="function" id="G-2313-06-P2__client__common__functions_8h_1a26512d35b24fec46c8fa4c803dc00867" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -448,7 +448,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="includes/G-2313-06-P2_client_common_functions.h" line="34" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="151" bodyend="189"/>
+        <location file="includes/G-2313-06-P2_client_common_functions.h" line="34" column="1" bodyfile="src/G-2313-06-P2_client_common_functions.c" bodystart="565" bodyend="603"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

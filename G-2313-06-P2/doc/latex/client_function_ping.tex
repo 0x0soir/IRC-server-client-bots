@@ -1,0 +1,23 @@
+\hypertarget{client_function_ping_synopsis_1}{}\section{Synopsis}\label{client_function_ping_synopsis_1}
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include <G-2313-06-P3\_ssl.h>}
+
+\textcolor{keywordtype}{void}* \hyperlink{G-2313-06-P2__client_8h_a7297f848d5b0bd4990857d03cf3111e4}{client\_function\_ping}(\textcolor{keywordtype}{void} *arg);
+\end{DoxyCode}
+ \hypertarget{client_function_ping_descripcion_1}{}\section{Descripción}\label{client_function_ping_descripcion_1}
+Inicia el hilo que controla el método P\+I\+N\+G-\/\+P\+O\+NG mediante el cual el cliente es capaz de saber si el servidor sigue encendido o no. ~\newline
+Funciona de la siguiente manera\+: 
+\begin{DoxyItemize}
+\item {\bfseries Envío de P\+I\+NG\+:} El hilo envía un mensaje P\+I\+NG al servidor y se mantiene a la espera. 
+\item {\bfseries Recepción de P\+O\+NG\+:} El hilo espera recibir una respuesta P\+O\+NG del servidor, en caso de no recibirla da por finalizada la conexión y desconecta al cliente del servidor. 
+\end{DoxyItemize}Hemos imitado el funcionamiento de un cliente real de I\+RC mediante el uso de este protocolo. El funcionamiento del P\+I\+N\+G-\/\+P\+O\+NG es básico y necesario para el buen desarrollo de una sesión de chat mediante I\+RC, para ello el cliente realiza una comprobación de P\+I\+NG cada 30 segundos. Mediante un hilo del cliente enviamos cada 30 segundos un P\+I\+NG al servidor, el cliente espera recibir P\+O\+NG en un periodo de tiempo determinado. En caso de que el cliente no reciba el P\+O\+NG de parte del servidor se procede a desconectar la sesión actual ya que se interpreta que el servidor a dejado de estar disponible. \hypertarget{client_function_ping_return_1}{}\section{Valores devueltos}\label{client_function_ping_return_1}
+
+\begin{DoxyItemize}
+\item {\bfseries void} No devuelve nada 
+\end{DoxyItemize}\hypertarget{client_function_ping_authors_1}{}\section{Autores}\label{client_function_ping_authors_1}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}

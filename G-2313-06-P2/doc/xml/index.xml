@@ -329,10 +329,24 @@
   </compound>
   <compound refid="group__IRCInterfaceCallbacks_IRCInterface_TakeVoice" kind="page"><name>IRCInterface_TakeVoice</name>
   </compound>
+  <compound refid="client_function_ping" kind="page"><name>client_function_ping</name>
+  </compound>
+  <compound refid="client_function_response" kind="page"><name>client_function_response</name>
+  </compound>
+  <compound refid="client_pre_in_function" kind="page"><name>client_pre_in_function</name>
+  </compound>
+  <compound refid="client_execute_in_function" kind="page"><name>client_execute_in_function</name>
+  </compound>
+  <compound refid="client_pre_out_function" kind="page"><name>client_pre_out_function</name>
+  </compound>
+  <compound refid="client_execute_out_function" kind="page"><name>client_execute_out_function</name>
+  </compound>
   <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>includes</name>
   </compound>
   <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
   </compound>
   <compound refid="dir_055525a30e828dc7e51b22601599d317" kind="dir"><name>srclib</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
   </compound>
 </doxygenindex>

@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "Redes de Comunicaciones II", "index.html", [
+    [ "P2 - Cliente IRC", "index.html", "index" ],
     [ "Módulos", "modules.html", "modules" ],
     [ "Clases", "annotated.html", [
       [ "Lista de clases", "annotated.html", "annotated_dup" ],

@@ -2,7 +2,7 @@
 GROUP_CLIENT=G-2313-06-P2
 
 # Flags para el compilador
-FFLAGS= -Wall -pedantic -pthread -rdynamic
+FFLAGS= -Wall -w -pedantic -pthread -rdynamic
 REDESLIB= -lircredes -lirctad -lircinterface -lsoundredes
 
 # Cliente
@@ -28,18 +28,18 @@ all: clean tar client
 
 client:
 	@echo "\033[31mCompilando cliente...\033[00m"
-	gcc $(GTK_CONFIG) -o ./obj/$(GROUP_CLIENT)_client $(SRCDIR_CLIENT) $(FFLAGS) $(REDESLIB) $(GTK_LIB)
+	@gcc $(GTK_CONFIG) -o $(GROUP_CLIENT)_client $(SRCDIR_CLIENT) $(FFLAGS) $(REDESLIB) $(GTK_LIB)
 	@echo "\033[32m--> Cliente compilado: $(GROUP_CLIENT)_client\033[00m"
 
-#Regla clean: limpia el directorio del ficheros temporales
 clean:
 	@echo "Borrando ficheros temporales"
 	rm -rf obj/*.o $(GROUP_CLIENT)
 	rm -rf objlib/*.o $(GROUP_CLIENT)
 	rm -rf $(GROUP_CLIENT)_client
+
 tar:
 	@echo "\033[31mComprimiendo...\033[00m"
-	tar --exclude .git -czf $(GROUP_CLIENT).tar.gz ../$(GROUP_CLIENT) --exclude $(GROUP_CLIENT).tar.gz
+	@tar --exclude .git -czf $(GROUP_CLIENT).tar.gz ../$(GROUP_CLIENT) --exclude $(GROUP_CLIENT).tar.gz
 	@echo "\033[32mFichero comprimido: $(GROUP).tar.gz\033[00m"
 
 doxy:

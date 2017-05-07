@@ -1,0 +1,41 @@
+.TH "client_function_response" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+client_function_response \- Hilo de recepción de datos 
+
+.SH "Synopsis"
+.PP
+.PP
+.nf
+#include <G-2313-06-P3_ssl\&.h>
+
+void* client_function_response(void *arg);
+.fi
+.PP
+ 
+.SH "Descripción"
+.PP
+Inicia el hilo que controla el método de recepción de datos del servidor mediante el cual el cliente recibe los mensajes que el servidor le envía\&. Desde este hilo se procesa cada mensaje y se envían a la función adecuada para procesarlos: 
+.PP
+.nf
+client_pre_in_function(resultado);
+
+.fi
+.PP
+ Es importante destacar que hemos tenido especial consideración con las llegadas del servidor al cliente, para ello hemos diseñado un hilo específico y exclusivo para la recepción de dichas llegadas a través del socket\&. Los mensajes son recibidos y preprocesados, una vez que el mensaje se considera íntegro es enviado a la función de preprocesado de las entradas del servidor (detallado más arriba)\&. 
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+
