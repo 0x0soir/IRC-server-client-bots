@@ -2,3 +2,7 @@
 .DS_Store
 *.o
 certs/
+doc/html/*
+doc/latex/*
+doc/man/*
+doc/xml/*
