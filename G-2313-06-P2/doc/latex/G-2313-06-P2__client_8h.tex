@@ -1,0 +1,127 @@
+\hypertarget{G-2313-06-P2__client_8h}{}\section{Referencia del Archivo includes/\+G-\/2313-\/06-\/\+P2\+\_\+client.h}
+\label{G-2313-06-P2__client_8h}\index{includes/\+G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{includes/\+G-\/2313-\/06-\/\+P2\+\_\+client.\+h}}
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$sys/time.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\+h$>$}\\*
+{\ttfamily \#include $<$syslog.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$strings.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\\*
+{\ttfamily \#include $<$redes2/irc.\+h$>$}\\*
+{\ttfamily \#include $<$netdb.\+h$>$}\\*
+{\ttfamily \#include $<$pthread.\+h$>$}\\*
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\\*
+{\ttfamily \#include $<$net/if.\+h$>$}\\*
+{\ttfamily \#include $<$ifaddrs.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}G-\/2313-\/06-\/\+P2\+\_\+tcp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}G-\/2313-\/06-\/\+P2\+\_\+files.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}G-\/2313-\/06-\/\+P2\+\_\+client\+\_\+common\+\_\+functions.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}G-\/2313-\/06-\/\+P2\+\_\+client\+\_\+function\+\_\+handlers.\+h\char`\"{}}\\*
+Dependencia gráfica adjunta para G-\/2313-\/06-\/\+P2\+\_\+client.h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{G-2313-06-P2__client_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{G-2313-06-P2__client_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{G-2313-06-P2__client_8h_a7297f848d5b0bd4990857d03cf3111e4}{client\+\_\+function\+\_\+ping} (void $\ast$arg)
+\item 
+void $\ast$ \hyperlink{G-2313-06-P2__client_8h_afbd2dc7b3224fc3d2c5c9233b307c376}{client\+\_\+function\+\_\+response} (void $\ast$arg)
+\item 
+void \hyperlink{G-2313-06-P2__client_8h_aa74c686c447b275e6a8cf36419033e81}{client\+\_\+pre\+\_\+in\+\_\+function} (char $\ast$command)
+\item 
+void \hyperlink{G-2313-06-P2__client_8h_a6dd72e0b56b87f85d8cac2a30066198b}{client\+\_\+execute\+\_\+in\+\_\+function} (long function\+Name, char $\ast$command)
+\item 
+void \hyperlink{G-2313-06-P2__client_8h_a68019fe1e0edcc71bb3dadeb70a86dcd}{client\+\_\+pre\+\_\+out\+\_\+function} (char $\ast$command)
+\item 
+void \hyperlink{G-2313-06-P2__client_8h_a26512d35b24fec46c8fa4c803dc00867}{client\+\_\+execute\+\_\+out\+\_\+function} (long function\+Name, char $\ast$command)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación de las funciones}
+\index{G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}!client\+\_\+execute\+\_\+in\+\_\+function@{client\+\_\+execute\+\_\+in\+\_\+function}}
+\index{client\+\_\+execute\+\_\+in\+\_\+function@{client\+\_\+execute\+\_\+in\+\_\+function}!G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}}
+\subsubsection[{\texorpdfstring{client\+\_\+execute\+\_\+in\+\_\+function(long function\+Name, char $\ast$command)}{client_execute_in_function(long functionName, char *command)}}]{\setlength{\rightskip}{0pt plus 5cm}void client\+\_\+execute\+\_\+in\+\_\+function (
+\begin{DoxyParamCaption}
+\item[{long}]{function\+Name, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P2__client_8h_a6dd72e0b56b87f85d8cac2a30066198b}{}\label{G-2313-06-P2__client_8h_a6dd72e0b56b87f85d8cac2a30066198b}
+
+
+Definición en la línea 67 del archivo G-\/2313-\/06-\/\+P2\+\_\+client\+\_\+common\+\_\+functions.\+c.
+
+\index{G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}!client\+\_\+execute\+\_\+out\+\_\+function@{client\+\_\+execute\+\_\+out\+\_\+function}}
+\index{client\+\_\+execute\+\_\+out\+\_\+function@{client\+\_\+execute\+\_\+out\+\_\+function}!G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}}
+\subsubsection[{\texorpdfstring{client\+\_\+execute\+\_\+out\+\_\+function(long function\+Name, char $\ast$command)}{client_execute_out_function(long functionName, char *command)}}]{\setlength{\rightskip}{0pt plus 5cm}void client\+\_\+execute\+\_\+out\+\_\+function (
+\begin{DoxyParamCaption}
+\item[{long}]{function\+Name, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P2__client_8h_a26512d35b24fec46c8fa4c803dc00867}{}\label{G-2313-06-P2__client_8h_a26512d35b24fec46c8fa4c803dc00867}
+
+
+Definición en la línea 151 del archivo G-\/2313-\/06-\/\+P2\+\_\+client\+\_\+common\+\_\+functions.\+c.
+
+\index{G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}!client\+\_\+function\+\_\+ping@{client\+\_\+function\+\_\+ping}}
+\index{client\+\_\+function\+\_\+ping@{client\+\_\+function\+\_\+ping}!G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}}
+\subsubsection[{\texorpdfstring{client\+\_\+function\+\_\+ping(void $\ast$arg)}{client_function_ping(void *arg)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ client\+\_\+function\+\_\+ping (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P2__client_8h_a7297f848d5b0bd4990857d03cf3111e4}{}\label{G-2313-06-P2__client_8h_a7297f848d5b0bd4990857d03cf3111e4}
+
+
+Definición en la línea 5 del archivo G-\/2313-\/06-\/\+P2\+\_\+client\+\_\+common\+\_\+functions.\+c.
+
+\index{G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}!client\+\_\+function\+\_\+response@{client\+\_\+function\+\_\+response}}
+\index{client\+\_\+function\+\_\+response@{client\+\_\+function\+\_\+response}!G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}}
+\subsubsection[{\texorpdfstring{client\+\_\+function\+\_\+response(void $\ast$arg)}{client_function_response(void *arg)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ client\+\_\+function\+\_\+response (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{arg}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P2__client_8h_afbd2dc7b3224fc3d2c5c9233b307c376}{}\label{G-2313-06-P2__client_8h_afbd2dc7b3224fc3d2c5c9233b307c376}
+
+
+Definición en la línea 23 del archivo G-\/2313-\/06-\/\+P2\+\_\+client\+\_\+common\+\_\+functions.\+c.
+
+\index{G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}!client\+\_\+pre\+\_\+in\+\_\+function@{client\+\_\+pre\+\_\+in\+\_\+function}}
+\index{client\+\_\+pre\+\_\+in\+\_\+function@{client\+\_\+pre\+\_\+in\+\_\+function}!G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}}
+\subsubsection[{\texorpdfstring{client\+\_\+pre\+\_\+in\+\_\+function(char $\ast$command)}{client_pre_in_function(char *command)}}]{\setlength{\rightskip}{0pt plus 5cm}void client\+\_\+pre\+\_\+in\+\_\+function (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P2__client_8h_aa74c686c447b275e6a8cf36419033e81}{}\label{G-2313-06-P2__client_8h_aa74c686c447b275e6a8cf36419033e81}
+
+
+Definición en la línea 63 del archivo G-\/2313-\/06-\/\+P2\+\_\+client\+\_\+common\+\_\+functions.\+c.
+
+\index{G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}!client\+\_\+pre\+\_\+out\+\_\+function@{client\+\_\+pre\+\_\+out\+\_\+function}}
+\index{client\+\_\+pre\+\_\+out\+\_\+function@{client\+\_\+pre\+\_\+out\+\_\+function}!G-\/2313-\/06-\/\+P2\+\_\+client.\+h@{G-\/2313-\/06-\/\+P2\+\_\+client.\+h}}
+\subsubsection[{\texorpdfstring{client\+\_\+pre\+\_\+out\+\_\+function(char $\ast$command)}{client_pre_out_function(char *command)}}]{\setlength{\rightskip}{0pt plus 5cm}void client\+\_\+pre\+\_\+out\+\_\+function (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)}\hypertarget{G-2313-06-P2__client_8h_a68019fe1e0edcc71bb3dadeb70a86dcd}{}\label{G-2313-06-P2__client_8h_a68019fe1e0edcc71bb3dadeb70a86dcd}
+
+
+Definición en la línea 146 del archivo G-\/2313-\/06-\/\+P2\+\_\+client\+\_\+common\+\_\+functions.\+c.
+

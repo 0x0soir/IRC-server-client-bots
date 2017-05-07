@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="fijar_contexto_SSL" kind="page">
+    <compoundname>fijar_contexto_SSL</compoundname>
+    <title>Fijación del contexto SSL</title>
+    <detaileddescription>
+<sect1 id="fijar_contexto_SSL_1synopsis_6">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P3__ssl_8h" kindref="compound">G-2313-06-P3_ssl.h</ref>&gt;</bold> <linebreak/>
+ <bold>int <ref refid="G-2313-06-P3__ssl_8c_1a006acb44fc7dae799271a48117f5a398" kindref="member">fijar_contexto_SSL(SSL_CTX* ssl_ctx, char * certFile, char * certRoot)</ref>;</bold> </computeroutput> </para></sect1>
+<sect1 id="fijar_contexto_SSL_1descripcion_6">
+<title>Descripción</title>
+<para>Fija la conexión SSL comprobando que los certificados utilizados en dicha conexión están formados correctamente y tienen el formato adecuado de SSL. <linebreak/>
+<heading level="2"><bold>Funciones de librería SSL:</bold></heading>
+</para><para><itemizedlist>
+<listitem>
+<para>SSL_CTX_load_verify_locations(ssl_ctx, certRoot, certFile); </para></listitem>
+<listitem>
+<para>SSL_CTX_set_default_verify_paths(ssl_ctx); </para></listitem>
+<listitem>
+<para>SSL_CTX_use_certificate_file(ssl_ctx, certFile, SSL_FILETYPE_PEM); </para></listitem>
+<listitem>
+<para>SSL_CTX_use_PrivateKey_file(ssl_ctx, certFile, SSL_FILETYPE_PEM; </para></listitem>
+<listitem>
+<para>SSL_CTX_set_verify(ssl_ctx, SSL_VERIFY_PEER, NULL); </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="fijar_contexto_SSL_1return_6">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>int</bold> Valor entero que representa una aceptación correcta/incorrecta </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="fijar_contexto_SSL_1authors_6">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

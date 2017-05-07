@@ -1,0 +1,40 @@
+.TH "cerrar_canal_SSL" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cerrar_canal_SSL \- Cierre de un canal SSL 
+
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P3_ssl\&.h\fP>\fP 
+.br
+ \fBvoid \fBcerrar_canal_SSL(SSL *ssl, SSL_CTX *ctl_ssl, int desc)\fP;\fP \fP 
+.SH "Descripción"
+.PP
+Finaliza un canal de comunicación con un cliente vía SSL\&. Para ello libera los recursos de SSL recibidos y además realiza un apagado del descriptor (socket) utilizado por el cliente\&. 
+.br
+.SS "\fBFunciones de librería SSL:\fP"
+.PP
+.PD 0
+.IP "\(bu" 2
+SSL_shutdown(ssl); 
+.IP "\(bu" 2
+SSL_free(ssl); 
+.IP "\(bu" 2
+SSL_CTX_free(ctl_ssl); 
+.PP
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBvoid\fP No devuelve nada 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

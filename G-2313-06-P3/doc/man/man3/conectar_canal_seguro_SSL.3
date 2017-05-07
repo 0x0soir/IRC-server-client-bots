@@ -1,0 +1,40 @@
+.TH "conectar_canal_seguro_SSL" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+conectar_canal_seguro_SSL \- Conexión a un canal SSL 
+
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P3_ssl\&.h\fP>\fP 
+.br
+ \fBSSL* \fBconectar_canal_seguro_SSL(SSL_CTX* ctx_ssl, int desc, struct sockaddr res)\fP;\fP \fP 
+.SH "Descripción"
+.PP
+Inicia la comunicación con un canal seguro vía SSL\&. Para ello realiza una nueva conexión vía TCP y conecta la capa SSL a dicho socket generado\&. 
+.br
+.SS "\fBFunciones de librería SSL:\fP"
+.PP
+.PD 0
+.IP "\(bu" 2
+SSL_new(ctx_ssl); 
+.IP "\(bu" 2
+SSL_set_fd(ssl, desc); 
+.IP "\(bu" 2
+SSL_connect(ssl); 
+.PP
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBSSL*\fP Devuelve una conexión SSL al canal seguro  
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

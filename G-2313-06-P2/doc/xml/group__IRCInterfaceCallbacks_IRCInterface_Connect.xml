@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__IRCInterfaceCallbacks_IRCInterface_Connect" kind="page">
+    <compoundname>IRCInterface_Connect</compoundname>
+    <title>IRCInterface_Connect</title>
+    <detaileddescription>
+<para>Llamada por los distintos botones de conexión.</para><para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;redes2/ircxchat.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">long<sp/>IRCInterface_Connect<sp/>(char<sp/>*nick,<sp/>char<sp/>*<sp/>user,<sp/>char<sp/>*<sp/>realname,<sp/>char<sp/>*<sp/>password,<sp/>char<sp/>*<sp/>server,<sp/>int<sp/>port,<sp/>boolean<sp/>ssl)</highlight></codeline>
+</programlisting></para><para>Función a implementar por el programador. Llamada por los distintos botones de conexión. Si implementará la comunicación completa, incluido el registro del usuario en el servidor.</para><para>En cualquier caso sólo se puede realizar si el servidor acepta la orden. Las strings recibidas no deben ser manipuladas por el programador, sólo leída.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">nick</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nick con el que se va a realizar la conexíón. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>usuario con el que se va a realizar la conexión. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">realname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nombre real con el que se va a realizar la conexión. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>password del usuario si es necesaria, puede valer NULL. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nombre o ip del servidor con el que se va a realizar la conexión. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puerto del servidor con el que se va a realizar la conexión. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ssl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puede ser TRUE si la conexión tiene que ser segura y FALSE si no es así.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>IRC_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>si todo ha sido correcto (debe devolverlo). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IRCERR_NOSSL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>si el valor de SSL es TRUE y no se puede activar la conexión SSL pero sí una conexión no protegida (debe devolverlo). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IRCERR_NOCONNECT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>en caso de que no se pueda realizar la comunicación (debe devolverlo).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>Esta función debe ser implementada por el alumno.</para></simplesect>
+<simplesect kind="author"><para>Eloy Anguiano (<ulink url="mailto:eloy.anguiano@uam.es">eloy.anguiano@uam.es</ulink>)</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

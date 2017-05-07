@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Redes de Comunicaciones II: Fichero Fuente includes/G-2313-06-P2_client_err_handlers.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo-eps.gif"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Redes de Comunicaciones II
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Documentación de la práctica 2 generada por Jorge Parrilla y Javier de Marco.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="modules.html"><span>Módulos</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('G-2313-06-P2__client__err__handlers_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">G-2313-06-P2_client_err_handlers.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="G-2313-06-P2__client__err__handlers_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;sys/types.h&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;sys/socket.h&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;sys/stat.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;netinet/in.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;syslog.h&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;strings.h&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;signal.h&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;arpa/inet.h&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;redes2/irc.h&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;netdb.h&gt;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="G-2313-06-P2__client__common__functions_8h.html">G-2313-06-P2_client_common_functions.h</a>&quot;</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#aee5973ae831d1c7c63b1a62b59f561c2">server_in_command_err_cannotsendtochan</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#a14bfb17eb95d0f2bef1869aa2ebf520c">server_in_command_err_alreadyregistred</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#aaa9cfb1b5050bd1218c227d8d0a041fe">server_in_command_err_nonicknamegiven</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#abeb8ead21ebba982eb59f161eda735cb">server_in_command_err_erroneusnickname</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#ab6d8f2d05566bf6ee9dfcfc4a20f5d23">server_in_command_err_nicknameinuse</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#a4af95b292b293c08c0989b4e7334c7eb">server_in_command_err_nickcollision</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#ae4fcb567dc7685f5d7a4abbc7c6506b4">server_in_command_err_unavailresource</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#ada432444f58d5effbb05fd558a8ce289">server_in_command_err_restricted</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#a548a7ad35236521dca4b829e466f3379">server_in_command_err_passwdmismatch</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#a0e4059ef132eaac2218fdd89b20ca852">server_in_command_err_bannedfromchan</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#a05db0aa32f2ec2925cba3b952435bf59">server_in_command_err_channelisfull</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#a9fcb3f66fbcc994c7a78b36ebc0fe63d">server_in_command_err_chanoprivsneeded</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#ae5512c3dd8e1584fd8bafc4f5dd15d8c">server_in_command_err_inviteonlychan</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#aade31864807344a9961ffdab697b5727">server_in_command_err_nochanmodes</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#a83109e15e2a8f93c9523a84a546098c0">server_in_command_err_nosuchchannel</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#af262f3569e06c21e3e466266fa4e2c80">server_in_command_err_unknownmode</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#a678f368edc1fd437f5f115ef897bdcd9">server_in_command_err_nomotd</a>(<span class="keywordtype">char</span>* command);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client__err__handlers_8h.html#a01f8c9822aac18d5424ebbaf67c06a51">server_in_command_err_nosuchnick</a>(<span class="keywordtype">char</span>* command);</div><div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_a4af95b292b293c08c0989b4e7334c7eb"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#a4af95b292b293c08c0989b4e7334c7eb">server_in_command_err_nickcollision</a></div><div class="ttdeci">void server_in_command_err_nickcollision(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00057">G-2313-06-P2_client_err_handlers.c:57</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_ab6d8f2d05566bf6ee9dfcfc4a20f5d23"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#ab6d8f2d05566bf6ee9dfcfc4a20f5d23">server_in_command_err_nicknameinuse</a></div><div class="ttdeci">void server_in_command_err_nicknameinuse(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00047">G-2313-06-P2_client_err_handlers.c:47</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_a01f8c9822aac18d5424ebbaf67c06a51"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#a01f8c9822aac18d5424ebbaf67c06a51">server_in_command_err_nosuchnick</a></div><div class="ttdeci">void server_in_command_err_nosuchnick(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00177">G-2313-06-P2_client_err_handlers.c:177</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_a548a7ad35236521dca4b829e466f3379"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#a548a7ad35236521dca4b829e466f3379">server_in_command_err_passwdmismatch</a></div><div class="ttdeci">void server_in_command_err_passwdmismatch(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00087">G-2313-06-P2_client_err_handlers.c:87</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_ada432444f58d5effbb05fd558a8ce289"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#ada432444f58d5effbb05fd558a8ce289">server_in_command_err_restricted</a></div><div class="ttdeci">void server_in_command_err_restricted(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00077">G-2313-06-P2_client_err_handlers.c:77</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_aade31864807344a9961ffdab697b5727"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#aade31864807344a9961ffdab697b5727">server_in_command_err_nochanmodes</a></div><div class="ttdeci">void server_in_command_err_nochanmodes(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00137">G-2313-06-P2_client_err_handlers.c:137</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_abeb8ead21ebba982eb59f161eda735cb"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#abeb8ead21ebba982eb59f161eda735cb">server_in_command_err_erroneusnickname</a></div><div class="ttdeci">void server_in_command_err_erroneusnickname(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00037">G-2313-06-P2_client_err_handlers.c:37</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_a9fcb3f66fbcc994c7a78b36ebc0fe63d"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#a9fcb3f66fbcc994c7a78b36ebc0fe63d">server_in_command_err_chanoprivsneeded</a></div><div class="ttdeci">void server_in_command_err_chanoprivsneeded(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00117">G-2313-06-P2_client_err_handlers.c:117</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_aee5973ae831d1c7c63b1a62b59f561c2"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#aee5973ae831d1c7c63b1a62b59f561c2">server_in_command_err_cannotsendtochan</a></div><div class="ttdeci">void server_in_command_err_cannotsendtochan(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00007">G-2313-06-P2_client_err_handlers.c:7</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_a05db0aa32f2ec2925cba3b952435bf59"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#a05db0aa32f2ec2925cba3b952435bf59">server_in_command_err_channelisfull</a></div><div class="ttdeci">void server_in_command_err_channelisfull(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00107">G-2313-06-P2_client_err_handlers.c:107</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_a0e4059ef132eaac2218fdd89b20ca852"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#a0e4059ef132eaac2218fdd89b20ca852">server_in_command_err_bannedfromchan</a></div><div class="ttdeci">void server_in_command_err_bannedfromchan(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00097">G-2313-06-P2_client_err_handlers.c:97</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_aaa9cfb1b5050bd1218c227d8d0a041fe"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#aaa9cfb1b5050bd1218c227d8d0a041fe">server_in_command_err_nonicknamegiven</a></div><div class="ttdeci">void server_in_command_err_nonicknamegiven(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00027">G-2313-06-P2_client_err_handlers.c:27</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_a678f368edc1fd437f5f115ef897bdcd9"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#a678f368edc1fd437f5f115ef897bdcd9">server_in_command_err_nomotd</a></div><div class="ttdeci">void server_in_command_err_nomotd(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00167">G-2313-06-P2_client_err_handlers.c:167</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_ae5512c3dd8e1584fd8bafc4f5dd15d8c"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#ae5512c3dd8e1584fd8bafc4f5dd15d8c">server_in_command_err_inviteonlychan</a></div><div class="ttdeci">void server_in_command_err_inviteonlychan(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00127">G-2313-06-P2_client_err_handlers.c:127</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_a83109e15e2a8f93c9523a84a546098c0"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#a83109e15e2a8f93c9523a84a546098c0">server_in_command_err_nosuchchannel</a></div><div class="ttdeci">void server_in_command_err_nosuchchannel(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00147">G-2313-06-P2_client_err_handlers.c:147</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_af262f3569e06c21e3e466266fa4e2c80"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#af262f3569e06c21e3e466266fa4e2c80">server_in_command_err_unknownmode</a></div><div class="ttdeci">void server_in_command_err_unknownmode(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00157">G-2313-06-P2_client_err_handlers.c:157</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_a14bfb17eb95d0f2bef1869aa2ebf520c"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#a14bfb17eb95d0f2bef1869aa2ebf520c">server_in_command_err_alreadyregistred</a></div><div class="ttdeci">void server_in_command_err_alreadyregistred(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00017">G-2313-06-P2_client_err_handlers.c:17</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__err__handlers_8h_html_ae4fcb567dc7685f5d7a4abbc7c6506b4"><div class="ttname"><a href="G-2313-06-P2__client__err__handlers_8h.html#ae4fcb567dc7685f5d7a4abbc7c6506b4">server_in_command_err_unavailresource</a></div><div class="ttdeci">void server_in_command_err_unavailresource(char *command)</div><div class="ttdef"><b>Definition:</b> <a href="G-2313-06-P2__client__err__handlers_8c_source.html#l00067">G-2313-06-P2_client_err_handlers.c:67</a></div></div>
+<div class="ttc" id="G-2313-06-P2__client__common__functions_8h_html"><div class="ttname"><a href="G-2313-06-P2__client__common__functions_8h.html">G-2313-06-P2_client_common_functions.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="G-2313-06-P2__client__err__handlers_8h.html">G-2313-06-P2_client_err_handlers.h</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

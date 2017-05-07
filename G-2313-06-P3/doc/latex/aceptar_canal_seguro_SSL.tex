@@ -1,0 +1,22 @@
+\hypertarget{aceptar_canal_seguro_SSL_synopsis_2}{}\section{Synopsis}\label{aceptar_canal_seguro_SSL_synopsis_2}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P3__ssl_8h}{G-\/2313-\/06-\/\+P3\+\_\+ssl.\+h}$>$} ~\newline
+ {\bfseries int \hyperlink{G-2313-06-P3__ssl_8c_a44410967ff9e0a1b4219c85f0e62e926}{aceptar\+\_\+canal\+\_\+seguro\+\_\+\+S\+S\+L(\+S\+S\+L\+\_\+\+C\+T\+X$\ast$ ctx\+\_\+ssl, S\+S\+L $\ast$$\ast$ssl, int desc, int puerto, int tam, struct sockaddr\+\_\+in ip4addr)};} } \hypertarget{aceptar_canal_seguro_SSL_descripcion_2}{}\section{Descripción}\label{aceptar_canal_seguro_SSL_descripcion_2}
+Acepta una conexión recibida mediante la capa S\+SL, se ejecuta desde el lado del servidor. Mediante esta función el servidor se queda bloqueado esperando una nueva conexión a la que atender. ~\newline
+Recibe como parámetros los argumentos necesarios para la iteracción de la función con la capa S\+SL\+: contexto (S\+S\+L\+\_\+\+C\+TX), S\+SL, descriptor del socket, puerto de conexión, tamaño de peticiones máxima a atender y la estructura de conexión I\+P4. ~\newline
+\subsection*{{\bfseries Funciones de librería S\+SL\+:}}
+
+
+\begin{DoxyItemize}
+\item S\+S\+L\+\_\+new(); 
+\item S\+S\+L\+\_\+set\+\_\+fd(); 
+\item S\+S\+L\+\_\+accept(); 
+\end{DoxyItemize}\hypertarget{aceptar_canal_seguro_SSL_return_2}{}\section{Valores devueltos}\label{aceptar_canal_seguro_SSL_return_2}
+
+\begin{DoxyItemize}
+\item {\bfseries int} Valor entero que representa una aceptación correcta/incorrecta 
+\end{DoxyItemize}\hypertarget{aceptar_canal_seguro_SSL_authors_2}{}\section{Autores}\label{aceptar_canal_seguro_SSL_authors_2}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}

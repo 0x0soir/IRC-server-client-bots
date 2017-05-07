@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>P3- Seguridad SSL</title>
+    <innerpage refid="inicializar_nivel_SSL">Inicialización de SSL</innerpage>
+    <innerpage refid="fijar_contexto_SSL">Fijación del contexto SSL</innerpage>
+    <innerpage refid="aceptar_canal_seguro_SSL">Aceptación de un canal seguro</innerpage>
+    <innerpage refid="evaluar_post_connectar_SSL">Comprobación de conexión SSL</innerpage>
+    <innerpage refid="enviar_datos_SSL">Envío de datos vía SSL</innerpage>
+    <innerpage refid="recibir_datos_SSL">Recepción de datos vía SSL</innerpage>
+    <innerpage refid="cerrar_canal_SSL">Cierre de un canal SSL</innerpage>
+    <innerpage refid="conectar_canal_seguro_SSL">Conexión a un canal SSL</innerpage>
+    <detaileddescription>
+<para>En esta página se encuentra disponible la documentación de librería SSL de la práctica 3 de Redes de Comunicaciones II, grupo 2313, pareja 6.</para><para><heading level="1">Librería SSL</heading>
+</para><para>La librería SSL proporciona una capa superior a las funciones de los servidores echo proporcionados para la práctica. En ella se encuentran las funciones de fijación, conexión, envío y recepción mediante la capa SSL de socket. <itemizedlist>
+<listitem>
+<para><ref refid="inicializar_nivel_SSL" kindref="compound">Inicialización de SSL</ref> </para></listitem>
+<listitem>
+<para><ref refid="fijar_contexto_SSL" kindref="compound">Fijación del contexto SSL</ref> </para></listitem>
+<listitem>
+<para><ref refid="aceptar_canal_seguro_SSL" kindref="compound">Aceptación de un canal seguro</ref> </para></listitem>
+<listitem>
+<para><ref refid="evaluar_post_connectar_SSL" kindref="compound">Comprobación de conexión SSL</ref> </para></listitem>
+<listitem>
+<para><ref refid="enviar_datos_SSL" kindref="compound">Envío de datos vía SSL</ref> </para></listitem>
+<listitem>
+<para><ref refid="recibir_datos_SSL" kindref="compound">Recepción de datos vía SSL</ref> </para></listitem>
+<listitem>
+<para><ref refid="cerrar_canal_SSL" kindref="compound">Cierre de un canal SSL</ref> </para></listitem>
+<listitem>
+<para><ref refid="conectar_canal_seguro_SSL" kindref="compound">Conexión a un canal SSL</ref> </para></listitem>
+</itemizedlist>
+<dotfile></dotfile>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

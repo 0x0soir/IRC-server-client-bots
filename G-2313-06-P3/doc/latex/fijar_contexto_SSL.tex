@@ -1,0 +1,23 @@
+\hypertarget{fijar_contexto_SSL_synopsis_6}{}\section{Synopsis}\label{fijar_contexto_SSL_synopsis_6}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P3__ssl_8h}{G-\/2313-\/06-\/\+P3\+\_\+ssl.\+h}$>$} ~\newline
+ {\bfseries int \hyperlink{G-2313-06-P3__ssl_8c_a006acb44fc7dae799271a48117f5a398}{fijar\+\_\+contexto\+\_\+\+S\+S\+L(\+S\+S\+L\+\_\+\+C\+T\+X$\ast$ ssl\+\_\+ctx, char $\ast$ cert\+File, char $\ast$ cert\+Root)};} } \hypertarget{fijar_contexto_SSL_descripcion_6}{}\section{Descripción}\label{fijar_contexto_SSL_descripcion_6}
+Fija la conexión S\+SL comprobando que los certificados utilizados en dicha conexión están formados correctamente y tienen el formato adecuado de S\+SL. ~\newline
+\subsection*{{\bfseries Funciones de librería S\+SL\+:}}
+
+
+\begin{DoxyItemize}
+\item S\+S\+L\+\_\+\+C\+T\+X\+\_\+load\+\_\+verify\+\_\+locations(ssl\+\_\+ctx, cert\+Root, cert\+File); 
+\item S\+S\+L\+\_\+\+C\+T\+X\+\_\+set\+\_\+default\+\_\+verify\+\_\+paths(ssl\+\_\+ctx); 
+\item S\+S\+L\+\_\+\+C\+T\+X\+\_\+use\+\_\+certificate\+\_\+file(ssl\+\_\+ctx, cert\+File, S\+S\+L\+\_\+\+F\+I\+L\+E\+T\+Y\+P\+E\+\_\+\+P\+E\+M); 
+\item S\+S\+L\+\_\+\+C\+T\+X\+\_\+use\+\_\+\+Private\+Key\+\_\+file(ssl\+\_\+ctx, cert\+File, S\+S\+L\+\_\+\+F\+I\+L\+E\+T\+Y\+P\+E\+\_\+\+P\+EM; 
+\item S\+S\+L\+\_\+\+C\+T\+X\+\_\+set\+\_\+verify(ssl\+\_\+ctx, S\+S\+L\+\_\+\+V\+E\+R\+I\+F\+Y\+\_\+\+P\+E\+E\+R, N\+U\+L\+L); 
+\end{DoxyItemize}\hypertarget{fijar_contexto_SSL_return_6}{}\section{Valores devueltos}\label{fijar_contexto_SSL_return_6}
+
+\begin{DoxyItemize}
+\item {\bfseries int} Valor entero que representa una aceptación correcta/incorrecta 
+\end{DoxyItemize}\hypertarget{fijar_contexto_SSL_authors_6}{}\section{Autores}\label{fijar_contexto_SSL_authors_6}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}

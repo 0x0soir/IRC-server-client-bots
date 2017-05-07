@@ -1,0 +1,483 @@
+.TH "includes/G-2313-06-P2_client_function_handlers.h" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2313-06-P2_client_function_handlers.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <syslog\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <strings\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include <redes2/irc\&.h>\fP
+.br
+\fC#include <redes2/ircxchat\&.h>\fP
+.br
+\fC#include <netdb\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include 'G\-2313\-06\-P2_files\&.h'\fP
+.br
+\fC#include 'G\-2313\-06\-P2_client_common_functions\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "void \fBserver_in_command_nick\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_join\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_part\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_mode\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_topic\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_kick\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_who\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_privmsg\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_ping\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_pong\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_welcome\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_created\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_yourhost\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_luserclient\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_luserme\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_motdstart\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_motd\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_endofmotd\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_whoreply\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_away\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_nowaway\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_topic\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_notopic\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_youroper\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_luserop\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_luserchannels\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_youreservice\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_myinfo\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_endofwho\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_endofwhois\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_info\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_whoisuser\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_whoischannels\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_whoisoperator\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_whoisserver\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_whoisidle\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_channelmodeis\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_endofnames\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_list\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_listend\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_rpl_namreply\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_nick\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_join\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_names\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_list\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_part\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_mode\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_kick\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_privmsg\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_whois\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_invite\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_topic\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_me\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_msg\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_notice\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_ignore\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_who\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_whowas\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_motd\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_away\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_out_command_ping\fP (char *command)"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "void server_in_command_join (char * command)"
+
+.PP
+Definición en la línea 51 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_kick (char * command)"
+
+.PP
+Definición en la línea 204 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_mode (char * command)"
+
+.PP
+Definición en la línea 103 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_nick (char * command)"
+
+.PP
+Definición en la línea 7 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_part (char * command)"
+
+.PP
+Definición en la línea 83 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_ping (char * command)"
+
+.PP
+Definición en la línea 274 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_pong (char * command)"
+
+.PP
+Definición en la línea 289 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_privmsg (char * command)"
+
+.PP
+Definición en la línea 241 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_away (char * command)"
+
+.PP
+Definición en la línea 410 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_channelmodeis (char * command)"
+
+.PP
+Definición en la línea 602 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_created (char * command)"
+
+.PP
+Definición en la línea 318 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_endofmotd (char * command)"
+
+.PP
+Definición en la línea 374 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_endofnames (char * command)"
+
+.PP
+Definición en la línea 613 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_endofwho (char * command)"
+
+.PP
+Definición en la línea 515 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_endofwhois (char * command)"
+
+.PP
+Definición en la línea 524 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_info (char * command)"
+
+.PP
+Definición en la línea 533 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_list (char * command)"
+
+.PP
+Definición en la línea 622 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_listend (char * command)"
+
+.PP
+Definición en la línea 633 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_luserchannels (char * command)"
+
+.PP
+Definición en la línea 479 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_luserclient (char * command)"
+
+.PP
+Definición en la línea 336 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_luserme (char * command)"
+
+.PP
+Definición en la línea 346 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_luserop (char * command)"
+
+.PP
+Definición en la línea 467 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_motd (char * command)"
+
+.PP
+Definición en la línea 365 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_motdstart (char * command)"
+
+.PP
+Definición en la línea 356 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_myinfo (char * command)"
+
+.PP
+Definición en la línea 502 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_namreply (char * command)"
+
+.PP
+Definición en la línea 642 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_notopic (char * command)"
+
+.PP
+Definición en la línea 445 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_nowaway (char * command)"
+
+.PP
+Definición en la línea 422 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_topic (char * command)"
+
+.PP
+Definición en la línea 434 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_welcome (char * command)"
+
+.PP
+Definición en la línea 309 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_whoischannels (char * command)"
+
+.PP
+Definición en la línea 556 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_whoisidle (char * command)"
+
+.PP
+Definición en la línea 589 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_whoisoperator (char * command)"
+
+.PP
+Definición en la línea 568 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_whoisserver (char * command)"
+
+.PP
+Definición en la línea 577 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_whoisuser (char * command)"
+
+.PP
+Definición en la línea 542 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_whoreply (char * command)"
+
+.PP
+Definición en la línea 383 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_youreservice (char * command)"
+
+.PP
+Definición en la línea 491 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_yourhost (char * command)"
+
+.PP
+Definición en la línea 327 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_rpl_youroper (char * command)"
+
+.PP
+Definición en la línea 456 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_topic (char * command)"
+
+.PP
+Definición en la línea 188 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_in_command_who (char * command)"
+
+.PP
+Definición en la línea 230 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_away (char * command)"
+
+.PP
+Definición en la línea 943 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_ignore (char * command)"
+
+.PP
+Definición en la línea 889 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_invite (char * command)"
+
+.PP
+Definición en la línea 809 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_join (char * command)"
+
+.PP
+Definición en la línea 674 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_kick (char * command)"
+
+.PP
+Definición en la línea 757 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_list (char * command)"
+
+.PP
+Definición en la línea 701 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_me (char * command)"
+
+.PP
+Definición en la línea 842 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_mode (char * command)"
+
+.PP
+Definición en la línea 738 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_motd (char * command)"
+
+.PP
+Definición en la línea 927 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_msg (char * command)"
+
+.PP
+Definición en la línea 861 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_names (char * command)"
+
+.PP
+Definición en la línea 687 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_nick (char * command)"
+
+.PP
+Definición en la línea 654 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_notice (char * command)"
+
+.PP
+Definición en la línea 875 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_part (char * command)"
+
+.PP
+Definición en la línea 714 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_ping (char * command)"
+
+.PP
+Definición en la línea 959 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_privmsg (char * command)"
+
+.PP
+Definición en la línea 776 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_topic (char * command)"
+
+.PP
+Definición en la línea 823 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_who (char * command)"
+
+.PP
+Definición en la línea 894 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_whois (char * command)"
+
+.PP
+Definición en la línea 795 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SS "void server_out_command_whowas (char * command)"
+
+.PP
+Definición en la línea 910 del archivo G\-2313\-06\-P2_client_function_handlers\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

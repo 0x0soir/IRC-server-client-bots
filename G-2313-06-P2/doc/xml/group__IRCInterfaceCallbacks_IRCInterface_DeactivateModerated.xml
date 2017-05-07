@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__IRCInterfaceCallbacks_IRCInterface_DeactivateModerated" kind="page">
+    <compoundname>IRCInterface_DeactivateModerated</compoundname>
+    <title>IRCInterface_DeactivateModerated</title>
+    <detaileddescription>
+<para>Llamada por el botón de desactivación de la moderación del canal.</para><para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;redes2/ircxchat.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>IRCInterface_DeactivateModerated<sp/>(char<sp/>*channel)</highlight></codeline>
+</programlisting></para><para>Llamada por el botón de desactivación de la moderación del canal.</para><para>En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>canal sobre el que se va a desactivar la moderación.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>Esta función debe ser implementada por el alumno.</para></simplesect>
+<simplesect kind="author"><para>Eloy Anguiano (<ulink url="mailto:eloy.anguiano@uam.es">eloy.anguiano@uam.es</ulink>)</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

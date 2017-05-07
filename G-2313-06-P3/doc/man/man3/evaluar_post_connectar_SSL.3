@@ -1,0 +1,38 @@
+.TH "evaluar_post_connectar_SSL" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+evaluar_post_connectar_SSL \- Comprobación de conexión SSL 
+
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P3_ssl\&.h\fP>\fP 
+.br
+ \fBint \fBevaluar_post_connectar_SSL(SSL * ssl)\fP;\fP \fP 
+.SH "Descripción"
+.PP
+Comprueba una conexión SSL recibida como parámetro, para ello verifica que los certificados utilizados en dicha conexión son válidos, así como el propio resultado de la estabilidad de la conexión SSL\&. 
+.br
+.SS "\fBFunciones de librería SSL:\fP"
+.PP
+.PD 0
+.IP "\(bu" 2
+SSL_get_peer_certificate(); 
+.IP "\(bu" 2
+SSL_get_verify_result(); 
+.PP
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBint\fP Valor entero que representa una aceptación correcta/incorrecta 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

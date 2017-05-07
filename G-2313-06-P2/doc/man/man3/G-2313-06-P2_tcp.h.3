@@ -1,0 +1,52 @@
+.TH "includes/G-2313-06-P2_tcp.h" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2313-06-P2_tcp.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBtcp_connect\fP (char *server, int port)"
+.br
+.ti -1c
+.RI "int \fBtcp_listen\fP (int port, int max_conn)"
+.br
+.ti -1c
+.RI "int \fBtcp_send\fP (int fd, char *msg)"
+.br
+.ti -1c
+.RI "int \fBtcp_receive\fP (int fd, char *msg, int len)"
+.br
+.ti -1c
+.RI "int \fBtcp_disconnect\fP (int fd)"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "int tcp_connect (char * server, int port)"
+
+.PP
+Definición en la línea 7 del archivo G\-2313\-06\-P2_tcp\&.c\&.
+.SS "int tcp_disconnect (int fd)"
+
+.PP
+Definición en la línea 88 del archivo G\-2313\-06\-P2_tcp\&.c\&.
+.SS "int tcp_listen (int port, int max_conn)"
+
+.PP
+Definición en la línea 39 del archivo G\-2313\-06\-P2_tcp\&.c\&.
+.SS "int tcp_receive (int fd, char * msg, int len)"
+
+.PP
+Definición en la línea 81 del archivo G\-2313\-06\-P2_tcp\&.c\&.
+.SS "int tcp_send (int fd, char * msg)"
+
+.PP
+Definición en la línea 74 del archivo G\-2313\-06\-P2_tcp\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

@@ -1,0 +1,1017 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Redes de Comunicaciones II: Referencia del Archivo src/G-2313-06-P2_client.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo-eps.gif"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Redes de Comunicaciones II
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Documentación de la práctica 2 generada por Jorge Parrilla y Javier de Marco.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="modules.html"><span>Módulos</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('G-2313-06-P2__client_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia del Archivo G-2313-06-P2_client.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;redes2/ircxchat.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="G-2313-06-P2__client_8h_source.html">../includes/G-2313-06-P2_client.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para G-2313-06-P2_client.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="G-2313-06-P2__client_8c__incl.png" border="0" usemap="#src_2G-2313-06-P2__client_8c" alt=""/></div>
+<map name="src_2G-2313-06-P2__client_8c" id="src_2G-2313-06-P2__client_8c">
+<area shape="rect" id="node3" href="G-2313-06-P2__client_8h.html" title="../includes/G&#45;2313\l&#45;06&#45;P2_client.h" alt="" coords="1331,80,1459,121"/>
+<area shape="rect" id="node25" href="G-2313-06-P2__tcp_8h.html" title="G&#45;2313&#45;06&#45;P2_tcp.h" alt="" coords="403,437,541,464"/>
+<area shape="rect" id="node26" href="G-2313-06-P2__files_8h.html" title="G&#45;2313&#45;06&#45;P2_files.h" alt="" coords="1356,355,1500,382"/>
+<area shape="rect" id="node27" href="G-2313-06-P2__client__common__functions_8h.html" title="G&#45;2313&#45;06&#45;P2_client\l_common_functions.h" alt="" coords="1665,169,1815,211"/>
+<area shape="rect" id="node28" href="G-2313-06-P2__client__function__handlers_8h.html" title="G&#45;2313&#45;06&#45;P2_client\l_function_handlers.h" alt="" coords="1559,259,1702,300"/>
+<area shape="rect" id="node29" href="G-2313-06-P2__client__err__handlers_8h.html" title="G&#45;2313&#45;06&#45;P2_client\l_err_handlers.h" alt="" coords="1829,348,1969,389"/>
+</map>
+</div>
+</div>
+<p><a href="G-2313-06-P2__client_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a33f80a29a744e4182b29e23f13c1f05c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a33f80a29a744e4182b29e23f13c1f05c">IRCInterface_ActivateChannelKey</a> (char *channel, char *key)</td></tr>
+<tr class="separator:a33f80a29a744e4182b29e23f13c1f05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a439929c246e342ae525139b2c39f5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a7a439929c246e342ae525139b2c39f5d">IRCInterface_ActivateExternalMessages</a> (char *channel)</td></tr>
+<tr class="separator:a7a439929c246e342ae525139b2c39f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac72762ab1e3575b421b967241db23f9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#ac72762ab1e3575b421b967241db23f9c">IRCInterface_ActivateInvite</a> (char *channel)</td></tr>
+<tr class="separator:ac72762ab1e3575b421b967241db23f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af83498f4058311f4562c43a9b70566b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#af83498f4058311f4562c43a9b70566b2">IRCInterface_ActivateModerated</a> (char *channel)</td></tr>
+<tr class="separator:af83498f4058311f4562c43a9b70566b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5694cc413472173bfcaa969c7d9800e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#ab5694cc413472173bfcaa969c7d9800e">IRCInterface_ActivateNicksLimit</a> (char *channel, int limit)</td></tr>
+<tr class="separator:ab5694cc413472173bfcaa969c7d9800e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f09c737c7c109a97e22de6072d731d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#ab1f09c737c7c109a97e22de6072d731d">IRCInterface_ActivatePrivate</a> (char *channel)</td></tr>
+<tr class="separator:ab1f09c737c7c109a97e22de6072d731d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45f12d4dcacf3b5485eec6fdc51df93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#ac45f12d4dcacf3b5485eec6fdc51df93">IRCInterface_ActivateProtectTopic</a> (char *channel)</td></tr>
+<tr class="separator:ac45f12d4dcacf3b5485eec6fdc51df93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9e9155115b834d85a4d10cb27f99093"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#aa9e9155115b834d85a4d10cb27f99093">IRCInterface_ActivateSecret</a> (char *channel)</td></tr>
+<tr class="separator:aa9e9155115b834d85a4d10cb27f99093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42773b5a840f9d0455f148d285e1e595"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a42773b5a840f9d0455f148d285e1e595">IRCInterface_BanNick</a> (char *channel, char *nick)</td></tr>
+<tr class="separator:a42773b5a840f9d0455f148d285e1e595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed072f4ce0d6e90697d4d6eb0278a2ad"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#aed072f4ce0d6e90697d4d6eb0278a2ad">IRCInterface_Connect</a> (char *nick, char *user, char *realname, char *password, char *server, int port, boolean ssl)</td></tr>
+<tr class="separator:aed072f4ce0d6e90697d4d6eb0278a2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e67ee0cd384b524d57fda14593dce8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a3e67ee0cd384b524d57fda14593dce8e">IRCInterface_DeactivateChannelKey</a> (char *channel)</td></tr>
+<tr class="separator:a3e67ee0cd384b524d57fda14593dce8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a638b1535f4ecbc9a6affb2df2a6a946e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a638b1535f4ecbc9a6affb2df2a6a946e">IRCInterface_DeactivateExternalMessages</a> (char *channel)</td></tr>
+<tr class="separator:a638b1535f4ecbc9a6affb2df2a6a946e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ba4e98a3729737aa63ebec54ba4e894"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a9ba4e98a3729737aa63ebec54ba4e894">IRCInterface_DeactivateInvite</a> (char *channel)</td></tr>
+<tr class="separator:a9ba4e98a3729737aa63ebec54ba4e894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab760e8144b38f6c14bd809d157cee5d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#ab760e8144b38f6c14bd809d157cee5d4">IRCInterface_DeactivateModerated</a> (char *channel)</td></tr>
+<tr class="separator:ab760e8144b38f6c14bd809d157cee5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92c8cfbe2e14e19277e1c97d11719e80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a92c8cfbe2e14e19277e1c97d11719e80">IRCInterface_DeactivateNicksLimit</a> (char *channel)</td></tr>
+<tr class="separator:a92c8cfbe2e14e19277e1c97d11719e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6141803691ba327f11ba763ad075d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a8a6141803691ba327f11ba763ad075d4">IRCInterface_DeactivatePrivate</a> (char *channel)</td></tr>
+<tr class="separator:a8a6141803691ba327f11ba763ad075d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a57541a950f8c2c40b4b44c32b28ed9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a5a57541a950f8c2c40b4b44c32b28ed9">IRCInterface_DeactivateProtectTopic</a> (char *channel)</td></tr>
+<tr class="separator:a5a57541a950f8c2c40b4b44c32b28ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4956427664cabc7d5b2bd1589a207324"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a4956427664cabc7d5b2bd1589a207324">IRCInterface_DeactivateSecret</a> (char *channel)</td></tr>
+<tr class="separator:a4956427664cabc7d5b2bd1589a207324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf0424ef7f845be79a056e9aed56fe2"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a8bf0424ef7f845be79a056e9aed56fe2">IRCInterface_DisconnectServer</a> (char *server, int port)</td></tr>
+<tr class="separator:a8bf0424ef7f845be79a056e9aed56fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab431412191716f751461f94d613ffdab"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#ab431412191716f751461f94d613ffdab">IRCInterface_ExitAudioChat</a> (char *nick)</td></tr>
+<tr class="separator:ab431412191716f751461f94d613ffdab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae075029bb55e8b995f22beb0810674f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#ae075029bb55e8b995f22beb0810674f4">IRCInterface_GiveOp</a> (char *channel, char *nick)</td></tr>
+<tr class="separator:ae075029bb55e8b995f22beb0810674f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9effb4bdaf4a2cdf2dd9edbeb90b430"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#ae9effb4bdaf4a2cdf2dd9edbeb90b430">IRCInterface_GiveVoice</a> (char *channel, char *nick)</td></tr>
+<tr class="separator:ae9effb4bdaf4a2cdf2dd9edbeb90b430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7adfea400a96160585f86179bafb055f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a7adfea400a96160585f86179bafb055f">IRCInterface_KickNick</a> (char *channel, char *nick)</td></tr>
+<tr class="separator:a7adfea400a96160585f86179bafb055f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a214e10b19c8be028fb35d2a7abf3f798"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a214e10b19c8be028fb35d2a7abf3f798">IRCInterface_NewCommandText</a> (char *command)</td></tr>
+<tr class="separator:a214e10b19c8be028fb35d2a7abf3f798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a080cf34ff506481737f6d08af60ca92b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a080cf34ff506481737f6d08af60ca92b">IRCInterface_NewTopicEnter</a> (char *topicdata)</td></tr>
+<tr class="separator:a080cf34ff506481737f6d08af60ca92b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a100f1c87bb3b399a7284e62dd2e6172a"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a100f1c87bb3b399a7284e62dd2e6172a">IRCInterface_SendFile</a> (char *filename, char *nick, char *data, long unsigned int length)</td></tr>
+<tr class="separator:a100f1c87bb3b399a7284e62dd2e6172a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc7a44587e609b416a783cd420a12e3"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a5dc7a44587e609b416a783cd420a12e3">IRCInterface_StartAudioChat</a> (char *nick)</td></tr>
+<tr class="separator:a5dc7a44587e609b416a783cd420a12e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754a3d3dd311194637c07cc701e7d507"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a754a3d3dd311194637c07cc701e7d507">IRCInterface_StopAudioChat</a> (char *nick)</td></tr>
+<tr class="separator:a754a3d3dd311194637c07cc701e7d507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e2a1ea75e59306142030a91a054b7e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a4e2a1ea75e59306142030a91a054b7e6">IRCInterface_TakeOp</a> (char *channel, char *nick)</td></tr>
+<tr class="separator:a4e2a1ea75e59306142030a91a054b7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ff2e10ed1cb1a399293b6f76ac1e5ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a2ff2e10ed1cb1a399293b6f76ac1e5ae">IRCInterface_TakeVoice</a> (char *channel, char *nick)</td></tr>
+<tr class="separator:a2ff2e10ed1cb1a399293b6f76ac1e5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:adeadf7cb6916a10c7142ce7d265ab32a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#adeadf7cb6916a10c7142ce7d265ab32a">socket_desc</a></td></tr>
+<tr class="separator:adeadf7cb6916a10c7142ce7d265ab32a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93a317ee9a27c82844c9128a76b136a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#ab93a317ee9a27c82844c9128a76b136a">nick_cliente</a></td></tr>
+<tr class="separator:ab93a317ee9a27c82844c9128a76b136a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a497238a5c30172237878376d95472ce4"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a497238a5c30172237878376d95472ce4">thread_ficheros</a></td></tr>
+<tr class="separator:a497238a5c30172237878376d95472ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a081c16d23aa5029dd2454dfb0c355eb0"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a081c16d23aa5029dd2454dfb0c355eb0">thread_ping</a></td></tr>
+<tr class="separator:a081c16d23aa5029dd2454dfb0c355eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3ce8d8dc4bda71d7bd4a3b47fffd9d"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="G-2313-06-P2__client_8c.html#a2b3ce8d8dc4bda71d7bd4a3b47fffd9d">thread_response</a></td></tr>
+<tr class="separator:a2b3ce8d8dc4bda71d7bd4a3b47fffd9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a class="anchor" id="a33f80a29a744e4182b29e23f13c1f05c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_ActivateChannelKey </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00061">61</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a439929c246e342ae525139b2c39f5d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_ActivateExternalMessages </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00108">108</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac72762ab1e3575b421b967241db23f9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_ActivateInvite </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00156">156</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af83498f4058311f4562c43a9b70566b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_ActivateModerated </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00200">200</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5694cc413472173bfcaa969c7d9800e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_ActivateNicksLimit </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00251">251</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab1f09c737c7c109a97e22de6072d731d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_ActivatePrivate </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00300">300</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac45f12d4dcacf3b5485eec6fdc51df93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_ActivateProtectTopic </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00344">344</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa9e9155115b834d85a4d10cb27f99093"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_ActivateSecret </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00392">392</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a42773b5a840f9d0455f148d285e1e595"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_BanNick </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00442">442</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aed072f4ce0d6e90697d4d6eb0278a2ad"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long IRCInterface_Connect </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>realname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>server</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>ssl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00502">502</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e67ee0cd384b524d57fda14593dce8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_DeactivateChannelKey </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00599">599</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a638b1535f4ecbc9a6affb2df2a6a946e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_DeactivateExternalMessages </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00646">646</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ba4e98a3729737aa63ebec54ba4e894"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_DeactivateInvite </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00693">693</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab760e8144b38f6c14bd809d157cee5d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_DeactivateModerated </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00740">740</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a92c8cfbe2e14e19277e1c97d11719e80"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_DeactivateNicksLimit </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00787">787</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a6141803691ba327f11ba763ad075d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_DeactivatePrivate </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00836">836</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5a57541a950f8c2c40b4b44c32b28ed9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_DeactivateProtectTopic </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00883">883</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4956427664cabc7d5b2bd1589a207324"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_DeactivateSecret </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00931">931</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8bf0424ef7f845be79a056e9aed56fe2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean IRCInterface_DisconnectServer </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>server</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00982">982</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab431412191716f751461f94d613ffdab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean IRCInterface_ExitAudioChat </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01036">1036</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae075029bb55e8b995f22beb0810674f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_GiveOp </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01073">1073</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9effb4bdaf4a2cdf2dd9edbeb90b430"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_GiveVoice </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01118">1118</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7adfea400a96160585f86179bafb055f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_KickNick </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01163">1163</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a214e10b19c8be028fb35d2a7abf3f798"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_NewCommandText </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>command</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01208">1208</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a080cf34ff506481737f6d08af60ca92b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_NewTopicEnter </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>topicdata</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01245">1245</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a100f1c87bb3b399a7284e62dd2e6172a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean IRCInterface_SendFile </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long unsigned int&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01298">1298</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5dc7a44587e609b416a783cd420a12e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean IRCInterface_StartAudioChat </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01356">1356</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a754a3d3dd311194637c07cc701e7d507"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean IRCInterface_StopAudioChat </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01396">1396</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e2a1ea75e59306142030a91a054b7e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_TakeOp </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01433">1433</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ff2e10ed1cb1a399293b6f76ac1e5ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRCInterface_TakeVoice </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nick</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01478">1478</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>MMMMMMMMMM MMMMM AAAAAAA IIIIIII NNNNNNNNNN NNNNNN MMMMMMMMMM MMMMM AAAAAAAA IIIII NNNNNNNNNN NNNN MMMMM MMMM MM MM AAAAA AA III NNNNN NNNN NN MMMMM MMMM MM MM AAAAA AA III NNNNN NNNN NN MMMMM MMMM MM MM AAAAA AA III NNNNN NNNN NN MMMMM MMMM MM MM AAAAA AA III NNNNN NNNN NN MMMMM MMMM MM MM AAAAA AA III NNNNN NNNN NN MMMMM MMMM MM MM AAAAAAAAAAAAAA III NNNNN NNNN NN MMMMM MMMMM MM AAAAA AA III NNNNN NNNN NN MMMMM MMM MM AAAAA AA III NNNNN NNNN NN MMMMM MM AAAAA AA III NNNNN NNNN NN MMMMM MM AAAAA AA III NNNNN NNNN NN MMMMMMM MMMM AAAAAA AAAA IIIII NNNNNN NNNNNNN MMMMMMMMM MMMMMM AAAAAAAA AAAAAA IIIIIII NNNNNNN NNNNNNN </p>
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l01515">1515</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las variables</h2>
+<a class="anchor" id="ab93a317ee9a27c82844c9128a76b136a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* nick_cliente</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00005">5</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adeadf7cb6916a10c7142ce7d265ab32a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int socket_desc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00004">4</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a497238a5c30172237878376d95472ce4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_t thread_ficheros</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00006">6</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a081c16d23aa5029dd2454dfb0c355eb0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_t thread_ping</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00006">6</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b3ce8d8dc4bda71d7bd4a3b47fffd9d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_t thread_response</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="G-2313-06-P2__client_8c_source.html#l00006">6</a> del archivo <a class="el" href="G-2313-06-P2__client_8c_source.html">G-2313-06-P2_client.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="G-2313-06-P2__client_8c.html">G-2313-06-P2_client.c</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

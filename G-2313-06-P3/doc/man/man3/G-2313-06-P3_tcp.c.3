@@ -1,0 +1,98 @@
+.TH "srclib/G-2313-06-P3_tcp.c" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+srclib/G-2313-06-P3_tcp.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./includes/G\-2313\-06\-P3_tcp\&.h'\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <netdb\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "int \fBtcp_new_socket\fP ()"
+.br
+.ti -1c
+.RI "int \fBtcp_bind\fP (int desc, int puerto)"
+.br
+.ti -1c
+.RI "int \fBtcp_new_listen\fP (int desc, int tam)"
+.br
+.ti -1c
+.RI "int \fBtcp_new_accept\fP (int desc, struct sockaddr_in ip4addr)"
+.br
+.ti -1c
+.RI "int \fBtcp_new_open_connection\fP (int desc, struct sockaddr res)"
+.br
+.ti -1c
+.RI "int \fBtcp_connect\fP (char *server, int port)"
+.br
+.ti -1c
+.RI "int \fBtcp_listen\fP (int port, int max_conn)"
+.br
+.ti -1c
+.RI "int \fBtcp_send\fP (int fd, char *msg)"
+.br
+.ti -1c
+.RI "int \fBtcp_receive\fP (int fd, char *msg, int len)"
+.br
+.ti -1c
+.RI "int \fBtcp_disconnect\fP (int fd)"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "int tcp_bind (int desc, int puerto)"
+
+.PP
+Definición en la línea 14 del archivo G\-2313\-06\-P3_tcp\&.c\&.
+.SS "int tcp_connect (char * server, int port)"
+
+.PP
+Definición en la línea 51 del archivo G\-2313\-06\-P3_tcp\&.c\&.
+.SS "int tcp_disconnect (int fd)"
+
+.PP
+Definición en la línea 132 del archivo G\-2313\-06\-P3_tcp\&.c\&.
+.SS "int tcp_listen (int port, int max_conn)"
+
+.PP
+Definición en la línea 83 del archivo G\-2313\-06\-P3_tcp\&.c\&.
+.SS "int tcp_new_accept (int desc, struct sockaddr_in ip4addr)"
+
+.PP
+Definición en la línea 33 del archivo G\-2313\-06\-P3_tcp\&.c\&.
+.SS "int tcp_new_listen (int desc, int tam)"
+
+.PP
+Definición en la línea 25 del archivo G\-2313\-06\-P3_tcp\&.c\&.
+.SS "int tcp_new_open_connection (int desc, struct sockaddr res)"
+
+.PP
+Definición en la línea 43 del archivo G\-2313\-06\-P3_tcp\&.c\&.
+.SS "int tcp_new_socket ()"
+
+.PP
+Definición en la línea 7 del archivo G\-2313\-06\-P3_tcp\&.c\&.
+.SS "int tcp_receive (int fd, char * msg, int len)"
+
+.PP
+Definición en la línea 125 del archivo G\-2313\-06\-P3_tcp\&.c\&.
+.SS "int tcp_send (int fd, char * msg)"
+
+.PP
+Definición en la línea 118 del archivo G\-2313\-06\-P3_tcp\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

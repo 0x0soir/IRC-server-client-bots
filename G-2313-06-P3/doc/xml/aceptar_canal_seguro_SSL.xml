@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="aceptar_canal_seguro_SSL" kind="page">
+    <compoundname>aceptar_canal_seguro_SSL</compoundname>
+    <title>Aceptación de un canal seguro</title>
+    <detaileddescription>
+<sect1 id="aceptar_canal_seguro_SSL_1synopsis_2">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P3__ssl_8h" kindref="compound">G-2313-06-P3_ssl.h</ref>&gt;</bold> <linebreak/>
+ <bold>int <ref refid="G-2313-06-P3__ssl_8c_1a44410967ff9e0a1b4219c85f0e62e926" kindref="member">aceptar_canal_seguro_SSL(SSL_CTX* ctx_ssl, SSL **ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr)</ref>;</bold> </computeroutput> </para></sect1>
+<sect1 id="aceptar_canal_seguro_SSL_1descripcion_2">
+<title>Descripción</title>
+<para>Acepta una conexión recibida mediante la capa SSL, se ejecuta desde el lado del servidor. Mediante esta función el servidor se queda bloqueado esperando una nueva conexión a la que atender. <linebreak/>
+Recibe como parámetros los argumentos necesarios para la iteracción de la función con la capa SSL: contexto (SSL_CTX), SSL, descriptor del socket, puerto de conexión, tamaño de peticiones máxima a atender y la estructura de conexión IP4. <linebreak/>
+<heading level="2"><bold>Funciones de librería SSL:</bold></heading>
+</para><para><itemizedlist>
+<listitem>
+<para>SSL_new(); </para></listitem>
+<listitem>
+<para>SSL_set_fd(); </para></listitem>
+<listitem>
+<para>SSL_accept(); </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="aceptar_canal_seguro_SSL_1return_2">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>int</bold> Valor entero que representa una aceptación correcta/incorrecta </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="aceptar_canal_seguro_SSL_1authors_2">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

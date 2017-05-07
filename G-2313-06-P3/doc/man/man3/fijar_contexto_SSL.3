@@ -1,0 +1,44 @@
+.TH "fijar_contexto_SSL" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+fijar_contexto_SSL \- Fijación del contexto SSL 
+
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P3_ssl\&.h\fP>\fP 
+.br
+ \fBint \fBfijar_contexto_SSL(SSL_CTX* ssl_ctx, char * certFile, char * certRoot)\fP;\fP \fP 
+.SH "Descripción"
+.PP
+Fija la conexión SSL comprobando que los certificados utilizados en dicha conexión están formados correctamente y tienen el formato adecuado de SSL\&. 
+.br
+.SS "\fBFunciones de librería SSL:\fP"
+.PP
+.PD 0
+.IP "\(bu" 2
+SSL_CTX_load_verify_locations(ssl_ctx, certRoot, certFile); 
+.IP "\(bu" 2
+SSL_CTX_set_default_verify_paths(ssl_ctx); 
+.IP "\(bu" 2
+SSL_CTX_use_certificate_file(ssl_ctx, certFile, SSL_FILETYPE_PEM); 
+.IP "\(bu" 2
+SSL_CTX_use_PrivateKey_file(ssl_ctx, certFile, SSL_FILETYPE_PEM; 
+.IP "\(bu" 2
+SSL_CTX_set_verify(ssl_ctx, SSL_VERIFY_PEER, NULL); 
+.PP
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBint\fP Valor entero que representa una aceptación correcta/incorrecta 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="evaluar_post_connectar_SSL" kind="page">
+    <compoundname>evaluar_post_connectar_SSL</compoundname>
+    <title>Comprobación de conexión SSL</title>
+    <detaileddescription>
+<sect1 id="evaluar_post_connectar_SSL_1synopsis_3">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P3__ssl_8h" kindref="compound">G-2313-06-P3_ssl.h</ref>&gt;</bold> <linebreak/>
+ <bold>int <ref refid="G-2313-06-P3__ssl_8c_1ac5f32cf09e3c0efd5cbc25452ed192a9" kindref="member">evaluar_post_connectar_SSL(SSL * ssl)</ref>;</bold> </computeroutput> </para></sect1>
+<sect1 id="evaluar_post_connectar_SSL_1descripcion_3">
+<title>Descripción</title>
+<para>Comprueba una conexión SSL recibida como parámetro, para ello verifica que los certificados utilizados en dicha conexión son válidos, así como el propio resultado de la estabilidad de la conexión SSL. <linebreak/>
+<heading level="2"><bold>Funciones de librería SSL:</bold></heading>
+</para><para><itemizedlist>
+<listitem>
+<para>SSL_get_peer_certificate(); </para></listitem>
+<listitem>
+<para>SSL_get_verify_result(); </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="evaluar_post_connectar_SSL_1return_3">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>int</bold> Valor entero que representa una aceptación correcta/incorrecta </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="evaluar_post_connectar_SSL_1authors_3">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

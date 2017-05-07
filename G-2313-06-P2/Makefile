@@ -41,3 +41,8 @@ tar:
 	@echo "\033[31mComprimiendo...\033[00m"
 	tar --exclude .git -czf $(GROUP_CLIENT).tar.gz ../$(GROUP_CLIENT) --exclude $(GROUP_CLIENT).tar.gz
 	@echo "\033[32mFichero comprimido: $(GROUP).tar.gz\033[00m"
+
+doxy:
+	@echo "\033[31mGenerando documentación...\033[00m"
+	@doxygen Doxyfile  > /dev/null 2>&1
+	@echo "\033[32m--> Documentación generada en: ./doc/html/index.html\033[00m"

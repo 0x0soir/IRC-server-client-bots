@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__IRCInterfaceCallbacks_IRCInterface_DisconnectServer" kind="page">
+    <compoundname>IRCInterface_DisconnectServer</compoundname>
+    <title>IRCInterface_DisconnectServer</title>
+    <detaileddescription>
+<para>Llamada por los distintos botones de desconexión.</para><para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;redes2/ircxchat.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">boolean<sp/>IRCInterface_DisconnectServer<sp/>(char<sp/>*<sp/>server,<sp/>int<sp/>port)</highlight></codeline>
+</programlisting></para><para>Llamada por los distintos botones de desconexión. Debe cerrar la conexión con el servidor.</para><para>En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nombre o ip del servidor del que se va a realizar la desconexión. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>puerto sobre el que se va a realizar la desconexión.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>TRUE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>si se ha cerrado la conexión (debe devolverlo). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FALSE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>en caso contrario (debe devolverlo).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>Esta función debe ser implementada por el alumno.</para></simplesect>
+<simplesect kind="author"><para>Eloy Anguiano (<ulink url="mailto:eloy.anguiano@uam.es">eloy.anguiano@uam.es</ulink>)</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerfile refid="G-2313-06-P2__client_8c">G-2313-06-P2_client.c</innerfile>
+    <innerfile refid="G-2313-06-P2__client__common__functions_8c">G-2313-06-P2_client_common_functions.c</innerfile>
+    <innerfile refid="G-2313-06-P2__client__err__handlers_8c">G-2313-06-P2_client_err_handlers.c</innerfile>
+    <innerfile refid="G-2313-06-P2__client__function__handlers_8c">G-2313-06-P2_client_function_handlers.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,180 @@
+.TH "includes/G-2313-06-P2_client_err_handlers.h" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2313-06-P2_client_err_handlers.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <syslog\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <strings\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include <redes2/irc\&.h>\fP
+.br
+\fC#include <redes2/ircxchat\&.h>\fP
+.br
+\fC#include <netdb\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include 'G\-2313\-06\-P2_client_common_functions\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "void \fBserver_in_command_err_cannotsendtochan\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_alreadyregistred\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_nonicknamegiven\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_erroneusnickname\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_nicknameinuse\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_nickcollision\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_unavailresource\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_restricted\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_passwdmismatch\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_bannedfromchan\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_channelisfull\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_chanoprivsneeded\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_inviteonlychan\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_nochanmodes\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_nosuchchannel\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_unknownmode\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_nomotd\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBserver_in_command_err_nosuchnick\fP (char *command)"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "void server_in_command_err_alreadyregistred (char * command)"
+
+.PP
+Definición en la línea 17 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_bannedfromchan (char * command)"
+
+.PP
+Definición en la línea 97 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_cannotsendtochan (char * command)"
+
+.PP
+Definición en la línea 7 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_channelisfull (char * command)"
+
+.PP
+Definición en la línea 107 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_chanoprivsneeded (char * command)"
+
+.PP
+Definición en la línea 117 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_erroneusnickname (char * command)"
+
+.PP
+Definición en la línea 37 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_inviteonlychan (char * command)"
+
+.PP
+Definición en la línea 127 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_nickcollision (char * command)"
+
+.PP
+Definición en la línea 57 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_nicknameinuse (char * command)"
+
+.PP
+Definición en la línea 47 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_nochanmodes (char * command)"
+
+.PP
+Definición en la línea 137 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_nomotd (char * command)"
+
+.PP
+Definición en la línea 167 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_nonicknamegiven (char * command)"
+
+.PP
+Definición en la línea 27 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_nosuchchannel (char * command)"
+
+.PP
+Definición en la línea 147 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_nosuchnick (char * command)"
+
+.PP
+Definición en la línea 177 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_passwdmismatch (char * command)"
+
+.PP
+Definición en la línea 87 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_restricted (char * command)"
+
+.PP
+Definición en la línea 77 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_unavailresource (char * command)"
+
+.PP
+Definición en la línea 67 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SS "void server_in_command_err_unknownmode (char * command)"
+
+.PP
+Definición en la línea 157 del archivo G\-2313\-06\-P2_client_err_handlers\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

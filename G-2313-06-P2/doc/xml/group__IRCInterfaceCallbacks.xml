@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__IRCInterfaceCallbacks" kind="group">
+    <compoundname>IRCInterfaceCallbacks</compoundname>
+    <title>Callbaks</title>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateChannelKey">IRCInterface_ActivateChannelKey</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateExternalMessages">IRCInterface_ActivateExternalMessages</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateInvite">IRCInterface_ActivateInvite</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateModerated">IRCInterface_ActivateModerated</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateNicksLimit">IRCInterface_ActivateNicksLimit</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_ActivatePrivate">IRCInterface_ActivatePrivate</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateProtectTopic">IRCInterface_ActivateProtectTopic</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateSecret">IRCInterface_ActivateSecret</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_BanNick">IRCInterface_BanNick</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_Connect">IRCInterface_Connect</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateChannelKey">IRCInterface_DeactivateChannelKey</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateExternalMessages">IRCInterface_DeactivateExternalMessages</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateInvite">IRCInterface_DeactivateInvite</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateModerated">IRCInterface_DeactivateModerated</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateNicksLimit">IRCInterface_DeactivateNicksLimit</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivatePrivate">IRCInterface_DeactivatePrivate</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateProtectTopic">IRCInterface_DeactivateProtectTopic</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateSecret">IRCInterface_DeactivateSecret</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_DisconnectServer">IRCInterface_DisconnectServer</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_ExitAudioChat">IRCInterface_ExitAudioChat</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_GiveOp">IRCInterface_GiveOp</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_GiveVoice">IRCInterface_GiveVoice</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_KickNick">IRCInterface_KickNick</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_NewCommandText">IRCInterface_NewCommandText</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_NewTopicEnter">IRCInterface_NewTopicEnter</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_SendFile">IRCInterface_SendFile</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_StartAudioChat">IRCInterface_StartAudioChat</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_StopAudioChat">IRCInterface_StopAudioChat</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_TakeOp">IRCInterface_TakeOp</innerpage>
+    <innerpage refid="group__IRCInterfaceCallbacks_IRCInterface_TakeVoice">IRCInterface_TakeVoice</innerpage>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Funciones que van a ser llamadas desde el interface y que deben ser implementadas por el usuario. Todas estas funciones pertenecen al hilo del interfaz.</para><para>El programador puede, por supuesto, separar todas estas funciones en múltiples ficheros a efectos de desarrollo y modularización.</para><para><hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

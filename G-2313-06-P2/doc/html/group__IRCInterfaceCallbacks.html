@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Redes de Comunicaciones II: Callbaks</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo-eps.gif"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Redes de Comunicaciones II
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Documentación de la práctica 2 generada por Jorge Parrilla y Javier de Marco.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li class="current"><a href="modules.html"><span>Módulos</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('group__IRCInterfaceCallbacks.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Callbaks<div class="ingroups"><a class="el" href="group__IRCInterface.html">Interface</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de colaboración para Callbaks:</div>
+<div class="dyncontent">
+<center><table><tr><td><img src="group__IRCInterfaceCallbacks.png" border="0" alt="" usemap="#group____IRCInterfaceCallbacks"/>
+<map name="group____IRCInterfaceCallbacks" id="group____IRCInterfaceCallbacks">
+<area shape="rect" id="node2" href="group__IRCInterface.html" title="Interface" alt="" coords="5,5,79,32"/>
+</map>
+</td></tr></table></center>
+</div>
+<p>Funciones que van a ser llamadas desde el interface y que deben ser implementadas por el usuario. Todas estas funciones pertenecen al hilo del interfaz.</p>
+<p>El programador puede, por supuesto, separar todas estas funciones en múltiples ficheros a efectos de desarrollo y modularización.</p>
+<hr/>
+ 
+
+<h3><a class="anchor" id="IRCInterface_ActivateChannelKey"></a>IRCInterface_ActivateChannelKey</h3><div class="textblock">Llamada por el botón de activación de la clave del canal.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a33f80a29a744e4182b29e23f13c1f05c">IRCInterface_ActivateChannelKey</a> (<span class="keywordtype">char</span> *channel, <span class="keywordtype">char</span> * key)</div></div><!-- fragment -->Llamada por el botón de activación de la clave del canal. El segundo parámetro es la clave del canal que se desea poner. Si es NULL deberá impedirse la activación con la función implementada a tal efecto. En cualquier caso sólo se puede realizar si el servidor acepta la orden. Las strings recibidas no deben ser manipuladas por el programador, sólo leídas.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a activar la clave. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>clave para el canal indicado.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_ActivateExternalMessages"></a>IRCInterface_ActivateExternalMessages</h3><div class="textblock">Llamada por el botón de activación de la recepción de mensajes externos.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a7a439929c246e342ae525139b2c39f5d">IRCInterface_ActivateExternalMessages</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de activación de la recepción de mensajes externos.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se activará la recepción de mensajes externos.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_ActivateInvite"></a>IRCInterface_ActivateInvite</h3><div class="textblock">Llamada por el botón de activación de canal de sólo invitación.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#ac72762ab1e3575b421b967241db23f9c">IRCInterface_ActivateInvite</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de activación de canal de sólo invitación.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se activará la invitación.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_ActivateModerated"></a>IRCInterface_ActivateModerated</h3><div class="textblock">Llamada por el botón de activación de la moderación del canal.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#af83498f4058311f4562c43a9b70566b2">IRCInterface_ActivateModerated</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de activación de la moderación del canal.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se activará la moderación.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_ActivateNicksLimit"></a>IRCInterface_ActivateNicksLimit</h3><div class="textblock">Llamada por el botón de activación del límite de usuarios en el canal.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#ab5694cc413472173bfcaa969c7d9800e">IRCInterface_ActivateNicksLimit</a> (<span class="keywordtype">char</span> *channel, <span class="keywordtype">int</span> * limit)</div></div><!-- fragment -->Llamada por el botón de activación del límite de usuarios en el canal. El segundo es el límite de usuarios que se desea poner. Si el valor es 0 se sobrentiende que se desea eliminar este límite.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se activará el límite de usuarios. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">limit</td><td>límite de usuarios en el canal indicado.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_ActivatePrivate"></a>IRCInterface_ActivatePrivate</h3><div class="textblock">Llamada por el botón de activación del modo privado.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#ab1f09c737c7c109a97e22de6072d731d">IRCInterface_ActivatePrivate</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de activación del modo privado.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a activar la privacidad.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_ActivateProtectTopic"></a>IRCInterface_ActivateProtectTopic</h3><div class="textblock">Llamada por el botón de activación de la protección de tópico.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#ac45f12d4dcacf3b5485eec6fdc51df93">IRCInterface_ActivateProtectTopic</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de activación de la protección de tópico.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a activar la protección de tópico.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_ActivateSecret"></a>IRCInterface_ActivateSecret</h3><div class="textblock">Llamada por el botón de activación de canal secreto.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#aa9e9155115b834d85a4d10cb27f99093">IRCInterface_ActivateSecret</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de activación de canal secreto.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a activar el estado de secreto.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_BanNick"></a>IRCInterface_BanNick</h3><div class="textblock">Llamada por el botón "Banear".<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a42773b5a840f9d0455f148d285e1e595">IRCInterface_BanNick</a> (<span class="keywordtype">char</span> *channel, <span class="keywordtype">char</span> *nick)</div></div><!-- fragment -->Llamada por el botón "Banear". Previamente debe seleccionarse un nick del canal para darle voz a dicho usuario.En cualquier caso sólo se puede realizar si el servidor acepta la orden. Las strings recibidas no deben ser manipuladas por el programador, sólo leídas.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a realizar el baneo. En principio es un valor innecesario. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nick</td><td>nick del usuario que va a ser baneado</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_Connect"></a>IRCInterface_Connect</h3><div class="textblock">Llamada por los distintos botones de conexión.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">long</span> <a class="code" href="G-2313-06-P2__client_8c.html#aed072f4ce0d6e90697d4d6eb0278a2ad">IRCInterface_Connect</a> (<span class="keywordtype">char</span> *nick, <span class="keywordtype">char</span> * user, <span class="keywordtype">char</span> * realname, <span class="keywordtype">char</span> * password, <span class="keywordtype">char</span> * server, <span class="keywordtype">int</span> port, <span class="keywordtype">boolean</span> ssl)</div></div><!-- fragment -->Función a implementar por el programador. Llamada por los distintos botones de conexión. Si implementará la comunicación completa, incluido el registro del usuario en el servidor.En cualquier caso sólo se puede realizar si el servidor acepta la orden. Las strings recibidas no deben ser manipuladas por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nick</td><td>nick con el que se va a realizar la conexíón. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user</td><td>usuario con el que se va a realizar la conexión. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">realname</td><td>nombre real con el que se va a realizar la conexión. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">password</td><td>password del usuario si es necesaria, puede valer NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">server</td><td>nombre o ip del servidor con el que se va a realizar la conexión. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">port</td><td>puerto del servidor con el que se va a realizar la conexión. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>puede ser TRUE si la conexión tiene que ser segura y FALSE si no es así.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">IRC_OK</td><td>si todo ha sido correcto (debe devolverlo). </td></tr>
+    <tr><td class="paramname">IRCERR_NOSSL</td><td>si el valor de SSL es TRUE y no se puede activar la conexión SSL pero sí una conexión no protegida (debe devolverlo). </td></tr>
+    <tr><td class="paramname">IRCERR_NOCONNECT</td><td>en caso de que no se pueda realizar la comunicación (debe devolverlo).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_DeactivateChannelKey"></a>IRCInterface_DeactivateChannelKey</h3><div class="textblock">Llamada por el botón de desactivación de la clave del canal.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a3e67ee0cd384b524d57fda14593dce8e">IRCInterface_DeactivateChannelKey</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de desactivación de la clave del canal.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a desactivar la clave.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_DeactivateExternalMessages"></a>IRCInterface_DeactivateExternalMessages</h3><div class="textblock">Llamada por el botón de desactivación de la recepción de mensajes externos.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a638b1535f4ecbc9a6affb2df2a6a946e">IRCInterface_DeactivateExternalMessages</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de desactivación de la recepción de mensajes externos.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a deactivar la recepción de mensajes externos.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_DeactivateInvite"></a>IRCInterface_DeactivateInvite</h3><div class="textblock">Llamada por el botón de desactivación de canal de sólo invitación.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a9ba4e98a3729737aa63ebec54ba4e894">IRCInterface_DeactivateInvite</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de desactivación de canal de sólo invitación.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a desactivar la invitación.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_DeactivateModerated"></a>IRCInterface_DeactivateModerated</h3><div class="textblock">Llamada por el botón de desactivación de la moderación del canal.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#ab760e8144b38f6c14bd809d157cee5d4">IRCInterface_DeactivateModerated</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de desactivación de la moderación del canal.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a desactivar la moderación.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_DeactivateNicksLimit"></a>IRCInterface_DeactivateNicksLimit</h3><div class="textblock">Llamada por el botón de desactivación de la protección de tópico.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a92c8cfbe2e14e19277e1c97d11719e80">IRCInterface_DeactivateNicksLimit</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de desactivación del límite de usuarios en el canal.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a desactivar el límite de usuarios.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_DeactivatePrivate"></a>IRCInterface_DeactivatePrivate</h3><div class="textblock">Llamada por el botón de desactivación del modo privado.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a8a6141803691ba327f11ba763ad075d4">IRCInterface_DeactivatePrivate</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de desactivación del modo privado.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a desactivar la privacidad.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_DeactivateProtectTopic"></a>IRCInterface_DeactivateProtectTopic</h3><div class="textblock">Llamada por el botón de desactivación de la protección de tópico.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a5a57541a950f8c2c40b4b44c32b28ed9">IRCInterface_DeactivateProtectTopic</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de desactivación de la protección de tópico.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a desactivar la protección de tópico.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_DeactivateSecret"></a>IRCInterface_DeactivateSecret</h3><div class="textblock">Llamada por el botón de desactivación de canal secreto.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a4956427664cabc7d5b2bd1589a207324">IRCInterface_DeactivateSecret</a> (<span class="keywordtype">char</span> *channel)</div></div><!-- fragment -->Llamada por el botón de desactivación de canal secreto.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a desactivar la propiedad de canal secreto.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_DisconnectServer"></a>IRCInterface_DisconnectServer</h3><div class="textblock">Llamada por los distintos botones de desconexión.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">boolean</span> <a class="code" href="G-2313-06-P2__client_8c.html#a8bf0424ef7f845be79a056e9aed56fe2">IRCInterface_DisconnectServer</a> (<span class="keywordtype">char</span> * server, <span class="keywordtype">int</span> port)</div></div><!-- fragment -->Llamada por los distintos botones de desconexión. Debe cerrar la conexión con el servidor.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">server</td><td>nombre o ip del servidor del que se va a realizar la desconexión. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">port</td><td>puerto sobre el que se va a realizar la desconexión.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE</td><td>si se ha cerrado la conexión (debe devolverlo). </td></tr>
+    <tr><td class="paramname">FALSE</td><td>en caso contrario (debe devolverlo).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_ExitAudioChat"></a>IRCInterface_ExitAudioChat</h3><div class="textblock">Llamada por el botón "Cancelar" del diálogo de chat de voz.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#ab431412191716f751461f94d613ffdab">IRCInterface_ExitAudioChat</a> (<span class="keywordtype">char</span> *nick)</div></div><!-- fragment -->Llamada por el botón "Parar" del diálogo de chat de voz. Previamente debe seleccionarse un nick del canal para darle voz a dicho usuario. Esta función cierrala comunicación. Evidentemente tiene que actuar sobre el hilo de chat de voz.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nick</td><td>nick del usuario que solicita la parada del chat de audio.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE</td><td>si se ha cerrado la comunicación (debe devolverlo). </td></tr>
+    <tr><td class="paramname">FALSE</td><td>en caso contrario (debe devolverlo).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_GiveOp"></a>IRCInterface_GiveOp</h3><div class="textblock">Llamada por el botón "Op".<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#ae075029bb55e8b995f22beb0810674f4">IRCInterface_GiveOp</a> (<span class="keywordtype">char</span> *channel, <span class="keywordtype">char</span> *nick)</div></div><!-- fragment -->Llamada por el botón "Op". Previamente debe seleccionarse un nick del canal para darle "op" a dicho usuario.En cualquier caso sólo se puede realizar si el servidor acepta la orden. Las strings recibidas no deben ser manipuladas por el programador, sólo leídas.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va dar op al usuario. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nick</td><td>nick al que se le va a dar el nivel de op.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_GiveVoice"></a>IRCInterface_GiveVoice</h3><div class="textblock">Llamada por el botón "Dar voz".<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#ae9effb4bdaf4a2cdf2dd9edbeb90b430">IRCInterface_GiveVoice</a> (<span class="keywordtype">char</span> *channel, <span class="keywordtype">char</span> *nick)</div></div><!-- fragment -->Llamada por el botón "Dar voz". Previamente debe seleccionarse un nick del canal para darle voz a dicho usuario.En cualquier caso sólo se puede realizar si el servidor acepta la orden. Las strings recibidas no deben ser manipuladas por el programador, sólo leídas.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va dar voz al usuario. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nick</td><td>nick al que se le va a dar voz.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_KickNick"></a>IRCInterface_KickNick</h3><div class="textblock">Llamada por el botón "Echar".<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a7adfea400a96160585f86179bafb055f">IRCInterface_KickNick</a> (<span class="keywordtype">char</span> *channel, <span class="keywordtype">char</span> *nick)</div></div><!-- fragment -->Llamada por el botón "Echar". Previamente debe seleccionarse un nick del canal para darle voz a dicho usuario.En cualquier caso sólo se puede realizar si el servidor acepta la orden. Las strings recibidas no deben ser manipuladas por el programador, sólo leídas.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a expulsar al usuario. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nick</td><td>nick del usuario que va a ser expulsado.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_NewCommandText"></a>IRCInterface_NewCommandText</h3><div class="textblock">Llamada la tecla ENTER en el campo de texto y comandos.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a214e10b19c8be028fb35d2a7abf3f798">IRCInterface_NewCommandText</a> (<span class="keywordtype">char</span> *command)</div></div><!-- fragment -->Llamada de la tecla ENTER en el campo de texto y comandos. El texto deberá ser enviado y el comando procesado por las funciones de "parseo" de comandos de usuario.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">comando</td><td>introducido por el usuario.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_NewTopicEnter"></a>IRCInterface_NewTopicEnter</h3><div class="textblock">Llamada cuando se pulsa la tecla ENTER en el campo de tópico.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a080cf34ff506481737f6d08af60ca92b">IRCInterface_NewTopicEnter</a> (<span class="keywordtype">char</span> * topicdata)</div></div><!-- fragment -->Llamada cuando se pulsa la tecla ENTER en el campo de tópico. Deberá intentarse cambiar el tópico del canal.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.param[in] topicdata string con el tópico que se desea poner en el canal.<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_SendFile"></a>IRCInterface_SendFile</h3><div class="textblock">Llamada por el botón "Enviar Archivo".<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a100f1c87bb3b399a7284e62dd2e6172a">IRCInterface_SendFile</a> (<span class="keywordtype">char</span> * filename, <span class="keywordtype">char</span> *nick, <span class="keywordtype">char</span> *data, <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> length)</div></div><!-- fragment -->Llamada por el botón "Enviar Archivo". Previamente debe seleccionarse un nick del canal para darle voz a dicho usuario. Esta función como todos los demás callbacks bloquea el interface y por tanto es el programador el que debe determinar si crea un nuevo hilo para enviar el archivo o no lo hace.En cualquier caso sólo se puede realizar si el servidor acepta la orden. Las strings recibidas no deben ser manipuladas por el programador, sólo leídas.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>nombre del fichero a enviar. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nick</td><td>nick del usuario que enviará el fichero. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>datos a ser enviados. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>longitud de los datos a ser enviados.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE</td><td>si se ha establecido la comunicación (debe devolverlo). </td></tr>
+    <tr><td class="paramname">FALSE</td><td>en caso contrario (debe devolverlo).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_StartAudioChat"></a>IRCInterface_StartAudioChat</h3><div class="textblock">Llamada por el botón "Iniciar" del diálogo de chat de voz.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a5dc7a44587e609b416a783cd420a12e3">IRCInterface_StartAudioChat</a> (<span class="keywordtype">char</span> *nick)</div></div><!-- fragment -->Llamada por el botón "Iniciar" del diálogo de chat de voz. Previamente debe seleccionarse un nick del canal para darle voz a dicho usuario. Esta función como todos los demás callbacks bloquea el interface y por tanto para mantener la funcionalidad del chat de voz es imprescindible crear un hilo a efectos de comunicación de voz.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nick</td><td>nick del usuario con el que se desea conectar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE</td><td>si se ha establecido la comunicación (debe devolverlo). </td></tr>
+    <tr><td class="paramname">FALSE</td><td>en caso contrario (debe devolverlo).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_StopAudioChat"></a>IRCInterface_StopAudioChat</h3><div class="textblock">Llamada por el botón "Parar" del diálogo de chat de voz.<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a754a3d3dd311194637c07cc701e7d507">IRCInterface_StopAudioChat</a> (<span class="keywordtype">char</span> *nick)</div></div><!-- fragment -->Llamada por el botón "Parar" del diálogo de chat de voz. Previamente debe seleccionarse un nick del canal para darle voz a dicho usuario. Esta función sólo para la comunicación que puede ser reiniciada. Evidentemente tiene que actuar sobre el hilo de chat de voz.En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nick</td><td>nick del usuario con el que se quiere parar el chat de voz.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">TRUE</td><td>si se ha parado la comunicación (debe devolverlo). </td></tr>
+    <tr><td class="paramname">FALSE</td><td>en caso contrario (debe devolverlo).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_TakeOp"></a>IRCInterface_TakeOp</h3><div class="textblock">Llamada por el botón "Quitar Op".<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a4e2a1ea75e59306142030a91a054b7e6">IRCInterface_TakeOp</a> (<span class="keywordtype">char</span> *channel, <span class="keywordtype">char</span> *nick)</div></div><!-- fragment -->Llamada por el botón "Quitar Op". Previamente debe seleccionarse un nick del canal para quitarle "op" a dicho usuario.En cualquier caso sólo se puede realizar si el servidor acepta la orden. Las strings recibidas no deben ser manipuladas por el programador, sólo leídas.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se va a quitar op al usuario. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nick</td><td>nick del usuario al que se le va a quitar op.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div>
+
+<h3><a class="anchor" id="IRCInterface_TakeVoice"></a>IRCInterface_TakeVoice</h3><div class="textblock">Llamada por el botón "Quitar voz".<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;redes2/ircxchat.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> <a class="code" href="G-2313-06-P2__client_8c.html#a2ff2e10ed1cb1a399293b6f76ac1e5ae">IRCInterface_TakeVoice</a> (<span class="keywordtype">char</span> *channel, <span class="keywordtype">char</span> *nick)</div></div><!-- fragment -->Llamada por el botón "Quitar voz". Previamente debe seleccionarse un nick del canal para darle voz a dicho usuario.En cualquier caso sólo se puede realizar si el servidor acepta la orden. Las strings recibidas no deben ser manipuladas por el programador, sólo leídas.<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>canal sobre el que se le va a quitar voz al usuario. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nick</td><td>nick del usuario al que se va a quitar la voz.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Atención</dt><dd>Esta función debe ser implementada por el alumno.</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Eloy Anguiano (<a href="#" onclick="location.href='mai'+'lto:'+'elo'+'y.'+'ang'+'ui'+'ano'+'@u'+'am.'+'es'; return false;">eloy.<span style="display: none;">.nosp@m.</span>angu<span style="display: none;">.nosp@m.</span>iano@<span style="display: none;">.nosp@m.</span>uam.<span style="display: none;">.nosp@m.</span>es</a>)</dd></dl>
+<hr/>
+ </div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+  </ul>
+</div>
+</body>
+</html>

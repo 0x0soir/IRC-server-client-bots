@@ -1,0 +1,92 @@
+.TH "srclib/G-2313-06-P3_ssl.c" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+srclib/G-2313-06-P3_ssl.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include '\&.\&./includes/G\-2313\-06\-P3_ssl\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "void \fBssl_start_client\fP ()"
+.br
+.ti -1c
+.RI "void \fBssl_start_server\fP ()"
+.br
+.ti -1c
+.RI "SSL_CTX * \fBinicializar_nivel_SSL\fP (int *desc)"
+.br
+.ti -1c
+.RI "int \fBaceptar_canal_seguro_SSL\fP (SSL_CTX *ctx_ssl, SSL **ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr)"
+.br
+.ti -1c
+.RI "int \fBevaluar_post_connectar_SSL\fP (SSL *ssl)"
+.br
+.ti -1c
+.RI "int \fBenviar_datos_SSL\fP (SSL *ssl, const char *buf)"
+.br
+.ti -1c
+.RI "int \fBrecibir_datos_SSL\fP (SSL *ssl, char *buf)"
+.br
+.ti -1c
+.RI "int \fBfijar_contexto_SSL\fP (SSL_CTX *ssl_ctx, char *certFile, char *certRoot)"
+.br
+.ti -1c
+.RI "void \fBcerrar_canal_SSL\fP (SSL *ssl, SSL_CTX *ctl_ssl, int desc)"
+.br
+.ti -1c
+.RI "SSL * \fBconectar_canal_seguro_SSL\fP (SSL_CTX *ctx_ssl, int desc, struct sockaddr res)"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "int aceptar_canal_seguro_SSL (SSL_CTX * ctx_ssl, SSL ** ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr)"
+
+.PP
+Definición en la línea 231 del archivo G\-2313\-06\-P3_ssl\&.c\&.
+.SS "void cerrar_canal_SSL (SSL * ssl, SSL_CTX * ctl_ssl, int desc)"
+
+.PP
+Definición en la línea 441 del archivo G\-2313\-06\-P3_ssl\&.c\&.
+.SS "SSL* conectar_canal_seguro_SSL (SSL_CTX * ctx_ssl, int desc, struct sockaddr res)"
+
+.PP
+Definición en la línea 484 del archivo G\-2313\-06\-P3_ssl\&.c\&.
+.SS "int enviar_datos_SSL (SSL * ssl, const char * buf)"
+
+.PP
+Definición en la línea 322 del archivo G\-2313\-06\-P3_ssl\&.c\&.
+.SS "int evaluar_post_connectar_SSL (SSL * ssl)"
+
+.PP
+Definición en la línea 284 del archivo G\-2313\-06\-P3_ssl\&.c\&.
+.SS "int fijar_contexto_SSL (SSL_CTX * ssl_ctx, char * certFile, char * certRoot)"
+
+.PP
+Definición en la línea 392 del archivo G\-2313\-06\-P3_ssl\&.c\&.
+.SS "SSL_CTX* inicializar_nivel_SSL (int * desc)"
+
+.PP
+Definición en la línea 183 del archivo G\-2313\-06\-P3_ssl\&.c\&.
+.SS "int recibir_datos_SSL (SSL * ssl, char * buf)"
+
+.PP
+Definición en la línea 354 del archivo G\-2313\-06\-P3_ssl\&.c\&.
+.SS "void ssl_start_client ()"
+
+.PP
+Definición en la línea 26 del archivo G\-2313\-06\-P3_ssl\&.c\&.
+.SS "void ssl_start_server ()"
+
+.PP
+Definición en la línea 95 del archivo G\-2313\-06\-P3_ssl\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

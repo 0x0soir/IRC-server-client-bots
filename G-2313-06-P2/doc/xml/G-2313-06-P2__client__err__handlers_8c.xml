@@ -1,0 +1,785 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="G-2313-06-P2__client__err__handlers_8c" kind="file" language="C++">
+    <compoundname>G-2313-06-P2_client_err_handlers.c</compoundname>
+    <includes refid="G-2313-06-P2__client__err__handlers_8h" local="yes">../includes/G-2313-06-P2_client_err_handlers.h</includes>
+    <incdepgraph>
+      <node id="578">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="585">
+        <label>stdbool.h</label>
+      </node>
+      <node id="579">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="587">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="598">
+        <label>net/if.h</label>
+      </node>
+      <node id="581">
+        <label>stdlib.h</label>
+      </node>
+      <node id="595">
+        <label>errno.h</label>
+      </node>
+      <node id="574">
+        <label>../includes/G-2313-06-P2_client_err_handlers.h</label>
+        <link refid="G-2313-06-P2__client__err__handlers_8h"/>
+        <childnode refid="575" relation="include">
+        </childnode>
+        <childnode refid="576" relation="include">
+        </childnode>
+        <childnode refid="577" relation="include">
+        </childnode>
+        <childnode refid="578" relation="include">
+        </childnode>
+        <childnode refid="579" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="582" relation="include">
+        </childnode>
+        <childnode refid="583" relation="include">
+        </childnode>
+        <childnode refid="584" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="586" relation="include">
+        </childnode>
+        <childnode refid="587" relation="include">
+        </childnode>
+        <childnode refid="588" relation="include">
+        </childnode>
+        <childnode refid="589" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="591" relation="include">
+        </childnode>
+        <childnode refid="592" relation="include">
+        </childnode>
+      </node>
+      <node id="592">
+        <label>G-2313-06-P2_client_common_functions.h</label>
+        <link refid="G-2313-06-P2__client__common__functions_8h"/>
+        <childnode refid="575" relation="include">
+        </childnode>
+        <childnode refid="576" relation="include">
+        </childnode>
+        <childnode refid="577" relation="include">
+        </childnode>
+        <childnode refid="578" relation="include">
+        </childnode>
+        <childnode refid="579" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="582" relation="include">
+        </childnode>
+        <childnode refid="583" relation="include">
+        </childnode>
+        <childnode refid="584" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="586" relation="include">
+        </childnode>
+        <childnode refid="587" relation="include">
+        </childnode>
+        <childnode refid="588" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="591" relation="include">
+        </childnode>
+        <childnode refid="593" relation="include">
+        </childnode>
+        <childnode refid="574" relation="include">
+        </childnode>
+      </node>
+      <node id="594">
+        <label>G-2313-06-P2_files.h</label>
+        <link refid="G-2313-06-P2__files_8h"/>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="596" relation="include">
+        </childnode>
+        <childnode refid="575" relation="include">
+        </childnode>
+        <childnode refid="576" relation="include">
+        </childnode>
+        <childnode refid="577" relation="include">
+        </childnode>
+        <childnode refid="578" relation="include">
+        </childnode>
+        <childnode refid="579" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="582" relation="include">
+        </childnode>
+        <childnode refid="583" relation="include">
+        </childnode>
+        <childnode refid="584" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="586" relation="include">
+        </childnode>
+        <childnode refid="587" relation="include">
+        </childnode>
+        <childnode refid="588" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="591" relation="include">
+        </childnode>
+        <childnode refid="597" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="599" relation="include">
+        </childnode>
+        <childnode refid="589" relation="include">
+        </childnode>
+        <childnode refid="600" relation="include">
+        </childnode>
+      </node>
+      <node id="597">
+        <label>sys/ioctl.h</label>
+      </node>
+      <node id="593">
+        <label>G-2313-06-P2_client_function_handlers.h</label>
+        <link refid="G-2313-06-P2__client__function__handlers_8h"/>
+        <childnode refid="575" relation="include">
+        </childnode>
+        <childnode refid="576" relation="include">
+        </childnode>
+        <childnode refid="577" relation="include">
+        </childnode>
+        <childnode refid="578" relation="include">
+        </childnode>
+        <childnode refid="579" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="582" relation="include">
+        </childnode>
+        <childnode refid="583" relation="include">
+        </childnode>
+        <childnode refid="584" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="586" relation="include">
+        </childnode>
+        <childnode refid="587" relation="include">
+        </childnode>
+        <childnode refid="588" relation="include">
+        </childnode>
+        <childnode refid="589" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="591" relation="include">
+        </childnode>
+        <childnode refid="594" relation="include">
+        </childnode>
+        <childnode refid="592" relation="include">
+        </childnode>
+      </node>
+      <node id="590">
+        <label>netdb.h</label>
+      </node>
+      <node id="573">
+        <label>src/G-2313-06-P2_client_err_handlers.c</label>
+        <link refid="G-2313-06-P2_client_err_handlers.c"/>
+        <childnode refid="574" relation="include">
+        </childnode>
+      </node>
+      <node id="580">
+        <label>syslog.h</label>
+      </node>
+      <node id="599">
+        <label>ifaddrs.h</label>
+      </node>
+      <node id="591">
+        <label>pthread.h</label>
+      </node>
+      <node id="576">
+        <label>sys/types.h</label>
+      </node>
+      <node id="600">
+        <label>G-2313-06-P2_tcp.h</label>
+        <link refid="G-2313-06-P2__tcp_8h"/>
+      </node>
+      <node id="588">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="575">
+        <label>unistd.h</label>
+      </node>
+      <node id="584">
+        <label>signal.h</label>
+      </node>
+      <node id="586">
+        <label>time.h</label>
+      </node>
+      <node id="596">
+        <label>sys/time.h</label>
+      </node>
+      <node id="583">
+        <label>strings.h</label>
+      </node>
+      <node id="577">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="589">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="582">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="G-2313-06-P2__client__err__handlers_8c_1adeadf7cb6916a10c7142ce7d265ab32a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int socket_desc</definition>
+        <argsstring></argsstring>
+        <name>socket_desc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="3" column="1" bodyfile="src/G-2313-06-P2_client.c" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="G-2313-06-P2__client__err__handlers_8c_1ab93a317ee9a27c82844c9128a76b136a" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* nick_cliente</definition>
+        <argsstring></argsstring>
+        <name>nick_cliente</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="4" column="1" bodyfile="src/G-2313-06-P2_client.c" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1aee5973ae831d1c7c63b1a62b59f561c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_cannotsendtochan</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_cannotsendtochan</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="7" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="7" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1a14bfb17eb95d0f2bef1869aa2ebf520c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_alreadyregistred</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_alreadyregistred</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="17" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="17" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1aaa9cfb1b5050bd1218c227d8d0a041fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_nonicknamegiven</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_nonicknamegiven</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="27" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="27" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1abeb8ead21ebba982eb59f161eda735cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_erroneusnickname</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_erroneusnickname</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="37" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="37" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1ab6d8f2d05566bf6ee9dfcfc4a20f5d23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_nicknameinuse</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_nicknameinuse</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="47" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="47" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1a4af95b292b293c08c0989b4e7334c7eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_nickcollision</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_nickcollision</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="57" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="57" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1ae4fcb567dc7685f5d7a4abbc7c6506b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_unavailresource</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_unavailresource</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="67" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="67" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1ada432444f58d5effbb05fd558a8ce289" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_restricted</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_restricted</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="77" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="77" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1a548a7ad35236521dca4b829e466f3379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_passwdmismatch</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_passwdmismatch</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="87" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="87" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1a0e4059ef132eaac2218fdd89b20ca852" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_bannedfromchan</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_bannedfromchan</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="97" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="97" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1a05db0aa32f2ec2925cba3b952435bf59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_channelisfull</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_channelisfull</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="107" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="107" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1a9fcb3f66fbcc994c7a78b36ebc0fe63d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_chanoprivsneeded</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_chanoprivsneeded</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="117" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="117" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1ae5512c3dd8e1584fd8bafc4f5dd15d8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_inviteonlychan</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_inviteonlychan</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="127" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="127" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1aade31864807344a9961ffdab697b5727" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_nochanmodes</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_nochanmodes</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="137" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="137" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1a83109e15e2a8f93c9523a84a546098c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_nosuchchannel</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_nosuchchannel</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="147" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="147" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1af262f3569e06c21e3e466266fa4e2c80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_unknownmode</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_unknownmode</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="157" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="157" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1a678f368edc1fd437f5f115ef897bdcd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_nomotd</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_nomotd</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="167" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="167" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__client__err__handlers_8c_1a01f8c9822aac18d5424ebbaf67c06a51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void server_in_command_err_nosuchnick</definition>
+        <argsstring>(char *command)</argsstring>
+        <name>server_in_command_err_nosuchnick</name>
+        <param>
+          <type>char *</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/G-2313-06-P2_client_err_handlers.c" line="177" column="1" bodyfile="src/G-2313-06-P2_client_err_handlers.c" bodystart="177" bodyend="185"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2313-06-P2_client_err_handlers.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1adeadf7cb6916a10c7142ce7d265ab32a" kindref="member">socket_desc</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1ab93a317ee9a27c82844c9128a76b136a" kindref="member">nick_cliente</ref>;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>ERR<sp/>FUNCTIONS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="G-2313-06-P2__client__err__handlers_8c_1aee5973ae831d1c7c63b1a62b59f561c2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1aee5973ae831d1c7c63b1a62b59f561c2" kindref="member">server_in_command_err_cannotsendtochan</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_channel;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR<sp/>BANNED&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/>IRCParse_ErrCanNotSendToChan(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_channel,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_CANNOTSENDTOCHAN]<sp/>No<sp/>se<sp/>ha<sp/>podido<sp/>enviar<sp/>el<sp/>mensaje,<sp/>es<sp/>posible<sp/>que<sp/>hayas<sp/>sido<sp/>baneado.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_channel,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="G-2313-06-P2__client__err__handlers_8c_1a14bfb17eb95d0f2bef1869aa2ebf520c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1a14bfb17eb95d0f2bef1869aa2ebf520c" kindref="member">server_in_command_err_alreadyregistred</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR<sp/>ALREADYREGISTRED&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>IRCParse_ErrAlreadyRegistred(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_ALREADYREGISTRED]<sp/>No<sp/>se<sp/>ha<sp/>podido<sp/>registrar<sp/>la<sp/>conexión,<sp/>ya<sp/>existe<sp/>una<sp/>igual.<sp/>Debes<sp/>volver<sp/>a<sp/>iniciar<sp/>sesión.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>IRC_MFree(3,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="G-2313-06-P2__client__err__handlers_8c_1aaa9cfb1b5050bd1218c227d8d0a041fe" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1aaa9cfb1b5050bd1218c227d8d0a041fe" kindref="member">server_in_command_err_nonicknamegiven</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR<sp/>NONICKNAMEGIVEN&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>IRCParse_ErrNoNickNameGiven(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_NONICKNAMEGIVEN]<sp/>Debes<sp/>introducir<sp/>un<sp/>nickname.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>IRC_MFree(3,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="G-2313-06-P2__client__err__handlers_8c_1abeb8ead21ebba982eb59f161eda735cb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1abeb8ead21ebba982eb59f161eda735cb" kindref="member">server_in_command_err_erroneusnickname</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_nick_err;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_ERRONEUSNICKNAME&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>IRCParse_ErrErroneusNickName(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_nick_err,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_ERRONEUSNICKNAME]<sp/>Debes<sp/>introducir<sp/>un<sp/>nickname<sp/>válido.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_nick_err,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="G-2313-06-P2__client__err__handlers_8c_1ab6d8f2d05566bf6ee9dfcfc4a20f5d23" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1ab6d8f2d05566bf6ee9dfcfc4a20f5d23" kindref="member">server_in_command_err_nicknameinuse</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_nick_err;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_NICKNAMEINUSE&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>IRCParse_ErrNickNameInUse(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_nick_err,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_NICKNAMEINUSE]<sp/>El<sp/>nick<sp/>elegido<sp/>ya<sp/>está<sp/>siendo<sp/>utilizado.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_nick_err,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="G-2313-06-P2__client__err__handlers_8c_1a4af95b292b293c08c0989b4e7334c7eb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1a4af95b292b293c08c0989b4e7334c7eb" kindref="member">server_in_command_err_nickcollision</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_nick_err,<sp/>*parse_complex;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_NICKCOLLISION&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>IRCParse_ErrNickCollision(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_nick_err,<sp/>&amp;msg,<sp/>&amp;parse_complex);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_NICKCOLLISION]<sp/>Existe<sp/>una<sp/>colisión<sp/>con<sp/>el<sp/>nick<sp/>elegido.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>IRC_MFree(5,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_nick_err,<sp/>&amp;msg,<sp/>&amp;parse_complex);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="G-2313-06-P2__client__err__handlers_8c_1ae4fcb567dc7685f5d7a4abbc7c6506b4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1ae4fcb567dc7685f5d7a4abbc7c6506b4" kindref="member">server_in_command_err_unavailresource</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_UNAVAILRESOURCE&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>IRCParse_ErrUnavailResource(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_UNAVAILRESOURCE]<sp/>Recurso<sp/>no<sp/>disponible.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>IRC_MFree(3,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="G-2313-06-P2__client__err__handlers_8c_1ada432444f58d5effbb05fd558a8ce289" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1ada432444f58d5effbb05fd558a8ce289" kindref="member">server_in_command_err_restricted</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_RESTRICTED&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>IRCParse_ErrRestricted(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_RESTRICTED]<sp/>Acceso<sp/>restringido.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>IRC_MFree(3,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="G-2313-06-P2__client__err__handlers_8c_1a548a7ad35236521dca4b829e466f3379" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1a548a7ad35236521dca4b829e466f3379" kindref="member">server_in_command_err_passwdmismatch</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_PASSWDMISMATCH&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>IRCParse_ErrPasswdMismatch(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_PASSWDMISMATCH]<sp/>Debes<sp/>indicar<sp/>una<sp/>clave<sp/>de<sp/>acceso<sp/>para<sp/>conectarte.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>IRC_MFree(3,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="G-2313-06-P2__client__err__handlers_8c_1a0e4059ef132eaac2218fdd89b20ca852" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1a0e4059ef132eaac2218fdd89b20ca852" kindref="member">server_in_command_err_bannedfromchan</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_chan;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_BANNEDFROMCHAN&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>IRCParse_ErrBannedFromChan(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_BANNEDFROMCHAN]<sp/>Estás<sp/>baneado<sp/>del<sp/>canal<sp/>al<sp/>que<sp/>quieres<sp/>acceder.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="G-2313-06-P2__client__err__handlers_8c_1a05db0aa32f2ec2925cba3b952435bf59" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1a05db0aa32f2ec2925cba3b952435bf59" kindref="member">server_in_command_err_channelisfull</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_chan;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_CHANNELISFULL&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>IRCParse_ErrChannelIsFull(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_CHANNELISFULL]<sp/>El<sp/>canal<sp/>al<sp/>que<sp/>quieres<sp/>acceder<sp/>está<sp/>lleno.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="G-2313-06-P2__client__err__handlers_8c_1a9fcb3f66fbcc994c7a78b36ebc0fe63d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1a9fcb3f66fbcc994c7a78b36ebc0fe63d" kindref="member">server_in_command_err_chanoprivsneeded</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_chan;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_CHANOPRIVSNEEDED&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>IRCParse_ErrChanOPrivsNeeded(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_CHANOPRIVSNEEDED]<sp/>El<sp/>canal<sp/>requiere<sp/>que<sp/>tengas<sp/>privilegios<sp/>de<sp/>OP.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="G-2313-06-P2__client__err__handlers_8c_1ae5512c3dd8e1584fd8bafc4f5dd15d8c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1ae5512c3dd8e1584fd8bafc4f5dd15d8c" kindref="member">server_in_command_err_inviteonlychan</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_chan;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_INVITEONLYCHAN&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>IRCParse_ErrInviteOnlyChan(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_INVITEONLYCHAN]<sp/>El<sp/>canal<sp/>al<sp/>que<sp/>quieres<sp/>acceder<sp/>requiere<sp/>invitación.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="G-2313-06-P2__client__err__handlers_8c_1aade31864807344a9961ffdab697b5727" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1aade31864807344a9961ffdab697b5727" kindref="member">server_in_command_err_nochanmodes</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_chan;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_NOCHANMODES&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>IRCParse_ErrNoChanModes(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_NOCHANMODES]<sp/>El<sp/>canal<sp/>no<sp/>tiene<sp/>modos.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="G-2313-06-P2__client__err__handlers_8c_1a83109e15e2a8f93c9523a84a546098c0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1a83109e15e2a8f93c9523a84a546098c0" kindref="member">server_in_command_err_nosuchchannel</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_chan;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_NOSUCHCHANNEL&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>IRCParse_ErrNoSuchChannel(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_NOSUCHCHANNEL]<sp/>El<sp/>canal<sp/>al<sp/>que<sp/>quieres<sp/>acceder<sp/>no<sp/>existe.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="G-2313-06-P2__client__err__handlers_8c_1af262f3569e06c21e3e466266fa4e2c80" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1af262f3569e06c21e3e466266fa4e2c80" kindref="member">server_in_command_err_unknownmode</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_chan,<sp/>*parse_mode;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_UNKNOWNMODE&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>IRCParse_ErrUnknownMode(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_mode,<sp/>&amp;parse_chan,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_UNKNOWNMODE]<sp/>Ese<sp/>modo<sp/>no<sp/>existe.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>IRC_MFree(5,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_chan,<sp/>&amp;parse_mode,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="G-2313-06-P2__client__err__handlers_8c_1a678f368edc1fd437f5f115ef897bdcd9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1a678f368edc1fd437f5f115ef897bdcd9" kindref="member">server_in_command_err_nomotd</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_NOMOTD&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>IRCParse_ErrNoMotd(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_NOMOTD]<sp/>No<sp/>se<sp/>ha<sp/>especificado<sp/>un<sp/>MOTD.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/>IRC_MFree(3,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="G-2313-06-P2__client__err__handlers_8c_1a01f8c9822aac18d5424ebbaf67c06a51" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__client__err__handlers_8c_1a01f8c9822aac18d5424ebbaf67c06a51" kindref="member">server_in_command_err_nosuchnick</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>command){</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prefix,<sp/>*msg,<sp/>*parse_nick,<sp/>*parse_nick2;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>IRCInterface_PlaneRegisterInMessageThread(command);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>syslog(LOG_INFO,<sp/></highlight><highlight class="stringliteral">&quot;[CLIENTE]<sp/>[IN]:<sp/>ERR_NOSUCHNICK&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/>IRCParse_ErrNoSuchNick(command,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_nick2,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><ref refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kindref="member">client_show_error</ref>(msg);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>IRCInterface_ErrorDialogThread(</highlight><highlight class="stringliteral">&quot;[ERR_NOSUCHNICK]<sp/>Ese<sp/>nick<sp/>no<sp/>existe.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>IRC_MFree(4,<sp/>&amp;prefix,<sp/>&amp;parse_nick,<sp/>&amp;parse_nick2,<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/G-2313-06-P2_client_err_handlers.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,280 @@
+.TH "src/G-2313-06-P2_client.c" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/G-2313-06-P2_client.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <redes2/ircxchat\&.h>\fP
+.br
+\fC#include '\&.\&./includes/G\-2313\-06\-P2_client\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "void \fBIRCInterface_ActivateChannelKey\fP (char *channel, char *key)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_ActivateExternalMessages\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_ActivateInvite\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_ActivateModerated\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_ActivateNicksLimit\fP (char *channel, int limit)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_ActivatePrivate\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_ActivateProtectTopic\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_ActivateSecret\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_BanNick\fP (char *channel, char *nick)"
+.br
+.ti -1c
+.RI "long \fBIRCInterface_Connect\fP (char *nick, char *user, char *realname, char *password, char *server, int port, boolean ssl)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_DeactivateChannelKey\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_DeactivateExternalMessages\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_DeactivateInvite\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_DeactivateModerated\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_DeactivateNicksLimit\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_DeactivatePrivate\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_DeactivateProtectTopic\fP (char *channel)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_DeactivateSecret\fP (char *channel)"
+.br
+.ti -1c
+.RI "boolean \fBIRCInterface_DisconnectServer\fP (char *server, int port)"
+.br
+.ti -1c
+.RI "boolean \fBIRCInterface_ExitAudioChat\fP (char *nick)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_GiveOp\fP (char *channel, char *nick)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_GiveVoice\fP (char *channel, char *nick)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_KickNick\fP (char *channel, char *nick)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_NewCommandText\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_NewTopicEnter\fP (char *topicdata)"
+.br
+.ti -1c
+.RI "boolean \fBIRCInterface_SendFile\fP (char *filename, char *nick, char *data, long unsigned int length)"
+.br
+.ti -1c
+.RI "boolean \fBIRCInterface_StartAudioChat\fP (char *nick)"
+.br
+.ti -1c
+.RI "boolean \fBIRCInterface_StopAudioChat\fP (char *nick)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_TakeOp\fP (char *channel, char *nick)"
+.br
+.ti -1c
+.RI "void \fBIRCInterface_TakeVoice\fP (char *channel, char *nick)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBsocket_desc\fP"
+.br
+.ti -1c
+.RI "char * \fBnick_cliente\fP"
+.br
+.ti -1c
+.RI "pthread_t \fBthread_ficheros\fP"
+.br
+.ti -1c
+.RI "pthread_t \fBthread_ping\fP"
+.br
+.ti -1c
+.RI "pthread_t \fBthread_response\fP"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "void IRCInterface_ActivateChannelKey (char * channel, char * key)"
+
+.PP
+Definición en la línea 61 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_ActivateExternalMessages (char * channel)"
+
+.PP
+Definición en la línea 108 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_ActivateInvite (char * channel)"
+
+.PP
+Definición en la línea 156 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_ActivateModerated (char * channel)"
+
+.PP
+Definición en la línea 200 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_ActivateNicksLimit (char * channel, int limit)"
+
+.PP
+Definición en la línea 251 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_ActivatePrivate (char * channel)"
+
+.PP
+Definición en la línea 300 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_ActivateProtectTopic (char * channel)"
+
+.PP
+Definición en la línea 344 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_ActivateSecret (char * channel)"
+
+.PP
+Definición en la línea 392 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_BanNick (char * channel, char * nick)"
+
+.PP
+Definición en la línea 442 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "long IRCInterface_Connect (char * nick, char * user, char * realname, char * password, char * server, int port, boolean ssl)"
+
+.PP
+Definición en la línea 502 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_DeactivateChannelKey (char * channel)"
+
+.PP
+Definición en la línea 599 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_DeactivateExternalMessages (char * channel)"
+
+.PP
+Definición en la línea 646 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_DeactivateInvite (char * channel)"
+
+.PP
+Definición en la línea 693 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_DeactivateModerated (char * channel)"
+
+.PP
+Definición en la línea 740 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_DeactivateNicksLimit (char * channel)"
+
+.PP
+Definición en la línea 787 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_DeactivatePrivate (char * channel)"
+
+.PP
+Definición en la línea 836 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_DeactivateProtectTopic (char * channel)"
+
+.PP
+Definición en la línea 883 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_DeactivateSecret (char * channel)"
+
+.PP
+Definición en la línea 931 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "boolean IRCInterface_DisconnectServer (char * server, int port)"
+
+.PP
+Definición en la línea 982 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "boolean IRCInterface_ExitAudioChat (char * nick)"
+
+.PP
+Definición en la línea 1036 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_GiveOp (char * channel, char * nick)"
+
+.PP
+Definición en la línea 1073 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_GiveVoice (char * channel, char * nick)"
+
+.PP
+Definición en la línea 1118 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_KickNick (char * channel, char * nick)"
+
+.PP
+Definición en la línea 1163 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_NewCommandText (char * command)"
+
+.PP
+Definición en la línea 1208 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_NewTopicEnter (char * topicdata)"
+
+.PP
+Definición en la línea 1245 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "boolean IRCInterface_SendFile (char * filename, char * nick, char * data, long unsigned int length)"
+
+.PP
+Definición en la línea 1298 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "boolean IRCInterface_StartAudioChat (char * nick)"
+
+.PP
+Definición en la línea 1356 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "boolean IRCInterface_StopAudioChat (char * nick)"
+
+.PP
+Definición en la línea 1396 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_TakeOp (char * channel, char * nick)"
+
+.PP
+Definición en la línea 1433 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "void IRCInterface_TakeVoice (char * channel, char * nick)"
+
+.PP
+Definición en la línea 1478 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "int main (int argc, char * argv[])"
+MMMMMMMMMM MMMMM AAAAAAA IIIIIII NNNNNNNNNN NNNNNN MMMMMMMMMM MMMMM AAAAAAAA IIIII NNNNNNNNNN NNNN MMMMM MMMM MM MM AAAAA AA III NNNNN NNNN NN MMMMM MMMM MM MM AAAAA AA III NNNNN NNNN NN MMMMM MMMM MM MM AAAAA AA III NNNNN NNNN NN MMMMM MMMM MM MM AAAAA AA III NNNNN NNNN NN MMMMM MMMM MM MM AAAAA AA III NNNNN NNNN NN MMMMM MMMM MM MM AAAAAAAAAAAAAA III NNNNN NNNN NN MMMMM MMMMM MM AAAAA AA III NNNNN NNNN NN MMMMM MMM MM AAAAA AA III NNNNN NNNN NN MMMMM MM AAAAA AA III NNNNN NNNN NN MMMMM MM AAAAA AA III NNNNN NNNN NN MMMMMMM MMMM AAAAAA AAAA IIIII NNNNNN NNNNNNN MMMMMMMMM MMMMMM AAAAAAAA AAAAAA IIIIIII NNNNNNN NNNNNNN 
+.PP
+Definición en la línea 1515 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SH "Documentación de las variables"
+.PP 
+.SS "char* nick_cliente"
+
+.PP
+Definición en la línea 5 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "int socket_desc"
+
+.PP
+Definición en la línea 4 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "pthread_t thread_ficheros"
+
+.PP
+Definición en la línea 6 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "pthread_t thread_ping"
+
+.PP
+Definición en la línea 6 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SS "pthread_t thread_response"
+
+.PP
+Definición en la línea 6 del archivo G\-2313\-06\-P2_client\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

@@ -1,0 +1,402 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="G-2313-06-P3__tcp_8c" kind="file" language="C++">
+    <compoundname>G-2313-06-P3_tcp.c</compoundname>
+    <includes refid="G-2313-06-P3__tcp_8h" local="yes">../includes/G-2313-06-P3_tcp.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">netdb.h</includes>
+    <includes local="no">unistd.h</includes>
+    <incdepgraph>
+      <node id="188">
+        <label>../includes/G-2313-06-P3_tcp.h</label>
+        <link refid="G-2313-06-P3__tcp_8h"/>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="190" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+      </node>
+      <node id="192">
+        <label>netdb.h</label>
+      </node>
+      <node id="190">
+        <label>sys/types.h</label>
+      </node>
+      <node id="193">
+        <label>string.h</label>
+      </node>
+      <node id="194">
+        <label>unistd.h</label>
+      </node>
+      <node id="187">
+        <label>srclib/G-2313-06-P3_tcp.c</label>
+        <link refid="G-2313-06-P3_tcp.c"/>
+        <childnode refid="188" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="193" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="194" relation="include">
+        </childnode>
+      </node>
+      <node id="191">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="189">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8c_1a25c77773298f02f1e8135829713d7f3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_new_socket</definition>
+        <argsstring>()</argsstring>
+        <name>tcp_new_socket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="srclib/G-2313-06-P3_tcp.c" line="7" column="1" bodyfile="srclib/G-2313-06-P3_tcp.c" bodystart="7" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8c_1a383b8c763aedca0e2ed838e32073fde6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_bind</definition>
+        <argsstring>(int desc, int puerto)</argsstring>
+        <name>tcp_bind</name>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>puerto</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="srclib/G-2313-06-P3_tcp.c" line="14" column="1" bodyfile="srclib/G-2313-06-P3_tcp.c" bodystart="14" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8c_1a9c9d03de1e87014ced69f8d36bb37f86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_new_listen</definition>
+        <argsstring>(int desc, int tam)</argsstring>
+        <name>tcp_new_listen</name>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tam</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="srclib/G-2313-06-P3_tcp.c" line="25" column="1" bodyfile="srclib/G-2313-06-P3_tcp.c" bodystart="25" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8c_1a6bae59be22b410f157347083f2e43987" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_new_accept</definition>
+        <argsstring>(int desc, struct sockaddr_in ip4addr)</argsstring>
+        <name>tcp_new_accept</name>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>struct sockaddr_in</type>
+          <declname>ip4addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="srclib/G-2313-06-P3_tcp.c" line="33" column="1" bodyfile="srclib/G-2313-06-P3_tcp.c" bodystart="33" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8c_1a3e15d12d1405c959da073cabab3a8520" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_new_open_connection</definition>
+        <argsstring>(int desc, struct sockaddr res)</argsstring>
+        <name>tcp_new_open_connection</name>
+        <param>
+          <type>int</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>struct sockaddr</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="srclib/G-2313-06-P3_tcp.c" line="43" column="1" bodyfile="srclib/G-2313-06-P3_tcp.c" bodystart="43" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8c_1a4e5ce422aa030ac8b3998e858b79cae2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_connect</definition>
+        <argsstring>(char *server, int port)</argsstring>
+        <name>tcp_connect</name>
+        <param>
+          <type>char *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="srclib/G-2313-06-P3_tcp.c" line="51" column="1" bodyfile="srclib/G-2313-06-P3_tcp.c" bodystart="51" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8c_1a14d727cfbcd2ce3c5f4fae5a470a84da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_listen</definition>
+        <argsstring>(int port, int max_conn)</argsstring>
+        <name>tcp_listen</name>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_conn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="srclib/G-2313-06-P3_tcp.c" line="83" column="1" bodyfile="srclib/G-2313-06-P3_tcp.c" bodystart="83" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8c_1a1e2b75e457a02f23d433a6821f6902b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_send</definition>
+        <argsstring>(int fd, char *msg)</argsstring>
+        <name>tcp_send</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="srclib/G-2313-06-P3_tcp.c" line="118" column="1" bodyfile="srclib/G-2313-06-P3_tcp.c" bodystart="118" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8c_1af3354e60e1181adcd72f9f242063fafe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_receive</definition>
+        <argsstring>(int fd, char *msg, int len)</argsstring>
+        <name>tcp_receive</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="srclib/G-2313-06-P3_tcp.c" line="125" column="1" bodyfile="srclib/G-2313-06-P3_tcp.c" bodystart="125" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P3__tcp_8c_1a2d1f9e76e5da3a7c1e172d1294a33611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_disconnect</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>tcp_disconnect</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="srclib/G-2313-06-P3_tcp.c" line="132" column="1" bodyfile="srclib/G-2313-06-P3_tcp.c" bodystart="132" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../includes/G-2313-06-P3_tcp.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netdb.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="G-2313-06-P3__tcp_8c_1a25c77773298f02f1e8135829713d7f3a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8c_1a25c77773298f02f1e8135829713d7f3a" kindref="member">tcp_new_socket</ref>(){</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(desc<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>desc;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="G-2313-06-P3__tcp_8c_1a383b8c763aedca0e2ed838e32073fde6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8c_1a383b8c763aedca0e2ed838e32073fde6" kindref="member">tcp_bind</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>puerto){</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>ip4addr;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>ip4addr.sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>ip4addr.sin_port<sp/>=<sp/>htons(puerto);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>ip4addr.sin_addr.s_addr=INADDR_ANY;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*bzero((void<sp/><sp/>*)&amp;(ip4addr.sin_zero),<sp/>8);*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(bind(desc,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr*)&amp;ip4addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(ip4addr))==-1)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="G-2313-06-P3__tcp_8c_1a9c9d03de1e87014ced69f8d36bb37f86" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8c_1a9c9d03de1e87014ced69f8d36bb37f86" kindref="member">tcp_new_listen</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tam){</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lstn;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>lstn<sp/>=<sp/>listen(desc,<sp/>tam);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>lstn<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="G-2313-06-P3__tcp_8c_1a6bae59be22b410f157347083f2e43987" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8c_1a6bae59be22b410f157347083f2e43987" kindref="member">tcp_new_accept</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in<sp/>ip4addr){</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>acc=0;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>addrlen<sp/>=</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(ip4addr);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>acc<sp/>=<sp/>accept(desc,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr*)&amp;ip4addr,<sp/>(socklen_t*)&amp;addrlen);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(acc<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>acc;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="G-2313-06-P3__tcp_8c_1a3e15d12d1405c959da073cabab3a8520" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8c_1a3e15d12d1405c959da073cabab3a8520" kindref="member">tcp_new_open_connection</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>desc,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>res){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cnct=0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>cnct=<sp/>connect(desc,<sp/>&amp;res,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(res));</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cnct==-1)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="G-2313-06-P3__tcp_8c_1a4e5ce422aa030ac8b3998e858b79cae2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8c_1a4e5ce422aa030ac8b3998e858b79cae2" kindref="member">tcp_connect</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*server,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port){</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sck;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">hostent<sp/>*host_addr;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>sock_addr;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(server<sp/>==<sp/>NULL<sp/>||<sp/>port<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>host_addr<sp/>=<sp/>gethostbyname(server);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(host_addr<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>sck<sp/>=<sp/>socket<sp/>(AF_INET,<sp/>SOCK_STREAM,<sp/>0);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sck<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>bzero<sp/>(&amp;sock_addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in));</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>sock_addr.sin_port<sp/>=<sp/>htons<sp/>(port);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>sock_addr.sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy<sp/>(&amp;(sock_addr.sin_addr),<sp/>host_addr-&gt;h_addr,<sp/>host_addr-&gt;h_length);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(connect<sp/>(sck,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>&amp;sock_addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in))<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sck;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="G-2313-06-P3__tcp_8c_1a14d727cfbcd2ce3c5f4fae5a470a84da" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8c_1a14d727cfbcd2ce3c5f4fae5a470a84da" kindref="member">tcp_listen</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_conn){</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sck;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">sockaddr_in<sp/>sock_addr;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_conn<sp/>&lt;<sp/>1<sp/>||<sp/>port<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Abrimos<sp/>una<sp/>socket<sp/>TCP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>sck<sp/>=<sp/>socket<sp/>(AF_INET,<sp/>SOCK_STREAM,<sp/>0);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sck<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>bzero<sp/>(&amp;sock_addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in));</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Completamos<sp/>la<sp/>estructura<sp/>de<sp/>direccion<sp/>para<sp/>la<sp/>socket</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>sock_addr.sin_port<sp/>=<sp/>htons<sp/>(port);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>sock_addr.sin_family<sp/>=<sp/>AF_INET;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>sock_addr.sin_addr.s_addr<sp/>=<sp/>htonl<sp/>(INADDR_ANY);<sp/></highlight><highlight class="comment">//<sp/>Acepta<sp/>conexiones<sp/>de<sp/>cualquier<sp/>direccion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Asignamos<sp/>la<sp/>direccion<sp/>local<sp/>a<sp/>la<sp/>socket</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bind(sck,<sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr<sp/>*)<sp/>&amp;sock_addr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>sockaddr_in))<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Comenzamos<sp/>a<sp/>escuchar<sp/>por<sp/>la<sp/>socket</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(listen<sp/>(sck,<sp/>max_conn)<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sck;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="G-2313-06-P3__tcp_8c_1a1e2b75e457a02f23d433a6821f6902b7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8c_1a1e2b75e457a02f23d433a6821f6902b7" kindref="member">tcp_send</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*msg){</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fd<sp/>&lt;<sp/>0<sp/>||<sp/>msg<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>send<sp/>(fd,<sp/>msg,<sp/>strlen(msg)*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">),<sp/>0);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="G-2313-06-P3__tcp_8c_1af3354e60e1181adcd72f9f242063fafe" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8c_1af3354e60e1181adcd72f9f242063fafe" kindref="member">tcp_receive</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*msg,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len){</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fd<sp/>&lt;<sp/>0<sp/>||<sp/>msg<sp/>==<sp/>NULL<sp/>||<sp/>len<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>read<sp/>(fd,<sp/>msg,<sp/>len*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="G-2313-06-P3__tcp_8c_1a2d1f9e76e5da3a7c1e172d1294a33611" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P3__tcp_8c_1a2d1f9e76e5da3a7c1e172d1294a33611" kindref="member">tcp_disconnect</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd){</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>close<sp/>(fd);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="srclib/G-2313-06-P3_tcp.c"/>
+  </compounddef>
+</doxygen>

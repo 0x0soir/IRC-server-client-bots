@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="structsrecv" kind="struct"><name>srecv</name>
+    <member refid="structsrecv_1abe3a30e845f4f2f6e47aac6583af3166" kind="variable"><name>nick</name></member>
+    <member refid="structsrecv_1a6ec350741c1d09ab84e115dfde89aa82" kind="variable"><name>filename</name></member>
+    <member refid="structsrecv_1ac5ef113d83ca6646b0cc58b757e22f78" kind="variable"><name>data</name></member>
+    <member refid="structsrecv_1af681620ef61aa562c7d575773f156761" kind="variable"><name>length</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__client_8h" kind="file"><name>G-2313-06-P2_client.h</name>
+    <member refid="G-2313-06-P2__client_8h_1a7297f848d5b0bd4990857d03cf3111e4" kind="function"><name>client_function_ping</name></member>
+    <member refid="G-2313-06-P2__client_8h_1afbd2dc7b3224fc3d2c5c9233b307c376" kind="function"><name>client_function_response</name></member>
+    <member refid="G-2313-06-P2__client_8h_1aa74c686c447b275e6a8cf36419033e81" kind="function"><name>client_pre_in_function</name></member>
+    <member refid="G-2313-06-P2__client_8h_1a6dd72e0b56b87f85d8cac2a30066198b" kind="function"><name>client_execute_in_function</name></member>
+    <member refid="G-2313-06-P2__client_8h_1a68019fe1e0edcc71bb3dadeb70a86dcd" kind="function"><name>client_pre_out_function</name></member>
+    <member refid="G-2313-06-P2__client_8h_1a26512d35b24fec46c8fa4c803dc00867" kind="function"><name>client_execute_out_function</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__client__common__functions_8h" kind="file"><name>G-2313-06-P2_client_common_functions.h</name>
+    <member refid="G-2313-06-P2__client__common__functions_8h_1a7297f848d5b0bd4990857d03cf3111e4" kind="function"><name>client_function_ping</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8h_1afbd2dc7b3224fc3d2c5c9233b307c376" kind="function"><name>client_function_response</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8h_1a03942275c5a503be4f7288cda71fb139" kind="function"><name>client_show_error</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8h_1aa74c686c447b275e6a8cf36419033e81" kind="function"><name>client_pre_in_function</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8h_1a6dd72e0b56b87f85d8cac2a30066198b" kind="function"><name>client_execute_in_function</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8h_1a68019fe1e0edcc71bb3dadeb70a86dcd" kind="function"><name>client_pre_out_function</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8h_1a26512d35b24fec46c8fa4c803dc00867" kind="function"><name>client_execute_out_function</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__client__err__handlers_8h" kind="file"><name>G-2313-06-P2_client_err_handlers.h</name>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1aee5973ae831d1c7c63b1a62b59f561c2" kind="function"><name>server_in_command_err_cannotsendtochan</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1a14bfb17eb95d0f2bef1869aa2ebf520c" kind="function"><name>server_in_command_err_alreadyregistred</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1aaa9cfb1b5050bd1218c227d8d0a041fe" kind="function"><name>server_in_command_err_nonicknamegiven</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1abeb8ead21ebba982eb59f161eda735cb" kind="function"><name>server_in_command_err_erroneusnickname</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1ab6d8f2d05566bf6ee9dfcfc4a20f5d23" kind="function"><name>server_in_command_err_nicknameinuse</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1a4af95b292b293c08c0989b4e7334c7eb" kind="function"><name>server_in_command_err_nickcollision</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1ae4fcb567dc7685f5d7a4abbc7c6506b4" kind="function"><name>server_in_command_err_unavailresource</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1ada432444f58d5effbb05fd558a8ce289" kind="function"><name>server_in_command_err_restricted</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1a548a7ad35236521dca4b829e466f3379" kind="function"><name>server_in_command_err_passwdmismatch</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1a0e4059ef132eaac2218fdd89b20ca852" kind="function"><name>server_in_command_err_bannedfromchan</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1a05db0aa32f2ec2925cba3b952435bf59" kind="function"><name>server_in_command_err_channelisfull</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1a9fcb3f66fbcc994c7a78b36ebc0fe63d" kind="function"><name>server_in_command_err_chanoprivsneeded</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1ae5512c3dd8e1584fd8bafc4f5dd15d8c" kind="function"><name>server_in_command_err_inviteonlychan</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1aade31864807344a9961ffdab697b5727" kind="function"><name>server_in_command_err_nochanmodes</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1a83109e15e2a8f93c9523a84a546098c0" kind="function"><name>server_in_command_err_nosuchchannel</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1af262f3569e06c21e3e466266fa4e2c80" kind="function"><name>server_in_command_err_unknownmode</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1a678f368edc1fd437f5f115ef897bdcd9" kind="function"><name>server_in_command_err_nomotd</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8h_1a01f8c9822aac18d5424ebbaf67c06a51" kind="function"><name>server_in_command_err_nosuchnick</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__client__function__handlers_8h" kind="file"><name>G-2313-06-P2_client_function_handlers.h</name>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a3271de16b2f7077059343bd6f52e4866" kind="function"><name>server_in_command_nick</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a64c324e32edf01774722861d3abc7be3" kind="function"><name>server_in_command_join</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a53568ffb9d2301140815861c2f7178ad" kind="function"><name>server_in_command_part</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ae5f66619469f8ea0efa0a7a5d75938dc" kind="function"><name>server_in_command_mode</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ad908abfd32d53b9483d5afa4ca18ff14" kind="function"><name>server_in_command_topic</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1aa3d18c616914957b9794f086466788bb" kind="function"><name>server_in_command_kick</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a858c0e5586286e535590f7de14620300" kind="function"><name>server_in_command_who</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a32594eebe5482f63993568825a9e126a" kind="function"><name>server_in_command_privmsg</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a09a9d4d13037bd783036a70d5a76ac46" kind="function"><name>server_in_command_ping</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a06042a6459e89e0ae7586e66f8595fa3" kind="function"><name>server_in_command_pong</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a294ef5e5070e9859d88beb603ef950f2" kind="function"><name>server_in_command_rpl_welcome</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a40e46db4017fb76fc547536d9c51f5d9" kind="function"><name>server_in_command_rpl_created</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a3f4cf6c0d74b06a0916f7a9619972eee" kind="function"><name>server_in_command_rpl_yourhost</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1af5091cf59cbab7ce259c405c019fa8dd" kind="function"><name>server_in_command_rpl_luserclient</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a5764225aa28906c7ccebf0996b2c5a08" kind="function"><name>server_in_command_rpl_luserme</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1acd688f18855dcb6ee9bf10a72e0c8f6c" kind="function"><name>server_in_command_rpl_motdstart</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a774c98f4ea94eb6f92a5b22d33030674" kind="function"><name>server_in_command_rpl_motd</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ad22233e08c30cad9e0598f80b5b38744" kind="function"><name>server_in_command_rpl_endofmotd</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a86782df5d9b151dd061b9831a47a2c5f" kind="function"><name>server_in_command_rpl_whoreply</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1add282510a7e92a90d45091e6dc3a3488" kind="function"><name>server_in_command_rpl_away</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ada377e1754f9a22a2ebe0bada8838b5b" kind="function"><name>server_in_command_rpl_nowaway</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1abc030e3bc9ce4ad126ea2c66e304e2d5" kind="function"><name>server_in_command_rpl_topic</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ab9b55bd1e18bde61e8327fcf6936d91f" kind="function"><name>server_in_command_rpl_notopic</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a24bb76a5941798964a8dd18e1cfb1d81" kind="function"><name>server_in_command_rpl_youroper</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1aa885b5d729d8a920a1c38678abdbe6b7" kind="function"><name>server_in_command_rpl_luserop</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ae53c29cff5b1b8b3981be92c317cf29d" kind="function"><name>server_in_command_rpl_luserchannels</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a9a54a1989e86596904bc4d1c2618ba84" kind="function"><name>server_in_command_rpl_youreservice</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1aa4c4d377b1cde9f0b40997a54c81c3de" kind="function"><name>server_in_command_rpl_myinfo</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a441993de1d4be974fab21e17aacc553e" kind="function"><name>server_in_command_rpl_endofwho</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a56185c77cfea8620c1ce413a44865bc4" kind="function"><name>server_in_command_rpl_endofwhois</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a6477df39f199931be3274e311a18b276" kind="function"><name>server_in_command_rpl_info</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1af2190c9ca68abe019cde6f3a18e380c2" kind="function"><name>server_in_command_rpl_whoisuser</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a7ed4d1bd7f485fe7c6d26bd1d8eef662" kind="function"><name>server_in_command_rpl_whoischannels</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a890fb67530ca5c1f5c14da877fc9ba21" kind="function"><name>server_in_command_rpl_whoisoperator</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a27bc970f66b7e5a2f3806853c3fa156f" kind="function"><name>server_in_command_rpl_whoisserver</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ada14de5a081899ca2b5eccbfb9779d62" kind="function"><name>server_in_command_rpl_whoisidle</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a23ae57a558e401f83bc03209efb34be2" kind="function"><name>server_in_command_rpl_channelmodeis</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a11fdd753a098bb69dc7ca93a89433abb" kind="function"><name>server_in_command_rpl_endofnames</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a032cc47903f14a4fbdcec9e54f6a8e4a" kind="function"><name>server_in_command_rpl_list</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ad4a1e3d492ae6907a5e15e92cb9b69f7" kind="function"><name>server_in_command_rpl_listend</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a770ed57ba6c48c4a349208439e3f19ef" kind="function"><name>server_in_command_rpl_namreply</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a43f3e63fcf23bd087e02911f79b789b0" kind="function"><name>server_out_command_nick</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a49e60d29aef3725ab2a91c7f99e61021" kind="function"><name>server_out_command_join</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ab2f3bd779063c27074a6cdce0f98ee0a" kind="function"><name>server_out_command_names</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a0a66dad6908cd303ae31f06dda298e5f" kind="function"><name>server_out_command_list</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a39f81214b8394e2b7fb0989e5fe10fb3" kind="function"><name>server_out_command_part</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1afa583197101ff2eb07ab93ccd10da962" kind="function"><name>server_out_command_mode</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a4e94d9864089e10109fc24ce92d4368b" kind="function"><name>server_out_command_kick</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a4c442d20949a3a3e84551a5f23ce8263" kind="function"><name>server_out_command_privmsg</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1af34c02fb3b13802e2c457a302c66cb89" kind="function"><name>server_out_command_whois</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a6760491bb5560bf6db1e652022f0720f" kind="function"><name>server_out_command_invite</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1affd97f456e87778153ec551468bb7f25" kind="function"><name>server_out_command_topic</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a9680c711ecaa492727c14a9c5d7e82ca" kind="function"><name>server_out_command_me</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ad2280719361affeaf8d3a663b48f0b3f" kind="function"><name>server_out_command_msg</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a6e05dad9592e0e473e84647cfe263034" kind="function"><name>server_out_command_notice</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a3b0bef634e60a6e59223cfb7e444fb36" kind="function"><name>server_out_command_ignore</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a4f8f2db21b7edd9e6b7fbad232ee27fd" kind="function"><name>server_out_command_who</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a74f475c007446256a2cbada71f51f30a" kind="function"><name>server_out_command_whowas</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ae721ae6a65ec5f0790d6b6883dcf94a5" kind="function"><name>server_out_command_motd</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1ac0c8a1e0d4144fd3d78c124bad9228d6" kind="function"><name>server_out_command_away</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8h_1a3719651e6671245a46f4994fcf462c7d" kind="function"><name>server_out_command_ping</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__files_8h" kind="file"><name>G-2313-06-P2_files.h</name>
+    <member refid="G-2313-06-P2__files_8h_1ad00af19306b45db3947f1b89ae4b5def" kind="function"><name>server_especial_enviar_ficheros</name></member>
+    <member refid="G-2313-06-P2__files_8h_1a6796f20636727f52161d02748cb2b17e" kind="function"><name>server_especial_recibir_ficheros</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__tcp_8h" kind="file"><name>G-2313-06-P2_tcp.h</name>
+    <member refid="G-2313-06-P2__tcp_8h_1a4e5ce422aa030ac8b3998e858b79cae2" kind="function"><name>tcp_connect</name></member>
+    <member refid="G-2313-06-P2__tcp_8h_1a14d727cfbcd2ce3c5f4fae5a470a84da" kind="function"><name>tcp_listen</name></member>
+    <member refid="G-2313-06-P2__tcp_8h_1a1e2b75e457a02f23d433a6821f6902b7" kind="function"><name>tcp_send</name></member>
+    <member refid="G-2313-06-P2__tcp_8h_1af3354e60e1181adcd72f9f242063fafe" kind="function"><name>tcp_receive</name></member>
+    <member refid="G-2313-06-P2__tcp_8h_1a2d1f9e76e5da3a7c1e172d1294a33611" kind="function"><name>tcp_disconnect</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__client_8c" kind="file"><name>G-2313-06-P2_client.c</name>
+    <member refid="G-2313-06-P2__client_8c_1adeadf7cb6916a10c7142ce7d265ab32a" kind="variable"><name>socket_desc</name></member>
+    <member refid="G-2313-06-P2__client_8c_1ab93a317ee9a27c82844c9128a76b136a" kind="variable"><name>nick_cliente</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a497238a5c30172237878376d95472ce4" kind="variable"><name>thread_ficheros</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a081c16d23aa5029dd2454dfb0c355eb0" kind="variable"><name>thread_ping</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a2b3ce8d8dc4bda71d7bd4a3b47fffd9d" kind="variable"><name>thread_response</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a33f80a29a744e4182b29e23f13c1f05c" kind="function"><name>IRCInterface_ActivateChannelKey</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a7a439929c246e342ae525139b2c39f5d" kind="function"><name>IRCInterface_ActivateExternalMessages</name></member>
+    <member refid="G-2313-06-P2__client_8c_1ac72762ab1e3575b421b967241db23f9c" kind="function"><name>IRCInterface_ActivateInvite</name></member>
+    <member refid="G-2313-06-P2__client_8c_1af83498f4058311f4562c43a9b70566b2" kind="function"><name>IRCInterface_ActivateModerated</name></member>
+    <member refid="G-2313-06-P2__client_8c_1ab5694cc413472173bfcaa969c7d9800e" kind="function"><name>IRCInterface_ActivateNicksLimit</name></member>
+    <member refid="G-2313-06-P2__client_8c_1ab1f09c737c7c109a97e22de6072d731d" kind="function"><name>IRCInterface_ActivatePrivate</name></member>
+    <member refid="G-2313-06-P2__client_8c_1ac45f12d4dcacf3b5485eec6fdc51df93" kind="function"><name>IRCInterface_ActivateProtectTopic</name></member>
+    <member refid="G-2313-06-P2__client_8c_1aa9e9155115b834d85a4d10cb27f99093" kind="function"><name>IRCInterface_ActivateSecret</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a42773b5a840f9d0455f148d285e1e595" kind="function"><name>IRCInterface_BanNick</name></member>
+    <member refid="G-2313-06-P2__client_8c_1aed072f4ce0d6e90697d4d6eb0278a2ad" kind="function"><name>IRCInterface_Connect</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a3e67ee0cd384b524d57fda14593dce8e" kind="function"><name>IRCInterface_DeactivateChannelKey</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a638b1535f4ecbc9a6affb2df2a6a946e" kind="function"><name>IRCInterface_DeactivateExternalMessages</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a9ba4e98a3729737aa63ebec54ba4e894" kind="function"><name>IRCInterface_DeactivateInvite</name></member>
+    <member refid="G-2313-06-P2__client_8c_1ab760e8144b38f6c14bd809d157cee5d4" kind="function"><name>IRCInterface_DeactivateModerated</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a92c8cfbe2e14e19277e1c97d11719e80" kind="function"><name>IRCInterface_DeactivateNicksLimit</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a8a6141803691ba327f11ba763ad075d4" kind="function"><name>IRCInterface_DeactivatePrivate</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a5a57541a950f8c2c40b4b44c32b28ed9" kind="function"><name>IRCInterface_DeactivateProtectTopic</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a4956427664cabc7d5b2bd1589a207324" kind="function"><name>IRCInterface_DeactivateSecret</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a8bf0424ef7f845be79a056e9aed56fe2" kind="function"><name>IRCInterface_DisconnectServer</name></member>
+    <member refid="G-2313-06-P2__client_8c_1ab431412191716f751461f94d613ffdab" kind="function"><name>IRCInterface_ExitAudioChat</name></member>
+    <member refid="G-2313-06-P2__client_8c_1ae075029bb55e8b995f22beb0810674f4" kind="function"><name>IRCInterface_GiveOp</name></member>
+    <member refid="G-2313-06-P2__client_8c_1ae9effb4bdaf4a2cdf2dd9edbeb90b430" kind="function"><name>IRCInterface_GiveVoice</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a7adfea400a96160585f86179bafb055f" kind="function"><name>IRCInterface_KickNick</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a214e10b19c8be028fb35d2a7abf3f798" kind="function"><name>IRCInterface_NewCommandText</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a080cf34ff506481737f6d08af60ca92b" kind="function"><name>IRCInterface_NewTopicEnter</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a100f1c87bb3b399a7284e62dd2e6172a" kind="function"><name>IRCInterface_SendFile</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a5dc7a44587e609b416a783cd420a12e3" kind="function"><name>IRCInterface_StartAudioChat</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a754a3d3dd311194637c07cc701e7d507" kind="function"><name>IRCInterface_StopAudioChat</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a4e2a1ea75e59306142030a91a054b7e6" kind="function"><name>IRCInterface_TakeOp</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a2ff2e10ed1cb1a399293b6f76ac1e5ae" kind="function"><name>IRCInterface_TakeVoice</name></member>
+    <member refid="G-2313-06-P2__client_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__client__common__functions_8c" kind="file"><name>G-2313-06-P2_client_common_functions.c</name>
+    <member refid="G-2313-06-P2__client__common__functions_8c_1adeadf7cb6916a10c7142ce7d265ab32a" kind="variable"><name>socket_desc</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8c_1a7297f848d5b0bd4990857d03cf3111e4" kind="function"><name>client_function_ping</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8c_1afbd2dc7b3224fc3d2c5c9233b307c376" kind="function"><name>client_function_response</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8c_1a03942275c5a503be4f7288cda71fb139" kind="function"><name>client_show_error</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8c_1aa74c686c447b275e6a8cf36419033e81" kind="function"><name>client_pre_in_function</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8c_1a6dd72e0b56b87f85d8cac2a30066198b" kind="function"><name>client_execute_in_function</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8c_1a68019fe1e0edcc71bb3dadeb70a86dcd" kind="function"><name>client_pre_out_function</name></member>
+    <member refid="G-2313-06-P2__client__common__functions_8c_1a26512d35b24fec46c8fa4c803dc00867" kind="function"><name>client_execute_out_function</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__client__err__handlers_8c" kind="file"><name>G-2313-06-P2_client_err_handlers.c</name>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1adeadf7cb6916a10c7142ce7d265ab32a" kind="variable"><name>socket_desc</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1ab93a317ee9a27c82844c9128a76b136a" kind="variable"><name>nick_cliente</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1aee5973ae831d1c7c63b1a62b59f561c2" kind="function"><name>server_in_command_err_cannotsendtochan</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1a14bfb17eb95d0f2bef1869aa2ebf520c" kind="function"><name>server_in_command_err_alreadyregistred</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1aaa9cfb1b5050bd1218c227d8d0a041fe" kind="function"><name>server_in_command_err_nonicknamegiven</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1abeb8ead21ebba982eb59f161eda735cb" kind="function"><name>server_in_command_err_erroneusnickname</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1ab6d8f2d05566bf6ee9dfcfc4a20f5d23" kind="function"><name>server_in_command_err_nicknameinuse</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1a4af95b292b293c08c0989b4e7334c7eb" kind="function"><name>server_in_command_err_nickcollision</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1ae4fcb567dc7685f5d7a4abbc7c6506b4" kind="function"><name>server_in_command_err_unavailresource</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1ada432444f58d5effbb05fd558a8ce289" kind="function"><name>server_in_command_err_restricted</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1a548a7ad35236521dca4b829e466f3379" kind="function"><name>server_in_command_err_passwdmismatch</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1a0e4059ef132eaac2218fdd89b20ca852" kind="function"><name>server_in_command_err_bannedfromchan</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1a05db0aa32f2ec2925cba3b952435bf59" kind="function"><name>server_in_command_err_channelisfull</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1a9fcb3f66fbcc994c7a78b36ebc0fe63d" kind="function"><name>server_in_command_err_chanoprivsneeded</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1ae5512c3dd8e1584fd8bafc4f5dd15d8c" kind="function"><name>server_in_command_err_inviteonlychan</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1aade31864807344a9961ffdab697b5727" kind="function"><name>server_in_command_err_nochanmodes</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1a83109e15e2a8f93c9523a84a546098c0" kind="function"><name>server_in_command_err_nosuchchannel</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1af262f3569e06c21e3e466266fa4e2c80" kind="function"><name>server_in_command_err_unknownmode</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1a678f368edc1fd437f5f115ef897bdcd9" kind="function"><name>server_in_command_err_nomotd</name></member>
+    <member refid="G-2313-06-P2__client__err__handlers_8c_1a01f8c9822aac18d5424ebbaf67c06a51" kind="function"><name>server_in_command_err_nosuchnick</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__client__function__handlers_8c" kind="file"><name>G-2313-06-P2_client_function_handlers.c</name>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1adeadf7cb6916a10c7142ce7d265ab32a" kind="variable"><name>socket_desc</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ab93a317ee9a27c82844c9128a76b136a" kind="variable"><name>nick_cliente</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a3271de16b2f7077059343bd6f52e4866" kind="function"><name>server_in_command_nick</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a64c324e32edf01774722861d3abc7be3" kind="function"><name>server_in_command_join</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a53568ffb9d2301140815861c2f7178ad" kind="function"><name>server_in_command_part</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ae5f66619469f8ea0efa0a7a5d75938dc" kind="function"><name>server_in_command_mode</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ad908abfd32d53b9483d5afa4ca18ff14" kind="function"><name>server_in_command_topic</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1aa3d18c616914957b9794f086466788bb" kind="function"><name>server_in_command_kick</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a858c0e5586286e535590f7de14620300" kind="function"><name>server_in_command_who</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a32594eebe5482f63993568825a9e126a" kind="function"><name>server_in_command_privmsg</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a09a9d4d13037bd783036a70d5a76ac46" kind="function"><name>server_in_command_ping</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a06042a6459e89e0ae7586e66f8595fa3" kind="function"><name>server_in_command_pong</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a294ef5e5070e9859d88beb603ef950f2" kind="function"><name>server_in_command_rpl_welcome</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a40e46db4017fb76fc547536d9c51f5d9" kind="function"><name>server_in_command_rpl_created</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a3f4cf6c0d74b06a0916f7a9619972eee" kind="function"><name>server_in_command_rpl_yourhost</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1af5091cf59cbab7ce259c405c019fa8dd" kind="function"><name>server_in_command_rpl_luserclient</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a5764225aa28906c7ccebf0996b2c5a08" kind="function"><name>server_in_command_rpl_luserme</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1acd688f18855dcb6ee9bf10a72e0c8f6c" kind="function"><name>server_in_command_rpl_motdstart</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a774c98f4ea94eb6f92a5b22d33030674" kind="function"><name>server_in_command_rpl_motd</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ad22233e08c30cad9e0598f80b5b38744" kind="function"><name>server_in_command_rpl_endofmotd</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a86782df5d9b151dd061b9831a47a2c5f" kind="function"><name>server_in_command_rpl_whoreply</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1add282510a7e92a90d45091e6dc3a3488" kind="function"><name>server_in_command_rpl_away</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ada377e1754f9a22a2ebe0bada8838b5b" kind="function"><name>server_in_command_rpl_nowaway</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1abc030e3bc9ce4ad126ea2c66e304e2d5" kind="function"><name>server_in_command_rpl_topic</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ab9b55bd1e18bde61e8327fcf6936d91f" kind="function"><name>server_in_command_rpl_notopic</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a24bb76a5941798964a8dd18e1cfb1d81" kind="function"><name>server_in_command_rpl_youroper</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1aa885b5d729d8a920a1c38678abdbe6b7" kind="function"><name>server_in_command_rpl_luserop</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ae53c29cff5b1b8b3981be92c317cf29d" kind="function"><name>server_in_command_rpl_luserchannels</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a9a54a1989e86596904bc4d1c2618ba84" kind="function"><name>server_in_command_rpl_youreservice</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1aa4c4d377b1cde9f0b40997a54c81c3de" kind="function"><name>server_in_command_rpl_myinfo</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a441993de1d4be974fab21e17aacc553e" kind="function"><name>server_in_command_rpl_endofwho</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a56185c77cfea8620c1ce413a44865bc4" kind="function"><name>server_in_command_rpl_endofwhois</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a6477df39f199931be3274e311a18b276" kind="function"><name>server_in_command_rpl_info</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1af2190c9ca68abe019cde6f3a18e380c2" kind="function"><name>server_in_command_rpl_whoisuser</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a7ed4d1bd7f485fe7c6d26bd1d8eef662" kind="function"><name>server_in_command_rpl_whoischannels</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a890fb67530ca5c1f5c14da877fc9ba21" kind="function"><name>server_in_command_rpl_whoisoperator</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a27bc970f66b7e5a2f3806853c3fa156f" kind="function"><name>server_in_command_rpl_whoisserver</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ada14de5a081899ca2b5eccbfb9779d62" kind="function"><name>server_in_command_rpl_whoisidle</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a23ae57a558e401f83bc03209efb34be2" kind="function"><name>server_in_command_rpl_channelmodeis</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a11fdd753a098bb69dc7ca93a89433abb" kind="function"><name>server_in_command_rpl_endofnames</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a032cc47903f14a4fbdcec9e54f6a8e4a" kind="function"><name>server_in_command_rpl_list</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ad4a1e3d492ae6907a5e15e92cb9b69f7" kind="function"><name>server_in_command_rpl_listend</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a770ed57ba6c48c4a349208439e3f19ef" kind="function"><name>server_in_command_rpl_namreply</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a43f3e63fcf23bd087e02911f79b789b0" kind="function"><name>server_out_command_nick</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a49e60d29aef3725ab2a91c7f99e61021" kind="function"><name>server_out_command_join</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ab2f3bd779063c27074a6cdce0f98ee0a" kind="function"><name>server_out_command_names</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a0a66dad6908cd303ae31f06dda298e5f" kind="function"><name>server_out_command_list</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a39f81214b8394e2b7fb0989e5fe10fb3" kind="function"><name>server_out_command_part</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1afa583197101ff2eb07ab93ccd10da962" kind="function"><name>server_out_command_mode</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a4e94d9864089e10109fc24ce92d4368b" kind="function"><name>server_out_command_kick</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a4c442d20949a3a3e84551a5f23ce8263" kind="function"><name>server_out_command_privmsg</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1af34c02fb3b13802e2c457a302c66cb89" kind="function"><name>server_out_command_whois</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a6760491bb5560bf6db1e652022f0720f" kind="function"><name>server_out_command_invite</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1affd97f456e87778153ec551468bb7f25" kind="function"><name>server_out_command_topic</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a9680c711ecaa492727c14a9c5d7e82ca" kind="function"><name>server_out_command_me</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ad2280719361affeaf8d3a663b48f0b3f" kind="function"><name>server_out_command_msg</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a6e05dad9592e0e473e84647cfe263034" kind="function"><name>server_out_command_notice</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a3b0bef634e60a6e59223cfb7e444fb36" kind="function"><name>server_out_command_ignore</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a4f8f2db21b7edd9e6b7fbad232ee27fd" kind="function"><name>server_out_command_who</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a74f475c007446256a2cbada71f51f30a" kind="function"><name>server_out_command_whowas</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ae721ae6a65ec5f0790d6b6883dcf94a5" kind="function"><name>server_out_command_motd</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1ac0c8a1e0d4144fd3d78c124bad9228d6" kind="function"><name>server_out_command_away</name></member>
+    <member refid="G-2313-06-P2__client__function__handlers_8c_1a3719651e6671245a46f4994fcf462c7d" kind="function"><name>server_out_command_ping</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__files_8c" kind="file"><name>G-2313-06-P2_files.c</name>
+    <member refid="G-2313-06-P2__files_8c_1adeadf7cb6916a10c7142ce7d265ab32a" kind="variable"><name>socket_desc</name></member>
+    <member refid="G-2313-06-P2__files_8c_1ab93a317ee9a27c82844c9128a76b136a" kind="variable"><name>nick_cliente</name></member>
+    <member refid="G-2313-06-P2__files_8c_1ad00af19306b45db3947f1b89ae4b5def" kind="function"><name>server_especial_enviar_ficheros</name></member>
+    <member refid="G-2313-06-P2__files_8c_1a6796f20636727f52161d02748cb2b17e" kind="function"><name>server_especial_recibir_ficheros</name></member>
+  </compound>
+  <compound refid="G-2313-06-P2__tcp_8c" kind="file"><name>G-2313-06-P2_tcp.c</name>
+    <member refid="G-2313-06-P2__tcp_8c_1a4e5ce422aa030ac8b3998e858b79cae2" kind="function"><name>tcp_connect</name></member>
+    <member refid="G-2313-06-P2__tcp_8c_1a14d727cfbcd2ce3c5f4fae5a470a84da" kind="function"><name>tcp_listen</name></member>
+    <member refid="G-2313-06-P2__tcp_8c_1a1e2b75e457a02f23d433a6821f6902b7" kind="function"><name>tcp_send</name></member>
+    <member refid="G-2313-06-P2__tcp_8c_1af3354e60e1181adcd72f9f242063fafe" kind="function"><name>tcp_receive</name></member>
+    <member refid="G-2313-06-P2__tcp_8c_1a2d1f9e76e5da3a7c1e172d1294a33611" kind="function"><name>tcp_disconnect</name></member>
+  </compound>
+  <compound refid="group__IRCInterface" kind="group"><name>IRCInterface</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks" kind="group"><name>IRCInterfaceCallbacks</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateChannelKey" kind="page"><name>IRCInterface_ActivateChannelKey</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateExternalMessages" kind="page"><name>IRCInterface_ActivateExternalMessages</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateInvite" kind="page"><name>IRCInterface_ActivateInvite</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateModerated" kind="page"><name>IRCInterface_ActivateModerated</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateNicksLimit" kind="page"><name>IRCInterface_ActivateNicksLimit</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_ActivatePrivate" kind="page"><name>IRCInterface_ActivatePrivate</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateProtectTopic" kind="page"><name>IRCInterface_ActivateProtectTopic</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_ActivateSecret" kind="page"><name>IRCInterface_ActivateSecret</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_BanNick" kind="page"><name>IRCInterface_BanNick</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_Connect" kind="page"><name>IRCInterface_Connect</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateChannelKey" kind="page"><name>IRCInterface_DeactivateChannelKey</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateExternalMessages" kind="page"><name>IRCInterface_DeactivateExternalMessages</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateInvite" kind="page"><name>IRCInterface_DeactivateInvite</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateModerated" kind="page"><name>IRCInterface_DeactivateModerated</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateNicksLimit" kind="page"><name>IRCInterface_DeactivateNicksLimit</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivatePrivate" kind="page"><name>IRCInterface_DeactivatePrivate</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateProtectTopic" kind="page"><name>IRCInterface_DeactivateProtectTopic</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_DeactivateSecret" kind="page"><name>IRCInterface_DeactivateSecret</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_DisconnectServer" kind="page"><name>IRCInterface_DisconnectServer</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_ExitAudioChat" kind="page"><name>IRCInterface_ExitAudioChat</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_GiveOp" kind="page"><name>IRCInterface_GiveOp</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_GiveVoice" kind="page"><name>IRCInterface_GiveVoice</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_KickNick" kind="page"><name>IRCInterface_KickNick</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_NewCommandText" kind="page"><name>IRCInterface_NewCommandText</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_NewTopicEnter" kind="page"><name>IRCInterface_NewTopicEnter</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_SendFile" kind="page"><name>IRCInterface_SendFile</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_StartAudioChat" kind="page"><name>IRCInterface_StartAudioChat</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_StopAudioChat" kind="page"><name>IRCInterface_StopAudioChat</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_TakeOp" kind="page"><name>IRCInterface_TakeOp</name>
+  </compound>
+  <compound refid="group__IRCInterfaceCallbacks_IRCInterface_TakeVoice" kind="page"><name>IRCInterface_TakeVoice</name>
+  </compound>
+  <compound refid="dir_09e761304027c904456130627fd4dcf5" kind="dir"><name>includes</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_055525a30e828dc7e51b22601599d317" kind="dir"><name>srclib</name>
+  </compound>
+</doxygenindex>

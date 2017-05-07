@@ -1,0 +1,21 @@
+\hypertarget{conectar_canal_seguro_SSL_synopsis_8}{}\section{Synopsis}\label{conectar_canal_seguro_SSL_synopsis_8}
+{\ttfamily  {\bfseries \#include} {\bfseries $<$\hyperlink{G-2313-06-P3__ssl_8h}{G-\/2313-\/06-\/\+P3\+\_\+ssl.\+h}$>$} ~\newline
+ {\bfseries S\+S\+L$\ast$ \hyperlink{G-2313-06-P3__ssl_8c_aa58ddc931cb106d430ab49223b9394fc}{conectar\+\_\+canal\+\_\+seguro\+\_\+\+S\+S\+L(\+S\+S\+L\+\_\+\+C\+T\+X$\ast$ ctx\+\_\+ssl, int desc, struct sockaddr res)};} } \hypertarget{conectar_canal_seguro_SSL_descripcion_8}{}\section{Descripción}\label{conectar_canal_seguro_SSL_descripcion_8}
+Inicia la comunicación con un canal seguro vía S\+SL. Para ello realiza una nueva conexión vía T\+CP y conecta la capa S\+SL a dicho socket generado. ~\newline
+\subsection*{{\bfseries Funciones de librería S\+SL\+:}}
+
+
+\begin{DoxyItemize}
+\item S\+S\+L\+\_\+new(ctx\+\_\+ssl); 
+\item S\+S\+L\+\_\+set\+\_\+fd(ssl, desc); 
+\item S\+S\+L\+\_\+connect(ssl); 
+\end{DoxyItemize}\hypertarget{conectar_canal_seguro_SSL_return_7}{}\section{Valores devueltos}\label{conectar_canal_seguro_SSL_return_7}
+
+\begin{DoxyItemize}
+\item {\bfseries S\+S\+L$\ast$} Devuelve una conexión S\+SL al canal seguro  
+\end{DoxyItemize}\hypertarget{conectar_canal_seguro_SSL_authors_7}{}\section{Autores}\label{conectar_canal_seguro_SSL_authors_7}
+
+\begin{DoxyItemize}
+\item Jorge Parrilla Llamas (\href{mailto:jorge.parrilla@estudiante.uam.es}{\tt jorge.\+parrilla@estudiante.\+uam.\+es}) 
+\item Javier de Marco Tomás (\href{mailto:javier.marco@estudiante.uam.es}{\tt javier.\+marco@estudiante.\+uam.\+es}) 
+\end{DoxyItemize}

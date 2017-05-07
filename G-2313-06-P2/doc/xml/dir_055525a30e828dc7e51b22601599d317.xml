@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_055525a30e828dc7e51b22601599d317" kind="dir">
+    <compoundname>srclib</compoundname>
+    <innerfile refid="G-2313-06-P2__files_8c">G-2313-06-P2_files.c</innerfile>
+    <innerfile refid="G-2313-06-P2__tcp_8c">G-2313-06-P2_tcp.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="srclib/"/>
+  </compounddef>
+</doxygen>

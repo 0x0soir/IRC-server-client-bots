@@ -1,0 +1,103 @@
+.TH "includes/G-2313-06-P2_client_common_functions.h" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/G-2313-06-P2_client_common_functions.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/socket\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+\fC#include <syslog\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <strings\&.h>\fP
+.br
+\fC#include <signal\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <arpa/inet\&.h>\fP
+.br
+\fC#include <redes2/irc\&.h>\fP
+.br
+\fC#include <netdb\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include 'G\-2313\-06\-P2_client_function_handlers\&.h'\fP
+.br
+\fC#include 'G\-2313\-06\-P2_client_err_handlers\&.h'\fP
+.br
+
+.SS "Funciones"
+
+.in +1c
+.ti -1c
+.RI "void * \fBclient_function_ping\fP (void *arg)"
+.br
+.ti -1c
+.RI "void * \fBclient_function_response\fP (void *arg)"
+.br
+.ti -1c
+.RI "void \fBclient_show_error\fP (char *msg)"
+.br
+.ti -1c
+.RI "void \fBclient_pre_in_function\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBclient_execute_in_function\fP (long functionName, char *command)"
+.br
+.ti -1c
+.RI "void \fBclient_pre_out_function\fP (char *command)"
+.br
+.ti -1c
+.RI "void \fBclient_execute_out_function\fP (long functionName, char *command)"
+.br
+.in -1c
+.SH "Documentación de las funciones"
+.PP 
+.SS "void client_execute_in_function (long functionName, char * command)"
+
+.PP
+Definición en la línea 67 del archivo G\-2313\-06\-P2_client_common_functions\&.c\&.
+.SS "void client_execute_out_function (long functionName, char * command)"
+
+.PP
+Definición en la línea 151 del archivo G\-2313\-06\-P2_client_common_functions\&.c\&.
+.SS "void* client_function_ping (void * arg)"
+
+.PP
+Definición en la línea 5 del archivo G\-2313\-06\-P2_client_common_functions\&.c\&.
+.SS "void* client_function_response (void * arg)"
+
+.PP
+Definición en la línea 23 del archivo G\-2313\-06\-P2_client_common_functions\&.c\&.
+.SS "void client_pre_in_function (char * command)"
+
+.PP
+Definición en la línea 63 del archivo G\-2313\-06\-P2_client_common_functions\&.c\&.
+.SS "void client_pre_out_function (char * command)"
+
+.PP
+Definición en la línea 146 del archivo G\-2313\-06\-P2_client_common_functions\&.c\&.
+.SS "void client_show_error (char * msg)"
+
+.PP
+Definición en la línea 53 del archivo G\-2313\-06\-P2_client_common_functions\&.c\&.
+.SH "Autor"
+.PP 
+Generado automáticamente por Doxygen para Redes de Comunicaciones II del código fuente\&.

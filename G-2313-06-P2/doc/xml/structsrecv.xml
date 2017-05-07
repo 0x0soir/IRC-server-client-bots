@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structsrecv" kind="struct" language="C++" prot="public">
+    <compoundname>srecv</compoundname>
+    <includes refid="G-2313-06-P2__files_8h" local="no">G-2313-06-P2_files.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structsrecv_1abe3a30e845f4f2f6e47aac6583af3166" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* srecv::nick</definition>
+        <argsstring></argsstring>
+        <name>nick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_files.h" line="30" column="1" bodyfile="includes/G-2313-06-P2_files.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsrecv_1a6ec350741c1d09ab84e115dfde89aa82" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* srecv::filename</definition>
+        <argsstring></argsstring>
+        <name>filename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_files.h" line="31" column="1" bodyfile="includes/G-2313-06-P2_files.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsrecv_1ac5ef113d83ca6646b0cc58b757e22f78" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* srecv::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_files.h" line="32" column="1" bodyfile="includes/G-2313-06-P2_files.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structsrecv_1af681620ef61aa562c7d575773f156761" prot="public" static="no" mutable="no">
+        <type>long unsigned</type>
+        <definition>long unsigned srecv::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_files.h" line="33" column="1" bodyfile="includes/G-2313-06-P2_files.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="includes/G-2313-06-P2_files.h" line="29" column="1" bodyfile="includes/G-2313-06-P2_files.h" bodystart="29" bodyend="34"/>
+    <listofallmembers>
+      <member refid="structsrecv_1ac5ef113d83ca6646b0cc58b757e22f78" prot="public" virt="non-virtual"><scope>srecv</scope><name>data</name></member>
+      <member refid="structsrecv_1a6ec350741c1d09ab84e115dfde89aa82" prot="public" virt="non-virtual"><scope>srecv</scope><name>filename</name></member>
+      <member refid="structsrecv_1af681620ef61aa562c7d575773f156761" prot="public" virt="non-virtual"><scope>srecv</scope><name>length</name></member>
+      <member refid="structsrecv_1abe3a30e845f4f2f6e47aac6583af3166" prot="public" virt="non-virtual"><scope>srecv</scope><name>nick</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

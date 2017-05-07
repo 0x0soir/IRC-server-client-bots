@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__IRCInterfaceCallbacks_IRCInterface_StartAudioChat" kind="page">
+    <compoundname>IRCInterface_StartAudioChat</compoundname>
+    <title>IRCInterface_StartAudioChat</title>
+    <detaileddescription>
+<para>Llamada por el botón &quot;Iniciar&quot; del diálogo de chat de voz.</para><para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;redes2/ircxchat.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>IRCInterface_StartAudioChat<sp/>(char<sp/>*nick)</highlight></codeline>
+</programlisting></para><para>Llamada por el botón &quot;Iniciar&quot; del diálogo de chat de voz. Previamente debe seleccionarse un nick del canal para darle voz a dicho usuario. Esta función como todos los demás callbacks bloquea el interface y por tanto para mantener la funcionalidad del chat de voz es imprescindible crear un hilo a efectos de comunicación de voz.</para><para>En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">nick</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nick del usuario con el que se desea conectar.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>TRUE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>si se ha establecido la comunicación (debe devolverlo). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FALSE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>en caso contrario (debe devolverlo).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>Esta función debe ser implementada por el alumno.</para></simplesect>
+<simplesect kind="author"><para>Eloy Anguiano (<ulink url="mailto:eloy.anguiano@uam.es">eloy.anguiano@uam.es</ulink>)</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

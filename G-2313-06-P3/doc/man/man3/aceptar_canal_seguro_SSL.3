@@ -1,0 +1,42 @@
+.TH "aceptar_canal_seguro_SSL" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+aceptar_canal_seguro_SSL \- Aceptación de un canal seguro 
+
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P3_ssl\&.h\fP>\fP 
+.br
+ \fBint \fBaceptar_canal_seguro_SSL(SSL_CTX* ctx_ssl, SSL **ssl, int desc, int puerto, int tam, struct sockaddr_in ip4addr)\fP;\fP \fP 
+.SH "Descripción"
+.PP
+Acepta una conexión recibida mediante la capa SSL, se ejecuta desde el lado del servidor\&. Mediante esta función el servidor se queda bloqueado esperando una nueva conexión a la que atender\&. 
+.br
+Recibe como parámetros los argumentos necesarios para la iteracción de la función con la capa SSL: contexto (SSL_CTX), SSL, descriptor del socket, puerto de conexión, tamaño de peticiones máxima a atender y la estructura de conexión IP4\&. 
+.br
+.SS "\fBFunciones de librería SSL:\fP"
+.PP
+.PD 0
+.IP "\(bu" 2
+SSL_new(); 
+.IP "\(bu" 2
+SSL_set_fd(); 
+.IP "\(bu" 2
+SSL_accept(); 
+.PP
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBint\fP Valor entero que representa una aceptación correcta/incorrecta 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="G-2313-06-P2__tcp_8h" kind="file" language="C++">
+    <compoundname>G-2313-06-P2_tcp.h</compoundname>
+    <includedby refid="G-2313-06-P2__client_8h" local="yes">includes/G-2313-06-P2_client.h</includedby>
+    <includedby refid="G-2313-06-P2__files_8h" local="yes">includes/G-2313-06-P2_files.h</includedby>
+    <includedby refid="G-2313-06-P2__tcp_8c" local="yes">srclib/G-2313-06-P2_tcp.c</includedby>
+    <invincdepgraph>
+      <node id="510">
+        <label>src/G-2313-06-P2_client_common_functions.c</label>
+        <link refid="G-2313-06-P2__client__common__functions_8c"/>
+      </node>
+      <node id="503">
+        <label>includes/G-2313-06-P2_client.h</label>
+        <link refid="G-2313-06-P2__client_8h"/>
+        <childnode refid="504" relation="include">
+        </childnode>
+      </node>
+      <node id="504">
+        <label>src/G-2313-06-P2_client.c</label>
+        <link refid="G-2313-06-P2__client_8c"/>
+      </node>
+      <node id="511">
+        <label>src/G-2313-06-P2_client_function_handlers.c</label>
+        <link refid="G-2313-06-P2__client__function__handlers_8c"/>
+      </node>
+      <node id="513">
+        <label>srclib/G-2313-06-P2_tcp.c</label>
+        <link refid="G-2313-06-P2__tcp_8c"/>
+      </node>
+      <node id="508">
+        <label>includes/G-2313-06-P2_client_err_handlers.h</label>
+        <link refid="G-2313-06-P2__client__err__handlers_8h"/>
+        <childnode refid="507" relation="include">
+        </childnode>
+        <childnode refid="509" relation="include">
+        </childnode>
+      </node>
+      <node id="507">
+        <label>includes/G-2313-06-P2_client_common_functions.h</label>
+        <link refid="G-2313-06-P2__client__common__functions_8h"/>
+        <childnode refid="503" relation="include">
+        </childnode>
+        <childnode refid="506" relation="include">
+        </childnode>
+        <childnode refid="508" relation="include">
+        </childnode>
+        <childnode refid="510" relation="include">
+        </childnode>
+      </node>
+      <node id="505">
+        <label>includes/G-2313-06-P2_files.h</label>
+        <link refid="G-2313-06-P2__files_8h"/>
+        <childnode refid="503" relation="include">
+        </childnode>
+        <childnode refid="506" relation="include">
+        </childnode>
+        <childnode refid="512" relation="include">
+        </childnode>
+      </node>
+      <node id="506">
+        <label>includes/G-2313-06-P2_client_function_handlers.h</label>
+        <link refid="G-2313-06-P2__client__function__handlers_8h"/>
+        <childnode refid="507" relation="include">
+        </childnode>
+        <childnode refid="503" relation="include">
+        </childnode>
+        <childnode refid="511" relation="include">
+        </childnode>
+      </node>
+      <node id="509">
+        <label>src/G-2313-06-P2_client_err_handlers.c</label>
+        <link refid="G-2313-06-P2__client__err__handlers_8c"/>
+      </node>
+      <node id="502">
+        <label>includes/G-2313-06-P2_tcp.h</label>
+        <link refid="G-2313-06-P2_tcp.h"/>
+        <childnode refid="503" relation="include">
+        </childnode>
+        <childnode refid="505" relation="include">
+        </childnode>
+        <childnode refid="513" relation="include">
+        </childnode>
+      </node>
+      <node id="512">
+        <label>srclib/G-2313-06-P2_files.c</label>
+        <link refid="G-2313-06-P2__files_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="G-2313-06-P2__tcp_8h_1a4e5ce422aa030ac8b3998e858b79cae2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_connect</definition>
+        <argsstring>(char *server, int port)</argsstring>
+        <name>tcp_connect</name>
+        <param>
+          <type>char *</type>
+          <declname>server</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_tcp.h" line="4" column="1" bodyfile="srclib/G-2313-06-P2_tcp.c" bodystart="7" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__tcp_8h_1a14d727cfbcd2ce3c5f4fae5a470a84da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_listen</definition>
+        <argsstring>(int port, int max_conn)</argsstring>
+        <name>tcp_listen</name>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_conn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_tcp.h" line="5" column="1" bodyfile="srclib/G-2313-06-P2_tcp.c" bodystart="39" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__tcp_8h_1a1e2b75e457a02f23d433a6821f6902b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_send</definition>
+        <argsstring>(int fd, char *msg)</argsstring>
+        <name>tcp_send</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_tcp.h" line="6" column="1" bodyfile="srclib/G-2313-06-P2_tcp.c" bodystart="74" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__tcp_8h_1af3354e60e1181adcd72f9f242063fafe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_receive</definition>
+        <argsstring>(int fd, char *msg, int len)</argsstring>
+        <name>tcp_receive</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_tcp.h" line="7" column="1" bodyfile="srclib/G-2313-06-P2_tcp.c" bodystart="81" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__tcp_8h_1a2d1f9e76e5da3a7c1e172d1294a33611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tcp_disconnect</definition>
+        <argsstring>(int fd)</argsstring>
+        <name>tcp_disconnect</name>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_tcp.h" line="8" column="1" bodyfile="srclib/G-2313-06-P2_tcp.c" bodystart="88" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>_TCP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_TCP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__tcp_8h_1a4e5ce422aa030ac8b3998e858b79cae2" kindref="member">tcp_connect</ref><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*server,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__tcp_8h_1a14d727cfbcd2ce3c5f4fae5a470a84da" kindref="member">tcp_listen</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_conn);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__tcp_8h_1a1e2b75e457a02f23d433a6821f6902b7" kindref="member">tcp_send</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*msg);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__tcp_8h_1af3354e60e1181adcd72f9f242063fafe" kindref="member">tcp_receive</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*msg,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="G-2313-06-P2__tcp_8h_1a2d1f9e76e5da3a7c1e172d1294a33611" kindref="member">tcp_disconnect</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="includes/G-2313-06-P2_tcp.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__IRCInterfaceCallbacks_IRCInterface_NewCommandText" kind="page">
+    <compoundname>IRCInterface_NewCommandText</compoundname>
+    <title>IRCInterface_NewCommandText</title>
+    <detaileddescription>
+<para>Llamada la tecla ENTER en el campo de texto y comandos.</para><para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;redes2/ircxchat.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>IRCInterface_NewCommandText<sp/>(char<sp/>*command)</highlight></codeline>
+</programlisting></para><para>Llamada de la tecla ENTER en el campo de texto y comandos. El texto deberá ser enviado y el comando procesado por las funciones de &quot;parseo&quot; de comandos de usuario.</para><para>En cualquier caso sólo se puede realizar si el servidor acepta la orden. La string recibida no debe ser manipulada por el programador, sólo leída.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">comando</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>introducido por el usuario.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>Esta función debe ser implementada por el alumno.</para></simplesect>
+<simplesect kind="author"><para>Eloy Anguiano (<ulink url="mailto:eloy.anguiano@uam.es">eloy.anguiano@uam.es</ulink>)</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

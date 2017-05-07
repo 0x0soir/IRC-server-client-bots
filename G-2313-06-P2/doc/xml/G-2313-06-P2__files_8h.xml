@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="G-2313-06-P2__files_8h" kind="file" language="C++">
+    <compoundname>G-2313-06-P2_files.h</compoundname>
+    <includes local="no">errno.h</includes>
+    <includes local="no">sys/time.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">sys/stat.h</includes>
+    <includes local="no">netinet/in.h</includes>
+    <includes local="no">syslog.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">strings.h</includes>
+    <includes local="no">signal.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">time.h</includes>
+    <includes local="no">arpa/inet.h</includes>
+    <includes local="no">redes2/irc.h</includes>
+    <includes local="no">netdb.h</includes>
+    <includes local="no">pthread.h</includes>
+    <includes local="no">sys/ioctl.h</includes>
+    <includes local="no">net/if.h</includes>
+    <includes local="no">ifaddrs.h</includes>
+    <includes local="no">redes2/ircxchat.h</includes>
+    <includes refid="G-2313-06-P2__tcp_8h" local="yes">G-2313-06-P2_tcp.h</includes>
+    <includedby refid="G-2313-06-P2__client_8h" local="yes">includes/G-2313-06-P2_client.h</includedby>
+    <includedby refid="G-2313-06-P2__client__function__handlers_8h" local="yes">includes/G-2313-06-P2_client_function_handlers.h</includedby>
+    <includedby refid="G-2313-06-P2__files_8c" local="yes">srclib/G-2313-06-P2_files.c</includedby>
+    <incdepgraph>
+      <node id="473">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="480">
+        <label>stdbool.h</label>
+      </node>
+      <node id="474">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="482">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="487">
+        <label>net/if.h</label>
+      </node>
+      <node id="476">
+        <label>stdlib.h</label>
+      </node>
+      <node id="468">
+        <label>errno.h</label>
+      </node>
+      <node id="467">
+        <label>includes/G-2313-06-P2_files.h</label>
+        <link refid="G-2313-06-P2_files.h"/>
+        <childnode refid="468" relation="include">
+        </childnode>
+        <childnode refid="469" relation="include">
+        </childnode>
+        <childnode refid="470" relation="include">
+        </childnode>
+        <childnode refid="471" relation="include">
+        </childnode>
+        <childnode refid="472" relation="include">
+        </childnode>
+        <childnode refid="473" relation="include">
+        </childnode>
+        <childnode refid="474" relation="include">
+        </childnode>
+        <childnode refid="475" relation="include">
+        </childnode>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="477" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="481" relation="include">
+        </childnode>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="483" relation="include">
+        </childnode>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="486" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+        <childnode refid="488" relation="include">
+        </childnode>
+        <childnode refid="489" relation="include">
+        </childnode>
+        <childnode refid="490" relation="include">
+        </childnode>
+      </node>
+      <node id="486">
+        <label>sys/ioctl.h</label>
+      </node>
+      <node id="484">
+        <label>netdb.h</label>
+      </node>
+      <node id="475">
+        <label>syslog.h</label>
+      </node>
+      <node id="488">
+        <label>ifaddrs.h</label>
+      </node>
+      <node id="485">
+        <label>pthread.h</label>
+      </node>
+      <node id="471">
+        <label>sys/types.h</label>
+      </node>
+      <node id="490">
+        <label>G-2313-06-P2_tcp.h</label>
+        <link refid="G-2313-06-P2__tcp_8h"/>
+      </node>
+      <node id="483">
+        <label>redes2/irc.h</label>
+      </node>
+      <node id="470">
+        <label>unistd.h</label>
+      </node>
+      <node id="479">
+        <label>signal.h</label>
+      </node>
+      <node id="481">
+        <label>time.h</label>
+      </node>
+      <node id="469">
+        <label>sys/time.h</label>
+      </node>
+      <node id="478">
+        <label>strings.h</label>
+      </node>
+      <node id="472">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="489">
+        <label>redes2/ircxchat.h</label>
+      </node>
+      <node id="477">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="498">
+        <label>src/G-2313-06-P2_client_common_functions.c</label>
+        <link refid="G-2313-06-P2__client__common__functions_8c"/>
+      </node>
+      <node id="492">
+        <label>includes/G-2313-06-P2_client.h</label>
+        <link refid="G-2313-06-P2__client_8h"/>
+        <childnode refid="493" relation="include">
+        </childnode>
+      </node>
+      <node id="493">
+        <label>src/G-2313-06-P2_client.c</label>
+        <link refid="G-2313-06-P2__client_8c"/>
+      </node>
+      <node id="499">
+        <label>src/G-2313-06-P2_client_function_handlers.c</label>
+        <link refid="G-2313-06-P2__client__function__handlers_8c"/>
+      </node>
+      <node id="496">
+        <label>includes/G-2313-06-P2_client_err_handlers.h</label>
+        <link refid="G-2313-06-P2__client__err__handlers_8h"/>
+        <childnode refid="495" relation="include">
+        </childnode>
+        <childnode refid="497" relation="include">
+        </childnode>
+      </node>
+      <node id="495">
+        <label>includes/G-2313-06-P2_client_common_functions.h</label>
+        <link refid="G-2313-06-P2__client__common__functions_8h"/>
+        <childnode refid="492" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+        <childnode refid="496" relation="include">
+        </childnode>
+        <childnode refid="498" relation="include">
+        </childnode>
+      </node>
+      <node id="491">
+        <label>includes/G-2313-06-P2_files.h</label>
+        <link refid="G-2313-06-P2_files.h"/>
+        <childnode refid="492" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
+        </childnode>
+        <childnode refid="500" relation="include">
+        </childnode>
+      </node>
+      <node id="494">
+        <label>includes/G-2313-06-P2_client_function_handlers.h</label>
+        <link refid="G-2313-06-P2__client__function__handlers_8h"/>
+        <childnode refid="495" relation="include">
+        </childnode>
+        <childnode refid="492" relation="include">
+        </childnode>
+        <childnode refid="499" relation="include">
+        </childnode>
+      </node>
+      <node id="497">
+        <label>src/G-2313-06-P2_client_err_handlers.c</label>
+        <link refid="G-2313-06-P2__client__err__handlers_8c"/>
+      </node>
+      <node id="500">
+        <label>srclib/G-2313-06-P2_files.c</label>
+        <link refid="G-2313-06-P2__files_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structsrecv" prot="public">srecv</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="G-2313-06-P2__files_8h_1ad00af19306b45db3947f1b89ae4b5def" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* server_especial_enviar_ficheros</definition>
+        <argsstring>(void *vrecv)</argsstring>
+        <name>server_especial_enviar_ficheros</name>
+        <param>
+          <type>void *</type>
+          <declname>vrecv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_files.h" line="37" column="1" bodyfile="srclib/G-2313-06-P2_files.c" bodystart="6" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="G-2313-06-P2__files_8h_1a6796f20636727f52161d02748cb2b17e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* server_especial_recibir_ficheros</definition>
+        <argsstring>(void *vmsg)</argsstring>
+        <name>server_especial_recibir_ficheros</name>
+        <param>
+          <type>void *</type>
+          <declname>vmsg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="includes/G-2313-06-P2_files.h" line="38" column="1" bodyfile="srclib/G-2313-06-P2_files.c" bodystart="122" bodyend="224"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/stat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netinet/in.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;syslog.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;strings.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;arpa/inet.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;redes2/irc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netdb.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pthread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/ioctl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;net/if.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ifaddrs.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;redes2/ircxchat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="G-2313-06-P2__tcp_8h" kindref="compound">G-2313-06-P2_tcp.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>A_FWD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>A_FWD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="structsrecv" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30" refid="structsrecv_1abe3a30e845f4f2f6e47aac6583af3166" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structsrecv_1abe3a30e845f4f2f6e47aac6583af3166" kindref="member">nick</ref>;</highlight></codeline>
+<codeline lineno="31" refid="structsrecv_1a6ec350741c1d09ab84e115dfde89aa82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structsrecv_1a6ec350741c1d09ab84e115dfde89aa82" kindref="member">filename</ref>;</highlight></codeline>
+<codeline lineno="32" refid="structsrecv_1ac5ef113d83ca6646b0cc58b757e22f78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structsrecv_1ac5ef113d83ca6646b0cc58b757e22f78" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="33" refid="structsrecv_1af681620ef61aa562c7d575773f156761" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="structsrecv_1af681620ef61aa562c7d575773f156761" kindref="member">length</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}<ref refid="structsrecv" kindref="compound">srecv</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="G-2313-06-P2__files_8h_1ad00af19306b45db3947f1b89ae4b5def" kindref="member">server_especial_enviar_ficheros</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*vrecv);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="G-2313-06-P2__files_8h_1a6796f20636727f52161d02748cb2b17e" kindref="member">server_especial_recibir_ficheros</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*vmsg);</highlight></codeline>
+    </programlisting>
+    <location file="includes/G-2313-06-P2_files.h"/>
+  </compounddef>
+</doxygen>

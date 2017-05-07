@@ -1,0 +1,40 @@
+.TH "inicializar_nivel_SSL" 3 "Domingo, 7 de Mayo de 2017" "Version 1.0" "Redes de Comunicaciones II" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+inicializar_nivel_SSL \- Inicialización de SSL 
+
+.SH "Synopsis"
+.PP
+\fC \fB#include\fP \fB<\fBG-2313-06-P3_ssl\&.h\fP>\fP 
+.br
+ \fBSSL_CTX* \fBinicializar_nivel_SSL(int *desc)\fP;\fP \fP 
+.SH "Descripción"
+.PP
+Inicializa el socket principal del servidor mediante una capa SSL, para ello se generan varias llamadas de comprobación y verificación de las características de SSL\&. 
+.br
+Recibe como parámetro un puntero a un entero donde se almacenará el identificador del descriptor (socket)\&. 
+.br
+.SS "\fBFunciones de librería SSL:\fP"
+.PP
+.PD 0
+.IP "\(bu" 2
+SSL_load_error_strings(); 
+.IP "\(bu" 2
+SSL_library_init(); 
+.PP
+.SH "Valores devueltos"
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBSSL_CTX*\fP Contexto de la capa SSL\&. 
+.PP
+.SH "Autores"
+.PP
+.PD 0
+.IP "\(bu" 2
+Jorge Parrilla Llamas (jorge.parrilla@estudiante.uam.es) 
+.IP "\(bu" 2
+Javier de Marco Tomás (javier.marco@estudiante.uam.es) 
+.PP
+

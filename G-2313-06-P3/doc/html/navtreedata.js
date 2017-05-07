@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "Redes de Comunicaciones II", "index.html", [
+    [ "P3- Seguridad SSL", "index.html", "index" ],
     [ "Archivos", null, [
       [ "Lista de archivos", "files.html", "files" ],
       [ "Miembros de los ficheros", "globals.html", [

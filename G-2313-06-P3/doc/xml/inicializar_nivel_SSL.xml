@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="inicializar_nivel_SSL" kind="page">
+    <compoundname>inicializar_nivel_SSL</compoundname>
+    <title>Inicialización de SSL</title>
+    <detaileddescription>
+<sect1 id="inicializar_nivel_SSL_1synopsis_1">
+<title>Synopsis</title>
+<para><computeroutput> <bold>#include</bold> <bold>&lt;<ref refid="G-2313-06-P3__ssl_8h" kindref="compound">G-2313-06-P3_ssl.h</ref>&gt;</bold> <linebreak/>
+ <bold>SSL_CTX* <ref refid="G-2313-06-P3__ssl_8c_1a32d6d68d1f64d25effa1ea5ec1e6bdb3" kindref="member">inicializar_nivel_SSL(int *desc)</ref>;</bold> </computeroutput> </para></sect1>
+<sect1 id="inicializar_nivel_SSL_1descripcion_1">
+<title>Descripción</title>
+<para>Inicializa el socket principal del servidor mediante una capa SSL, para ello se generan varias llamadas de comprobación y verificación de las características de SSL. <linebreak/>
+Recibe como parámetro un puntero a un entero donde se almacenará el identificador del descriptor (socket). <linebreak/>
+<heading level="2"><bold>Funciones de librería SSL:</bold></heading>
+</para><para><itemizedlist>
+<listitem>
+<para>SSL_load_error_strings(); </para></listitem>
+<listitem>
+<para>SSL_library_init(); </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="inicializar_nivel_SSL_1return_1">
+<title>Valores devueltos</title>
+<para><itemizedlist>
+<listitem>
+<para><bold>SSL_CTX*</bold> Contexto de la capa SSL. </para></listitem>
+</itemizedlist>
+</para></sect1>
+<sect1 id="inicializar_nivel_SSL_1authors_1">
+<title>Autores</title>
+<para><itemizedlist>
+<listitem>
+<para>Jorge Parrilla Llamas (<ulink url="mailto:jorge.parrilla@estudiante.uam.es">jorge.parrilla@estudiante.uam.es</ulink>) </para></listitem>
+<listitem>
+<para>Javier de Marco Tomás (<ulink url="mailto:javier.marco@estudiante.uam.es">javier.marco@estudiante.uam.es</ulink>) </para></listitem>
+</itemizedlist>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

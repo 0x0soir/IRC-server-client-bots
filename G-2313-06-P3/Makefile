@@ -54,7 +54,7 @@ LIB_SSL = -lssl -lcrypto
 #Comienzo del makefile
 #Regla All: compila todo el programa
 
-all: clean certificados claves server_echo client_echo servidor_irc doxy
+all: clean certificados claves server_echo client_echo servidor_irc
 
 certificados:
 		@echo "\033[31mGenerando certificados...\033[00m"

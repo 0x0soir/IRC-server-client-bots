@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__IRCInterfaceCallbacks_IRCInterface_TakeVoice" kind="page">
+    <compoundname>IRCInterface_TakeVoice</compoundname>
+    <title>IRCInterface_TakeVoice</title>
+    <detaileddescription>
+<para>Llamada por el botón &quot;Quitar voz&quot;.</para><para><programlisting><codeline><highlight class="normal">#include<sp/>&lt;redes2/ircxchat.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>IRCInterface_TakeVoice<sp/>(char<sp/>*channel,<sp/>char<sp/>*nick)</highlight></codeline>
+</programlisting></para><para>Llamada por el botón &quot;Quitar voz&quot;. Previamente debe seleccionarse un nick del canal para darle voz a dicho usuario.</para><para>En cualquier caso sólo se puede realizar si el servidor acepta la orden. Las strings recibidas no deben ser manipuladas por el programador, sólo leídas.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>canal sobre el que se le va a quitar voz al usuario. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nick</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nick del usuario al que se va a quitar la voz.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>Esta función debe ser implementada por el alumno.</para></simplesect>
+<simplesect kind="author"><para>Eloy Anguiano (<ulink url="mailto:eloy.anguiano@uam.es">eloy.anguiano@uam.es</ulink>)</para></simplesect>
+<hruler/>
+ </para>    </detaileddescription>
+  </compounddef>
+</doxygen>
