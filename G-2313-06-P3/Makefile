@@ -30,14 +30,14 @@ SRC_SERVER_IRC += srclib/$(GROUP)_tcp.c
 SRC_SERVER_IRC += includes/$(GROUP)_tcp.h
 
 # Flags para el compilador
-FFLAGS= -Wall -pedantic -pthread -rdynamic
+FFLAGS= -Wall -w -pedantic -pthread -rdynamic
 REDESLIB= -lircredes -lirctad -lircinterface -lsoundredes
 LIB_SSL = -lssl -lcrypto
 
 #Comienzo del makefile
 #Regla All: compila todo el programa
 
-all: certificados claves server_echo client_echo
+all: certificados claves server_echo client_echo servidor_irc
 
 certificados:
 		@echo "\033[31mGenerando certificados...\033[00m"
@@ -79,7 +79,7 @@ client_echo:
 	gcc -o ./echo/cliente_echo $(SRC_CLIENT_ECHO) $(FFLAGS) $(REDESLIB) $(LIB_SSL)
 	@echo "\033[32m--> Cliente compilado: ./echo/cliente_echo\033[00m"
 
-server_irc:
+servidor_irc:
 	@mkdir -p "cliente_servidor"
 	@echo "\033[31mCompilando servidor IRC...\033[00m"
 	gcc -o ./cliente_servidor/servidor_IRC $(SRC_SERVER_IRC) $(FFLAGS) $(REDESLIB) $(LIB_SSL)

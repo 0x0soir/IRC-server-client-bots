@@ -576,10 +576,6 @@ void server_daemon(){
 		syslog (LOG_ERR, "Error creando el nuevo SID del proceso hijo");
 		exit(EXIT_FAILURE);
 	}
-	if ((chdir("/")) < 0) {
-		syslog (LOG_ERR, "Error cambiando el directorio actual de trabajo =\"/\"");
-		exit(EXIT_FAILURE);
-	}
 	syslog(LOG_INFO, "Cerrando los descriptores base...");
   for (i = getdtablesize(); i >= 0; --i)
     close(i);
@@ -652,7 +648,7 @@ int main(int argc, char* argv[]){
     }
   }
   if(daemon==1)
-    /*server_daemon();*/
+    server_daemon();
   signal(SIGINT, server_exit);
   server_start_pool();
   server_accept_connection(server_start());
