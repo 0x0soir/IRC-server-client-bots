@@ -1,4 +1,6 @@
-# IRCServer
+# myIRC
 
-IRC Server using C. Using RFC-2812.
-(C) Jorge Parrilla
+IRC Server, client and SSL security using C. Implemented using RFC-2812.
+
+(c) Jorge Parrilla
+Software libre publicado bajo licencia GNU.
