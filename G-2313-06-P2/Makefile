@@ -24,7 +24,7 @@ SRCDIR_CLIENT += includes/$(GROUP_CLIENT)_client_err_handlers.h
 #Comienzo del makefile
 #Regla All: compila todo el programa
 
-all: clean tar client
+all: clean client
 
 client:
 	@echo "\033[31mCompilando cliente...\033[00m"
