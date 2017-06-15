@@ -32,7 +32,7 @@ int main(int argc, char ** argv){
 	status = options = 0;
 	void (*prev_fn)(int);
 
-	server_daemon();
+	//server_daemon();
 
 	fprintf(stderr, ANSI_COLOR_CYAN "############################################\n" ANSI_COLOR_RESET);
 	fprintf(stderr, ANSI_COLOR_CYAN "###\t BOT SIRI - JORGE PARRILLA\t ###\n" ANSI_COLOR_RESET);

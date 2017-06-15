@@ -5,6 +5,10 @@ GROUP=G-2313-06-BOT
 SRC_BOT = src/$(GROUP)_bot.c
 SRC_BOT += src/$(GROUP)_bot_connection.c
 SRC_BOT += includes/$(GROUP)_bot_connection.h
+SRC_BOT += src/$(GROUP)_bot_in_out.c
+SRC_BOT += includes/$(GROUP)_bot_in_out.h
+SRC_BOT += src/$(GROUP)_bot_handlers.c
+SRC_BOT += includes/$(GROUP)_bot_handlers.h
 SRC_BOT += srclib/$(GROUP)_tcp.c
 SRC_BOT += includes/$(GROUP)_tcp.h
 

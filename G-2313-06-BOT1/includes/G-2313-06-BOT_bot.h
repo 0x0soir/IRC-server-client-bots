@@ -21,6 +21,7 @@
 #include <sys/types.h>
 #include <ifaddrs.h>
 #include "G-2313-06-BOT_bot_connection.h"
+#include "G-2313-06-BOT_bot_in_out.h"
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"

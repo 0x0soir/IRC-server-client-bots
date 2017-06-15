@@ -10,46 +10,71 @@ int status = 0;
 pthread_t thread_response;
 
 void run_siri(){
-	char buff[CLIENT_MESSAGE_MAXSIZE] = "";
-	int valread;
-	connect_server();
-	while (alive) {
-		if(status==0){
-			send_nick();
-			send_user();
-			send_join();
+	if(connect_server()==1){
+		syslog(LOG_INFO, "[BOT] Abrimos hilo de recepciones...");
+		pthread_create(&thread_response, NULL, client_function_response, NULL);
+		while (alive) {
+			if(status==0){
+				send_nick();
+				send_user();
+				send_join();
+			}
 		}
-		valread = recv(socket_desc, buff, CLIENT_MESSAGE_MAXSIZE, 0);
-		if(valread == 0) {
-			continue;
-		}
-		syslog(LOG_INFO, "[BOT] Mensaje recibido: %s", buff);
-		memset(buff,0,sizeof(buff));
 	}
 }
 
-void connect_server(){
+void* client_function_response(void *arg){
+  char buff[CLIENT_MESSAGE_MAXSIZE] = "";
+  char* next;
+  char* resultado;
+  int valread;
+	syslog(LOG_INFO, "[BOT] [!!] Dentro de hilo");
+  while(TRUE) {
+    syslog(LOG_INFO, "[BOT] Esperando a recibir mensajes...");
+    valread = recv(socket_desc, buff, CLIENT_MESSAGE_MAXSIZE, 0);
+    if(valread < 0) {
+      pthread_exit(NULL);
+    }
+
+    syslog(LOG_INFO, "[BOT] Mensaje recibido: %s", buff);
+    next = IRC_UnPipelineCommands(buff, &resultado);
+    syslog(LOG_INFO, "[BOT] Procesa: %s", resultado);
+    client_pre_in_function(resultado);
+    free(resultado);
+    while(next != NULL) {
+      next = IRC_UnPipelineCommands(next, &resultado);
+      if(resultado !=((void *) 0)) {
+        syslog(LOG_INFO, "[BOT] Procesa: %s", resultado);
+        client_pre_in_function(resultado);
+      }
+      free(resultado);
+    }
+    memset(buff,0,sizeof(buff));
+  }
+}
+
+int connect_server(){
 	struct sockaddr_in socket_address;
   struct hostent *server_info;
-  char *command, *msgNick, *msgUser;
-  fprintf(stderr, ANSI_COLOR_YELLOW "Conectando al servidor...\n" ANSI_COLOR_RESET);
+  syslog(LOG_INFO, "[BOT] Conectando al servidor... ");
   if(!nick||!server){
-    return IRCERR_NOCONNECT;
+    return -1;
   } else {
-    /* Se crea el socket que vamos a usar */
     if((socket_desc = socket(AF_INET, SOCK_STREAM, 0)) < 0 ){
-      fprintf(stderr, ANSI_COLOR_RED "[!!] Error al generar socket\n" ANSI_COLOR_RESET);
-      return IRCERR_NOCONNECT;
+			syslog(LOG_INFO, "[BOT] [!!] Error al generar socket");
+      return -1;
     } else {
-      fprintf(stderr, ANSI_COLOR_GREEN "[!] Socket generado OK\n" ANSI_COLOR_RESET);
+			syslog(LOG_INFO, "[BOT] [!] Socket generado OK");
     }
 
     server_info = gethostbyname(server);
     if(server_info == NULL) {
       fprintf(stderr, ANSI_COLOR_RED "[!!] Error al obtener host\n" ANSI_COLOR_RESET);
-      return IRCERR_NOCONNECT;
+			syslog(LOG_INFO, "[BOT] [!!] Error al obtener host");
+      return -1;
     } else {
       fprintf(stderr, ANSI_COLOR_GREEN "[!] Host obtenido OK\n" ANSI_COLOR_RESET);
+			syslog(LOG_INFO, "[BOT] [!] Host obtenido OK");
     }
 
     bzero((char *) &socket_address, sizeof (socket_address));
@@ -59,37 +84,21 @@ void connect_server(){
 
     if(connect(socket_desc, (struct sockaddr*) &socket_address, sizeof (socket_address)) < 0) {
 			fprintf(stderr, ANSI_COLOR_RED "[!!] Error conectando al servidor\n" ANSI_COLOR_RESET);
-      return IRCERR_NOCONNECT;
+			syslog(LOG_INFO, "[BOT] [!!] Error conectando al servidor");
+      return -1;
     } else {
 			fprintf(stderr, ANSI_COLOR_GREEN "[!] Conexión con servidor OK\n" ANSI_COLOR_RESET);
+			syslog(LOG_INFO, "[BOT] [!] Conexión con servidor OK");
     }
-    /*pthread_create(&thread_response, NULL, client_function_response, NULL);*/
-
-    /* Ya conectados, parseamos nick/user y lo enviamos */
-    /*IRCMsg_Nick(&msgNick, NULL, nick, NULL);
-    IRCMsg_User(&msgUser, NULL, "bot_siri", server, "bot_siri");
-
-    IRC_PipelineCommands(&command, msgNick, msgUser, NULL);
-    syslog(LOG_ERR, "[CLIENTE] Registro pipelined: %s", command);
-
-    if(send(socket_desc, command, strlen(command), 0) < 0) {
-			fprintf(stderr, ANSI_COLOR_RED "[!!] Error enviando el mensaje: %s (%s)\n" ANSI_COLOR_RESET, command, strerror(errno));
-			return IRCERR_NOCONNECT;
-    } else {
-			fprintf(stderr, ANSI_COLOR_GREEN "[!] Mensaje enviado OK\n" ANSI_COLOR_RESET);
-		}
-
-    syslog(LOG_ERR, "[CLIENTE] Socket desc: %d", socket_desc);
-    free(command);*/
   }
+	return 1;
 }
 
 void send_nick(){
-	char *command, *msgNick;
+	char *msgNick;
 	IRCMsg_Nick(&msgNick, NULL, nick, NULL);
 	if(send(socket_desc, msgNick, strlen(msgNick), 0) < 0) {
 		fprintf(stderr, ANSI_COLOR_RED "[!!] Error enviando el mensaje: %s (%s)\n" ANSI_COLOR_RESET, msgNick, strerror(errno));
-		return IRCERR_NOCONNECT;
 	} else {
 		fprintf(stderr, ANSI_COLOR_GREEN "[!] Mensaje nick enviado OK\n" ANSI_COLOR_RESET);
 		status = 1;
@@ -97,11 +106,10 @@ void send_nick(){
 }
 
 void send_user(){
-	char *command, *msgUser;
+	char *msgUser;
 	IRCMsg_User(&msgUser, NULL, "bot_siri", server, "bot_siri");
 	if(send(socket_desc, msgUser, strlen(msgUser), 0) < 0) {
 		fprintf(stderr, ANSI_COLOR_RED "[!!] Error enviando el mensaje: %s (%s)\n" ANSI_COLOR_RESET, msgUser, strerror(errno));
-		return IRCERR_NOCONNECT;
 	} else {
 		fprintf(stderr, ANSI_COLOR_GREEN "[!] Mensaje user enviado OK\n" ANSI_COLOR_RESET);
 		status = 1;
@@ -109,11 +117,10 @@ void send_user(){
 }
 
 void send_join(){
-	char *command, *msgJoin;
+	char *msgJoin;
 	IRCMsg_Join(&msgJoin, NULL, channel, NULL, NULL);
 	if(send(socket_desc, msgJoin, strlen(msgJoin), 0) < 0) {
 		fprintf(stderr, ANSI_COLOR_RED "[!!] Error enviando el mensaje: %s (%s)\n" ANSI_COLOR_RESET, msgJoin, strerror(errno));
-		return IRCERR_NOCONNECT;
 	} else {
 		fprintf(stderr, ANSI_COLOR_GREEN "[!] Mensaje join enviado OK\n" ANSI_COLOR_RESET);
 		status = 1;
