@@ -21,6 +21,8 @@ void server_in_command_privmsg(char* command);
 void server_in_command_ping(char* command);
 void server_in_command_pong(char* command);
 
+void server_in_command_rpl_welcome(char* command);
+
 void server_out_command_nick(char* command);
 void server_out_command_join(char* command);
 void server_out_command_names(char* command);

@@ -13,6 +13,7 @@ void client_execute_in_function(long functionName, char* command){
   /* Definir lista de funciones para cada comando*/
   functions[PRIVMSG]          = &server_in_command_privmsg;
   functions[PING]             = &server_in_command_ping;
+  functions[RPL_WELCOME]      = &server_in_command_rpl_welcome;
 
   /* Llamar a la funcion del argumento */
   if((functionName<0)||(functionName>IRC_MAX_COMMANDS)||(functions[functionName]==NULL)){

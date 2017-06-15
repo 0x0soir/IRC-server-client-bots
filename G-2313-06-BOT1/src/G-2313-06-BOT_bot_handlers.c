@@ -7,6 +7,7 @@ extern char* channel;
 
 void server_in_command_privmsg(char* command){
   char *prefix, *channel, *msg, *parse_nick, *parse_user, *parse_host, *parse_server;
+  char msgEnvio[2048] = "";
   syslog(LOG_INFO, "[BOT] [IN]: PRIVMSG");
   if(IRCParse_Privmsg(command, &prefix, &channel, &msg)==IRC_OK){
     if(IRCParse_ComplexUser(prefix, &parse_nick, &parse_user, &parse_host, &parse_server)==IRC_OK){
@@ -14,13 +15,16 @@ void server_in_command_privmsg(char* command){
       if(channel[0]=='#'){
         syslog(LOG_INFO, "[BOT] [IN]: Es canal");
         if(strstr(msg, nick)){
-          syslog(LOG_INFO, "[BOT] [IN]: Habla conmigo");
+          fprintf(stderr, ANSI_COLOR_YELLOW "[S] Canal: %s | Mensaje: %s\n" ANSI_COLOR_RESET, channel, msg);
           removeSubstring(msg, nick);
           trim(msg);
-          server_out_command_privmsg(server_bot_text_test(msg));
+          IRC_ToLower(msg);
+          sprintf(msgEnvio, "%s: %s", parse_nick, server_bot_text_test(msg));
+          server_out_command_privmsg(msgEnvio);
         }
       } else {
         syslog(LOG_INFO, "[BOT] [IN]: No es canal");
+        fprintf(stderr, ANSI_COLOR_YELLOW "[S] MP: %s | Mensaje: %s\n" ANSI_COLOR_RESET, channel, msg);
       }
     }
   }
@@ -49,9 +53,16 @@ void server_in_command_ping(char* command){
   IRC_MFree(5, &prefix, &msg, &msg2, &parse_host, &parse_server);
 }
 
+void server_in_command_rpl_welcome(char* command){
+  char *prefix, *msg, *parse_nick;
+  IRCParse_RplWelcome(command, &prefix, &parse_nick, &msg);
+  fprintf(stderr, ANSI_COLOR_YELLOW "[S] Conexión satisfactoria: %s\n" ANSI_COLOR_RESET, msg);
+  IRC_MFree(3, &prefix, &parse_nick, &msg);
+}
+
 void server_out_command_names(char* command){
   char *msg, *channel, *targetserver;
-  syslog(LOG_INFO, "[CLIENTE] Send names %s", command);
+  syslog(LOG_INFO, "[BOT] Send names %s", command);
   if(IRCUserParse_Names(command, &channel, &targetserver)==IRC_OK){
     syslog(LOG_INFO, "[CLIENTE] NAMES PARSE OK");
     IRCMsg_Names(&msg, NULL, channel, targetserver);
@@ -107,17 +118,41 @@ char* server_bot_text_test(char * msg){
   char *textos_preguntas[] = {
       "hola",
       "años tienes",
-      "que tal"
+      "que tal",
+      "sentido de la vida",
+      "aprobar",
+      "chiste",
   };
-  char *textos_respuestas[][3] = {
-      {"Hola :)", "Ey!"},
-      {"256 módulo 255.","Nací junto a IRC."},
-      {"Bien, como siempre gracias.","Aquí estoy esperando a las segundas matrículas..."}
+  char *textos_respuestas[][2] = {
+      {
+        "Hola :)",
+        "Ey!"
+      },
+      {
+        "256 módulo 255.",
+        "Nací junto a IRC."
+      },
+      {
+        "Bien, como siempre gracias.",
+        "Aquí estoy esperando a las segundas matrículas..."
+      },
+      {
+        "Es complicado, pero podría ser aprobar Cirel en primera convocatoria :)",
+        "El mundo se divide en 10 clases de personas, las que conocen el sistema binario y las que no."
+      },
+      {
+        "Si",
+        "No, te vas a segunda matrícula (o tercera?)"
+      },
+      {
+        "¿Qué diferencia hay entre hacer la colada y utilizar Windows? - Que la colada no se cuelga sola.",
+        "¿Qué diferencia hay entre hacer la colada y utilizar Windows? - Que la colada no se cuelga sola.",
+      }
   };
   int i;
   syslog(LOG_INFO, "[BOT] [OUT] Buscando frase:%s", msg);
-  for(i=0;i<3;i++){
-      if(strstr(textos_preguntas[i], msg)){
+  for(i=0;i<6;i++){
+      if(strstr(msg, textos_preguntas[i])){
         return textos_respuestas[i][rand()%2];
       }
   }

@@ -73,7 +73,7 @@ int connect_server(){
 			syslog(LOG_INFO, "[BOT] [!!] Error al obtener host");
       return -1;
     } else {
-      fprintf(stderr, ANSI_COLOR_GREEN "[!] Host obtenido OK\n" ANSI_COLOR_RESET);
+      fprintf(stderr, ANSI_COLOR_GREEN "[B] Host obtenido OK\n" ANSI_COLOR_RESET);
 			syslog(LOG_INFO, "[BOT] [!] Host obtenido OK");
     }
 
@@ -87,8 +87,7 @@ int connect_server(){
 			syslog(LOG_INFO, "[BOT] [!!] Error conectando al servidor");
       return -1;
     } else {
-			fprintf(stderr, ANSI_COLOR_GREEN "[!] Conexión con servidor OK\n" ANSI_COLOR_RESET);
-			syslog(LOG_INFO, "[BOT] [!] Conexión con servidor OK");
+			fprintf(stderr, ANSI_COLOR_GREEN "[B] Conexión con servidor OK\n" ANSI_COLOR_RESET);
     }
   }
 	return 1;
@@ -100,7 +99,7 @@ void send_nick(){
 	if(send(socket_desc, msgNick, strlen(msgNick), 0) < 0) {
 		fprintf(stderr, ANSI_COLOR_RED "[!!] Error enviando el mensaje: %s (%s)\n" ANSI_COLOR_RESET, msgNick, strerror(errno));
 	} else {
-		fprintf(stderr, ANSI_COLOR_GREEN "[!] Mensaje nick enviado OK\n" ANSI_COLOR_RESET);
+		fprintf(stderr, ANSI_COLOR_GREEN "[B] Mensaje nick enviado OK\n" ANSI_COLOR_RESET);
 		status = 1;
 	}
 }
@@ -111,7 +110,7 @@ void send_user(){
 	if(send(socket_desc, msgUser, strlen(msgUser), 0) < 0) {
 		fprintf(stderr, ANSI_COLOR_RED "[!!] Error enviando el mensaje: %s (%s)\n" ANSI_COLOR_RESET, msgUser, strerror(errno));
 	} else {
-		fprintf(stderr, ANSI_COLOR_GREEN "[!] Mensaje user enviado OK\n" ANSI_COLOR_RESET);
+		fprintf(stderr, ANSI_COLOR_GREEN "[B] Mensaje user enviado OK\n" ANSI_COLOR_RESET);
 		status = 1;
 	}
 }
@@ -122,7 +121,7 @@ void send_join(){
 	if(send(socket_desc, msgJoin, strlen(msgJoin), 0) < 0) {
 		fprintf(stderr, ANSI_COLOR_RED "[!!] Error enviando el mensaje: %s (%s)\n" ANSI_COLOR_RESET, msgJoin, strerror(errno));
 	} else {
-		fprintf(stderr, ANSI_COLOR_GREEN "[!] Mensaje join enviado OK\n" ANSI_COLOR_RESET);
+		fprintf(stderr, ANSI_COLOR_GREEN "[B] Mensaje join enviado OK\n" ANSI_COLOR_RESET);
 		status = 1;
 	}
 }
