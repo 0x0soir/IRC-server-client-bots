@@ -19,7 +19,7 @@ LIB = ./lib/
 OBJ = ./obj/
 SRCLIB = ./srclib/
 
-all: clean bot_1 prelibreria libreria
+all: clean bot_1 prelibreria libreria siri
 
 bot_1:
 	@mkdir -p "bot_1"
@@ -38,6 +38,9 @@ prelibreria:
 	@mkdir -p "lib"
 
 libreria: $(LIB)$(GROUP)_tcp.a
+
+siri:
+	./bot_1/bot_1 -a metis.ii.uam.es:6667 -c "#redes2" -n SiriBot
 
 $(LIB)$(GROUP)_tcp.a: $(OBJ)$(GROUP)_tcp.o
 	@ar -rv $@ $^ -lssl > /dev/null 2>&1
