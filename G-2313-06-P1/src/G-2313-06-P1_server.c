@@ -575,7 +575,7 @@ int main(){
   /*struct sigaction act;
   act.sa_handler = server_exit;
   sigaction(SIGKILL, &act, NULL);*/
-  server_daemon();
+  /*server_daemon();*/
   signal(SIGINT, server_exit);
   server_start_pool();
   server_accept_connection(server_start());
